@@ -167,7 +167,7 @@ print("Welcome,", name)
             <section class="board-card" id="community-setup">
               <h2>Connection</h2>
               <p id="community-status">Checking Supabase configuration...</p>
-              <p class="small-note">
+              <p class="small-note setup-note">
                 The board needs a Supabase URL and anon key in <code>web/community-config.js</code>. Until then, the
                 textbook still works normally.
               </p>
@@ -176,37 +176,45 @@ print("Welcome,", name)
             <section class="board-card" id="auth-card">
               <h2>Class Sign In</h2>
               <p class="small-note">Sign in to post or comment. Reading the board can stay public for classmates.</p>
-              <form id="auth-form" class="stacked-form">
-                <label>
-                  Display name
-                  <input type="text" id="auth-name" autocomplete="name" placeholder="Ada Lovelace">
-                </label>
+
+              <div class="auth-tabs" role="tablist" aria-label="Class board account options">
+                <button type="button" class="auth-tab active" data-auth-panel="login-panel">Login</button>
+                <button type="button" class="auth-tab" data-auth-panel="signup-panel">Create Account</button>
+              </div>
+
+              <form id="login-form" class="stacked-form auth-panel active">
                 <label>
                   Email
-                  <input type="email" id="auth-email" autocomplete="email" required placeholder="you@example.com">
+                  <input type="email" id="login-email" autocomplete="email" required placeholder="you@example.com">
                 </label>
                 <label>
                   Password
-                  <input type="password" id="auth-password" autocomplete="current-password" required minlength="6" placeholder="At least 6 characters">
+                  <input type="password" id="login-password" autocomplete="current-password" required minlength="6" placeholder="Your password">
                 </label>
-                <div class="form-actions">
-                  <button type="submit" class="button primary" data-auth-action="signin">Sign in</button>
-                  <button type="button" class="button secondary" id="signup-button">Create account</button>
-                </div>
+                <button type="submit" class="button primary">Login</button>
               </form>
+
+              <form id="signup-form" class="stacked-form auth-panel" hidden>
+                <label>
+                  Display name
+                  <input type="text" id="signup-name" autocomplete="name" placeholder="Ada Lovelace">
+                </label>
+                <label>
+                  Email
+                  <input type="email" id="signup-email" autocomplete="email" required placeholder="you@example.com">
+                </label>
+                <label>
+                  Password
+                  <input type="password" id="signup-password" autocomplete="new-password" required minlength="6" placeholder="At least 6 characters">
+                </label>
+                <button type="submit" class="button primary">Create account</button>
+              </form>
+
               <div class="signed-in-panel" id="signed-in-panel" hidden>
                 <p id="signed-in-label"></p>
                 <button type="button" class="button secondary" id="signout-button">Sign out</button>
               </div>
               <p class="form-message" id="auth-message" aria-live="polite"></p>
-            </section>
-
-            <section class="board-card setup-help-card">
-              <h2>Setup Summary</h2>
-              <p class="small-note">
-                Run the SQL setup file in Supabase, copy your Project URL and anon key, then paste them into
-                <code>web/community-config.js</code>.
-              </p>
             </section>
           </aside>
 
@@ -3750,8 +3758,8 @@ BMW</code></pre>
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260522-3"></script>
+  <script src="community-config.js?v=20260522-4"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260522-3"></script>
+  <script src="app.js?v=20260522-4"></script>
 </body>
 </html>

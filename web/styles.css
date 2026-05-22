@@ -844,6 +844,38 @@ details p {
   font: inherit;
 }
 
+.auth-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 18px 0 16px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.auth-tab {
+  flex: 1;
+  min-height: 38px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.auth-tab.active {
+  color: var(--blue);
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.auth-panel {
+  margin-top: 0;
+}
+
 .post-form textarea,
 .comment-form textarea {
   resize: vertical;
@@ -904,6 +936,10 @@ details p {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+#community-setup.is-connected .setup-note {
+  display: none;
 }
 
 .posts-list {

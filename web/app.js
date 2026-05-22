@@ -208,9 +208,12 @@ const boardState = {
   profiles: new Map(),
   comments: new Map(),
   channel: null,
+  signingOut: false,
+  ignoreAuthUntil: 0,
 };
 
 const REQUEST_TIMEOUT_MS = 12000;
+const AUTH_STORAGE_KEY = "python-tutorial-library-auth";
 
 function withTimeout(promise, label, timeoutMs = REQUEST_TIMEOUT_MS) {
   let timeoutId;
@@ -265,6 +268,35 @@ function boardMessage(id, message, isError = false) {
   }
   target.textContent = message;
   target.classList.toggle("error", isError);
+}
+
+function clearSupabaseAuthStorage() {
+  const authKeys = [AUTH_STORAGE_KEY];
+  const stores = [window.localStorage, window.sessionStorage];
+
+  stores.forEach((store) => {
+    try {
+      authKeys.forEach((key) => store.removeItem(key));
+      Object.keys(store).forEach((key) => {
+        if ((key.startsWith("sb-") && key.includes("auth-token")) || key.includes("supabase.auth.token")) {
+          store.removeItem(key);
+        }
+      });
+    } catch {
+      // Browser privacy settings can block storage access. Sign-out still updates the visible UI.
+    }
+  });
+}
+
+function selectAuthPanel(panelId) {
+  const selectedPanel = panelId || "login-panel";
+  document.querySelectorAll("[data-auth-panel]").forEach((tab) => {
+    tab.classList.toggle("active", tab.dataset.authPanel === selectedPanel);
+  });
+  document.querySelectorAll(".auth-panel").forEach((panel) => {
+    panel.hidden = panel.id !== selectedPanel;
+    panel.classList.toggle("active", panel.id === selectedPanel);
+  });
 }
 
 function renderPostsLoading() {
@@ -327,6 +359,7 @@ function setBoardEnabled(enabled) {
     });
   document.querySelector("#refresh-posts")?.toggleAttribute("disabled", !enabled);
   document.querySelector("#auth-card")?.classList.toggle("setup-required", !enabled);
+  document.querySelector("#community-setup")?.classList.toggle("is-connected", enabled);
   document.querySelector("#thread-composer")?.classList.toggle("is-locked", !enabled || !boardState.user);
   if (!enabled) {
     boardMessage("#auth-message", "Connect Supabase before signing in.");
@@ -360,7 +393,14 @@ async function initCommunityBoard() {
   }
 
   const config = window.PY_TUTORIAL_SUPABASE;
-  boardState.client = window.supabase.createClient(config.url, config.anonKey);
+  boardState.client = window.supabase.createClient(config.url, config.anonKey, {
+    auth: {
+      storageKey: AUTH_STORAGE_KEY,
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+    },
+  });
   boardState.configured = true;
   setBoardEnabled(true);
   boardMessage("#community-status", "Connected. Recent class posts will appear here.");
@@ -372,12 +412,20 @@ async function initCommunityBoard() {
 }
 
 function bindCommunityEvents() {
-  document.querySelector("#auth-form")?.addEventListener("submit", async (event) => {
+  document.querySelectorAll("[data-auth-panel]").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      selectAuthPanel(tab.dataset.authPanel);
+      boardMessage("#auth-message", "");
+    });
+  });
+
+  document.querySelector("#login-form")?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await signIn();
   });
 
-  document.querySelector("#signup-button")?.addEventListener("click", async () => {
+  document.querySelector("#signup-form")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
     await signUp();
   });
 
@@ -410,6 +458,12 @@ function bindCommunityEvents() {
   });
 
   boardState.client.auth.onAuthStateChange(async (_event, session) => {
+    if (boardState.signingOut) {
+      return;
+    }
+    if (session?.user && Date.now() < boardState.ignoreAuthUntil) {
+      return;
+    }
     boardState.user = session?.user || null;
     updateAuthUi();
     await loadPosts();
@@ -431,18 +485,22 @@ async function refreshSession() {
 }
 
 function updateAuthUi() {
-  const authForm = document.querySelector("#auth-form");
+  const authTabs = document.querySelector(".auth-tabs");
+  const loginForm = document.querySelector("#login-form");
+  const signupForm = document.querySelector("#signup-form");
   const signedInPanel = document.querySelector("#signed-in-panel");
   const signedInLabel = document.querySelector("#signed-in-label");
   const postForm = document.querySelector("#post-form");
   const composer = document.querySelector("#thread-composer");
 
-  if (!authForm || !signedInPanel || !signedInLabel || !postForm) {
+  if (!authTabs || !loginForm || !signupForm || !signedInPanel || !signedInLabel || !postForm) {
     return;
   }
 
   const isSignedIn = Boolean(boardState.user);
-  authForm.hidden = isSignedIn;
+  authTabs.hidden = isSignedIn;
+  loginForm.hidden = isSignedIn;
+  signupForm.hidden = true;
   signedInPanel.hidden = !isSignedIn;
   postForm.querySelectorAll("input, textarea, select, button").forEach((field) => {
     field.disabled = !isSignedIn;
@@ -459,14 +517,17 @@ function updateAuthUi() {
     `;
     boardMessage("#auth-message", "");
   } else {
-    authForm.reset();
+    loginForm.reset();
+    signupForm.reset();
+    selectAuthPanel("login-panel");
     boardMessage("#auth-message", "Sign in to start threads or comment.");
   }
 }
 
 async function signIn() {
-  const email = document.querySelector("#auth-email")?.value.trim();
-  const password = document.querySelector("#auth-password")?.value;
+  const email = document.querySelector("#login-email")?.value.trim();
+  const password = document.querySelector("#login-password")?.value;
+  boardState.ignoreAuthUntil = 0;
   boardMessage("#auth-message", "Signing in...");
   try {
     const { error } = await withTimeout(
@@ -484,34 +545,39 @@ async function signIn() {
 }
 
 async function signOut() {
-  const previousUser = boardState.user;
+  boardState.signingOut = true;
+  boardState.ignoreAuthUntil = Date.now() + 10000;
   boardState.user = null;
+  clearSupabaseAuthStorage();
   updateAuthUi();
-  boardMessage("#auth-message", "Signing out...");
+  boardMessage("#auth-message", "Signing out on this browser...");
   boardMessage("#post-message", "");
+  let signOutMessage = "Signed out.";
 
   try {
-    const { error } = await withTimeout(boardState.client.auth.signOut(), "Signing out", 6000);
+    const { error } = await withTimeout(boardState.client.auth.signOut({ scope: "local" }), "Signing out", 6000);
     if (error) {
-      boardState.user = previousUser;
-      updateAuthUi();
-      boardMessage("#auth-message", friendlyBoardError(error), true);
+      signOutMessage = "Signed out locally. Supabase was slow to confirm the remote session cleanup.";
       return;
     }
-    boardMessage("#auth-message", "Signed out.");
-    await loadPosts();
   } catch (error) {
-    boardState.user = previousUser;
+    signOutMessage = "Signed out locally. Supabase was slow to confirm the remote session cleanup.";
+  } finally {
+    clearSupabaseAuthStorage();
+    boardState.user = null;
+    boardState.signingOut = false;
     updateAuthUi();
-    boardMessage("#auth-message", friendlyBoardError(error), true);
+    loadPosts();
+    boardMessage("#auth-message", signOutMessage);
   }
 }
 
 async function signUp() {
-  const email = document.querySelector("#auth-email")?.value.trim();
-  const password = document.querySelector("#auth-password")?.value;
-  const displayName = document.querySelector("#auth-name")?.value.trim() || email?.split("@")[0];
+  const email = document.querySelector("#signup-email")?.value.trim();
+  const password = document.querySelector("#signup-password")?.value;
+  const displayName = document.querySelector("#signup-name")?.value.trim() || email?.split("@")[0];
   const emailRedirectTo = `${window.location.origin}${window.location.pathname}`;
+  boardState.ignoreAuthUntil = 0;
   boardMessage("#auth-message", "Creating account...");
   try {
     const { data, error } = await withTimeout(
