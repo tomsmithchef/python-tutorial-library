@@ -382,10 +382,7 @@ function bindCommunityEvents() {
   });
 
   document.querySelector("#signout-button")?.addEventListener("click", async () => {
-    const { error } = await boardState.client.auth.signOut();
-    if (error) {
-      boardMessage("#auth-message", error.message, true);
-    }
+    await signOut();
   });
 
   document.querySelector("#post-form")?.addEventListener("submit", async (event) => {
@@ -462,6 +459,7 @@ function updateAuthUi() {
     `;
     boardMessage("#auth-message", "");
   } else {
+    authForm.reset();
     boardMessage("#auth-message", "Sign in to start threads or comment.");
   }
 }
@@ -481,6 +479,30 @@ async function signIn() {
     }
     boardMessage("#auth-message", "Signed in.");
   } catch (error) {
+    boardMessage("#auth-message", friendlyBoardError(error), true);
+  }
+}
+
+async function signOut() {
+  const previousUser = boardState.user;
+  boardState.user = null;
+  updateAuthUi();
+  boardMessage("#auth-message", "Signing out...");
+  boardMessage("#post-message", "");
+
+  try {
+    const { error } = await withTimeout(boardState.client.auth.signOut(), "Signing out", 6000);
+    if (error) {
+      boardState.user = previousUser;
+      updateAuthUi();
+      boardMessage("#auth-message", friendlyBoardError(error), true);
+      return;
+    }
+    boardMessage("#auth-message", "Signed out.");
+    await loadPosts();
+  } catch (error) {
+    boardState.user = previousUser;
+    updateAuthUi();
     boardMessage("#auth-message", friendlyBoardError(error), true);
   }
 }
