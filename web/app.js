@@ -559,19 +559,6 @@ async function createPost() {
   boardMessage("#post-message", "Posting...");
 
   try {
-    const { data: sessionData, error: sessionError } = await withTimeout(
-      boardState.client.auth.getSession(),
-      "Checking your sign-in session"
-    );
-    if (sessionError) {
-      boardMessage("#post-message", friendlyBoardError(sessionError), true);
-      return;
-    }
-    if (!sessionData.session?.access_token) {
-      boardMessage("#post-message", "Your sign-in session is missing an access token. Sign out, sign back in, then try posting again.", true);
-      return;
-    }
-
     const { error } = await withTimeout(
       boardState.client.from("board_posts").insert(payload),
       "Posting the thread"
