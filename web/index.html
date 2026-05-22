@@ -225,7 +225,18 @@ print("Welcome,", name)
                   <p class="eyebrow">Open Forum</p>
                   <h2>Recent Threads</h2>
                 </div>
-                <button type="button" class="button secondary" id="refresh-posts">Refresh</button>
+                <div class="feed-controls">
+                  <label>
+                    Sort by
+                    <select id="post-sort">
+                      <option value="newest">Newest</option>
+                      <option value="popular">Most popular</option>
+                      <option value="discussed">Most discussed</option>
+                      <option value="oldest">Oldest</option>
+                    </select>
+                  </label>
+                  <button type="button" class="button secondary" id="refresh-posts">Refresh</button>
+                </div>
               </div>
 
               <details class="board-card composer-card" id="thread-composer">
@@ -3758,8 +3769,8 @@ BMW</code></pre>
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260522-7"></script>
+  <script src="community-config.js?v=20260522-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260522-7"></script>
+  <script src="app.js?v=20260522-8"></script>
 </body>
 </html>

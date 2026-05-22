@@ -34,8 +34,18 @@ create table if not exists public.board_comments (
   updated_at timestamptz not null default now()
 );
 
+create table if not exists public.board_votes (
+  post_id uuid not null references public.board_posts(id) on delete cascade,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  vote smallint not null check (vote in (-1, 1)),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (post_id, user_id)
+);
+
 create index if not exists board_posts_created_at_idx on public.board_posts(created_at desc);
 create index if not exists board_comments_post_id_idx on public.board_comments(post_id);
+create index if not exists board_votes_post_id_idx on public.board_votes(post_id);
 
 -- If you ran an earlier version of this setup, these remove the old restrictive
 -- lesson/category fields so the board behaves like an open forum.
@@ -62,13 +72,23 @@ exception
 end;
 $$;
 
+do $$
+begin
+  alter publication supabase_realtime add table public.board_votes;
+exception
+  when duplicate_object then null;
+  when undefined_object then null;
+end;
+$$;
+
 alter table public.profiles enable row level security;
 alter table public.board_posts enable row level security;
 alter table public.board_comments enable row level security;
+alter table public.board_votes enable row level security;
 
 grant usage on schema public to anon, authenticated;
-grant select on public.profiles, public.board_posts, public.board_comments to anon, authenticated;
-grant insert, update, delete on public.profiles, public.board_posts, public.board_comments to authenticated;
+grant select on public.profiles, public.board_posts, public.board_comments, public.board_votes to anon, authenticated;
+grant insert, update, delete on public.profiles, public.board_posts, public.board_comments, public.board_votes to authenticated;
 
 drop policy if exists "Profiles are readable by everyone" on public.profiles;
 create policy "Profiles are readable by everyone"
@@ -142,6 +162,27 @@ using (
   )
 );
 
+drop policy if exists "Votes are readable by everyone" on public.board_votes;
+create policy "Votes are readable by everyone"
+on public.board_votes for select
+using (true);
+
+drop policy if exists "Signed-in users can create their own votes" on public.board_votes;
+create policy "Signed-in users can create their own votes"
+on public.board_votes for insert
+with check (auth.uid() = user_id);
+
+drop policy if exists "Users can update their own votes" on public.board_votes;
+create policy "Users can update their own votes"
+on public.board_votes for update
+using (auth.uid() = user_id)
+with check (auth.uid() = user_id);
+
+drop policy if exists "Users can delete their own votes" on public.board_votes;
+create policy "Users can delete their own votes"
+on public.board_votes for delete
+using (auth.uid() = user_id);
+
 create or replace function public.set_updated_at()
 returns trigger
 language plpgsql
@@ -165,6 +206,11 @@ for each row execute function public.set_updated_at();
 drop trigger if exists board_comments_set_updated_at on public.board_comments;
 create trigger board_comments_set_updated_at
 before update on public.board_comments
+for each row execute function public.set_updated_at();
+
+drop trigger if exists board_votes_set_updated_at on public.board_votes;
+create trigger board_votes_set_updated_at
+before update on public.board_votes
 for each row execute function public.set_updated_at();
 
 create or replace function public.handle_new_user()

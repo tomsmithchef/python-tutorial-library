@@ -208,12 +208,14 @@ const boardState = {
   session: null,
   profiles: new Map(),
   comments: new Map(),
+  votes: new Map(),
   channel: null,
   signingOut: false,
   ignoreAuthUntil: 0,
   hasLoadedPosts: false,
   refreshTimer: null,
   isLoadingPosts: false,
+  sortBy: "newest",
 };
 
 const REQUEST_TIMEOUT_MS = 12000;
@@ -497,6 +499,10 @@ function bindCommunityEvents() {
   });
 
   document.querySelector("#refresh-posts")?.addEventListener("click", () => loadPosts({ showLoading: true }));
+  document.querySelector("#post-sort")?.addEventListener("change", (event) => {
+    boardState.sortBy = event.target.value;
+    loadPosts({ showLoading: false });
+  });
   document.querySelector("#posts-list")?.addEventListener("submit", async (event) => {
     if (event.target.matches(".comment-form")) {
       event.preventDefault();
@@ -512,6 +518,10 @@ function bindCommunityEvents() {
     }
     if (deleteCommentButton) {
       await deleteComment(deleteCommentButton.dataset.deleteComment);
+    }
+    const voteButton = event.target.closest("[data-vote-post]");
+    if (voteButton) {
+      await togglePostVote(voteButton.dataset.votePost, Number(voteButton.dataset.voteValue));
     }
   });
 
@@ -800,6 +810,7 @@ async function loadRelatedData(posts) {
   }
   boardState.comments = new Map();
   boardState.profiles = new Map();
+  boardState.votes = new Map();
 
   if (postIds.length) {
     const postFilter = encodeURIComponent(`in.(${postIds.join(",")})`);
@@ -810,6 +821,21 @@ async function loadRelatedData(posts) {
       const group = boardState.comments.get(comment.post_id) || [];
       group.push(comment);
       boardState.comments.set(comment.post_id, group);
+    });
+
+    const votes = await supabaseRest(`board_votes?select=post_id,user_id,vote&post_id=${postFilter}`);
+    (votes || []).forEach((voteRow) => {
+      const summary = boardState.votes.get(voteRow.post_id) || { score: 0, up: 0, down: 0, myVote: 0 };
+      summary.score += voteRow.vote;
+      if (voteRow.vote > 0) {
+        summary.up += 1;
+      } else {
+        summary.down += 1;
+      }
+      if (voteRow.user_id === boardState.user?.id) {
+        summary.myVote = voteRow.vote;
+      }
+      boardState.votes.set(voteRow.post_id, summary);
     });
   }
 
@@ -861,12 +887,31 @@ function renderPosts(posts) {
     return;
   }
 
-  postsList.innerHTML = posts.map(renderPost).join("");
+  postsList.innerHTML = sortPosts(posts).map(renderPost).join("");
+}
+
+function sortPosts(posts) {
+  const sortedPosts = [...posts];
+  const commentCount = (post) => boardState.comments.get(post.id)?.length || 0;
+  const voteScore = (post) => boardState.votes.get(post.id)?.score || 0;
+  const createdAt = (post) => new Date(post.created_at).getTime();
+
+  if (boardState.sortBy === "oldest") {
+    return sortedPosts.sort((a, b) => createdAt(a) - createdAt(b));
+  }
+  if (boardState.sortBy === "popular") {
+    return sortedPosts.sort((a, b) => voteScore(b) - voteScore(a) || commentCount(b) - commentCount(a) || createdAt(b) - createdAt(a));
+  }
+  if (boardState.sortBy === "discussed") {
+    return sortedPosts.sort((a, b) => commentCount(b) - commentCount(a) || voteScore(b) - voteScore(a) || createdAt(b) - createdAt(a));
+  }
+  return sortedPosts.sort((a, b) => createdAt(b) - createdAt(a));
 }
 
 function renderPost(post) {
   const canDelete = canModerate(post.user_id);
   const comments = boardState.comments.get(post.id) || [];
+  const voteSummary = boardState.votes.get(post.id) || { score: 0, up: 0, down: 0, myVote: 0 };
   const codeBlock = post.code_snippet
     ? `<pre class="post-code"><code>${escapeHtml(post.code_snippet)}</code></pre>`
     : "";
@@ -883,20 +928,35 @@ function renderPost(post) {
     : `<p class="small-note">Sign in to comment.</p>`;
 
   return `
-    <article class="post-card">
-      <h3>${escapeHtml(post.title)}</h3>
-      <div class="post-meta">
-        <span>Posted by ${escapeHtml(profileName(post.user_id))}</span>
-        <span>${escapeHtml(formatDate(post.created_at))}</span>
+    <details class="post-card thread-card" open>
+      <summary class="thread-summary">
+        <span class="thread-title">${escapeHtml(post.title)}</span>
+        <span class="thread-stats">
+          <span>${voteSummary.score} votes</span>
+          <span>${comments.length} replies</span>
+        </span>
+      </summary>
+      <div class="thread-content">
+        <div class="post-meta">
+          <span>Posted by ${escapeHtml(profileName(post.user_id))}</span>
+          <span>${escapeHtml(formatDate(post.created_at))}</span>
+        </div>
+        <p class="post-body">${escapeHtml(post.body)}</p>
+        ${codeBlock}
+        <div class="post-tools">
+          <div class="vote-box" aria-label="Thread voting">
+            <button type="button" class="vote-button ${voteSummary.myVote === 1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="1" ${boardState.user ? "" : "disabled"} title="Upvote this thread">Up</button>
+            <span class="vote-score">${voteSummary.score}</span>
+            <button type="button" class="vote-button ${voteSummary.myVote === -1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="-1" ${boardState.user ? "" : "disabled"} title="Downvote this thread">Down</button>
+          </div>
+          ${deleteButton}
+        </div>
+        <div class="comments-list">
+          ${comments.map(renderComment).join("")}
+        </div>
+        ${commentForm}
       </div>
-      <p class="post-body">${escapeHtml(post.body)}</p>
-      ${codeBlock}
-      <div class="post-tools">${deleteButton}</div>
-      <div class="comments-list">
-        ${comments.map(renderComment).join("")}
-      </div>
-      ${commentForm}
-    </article>
+    </details>
   `;
 }
 
@@ -960,6 +1020,42 @@ async function createComment(form) {
   await loadPosts({ showLoading: false });
 }
 
+async function togglePostVote(postId, voteValue) {
+  if (!(await ensureWriteSession("#post-message"))) {
+    return;
+  }
+
+  const currentVote = boardState.votes.get(postId)?.myVote || 0;
+  try {
+    if (currentVote === voteValue) {
+      await supabaseRest(`board_votes?post_id=eq.${encodeURIComponent(postId)}&user_id=eq.${encodeURIComponent(boardState.user.id)}`, {
+        method: "DELETE",
+        accessToken: boardState.session.access_token,
+        headers: {
+          Prefer: "return=minimal",
+        },
+      });
+    } else {
+      await supabaseRest("board_votes?on_conflict=post_id,user_id", {
+        method: "POST",
+        accessToken: boardState.session.access_token,
+        headers: {
+          "Content-Type": "application/json",
+          Prefer: "resolution=merge-duplicates,return=representation",
+        },
+        body: JSON.stringify({
+          post_id: postId,
+          user_id: boardState.user.id,
+          vote: voteValue,
+        }),
+      });
+    }
+    await loadPosts({ showLoading: false });
+  } catch (error) {
+    window.alert(friendlyBoardError(error));
+  }
+}
+
 async function deletePost(postId) {
   if (!window.confirm("Delete this thread and its comments?")) {
     return;
@@ -1009,6 +1105,7 @@ function subscribeToBoardChanges() {
     .channel("class-board")
     .on("postgres_changes", { event: "*", schema: "public", table: "board_posts" }, () => schedulePostsRefresh())
     .on("postgres_changes", { event: "*", schema: "public", table: "board_comments" }, () => schedulePostsRefresh())
+    .on("postgres_changes", { event: "*", schema: "public", table: "board_votes" }, () => schedulePostsRefresh())
     .subscribe();
 }
 

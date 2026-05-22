@@ -960,6 +960,32 @@ details p {
   margin: 0;
 }
 
+.feed-controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+}
+
+.feed-controls label {
+  display: grid;
+  gap: 6px;
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 850;
+}
+
+.feed-controls select {
+  min-height: 44px;
+  min-width: 160px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 750;
+  padding: 0 12px;
+}
+
 .composer-card {
   margin-bottom: 18px;
 }
@@ -1010,6 +1036,45 @@ details p {
   align-items: center;
 }
 
+.thread-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.thread-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  color: var(--navy);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.thread-title {
+  font-size: 1.12rem;
+}
+
+.thread-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.thread-stats span {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+
+.thread-content {
+  padding: 0 24px 24px;
+}
+
 .post-tag {
   display: inline-flex;
   align-items: center;
@@ -1035,6 +1100,48 @@ details p {
   background: #111827;
   color: #f8fafc;
   font-size: 0.95rem;
+}
+
+.vote-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.vote-button {
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 900;
+  padding: 0 10px;
+}
+
+.vote-button:hover:not(:disabled),
+.vote-button.active {
+  color: var(--blue);
+  border-color: rgba(37, 99, 235, 0.35);
+  background: var(--blue-soft);
+}
+
+.vote-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.vote-score {
+  min-width: 2ch;
+  color: var(--navy);
+  font-weight: 950;
+  text-align: center;
 }
 
 .comments-list {
