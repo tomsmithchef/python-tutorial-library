@@ -1,0 +1,143 @@
+Lesson 2 Assignments
+
+Lab Activity 2-1: Determine Loan Qualification
+
+Introduction
+
+In this lab activity, you will write a Python program to determine if a customer qualifies for a loan based on their annual income and years of employment.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}LoanQualification.py.
+Write a Python program to determine if a customer qualifies for a loan based on their annual income and years of employment.
+Run your code to ensure it correctly determines loan qualification.
+Save your Python file.
+Qualification Criteria:
+
+The customer must earn at least $30,000 per year.
+The customer must have been on their current job for at least two years.
+Deliverable
+
+Submit the {name}LoanQualification.py file to the submission box  and  a report file showing successful execution of your code.
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+=========================================================================================================
+
+
+
+
+Lab Activity 2-2: Table of Numbers and Their Squares
+
+Introduction
+
+In this lab activity, you will write a Python program that uses a loop to display a table of numbers and their squares.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}NumbersAndSquares.py.
+Write a Python program that uses a loop to display a table of numbers and their squares.
+Run your code to ensure it correctly displays the table of numbers and their squares.
+Save your Python file.
+Output Format:
+
+Enter the start 1
+Enter end number 10
+number Square
+--------------------
+1  1
+2  4
+3  9
+4  16
+5  25
+6  36
+7  49
+8  64
+9  81
+10 100
+
+
+Deliverable
+
+Submit the {name}NumbersAndSquares.py file to the submission box  and  a report file showing successful execution of your code.
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+
+=========================================================================================================
+
+
+
+
+Assignment 2: Determine Rock, Paper, Scissors Game Result
+Completion requirements
+To do: Make a submission
+Due: Saturday, 23 May 2026, 11:59 PM
+Introduction
+
+In this assignment, you will write a Python script that will determine the result of a rock, paper, scissors game, given Player 1 and Player 2’s choices.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it RPSGame.py.
+Write a Python script that will determine the result of a rock, paper, scissors game, given Player 1 and Player 2’s choices. The program should print out the result based on the rules below.
+Run your code and ensure your script prints the right message based on the rules provided.
+Save your file.
+Note: The script should accept only these input from two players: “Rock”, “Paper” and “Scissors”.
+
+Rules:
+
+ 
+|                     | Player 2 - Rock  | Player 2 - Paper | Player 2 - Scissors |
+ 
+| Player 1 - Rock     |        Draw      | Player 2 wins    | Player 1 wins       |
+
+| Player 1 - Paper    |  Player 1 wins   |      Draw        | Player 2 wins       |
+
+| Player 1 - Scissors |  Player 2 wins   | Player 1 wins    | Draw                |
+
+
+
+Deliverable
+
+Submit the RPSGame.py file to the submission box  and  a report file showing successful execution of your code.
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.

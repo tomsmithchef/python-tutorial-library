@@ -1,0 +1,162 @@
+Lab Activity 4-1: Read File Line by Line and Store into a List
+
+Introduction
+
+In this lab activity, you will write a Python function that accepts the file name as a parameter, reads the file line by line, and stores each line into a list.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it FileIO.py.
+Write a Python function that accepts the file name as a parameter, reads the file line by line, and stores each line into a list. Use the cars.txt file (attached), call your function, pass the file to your function, and print the created list to your console.
+Run your code to ensure your script prints the correct result.
+Save your file.
+Deliverable
+
+Submit the Python Script: FileIO.py and a report showing successful execution. 
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+***NOTE(Original assignment page contained a downloadable text file containing the cars listed below)
+FILE ----> cars.txt
+
+Toyota
+Benz
+Kia
+Honda
+Ferrarri
+Lexus
+Abarth
+Acura
+Aston Martin
+Audi
+Bentley
+BMW
+
+
+
+
+
+
+============================================================================================================
+
+
+
+
+
+
+Lab Activity 4-2: Geoscience Unit Conversion Package
+
+Introduction
+
+In this lab activity, you will write a Python package called unitconvert that provides functions for temperature and distance conversions.
+
+Instructions
+
+Complete the following steps:
+
+Create the Package Directory Structure:
+Create a new folder named unitconvert.
+Inside unitconvert, create two modules: temperature.py and distance.py.
+Include an __init__.py file in the unitconvert directory.
+
+Implement the Functions:
+In the temperature module, implement fahrenheit_to_celsius and celsius_to_fahrenheit functions.
+°F  = ({inputedvalue}°C × 9/5) + 32
+°C =({inputedvalue}°°F − 32) × 5/9
+
+In the distance module, implement miles_to_kilometers and kilometers_to_miles functions.
+Mile = 1.60934 *{inputedvalueinKilometer}
+Kilometer = 0.621371*{inputedvalueinMiles}
+
+Ensure all functions have properly formatted doc-strings.
+
+Run and Test the Code:
+Open PyCharm IDE.
+Use an example to test your module functions.
+Run your code to ensure it works correctly.
+
+Save, Zip, and Submit:
+Save your files.
+Zip the unitconvert folder and test_conversion.py.
+Name the zipped file {Name}ModPackage.zip.
+Deliverable
+
+Submit the zipped project and a report showing successful execution. 
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+
+
+============================================================================================================
+
+
+
+
+Assignment 4: Manage Inventory
+
+Introduction
+
+In this assignment, you will write a series of Python programs to manage the inventory for Coffee Roasters, Inc. The tasks are to add records to the inventory file, display all records in the inventory file, and modify the quantity field in an existing record.
+
+Instructions
+
+Complete the following steps
+
+Part 1: Add Records to the Inventory File
+Open PyCharm IDE.
+Create a new Python file and name it AddRecords.py.
+Complete the assignment task stated below:
+Write a Python program that prompts the user to enter the description and quantity of coffee in inventory.
+Append these records to the inventory file, ensuring new records are added to the file’s existing contents.
+Run your code to ensure it correctly adds records to the inventory file.
+Save your file.
+
+Part 2: Display All Records in the Inventory File
+Open PyCharm IDE.
+Create a new Python file and name it DisplayRecords.py.
+Complete the assignment task stated below:
+Write a Python program that reads and displays all records from the inventory file in a formatted manner.
+Run your code to ensure it correctly displays all records.
+Save your file.
+
+Part 3: Modify the Quantity Field in an Existing Record
+Open PyCharm IDE.
+Create a new Python file and name it ModifyQuantity.py.
+Complete the assignment task stated below:
+Write a Python program that allows the user to modify the quantity field of an existing coffee record.
+Create a second temporary file.
+Copy all records from the original file to the temporary file, modifying the specified record.
+Replace the original file with the temporary file.
+Run your code to ensure it correctly modifies the quantity field.
+Save your file.
+
+Ensure your project directory contains the AddRecords.py, DisplayRecords.py, and ModifyQuantity.py files, and the coffee_inventory.txt files.
+Zip your project directory.
+Deliverable
+
+Submit the zipped project directory.
