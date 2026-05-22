@@ -66,6 +66,10 @@ alter table public.profiles enable row level security;
 alter table public.board_posts enable row level security;
 alter table public.board_comments enable row level security;
 
+grant usage on schema public to anon, authenticated;
+grant select on public.profiles, public.board_posts, public.board_comments to anon, authenticated;
+grant insert, update, delete on public.profiles, public.board_posts, public.board_comments to authenticated;
+
 drop policy if exists "Profiles are readable by everyone" on public.profiles;
 create policy "Profiles are readable by everyone"
 on public.profiles for select
@@ -74,6 +78,12 @@ using (true);
 drop policy if exists "Users can insert their own profile" on public.profiles;
 create policy "Users can insert their own profile"
 on public.profiles for insert
+with check (auth.uid() = id and role = 'student');
+
+drop policy if exists "Users can update their own profile" on public.profiles;
+create policy "Users can update their own profile"
+on public.profiles for update
+using (auth.uid() = id)
 with check (auth.uid() = id and role = 'student');
 
 drop policy if exists "Posts are readable by everyone" on public.board_posts;

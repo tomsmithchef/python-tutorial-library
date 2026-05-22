@@ -205,6 +205,7 @@ const boardState = {
   configured: false,
   client: null,
   user: null,
+  session: null,
   profiles: new Map(),
   comments: new Map(),
   channel: null,
@@ -230,6 +231,9 @@ function withTimeout(promise, label, timeoutMs = REQUEST_TIMEOUT_MS) {
 
 function friendlyBoardError(error) {
   const message = error?.message || String(error || "Something went wrong.");
+  if (error?.details || error?.hint || error?.code) {
+    return [message, error.details, error.hint, error.code ? `Code: ${error.code}` : ""].filter(Boolean).join(" ");
+  }
   if (message.includes("lesson") || message.includes("category")) {
     return `${message}. Your Supabase table may still have the old lesson/category columns. Re-run the latest supabase/class-board-schema.sql file.`;
   }
@@ -237,6 +241,50 @@ function friendlyBoardError(error) {
     return `${message}. Confirm the class-board SQL policies were run in Supabase.`;
   }
   return message;
+}
+
+async function supabaseRest(path, options = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+  const config = window.PY_TUTORIAL_SUPABASE;
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+  const { accessToken, headers: optionHeaders = {}, ...fetchOptions } = options;
+  const headers = {
+    apikey: config.anonKey,
+    Authorization: `Bearer ${accessToken || config.anonKey}`,
+    ...optionHeaders,
+  };
+
+  try {
+    const response = await fetch(`${config.url}/rest/v1/${path}`, {
+      ...fetchOptions,
+      headers,
+      signal: controller.signal,
+    });
+    const text = await response.text();
+    let body = null;
+    if (text) {
+      try {
+        body = JSON.parse(text);
+      } catch {
+        body = text;
+      }
+    }
+
+    if (!response.ok) {
+      const error = typeof body === "object" && body ? body : { message: text || response.statusText };
+      error.status = response.status;
+      throw error;
+    }
+
+    return body;
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error("Supabase did not answer the post request before the browser timed out. Check the browser console Network tab for a blocked POST request to /rest/v1/board_posts.");
+    }
+    throw error;
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
 }
 
 function escapeHtml(value = "") {
@@ -464,6 +512,7 @@ function bindCommunityEvents() {
     if (session?.user && Date.now() < boardState.ignoreAuthUntil) {
       return;
     }
+    boardState.session = session || null;
     boardState.user = session?.user || null;
     updateAuthUi();
     await loadPosts();
@@ -477,6 +526,7 @@ async function refreshSession() {
       boardMessage("#auth-message", friendlyBoardError(error), true);
       return;
     }
+    boardState.session = data.session || null;
     boardState.user = data.session?.user || null;
     updateAuthUi();
   } catch (error) {
@@ -530,7 +580,7 @@ async function signIn() {
   boardState.ignoreAuthUntil = 0;
   boardMessage("#auth-message", "Signing in...");
   try {
-    const { error } = await withTimeout(
+    const { data, error } = await withTimeout(
       boardState.client.auth.signInWithPassword({ email, password }),
       "Signing in"
     );
@@ -538,6 +588,9 @@ async function signIn() {
       boardMessage("#auth-message", friendlyBoardError(error), true);
       return;
     }
+    boardState.session = data.session || null;
+    boardState.user = data.user || data.session?.user || null;
+    updateAuthUi();
     boardMessage("#auth-message", "Signed in.");
   } catch (error) {
     boardMessage("#auth-message", friendlyBoardError(error), true);
@@ -548,6 +601,7 @@ async function signOut() {
   boardState.signingOut = true;
   boardState.ignoreAuthUntil = Date.now() + 10000;
   boardState.user = null;
+  boardState.session = null;
   clearSupabaseAuthStorage();
   updateAuthUi();
   boardMessage("#auth-message", "Signing out on this browser...");
@@ -565,6 +619,7 @@ async function signOut() {
   } finally {
     clearSupabaseAuthStorage();
     boardState.user = null;
+    boardState.session = null;
     boardState.signingOut = false;
     updateAuthUi();
     loadPosts();
@@ -624,9 +679,37 @@ async function upsertProfile(user, displayName) {
   }
 }
 
-async function createPost() {
+async function ensureWriteSession(messageTarget = "#post-message") {
   if (!boardState.user) {
-    boardMessage("#post-message", "Sign in before posting.", true);
+    boardMessage(messageTarget, "Sign in before posting.", true);
+    return false;
+  }
+
+  if (!boardState.session?.access_token) {
+    try {
+      const { data, error } = await withTimeout(boardState.client.auth.getSession(), "Checking post session", 5000);
+      if (error) {
+        boardMessage(messageTarget, friendlyBoardError(error), true);
+        return false;
+      }
+      boardState.session = data.session || null;
+      boardState.user = data.session?.user || boardState.user;
+    } catch (error) {
+      boardMessage(messageTarget, "Your sign-in session could not be read. Sign out, sign in again, then retry.", true);
+      return false;
+    }
+  }
+
+  if (!boardState.session?.access_token) {
+    boardMessage(messageTarget, "Your sign-in session is missing an access token. Sign out, sign in again, then retry.", true);
+    return false;
+  }
+
+  return true;
+}
+
+async function createPost() {
+  if (!(await ensureWriteSession("#post-message"))) {
     return;
   }
 
@@ -647,14 +730,15 @@ async function createPost() {
   boardMessage("#post-message", "Posting...");
 
   try {
-    const { error } = await withTimeout(
-      boardState.client.from("board_posts").insert(payload),
-      "Posting the thread"
-    );
-    if (error) {
-      boardMessage("#post-message", friendlyBoardError(error), true);
-      return;
-    }
+    await supabaseRest("board_posts", {
+      method: "POST",
+      accessToken: boardState.session.access_token,
+      headers: {
+        "Content-Type": "application/json",
+        Prefer: "return=representation",
+      },
+      body: JSON.stringify(payload),
+    });
 
     postForm.reset();
     boardMessage("#post-message", "Thread posted.");
@@ -677,19 +761,8 @@ async function loadPosts() {
 
   renderPostsLoading();
 
-  const query = boardState.client
-    .from("board_posts")
-    .select("*")
-    .order("created_at", { ascending: false })
-    .limit(50);
-
   try {
-    const { data: posts, error } = await withTimeout(query, "Loading class posts");
-    if (error) {
-      renderPostError(friendlyBoardError(error));
-      return;
-    }
-
+    const posts = await supabaseRest("board_posts?select=*&order=created_at.desc&limit=50");
     await loadRelatedData(posts || []);
     renderPosts(posts || []);
   } catch (error) {
@@ -707,18 +780,8 @@ async function loadRelatedData(posts) {
   boardState.profiles = new Map();
 
   if (postIds.length) {
-    const { data: comments, error: commentsError } = await withTimeout(
-      boardState.client
-        .from("board_comments")
-        .select("*")
-        .in("post_id", postIds)
-        .order("created_at", { ascending: true }),
-      "Loading comments"
-    );
-
-    if (commentsError) {
-      throw commentsError;
-    }
+    const postFilter = encodeURIComponent(`in.(${postIds.join(",")})`);
+    const comments = await supabaseRest(`board_comments?select=*&post_id=${postFilter}&order=created_at.asc`);
 
     (comments || []).forEach((comment) => {
       userIds.add(comment.user_id);
@@ -729,17 +792,8 @@ async function loadRelatedData(posts) {
   }
 
   if (userIds.size) {
-    const { data: profiles, error: profilesError } = await withTimeout(
-      boardState.client
-        .from("profiles")
-        .select("id, display_name, role")
-        .in("id", Array.from(userIds)),
-      "Loading profiles"
-    );
-
-    if (profilesError) {
-      throw profilesError;
-    }
+    const userFilter = encodeURIComponent(`in.(${Array.from(userIds).join(",")})`);
+    const profiles = await supabaseRest(`profiles?select=id,display_name,role&id=${userFilter}`);
 
     (profiles || []).forEach((profile) => {
       boardState.profiles.set(profile.id, profile);
@@ -843,20 +897,29 @@ function renderComment(comment) {
 }
 
 async function createComment(form) {
-  if (!boardState.user) {
+  if (!(await ensureWriteSession("#post-message"))) {
     return;
   }
   const body = form.elements.comment.value.trim();
   if (!body) {
     return;
   }
-  const { error } = await boardState.client.from("board_comments").insert({
-    post_id: form.dataset.postId,
-    user_id: boardState.user.id,
-    body,
-  }).select("id").single();
-  if (error) {
-    window.alert(error.message);
+  try {
+    await supabaseRest("board_comments", {
+      method: "POST",
+      accessToken: boardState.session.access_token,
+      headers: {
+        "Content-Type": "application/json",
+        Prefer: "return=representation",
+      },
+      body: JSON.stringify({
+        post_id: form.dataset.postId,
+        user_id: boardState.user.id,
+        body,
+      }),
+    });
+  } catch (error) {
+    window.alert(friendlyBoardError(error));
     return;
   }
   form.reset();
@@ -867,18 +930,38 @@ async function deletePost(postId) {
   if (!window.confirm("Delete this thread and its comments?")) {
     return;
   }
-  const { error } = await boardState.client.from("board_posts").delete().eq("id", postId);
-  if (error) {
-    window.alert(error.message);
+  if (!(await ensureWriteSession("#post-message"))) {
+    return;
+  }
+  try {
+    await supabaseRest(`board_posts?id=eq.${encodeURIComponent(postId)}`, {
+      method: "DELETE",
+      accessToken: boardState.session.access_token,
+      headers: {
+        Prefer: "return=minimal",
+      },
+    });
+  } catch (error) {
+    window.alert(friendlyBoardError(error));
     return;
   }
   await loadPosts();
 }
 
 async function deleteComment(commentId) {
-  const { error } = await boardState.client.from("board_comments").delete().eq("id", commentId);
-  if (error) {
-    window.alert(error.message);
+  if (!(await ensureWriteSession("#post-message"))) {
+    return;
+  }
+  try {
+    await supabaseRest(`board_comments?id=eq.${encodeURIComponent(commentId)}`, {
+      method: "DELETE",
+      accessToken: boardState.session.access_token,
+      headers: {
+        Prefer: "return=minimal",
+      },
+    });
+  } catch (error) {
+    window.alert(friendlyBoardError(error));
     return;
   }
   await loadPosts();
