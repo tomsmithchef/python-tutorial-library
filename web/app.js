@@ -211,6 +211,9 @@ const boardState = {
   channel: null,
   signingOut: false,
   ignoreAuthUntil: 0,
+  hasLoadedPosts: false,
+  refreshTimer: null,
+  isLoadingPosts: false,
 };
 
 const REQUEST_TIMEOUT_MS = 12000;
@@ -360,6 +363,13 @@ function renderPostsLoading() {
   `;
 }
 
+function schedulePostsRefresh(delayMs = 350) {
+  window.clearTimeout(boardState.refreshTimer);
+  boardState.refreshTimer = window.setTimeout(() => {
+    loadPosts({ showLoading: false });
+  }, delayMs);
+}
+
 function isBoardConfigured() {
   const config = window.PY_TUTORIAL_SUPABASE || {};
   const url = config.url || "";
@@ -455,7 +465,7 @@ async function initCommunityBoard() {
 
   bindCommunityEvents();
   await refreshSession();
-  await loadPosts();
+  await loadPosts({ showLoading: true });
   subscribeToBoardChanges();
 }
 
@@ -486,7 +496,7 @@ function bindCommunityEvents() {
     await createPost();
   });
 
-  document.querySelector("#refresh-posts")?.addEventListener("click", loadPosts);
+  document.querySelector("#refresh-posts")?.addEventListener("click", () => loadPosts({ showLoading: true }));
   document.querySelector("#posts-list")?.addEventListener("submit", async (event) => {
     if (event.target.matches(".comment-form")) {
       event.preventDefault();
@@ -505,17 +515,20 @@ function bindCommunityEvents() {
     }
   });
 
-  boardState.client.auth.onAuthStateChange(async (_event, session) => {
+  boardState.client.auth.onAuthStateChange(async (event, session) => {
     if (boardState.signingOut) {
       return;
     }
     if (session?.user && Date.now() < boardState.ignoreAuthUntil) {
       return;
     }
+    const previousUserId = boardState.user?.id || null;
     boardState.session = session || null;
     boardState.user = session?.user || null;
     updateAuthUi();
-    await loadPosts();
+    if (event !== "TOKEN_REFRESHED" || previousUserId !== (boardState.user?.id || null)) {
+      await loadPosts({ showLoading: false });
+    }
   });
 }
 
@@ -622,7 +635,7 @@ async function signOut() {
     boardState.session = null;
     boardState.signingOut = false;
     updateAuthUi();
-    loadPosts();
+    loadPosts({ showLoading: false });
     boardMessage("#auth-message", signOutMessage);
   }
 }
@@ -742,7 +755,7 @@ async function createPost() {
 
     postForm.reset();
     boardMessage("#post-message", "Thread posted.");
-    await loadPosts();
+    await loadPosts({ showLoading: false });
     document.querySelector("#thread-composer")?.removeAttribute("open");
   } catch (error) {
     boardMessage("#post-message", friendlyBoardError(error), true);
@@ -754,19 +767,28 @@ async function createPost() {
   }
 }
 
-async function loadPosts() {
+async function loadPosts({ showLoading = false } = {}) {
   if (!boardState.configured) {
     return;
   }
+  if (boardState.isLoadingPosts && !showLoading) {
+    return;
+  }
 
-  renderPostsLoading();
+  boardState.isLoadingPosts = true;
+  if (showLoading || !boardState.hasLoadedPosts) {
+    renderPostsLoading();
+  }
 
   try {
     const posts = await supabaseRest("board_posts?select=*&order=created_at.desc&limit=50");
     await loadRelatedData(posts || []);
     renderPosts(posts || []);
+    boardState.hasLoadedPosts = true;
   } catch (error) {
     renderPostError(friendlyBoardError(error));
+  } finally {
+    boardState.isLoadingPosts = false;
   }
 }
 
@@ -904,6 +926,13 @@ async function createComment(form) {
   if (!body) {
     return;
   }
+  const submitButton = form.querySelector("button[type='submit']");
+  const originalLabel = submitButton?.textContent || "Comment";
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Posting...";
+  }
+
   try {
     await supabaseRest("board_comments", {
       method: "POST",
@@ -921,9 +950,14 @@ async function createComment(form) {
   } catch (error) {
     window.alert(friendlyBoardError(error));
     return;
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalLabel;
+    }
   }
   form.reset();
-  await loadPosts();
+  await loadPosts({ showLoading: false });
 }
 
 async function deletePost(postId) {
@@ -945,7 +979,7 @@ async function deletePost(postId) {
     window.alert(friendlyBoardError(error));
     return;
   }
-  await loadPosts();
+  await loadPosts({ showLoading: false });
 }
 
 async function deleteComment(commentId) {
@@ -964,7 +998,7 @@ async function deleteComment(commentId) {
     window.alert(friendlyBoardError(error));
     return;
   }
-  await loadPosts();
+  await loadPosts({ showLoading: false });
 }
 
 function subscribeToBoardChanges() {
@@ -973,8 +1007,8 @@ function subscribeToBoardChanges() {
   }
   boardState.channel = boardState.client
     .channel("class-board")
-    .on("postgres_changes", { event: "*", schema: "public", table: "board_posts" }, loadPosts)
-    .on("postgres_changes", { event: "*", schema: "public", table: "board_comments" }, loadPosts)
+    .on("postgres_changes", { event: "*", schema: "public", table: "board_posts" }, () => schedulePostsRefresh())
+    .on("postgres_changes", { event: "*", schema: "public", table: "board_comments" }, () => schedulePostsRefresh())
     .subscribe();
 }
 
