@@ -210,6 +210,32 @@ const boardState = {
   channel: null,
 };
 
+const REQUEST_TIMEOUT_MS = 12000;
+
+function withTimeout(promise, label, timeoutMs = REQUEST_TIMEOUT_MS) {
+  let timeoutId;
+  const timeout = new Promise((_, reject) => {
+    timeoutId = window.setTimeout(() => {
+      reject(new Error(`${label} timed out. Check the Supabase project URL, public key, network access, and table policies.`));
+    }, timeoutMs);
+  });
+
+  return Promise.race([promise, timeout]).finally(() => {
+    window.clearTimeout(timeoutId);
+  });
+}
+
+function friendlyBoardError(error) {
+  const message = error?.message || String(error || "Something went wrong.");
+  if (message.includes("lesson") || message.includes("category")) {
+    return `${message}. Your Supabase table may still have the old lesson/category columns. Re-run the latest supabase/class-board-schema.sql file.`;
+  }
+  if (message.includes("row-level security") || message.includes("violates row-level security")) {
+    return `${message}. Confirm the class-board SQL policies were run in Supabase.`;
+  }
+  return message;
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -239,6 +265,19 @@ function boardMessage(id, message, isError = false) {
   }
   target.textContent = message;
   target.classList.toggle("error", isError);
+}
+
+function renderPostsLoading() {
+  const postsList = document.querySelector("#posts-list");
+  if (!postsList) {
+    return;
+  }
+  postsList.innerHTML = `
+    <article class="post-card empty-card">
+      <h3>Loading class posts...</h3>
+      <p>Checking the class board database.</p>
+    </article>
+  `;
 }
 
 function isBoardConfigured() {
@@ -381,13 +420,17 @@ function bindCommunityEvents() {
 }
 
 async function refreshSession() {
-  const { data, error } = await boardState.client.auth.getSession();
-  if (error) {
-    boardMessage("#auth-message", error.message, true);
-    return;
+  try {
+    const { data, error } = await withTimeout(boardState.client.auth.getSession(), "Checking sign-in session");
+    if (error) {
+      boardMessage("#auth-message", friendlyBoardError(error), true);
+      return;
+    }
+    boardState.user = data.session?.user || null;
+    updateAuthUi();
+  } catch (error) {
+    boardMessage("#auth-message", friendlyBoardError(error), true);
   }
-  boardState.user = data.session?.user || null;
-  updateAuthUi();
 }
 
 function updateAuthUi() {
@@ -427,12 +470,19 @@ async function signIn() {
   const email = document.querySelector("#auth-email")?.value.trim();
   const password = document.querySelector("#auth-password")?.value;
   boardMessage("#auth-message", "Signing in...");
-  const { error } = await boardState.client.auth.signInWithPassword({ email, password });
-  if (error) {
-    boardMessage("#auth-message", error.message, true);
-    return;
+  try {
+    const { error } = await withTimeout(
+      boardState.client.auth.signInWithPassword({ email, password }),
+      "Signing in"
+    );
+    if (error) {
+      boardMessage("#auth-message", friendlyBoardError(error), true);
+      return;
+    }
+    boardMessage("#auth-message", "Signed in.");
+  } catch (error) {
+    boardMessage("#auth-message", friendlyBoardError(error), true);
   }
-  boardMessage("#auth-message", "Signed in.");
 }
 
 async function signUp() {
@@ -441,32 +491,49 @@ async function signUp() {
   const displayName = document.querySelector("#auth-name")?.value.trim() || email?.split("@")[0];
   const emailRedirectTo = `${window.location.origin}${window.location.pathname}`;
   boardMessage("#auth-message", "Creating account...");
-  const { data, error } = await boardState.client.auth.signUp({
-    email,
-    password,
-    options: {
-      emailRedirectTo,
-      data: {
-        display_name: displayName,
-        app_name: "Python Tutorial Library",
-      },
-    },
-  });
-  if (error) {
-    boardMessage("#auth-message", error.message, true);
-    return;
+  try {
+    const { data, error } = await withTimeout(
+      boardState.client.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo,
+          data: {
+            display_name: displayName,
+            app_name: "Python Tutorial Library",
+          },
+        },
+      }),
+      "Creating account"
+    );
+    if (error) {
+      boardMessage("#auth-message", friendlyBoardError(error), true);
+      return;
+    }
+    if (data.user) {
+      await upsertProfile(data.user, displayName);
+    }
+    boardMessage("#auth-message", "Account created. If email confirmation is enabled, check your inbox before signing in.");
+  } catch (error) {
+    boardMessage("#auth-message", friendlyBoardError(error), true);
   }
-  if (data.user) {
-    await upsertProfile(data.user, displayName);
-  }
-  boardMessage("#auth-message", "Account created. If email confirmation is enabled, check your inbox before signing in.");
 }
 
 async function upsertProfile(user, displayName) {
-  await boardState.client.from("profiles").upsert({
-    id: user.id,
-    display_name: displayName || user.email?.split("@")[0] || "Classmate",
-  });
+  try {
+    const { error } = await withTimeout(
+      boardState.client.from("profiles").upsert({
+        id: user.id,
+        display_name: displayName || user.email?.split("@")[0] || "Classmate",
+      }),
+      "Saving profile"
+    );
+    if (error) {
+      boardMessage("#auth-message", friendlyBoardError(error), true);
+    }
+  } catch (error) {
+    boardMessage("#auth-message", friendlyBoardError(error), true);
+  }
 }
 
 async function createPost() {
@@ -475,6 +542,9 @@ async function createPost() {
     return;
   }
 
+  const postForm = document.querySelector("#post-form");
+  const submitButton = postForm?.querySelector("button[type='submit']");
+  const originalLabel = submitButton?.textContent || "Post thread";
   const payload = {
     user_id: boardState.user.id,
     title: document.querySelector("#post-title").value.trim(),
@@ -482,21 +552,47 @@ async function createPost() {
     code_snippet: document.querySelector("#post-code").value.trim() || null,
   };
 
-  boardMessage("#post-message", "Posting...");
-  const { error } = await boardState.client.from("board_posts").insert(payload).select("id").single();
-  if (error) {
-    const message = error.message.includes("lesson") || error.message.includes("category")
-      ? `${error.message}. Your Supabase table may still have the old lesson/category columns. Re-run the latest supabase/class-board-schema.sql file.`
-      : error.message;
-    boardMessage("#post-message", message, true);
-    return;
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Posting...";
   }
+  boardMessage("#post-message", "Posting...");
 
-  const postForm = document.querySelector("#post-form");
-  postForm.reset();
-  boardMessage("#post-message", "Thread posted.");
-  await loadPosts();
-  document.querySelector("#thread-composer")?.removeAttribute("open");
+  try {
+    const { data: sessionData, error: sessionError } = await withTimeout(
+      boardState.client.auth.getSession(),
+      "Checking your sign-in session"
+    );
+    if (sessionError) {
+      boardMessage("#post-message", friendlyBoardError(sessionError), true);
+      return;
+    }
+    if (!sessionData.session?.access_token) {
+      boardMessage("#post-message", "Your sign-in session is missing an access token. Sign out, sign back in, then try posting again.", true);
+      return;
+    }
+
+    const { error } = await withTimeout(
+      boardState.client.from("board_posts").insert(payload),
+      "Posting the thread"
+    );
+    if (error) {
+      boardMessage("#post-message", friendlyBoardError(error), true);
+      return;
+    }
+
+    postForm.reset();
+    boardMessage("#post-message", "Thread posted.");
+    await loadPosts();
+    document.querySelector("#thread-composer")?.removeAttribute("open");
+  } catch (error) {
+    boardMessage("#post-message", friendlyBoardError(error), true);
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalLabel;
+    }
+  }
 }
 
 async function loadPosts() {
@@ -504,20 +600,26 @@ async function loadPosts() {
     return;
   }
 
+  renderPostsLoading();
+
   const query = boardState.client
     .from("board_posts")
     .select("*")
     .order("created_at", { ascending: false })
     .limit(50);
 
-  const { data: posts, error } = await query;
-  if (error) {
-    renderPostError(error.message);
-    return;
-  }
+  try {
+    const { data: posts, error } = await withTimeout(query, "Loading class posts");
+    if (error) {
+      renderPostError(friendlyBoardError(error));
+      return;
+    }
 
-  await loadRelatedData(posts || []);
-  renderPosts(posts || []);
+    await loadRelatedData(posts || []);
+    renderPosts(posts || []);
+  } catch (error) {
+    renderPostError(friendlyBoardError(error));
+  }
 }
 
 async function loadRelatedData(posts) {
@@ -530,15 +632,17 @@ async function loadRelatedData(posts) {
   boardState.profiles = new Map();
 
   if (postIds.length) {
-    const { data: comments, error: commentsError } = await boardState.client
-      .from("board_comments")
-      .select("*")
-      .in("post_id", postIds)
-      .order("created_at", { ascending: true });
+    const { data: comments, error: commentsError } = await withTimeout(
+      boardState.client
+        .from("board_comments")
+        .select("*")
+        .in("post_id", postIds)
+        .order("created_at", { ascending: true }),
+      "Loading comments"
+    );
 
     if (commentsError) {
-      renderPostError(commentsError.message);
-      return;
+      throw commentsError;
     }
 
     (comments || []).forEach((comment) => {
@@ -550,14 +654,16 @@ async function loadRelatedData(posts) {
   }
 
   if (userIds.size) {
-    const { data: profiles, error: profilesError } = await boardState.client
-      .from("profiles")
-      .select("id, display_name, role")
-      .in("id", Array.from(userIds));
+    const { data: profiles, error: profilesError } = await withTimeout(
+      boardState.client
+        .from("profiles")
+        .select("id, display_name, role")
+        .in("id", Array.from(userIds)),
+      "Loading profiles"
+    );
 
     if (profilesError) {
-      renderPostError(profilesError.message);
-      return;
+      throw profilesError;
     }
 
     (profiles || []).forEach((profile) => {
