@@ -912,6 +912,16 @@ function renderPost(post) {
   const canDelete = canModerate(post.user_id);
   const comments = boardState.comments.get(post.id) || [];
   const voteSummary = boardState.votes.get(post.id) || { score: 0, up: 0, down: 0, myVote: 0 };
+  const thumbsUpIcon = `
+    <svg class="vote-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3m0 11V10m0 12h10.7a2 2 0 0 0 2-1.7l1.1-7a2 2 0 0 0-2-2.3H15V6.2a4.2 4.2 0 0 0-1.2-3L13 2l-6 8" />
+    </svg>
+  `;
+  const thumbsDownIcon = `
+    <svg class="vote-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3m0-11v12m0-12H6.3a2 2 0 0 0-2 1.7l-1.1 7A2 2 0 0 0 5.2 13H9v4.8a4.2 4.2 0 0 0 1.2 3L11 22l6-8" />
+    </svg>
+  `;
   const codeBlock = post.code_snippet
     ? `<pre class="post-code"><code>${escapeHtml(post.code_snippet)}</code></pre>`
     : "";
@@ -944,10 +954,10 @@ function renderPost(post) {
         <p class="post-body">${escapeHtml(post.body)}</p>
         ${codeBlock}
         <div class="post-tools">
-          <div class="vote-box" aria-label="Thread voting">
-            <button type="button" class="vote-button ${voteSummary.myVote === 1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="1" ${boardState.user ? "" : "disabled"} title="Upvote this thread">Up</button>
+          <div class="vote-hud" aria-label="Thread voting">
+            <button type="button" class="vote-button ${voteSummary.myVote === 1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="1" ${boardState.user ? "" : "disabled"} title="Upvote this thread" aria-label="Upvote this thread">${thumbsUpIcon}</button>
             <span class="vote-score">${voteSummary.score}</span>
-            <button type="button" class="vote-button ${voteSummary.myVote === -1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="-1" ${boardState.user ? "" : "disabled"} title="Downvote this thread">Down</button>
+            <button type="button" class="vote-button ${voteSummary.myVote === -1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="-1" ${boardState.user ? "" : "disabled"} title="Downvote this thread" aria-label="Downvote this thread">${thumbsDownIcon}</button>
           </div>
           ${deleteButton}
         </div>

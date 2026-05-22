@@ -1041,6 +1041,14 @@ details p {
   overflow: hidden;
 }
 
+.thread-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.thread-card summary::marker {
+  content: "";
+}
+
 .thread-summary {
   display: flex;
   align-items: center;
@@ -1052,7 +1060,21 @@ details p {
   font-weight: 900;
 }
 
+.thread-summary::before {
+  content: "▶";
+  flex: 0 0 auto;
+  color: var(--navy);
+  font-size: 0.92rem;
+  transform: translateY(1px);
+  transition: transform 160ms ease;
+}
+
+.thread-card[open] > .thread-summary::before {
+  transform: translateY(1px) rotate(90deg);
+}
+
 .thread-title {
+  flex: 1;
   font-size: 1.12rem;
 }
 
@@ -1102,27 +1124,25 @@ details p {
   font-size: 0.95rem;
 }
 
-.vote-box {
+.vote-hud {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #f8fafc;
+  gap: 10px;
+  padding: 0;
 }
 
 .vote-button {
-  min-height: 34px;
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
   border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 999px;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  font: inherit;
-  font-size: 0.86rem;
-  font-weight: 900;
-  padding: 0 10px;
+  padding: 0;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .vote-button:hover:not(:disabled),
@@ -1132,9 +1152,23 @@ details p {
   background: var(--blue-soft);
 }
 
+.vote-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
 .vote-button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
+}
+
+.vote-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .vote-score {
