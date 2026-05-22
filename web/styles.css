@@ -1050,8 +1050,9 @@ details p {
 }
 
 .thread-summary {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
   justify-content: space-between;
   gap: 16px;
   padding: 20px 24px;
@@ -1076,6 +1077,64 @@ details p {
 .thread-title {
   flex: 1;
   font-size: 1.12rem;
+  line-height: 1.35;
+}
+
+.thread-summary::before {
+  content: none;
+}
+
+.thread-disclosure {
+  width: 0;
+  height: 0;
+  margin-top: 7px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid var(--navy);
+  transition: transform 160ms ease;
+}
+
+.thread-card[open] > .thread-summary .thread-disclosure {
+  transform: rotate(90deg);
+}
+
+.thread-preview {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.thread-preview-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.preview-meta {
+  font-weight: 600;
+}
+
+.thread-excerpt {
+  display: block;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.thread-code-preview {
+  max-width: 100%;
+  display: inline-block;
+  justify-self: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 6px 9px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .thread-stats {
@@ -1095,6 +1154,7 @@ details p {
 
 .thread-content {
   padding: 0 24px 24px;
+  border-top: 1px solid var(--line);
 }
 
 .post-tag {
@@ -1129,6 +1189,11 @@ details p {
   align-items: center;
   gap: 10px;
   padding: 0;
+}
+
+.preview-votes {
+  align-self: start;
+  margin-top: -2px;
 }
 
 .vote-button {
@@ -1290,6 +1355,24 @@ details p {
   .board-card,
   .post-card {
     padding: 24px 18px;
+  }
+
+  .thread-card {
+    padding: 0;
+  }
+
+  .thread-summary {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .thread-preview-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .preview-votes {
+    grid-column: 2;
+    justify-self: start;
   }
 
   .form-row,

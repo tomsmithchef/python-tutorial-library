@@ -513,15 +513,18 @@ function bindCommunityEvents() {
   document.querySelector("#posts-list")?.addEventListener("click", async (event) => {
     const deletePostButton = event.target.closest("[data-delete-post]");
     const deleteCommentButton = event.target.closest("[data-delete-comment]");
+    const voteButton = event.target.closest("[data-vote-post]");
+    if (voteButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      await togglePostVote(voteButton.dataset.votePost, Number(voteButton.dataset.voteValue));
+      return;
+    }
     if (deletePostButton) {
       await deletePost(deletePostButton.dataset.deletePost);
     }
     if (deleteCommentButton) {
       await deleteComment(deleteCommentButton.dataset.deleteComment);
-    }
-    const voteButton = event.target.closest("[data-vote-post]");
-    if (voteButton) {
-      await togglePostVote(voteButton.dataset.votePost, Number(voteButton.dataset.voteValue));
     }
   });
 
@@ -912,6 +915,10 @@ function renderPost(post) {
   const canDelete = canModerate(post.user_id);
   const comments = boardState.comments.get(post.id) || [];
   const voteSummary = boardState.votes.get(post.id) || { score: 0, up: 0, down: 0, myVote: 0 };
+  const authorName = profileName(post.user_id);
+  const postedAt = formatDate(post.created_at);
+  const bodyPreview = previewText(post.body, 180);
+  const codePreview = post.code_snippet ? previewText(post.code_snippet, 92) : "";
   const thumbsUpIcon = `
     <svg class="vote-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3m0 11V10m0 12h10.7a2 2 0 0 0 2-1.7l1.1-7a2 2 0 0 0-2-2.3H15V6.2a4.2 4.2 0 0 0-1.2-3L13 2l-6 8" />
@@ -938,27 +945,38 @@ function renderPost(post) {
     : `<p class="small-note">Sign in to comment.</p>`;
 
   return `
-    <details class="post-card thread-card" open>
+    <details class="post-card thread-card">
       <summary class="thread-summary">
-        <span class="thread-title">${escapeHtml(post.title)}</span>
-        <span class="thread-stats">
-          <span>${voteSummary.score} votes</span>
-          <span>${comments.length} replies</span>
+        <span class="thread-disclosure" aria-hidden="true"></span>
+        <span class="thread-preview">
+          <span class="thread-preview-head">
+            <span class="thread-title">${escapeHtml(post.title)}</span>
+            <span class="thread-stats">
+              <span>${voteSummary.score} votes</span>
+              <span>${comments.length} replies</span>
+            </span>
+          </span>
+          <span class="post-meta preview-meta">
+            <span>Posted by ${escapeHtml(authorName)}</span>
+            <span>${escapeHtml(postedAt)}</span>
+          </span>
+          <span class="thread-excerpt">${escapeHtml(bodyPreview)}</span>
+          ${codePreview ? `<code class="thread-code-preview">${escapeHtml(codePreview)}</code>` : ""}
+        </span>
+        <span class="vote-hud preview-votes" aria-label="Thread voting">
+          <button type="button" class="vote-button ${voteSummary.myVote === 1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="1" ${boardState.user ? "" : "disabled"} title="Upvote this thread" aria-label="Upvote this thread">${thumbsUpIcon}</button>
+          <span class="vote-score">${voteSummary.score}</span>
+          <button type="button" class="vote-button ${voteSummary.myVote === -1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="-1" ${boardState.user ? "" : "disabled"} title="Downvote this thread" aria-label="Downvote this thread">${thumbsDownIcon}</button>
         </span>
       </summary>
       <div class="thread-content">
         <div class="post-meta">
-          <span>Posted by ${escapeHtml(profileName(post.user_id))}</span>
-          <span>${escapeHtml(formatDate(post.created_at))}</span>
+          <span>Posted by ${escapeHtml(authorName)}</span>
+          <span>${escapeHtml(postedAt)}</span>
         </div>
         <p class="post-body">${escapeHtml(post.body)}</p>
         ${codeBlock}
         <div class="post-tools">
-          <div class="vote-hud" aria-label="Thread voting">
-            <button type="button" class="vote-button ${voteSummary.myVote === 1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="1" ${boardState.user ? "" : "disabled"} title="Upvote this thread" aria-label="Upvote this thread">${thumbsUpIcon}</button>
-            <span class="vote-score">${voteSummary.score}</span>
-            <button type="button" class="vote-button ${voteSummary.myVote === -1 ? "active" : ""}" data-vote-post="${post.id}" data-vote-value="-1" ${boardState.user ? "" : "disabled"} title="Downvote this thread" aria-label="Downvote this thread">${thumbsDownIcon}</button>
-          </div>
           ${deleteButton}
         </div>
         <div class="comments-list">
@@ -968,6 +986,14 @@ function renderPost(post) {
       </div>
     </details>
   `;
+}
+
+function previewText(value, maxLength = 160) {
+  const compact = String(value || "").replace(/\s+/g, " ").trim();
+  if (compact.length <= maxLength) {
+    return compact;
+  }
+  return `${compact.slice(0, maxLength - 1).trim()}...`;
 }
 
 function renderComment(comment) {
