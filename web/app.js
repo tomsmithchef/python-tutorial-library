@@ -289,7 +289,7 @@ function clearSupabaseAuthStorage() {
 }
 
 function selectAuthPanel(panelId) {
-  const selectedPanel = panelId || "login-panel";
+  const selectedPanel = panelId || "login-form";
   document.querySelectorAll("[data-auth-panel]").forEach((tab) => {
     tab.classList.toggle("active", tab.dataset.authPanel === selectedPanel);
   });
@@ -519,7 +519,7 @@ function updateAuthUi() {
   } else {
     loginForm.reset();
     signupForm.reset();
-    selectAuthPanel("login-panel");
+    selectAuthPanel("login-form");
     boardMessage("#auth-message", "Sign in to start threads or comment.");
   }
 }
