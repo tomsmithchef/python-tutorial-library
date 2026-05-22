@@ -1,0 +1,242 @@
+
+Lab Activity 1-1: Addition of Two Numbers in Python
+Completion requirements
+
+Introduction
+
+In this lab activity, you will write a Python program to add two numbers provided by user input and display the message "The sum of number 1 and number 2 is answer", where number 1 and number 2 are user inputs, and answer is the sum.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}_AddTwoNumbers.py.
+Write a Python program to add two numbers provided by user input and display the message "The sum of number 1 and number 2 is answer", where number 1 and number 2 are user inputs, and answer is the sum.
+Run your code and capture a screenshot of the output.
+Save your Python file and the screenshot.
+Deliverable
+
+Submit the {name}_AddTwoNumbers.py file and the screenshot of the output.
+
+
+
+==============================================================================================================
+
+
+Lab Activity 1-2: Calculate Sale Price after Discount
+
+Lab Activity: Calculate Sale Price Using Python
+Introduction
+In this lab activity, you will create a Python program that calculates the sale price of an item after applying a 20% discount.
+
+Instructions
+Complete the following steps:
+
+Open the PyCharm IDE.
+
+Create a new Python file named:
+{name}CalculateSalePrice.py
+
+Write a Python program that:
+
+Prompts the user to enter the original price of an item
+
+Calculates a 20% discount
+
+Displays the final sale price after the discount is applied
+
+Run and test your program to ensure the calculation is correct.
+
+Save your Python file.
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+Take screenshots showing:
+
+Your Python code in PyCharm
+
+The program running successfully
+
+Sample input and output results
+
+Insert the screenshots into a PDF document.
+
+Deliverables
+Submit the following files to the assignment submission box:
+
+{name}_CalculateSalePrice.py
+
+A PDF document containing screenshots of your code and program execution
+
+
+
+==============================================================================================================
+
+
+
+Lab Activity 1-3: Format and Display Financial Information
+
+Lab Activity: Formatting Financial Information in Python
+Introduction
+In this lab activity, you will create a Python program that formats and displays financial information using predefined variables.
+
+Instructions
+Complete the following steps:
+
+Open the PyCharm IDE.
+
+Create a new Python file named:
+{name}_FormatFinancialInfo.py
+
+Create variables with the following values:
+
+quantity = 10000
+total = 1507500
+price = 150.75
+Write a Python program that formats and displays the financial information in a readable sentence.
+
+Your output should appear similar to the following:
+
+It cost me $1,507,500 to buy 10,000 quantity of office supplies at the Ottawa Campus. The individual price of the item was $150.75.
+Use proper number formatting to:
+
+Display commas in large numbers
+
+Display currency values with a dollar sign and two decimal places
+
+Run and test your program to ensure the output is formatted correctly.
+
+Save your Python file.
+
+Your program should include:
+
+A header comment with your full name, college email, and the purpose of the program
+
+Meaningful comments throughout the code for readability
+
+Deliverables
+Submit the following files to the assignment submission box:
+
+{name}_FormatFinancialInfo.py
+
+A PDF document containing screenshots of:
+
+The program running successfully
+Sample output
+
+
+
+
+
+==============================================================================================================
+
+
+
+Lab Activity 1-4: Manipulate a List of Cars
+
+Introduction
+
+In this lab activity, you will write a Python program to manipulate a list of cars by changing, adding, reversing, and clearing the list elements.
+
+Instructions
+
+Complete the following steps:
+
+Open your PyCharm IDE.
+Create a new Python file and name it {YourName}_CarListManipulation.py.
+Write a Python program to manipulate a list of cars by changing, adding, reversing, and clearing the list elements.
+Run your code to ensure it manipulates the list correctly.
+Save your Python file.
+Detailed steps:
+
+Create a  list of cars (Honda, Toyota, Mercedes, Ferrari, Nissan, Hyundai).
+Print the list.
+Change the last item to “Kia”
+Tip: Reference to your index value should be dynamic. This will ensure that the value does not change even if a new list member is added, or an existing list member of the list is deleted.
+Print the list.
+Add a new member “Chevrolet” to index 2 of the list.
+Expected result (Honda, Toyota, Chevrolet, Mercedes, Ferrari, Nissan, Kia).
+Print the list.
+Reverse the list in descending order.
+Print the list.
+Empty all the members of the list.
+Print the list.
+Deliverable
+
+Submit the {YourName}_CarListManipulation.py and a PDF containing the running demonstration of your code.
+
+
+
+
+==============================================================================================================
+
+
+
+Lab Activity 1-5: Countries and Capitals using Dictionaries
+
+Introduction
+
+In this lab activity, you will write a Python program that uses dictionaries to define five countries and their capitals, then prints the capital of each country using their respective keys.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}_CountriesAndCapitals.py.
+Write a Python program that uses dictionaries to define five countries and their capitals, then prints the capital of each country using their respective keys.
+Run your code to ensure it correctly prints the capitals of each country.
+Save your Python file.
+Deliverable
+
+Submit the {name}_CountriesAndCapitals.py file and  a report file showing successful execution of your code
+
+
+
+
+==============================================================================================================
+
+
+
+
+
+Assignment 1: Set Operations
+Completion requirements
+To do: Make a submission
+Due: Saturday, 23 May 2026, 11:59 PM
+Introduction
+
+In this assignment, you will write a Python program that creates two sets: one for students on the baseball team and another for students on the basketball team. Perform various set operations to analyze the membership of the students in these sports teams.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}SportsTeams.py.
+Write a Python program that creates two sets: one for students on the baseball team and another for students on the basketball team. Perform various set operations to analyze the membership of the students in these sports teams.
+Run your code to ensure it correctly performs the set operations.
+Save your Python file.
+Teams:
+
+Basketball team: Jack, Jess, Jane, Jen, Juliet, Jap
+Baseball team: Jack, Jane, Juliet, Jacob, Jax, Justice
+Operations to Perform:
+
+Find the intersection of the sets to display the names of students who play both sports.
+Find the union of the sets to display the names of students who play either sport.
+Find the difference of the baseball and basketball sets to display the names of students who play baseball but not basketball.
+Find the difference of the basketball and baseball sets to display the names of students who play basketball but not baseball.
+Find the symmetric difference of the basketball and baseball sets to display the names of students who play one sport but not both.
+Deliverable
+
+Submit the {name}SportsTeams.py file to the submission box and  a report file showing successful execution of your code.

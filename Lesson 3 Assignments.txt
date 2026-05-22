@@ -1,0 +1,193 @@
+Lab Activity 3-1: Processing Mixed List in Python using functions.
+
+Introduction
+
+In this lab activity, you will write a Python script to perform certain operations on the given mixed list.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and call it {name}PrintIntegers.py.
+Write a Python script to perform the following operations on the given mixed list:
+Count the total number of integer numbers in the list below.
+ my_list = [10,’a’,’z’,-15.0,8.00,’h’,9.00,80,’q’,’r’,’s’,4,200,-8.00,]
+Print the sum and average of only the integer numbers.
+Run your code and ensure your script prints the correct message based on the rules provided.
+Save your file. 
+Deliverable
+
+Submit the {name}PrintIntegers.py file to the submission box  and  a report file showing successful execution of your code.
+
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+============================================================================================================
+
+
+
+
+Lab Activity 3-2: Check Element in Tuple of Tuples using functions.
+
+Introduction
+
+In this lab activity, you will write a Python program that asks the user to input a color and checks if the specified color exists in a tuple of tuples.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}CheckElementInTuples.py.
+Write a Python program that asks the user to input a color and checks if the specified color exists in a tuple of tuples.
+Run your code to ensure it correctly checks for the presence of the specified element.
+Save your Python file.
+Hint: Use conditional statement and loops.
+
+# Define the tuple of tuples
+tuple_of_tuples = (('Red', 'White', 'Blue'), ('Green', 'Pink', 'Purple'), ('Orange', 'Yellow', 'Lime'))
+Example:
+
+Check if 'White' is present in the tuple of tuples.
+Expected Output: True
+Check if 'Olive' is present in the tuple of tuples.
+Expected Output: False
+Deliverable
+
+Submit the {name}CheckElementInTuples.py file to the submission box  and  a report file showing successful execution of your code.
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+
+============================================================================================================
+
+
+
+
+Lab Activity 3-3: Calculate Simple Interest using functions.
+Introduction
+
+In this lab activity, you will write a Python program to calculate the simple interest for a client using two functions: main() and show_interest_function().
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}SimpleInterest.py.
+Write a Python program to calculate the simple interest for a client using two functions: main() and show_interest_function(). The client should be able to enter three values, and the program should display the simple interest.
+Run your code to ensure it correctly calculates the simple interest.
+Save your file.
+Hint: Simple interest formula: Simple interest = Principal * Rate * Periods
+
+Deliverable
+
+Submit the {name}SimpleInterest.py file to the submissions box and a report showing successful execution. 
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+
+============================================================================================================
+
+
+
+
+Lab Activity 3-4: Determine Loan Qualification with Credit Score using functions
+
+Introduction
+
+In this lab activity, you will write a Python program to determine if a customer qualifies for a loan, considering their income, years on the job, and credit score, using functions.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}LoanQualification.py.
+In this lab activity, you will write a Python program to determine if a customer qualifies for a loan, considering their income, years on the job, and credit score, using functions. To qualify, the customer must earn at least $30,000 per year, must have been on his/her current job for at least two years, and must have a credit score of at least 600.
+Run your code to ensure it correctly determines loan qualification.
+Save your file.
+Deliverable
+
+Submit the {name}LoanQualification.py file to the submissions box and a report showing successful execution. 
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
+
+
+
+
+============================================================================================================
+
+
+
+
+
+Assignment 3: Count Lowercase and Uppercase Letters using a Function
+Introduction
+
+In this assignment, you will create a Python function that takes a string input from the user as an argument and calculates the number of lowercase and uppercase letters.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {Name}Function.py.
+Create a Python function that takes a string input from the user as an argument and calculates the number of lowercase and uppercase letters.
+Run your code to ensure your script prints the total number of lowercase and uppercase letters.
+Save your file.
+Deliverable
+
+Submit the {Name}Function.py file to the submissions box and a report showing successful execution. 
+
+Your program must include a header comment containing the following information:
+
+Your full name
+
+College email address
+
+Purpose of the program
+
+Add meaningful comments throughout your code to improve readability and documentation.
