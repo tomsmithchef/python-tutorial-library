@@ -280,6 +280,134 @@ document.querySelectorAll("[data-practice-tab]").forEach((tab) => {
   });
 });
 
+function normalizeAttachmentLesson(value = "") {
+  const raw = String(value).toLowerCase().replace(/\s+/g, "");
+  if (/^\d+$/.test(raw)) {
+    return `lesson${Number(raw)}`;
+  }
+  return raw.replace(/^lesson0*/, "lesson");
+}
+
+function normalizeCardTitle(value = "") {
+  return String(value).trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function lessonFromPracticeView(view) {
+  const id = view?.id || "";
+  if (id === "practice-view") {
+    return "lesson1";
+  }
+  const match = id.match(/lesson(\d+)-practice-view/);
+  return match ? `lesson${match[1]}` : "";
+}
+
+function attachmentUrl(entry) {
+  return entry.file || entry.href || entry.url || "";
+}
+
+function attachmentLabel(entry) {
+  const file = attachmentUrl(entry).split("/").pop();
+  return entry.label || file || "Download attachment";
+}
+
+function createAttachmentLink(entry) {
+  const href = attachmentUrl(entry);
+  const link = document.createElement("a");
+  link.className = "attachment-link";
+  link.href = href;
+  link.setAttribute("download", "");
+
+  const icon = document.createElement("span");
+  icon.className = "attachment-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = "DL";
+
+  const copy = document.createElement("span");
+  const title = document.createElement("strong");
+  title.textContent = entry.title || attachmentLabel(entry);
+  const meta = document.createElement("small");
+  meta.textContent = [entry.description, attachmentLabel(entry), entry.size].filter(Boolean).join(" - ");
+
+  copy.append(title, meta);
+  link.append(icon, copy);
+  return link;
+}
+
+function createAttachmentBlock(entries, title = "Assignment Downloads", intro = "Download any starter files, datasets, or handouts provided for this lesson.") {
+  const block = document.createElement("section");
+  block.className = "attachment-card";
+  block.setAttribute("aria-label", title);
+
+  const heading = document.createElement("h2");
+  heading.textContent = title;
+  const description = document.createElement("p");
+  description.textContent = intro;
+  const list = document.createElement("div");
+  list.className = "attachment-list";
+
+  entries.forEach((entry) => list.append(createAttachmentLink(entry)));
+  block.append(heading, description, list);
+  return block;
+}
+
+function renderAssignmentAttachments() {
+  const manifest = Array.isArray(window.PY_TUTORIAL_ATTACHMENTS) ? window.PY_TUTORIAL_ATTACHMENTS : [];
+  const usableEntries = manifest.filter((entry) => entry && attachmentUrl(entry) && entry.lesson);
+
+  document.querySelectorAll(".practice-shell").forEach((shell) => {
+    const view = shell.closest(".view");
+    const lessonKey = lessonFromPracticeView(view);
+    if (!lessonKey) {
+      return;
+    }
+
+    const lessonEntries = usableEntries.filter((entry) => normalizeAttachmentLesson(entry.lesson) === lessonKey);
+    if (!lessonEntries.length) {
+      return;
+    }
+
+    const taskCards = Array.from(shell.querySelectorAll(".task-card"));
+    const cardEntries = [];
+    const lessonLevelEntries = [];
+
+    lessonEntries.forEach((entry) => {
+      if (entry.taskTitle) {
+        const targetTitle = normalizeCardTitle(entry.taskTitle);
+        const targetCard = taskCards.find((card) => normalizeCardTitle(card.querySelector("h3")?.textContent) === targetTitle);
+        if (targetCard) {
+          cardEntries.push([targetCard, entry]);
+          return;
+        }
+      }
+      lessonLevelEntries.push(entry);
+    });
+
+    const groupedByCard = new Map();
+    cardEntries.forEach(([card, entry]) => {
+      if (!groupedByCard.has(card)) {
+        groupedByCard.set(card, []);
+      }
+      groupedByCard.get(card).push(entry);
+    });
+
+    groupedByCard.forEach((entries, card) => {
+      if (card.querySelector(".attachment-card")) {
+        return;
+      }
+      card.append(createAttachmentBlock(entries, "Downloads", "Files for this specific assignment."));
+    });
+
+    if (lessonLevelEntries.length && !shell.querySelector(".lesson-attachments")) {
+      const header = shell.querySelector(".practice-header");
+      const block = createAttachmentBlock(lessonLevelEntries);
+      block.classList.add("lesson-attachments");
+      header?.insertAdjacentElement("afterend", block);
+    }
+  });
+}
+
+renderAssignmentAttachments();
+
 const boardState = {
   initialized: false,
   configured: false,

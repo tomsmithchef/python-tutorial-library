@@ -8,6 +8,8 @@ This folder contains a self-contained web textbook for the first eight Python fu
 - `web/styles.css` - the website styling
 - `web/app.js` - navigation, tabs, hints, code-copy behavior, and the optional Class Board
 - `web/community-config.js` - Supabase connection settings for the optional Class Board
+- `web/assignment-attachments.js` - optional downloadable assignment attachment manifest
+- `web/attachments/` - optional starter files, datasets, lab handouts, or other assignment downloads
 - `supabase/class-board-schema.sql` - database tables and security policies for the Class Board
 - `Lesson 1.pdf` through `Lesson 8.pdf` - original lesson slide decks
 - `Lesson 1 Assignments.txt` through `Lesson 4 Assignments.txt` - assignment/lab source text
@@ -53,6 +55,9 @@ Python Tutorial Library/
     styles.css
     app.js
     community-config.js
+    assignment-attachments.js
+    attachments/
+      README.md
 ```
 
 ## How To Use The Site
@@ -64,6 +69,44 @@ Python Tutorial Library/
 - Use **Community** to open the optional Class Board for questions, code snippets, and class discussion.
 - Concept reminders are hidden by default. Open them only when you need a hint.
 - The testing pages do not provide completed solutions.
+
+## Adding Assignment Downloads
+
+The testing environment can show download buttons for starter files, datasets, handouts, or other assignment attachments. Downloads stay hidden until you register at least one attachment.
+
+1. Put the file somewhere inside `web/attachments/`.
+2. Open `web/assignment-attachments.js`.
+3. Add one entry to `window.PY_TUTORIAL_ATTACHMENTS`.
+4. Commit and redeploy the site.
+
+Lesson-level downloads appear near the top of that lesson's testing page:
+
+```javascript
+window.PY_TUTORIAL_ATTACHMENTS = [
+  {
+    lesson: "lesson2",
+    title: "Rock Paper Scissors Starter",
+    description: "Starter file for the Lesson 2 lab.",
+    file: "attachments/lesson2/rock-paper-scissors-starter.py"
+  }
+];
+```
+
+Assignment-specific downloads appear inside a matching assignment card when `taskTitle` exactly matches the card heading:
+
+```javascript
+window.PY_TUTORIAL_ATTACHMENTS = [
+  {
+    lesson: "lesson4",
+    taskTitle: "Inventory File Practice",
+    title: "Inventory CSV",
+    description: "Sample data file for the inventory assignment.",
+    file: "attachments/lesson4/inventory.csv"
+  }
+];
+```
+
+Keep completed solutions out of `web/attachments/`.
 
 ## Optional: Enable The Class Board
 

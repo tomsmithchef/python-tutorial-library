@@ -616,6 +616,77 @@ h3 {
   max-width: 880px;
 }
 
+.attachment-card {
+  margin: 18px 0 26px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f8fafc;
+}
+
+.task-card .attachment-card {
+  margin: 20px 0 0;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.attachment-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.attachment-card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.attachment-list {
+  display: grid;
+  gap: 10px;
+}
+
+.attachment-link {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.attachment-link:hover {
+  border-color: var(--blue);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+}
+
+.attachment-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: white;
+  background: var(--green);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.attachment-link strong,
+.attachment-link small {
+  display: block;
+}
+
+.attachment-link strong {
+  color: var(--navy);
+}
+
+.attachment-link small {
+  color: var(--muted);
+}
+
 .practice-tabs {
   position: sticky;
   top: 73px;
