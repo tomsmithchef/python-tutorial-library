@@ -5477,14 +5477,14 @@ data = {
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 6 sections">
           <p class="sidebar-label">Lesson 6 Study Material</p>
-          <a href="#lesson6-errors">1. Errors and Exceptions</a>
-          <a href="#lesson6-builtins">2. Built-In Exceptions</a>
-          <a href="#lesson6-try-except">3. try and except</a>
-          <a href="#lesson6-specific">4. Specific Exceptions</a>
-          <a href="#lesson6-else-finally">5. else and finally</a>
-          <a href="#lesson6-raise">6. Raising Exceptions</a>
-          <a href="#lesson6-custom">7. Custom Exceptions</a>
-          <a href="#lesson6-validation">8. Validation Patterns</a>
+          <a href="#lesson6-errors">1. Errors and Exceptions <small>Page 3</small></a>
+          <a href="#lesson6-builtins">2. Built-In Exceptions <small>Pages 4-5</small></a>
+          <a href="#lesson6-try-except">3. try and except <small>Pages 6-8</small></a>
+          <a href="#lesson6-specific">4. Specific Exceptions <small>Pages 9-10</small></a>
+          <a href="#lesson6-else-finally">5. else and finally <small>Page 11</small></a>
+          <a href="#lesson6-raise">6. Raising Exceptions <small>Page 12</small></a>
+          <a href="#lesson6-custom">7. Custom Exceptions <small>Page 13</small></a>
+          <a href="#lesson6-validation">8. Validation Patterns <small>Pages 14-15</small></a>
           <a href="#lesson6-practice" data-route="lesson6-practice">Testing Environment</a>
         </aside>
 
@@ -5507,6 +5507,7 @@ data = {
 
           <section class="study-section" id="lesson6-errors">
             <h2>1. Errors and Exceptions</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               An error is a problem that prevents a program from continuing normally. Some errors happen before the
               program can even run. Others happen while the program is running. Python reports these problems with error
@@ -5564,6 +5565,7 @@ print(numbers[5])</code></pre>
 
           <section class="study-section" id="lesson6-builtins">
             <h2>2. Built-In Exception Types</h2>
+            <p class="section-pages">Source pages 4-5</p>
             <p>
               Python has many built-in exception classes. The class name tells you the category of problem. Learning the
               names helps you read tracebacks and decide what kind of <code>except</code> block to write. You do not
@@ -5633,6 +5635,7 @@ int("forty")   # ValueError: string cannot be converted to an integer
 
           <section class="study-section" id="lesson6-try-except">
             <h2>3. Handling Exceptions with try and except</h2>
+            <p class="section-pages">Source pages 6-8</p>
             <p>
               Exception handling starts with a <code>try</code> statement. The <code>try</code> block contains code that
               might fail. The <code>except</code> block contains code that should run if a matching exception occurs.
@@ -5708,6 +5711,7 @@ except Exception as error:
 
           <section class="study-section" id="lesson6-specific">
             <h2>4. Catching Specific Exceptions</h2>
+            <p class="section-pages">Source pages 9-10</p>
             <p>
               A single <code>try</code> block can have multiple <code>except</code> clauses. This lets your program
               respond differently to different problems. Only one matching <code>except</code> block runs for a single
@@ -5763,6 +5767,7 @@ except UnboundLocalError:
 
           <section class="study-section" id="lesson6-else-finally">
             <h2>5. try with else and finally</h2>
+            <p class="section-pages">Source page 11</p>
             <p>
               A full exception-handling structure can include <code>try</code>, <code>except</code>,
               <code>else</code>, and <code>finally</code>. The <code>else</code> block runs only when the
@@ -5818,6 +5823,7 @@ aby_b(2.0, 3.0)</code></pre>
 
           <section class="study-section" id="lesson6-raise">
             <h2>6. Raising Exceptions</h2>
+            <p class="section-pages">Source page 12</p>
             <p>
               Sometimes Python raises an exception automatically. Other times, your code should raise one on purpose.
               Raising an exception means your program has detected a condition that should not be accepted. Use the
@@ -5858,6 +5864,7 @@ if not isinstance(y, int):
 
           <section class="study-section" id="lesson6-custom">
             <h2>7. User-Defined Exceptions</h2>
+            <p class="section-pages">Source page 13</p>
             <p>
               Python also lets you create your own exception classes. A custom exception is useful when your program has
               a domain-specific problem that deserves a clear name. In the lesson example, the program asks for a number
@@ -5912,6 +5919,7 @@ print("Great! Value is in the correct range.")</code></pre>
 
           <section class="study-section" id="lesson6-validation">
             <h2>8. Validation Patterns for Beginner Programs</h2>
+            <p class="section-pages">Source pages 14-15</p>
             <p>
               Validation means checking that input is acceptable before the rest of the program depends on it. Lesson 6
               ends with activities that ask you to validate names, quantities, and prices. These are practical examples
@@ -6020,6 +6028,7 @@ print("Great! Value is in the correct range.")</code></pre>
                 Syntax errors happen when Python cannot parse the code. Exceptions happen while valid code is running.
                 Specific exception types make your error handling clearer and prevent unrelated bugs from being hidden.
               </p>
+              <a class="page-ref" href="#lesson6-errors" data-study-route="lesson6-study">Review: Lesson 6, pages 3-5.</a>
             </details>
           </article>
 
@@ -6038,6 +6047,7 @@ print("Great! Value is in the correct range.")</code></pre>
                 <code>try</code> tests risky code. <code>except</code> handles a matching error. <code>else</code> runs
                 only after success. <code>finally</code> always runs and is often used for cleanup or final status.
               </p>
+              <a class="page-ref" href="#lesson6-try-except" data-study-route="lesson6-study">Review: Lesson 6, pages 6-11.</a>
             </details>
           </article>
         </section>
@@ -6068,6 +6078,7 @@ print("Great! Value is in the correct range.")</code></pre>
                 the argument is a string but does not contain the expected number of words. String methods from Lesson 1
                 are useful here, especially splitting words and changing capitalization.
               </p>
+              <a class="page-ref" href="#lesson6-validation" data-study-route="lesson6-study">Review: Lesson 6, pages 12 and 14.</a>
             </details>
           </article>
         </section>
@@ -6098,6 +6109,7 @@ print("Great! Value is in the correct range.")</code></pre>
                 conversion errors, and repeat the prompt until the value passes all checks. Keep quantity and price
                 validation separate so each function has one clear job.
               </p>
+              <a class="page-ref" href="#lesson6-validation" data-study-route="lesson6-study">Review: Lesson 6, page 15.</a>
             </details>
           </article>
         </section>
@@ -6108,16 +6120,16 @@ print("Great! Value is in the correct range.")</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 7 sections">
           <p class="sidebar-label">Lesson 7 Study Material</p>
-          <a href="#lesson7-foundations">1. Secure Communication</a>
-          <a href="#lesson7-terms">2. Cryptography Terms</a>
-          <a href="#lesson7-symmetric">3. Symmetric Encryption</a>
-          <a href="#lesson7-classical">4. Classical Ciphers</a>
-          <a href="#lesson7-modern">5. Modern Symmetric Tools</a>
-          <a href="#lesson7-asymmetric">6. Asymmetric Encryption</a>
-          <a href="#lesson7-authentication">7. Authentication</a>
-          <a href="#lesson7-passwords">8. Passwords and Hashes</a>
-          <a href="#lesson7-certificates">9. Tokens and Certificates</a>
-          <a href="#lesson7-cryptanalysis">10. Cryptanalysis and Base64</a>
+          <a href="#lesson7-foundations">1. Secure Communication <small>Pages 4-5, 7</small></a>
+          <a href="#lesson7-terms">2. Cryptography Terms <small>Pages 6-8</small></a>
+          <a href="#lesson7-symmetric">3. Symmetric Encryption <small>Pages 9-10, 28-29</small></a>
+          <a href="#lesson7-classical">4. Classical Ciphers <small>Pages 11-19</small></a>
+          <a href="#lesson7-modern">5. Modern Symmetric Tools <small>Pages 20-28</small></a>
+          <a href="#lesson7-asymmetric">6. Asymmetric Encryption <small>Pages 30-35</small></a>
+          <a href="#lesson7-authentication">7. Authentication <small>Pages 36-41</small></a>
+          <a href="#lesson7-passwords">8. Passwords and Hashes <small>Pages 39, 42</small></a>
+          <a href="#lesson7-certificates">9. Tokens and Certificates <small>Pages 43-47</small></a>
+          <a href="#lesson7-cryptanalysis">10. Cryptanalysis and Base64 <small>Pages 48-50</small></a>
           <a href="#lesson7-practice" data-route="lesson7-practice">Testing Environment</a>
         </aside>
 
@@ -6140,6 +6152,7 @@ print("Great! Value is in the correct range.")</code></pre>
 
           <section class="study-section" id="lesson7-foundations">
             <h2>1. Secure Communication</h2>
+            <p class="section-pages">Source pages 4-5 and 7</p>
             <p>
               Cryptography is the science of secure communication in the presence of third parties. The phrase
               "third parties" matters: the problem is not simply sending a message from one person to another, but
@@ -6203,6 +6216,7 @@ print("Great! Value is in the correct range.")</code></pre>
 
           <section class="study-section" id="lesson7-terms">
             <h2>2. Core Cryptography Terminology</h2>
+            <p class="section-pages">Source pages 6-8</p>
             <p>
               Cryptography uses a vocabulary that can feel abstract until you connect each word to the life of a
               message. The original readable message is called plaintext or cleartext. After an encryption algorithm
@@ -6244,6 +6258,7 @@ print("Great! Value is in the correct range.")</code></pre>
 
           <section class="study-section" id="lesson7-symmetric">
             <h2>3. Symmetric Encryption</h2>
+            <p class="section-pages">Source pages 9-10 and 28-29</p>
             <p>
               Symmetric encryption uses the same key to encrypt and decrypt. That makes it efficient, but it creates a
               key-sharing problem: both parties need the same secret key, and the key must not be exposed. If an attacker
@@ -6297,6 +6312,7 @@ print("Great! Value is in the correct range.")</code></pre>
 
           <section class="study-section" id="lesson7-classical">
             <h2>4. Classical Ciphers: Caesar, Monoalphabetic, and Polyalphabetic</h2>
+            <p class="section-pages">Source pages 11-19</p>
             <p>
               Classical ciphers are useful teaching tools because their transformations are visible. They are not
               appropriate for protecting real secrets today, but they help you understand keys, substitution, frequency
@@ -6386,6 +6402,7 @@ print("".join(encrypted))</code></pre>
 
           <section class="study-section" id="lesson7-modern">
             <h2>5. Modern Symmetric Algorithms and Python Libraries</h2>
+            <p class="section-pages">Source pages 20-28</p>
             <p>
               Modern encryption should use established, reviewed libraries instead of handmade ciphers. Classical
               examples teach mechanics, but real confidentiality depends on mature algorithms, correct modes, safe key
@@ -6480,6 +6497,7 @@ print("decrypted string:", decrypted_message)</code></pre>
 
           <section class="study-section" id="lesson7-asymmetric">
             <h2>6. Asymmetric Encryption</h2>
+            <p class="section-pages">Source pages 30-35</p>
             <p>
               Asymmetric encryption uses a pair of keys. A public key can be shared and used for encryption. A private
               key must be kept secret and used for decryption. A message encrypted with the public key can only be
@@ -6537,6 +6555,7 @@ print("decrypted string:", decrypted_message)</code></pre>
 
           <section class="study-section" id="lesson7-authentication">
             <h2>7. Authentication, Message Digests, and Digital Signatures</h2>
+            <p class="section-pages">Source pages 36-41</p>
             <p>
               Authentication validates identity or the integrity of data. The chapter groups authentication technologies
               into message digests or message authentication codes, digital signatures, and public key infrastructure.
@@ -6599,6 +6618,7 @@ verify_key.verify(signed.message, signed.signature)</code></pre>
 
           <section class="study-section" id="lesson7-passwords">
             <h2>8. Passwords, Hashes, and Authentication Systems</h2>
+            <p class="section-pages">Source pages 39 and 42</p>
             <p>
               A password is a secret character string known to the user and the authentication system. A responsible
               system should not store the plaintext password. Instead, it stores a password hash produced by a password
@@ -6639,6 +6659,7 @@ print(is_valid)</code></pre>
 
           <section class="study-section" id="lesson7-certificates">
             <h2>9. Kerberos, Personal Tokens, Biometrics, and Digital Certificates</h2>
+            <p class="section-pages">Source pages 43-47</p>
             <p>
               Cryptography supports several authentication technologies beyond passwords. Kerberos is an authentication
               service that uses symmetric key encryption and a key distribution center. A Kerberos authentication server
@@ -6687,6 +6708,7 @@ print(is_valid)</code></pre>
 
           <section class="study-section" id="lesson7-cryptanalysis">
             <h2>10. Cryptanalysis and Base64</h2>
+            <p class="section-pages">Source pages 48-50</p>
             <p>
               Cryptanalysis is the process of breaking or analyzing an encryption code. It can involve trying to
               recognize patterns in encrypted messages, infer meaning without decrypting the message, deduce a key,
@@ -6783,6 +6805,7 @@ print(decoded_message)</code></pre>
                 A Caesar cipher shifts letters by a fixed amount. Modular arithmetic with <code>% 26</code> handles
                 wrapping around from the end of the alphabet back to the beginning.
               </p>
+              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7, pages 11-14.</a>
             </details>
           </article>
 
@@ -6806,6 +6829,7 @@ print(decoded_message)</code></pre>
                 letters map back to plaintext letters. Use <code>dict.get(letter, letter)</code> if you want spaces or
                 punctuation to pass through unchanged.
               </p>
+              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7, pages 15-19.</a>
             </details>
           </article>
         </section>
@@ -6838,6 +6862,7 @@ print(decoded_message)</code></pre>
                 bytes, so strings usually need <code>encode()</code> before encryption and <code>decode()</code> after
                 decryption.
               </p>
+              <a class="page-ref" href="#lesson7-modern" data-study-route="lesson7-study">Review: Lesson 7, pages 25-34.</a>
             </details>
           </article>
 
@@ -6856,6 +6881,7 @@ print(decoded_message)</code></pre>
                 Symmetric encryption uses the same secret key on both sides. Asymmetric encryption uses a public/private
                 key pair. Authenticated modes help detect tampering, not just recover plaintext.
               </p>
+              <a class="page-ref" href="#lesson7-modern" data-study-route="lesson7-study">Review: Lesson 7, pages 23-35.</a>
             </details>
           </article>
         </section>
@@ -6882,6 +6908,7 @@ print(decoded_message)</code></pre>
                 <code>hexdigest()</code> for readable output. MD5 is historical and not appropriate for modern security
                 decisions.
               </p>
+              <a class="page-ref" href="#lesson7-authentication" data-study-route="lesson7-study">Review: Lesson 7, pages 36-38.</a>
             </details>
           </article>
 
@@ -6903,6 +6930,7 @@ print(decoded_message)</code></pre>
                 Store password hashes, not plaintext passwords. With bcrypt, hash the password when registering or
                 updating, then use the library's check function during login. A dictionary is only for practice.
               </p>
+              <a class="page-ref" href="#lesson7-passwords" data-study-route="lesson7-study">Review: Lesson 7, pages 39 and 42.</a>
             </details>
           </article>
 
@@ -6921,6 +6949,7 @@ print(decoded_message)</code></pre>
                 A digital signature should prove source and detect tampering. Verification uses the public verify key.
                 If the message or signature changes, verification should fail.
               </p>
+              <a class="page-ref" href="#lesson7-authentication" data-study-route="lesson7-study">Review: Lesson 7, pages 40-41 and 47.</a>
             </details>
           </article>
         </section>
@@ -6949,6 +6978,7 @@ print(decoded_message)</code></pre>
                 Lesson 7 is not only about encryption code. It also connects encryption to identity, trust, certificates,
                 tokens, passwords, and integrity checks.
               </p>
+              <a class="page-ref" href="#lesson7-foundations" data-study-route="lesson7-study">Review: Lesson 7, pages 4-5, 29, 35, and 43-47.</a>
             </details>
           </article>
 
@@ -6968,6 +6998,7 @@ print(decoded_message)</code></pre>
                 Cryptanalysis studies ways to break or reason about encrypted communication. Base64 only changes
                 representation so binary data can move through text systems; it does not provide secrecy.
               </p>
+              <a class="page-ref" href="#lesson7-cryptanalysis" data-study-route="lesson7-study">Review: Lesson 7, pages 48-50.</a>
             </details>
           </article>
         </section>
@@ -6978,16 +7009,16 @@ print(decoded_message)</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 8 sections">
           <p class="sidebar-label">Lesson 8 Study Material</p>
-          <a href="#lesson8-traffic">1. Network Traffic</a>
-          <a href="#lesson8-wireshark">2. Wireshark</a>
-          <a href="#lesson8-dpkt">3. Reading PCAP with dpkt</a>
-          <a href="#lesson8-scapy-purpose">4. What Scapy Does</a>
-          <a href="#lesson8-install-modes">5. Installing and Modes</a>
-          <a href="#lesson8-layers">6. Packet Layers</a>
-          <a href="#lesson8-packet-sets">7. Packet Sets</a>
-          <a href="#lesson8-commands">8. Inspection Commands</a>
-          <a href="#lesson8-send-receive">9. Sending and Receiving</a>
-          <a href="#lesson8-sniffing">10. Fuzzing, Files, Sniffing</a>
+          <a href="#lesson8-traffic">1. Network Traffic <small>Page 3</small></a>
+          <a href="#lesson8-wireshark">2. Wireshark <small>Pages 4-7</small></a>
+          <a href="#lesson8-dpkt">3. Reading PCAP with dpkt <small>Pages 7-8</small></a>
+          <a href="#lesson8-scapy-purpose">4. What Scapy Does <small>Pages 9-12</small></a>
+          <a href="#lesson8-install-modes">5. Installing and Modes <small>Pages 13-14</small></a>
+          <a href="#lesson8-layers">6. Packet Layers <small>Pages 15-17</small></a>
+          <a href="#lesson8-packet-sets">7. Packet Sets <small>Page 18</small></a>
+          <a href="#lesson8-commands">8. Inspection Commands <small>Pages 19-20</small></a>
+          <a href="#lesson8-send-receive">9. Sending and Receiving <small>Pages 21-23, 28</small></a>
+          <a href="#lesson8-sniffing">10. Fuzzing, Files, Sniffing <small>Pages 24-27</small></a>
           <a href="#lesson8-practice" data-route="lesson8-practice">Testing Environment</a>
         </aside>
 
@@ -7014,6 +7045,7 @@ print(decoded_message)</code></pre>
 
           <section class="study-section" id="lesson8-traffic">
             <h2>1. Network Traffic and Packets</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               Network traffic is the movement of data across a network. When a computer opens a website, checks email,
               resolves a domain name, streams media, or talks to another device, the data is broken into packets. A
@@ -7064,6 +7096,7 @@ print(decoded_message)</code></pre>
 
           <section class="study-section" id="lesson8-wireshark">
             <h2>2. Wireshark: Capturing, Filtering, and Saving Traffic</h2>
+            <p class="section-pages">Source pages 4-7</p>
             <p>
               Wireshark is a free and open-source packet analyzer. It is widely used for troubleshooting, learning
               protocols, protocol development, security analysis, and network education. Wireshark can capture live
@@ -7121,6 +7154,7 @@ print(decoded_message)</code></pre>
 
           <section class="study-section" id="lesson8-dpkt">
             <h2>3. Reading PCAP Files with dpkt</h2>
+            <p class="section-pages">Source pages 7-8</p>
             <p>
               A packet capture becomes more useful when Python can read it. The <code>dpkt</code> module is a fast,
               simple packet creation and parsing library. It includes definitions for many basic TCP/IP protocols. In
@@ -7176,6 +7210,7 @@ with open("capture.pcap", "rb") as file:
 
           <section class="study-section" id="lesson8-scapy-purpose">
             <h2>4. What Scapy Does and Why It Matters</h2>
+            <p class="section-pages">Source pages 9-12</p>
             <p>
               Scapy is a Python program and library for packet manipulation. It can create packets, decode packets,
               send packets, receive replies, sniff traffic, and work with packet capture files. Scapy is best understood
@@ -7225,6 +7260,7 @@ with open("capture.pcap", "rb") as file:
 
           <section class="study-section" id="lesson8-install-modes">
             <h2>5. Installing Scapy and Working Modes</h2>
+            <p class="section-pages">Source pages 13-14</p>
             <p>
               Install Scapy with <code>pip install scapy</code>. Some Scapy operations require elevated permissions
               because sending and sniffing raw packets is a privileged networking action on many operating systems.
@@ -7266,6 +7302,7 @@ print(dir())</code></pre>
 
           <section class="study-section" id="lesson8-layers">
             <h2>6. Packets as Stacked Layers</h2>
+            <p class="section-pages">Source pages 15-17</p>
             <p>
               In Scapy, a packet is built by stacking layers with the <code>/</code> operator. A single layer such as
               <code>IP()</code> creates an IP packet with default field values. Adding <code>/TCP()</code> places a TCP
@@ -7338,6 +7375,7 @@ c.show()</code></pre>
 
           <section class="study-section" id="lesson8-packet-sets">
             <h2>7. Generating Sets of Packets</h2>
+            <p class="section-pages">Source page 18</p>
             <p>
               Scapy can treat some field values as sets. If a field is given a list, tuple range, or address range,
               Scapy can generate multiple packets from one expression. This is useful when you want to create a small
@@ -7381,6 +7419,7 @@ packets.summary()</code></pre>
 
           <section class="study-section" id="lesson8-commands">
             <h2>8. Scapy Inspection Commands</h2>
+            <p class="section-pages">Source pages 19-20</p>
             <p>
               Before sending or sniffing anything, a learner should become comfortable inspecting packet objects. Scapy
               provides several methods and helper functions that summarize, number, display, filter, dump, plot, or
@@ -7433,6 +7472,7 @@ hexdump(packet)</code></pre>
 
           <section class="study-section" id="lesson8-send-receive">
             <h2>9. Sending and Receiving Packets</h2>
+            <p class="section-pages">Source pages 21-23 and 28</p>
             <p>
               Scapy has separate functions for sending only, sending at a specific layer, and sending while collecting
               responses. This distinction matters. A send-only function is like putting a packet onto the wire and not
@@ -7499,6 +7539,7 @@ srloop(packet, count=3)</code></pre>
 
           <section class="study-section" id="lesson8-sniffing">
             <h2>10. Fuzzing, Importing, Exporting, and Sniffing</h2>
+            <p class="section-pages">Source pages 24-27</p>
             <p>
               Scapy can do more than construct ordinary packets. It can fuzz fields, import and export packet data, and
               sniff live or offline traffic. These features are useful, but they also require judgment. Fuzzing and live
@@ -7657,6 +7698,7 @@ offline.nsummary()</code></pre>
                 A display filter changes what Wireshark shows you; it does not necessarily delete packets from the
                 capture file. Save only lab captures that you are allowed to keep.
               </p>
+              <a class="page-ref" href="#lesson8-wireshark" data-study-route="lesson8-study">Review: Lesson 8, pages 3-7.</a>
             </details>
           </article>
 
@@ -7679,6 +7721,7 @@ offline.nsummary()</code></pre>
                 may include non-IP frames, so robust code checks packet types before assuming <code>ip.src</code> and
                 <code>ip.dst</code> exist.
               </p>
+              <a class="page-ref" href="#lesson8-dpkt" data-study-route="lesson8-study">Review: Lesson 8, pages 7-8.</a>
             </details>
           </article>
 
@@ -7697,6 +7740,7 @@ offline.nsummary()</code></pre>
                 A capture is a record of packets. Analysis means narrowing that record into something you can explain:
                 who talked, what protocol was used, when it happened, and what the packet summary suggests.
               </p>
+              <a class="page-ref" href="#lesson8-traffic" data-study-route="lesson8-study">Review: Lesson 8, pages 3-7.</a>
             </details>
           </article>
         </section>
@@ -7723,6 +7767,7 @@ offline.nsummary()</code></pre>
                 Interactive mode is convenient for one-liners and experiments. Module mode is better when the same steps
                 should be saved, rerun, submitted, or debugged like a normal Python program.
               </p>
+              <a class="page-ref" href="#lesson8-install-modes" data-study-route="lesson8-study">Review: Lesson 8, pages 13-14.</a>
             </details>
           </article>
 
@@ -7743,6 +7788,7 @@ offline.nsummary()</code></pre>
                 The <code>/</code> operator stacks layers in Scapy. <code>show()</code> displays fields before full
                 assembly, while <code>show2()</code> assembles the packet first and can fill calculated values.
               </p>
+              <a class="page-ref" href="#lesson8-layers" data-study-route="lesson8-study">Review: Lesson 8, pages 15-17.</a>
             </details>
           </article>
 
@@ -7764,6 +7810,7 @@ offline.nsummary()</code></pre>
                 Summaries help you scan packet lists quickly. Hexdumps remind you that packet objects ultimately become
                 raw bytes when stored, sent, or decoded.
               </p>
+              <a class="page-ref" href="#lesson8-commands" data-study-route="lesson8-study">Review: Lesson 8, pages 19-20.</a>
             </details>
           </article>
 
@@ -7784,6 +7831,7 @@ offline.nsummary()</code></pre>
                 values, Scapy may generate combinations. Use a list or <code>PacketList</code> when you need every
                 generated packet explicitly.
               </p>
+              <a class="page-ref" href="#lesson8-packet-sets" data-study-route="lesson8-study">Review: Lesson 8, page 18.</a>
             </details>
           </article>
         </section>
@@ -7810,6 +7858,7 @@ offline.nsummary()</code></pre>
                 <code>send()</code> works at Layer 3 and does not listen for replies. <code>sendp()</code> works at
                 Layer 2, so you provide a link-layer header and often specify an interface.
               </p>
+              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, page 21.</a>
             </details>
           </article>
 
@@ -7833,6 +7882,7 @@ offline.nsummary()</code></pre>
                 <code>sr()</code> returns answered stimulus-response pairs and unanswered packets. Start with a very
                 small list of ports and a timeout so the program remains predictable in a classroom lab.
               </p>
+              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 22-23 and 28.</a>
             </details>
           </article>
 
@@ -7851,6 +7901,7 @@ offline.nsummary()</code></pre>
                 <code>sr1()</code> is useful when you only care about the first answer. <code>srloop()</code> repeats a
                 send-and-receive action, so keep it bounded in learning exercises.
               </p>
+              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 22-23.</a>
             </details>
           </article>
         </section>
@@ -7877,6 +7928,7 @@ offline.nsummary()</code></pre>
                 Fuzzing sends unusual inputs to observe behavior. It belongs in a controlled lab because unexpected
                 packet values can stress, confuse, or disrupt systems.
               </p>
+              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, page 24.</a>
             </details>
           </article>
 
@@ -7896,6 +7948,7 @@ offline.nsummary()</code></pre>
                 <code>rdpcap()</code> and offline <code>sniff()</code> work with saved files. <code>raw(packet)</code>
                 gives packet bytes, while summaries and hexdumps give human-friendly views of those bytes.
               </p>
+              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, pages 25-26.</a>
             </details>
           </article>
 
@@ -7915,6 +7968,7 @@ offline.nsummary()</code></pre>
                 <code>sniff()</code> can capture live or offline traffic. Filters reduce what is captured or processed.
                 Scapy is flexible, but dedicated tools are better for high-speed capture.
               </p>
+              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, page 27.</a>
             </details>
           </article>
 
@@ -7932,6 +7986,7 @@ offline.nsummary()</code></pre>
                 Packet tools are normal cybersecurity learning tools, but they interact with real networks. Permission,
                 scope, and restraint are part of the technical skill.
               </p>
+              <a class="page-ref" href="#lesson8-scapy-purpose" data-study-route="lesson8-study">Review: Lesson 8, pages 3 and 9-28.</a>
             </details>
           </article>
         </section>
@@ -7942,15 +7997,15 @@ offline.nsummary()</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 9 sections">
           <p class="sidebar-label">Lesson 9 Study Material</p>
-          <a href="#lesson9-intro">1. What Web Scraping Is</a>
-          <a href="#lesson9-legal">2. Legal and Ethical Boundaries</a>
-          <a href="#lesson9-challenges">3. Scraping Challenges</a>
-          <a href="#lesson9-libraries">4. Library Choices</a>
-          <a href="#lesson9-requests">5. Requests</a>
-          <a href="#lesson9-bs4">6. Beautiful Soup</a>
-          <a href="#lesson9-lxml">7. lxml and XPath</a>
-          <a href="#lesson9-selenium">8. Selenium and WebDrivers</a>
-          <a href="#lesson9-export">9. Exporting Data</a>
+          <a href="#lesson9-intro">1. What Web Scraping Is <small>Page 3</small></a>
+          <a href="#lesson9-legal">2. Legal and Ethical Boundaries <small>Page 4</small></a>
+          <a href="#lesson9-challenges">3. Scraping Challenges <small>Page 5</small></a>
+          <a href="#lesson9-libraries">4. Library Choices <small>Pages 6, 18</small></a>
+          <a href="#lesson9-requests">5. Requests <small>Page 7</small></a>
+          <a href="#lesson9-bs4">6. Beautiful Soup <small>Pages 8-10</small></a>
+          <a href="#lesson9-lxml">7. lxml and XPath <small>Pages 11-12</small></a>
+          <a href="#lesson9-selenium">8. Selenium and WebDrivers <small>Pages 13-19</small></a>
+          <a href="#lesson9-export">9. Exporting Data <small>Pages 20-22</small></a>
           <a href="#lesson9-practice" data-route="lesson9-practice">Testing Environment</a>
         </aside>
 
@@ -7978,6 +8033,7 @@ offline.nsummary()</code></pre>
 
           <section class="study-section" id="lesson9-intro">
             <h2>1. What Web Scraping Is</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               Web scraping means extracting data from a website. A person could do this manually by opening a page,
               copying information, and pasting it into a spreadsheet, but automation is often faster and less
@@ -8010,6 +8066,7 @@ offline.nsummary()</code></pre>
 
           <section class="study-section" id="lesson9-legal">
             <h2>2. Legal and Ethical Boundaries</h2>
+            <p class="section-pages">Source page 4</p>
             <p>
               Web scraping is not automatically illegal, and it is not automatically acceptable either. The safest
               beginner rule is to scrape only pages you are allowed to use, keep requests small and respectful, and avoid
@@ -8046,6 +8103,7 @@ offline.nsummary()</code></pre>
 
           <section class="study-section" id="lesson9-challenges">
             <h2>3. Why Web Scraping Can Be Difficult</h2>
+            <p class="section-pages">Source page 5</p>
             <p>
               The web is not one consistent database. It grew organically from many people, technologies, design
               systems, frameworks, and business goals. Two pages may look similar to a person but have completely
@@ -8075,6 +8133,7 @@ offline.nsummary()</code></pre>
 
           <section class="study-section" id="lesson9-libraries">
             <h2>4. Choosing the Right Library</h2>
+            <p class="section-pages">Source pages 6 and 18</p>
             <p>
               Python has several web scraping libraries because different pages require different tools. Requests is
               excellent when the page content is available in the HTML response. Beautiful Soup is beginner-friendly for
@@ -8113,6 +8172,7 @@ offline.nsummary()</code></pre>
 
           <section class="study-section" id="lesson9-requests">
             <h2>5. Requests: Getting Web Pages and Sending Form Data</h2>
+            <p class="section-pages">Source page 7</p>
             <p>
               Web scraping usually begins with an HTTP request. HTTP is the protocol browsers use to request web pages
               from servers. A <code>GET</code> request asks for a resource, such as a page. A <code>POST</code> request
@@ -8161,6 +8221,7 @@ print(response.text[:500])</code></pre>
 
           <section class="study-section" id="lesson9-bs4">
             <h2>6. Beautiful Soup: Parsing and Searching HTML</h2>
+            <p class="section-pages">Source pages 8-10</p>
             <p>
               Beautiful Soup is a parsing library. It does not download pages by itself. Instead, it takes HTML that you
               already retrieved with Requests, Selenium, a file, or another source, and turns it into a parse tree. A
@@ -8238,6 +8299,7 @@ for card in book_cards:
 
           <section class="study-section" id="lesson9-lxml">
             <h2>7. lxml and XPath</h2>
+            <p class="section-pages">Source pages 11-12</p>
             <p>
               <code>lxml</code> is a fast parsing library for HTML and XML. It is often chosen when performance matters
               or when a project uses XPath expressions. XPath is a query language for selecting nodes inside XML or HTML
@@ -8284,6 +8346,7 @@ for title in titles:
 
           <section class="study-section" id="lesson9-selenium">
             <h2>8. Selenium and WebDrivers</h2>
+            <p class="section-pages">Source pages 13-19</p>
             <p>
               Requests, Beautiful Soup, and lxml work well when the useful data is already present in the HTML returned
               by the server. Some websites, however, rely on JavaScript to fill in fields, menus, tables, or product
@@ -8397,6 +8460,7 @@ driver.quit()</code></pre>
 
           <section class="study-section" id="lesson9-export">
             <h2>9. Exporting Data to CSV and Excel</h2>
+            <p class="section-pages">Source pages 20-22</p>
             <p>
               Once a scraper extracts data, the result should be stored in a useful format. Pandas is a common choice
               because it can turn a list or dictionary of values into a DataFrame, which is a two-dimensional table with
@@ -8497,7 +8561,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Web scraping extracts data from a website and stores it in a more useful format. Responsible scraping
                 also considers terms of service, public/private data, request volume, and personal information.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 3-4.</span>
+              <a class="page-ref" href="#lesson9-intro" data-study-route="lesson9-study">Review: Lesson 9, pages 3-4.</a>
             </details>
           </article>
 
@@ -8516,7 +8580,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Scrapers depend on page structure. When HTML structure, class names, pagination, or JavaScript behavior
                 changes, the scraper may need updates.
               </p>
-              <span class="page-ref">Review: Lesson 9, page 5.</span>
+              <a class="page-ref" href="#lesson9-challenges" data-study-route="lesson9-study">Review: Lesson 9, page 5.</a>
             </details>
           </article>
 
@@ -8535,7 +8599,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Requests gets pages, Beautiful Soup and lxml parse pages, and Selenium controls a browser for dynamic
                 pages. Use the lightest tool that solves the actual page problem.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 6 and 18.</span>
+              <a class="page-ref" href="#lesson9-libraries" data-study-route="lesson9-study">Review: Lesson 9, pages 6 and 18.</a>
             </details>
           </article>
         </section>
@@ -8563,7 +8627,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Requests simplifies HTTP. Use <code>get()</code> to request a page and <code>post()</code> to send form
                 data. Always check whether the response succeeded before parsing it.
               </p>
-              <span class="page-ref">Review: Lesson 9, page 7.</span>
+              <a class="page-ref" href="#lesson9-requests" data-study-route="lesson9-study">Review: Lesson 9, page 7.</a>
             </details>
           </article>
 
@@ -8583,7 +8647,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Beautiful Soup parses HTML, but it does not request the page by itself. Requests gets the HTML, and
                 Beautiful Soup turns that HTML into a searchable tree.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 8-9.</span>
+              <a class="page-ref" href="#lesson9-bs4" data-study-route="lesson9-study">Review: Lesson 9, pages 8-9.</a>
             </details>
           </article>
 
@@ -8603,7 +8667,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 CSS selectors can target classes with <code>.</code>, IDs with <code>#</code>, and nested structures
                 with selector combinations. <code>select()</code> returns multiple matches.
               </p>
-              <span class="page-ref">Review: Lesson 9, page 10.</span>
+              <a class="page-ref" href="#lesson9-bs4" data-study-route="lesson9-study">Review: Lesson 9, page 10.</a>
             </details>
           </article>
 
@@ -8623,7 +8687,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 lxml builds a tree from HTML text, then XPath selects nodes, text, or attributes. It is fast and
                 powerful, especially for structured documents.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 11-12.</span>
+              <a class="page-ref" href="#lesson9-lxml" data-study-route="lesson9-study">Review: Lesson 9, pages 11-12.</a>
             </details>
           </article>
         </section>
@@ -8651,7 +8715,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Selenium needs a browser, a compatible driver, and the Selenium package. The driver lets Python control
                 the browser.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 14-15.</span>
+              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, pages 14-15.</a>
             </details>
           </article>
 
@@ -8670,7 +8734,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Selenium locators include ID, name, XPath, full link text, partial link text, tag name, class name, and
                 CSS selector. One method returns one match; the plural method returns a list.
               </p>
-              <span class="page-ref">Review: Lesson 9, page 16.</span>
+              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, page 16.</a>
             </details>
           </article>
 
@@ -8691,7 +8755,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Selenium can render the page first. Beautiful Soup can then parse <code>driver.page_source</code>, which
                 is useful when content appears after browser rendering.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 17 and 19.</span>
+              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, pages 17 and 19.</a>
             </details>
           </article>
         </section>
@@ -8719,7 +8783,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Pandas DataFrames store tabular data. Use <code>to_csv()</code> for CSV and <code>to_excel()</code> for
                 Excel. Excel export may require <code>openpyxl</code>.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 20-21.</span>
+              <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 20-21.</a>
             </details>
           </article>
 
@@ -8743,7 +8807,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 Break the program into extraction and export functions. Use the page structure to select each country's
                 fields, store each record in a consistent shape, then let pandas write the final table.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 19-22.</span>
+              <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 19-22.</a>
             </details>
           </article>
 
@@ -8762,7 +8826,7 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 A scraper should not only work once. It should make failures visible, keep data shapes consistent, and
                 export files that can be opened and checked.
               </p>
-              <span class="page-ref">Review: Lesson 9, pages 5 and 20-22.</span>
+              <a class="page-ref" href="#lesson9-challenges" data-study-route="lesson9-study">Review: Lesson 9, pages 5 and 20-22.</a>
             </details>
           </article>
         </section>
