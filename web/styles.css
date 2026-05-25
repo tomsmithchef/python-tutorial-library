@@ -399,6 +399,14 @@ h3 {
   font-weight: 650;
 }
 
+.sidebar a small {
+  display: block;
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
 .sidebar a:hover {
   color: var(--blue);
   background: var(--blue-soft);
@@ -478,6 +486,18 @@ h3 {
 
 .study-section:last-child {
   border-bottom: 0;
+}
+
+.section-pages {
+  width: fit-content;
+  margin: -10px 0 20px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--green);
+  background: var(--green-soft);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
 }
 
 .callout,
@@ -792,6 +812,13 @@ details p {
   background: var(--green-soft);
   font-size: 0.9rem;
   font-weight: 800;
+  text-decoration: none;
+}
+
+.page-ref:hover,
+.page-ref:focus-visible {
+  color: white;
+  background: var(--green);
 }
 
 .team-grid {

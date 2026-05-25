@@ -177,6 +177,21 @@ document.querySelectorAll(".sidebar a[href^='#study-']").forEach((link) => {
   });
 });
 
+document.querySelectorAll("[data-study-route]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetSelector = link.getAttribute("href");
+    const target = document.querySelector(targetSelector);
+    setRoute(link.dataset.studyRoute);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", targetSelector);
+      }, 0);
+    }
+  });
+});
+
 document.querySelectorAll(".sidebar a[href^='#lesson2-']:not([data-route])").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
