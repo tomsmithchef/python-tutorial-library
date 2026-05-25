@@ -137,6 +137,15 @@ print("Welcome,", name)
             <a href="#lesson8-practice" data-route="lesson8-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 9</p>
+          <h2>Python for Cybersecurity: Web Scraping</h2>
+          <p>Responsible scraping, Requests, Beautiful Soup, lxml, Selenium, WebDrivers, parsing, and exporting data.</p>
+          <div class="chapter-links">
+            <a href="#lesson9-study" data-route="lesson9-study">Study</a>
+            <a href="#lesson9-practice" data-route="lesson9-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -208,6 +217,12 @@ print("Welcome,", name)
             <h2>Scapy and Packet Analysis</h2>
             <p>Practice Wireshark capture review, PCAP reading, Scapy packet construction, send/receive patterns, and sniffing.</p>
             <span class="testing-card-action">Open Lesson 8 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson9-practice" data-route="lesson9-practice">
+            <p class="chapter-number">Lesson 9</p>
+            <h2>Web Scraping</h2>
+            <p>Practice responsible scraping, HTTP requests, parsers, Selenium, and CSV/Excel export workflows.</p>
+            <span class="testing-card-action">Open Lesson 9 Testing</span>
           </a>
         </section>
       </div>
@@ -7828,6 +7843,837 @@ offline.nsummary()</code></pre>
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson9-study-view" aria-labelledby="lesson9-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 9 sections">
+          <p class="sidebar-label">Lesson 9 Study Material</p>
+          <a href="#lesson9-intro">1. What Web Scraping Is</a>
+          <a href="#lesson9-legal">2. Legal and Ethical Boundaries</a>
+          <a href="#lesson9-challenges">3. Scraping Challenges</a>
+          <a href="#lesson9-libraries">4. Library Choices</a>
+          <a href="#lesson9-requests">5. Requests</a>
+          <a href="#lesson9-bs4">6. Beautiful Soup</a>
+          <a href="#lesson9-lxml">7. lxml and XPath</a>
+          <a href="#lesson9-selenium">8. Selenium and WebDrivers</a>
+          <a href="#lesson9-export">9. Exporting Data</a>
+          <a href="#lesson9-practice" data-route="lesson9-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 9</p>
+            <h1 id="lesson9-study-title">Python for Cybersecurity: Web Scraping</h1>
+            <p>
+              Lesson 9 introduces web scraping: the process of collecting information from web pages and converting it
+              into a more useful format such as a list, spreadsheet, CSV file, Excel workbook, or API-friendly dataset.
+              The chapter connects several tools that each solve a different part of the scraping workflow. Requests
+              retrieves web pages. Beautiful Soup and lxml parse page content. Selenium controls a real browser when
+              JavaScript-generated content needs to load first. Pandas can store the final result in tabular files.
+            </p>
+            <p>
+              The technical side is only half of the chapter. Scraping also requires judgment. A beginner should learn
+              to ask whether the page is public, whether the terms of service allow automated collection, whether the
+              data contains personal information, and whether the script behaves respectfully.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson8-study" data-route="lesson8-study">Previous: Lesson 8</a>
+              <a class="lesson-nav-button next" href="#lesson9-practice" data-route="lesson9-practice">Next: Lesson 9 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson9-intro">
+            <h2>1. What Web Scraping Is</h2>
+            <p>
+              Web scraping means extracting data from a website. A person could do this manually by opening a page,
+              copying information, and pasting it into a spreadsheet, but automation is often faster and less
+              repetitive. A script can request a page, inspect its HTML, select the pieces of information that matter,
+              and save the result in a format that is easier to analyze.
+            </p>
+            <p>
+              A simple scraping workflow has four stages. First, the script retrieves the page. Second, it parses the
+              page into a structure Python can navigate. Third, it extracts values from the relevant elements. Fourth,
+              it stores the extracted values. In Lesson 9, a common example is the site
+              <code>http://books.toscrape.com/</code>, where book titles are stored inside repeated product cards.
+            </p>
+            <div class="reference-card">
+              <h3>Basic scraping workflow</h3>
+              <ol>
+                <li>Request the page HTML from the server.</li>
+                <li>Parse the HTML into a searchable structure.</li>
+                <li>Select the relevant elements by tag, class, ID, CSS selector, or XPath.</li>
+                <li>Extract the text or attribute values you need.</li>
+                <li>Clean and organize the values.</li>
+                <li>Export the result to CSV, Excel, or another format.</li>
+              </ol>
+            </div>
+            <p>
+              Web scraping can be useful for research, price monitoring, classroom exercises, data collection from
+              public pages, and transforming scattered web information into a structured dataset. It can also become
+              fragile quickly, because web pages are designed primarily for humans and browsers, not always for scripts.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson9-legal">
+            <h2>2. Legal and Ethical Boundaries</h2>
+            <p>
+              Web scraping is not automatically illegal, and it is not automatically acceptable either. The safest
+              beginner rule is to scrape only pages you are allowed to use, keep requests small and respectful, and avoid
+              collecting sensitive personal data. Publicly visible information is not the same thing as unrestricted
+              information. A website may have terms of service, copyright rules, rate limits, or anti-automation
+              expectations.
+            </p>
+            <p>
+              The chapter emphasizes that scraping is usually treated differently when the data is public, the website
+              does not forbid the activity, and the purpose is ordinary research or analysis. It becomes risky and often
+              illegal when the data is used for malicious purposes, sold improperly, or includes sensitive information
+              such as personal addresses, phone numbers, private account details, or other protected data.
+            </p>
+            <div class="callout warning">
+              <h3>Not legal advice</h3>
+              <p>
+                This chapter teaches technical concepts, not legal advice. Before building a real scraper, read the
+                site's terms of service, check whether an API is available, respect rate limits, and avoid collecting or
+                sharing personal information.
+              </p>
+            </div>
+            <div class="reference-card">
+              <h3>Responsible scraping habits</h3>
+              <ul class="compact-list">
+                <li>Prefer an official API when one exists.</li>
+                <li>Read the website's terms and copyright policy.</li>
+                <li>Keep request volume low while learning.</li>
+                <li>Do not scrape login-protected or private data without permission.</li>
+                <li>Do not collect personal information for spam, resale, harassment, or profiling.</li>
+                <li>Identify and document the source of your dataset.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson9-challenges">
+            <h2>3. Why Web Scraping Can Be Difficult</h2>
+            <p>
+              The web is not one consistent database. It grew organically from many people, technologies, design
+              systems, frameworks, and business goals. Two pages may look similar to a person but have completely
+              different HTML underneath. A scraper that works perfectly on one page may fail on another page because the
+              class names, element nesting, JavaScript behavior, or pagination pattern is different.
+            </p>
+            <p>
+              The first challenge is variety. Every website needs personal treatment. You may see repeated ideas, such
+              as headings, links, tables, lists, and product cards, but the exact markup is unique. A beginner scraper
+              should start by inspecting the page carefully and choosing selectors that are specific enough to find the
+              right data but not so brittle that a tiny layout change breaks everything.
+            </p>
+            <p>
+              The second challenge is durability. Websites change. A class name can be renamed, a product card can gain
+              another wrapper element, a page can move from static HTML to JavaScript rendering, or a site can redesign
+              its layout entirely. When this happens, a scraper may produce empty results or raise a stack trace. Good
+              scraping code includes checks, clear errors, and small tests so you know when the page structure changes.
+            </p>
+            <div class="callout">
+              <h3>Maintenance is normal</h3>
+              <p>
+                A scraper is not a one-time spell. Treat it like code that depends on someone else's changing website.
+                If the site changes, the scraper may need updates.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson9-libraries">
+            <h2>4. Choosing the Right Library</h2>
+            <p>
+              Python has several web scraping libraries because different pages require different tools. Requests is
+              excellent when the page content is available in the HTML response. Beautiful Soup is beginner-friendly for
+              parsing and searching HTML. lxml is very fast and works well with XPath. Selenium automates a real browser
+              and can handle pages whose content appears only after JavaScript runs.
+            </p>
+            <div class="reference-card">
+              <h3>Web scraping library comparison</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Library</th>
+                      <th>Main purpose</th>
+                      <th>Speed</th>
+                      <th>JavaScript support</th>
+                      <th>Beginner use case</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Requests</th><td>Send HTTP GET and POST requests.</td><td>Fast</td><td>No</td><td>Download page HTML or submit simple form data.</td></tr>
+                    <tr><th>Beautiful Soup</th><td>Parse and search HTML.</td><td>Fast enough for many projects</td><td>No</td><td>Find titles, links, tables, and text from HTML.</td></tr>
+                    <tr><th>lxml</th><td>Fast HTML/XML parsing with XPath.</td><td>Very fast</td><td>No</td><td>Extract data from larger documents or precise XPath paths.</td></tr>
+                    <tr><th>Selenium</th><td>Automate a real browser.</td><td>Slow</td><td>Yes</td><td>Work with dynamic pages that require JavaScript rendering.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              The important habit is to pick the simplest tool that actually solves the problem. If Requests and
+              Beautiful Soup can get the data, use them. If the page is large and XPath is natural, consider lxml. If
+              the data only appears after JavaScript runs in a browser, Selenium becomes more appropriate, even though
+              it is slower and heavier.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson9-requests">
+            <h2>5. Requests: Getting Web Pages and Sending Form Data</h2>
+            <p>
+              Web scraping usually begins with an HTTP request. HTTP is the protocol browsers use to request web pages
+              from servers. A <code>GET</code> request asks for a resource, such as a page. A <code>POST</code> request
+              sends data to a server, often from a form. Python includes lower-level networking tools, but the
+              <code>requests</code> library makes common HTTP work easier to read and debug.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Install Requests</span><button class="copy-code">Copy</button></div>
+              <pre><code>pip install requests</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>HTTP GET with Requests</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+
+url = "https://williscollege.com/"
+response = requests.get(url, timeout=10)
+
+print(response.status_code)
+print(response.text[:500])</code></pre>
+            </div>
+            <p>
+              The response object contains several useful pieces of information. <code>response.status_code</code> tells
+              you whether the server reports success, redirect, client error, or server error. <code>response.text</code>
+              gives decoded text, which is usually what you want for HTML. <code>response.content</code> gives raw bytes,
+              which can be useful for binary files or when you need exact byte-level data.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>HTTP POST with form data</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+
+form_data = {
+    "key1": "value1",
+    "key2": "value2",
+}
+
+response = requests.post("https://williscollege.com/", data=form_data, timeout=10)
+print(response.status_code)
+print(response.text[:500])</code></pre>
+            </div>
+            <p>
+              When learning scraping, always inspect the status code before assuming your request succeeded. A script
+              that blindly parses an error page may produce confusing results. In real scraping code, you might call
+              <code>response.raise_for_status()</code> so HTTP errors become Python exceptions.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson9-bs4">
+            <h2>6. Beautiful Soup: Parsing and Searching HTML</h2>
+            <p>
+              Beautiful Soup is a parsing library. It does not download pages by itself. Instead, it takes HTML that you
+              already retrieved with Requests, Selenium, a file, or another source, and turns it into a parse tree. A
+              parse tree is a navigable representation of the HTML document. You can search it by tag name, class, ID,
+              CSS selector, text, or relationships between elements.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Install Beautiful Soup</span><button class="copy-code">Copy</button></div>
+              <pre><code>pip install beautifulsoup4</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Get HTML and read the page title</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+from bs4 import BeautifulSoup
+
+url = "http://books.toscrape.com/"
+response = requests.get(url, timeout=10)
+
+soup = BeautifulSoup(response.text, "html.parser")
+print(soup.title)</code></pre>
+            </div>
+            <p>
+              The parser name <code>"html.parser"</code> refers to Python's built-in HTML parser. It is convenient
+              because it does not require an extra parser install. Beautiful Soup can also use other parsers, including
+              lxml, when they are available.
+            </p>
+            <p>
+              The chapter shows repeated book titles inside <code>h3</code> elements. Beautiful Soup can find those
+              elements with <code>find_all()</code>. Some older examples use <code>findAll()</code>; it still appears in
+              many tutorials, but <code>find_all()</code> is the modern Python-style spelling.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Find repeated title elements</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+from bs4 import BeautifulSoup
+
+url = "http://books.toscrape.com/"
+response = requests.get(url, timeout=10)
+soup = BeautifulSoup(response.text, "html.parser")
+
+book_titles = soup.find_all("h3")
+
+for title in book_titles:
+    print(title.get_text(strip=True))</code></pre>
+            </div>
+            <p>
+              CSS selectors are another way to find elements. If you know CSS, <code>soup.select()</code> can be very
+              readable. For example, on the book scraping practice site, each product card uses the class
+              <code>product_pod</code>, so <code>soup.select(".product_pod")</code> returns those cards. You can then
+              search inside each card for a link, title, price, or other detail.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Use CSS selectors</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+from bs4 import BeautifulSoup
+
+url = "http://books.toscrape.com/"
+response = requests.get(url, timeout=10)
+soup = BeautifulSoup(response.text, "html.parser")
+
+book_cards = soup.select(".product_pod")
+
+for card in book_cards:
+    title_link = card.select_one("h3 a")
+    if title_link:
+        print(title_link["title"])</code></pre>
+            </div>
+            <p>
+              Beautiful Soup can also find elements by ID and other attributes. A common pattern is
+              <code>soup.find("div", attrs={"id": "some-id"})</code>, which means "find the first <code>div</code>
+              whose <code>id</code> attribute has this value." IDs should be unique on a page, while classes often
+              repeat.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson9-lxml">
+            <h2>7. lxml and XPath</h2>
+            <p>
+              <code>lxml</code> is a fast parsing library for HTML and XML. It is often chosen when performance matters
+              or when a project uses XPath expressions. XPath is a query language for selecting nodes inside XML or HTML
+              documents. Where CSS selectors often describe visual styling relationships, XPath can describe document
+              paths and functions such as selecting text nodes.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Install lxml</span><button class="copy-code">Copy</button></div>
+              <pre><code>pip install lxml</code></pre>
+            </div>
+            <p>
+              lxml needs HTML text before it can build a tree. Requests can provide that text. The
+              <code>html.fromstring()</code> function parses the HTML string into a tree object, and
+              <code>tree.xpath()</code> returns the nodes or values that match the XPath expression.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Parse with lxml and use XPath</span><button class="copy-code">Copy</button></div>
+              <pre><code>import requests
+from lxml import html
+
+url = "http://books.toscrape.com/"
+response = requests.get(url, timeout=10)
+
+tree = html.fromstring(response.text)
+titles = tree.xpath("//article[@class='product_pod']/h3/a/@title")
+
+for title in titles:
+    print(title)</code></pre>
+            </div>
+            <p>
+              The expression <code>//article[@class='product_pod']/h3/a/@title</code> means: find article elements
+              whose class is <code>product_pod</code>, then go to their <code>h3</code> child, then their
+              <code>a</code> child, then return the link's <code>title</code> attribute. XPath can also use
+              <code>text()</code> to return text nodes.
+            </p>
+            <div class="callout">
+              <h3>lxml and imperfect HTML</h3>
+              <p>
+                lxml is fast and powerful, but poorly formed HTML can make parsing harder. Beautiful Soup is often more
+                forgiving for messy beginner examples, while lxml is excellent when the structure is predictable.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson9-selenium">
+            <h2>8. Selenium and WebDrivers</h2>
+            <p>
+              Requests, Beautiful Soup, and lxml work well when the useful data is already present in the HTML returned
+              by the server. Some websites, however, rely on JavaScript to fill in fields, menus, tables, or product
+              listings after the first page load. In that case, a simple Requests call may retrieve an almost empty page
+              shell. Selenium solves this by automating a real browser.
+            </p>
+            <p>
+              Selenium is an open-source browser automation tool. It is widely used for testing web applications, but it
+              can also be used for scraping when the page must render JavaScript first. The tradeoff is speed. A real
+              browser is heavier than a simple HTTP request, so Selenium is slower and consumes more CPU and memory.
+            </p>
+            <div class="reference-card">
+              <h3>Selenium requirements</h3>
+              <ul class="compact-list">
+                <li>A supported browser such as Chrome, Edge, Firefox, or Safari.</li>
+                <li>A compatible browser driver, such as ChromeDriver or GeckoDriver.</li>
+                <li>The Selenium Python package.</li>
+              </ul>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Install Selenium</span><button class="copy-code">Copy</button></div>
+              <pre><code>pip install selenium</code></pre>
+            </div>
+            <p>
+              The driver version should match the browser you are automating. For Chrome, that usually means
+              ChromeDriver. For Firefox, it means GeckoDriver. The driver is an executable file saved somewhere on your
+              machine, and Selenium uses it to control the browser.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Open a page with Chrome WebDriver</span><button class="copy-code">Copy</button></div>
+              <pre><code>from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
+path = "C:/WebDriver/chromedriver.exe"
+service = Service(path)
+
+driver = webdriver.Chrome(service=service)
+driver.get("http://books.toscrape.com/")</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Find elements with Selenium</span><button class="copy-code">Copy</button></div>
+              <pre><code>from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+service = Service("C:/WebDriver/chromedriver.exe")
+driver = webdriver.Chrome(service=service)
+driver.get("http://books.toscrape.com/")
+
+title_by_tag = driver.find_element(By.TAG_NAME, "title")
+first_product = driver.find_element(By.CLASS_NAME, "product_pod")
+all_titles = driver.find_elements(By.CSS_SELECTOR, ".product_pod h3 a")
+
+for title in all_titles:
+    print(title.get_attribute("title"))</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>Selenium locator reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Locator</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>By.ID</code></th><td>Find by an element's unique ID attribute.</td></tr>
+                    <tr><th><code>By.NAME</code></th><td>Find by a form field or element name.</td></tr>
+                    <tr><th><code>By.XPATH</code></th><td>Find using an XPath expression.</td></tr>
+                    <tr><th><code>By.LINK_TEXT</code></th><td>Find a link by its full visible text.</td></tr>
+                    <tr><th><code>By.PARTIAL_LINK_TEXT</code></th><td>Find a link by part of its visible text.</td></tr>
+                    <tr><th><code>By.TAG_NAME</code></th><td>Find by tag such as <code>h1</code>, <code>a</code>, or <code>table</code>.</td></tr>
+                    <tr><th><code>By.CLASS_NAME</code></th><td>Find by one class name.</td></tr>
+                    <tr><th><code>By.CSS_SELECTOR</code></th><td>Find by a CSS selector.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Selenium can also work with Beautiful Soup. One common pattern is to let Selenium open the page and run
+              the JavaScript, then read <code>driver.page_source</code> and pass that rendered HTML to Beautiful Soup.
+              This gives you browser rendering plus Beautiful Soup's comfortable parsing methods.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Use Selenium page source with Beautiful Soup</span><button class="copy-code">Copy</button></div>
+              <pre><code>from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
+service = Service("C:/WebDriver/chromedriver.exe")
+driver = webdriver.Chrome(service=service)
+driver.get("http://books.toscrape.com/")
+
+content = driver.page_source
+soup = BeautifulSoup(content, "html.parser")
+
+results = []
+
+for element in soup.find_all("h3"):
+    name = element.find("a")
+    if name:
+        results.append(name.get_text(strip=True))
+
+for item in results:
+    print(item)
+
+driver.quit()</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson9-export">
+            <h2>9. Exporting Data to CSV and Excel</h2>
+            <p>
+              Once a scraper extracts data, the result should be stored in a useful format. Pandas is a common choice
+              because it can turn a list or dictionary of values into a DataFrame, which is a two-dimensional table with
+              rows and columns. From there, exporting to CSV or Excel is straightforward.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Install pandas and Excel support</span><button class="copy-code">Copy</button></div>
+              <pre><code>pip install pandas
+pip install openpyxl</code></pre>
+            </div>
+            <p>
+              CSV stands for comma-separated values. It is plain text and works well for many simple datasets. Excel
+              files are richer spreadsheet files and require an Excel-writing engine such as <code>openpyxl</code>. In
+              both cases, the file extension matters. If you save a CSV without <code>.csv</code> or an Excel file
+              without <code>.xlsx</code>, other programs may not recognize it correctly.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Export scraped titles to CSV</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+results = [
+    "A Light in the Attic",
+    "Tipping the Velvet",
+    "Soumission",
+]
+
+df = pd.DataFrame({"book Title": results})
+df.to_csv("Book_title.csv", index=False, encoding="utf-8")</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Export scraped titles to Excel</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+results = [
+    "A Light in the Attic",
+    "Tipping the Velvet",
+    "Soumission",
+]
+
+df = pd.DataFrame({"book Title": results})
+df.to_excel("Book_title.xlsx", index=False)</code></pre>
+            </div>
+            <p>
+              The argument <code>index=False</code> prevents pandas from writing the DataFrame's row index as an extra
+              column. The argument <code>encoding="utf-8"</code> is useful for CSV because UTF-8 handles a wide range of
+              characters and is a sensible default for text data.
+            </p>
+            <div class="next-step-panel">
+              <h3>Ready to practice Lesson 9?</h3>
+              <p>
+                The Lesson 9 testing environment contains responsible-scraping checks, Requests and Beautiful Soup
+                prompts, Selenium review, export practice, and the country-data challenge. It does not provide
+                completed answers.
+              </p>
+              <a class="button primary" href="#lesson9-practice" data-route="lesson9-practice">Practice Lesson 9</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson9-practice-view" aria-labelledby="lesson9-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 9 Testing Environment</p>
+          <h1 id="lesson9-practice-title">Web Scraping Practice</h1>
+          <p>
+            Complete these activities in your own IDE. The concept reminders give a study nudge and include page
+            references so you know where to reread the matching Lesson 9 material.
+          </p>
+        </header>
+
+        <div class="practice-tabs" role="tablist" aria-label="Lesson 9 practice groups">
+          <button class="tab active" data-practice-tab="lesson9-responsible-activities">Responsible Scraping</button>
+          <button class="tab" data-practice-tab="lesson9-parser-activities">Requests and Parsers</button>
+          <button class="tab" data-practice-tab="lesson9-selenium-activities">Selenium</button>
+          <button class="tab" data-practice-tab="lesson9-export-activities">Export Challenge</button>
+        </div>
+
+        <section class="practice-panel active" id="lesson9-responsible-activities">
+          <div class="panel-intro">
+            <h2>Responsible Scraping Activities</h2>
+            <p>These activities check the judgment side of scraping before you write automation.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Scraping Purpose and Boundary Check</h3>
+            <ol>
+              <li>Define web scraping in your own words.</li>
+              <li>Explain why automated scraping is often faster than manual copying.</li>
+              <li>List two examples of acceptable educational or research scraping.</li>
+              <li>List two examples of scraping behavior that would be unsafe, unethical, or illegal.</li>
+              <li>Write a short checklist you would review before scraping a new website.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Web scraping extracts data from a website and stores it in a more useful format. Responsible scraping
+                also considers terms of service, public/private data, request volume, and personal information.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 3-4.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Challenge Risks: Variety and Durability</h3>
+            <ol>
+              <li>Explain why every website may need a custom scraper.</li>
+              <li>Describe how a website redesign can break a previously working scraper.</li>
+              <li>Give one example of a selector that might be too fragile.</li>
+              <li>Describe one way to test whether a scraper still works after a site changes.</li>
+              <li>Explain why scraping scripts may need ongoing maintenance.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Scrapers depend on page structure. When HTML structure, class names, pagination, or JavaScript behavior
+                changes, the scraper may need updates.
+              </p>
+              <span class="page-ref">Review: Lesson 9, page 5.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Library Selection Check</h3>
+            <ol>
+              <li>Match Requests, Beautiful Soup, lxml, and Selenium to their main purpose.</li>
+              <li>Identify which tool can run JavaScript by controlling a real browser.</li>
+              <li>Identify which tools are best for parsing static HTML.</li>
+              <li>Explain why Selenium is usually slower than Requests.</li>
+              <li>Choose a library combination for a static page and a JavaScript-heavy page.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Requests gets pages, Beautiful Soup and lxml parse pages, and Selenium controls a browser for dynamic
+                pages. Use the lightest tool that solves the actual page problem.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 6 and 18.</span>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson9-parser-activities">
+          <div class="panel-intro">
+            <h2>Requests and Parser Activities</h2>
+            <p>These prompts practice HTTP requests, Beautiful Soup selectors, and lxml XPath.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Requests GET and POST Review</h3>
+            <ol>
+              <li>Install the Requests library if needed.</li>
+              <li>Write a GET request for a permitted URL.</li>
+              <li>Print the response status code.</li>
+              <li>Print a small slice of <code>response.text</code>.</li>
+              <li>Create a small dictionary of form data.</li>
+              <li>Write a POST request that sends that dictionary to a permitted test endpoint.</li>
+              <li>Explain the difference between <code>response.text</code> and <code>response.content</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Requests simplifies HTTP. Use <code>get()</code> to request a page and <code>post()</code> to send form
+                data. Always check whether the response succeeded before parsing it.
+              </p>
+              <span class="page-ref">Review: Lesson 9, page 7.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Beautiful Soup Title and h3 Extraction</h3>
+            <ol>
+              <li>Use Requests to retrieve <code>http://books.toscrape.com/</code>.</li>
+              <li>Create a Beautiful Soup object with <code>html.parser</code>.</li>
+              <li>Print the page title.</li>
+              <li>Find all <code>h3</code> elements.</li>
+              <li>Loop through the elements and print cleaned text.</li>
+              <li>Explain why Beautiful Soup is paired with Requests in this exercise.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Beautiful Soup parses HTML, but it does not request the page by itself. Requests gets the HTML, and
+                Beautiful Soup turns that HTML into a searchable tree.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 8-9.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>CSS Selector Practice</h3>
+            <ol>
+              <li>Use <code>soup.select(".product_pod")</code> to collect book product cards.</li>
+              <li>Loop through the cards.</li>
+              <li>Inside each card, find the title link.</li>
+              <li>Print the title text or title attribute.</li>
+              <li>Use <code>soup.find()</code> with an attributes dictionary to find an element by ID in a sample page.</li>
+              <li>Explain when a CSS selector feels easier than <code>find_all()</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                CSS selectors can target classes with <code>.</code>, IDs with <code>#</code>, and nested structures
+                with selector combinations. <code>select()</code> returns multiple matches.
+              </p>
+              <span class="page-ref">Review: Lesson 9, page 10.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>lxml XPath Practice</h3>
+            <ol>
+              <li>Install <code>lxml</code> if needed.</li>
+              <li>Use Requests to retrieve a permitted HTML page.</li>
+              <li>Create a tree with <code>html.fromstring()</code>.</li>
+              <li>Write an XPath expression that returns text or attribute values.</li>
+              <li>Print each value returned by <code>tree.xpath()</code>.</li>
+              <li>Explain how XPath differs from a Beautiful Soup tag search.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                lxml builds a tree from HTML text, then XPath selects nodes, text, or attributes. It is fast and
+                powerful, especially for structured documents.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 11-12.</span>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson9-selenium-activities">
+          <div class="panel-intro">
+            <h2>Selenium Activities</h2>
+            <p>These prompts practice deciding when browser automation is needed and using Selenium locators.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Selenium Setup Checklist</h3>
+            <ol>
+              <li>Identify the browser you plan to automate.</li>
+              <li>Download or locate the matching WebDriver executable for that browser.</li>
+              <li>Install the Selenium Python package.</li>
+              <li>Create a <code>Service</code> object for the driver path.</li>
+              <li>Create a browser driver object.</li>
+              <li>Open <code>http://books.toscrape.com/</code> with <code>driver.get()</code>.</li>
+              <li>Close the browser cleanly when done.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Selenium needs a browser, a compatible driver, and the Selenium package. The driver lets Python control
+                the browser.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 14-15.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Selenium Locator Review</h3>
+            <ol>
+              <li>Use <code>By.TAG_NAME</code> to find a tag on a page.</li>
+              <li>Use <code>By.CLASS_NAME</code> to find an element by class.</li>
+              <li>Use <code>By.CSS_SELECTOR</code> to find all title links in product cards.</li>
+              <li>Explain the difference between <code>find_element()</code> and <code>find_elements()</code>.</li>
+              <li>List all eight locator types covered in the lesson.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Selenium locators include ID, name, XPath, full link text, partial link text, tag name, class name, and
+                CSS selector. One method returns one match; the plural method returns a list.
+              </p>
+              <span class="page-ref">Review: Lesson 9, page 16.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Selenium Plus Beautiful Soup Extraction</h3>
+            <ol>
+              <li>Use Selenium to open the book scraping practice site.</li>
+              <li>Read <code>driver.page_source</code>.</li>
+              <li>Pass the rendered page source into Beautiful Soup.</li>
+              <li>Find all <code>h3</code> elements.</li>
+              <li>Extract the link text for each title.</li>
+              <li>Append each title to a list named <code>results</code>.</li>
+              <li>Print the list items as a quick debugging check.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Selenium can render the page first. Beautiful Soup can then parse <code>driver.page_source</code>, which
+                is useful when content appears after browser rendering.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 17 and 19.</span>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson9-export-activities">
+          <div class="panel-intro">
+            <h2>Export and Final Challenge Activities</h2>
+            <p>These activities practice storing scraped results in useful tabular formats.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>CSV and Excel Export Check</h3>
+            <ol>
+              <li>Create a list of scraped book titles or sample titles.</li>
+              <li>Create a pandas DataFrame with one clear column name.</li>
+              <li>Export the DataFrame to a CSV file.</li>
+              <li>Export the same DataFrame to an Excel file.</li>
+              <li>Use <code>index=False</code> so row numbers are not written as an extra data column.</li>
+              <li>Explain why the file extension matters.</li>
+              <li>Explain what <code>encoding="utf-8"</code> does for CSV output.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Pandas DataFrames store tabular data. Use <code>to_csv()</code> for CSV and <code>to_excel()</code> for
+                Excel. Excel export may require <code>openpyxl</code>.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 20-21.</span>
+            </details>
+          </article>
+
+          <article class="task-card prominent">
+            <h3>Country, Capital, Population, and Area Scraper</h3>
+            <p><strong>Time guide:</strong> 60-65 minutes</p>
+            <p><strong>Objective:</strong> Create a Python script that extracts and stores country data from the assigned practice site.</p>
+            <ol>
+              <li>Use this URL: <code>https://www.scrapethissite.com/pages/simple/</code>.</li>
+              <li>Create a function that accepts the URL as an argument.</li>
+              <li>The function should extract country name, capital, population, and area in square kilometers.</li>
+              <li>The function should return the extracted result as a list or list-like collection.</li>
+              <li>Create a second function that converts the extracted list to CSV or Excel.</li>
+              <li>Use clear column names: country, capital, population, and area.</li>
+              <li>Run the script and confirm the exported file contains the expected columns.</li>
+              <li>Submit your script and exported file according to your instructor's directions.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Break the program into extraction and export functions. Use the page structure to select each country's
+                fields, store each record in a consistent shape, then let pandas write the final table.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 19-22.</span>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Scraper Quality Review</h3>
+            <ol>
+              <li>Confirm your script handles a failed HTTP request clearly.</li>
+              <li>Confirm your selectors return the number of records you expect.</li>
+              <li>Confirm numeric fields are cleaned consistently before export.</li>
+              <li>Confirm the output file opens correctly in a spreadsheet program.</li>
+              <li>Write down one thing that might break if the website changes.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A scraper should not only work once. It should make failures visible, keep data shapes consistent, and
+                export files that can be opened and checked.
+              </p>
+              <span class="page-ref">Review: Lesson 9, pages 5 and 20-22.</span>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -7841,6 +8687,6 @@ offline.nsummary()</code></pre>
   <script src="community-config.js?v=20260525-4"></script>
   <script src="assignment-attachments.js?v=20260525-5"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-5"></script>
+  <script src="app.js?v=20260525-6"></script>
 </body>
 </html>

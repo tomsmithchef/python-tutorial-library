@@ -17,6 +17,8 @@ const routes = {
   "lesson7-practice": document.querySelector("#lesson7-practice-view"),
   "lesson8-study": document.querySelector("#lesson8-study-view"),
   "lesson8-practice": document.querySelector("#lesson8-practice-view"),
+  "lesson9-study": document.querySelector("#lesson9-study-view"),
+  "lesson9-practice": document.querySelector("#lesson9-practice-view"),
   community: document.querySelector("#community-view"),
 };
 
@@ -39,6 +41,8 @@ const routeLabels = {
   "lesson7-practice": ["Lesson 7", "lesson7-study", "Testing Environment"],
   "lesson8-study": ["Lesson 8", "lesson8-study", "Scapy and Packet Analysis"],
   "lesson8-practice": ["Lesson 8", "lesson8-study", "Testing Environment"],
+  "lesson9-study": ["Lesson 9", "lesson9-study", "Web Scraping"],
+  "lesson9-practice": ["Lesson 9", "lesson9-study", "Testing Environment"],
   community: ["Community", "community", "Class Board"],
 };
 
@@ -84,8 +88,10 @@ function setRoute(routeName) {
       "lesson6-practice": ["Proceed to Lesson 7", "lesson7-study"],
       "lesson7-study": ["Proceed to Lesson 8", "lesson8-study"],
       "lesson7-practice": ["Proceed to Lesson 8", "lesson8-study"],
-      "lesson8-study": ["Return to Chapters", "home"],
-      "lesson8-practice": ["Return to Chapters", "home"],
+      "lesson8-study": ["Proceed to Lesson 9", "lesson9-study"],
+      "lesson8-practice": ["Proceed to Lesson 9", "lesson9-study"],
+      "lesson9-study": ["Return to Chapters", "home"],
+      "lesson9-practice": ["Return to Chapters", "home"],
     };
     const next = nextRoutes[safeRoute];
     footerNext.hidden = !next;
@@ -135,6 +141,9 @@ function routeFromHash() {
   }
   if (hash.startsWith("lesson8-") && !routes[hash]) {
     return "lesson8-study";
+  }
+  if (hash.startsWith("lesson9-") && !routes[hash]) {
+    return "lesson9-study";
   }
   return hash || "home";
 }
@@ -238,6 +247,17 @@ document.querySelectorAll(".sidebar a[href^='#lesson8-']:not([data-route])").for
   link.addEventListener("click", (event) => {
     event.preventDefault();
     setRoute("lesson8-study");
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+    }
+  });
+});
+
+document.querySelectorAll(".sidebar a[href^='#lesson9-']:not([data-route])").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setRoute("lesson9-study");
     const target = document.querySelector(link.getAttribute("href"));
     if (target) {
       setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
