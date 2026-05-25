@@ -108,6 +108,15 @@ print("Welcome,", name)
             <a href="#lesson5-practice" data-route="lesson5-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 6</p>
+          <h2>Error and Exception Handling</h2>
+          <p>Syntax errors, runtime exceptions, try/except/else/finally, raising errors, and custom exception classes.</p>
+          <div class="chapter-links">
+            <a href="#lesson6-study" data-route="lesson6-study">Study</a>
+            <a href="#lesson6-practice" data-route="lesson6-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -161,6 +170,12 @@ print("Welcome,", name)
             <h2>Pandas Data Manipulation</h2>
             <p>Practice Series, DataFrames, reading CSV/TXT/JSON files, cleaning data, analysis, plotting, and Pickle.</p>
             <span class="testing-card-action">Open Lesson 5 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson6-practice" data-route="lesson6-practice">
+            <p class="chapter-number">Lesson 6</p>
+            <h2>Error and Exception Handling</h2>
+            <p>Practice TypeError, ValueError, input validation, custom exceptions, and try/except control flow.</p>
+            <span class="testing-card-action">Open Lesson 6 Testing</span>
           </a>
         </section>
       </div>
@@ -5316,6 +5331,637 @@ data = {
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson6-study-view" aria-labelledby="lesson6-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 6 sections">
+          <p class="sidebar-label">Lesson 6 Study Material</p>
+          <a href="#lesson6-errors">1. Errors and Exceptions</a>
+          <a href="#lesson6-builtins">2. Built-In Exceptions</a>
+          <a href="#lesson6-try-except">3. try and except</a>
+          <a href="#lesson6-specific">4. Specific Exceptions</a>
+          <a href="#lesson6-else-finally">5. else and finally</a>
+          <a href="#lesson6-raise">6. Raising Exceptions</a>
+          <a href="#lesson6-custom">7. Custom Exceptions</a>
+          <a href="#lesson6-validation">8. Validation Patterns</a>
+          <a href="#lesson6-practice" data-route="lesson6-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 6</p>
+            <h1 id="lesson6-study-title">Error and Exception Handling</h1>
+            <p>
+              Lesson 6 teaches what happens when a program cannot continue normally. Earlier lessons focus on writing
+              code that works when the input is friendly and the files exist. Real programs must also respond when a
+              user types the wrong thing, a file is missing, an index is out of range, or a calculation is impossible.
+              Exception handling gives you a controlled way to respond to those problems instead of letting the whole
+              program crash without explanation.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson5-study" data-route="lesson5-study">Previous: Lesson 5</a>
+              <a class="lesson-nav-button next" href="#lesson6-practice" data-route="lesson6-practice">Next: Lesson 6 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson6-errors">
+            <h2>1. Errors and Exceptions</h2>
+            <p>
+              An error is a problem that prevents a program from continuing normally. Some errors happen before the
+              program can even run. Others happen while the program is running. Python reports these problems with error
+              messages that include the type of error, the location where Python noticed the problem, and a short
+              explanation.
+            </p>
+            <p>
+              The first broad category is a syntax error. Syntax is the grammar of the programming language. A missing
+              colon after an <code>if</code> statement, mismatched parentheses, inconsistent indentation, a missing
+              comma, or a keyword in the wrong place can all produce syntax errors. Python cannot understand the
+              structure, so it stops before the program logic begins.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Syntax error example</span><button class="copy-code">Copy</button></div>
+              <pre><code>age = 20
+
+if age &gt;= 18
+    print("Adult")</code></pre>
+            </div>
+            <p>
+              The code above is missing a colon after the condition. Python has not reached a risky runtime situation;
+              it cannot parse the instruction at all. Fixing syntax errors usually means correcting punctuation,
+              indentation, spelling, or structure.
+            </p>
+            <p>
+              The second broad category is a runtime exception. In the source lesson, these are described as logical
+              errors because the program may be written in valid Python syntax but still fail during execution. Dividing
+              by zero, reading a file that does not exist, converting <code>"abc"</code> to an integer, or accessing a
+              list item outside its index range are runtime problems. Python raises an exception to represent the
+              problem.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Runtime exception example</span><button class="copy-code">Copy</button></div>
+              <pre><code>numbers = [10, 20, 30]
+
+print(numbers[5])</code></pre>
+            </div>
+            <div class="output-block">
+              <span>Likely result</span>
+              <pre><code>IndexError: list index out of range</code></pre>
+            </div>
+            <p>
+              The list syntax is valid, and <code>print()</code> is being called correctly. The problem is that the
+              program asks for index <code>5</code> when the list only has indexes <code>0</code>, <code>1</code>, and
+              <code>2</code>. If an exception is not handled, Python stops the current operation and reports the error.
+            </p>
+            <div class="callout">
+              <h3>Beginner mental model</h3>
+              <p>
+                Syntax errors mean Python cannot understand the sentence. Exceptions mean Python understood the
+                sentence, tried to follow it, and hit a problem while doing the work.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson6-builtins">
+            <h2>2. Built-In Exception Types</h2>
+            <p>
+              Python has many built-in exception classes. The class name tells you the category of problem. Learning the
+              names helps you read tracebacks and decide what kind of <code>except</code> block to write. You do not
+              need to memorize every exception immediately, but you should recognize the common ones: <code>TypeError</code>,
+              <code>ValueError</code>, <code>NameError</code>, <code>IndexError</code>, <code>KeyError</code>,
+              <code>FileNotFoundError</code>, and <code>ZeroDivisionError</code>.
+            </p>
+            <div class="reference-card">
+              <h3>Built-in exception reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Exception</th>
+                      <th>Cause of error</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>AssertionError</code></th><td>Raised when an <code>assert</code> statement fails.</td></tr>
+                    <tr><th><code>AttributeError</code></th><td>Raised when attribute assignment or reference fails.</td></tr>
+                    <tr><th><code>EOFError</code></th><td>Raised when <code>input()</code> reaches end-of-file without reading input.</td></tr>
+                    <tr><th><code>FloatingPointError</code></th><td>Raised when a floating-point operation fails, though this is uncommon in normal beginner code.</td></tr>
+                    <tr><th><code>GeneratorExit</code></th><td>Raised when a generator's <code>close()</code> method is called.</td></tr>
+                    <tr><th><code>ImportError</code></th><td>Raised when an imported module or name cannot be found.</td></tr>
+                    <tr><th><code>IndexError</code></th><td>Raised when a sequence index is out of range.</td></tr>
+                    <tr><th><code>KeyError</code></th><td>Raised when a dictionary key is not found.</td></tr>
+                    <tr><th><code>KeyboardInterrupt</code></th><td>Raised when the user interrupts the program, often with Ctrl+C.</td></tr>
+                    <tr><th><code>MemoryError</code></th><td>Raised when an operation runs out of memory.</td></tr>
+                    <tr><th><code>NameError</code></th><td>Raised when a variable name is not found in local or global scope.</td></tr>
+                    <tr><th><code>NotImplementedError</code></th><td>Raised by methods that are intentionally not implemented yet, often in abstract designs.</td></tr>
+                    <tr><th><code>OSError</code></th><td>Raised when a system operation causes an operating-system-related error.</td></tr>
+                    <tr><th><code>OverflowError</code></th><td>Raised when an arithmetic result is too large to represent.</td></tr>
+                    <tr><th><code>ReferenceError</code></th><td>Raised when a weak reference proxy is used after the referenced object has been garbage collected.</td></tr>
+                    <tr><th><code>RuntimeError</code></th><td>Raised when an error does not fit another more specific category.</td></tr>
+                    <tr><th><code>StopIteration</code></th><td>Raised by <code>next()</code> to show that an iterator has no more values.</td></tr>
+                    <tr><th><code>SyntaxError</code></th><td>Raised by the parser when Python encounters invalid syntax.</td></tr>
+                    <tr><th><code>IndentationError</code></th><td>Raised when indentation is incorrect.</td></tr>
+                    <tr><th><code>TabError</code></th><td>Raised when indentation mixes tabs and spaces inconsistently.</td></tr>
+                    <tr><th><code>SystemError</code></th><td>Raised when the interpreter detects an internal error.</td></tr>
+                    <tr><th><code>SystemExit</code></th><td>Raised by <code>sys.exit()</code>.</td></tr>
+                    <tr><th><code>TypeError</code></th><td>Raised when an operation or function is applied to an object of the wrong type.</td></tr>
+                    <tr><th><code>UnboundLocalError</code></th><td>Raised when a local variable is referenced before it has been assigned a value.</td></tr>
+                    <tr><th><code>UnicodeError</code></th><td>Raised for Unicode-related encoding, decoding, or translation problems.</td></tr>
+                    <tr><th><code>UnicodeEncodeError</code></th><td>Raised during Unicode encoding.</td></tr>
+                    <tr><th><code>UnicodeDecodeError</code></th><td>Raised during Unicode decoding.</td></tr>
+                    <tr><th><code>UnicodeTranslateError</code></th><td>Raised during Unicode translation.</td></tr>
+                    <tr><th><code>ValueError</code></th><td>Raised when a function receives the correct type but an inappropriate value.</td></tr>
+                    <tr><th><code>ZeroDivisionError</code></th><td>Raised when the second operand of division or modulo is zero.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              The difference between <code>TypeError</code> and <code>ValueError</code> is especially important for the
+              Lesson 6 practice activities. If a function expects a string but receives a list, integer, or dictionary,
+              that is a type problem. If it receives a string but the string has the wrong shape or content, that is
+              often a value problem.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>TypeError versus ValueError</span><button class="copy-code">Copy</button></div>
+              <pre><code>int(3.8)       # Valid type and value; returns 3
+int("42")      # Valid value in a string; returns 42
+int("forty")   # ValueError: string cannot be converted to an integer
+"age" + 10     # TypeError: string and integer cannot be added this way</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson6-try-except">
+            <h2>3. Handling Exceptions with try and except</h2>
+            <p>
+              Exception handling starts with a <code>try</code> statement. The <code>try</code> block contains code that
+              might fail. The <code>except</code> block contains code that should run if a matching exception occurs.
+              The risky code goes in <code>try</code>; the recovery or explanation goes in <code>except</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Basic try/except shape</span><button class="copy-code">Copy</button></div>
+              <pre><code>try:
+    risky_code()
+except SomeException:
+    handle_the_problem()</code></pre>
+            </div>
+            <p>
+              When Python enters the <code>try</code> block, it runs the code normally. If no exception occurs, Python
+              skips the <code>except</code> block. If an exception occurs, Python stops the rest of the <code>try</code>
+              block and looks for an <code>except</code> block that matches the exception type.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Recover from invalid integer input</span><button class="copy-code">Copy</button></div>
+              <pre><code>text = "abc"
+
+try:
+    number = int(text)
+    print(number)
+except ValueError:
+    print("That text cannot be converted to an integer.")</code></pre>
+            </div>
+            <p>
+              Without the <code>try</code> statement, <code>int("abc")</code> would stop the program with a
+              <code>ValueError</code>. With the <code>try</code> statement, the program can display a friendly message
+              and continue.
+            </p>
+            <p>
+              The lesson shows a reciprocal example that loops through values until it finds one that works. It also
+              introduces <code>sys.exc_info()</code>, which can show information about the current exception. This can be
+              useful while learning, but most user-facing programs should print clear, specific messages rather than raw
+              exception internals.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Exception information while experimenting</span><button class="copy-code">Copy</button></div>
+              <pre><code>import sys
+
+random_list = ["a", 0, 2]
+
+for value in random_list:
+    try:
+        print("The value is", value)
+        reciprocal = 1 / int(value)
+        break
+    except Exception:
+        print("Error!", sys.exc_info()[0], "occurred.")
+        print("Next value.")
+        print()
+
+print("The reciprocal of", value, "is", reciprocal)</code></pre>
+            </div>
+            <p>
+              The example intentionally catches broad exceptions while exploring values. In larger programs, avoid a
+              bare <code>except:</code> because it catches almost everything and can hide bugs. Prefer specific
+              exception types, or at least use <code>except Exception as error:</code> so the error object is available.
+              Most everyday runtime exceptions inherit from <code>Exception</code>, while special exceptions such as
+              <code>KeyboardInterrupt</code> and <code>SystemExit</code> are normally left alone.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Access the exception object</span><button class="copy-code">Copy</button></div>
+              <pre><code>try:
+    result = 1 / 0
+except Exception as error:
+    print("Error!", error.__class__, "occurred.")
+    print(error)</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson6-specific">
+            <h2>4. Catching Specific Exceptions</h2>
+            <p>
+              A single <code>try</code> block can have multiple <code>except</code> clauses. This lets your program
+              respond differently to different problems. Only one matching <code>except</code> block runs for a single
+              exception. Python checks the clauses in order from top to bottom.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Multiple except clauses</span><button class="copy-code">Copy</button></div>
+              <pre><code>try:
+    index = int(input("Enter an index: "))
+    names = ["Ada", "Grace", "Guido"]
+    print(names[index])
+except ValueError:
+    print("Please enter a whole number.")
+except IndexError:
+    print("That index is not in the list.")</code></pre>
+            </div>
+            <p>
+              The first exception handles a conversion problem. The second handles a list-index problem. This is better
+              than treating every problem the same way because the user gets a message that matches what actually went
+              wrong.
+            </p>
+            <p>
+              The source lesson uses a function that can produce different exceptions depending on the input. With
+              <code>fun(3)</code>, the calculation tries to divide by zero. With a value greater than or equal to
+              <code>4</code>, the variable <code>b</code> may not be assigned before it is printed, creating a name or
+              local-variable problem depending on exact code structure.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Multiple error paths</span><button class="copy-code">Copy</button></div>
+              <pre><code>def fun(a):
+    if a &lt; 4:
+        b = a / (a - 3)
+
+    print("Value of b =", b)
+
+try:
+    fun(3)
+except ZeroDivisionError:
+    print("ZeroDivisionError occurred and was handled.")
+except NameError:
+    print("NameError occurred and was handled.")
+except UnboundLocalError:
+    print("A local variable was referenced before assignment.")</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Order matters</h3>
+              <p>
+                Put more specific exception handlers before broader ones. If <code>except Exception:</code> appears
+                first, it will catch many errors before the more specific handlers get a chance.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson6-else-finally">
+            <h2>5. try with else and finally</h2>
+            <p>
+              A full exception-handling structure can include <code>try</code>, <code>except</code>,
+              <code>else</code>, and <code>finally</code>. The <code>else</code> block runs only when the
+              <code>try</code> block completes without an exception. The <code>finally</code> block runs whether an
+              exception happened or not.
+            </p>
+            <div class="reference-card">
+              <h3>Exception block flow</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Block</th>
+                      <th>Purpose</th>
+                      <th>When it runs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>try</code></th><td>Contains code that might raise an exception.</td><td>Always starts first.</td></tr>
+                    <tr><th><code>except</code></th><td>Handles a matching exception.</td><td>Only if that exception occurs.</td></tr>
+                    <tr><th><code>else</code></th><td>Contains success-only code.</td><td>Only if the <code>try</code> block has no exception.</td></tr>
+                    <tr><th><code>finally</code></th><td>Contains cleanup code.</td><td>Always runs after <code>try</code>/<code>except</code>/<code>else</code>.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              <code>finally</code> is often used for cleanup: closing resources, releasing locks, or printing a final
+              status message. In file work, the <code>with</code> statement handles file cleanup for you, but
+              <code>finally</code> is still an important general pattern.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>else and finally example</span><button class="copy-code">Copy</button></div>
+              <pre><code>def aby_b(a, b):
+    try:
+        c = (a + b) / (a - b)
+    except ZeroDivisionError:
+        print("The calculation divided by zero.")
+    else:
+        print(c)
+    finally:
+        print("This is always executed.")
+
+aby_b(5.0, 5.0)
+aby_b(2.0, 3.0)</code></pre>
+            </div>
+            <p>
+              In the first call, <code>a - b</code> is zero, so the <code>except</code> block runs and
+              <code>else</code> does not. In the second call, the calculation succeeds, so <code>else</code> prints the
+              result. In both calls, <code>finally</code> prints its message.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson6-raise">
+            <h2>6. Raising Exceptions</h2>
+            <p>
+              Sometimes Python raises an exception automatically. Other times, your code should raise one on purpose.
+              Raising an exception means your program has detected a condition that should not be accepted. Use the
+              <code>raise</code> keyword followed by an exception object.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Raise a general exception</span><button class="copy-code">Copy</button></div>
+              <pre><code>y = -1
+
+if y &lt; 0:
+    raise Exception("Sorry, numbers below zero are not allowed.")</code></pre>
+            </div>
+            <p>
+              A general <code>Exception</code> works, but a specific exception type usually communicates the problem
+              better. If the problem is the type of the value, raise <code>TypeError</code>. If the type is correct but
+              the value is unacceptable, raise <code>ValueError</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Raise a TypeError</span><button class="copy-code">Copy</button></div>
+              <pre><code>y = "hello"
+
+if not isinstance(y, int):
+    raise TypeError("Only integers are allowed.")</code></pre>
+            </div>
+            <p>
+              The <code>isinstance()</code> function checks whether an object belongs to a particular type or class.
+              This is useful in validation code because you can reject the wrong type before trying operations that
+              would fail later.
+            </p>
+            <div class="callout">
+              <h3>Raise early, explain clearly</h3>
+              <p>
+                Good exception messages describe what was wrong and what kind of value was expected. That message helps
+                both the programmer and the person using the program.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson6-custom">
+            <h2>7. User-Defined Exceptions</h2>
+            <p>
+              Python also lets you create your own exception classes. A custom exception is useful when your program has
+              a domain-specific problem that deserves a clear name. In the lesson example, the program asks for a number
+              between <code>10</code> and <code>50</code>. Values below the range and above the range are different
+              conditions, so the code defines separate exception classes for each.
+            </p>
+            <p>
+              A custom exception class should inherit directly or indirectly from <code>Exception</code>. The class can
+              be empty at first. The name itself communicates the error category, and the docstring explains when the
+              exception is used.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Custom range exceptions</span><button class="copy-code">Copy</button></div>
+              <pre><code>class Error(Exception):
+    """Base class for other exceptions."""
+    pass
+
+
+class ValueTooSmallError(Error):
+    """Raised when the input value is too small."""
+    pass
+
+
+class ValueTooLargeError(Error):
+    """Raised when the input value is too large."""
+    pass
+
+
+while True:
+    try:
+        number = int(input("Enter any value in the 10 to 50 range: "))
+
+        if number &lt; 10:
+            raise ValueTooSmallError
+        elif number &gt; 50:
+            raise ValueTooLargeError
+
+        break
+    except ValueTooSmallError:
+        print("Value is below range. Try again.")
+    except ValueTooLargeError:
+        print("Value is out of range. Try again.")
+
+print("Great! Value is in the correct range.")</code></pre>
+            </div>
+            <p>
+              This example combines several ideas from earlier chapters: a <code>while True</code> loop, input,
+              conversion with <code>int()</code>, conditions, <code>raise</code>, custom exception classes, and
+              <code>break</code>. The loop continues until the entered value passes validation.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson6-validation">
+            <h2>8. Validation Patterns for Beginner Programs</h2>
+            <p>
+              Validation means checking that input is acceptable before the rest of the program depends on it. Lesson 6
+              ends with activities that ask you to validate names, quantities, and prices. These are practical examples
+              because user input always arrives as a string from <code>input()</code>, and users can type almost
+              anything.
+            </p>
+            <p>
+              A clean validation function should do one job. If the function validates a name, it should check that the
+              argument is a string and that it contains the expected number of words. If the function validates a
+              quantity, it should check that the value can become an integer and that the integer is greater than zero.
+              If the function validates a price, it should accept a number that can represent money and reject text that
+              cannot be converted.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Validation loop pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>while True:
+    user_text = input("Enter a whole number: ")
+
+    try:
+        number = int(user_text)
+    except ValueError:
+        print("Please enter digits only.")
+        continue
+
+    if number &lt;= 0:
+        print("Please enter a number greater than zero.")
+        continue
+
+    break</code></pre>
+            </div>
+            <p>
+              This example is intentionally generic. It shows the control-flow shape without solving the lesson
+              activity for you: ask, try to convert, handle conversion failure, check the acceptable range, and repeat
+              until the value is valid.
+            </p>
+            <div class="reference-card">
+              <h3>Choosing the right exception</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Problem</th>
+                      <th>Typical exception</th>
+                      <th>Example idea</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Wrong object type</th><td><code>TypeError</code></td><td>A function expects a string but receives an integer.</td></tr>
+                    <tr><th>Right type, wrong shape or content</th><td><code>ValueError</code></td><td>A string is provided, but it does not contain exactly two words.</td></tr>
+                    <tr><th>Invalid numeric range</th><td><code>ValueError</code> or custom exception</td><td>A number is less than or equal to zero when only positive values are allowed.</td></tr>
+                    <tr><th>Domain-specific range problem</th><td>Custom exception</td><td>A value is below or above a named acceptable range.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="next-step-panel">
+              <h3>Ready to practice Lesson 6?</h3>
+              <p>
+                The Lesson 6 testing environment contains the embedded function and validation activities from the
+                chapter. Use the study material as your guide, but the testing page does not provide completed answers.
+              </p>
+              <a class="button primary" href="#lesson6-practice" data-route="lesson6-practice">Practice Lesson 6</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson6-practice-view" aria-labelledby="lesson6-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 6 Testing Environment</p>
+          <h1 id="lesson6-practice-title">Exception Handling and Validation Practice</h1>
+          <p>
+            Complete these activities in your own IDE. Lesson 6 currently has embedded lesson questions only, so this
+            page contains the chapter activities without full solutions. Concept reminders stay hidden until you open
+            them.
+          </p>
+        </header>
+
+        <div class="practice-tabs" role="tablist" aria-label="Lesson 6 practice groups">
+          <button class="tab active" data-practice-tab="lesson6-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson6-function-activity">Function Activity</button>
+          <button class="tab" data-practice-tab="lesson6-validation-activity">Validation Activity</button>
+        </div>
+
+        <section class="practice-panel active" id="lesson6-concept-checks">
+          <div class="panel-intro">
+            <h2>Concept Checks</h2>
+            <p>Use these prompts to make sure the exception-handling vocabulary is solid before writing the activities.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Error and Exception Vocabulary</h3>
+            <ol>
+              <li>Explain the difference between a syntax error and a runtime exception.</li>
+              <li>Give one example of a problem that would raise <code>IndexError</code>.</li>
+              <li>Give one example of a problem that would raise <code>KeyError</code>.</li>
+              <li>Give one example of a problem that would raise <code>TypeError</code>.</li>
+              <li>Give one example of a problem that would raise <code>ValueError</code>.</li>
+              <li>Explain why a bare <code>except:</code> block is usually not a good habit.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Syntax errors happen when Python cannot parse the code. Exceptions happen while valid code is running.
+                Specific exception types make your error handling clearer and prevent unrelated bugs from being hidden.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>try, except, else, and finally Flow</h3>
+            <ol>
+              <li>Describe what belongs inside a <code>try</code> block.</li>
+              <li>Describe what belongs inside an <code>except</code> block.</li>
+              <li>Explain when an <code>else</code> block runs.</li>
+              <li>Explain when a <code>finally</code> block runs.</li>
+              <li>Write a small experiment that calls a function once with valid values and once with values that cause an exception.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>try</code> tests risky code. <code>except</code> handles a matching error. <code>else</code> runs
+                only after success. <code>finally</code> always runs and is often used for cleanup or final status.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson6-function-activity">
+          <div class="panel-intro">
+            <h2>Function Activity</h2>
+            <p>This activity practices raising <code>TypeError</code> and <code>ValueError</code> from inside a function.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>capitalize_last_name()</h3>
+            <p><strong>Objective:</strong> Create a function named <code>capitalize_last_name()</code>.</p>
+            <ol>
+              <li>The function must accept one argument: a string containing a single first name and a single last name.</li>
+              <li>Return a string where only the first letter of the first name is uppercase.</li>
+              <li>Return the last name in all uppercase letters.</li>
+              <li>For example, the input <code>"john james"</code> should become <code>"John JAMES"</code>.</li>
+              <li>Use <code>str.split()</code> to split the string into separate words.</li>
+              <li>If something other than a string object is passed, raise a <code>TypeError</code>.</li>
+              <li>Use <code>isinstance()</code> to check whether the object is a string.</li>
+              <li>If the string does not consist of exactly two words, raise a <code>ValueError</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Use <code>TypeError</code> when the argument is not the expected type. Use <code>ValueError</code> when
+                the argument is a string but does not contain the expected number of words. String methods from Lesson 1
+                are useful here, especially splitting words and changing capitalization.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson6-validation-activity">
+          <div class="panel-intro">
+            <h2>Validation Activity</h2>
+            <p>This activity practices repeated input validation with <code>try</code> and <code>except</code>.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Quantity and Price Validation Functions</h3>
+            <p><strong>Objective:</strong> Create two different functions that check the validity of quantity and price.</p>
+            <ol>
+              <li>Create one function that validates quantity.</li>
+              <li>Create one function that validates price.</li>
+              <li>Ensure quantity is greater than <code>0</code>.</li>
+              <li>Ensure quantity only accepts integers.</li>
+              <li>Ensure price accepts an integer or a float.</li>
+              <li>Keep asking the user to enter quantity until the quantity is greater than <code>0</code> and is an integer.</li>
+              <li>Keep asking the user to enter price until the input is either an integer or a float.</li>
+              <li>Use <code>try</code> and <code>except</code> to handle invalid conversions.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Values from <code>input()</code> begin as strings. Use conversion inside a <code>try</code> block, catch
+                conversion errors, and repeat the prompt until the value passes all checks. Keep quantity and price
+                validation separate so each function has one clear job.
+              </p>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -5326,8 +5972,8 @@ data = {
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260525-1"></script>
+  <script src="community-config.js?v=20260525-2"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-1"></script>
+  <script src="app.js?v=20260525-2"></script>
 </body>
 </html>

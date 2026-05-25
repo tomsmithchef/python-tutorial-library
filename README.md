@@ -1,6 +1,6 @@
 # Python Tutorial Library
 
-This folder contains a self-contained web textbook for the first five Python fundamentals lessons. It was built from the original lesson PDFs and assignment text files, with the study material rewritten into longer beginner-friendly explanations.
+This folder contains a self-contained web textbook for the first six Python fundamentals lessons. It was built from the original lesson PDFs and assignment text files, with the study material rewritten into longer beginner-friendly explanations.
 
 ## What Is Included
 
@@ -9,9 +9,9 @@ This folder contains a self-contained web textbook for the first five Python fun
 - `web/app.js` - navigation, tabs, hints, code-copy behavior, and the optional Class Board
 - `web/community-config.js` - Supabase connection settings for the optional Class Board
 - `supabase/class-board-schema.sql` - database tables and security policies for the Class Board
-- `Lesson 1.pdf` through `Lesson 5.pdf` - original lesson slide decks
+- `Lesson 1.pdf` through `Lesson 6.pdf` - original lesson slide decks
 - `Lesson 1 Assignments.txt` through `Lesson 4 Assignments.txt` - assignment/lab source text
-- Lesson 5 currently uses embedded lesson activities from the PDF only; assignment/lab text can be added later
+- Lessons 5 and 6 currently use embedded lesson activities from the PDFs only; assignment/lab text can be added later
 - `lesson_tutorial.py` - older terminal version kept for reference
 
 The website itself only needs the `web` folder. The PDFs and assignment text files are included as source/reference material.
@@ -42,6 +42,7 @@ Python Tutorial Library/
   Lesson 4.pdf
   Lesson 4 Assignments.txt
   Lesson 5.pdf
+  Lesson 6.pdf
   lesson_tutorial.py
   supabase/
     class-board-schema.sql
