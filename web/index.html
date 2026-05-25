@@ -128,6 +128,15 @@ print("Welcome,", name)
             <a href="#lesson7-practice" data-route="lesson7-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 8</p>
+          <h2>Python for Cybersecurity: Scapy and Packet Analysis</h2>
+          <p>Wireshark, packet captures, dpkt, Scapy layers, packet sets, sending, receiving, fuzzing, importing, and sniffing.</p>
+          <div class="chapter-links">
+            <a href="#lesson8-study" data-route="lesson8-study">Study</a>
+            <a href="#lesson8-practice" data-route="lesson8-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -193,6 +202,12 @@ print("Welcome,", name)
             <h2>Python for Cybersecurity</h2>
             <p>Practice cipher dictionaries, encryption workflows, hashing, authentication, signatures, and Base64.</p>
             <span class="testing-card-action">Open Lesson 7 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson8-practice" data-route="lesson8-practice">
+            <p class="chapter-number">Lesson 8</p>
+            <h2>Scapy and Packet Analysis</h2>
+            <p>Practice Wireshark capture review, PCAP reading, Scapy packet construction, send/receive patterns, and sniffing.</p>
+            <span class="testing-card-action">Open Lesson 8 Testing</span>
           </a>
         </section>
       </div>
@@ -6467,7 +6482,7 @@ verify_key.verify(signed)
 verify_key.verify(signed.message, signed.signature)</code></pre>
             </div>
             <p>
-              The source example also modifies a signed message to demonstrate failure. If a signed message is altered,
+              A useful verification exercise modifies a signed message to demonstrate failure. If a signed message is altered,
               verification should fail and the library should raise a signature error. That is the point: signatures do
               not merely attach a name to a message; they help detect tampering.
             </p>
@@ -6626,7 +6641,7 @@ print(decoded_message)</code></pre>
           <p class="eyebrow">Lesson 7 Testing Environment</p>
           <h1 id="lesson7-practice-title">Cryptography and Authentication Practice</h1>
           <p>
-            Complete these activities in your own IDE. Lesson 7 currently uses embedded lesson activities from the PDF,
+            Complete these activities in your own IDE. Lesson 7 currently uses embedded chapter activities,
             so this page separates the practice prompts from the textbook material and keeps concept reminders hidden.
           </p>
         </header>
@@ -6849,6 +6864,970 @@ print(decoded_message)</code></pre>
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson8-study-view" aria-labelledby="lesson8-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 8 sections">
+          <p class="sidebar-label">Lesson 8 Study Material</p>
+          <a href="#lesson8-traffic">1. Network Traffic</a>
+          <a href="#lesson8-wireshark">2. Wireshark</a>
+          <a href="#lesson8-dpkt">3. Reading PCAP with dpkt</a>
+          <a href="#lesson8-scapy-purpose">4. What Scapy Does</a>
+          <a href="#lesson8-install-modes">5. Installing and Modes</a>
+          <a href="#lesson8-layers">6. Packet Layers</a>
+          <a href="#lesson8-packet-sets">7. Packet Sets</a>
+          <a href="#lesson8-commands">8. Inspection Commands</a>
+          <a href="#lesson8-send-receive">9. Sending and Receiving</a>
+          <a href="#lesson8-sniffing">10. Fuzzing, Files, Sniffing</a>
+          <a href="#lesson8-practice" data-route="lesson8-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 8</p>
+            <h1 id="lesson8-study-title">Python for Cybersecurity: Scapy and Packet Analysis</h1>
+            <p>
+              Lesson 8 moves from cryptography into packet-level network investigation. The chapter begins with
+              Wireshark, a visual packet analyzer, then introduces Python tools for reading packet captures and
+              constructing packets. The major programming tool is Scapy, a packet manipulation library that lets you
+              build, inspect, send, receive, fuzz, import, export, and sniff packets from Python.
+            </p>
+            <p>
+              This is powerful material, so it belongs in a careful learning context. The goal is to understand packets,
+              protocols, and lab traffic, not to interfere with public networks. Use these examples only on systems,
+              virtual machines, files, and networks where you have explicit permission.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson7-study" data-route="lesson7-study">Previous: Lesson 7</a>
+              <a class="lesson-nav-button next" href="#lesson8-practice" data-route="lesson8-practice">Next: Lesson 8 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson8-traffic">
+            <h2>1. Network Traffic and Packets</h2>
+            <p>
+              Network traffic is the movement of data across a network. When a computer opens a website, checks email,
+              resolves a domain name, streams media, or talks to another device, the data is broken into packets. A
+              packet is a small unit of network communication with structured information such as where it came from,
+              where it is going, what protocol it uses, and what data it is carrying.
+            </p>
+            <p>
+              Traffic volume can be described with the relationship
+              <code>Traffic volume = Traffic intensity * Time</code>. Traffic intensity is how much data is moving in a
+              period, and time is how long the traffic is observed. In practice, this helps explain why a busy network
+              capture fills up quickly: even normal background communication can create many packets every second.
+            </p>
+            <p>
+              Packet analysis usually begins by looking at a few repeated fields. <strong>Time</strong> tells you when
+              the packet was seen. <strong>Source</strong> tells you which host sent it. <strong>Destination</strong>
+              tells you which host should receive it. <strong>Protocol</strong> tells you the communication rules being
+              used. <strong>Info</strong> gives a short human-readable summary of what the packet appears to be doing.
+            </p>
+            <div class="reference-card">
+              <h3>Common protocols in a capture</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Protocol</th>
+                      <th>What a beginner should recognize</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>TCP</th><td>A connection-oriented transport protocol used by many reliable network services.</td></tr>
+                    <tr><th>UDP</th><td>A connectionless transport protocol often used when speed or simplicity matters.</td></tr>
+                    <tr><th>DNS</th><td>Translates domain names such as <code>example.com</code> into IP addresses.</td></tr>
+                    <tr><th>ARP</th><td>Maps IP addresses to hardware addresses on a local network.</td></tr>
+                    <tr><th>SMTP</th><td>A mail-related protocol used for sending email between systems.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="callout warning">
+              <h3>Authorization comes first</h3>
+              <p>
+                Packet capture can expose private information. Capture only your own lab traffic, classroom lab traffic,
+                or traffic you have been authorized to inspect. If you are unsure whether you have permission, do not
+                capture.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-wireshark">
+            <h2>2. Wireshark: Capturing, Filtering, and Saving Traffic</h2>
+            <p>
+              Wireshark is a free and open-source packet analyzer. It is widely used for troubleshooting, learning
+              protocols, protocol development, security analysis, and network education. Wireshark can capture live
+              traffic from a network interface, and it can also open previously saved capture files. Those saved files
+              are often stored in <code>.pcap</code> format, which is a common packet capture file format used by many
+              tools.
+            </p>
+            <p>
+              A live capture depends on the network interface you select. A computer may have Ethernet, wireless
+              802.11, loopback, VPN, or other interfaces. On Linux and macOS, <code>ifconfig</code> may show interface
+              names and addresses. On Windows, <code>ipconfig</code> is the usual command. In Wireshark, you choose the
+              interface that represents the traffic you want to observe, then begin the capture. The packet list may
+              fill quickly, which is normal.
+            </p>
+            <p>
+              Filters are essential because captures can contain far more packets than a person can comfortably read.
+              Wireshark display filters let you focus the visible list without changing the saved data. To find packets
+              related to an IP address, use a filter such as <code>ip.addr == 192.168.1.10</code>. To focus on a
+              protocol, type the protocol name, such as <code>tcp</code>, <code>udp</code>, <code>dns</code>,
+              <code>arp</code>, or <code>smtp</code>.
+            </p>
+            <div class="reference-card">
+              <h3>Wireshark workflow</h3>
+              <ol>
+                <li>Install Wireshark from the official source or your classroom software image.</li>
+                <li>Identify the correct network interface with your operating system tools.</li>
+                <li>Open Wireshark and select the interface to capture from.</li>
+                <li>Start the capture and create a small amount of lab traffic, such as visiting a permitted test page.</li>
+                <li>Use display filters to narrow the packet list.</li>
+                <li>Stop the capture before saving.</li>
+                <li>Use File, then Save As, and save the capture as a <code>.pcap</code> file.</li>
+              </ol>
+            </div>
+            <div class="reference-card">
+              <h3>Useful filter examples</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Goal</th>
+                      <th>Filter pattern</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Any traffic involving one IP address</th><td><code>ip.addr == 192.168.1.10</code></td></tr>
+                    <tr><th>TCP traffic</th><td><code>tcp</code></td></tr>
+                    <tr><th>UDP traffic</th><td><code>udp</code></td></tr>
+                    <tr><th>DNS traffic</th><td><code>dns</code></td></tr>
+                    <tr><th>ARP traffic</th><td><code>arp</code></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-dpkt">
+            <h2>3. Reading PCAP Files with dpkt</h2>
+            <p>
+              A packet capture becomes more useful when Python can read it. The <code>dpkt</code> module is a fast,
+              simple packet creation and parsing library. It includes definitions for many basic TCP/IP protocols. In
+              Lesson 8, <code>dpkt</code> is used to open a saved <code>.pcap</code> file and print source and
+              destination IP addresses.
+            </p>
+            <p>
+              Install it with <code>pip install dpkt</code>. The basic reading pattern is: open the capture file in
+              binary mode, pass the file object to <code>dpkt.pcap.Reader</code>, loop through each packet, parse the
+              Ethernet frame, retrieve the IP layer, and convert the packed network-address bytes into readable dotted
+              IPv4 strings.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Read source and destination IP addresses from a PCAP</span><button class="copy-code">Copy</button></div>
+              <pre><code>import dpkt
+import socket
+
+def print_packets(pcap):
+    for timestamp, buffer in pcap:
+        ethernet = dpkt.ethernet.Ethernet(buffer)
+        ip = ethernet.data
+
+        source_ip = socket.inet_ntoa(ip.src)
+        destination_ip = socket.inet_ntoa(ip.dst)
+
+        print("Source:", source_ip, "Destination:", destination_ip)
+
+with open("capture.pcap", "rb") as file:
+    pcap = dpkt.pcap.Reader(file)
+    print_packets(pcap)</code></pre>
+            </div>
+            <p>
+              The loop variable <code>timestamp</code> represents when the packet was captured. The variable
+              <code>buffer</code> contains the raw packet bytes from the file. The expression
+              <code>dpkt.ethernet.Ethernet(buffer)</code> interprets those bytes as an Ethernet frame. If that frame
+              contains IP traffic, <code>ethernet.data</code> gives access to the IP packet.
+            </p>
+            <p>
+              IP addresses in packet structures are stored as packed bytes, not as familiar strings like
+              <code>192.168.1.10</code>. The function <code>socket.inet_ntoa()</code> converts packed IPv4 bytes into
+              dotted-quad text. The reverse operation, <code>socket.inet_aton()</code>, converts a dotted IPv4 string
+              into packed bytes.
+            </p>
+            <div class="callout">
+              <h3>Beginner debugging note</h3>
+              <p>
+                Not every captured frame is guaranteed to be the exact protocol shape your code expects. Real parsers
+                often check whether a frame contains IP before reading <code>ip.src</code> or <code>ip.dst</code>. For a
+                classroom exercise, a small capture containing known IP traffic is easier to reason about.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-scapy-purpose">
+            <h2>4. What Scapy Does and Why It Matters</h2>
+            <p>
+              Scapy is a Python program and library for packet manipulation. It can create packets, decode packets,
+              send packets, receive replies, sniff traffic, and work with packet capture files. Scapy is best understood
+              as a powerful interactive packet manipulation program because it lets you describe packets directly in
+              Python instead of writing large amounts of low-level networking code.
+            </p>
+            <p>
+              Scapy can be used for scanning, tracerouting, probing, network discovery, unit tests, and protocol
+              experiments. It can replace or overlap with parts of tools such as <code>hping</code>, <code>arping</code>,
+              <code>tcpdump</code>, <code>tshark</code>, and some Nmap-style probing. That does not mean it should be
+              used carelessly. A tool that can generate packets can also generate unwanted traffic, so use Scapy inside
+              labs and permissioned environments.
+            </p>
+            <p>
+              One reason Scapy is approachable is that it treats packets as stacked layers. You can create an IP layer,
+              place a TCP layer on top of it, and attach raw data as a payload. Each layer has fields with defaults, so
+              you only need to set the fields that matter for the experiment. This is much friendlier than manually
+              creating every byte of every header.
+            </p>
+            <div class="reference-card">
+              <h3>Why Scapy is useful</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Beginner meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Packet forging</th><td>You can construct packets with specific layers and field values.</td></tr>
+                    <tr><th>Dissection</th><td>You can decode packet bytes into readable protocol fields.</td></tr>
+                    <tr><th>Send and receive</th><td>You can send a probe and inspect the response in Python.</td></tr>
+                    <tr><th>Raw data preservation</th><td>You can keep the packet data and reinterpret it later from a different viewpoint.</td></tr>
+                    <tr><th>Layer stacking</th><td>You build packets by combining protocol layers with the <code>/</code> operator.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Lesson 8 makes an important point about interpretation. Some tools probe the network and immediately
+              reduce the result to one conclusion. Scapy keeps the raw stimulus-response data, which means the same
+              results can be examined in more than one way. For example, a set of TCP probe replies might later be
+              grouped by TTL behavior without sending the probes again.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson8-install-modes">
+            <h2>5. Installing Scapy and Working Modes</h2>
+            <p>
+              Install Scapy with <code>pip install scapy</code>. Some Scapy operations require elevated permissions
+              because sending and sniffing raw packets is a privileged networking action on many operating systems.
+              Reading saved capture files and constructing packet objects is safer for first practice because it does
+              not require sending live traffic.
+            </p>
+            <p>
+              Scapy has two common modes. In interactive mode, you run <code>scapy</code> from a terminal and work in a
+              Python-like shell where Scapy classes and helpers are already loaded. This is good for experiments and
+              one-liners. In module mode, you import Scapy into a regular Python script. This is better when you want a
+              repeatable program.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Interactive mode</span><button class="copy-code">Copy</button></div>
+              <pre><code>scapy</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Module mode in a script</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+from scapy.layers.inet import IP
+
+print(IP)
+print(dir())</code></pre>
+            </div>
+            <p>
+              The import <code>from scapy.all import *</code> is common in Scapy examples because Scapy exposes many
+              packet classes and helper functions. In larger production code, explicit imports are usually easier to
+              audit, but for a beginner lab this wildcard import matches the Scapy learning style.
+            </p>
+            <div class="callout">
+              <h3>802.11 frames</h3>
+              <p>
+                Scapy can work with 802.11 wireless frames. Wireless frames are lower-level network
+                frames that can be difficult to manipulate with simpler libraries. Treat wireless experiments as
+                advanced lab work and follow your instructor's environment exactly.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-layers">
+            <h2>6. Packets as Stacked Layers</h2>
+            <p>
+              In Scapy, a packet is built by stacking layers with the <code>/</code> operator. A single layer such as
+              <code>IP()</code> creates an IP packet with default field values. Adding <code>/TCP()</code> places a TCP
+              layer inside the IP packet. Adding a string places raw payload data after the protocol headers.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Basic layer stacking</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+packet1 = IP()
+packet2 = IP() / TCP()
+packet3 = Ether() / IP() / TCP()
+packet4 = IP() / TCP() / "GET / HTTP/1.0\r\n\r\n"
+packet5 = Ether() / IP() / IP() / UDP()
+packet6 = IP(proto=55) / TCP()
+
+packet2.show()</code></pre>
+            </div>
+            <p>
+              The <code>/</code> operator is not division in this context. Scapy overloads it to mean "put this layer
+              inside or after the previous layer." Some lower-layer defaults can be influenced by upper layers. For
+              example, when you stack TCP inside IP, Scapy understands that the IP protocol field should describe TCP.
+            </p>
+            <p>
+              You can set fields while constructing a layer. The expression <code>IP(dst="8.8.8.8")</code> creates an
+              IP packet whose destination is <code>8.8.8.8</code>. Scapy also accepts hostnames and CIDR notation in
+              many places. For example, <code>IP(dst="scanme.nmap.org")</code> uses a hostname, and
+              <code>IP(dst="8.8.8.8/30")</code> represents a small range of addresses.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Destination fields and packet expansion</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+packet = IP(dst="8.8.8.8")
+print(packet.dst)
+
+range_packet = IP(dst="8.8.8.8/30")
+print([item.dst for item in range_packet])
+
+ttl_packet = IP(ttl=[1, 3, 5, (7, 10)]) / TCP()
+print([item.ttl for item in ttl_packet])</code></pre>
+            </div>
+            <p>
+              Fields can be read and changed with attribute syntax. If <code>a = IP(dst="192.168.1.1")</code>, then
+              <code>a.ttl</code> reads the time-to-live value. Assigning <code>a.ttl = 32</code> changes that field.
+              The <code>show()</code> method prints a detailed view of the packet fields before Scapy fully assembles
+              the packet. The <code>show2()</code> method assembles the packet first, which causes calculated fields
+              such as checksums and header lengths to be filled.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Build, convert, and dissect</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+a = Ether() / IP(dst="www.slashdot.org") / TCP() / "GET /index.html HTTP/1.0\n\n"
+
+hexdump(a)
+
+raw_bytes = raw(a)
+c = Ether(raw_bytes)
+c.show()
+c.hide_defaults()
+c.show()</code></pre>
+            </div>
+            <p>
+              The function <code>raw()</code> converts the Scapy object into packet bytes. Passing those bytes back to
+              <code>Ether()</code> asks Scapy to dissect them into layers again. The method <code>hide_defaults()</code>
+              removes fields that are equal to their default values, which can make the object easier to read.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson8-packet-sets">
+            <h2>7. Generating Sets of Packets</h2>
+            <p>
+              Scapy can treat some field values as sets. If a field is given a list, tuple range, or address range,
+              Scapy can generate multiple packets from one expression. This is useful when you want to create a small
+              controlled group of probes or examples without writing repetitive loops by hand.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Packet sets from field values</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+a = IP(dst="www.slashdot.org/30")
+print([packet.dst for packet in a])
+
+b = IP(ttl=[1, 2, (5, 9)])
+print([packet.ttl for packet in b])
+
+c = TCP(dport=[80, 443])
+print([(packet.dst, packet.dport) for packet in a / c])</code></pre>
+            </div>
+            <p>
+              When you combine two packet expressions that each expand to multiple values, Scapy can create a Cartesian
+              product. In plain English, it tries every relevant combination. If one destination expression creates four
+              destination values and one TCP expression creates two destination ports, combining them can create eight
+              packets.
+            </p>
+            <p>
+              Some operations do not work directly on packet sets. If a packet set is not explicitly
+              unrolled into individual packets, an operation may use only the first element. When you want a list-like
+              object containing all generated packets, use a list comprehension or <code>PacketList</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>PacketList pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+a = IP(dst="www.slashdot.org/30")
+c = TCP(dport=[80, 443])
+
+packets = PacketList([packet for packet in a / c])
+packets.summary()</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-commands">
+            <h2>8. Scapy Inspection Commands</h2>
+            <p>
+              Before sending or sniffing anything, a learner should become comfortable inspecting packet objects. Scapy
+              provides several methods and helper functions that summarize, number, display, filter, dump, plot, or
+              table packet data. These commands are especially useful when a packet list contains many objects.
+            </p>
+            <div class="reference-card">
+              <h3>Packet inspection command reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Command</th>
+                      <th>What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>summary()</code></th><td>Displays a short summary line for each packet.</td></tr>
+                    <tr><th><code>nsummary()</code></th><td>Displays summaries with packet numbers.</td></tr>
+                    <tr><th><code>conversations()</code></th><td>Builds a graph-style view of conversations between endpoints.</td></tr>
+                    <tr><th><code>show()</code></th><td>Shows detailed fields without fully assembling calculated values.</td></tr>
+                    <tr><th><code>show2()</code></th><td>Assembles first, then shows fields such as checksums and header lengths.</td></tr>
+                    <tr><th><code>filter()</code></th><td>Returns packets that match a lambda function.</td></tr>
+                    <tr><th><code>hexdump()</code></th><td>Displays packet bytes in hexadecimal form.</td></tr>
+                    <tr><th><code>hexraw()</code></th><td>Displays the raw layer in hexadecimal.</td></tr>
+                    <tr><th><code>padding()</code></th><td>Shows packet padding bytes.</td></tr>
+                    <tr><th><code>nzpadding()</code></th><td>Shows non-zero padding bytes.</td></tr>
+                    <tr><th><code>plot()</code></th><td>Plots values produced by a lambda function applied to packets.</td></tr>
+                    <tr><th><code>make_table()</code></th><td>Creates a table from packet data using a lambda function.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Inspect a simple packet</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+packet = IP() / TCP()
+
+ls(packet)
+packet.show()
+packet.show2()
+hexdump(packet)</code></pre>
+            </div>
+            <p>
+              The <code>ls()</code> helper lists fields available on a packet or layer. The <code>hexdump()</code>
+              function is useful because packets are ultimately bytes. Seeing the hex representation helps connect the
+              friendly Scapy object to the raw data a network interface or capture file actually stores.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson8-send-receive">
+            <h2>9. Sending and Receiving Packets</h2>
+            <p>
+              Scapy has separate functions for sending only, sending at a specific layer, and sending while collecting
+              responses. This distinction matters. A send-only function is like putting a packet onto the wire and not
+              listening for an answer. A send-and-receive function is like sending a question and then recording who
+              answered.
+            </p>
+            <p>
+              <code>send()</code> sends Layer 3 packets. That usually means you provide an IP packet and Scapy handles
+              the needed Layer 2 details. It does not receive packets. The options <code>count</code>, <code>loop</code>,
+              and <code>inter</code> control repetition. <code>count</code> sends an exact number of packets.
+              <code>loop</code> repeats until interrupted when nonzero. <code>inter</code> waits a number of seconds
+              between sends.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>send() examples for a permissioned lab</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+lab_target = "192.168.56.102"
+
+send(IP(dst=lab_target) / TCP(dport=53, flags="S"))
+send(IP(dst=lab_target) / TCP(dport=53, flags="S"), count=10)
+send(IP(dst=["192.168.56.102", "192.168.56.103"]) / TCP(dport=53, flags="S"))</code></pre>
+            </div>
+            <p>
+              <code>sendp()</code> sends at Layer 2. In this case, you must provide the Layer 2 header, such as an
+              Ethernet layer. You can choose the interface with <code>iface</code>. If you do not choose an interface,
+              Scapy uses its configured default, <code>conf.iface</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>sendp() examples</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+sendp(Ether() / IP(dst="192.168.56.102", ttl=(1, 4)), iface="eth1")
+sendp("I'm travelling on Ethernet", iface="eth1", loop=1, inter=0.2)
+sendp(rdpcap("lab_capture.pcap"))</code></pre>
+            </div>
+            <p>
+              Send-and-receive functions collect responses. <code>sr()</code> sends packets and receives answers. It
+              returns two packet lists: answered stimulus-response pairs and unanswered probes. <code>sr1()</code>
+              returns only the first response. <code>srloop()</code> repeats the send-and-receive process in a loop and
+              displays responses as they arrive.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Send and receive patterns</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+ans, unans = sr(IP(dst="192.168.56.102") / TCP(dport=[21, 22, 23]), timeout=2)
+ans.summary()
+
+first_reply = sr1(IP(dst="192.168.56.102") / ICMP() / "XXXXXXXXXXX", timeout=2)
+print(first_reply.summary() if first_reply else "No reply")
+
+packet = IP(dst="192.168.56.102") / ICMP()
+srloop(packet, count=3)</code></pre>
+            </div>
+            <div class="callout warning">
+              <h3>Do not loop against public targets</h3>
+              <p>
+                Scapy supports looped sending, but it needs restraint. For learning, use a private lab address,
+                virtual machine, or instructor-provided target. Avoid repeated traffic against public systems.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson8-sniffing">
+            <h2>10. Fuzzing, Importing, Exporting, and Sniffing</h2>
+            <p>
+              Scapy can do more than construct ordinary packets. It can fuzz fields, import and export packet data, and
+              sniff live or offline traffic. These features are useful, but they also require judgment. Fuzzing and live
+              sniffing should stay inside controlled labs.
+            </p>
+            <p>
+              Fuzzing means intentionally generating unusual or randomized values to see how a target or parser behaves.
+              Scapy's <code>fuzz()</code> function changes default values that are not automatically calculated, such as
+              many protocol fields. It avoids recalculating fields such as checksums in the wrong way. The source
+              example uses UDP and NTP. It also notes that if you fuzz the IP layer, <code>src</code> and
+              <code>dst</code> are not randomly generated unless you use helpers such as <code>RandIP()</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Fuzzing shape for an isolated lab target</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+lab_target = "192.168.56.102"
+
+packet = IP(dst=lab_target) / fuzz(UDP() / NTP(version=4))
+packet.show()
+
+# Send only inside a lab where you have permission.
+# send(packet, count=5)</code></pre>
+            </div>
+            <p>
+              Importing and exporting packet data lets you move between capture files, hexdumps, and Scapy objects.
+              <code>rdpcap()</code> reads packets from a capture file. <code>sniff(offline="file.pcap")</code> can also
+              read an offline capture. <code>hexdump()</code> displays bytes. <code>import_hexcap()</code> reads a
+              pasted hexdump. <code>export_object()</code> and <code>import_object()</code> serialize and restore Scapy
+              objects.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Import and export examples</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+pkts = rdpcap("temp.cap")
+pkts.nsummary()
+
+offline_pkts = sniff(offline="temp.cap")
+offline_pkts.summary()
+
+pkt = IP(dst="192.168.56.102") / TCP()
+hexdump(pkt)
+
+# In interactive Scapy, import_hexcap() can read a pasted hexdump.
+# pkt_from_hex = Ether(import_hexcap())
+
+export_object(pkt)
+# new_pkt = import_object()</code></pre>
+            </div>
+            <p>
+              In modern Python, packet bytes and strings are separate concepts. Some older examples use
+              <code>str(pkt)</code> to get packet data. When you need actual packet bytes, <code>raw(pkt)</code> is the
+              clearer choice. If you need readable hexadecimal text, <code>raw(pkt).hex()</code> is explicit.
+            </p>
+            <p>
+              Sniffing captures packets. Scapy's <code>sniff()</code> function can capture live traffic or read offline
+              files. Important parameters include <code>count</code>, <code>filter</code>, <code>iface</code>,
+              <code>lfilter</code>, <code>prn</code>, and <code>timeout</code>. Scapy supports BPF filter syntax, the
+              same style used by tools such as tcpdump.
+            </p>
+            <div class="reference-card">
+              <h3>sniff() option reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Option</th>
+                      <th>Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>count</code></th><td>Stop after capturing this many packets.</td></tr>
+                    <tr><th><code>filter</code></th><td>Use a BPF filter such as <code>"tcp and port 80"</code>.</td></tr>
+                    <tr><th><code>iface</code></th><td>Capture on a specific network interface.</td></tr>
+                    <tr><th><code>lfilter</code></th><td>Use a Python function to filter packets after capture.</td></tr>
+                    <tr><th><code>prn</code></th><td>Run a function on each captured packet, often for printing summaries.</td></tr>
+                    <tr><th><code>timeout</code></th><td>Stop after this many seconds.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Sniffing examples</span><button class="copy-code">Copy</button></div>
+              <pre><code>from scapy.all import *
+
+pkts = sniff(count=4, iface="eth3")
+pkts.nsummary()
+
+filtered = sniff(count=1, filter="tcp and host 64.233.167.99 and port 80")
+filtered.summary()
+
+offline = sniff(offline="sniffing_file.pcap")
+offline.nsummary()</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Scapy is not a high-speed sniffer</h3>
+              <p>
+                Scapy's sniffer is not designed for extremely high-speed capture and may miss
+                packets. For heavy capture work, tools such as Wireshark, tcpdump, or tshark are usually better. Scapy
+                shines when you want Python-level packet manipulation and analysis.
+              </p>
+            </div>
+            <div class="next-step-panel">
+              <h3>Ready to practice Lesson 8?</h3>
+              <p>
+                The Lesson 8 testing environment contains Wireshark, dpkt, Scapy layer, packet-set, send/receive,
+                fuzzing, import/export, and sniffing prompts. It does not provide completed answers.
+              </p>
+              <a class="button primary" href="#lesson8-practice" data-route="lesson8-practice">Practice Lesson 8</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson8-practice-view" aria-labelledby="lesson8-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 8 Testing Environment</p>
+          <h1 id="lesson8-practice-title">Scapy and Packet Analysis Practice</h1>
+          <p>
+            Complete these activities in your own IDE and lab environment. Lesson 8 currently uses embedded lesson
+            activities from the chapter, so this page keeps the prompts separate from the textbook and uses hidden concept
+            reminders instead of completed solutions.
+          </p>
+        </header>
+
+        <div class="practice-tabs" role="tablist" aria-label="Lesson 8 practice groups">
+          <button class="tab active" data-practice-tab="lesson8-traffic-activities">Traffic Analysis</button>
+          <button class="tab" data-practice-tab="lesson8-scapy-activities">Scapy Basics</button>
+          <button class="tab" data-practice-tab="lesson8-send-activities">Send and Receive</button>
+          <button class="tab" data-practice-tab="lesson8-sniff-activities">Sniffing and Files</button>
+        </div>
+
+        <section class="practice-panel active" id="lesson8-traffic-activities">
+          <div class="panel-intro">
+            <h2>Traffic Analysis Activities</h2>
+            <p>These prompts practice packet-capture vocabulary, Wireshark workflow, filters, and PCAP reading.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Wireshark Capture Review</h3>
+            <p><strong>Objective:</strong> Practice reading basic packet-capture information from a small authorized capture.</p>
+            <ol>
+              <li>Open Wireshark and identify the interface used for your lab traffic.</li>
+              <li>Start a short capture in a permitted lab environment.</li>
+              <li>Identify the packet list columns for time, source, destination, protocol, and info.</li>
+              <li>Apply an IP address display filter using the pattern <code>ip.addr == x.x.x.x</code>.</li>
+              <li>Apply at least three protocol filters from this list: <code>tcp</code>, <code>udp</code>, <code>dns</code>, <code>arp</code>, <code>smtp</code>.</li>
+              <li>Stop the capture and save it as a <code>.pcap</code> file.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A display filter changes what Wireshark shows you; it does not necessarily delete packets from the
+                capture file. Save only lab captures that you are allowed to keep.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>PCAP Source and Destination Printer</h3>
+            <p><strong>Objective:</strong> Use <code>dpkt</code> to read a packet capture and display IP endpoints.</p>
+            <ol>
+              <li>Install <code>dpkt</code> if it is not already available in your environment.</li>
+              <li>Open a saved <code>.pcap</code> file in binary mode.</li>
+              <li>Create a <code>dpkt.pcap.Reader</code> object.</li>
+              <li>Loop through the reader and unpack each <code>timestamp</code> and packet buffer.</li>
+              <li>Parse the packet buffer as an Ethernet frame.</li>
+              <li>Convert source and destination IP bytes into dotted strings.</li>
+              <li>Print the source and destination for each IP packet you process.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>socket.inet_ntoa()</code> converts packed IPv4 bytes into readable dotted-quad text. Real captures
+                may include non-IP frames, so robust code checks packet types before assuming <code>ip.src</code> and
+                <code>ip.dst</code> exist.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Traffic Vocabulary Check</h3>
+            <ol>
+              <li>Define network traffic in your own words.</li>
+              <li>Explain the meaning of <code>Traffic volume = Traffic intensity * Time</code>.</li>
+              <li>Explain what the source and destination fields tell you.</li>
+              <li>Explain why a busy network capture can become difficult to read without filters.</li>
+              <li>Describe the difference between live capture and opening a saved capture file.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A capture is a record of packets. Analysis means narrowing that record into something you can explain:
+                who talked, what protocol was used, when it happened, and what the packet summary suggests.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson8-scapy-activities">
+          <div class="panel-intro">
+            <h2>Scapy Basics Activities</h2>
+            <p>These activities practice Scapy imports, packet objects, layer stacking, inspection commands, and packet sets.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Interactive Mode and Module Mode</h3>
+            <ol>
+              <li>Start Scapy in interactive mode from the terminal.</li>
+              <li>Create an <code>IP()</code> object and display it.</li>
+              <li>Create a separate Python script that imports Scapy in module mode.</li>
+              <li>Import <code>IP</code> from <code>scapy.layers.inet</code>.</li>
+              <li>Use <code>print(IP)</code> and <code>print(dir())</code> to inspect what is available.</li>
+              <li>Write a short paragraph describing when you would prefer a script over the interactive shell.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Interactive mode is convenient for one-liners and experiments. Module mode is better when the same steps
+                should be saved, rerun, submitted, or debugged like a normal Python program.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Layer Stacking Practice</h3>
+            <p><strong>Objective:</strong> Create packets by stacking Scapy layers with the <code>/</code> operator.</p>
+            <ol>
+              <li>Create an <code>IP()</code> packet.</li>
+              <li>Create an <code>IP()/TCP()</code> packet.</li>
+              <li>Create an <code>Ether()/IP()/TCP()</code> packet.</li>
+              <li>Create an <code>IP()/TCP()</code> packet with a simple HTTP-style string payload.</li>
+              <li>Create an <code>IP(proto=55)/TCP()</code> packet.</li>
+              <li>Use <code>show()</code>, <code>show2()</code>, and <code>hexdump()</code> on at least one packet.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                The <code>/</code> operator stacks layers in Scapy. <code>show()</code> displays fields before full
+                assembly, while <code>show2()</code> assembles the packet first and can fill calculated values.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card prominent">
+            <h3>nsummary, summary, and hexdump Activity</h3>
+            <p><strong>Time guide:</strong> 5-10 minutes</p>
+            <p><strong>Objective:</strong> Implement Scapy inspection commands in the terminal, then translate them into a Python script.</p>
+            <ol>
+              <li>Create a small packet or packet list in interactive Scapy.</li>
+              <li>Run <code>nsummary()</code> and observe the numbered summary output.</li>
+              <li>Run <code>summary()</code> and compare it with <code>nsummary()</code>.</li>
+              <li>Run <code>hexdump()</code> on one packet.</li>
+              <li>Create a Python script that performs the same inspections.</li>
+              <li>Add comments explaining what each inspection command helps you learn.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Summaries help you scan packet lists quickly. Hexdumps remind you that packet objects ultimately become
+                raw bytes when stored, sent, or decoded.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Packet Sets and PacketList</h3>
+            <ol>
+              <li>Create an <code>IP</code> packet using a small CIDR destination range.</li>
+              <li>Create an <code>IP</code> packet with TTL values <code>1</code>, <code>2</code>, and a range from <code>5</code> through <code>9</code>.</li>
+              <li>Create a <code>TCP</code> layer with destination ports <code>80</code> and <code>443</code>.</li>
+              <li>Combine the IP and TCP expressions.</li>
+              <li>Use a list comprehension to display the generated combinations.</li>
+              <li>Wrap the generated packets in a <code>PacketList</code> and call <code>summary()</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Packet sets can expand one expression into many packets. When more than one field contains multiple
+                values, Scapy may generate combinations. Use a list or <code>PacketList</code> when you need every
+                generated packet explicitly.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson8-send-activities">
+          <div class="panel-intro">
+            <h2>Sending and Receiving Activities</h2>
+            <p>Use a private lab target or instructor-provided environment for these prompts.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>send() and sendp() Comparison</h3>
+            <ol>
+              <li>Explain the difference between Layer 3 sending and Layer 2 sending.</li>
+              <li>Create a Layer 3 packet for a permitted lab target.</li>
+              <li>Use <code>send()</code> with <code>count</code> set to a small value.</li>
+              <li>Create a Layer 2 packet that includes an <code>Ether()</code> layer.</li>
+              <li>Use <code>sendp()</code> with a lab interface name supplied by your environment.</li>
+              <li>Write down what <code>count</code>, <code>loop</code>, <code>inter</code>, and <code>iface</code> control.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>send()</code> works at Layer 3 and does not listen for replies. <code>sendp()</code> works at
+                Layer 2, so you provide a link-layer header and often specify an interface.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card prominent">
+            <h3>Send and Receive TCP Packets</h3>
+            <p><strong>Time guide:</strong> 25-30 minutes</p>
+            <p><strong>Objective:</strong> Write a Python script that sends and receives TCP packets with Scapy.</p>
+            <ol>
+              <li>Choose an authorized lab target IP address.</li>
+              <li>Create an IP layer for that destination.</li>
+              <li>Create a TCP layer using a small list of destination ports.</li>
+              <li>Use <code>sr()</code> to send the packets and receive responses.</li>
+              <li>Store the answered and unanswered results in separate variables.</li>
+              <li>Use <code>summary()</code> or <code>nsummary()</code> to inspect the answered results.</li>
+              <li>Add a timeout so the script does not wait forever.</li>
+              <li>Write a short explanation of the difference between answered and unanswered probes.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>sr()</code> returns answered stimulus-response pairs and unanswered packets. Start with a very
+                small list of ports and a timeout so the program remains predictable in a classroom lab.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>sr1() and srloop() Review</h3>
+            <ol>
+              <li>Create an ICMP packet for a permitted lab target.</li>
+              <li>Use <code>sr1()</code> to collect only the first response.</li>
+              <li>Print a friendly message if no response is received.</li>
+              <li>Use <code>srloop()</code> with a very small count in a lab environment.</li>
+              <li>Explain why endless loops are risky on networks.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>sr1()</code> is useful when you only care about the first answer. <code>srloop()</code> repeats a
+                send-and-receive action, so keep it bounded in learning exercises.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson8-sniff-activities">
+          <div class="panel-intro">
+            <h2>Fuzzing, Import/Export, and Sniffing Activities</h2>
+            <p>These prompts practice advanced Scapy features while keeping safety and authorization visible.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Fuzzing Concept Check</h3>
+            <ol>
+              <li>Define fuzzing in your own words.</li>
+              <li>Create a fuzzed UDP/NTP packet object for an isolated lab target, but do not send it at first.</li>
+              <li>Use <code>show()</code> to inspect which fields Scapy randomized.</li>
+              <li>Explain why checksums are treated differently from ordinary randomizable fields.</li>
+              <li>Explain why fuzzing should not be performed against public systems.</li>
+              <li>Describe when <code>RandIP()</code> would be relevant.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Fuzzing sends unusual inputs to observe behavior. It belongs in a controlled lab because unexpected
+                packet values can stress, confuse, or disrupt systems.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Import and Export Packet Data</h3>
+            <ol>
+              <li>Use <code>rdpcap()</code> to read a saved capture file.</li>
+              <li>Use <code>sniff(offline="file.pcap")</code> to read the same capture another way.</li>
+              <li>Use <code>summary()</code> and <code>nsummary()</code> on the loaded packets.</li>
+              <li>Create a small packet object and display it with <code>hexdump()</code>.</li>
+              <li>Describe what <code>export_object()</code> and <code>import_object()</code> are used for.</li>
+              <li>Explain the difference between packet bytes and a readable string representation.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>rdpcap()</code> and offline <code>sniff()</code> work with saved files. <code>raw(packet)</code>
+                gives packet bytes, while summaries and hexdumps give human-friendly views of those bytes.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Sniffing Options Review</h3>
+            <ol>
+              <li>Use <code>sniff()</code> on an authorized lab interface with a small <code>count</code>.</li>
+              <li>Use a BPF filter such as <code>"tcp and port 80"</code> in a lab environment.</li>
+              <li>Use <code>timeout</code> so the capture stops even if the count is not reached.</li>
+              <li>Use <code>prn</code> to print a short summary of each captured packet.</li>
+              <li>Read an offline capture with <code>sniff(offline="file.pcap")</code>.</li>
+              <li>Explain why Scapy may miss packets on very busy networks.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>sniff()</code> can capture live or offline traffic. Filters reduce what is captured or processed.
+                Scapy is flexible, but dedicated tools are better for high-speed capture.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Safety and Ethics Reflection</h3>
+            <ol>
+              <li>List three Scapy actions that should only be performed in a lab or permissioned network.</li>
+              <li>Explain why reading a saved classroom PCAP is safer than sending live packets.</li>
+              <li>Describe the difference between learning protocol structure and testing someone else's system.</li>
+              <li>Write a short rule you will follow before capturing, sending, fuzzing, or sniffing traffic.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Packet tools are normal cybersecurity learning tools, but they interact with real networks. Permission,
+                scope, and restraint are part of the technical skill.
+              </p>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -6859,8 +7838,8 @@ print(decoded_message)</code></pre>
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260525-3"></script>
+  <script src="community-config.js?v=20260525-4"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-3"></script>
+  <script src="app.js?v=20260525-4"></script>
 </body>
 </html>
