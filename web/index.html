@@ -119,6 +119,15 @@ print("Welcome,", name)
             <a href="#lesson6-practice" data-route="lesson6-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 7</p>
+          <h2>Python for Cybersecurity: Cryptography</h2>
+          <p>Secure communication, ciphers, keys, hashing, signatures, certificates, authentication, and Base64.</p>
+          <div class="chapter-links">
+            <a href="#lesson7-study" data-route="lesson7-study">Study</a>
+            <a href="#lesson7-practice" data-route="lesson7-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -178,6 +187,12 @@ print("Welcome,", name)
             <h2>Error and Exception Handling</h2>
             <p>Practice TypeError, ValueError, input validation, custom exceptions, and try/except control flow.</p>
             <span class="testing-card-action">Open Lesson 6 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson7-practice" data-route="lesson7-practice">
+            <p class="chapter-number">Lesson 7</p>
+            <h2>Python for Cybersecurity</h2>
+            <p>Practice cipher dictionaries, encryption workflows, hashing, authentication, signatures, and Base64.</p>
+            <span class="testing-card-action">Open Lesson 7 Testing</span>
           </a>
         </section>
       </div>
@@ -5964,6 +5979,876 @@ print("Great! Value is in the correct range.")</code></pre>
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson7-study-view" aria-labelledby="lesson7-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 7 sections">
+          <p class="sidebar-label">Lesson 7 Study Material</p>
+          <a href="#lesson7-foundations">1. Secure Communication</a>
+          <a href="#lesson7-terms">2. Cryptography Terms</a>
+          <a href="#lesson7-symmetric">3. Symmetric Encryption</a>
+          <a href="#lesson7-classical">4. Classical Ciphers</a>
+          <a href="#lesson7-modern">5. Modern Symmetric Tools</a>
+          <a href="#lesson7-asymmetric">6. Asymmetric Encryption</a>
+          <a href="#lesson7-authentication">7. Authentication</a>
+          <a href="#lesson7-passwords">8. Passwords and Hashes</a>
+          <a href="#lesson7-certificates">9. Tokens and Certificates</a>
+          <a href="#lesson7-cryptanalysis">10. Cryptanalysis and Base64</a>
+          <a href="#lesson7-practice" data-route="lesson7-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 7</p>
+            <h1 id="lesson7-study-title">Python for Cybersecurity: Cryptography</h1>
+            <p>
+              Lesson 7 introduces cryptography from both a security-concept angle and a Python-programming angle.
+              The chapter begins with the need for secure communication, then moves through classical ciphers, modern
+              symmetric and asymmetric encryption, hashing, authentication, digital signatures, certificates,
+              cryptanalysis, and Base64 encoding. The goal is to understand the vocabulary and workflows well enough to
+              write small educational scripts and to recognize when real security work requires established libraries.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson6-study" data-route="lesson6-study">Previous: Lesson 6</a>
+              <a class="lesson-nav-button next" href="#lesson7-practice" data-route="lesson7-practice">Next: Lesson 7 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson7-foundations">
+            <h2>1. Secure Communication</h2>
+            <p>
+              Cryptography is the science of secure communication in the presence of third parties. The phrase
+              "third parties" matters: the problem is not simply sending a message from one person to another, but
+              sending it while someone else may be able to observe, copy, delay, alter, or impersonate part of the
+              communication.
+            </p>
+            <p>
+              Cryptography appears anywhere information needs protection. Online banking and e-commerce use it to
+              protect account details, payment data, and session traffic. Digital signatures use cryptographic
+              techniques to verify the source and integrity of documents. Password systems should not store plaintext
+              passwords; they should store password hashes produced by appropriate password-hashing algorithms. Military
+              and intelligence systems use cryptography to protect classified communication.
+            </p>
+            <p>
+              The established needs for secure communication are secrecy, authentication, and message integrity. Secrecy
+              means only the intended receiver should understand the message. Authentication means the parties involved
+              can confirm identity: the sender is who they claim to be, and the receiver is the intended receiver.
+              Message integrity means the communication has not been changed maliciously or accidentally during
+              transmission.
+            </p>
+            <div class="reference-card">
+              <h3>Security goals</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Goal</th>
+                      <th>Meaning</th>
+                      <th>Beginner example</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Secrecy</th>
+                      <td>Only the intended receiver can understand the message.</td>
+                      <td>An encrypted banking session keeps account data unreadable to observers.</td>
+                    </tr>
+                    <tr>
+                      <th>Authentication</th>
+                      <td>Parties can confirm identity or source.</td>
+                      <td>A login system checks that a user knows the correct credentials.</td>
+                    </tr>
+                    <tr>
+                      <th>Integrity</th>
+                      <td>Data has not been altered.</td>
+                      <td>A message digest changes when a document is modified.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="callout">
+              <h3>Use this knowledge responsibly</h3>
+              <p>
+                Cryptography is a defensive security topic. The examples in this chapter are for learning, protecting
+                your own data, and understanding secure systems. Do not use these techniques to access, alter, or hide
+                activity on systems you do not own or have permission to test.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson7-terms">
+            <h2>2. Core Cryptography Terminology</h2>
+            <p>
+              Cryptography uses a vocabulary that can feel abstract until you connect each word to the life of a
+              message. The original readable message is called plaintext or cleartext. After an encryption algorithm
+              transforms it, the unreadable result is ciphertext. Encryption converts plaintext into ciphertext.
+              Decryption converts ciphertext back into plaintext.
+            </p>
+            <p>
+              Many algorithms also use a key. A key is a string of numbers, bytes, or characters used as an input to the
+              algorithm. If the same secret key is used for both encryption and decryption, the algorithm is symmetric.
+              If one key encrypts and a different related key decrypts, the algorithm is asymmetric.
+            </p>
+            <div class="reference-card">
+              <h3>Term reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Term</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Plaintext</th><td>The original readable message, often denoted as <code>P</code>.</td></tr>
+                    <tr><th>Ciphertext</th><td>The encrypted message, often denoted as <code>C</code>.</td></tr>
+                    <tr><th>Encryption</th><td>The process of encoding plaintext into ciphertext, often denoted as <code>E</code>.</td></tr>
+                    <tr><th>Decryption</th><td>The process of decoding ciphertext back into plaintext, often denoted as <code>D</code>.</td></tr>
+                    <tr><th>Cipher</th><td>A method or algorithm for encrypting messages.</td></tr>
+                    <tr><th>Key</th><td>A secret or public input used by the algorithm to transform data.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              A common way to describe the relationship is <code>C = E(P)</code>, meaning encryption turns plaintext
+              into ciphertext. Decryption reverses that relationship: <code>D(C) = P</code>. In real algorithms, the key
+              is part of both operations, but the shorthand helps you see the direction of the transformation.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson7-symmetric">
+            <h2>3. Symmetric Encryption</h2>
+            <p>
+              Symmetric encryption uses the same key to encrypt and decrypt. That makes it efficient, but it creates a
+              key-sharing problem: both parties need the same secret key, and the key must not be exposed. If an attacker
+              gets the secret key, they can read the ciphertext and may be able to create convincing encrypted messages.
+            </p>
+            <p>
+              Symmetric algorithms include stream ciphers, block ciphers, substitution techniques, transposition
+              techniques, and related hiding techniques such as steganography. These categories describe different ways
+              of transforming or arranging data.
+            </p>
+            <div class="reference-card">
+              <h3>Symmetric algorithm families</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Examples</th>
+                      <th>What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Stream cipher</th><td>RC4, ChaCha20</td><td>Encrypts plaintext one bit or byte at a time, useful for continuous streams.</td></tr>
+                    <tr><th>Block cipher</th><td>AES, DES, Blowfish</td><td>Encrypts fixed-size blocks of plaintext under the same key.</td></tr>
+                    <tr><th>Substitution</th><td>Caesar, monoalphabetic, Playfair, Hill, polyalphabetic, one-time pad</td><td>Replaces symbols or groups of symbols according to a rule or key.</td></tr>
+                    <tr><th>Transposition</th><td>Rail fence, columnar transposition</td><td>Rearranges the position of plaintext characters.</td></tr>
+                    <tr><th>Steganography</th><td>Embedding in images or audio</td><td>Hides the existence of a message inside another medium.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Key strength is a major part of symmetric encryption. Key length is measured in bits. A set of all
+              possible keys for a cipher is called the key space. A 40-bit key has <code>2 ** 40</code> possible keys;
+              a 128-bit key has <code>2 ** 128</code> possible keys. Each additional bit doubles the number of possible
+              keys, which is why key length matters so much against brute-force guessing.
+            </p>
+            <div class="callout">
+              <h3>Brute force</h3>
+              <p>
+                A brute-force attack tries possible keys until one works. Good modern systems choose algorithms and key
+                sizes that make brute force impractical with available computing power.
+              </p>
+            </div>
+            <p>
+              Symmetric encryption is fast, but it has a central limitation: the secret key must somehow reach the
+              receiver. Any exposure of that key compromises the secrecy of the ciphertext. This is why modern secure
+              systems often combine asymmetric methods for key exchange with symmetric methods for bulk data encryption.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson7-classical">
+            <h2>4. Classical Ciphers: Caesar, Monoalphabetic, and Polyalphabetic</h2>
+            <p>
+              Classical ciphers are useful teaching tools because their transformations are visible. They are not
+              appropriate for protecting real secrets today, but they help you understand keys, substitution, frequency
+              analysis, and reversible transformations.
+            </p>
+            <p>
+              A Caesar cipher shifts each letter by a fixed number of positions. With a shift of three, <code>A</code>
+              maps to <code>D</code>, <code>B</code> maps to <code>E</code>, and so on, wrapping around at the end of
+              the alphabet. The mathematical idea uses modular arithmetic. If letters are numbered from
+              <code>A = 0</code> through <code>Z = 25</code>, encryption can be described as
+              <code>(message_value + key) % 26</code>. Decryption reverses the shift with
+              <code>(cipher_value - key + 26) % 26</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Caesar shift idea</span><button class="copy-code">Copy</button></div>
+              <pre><code>alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+shifted = "DEFGHIJKLMNOPQRSTUVWXYZABC"
+
+for plain, cipher in zip(alphabet, shifted):
+    print(plain, "maps to", cipher)</code></pre>
+            </div>
+            <p>
+              The source chapter also shows a key-generation pattern for a polyalphabetic Caesar-style cipher. A keyword
+              is repeated until it is the same length as the message. Then each message character is combined with the
+              matching key character using <code>ord()</code>, <code>chr()</code>, and modulo arithmetic. The
+              <code>ord()</code> function returns the Unicode code point for a single character; <code>chr()</code>
+              converts an integer code point back into a character.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Repeat a keyword to message length</span><button class="copy-code">Copy</button></div>
+              <pre><code>def generate_key(message, keyword):
+    key = list(keyword)
+
+    if len(message) == len(key):
+        return "".join(key)
+
+    for i in range(len(message) - len(key)):
+        key.append(key[i % len(key)])
+
+    return "".join(key)
+
+print(generate_key("HELLOWORLD", "KEY"))</code></pre>
+            </div>
+            <p>
+              A monoalphabetic cipher substitutes each plaintext letter with one fixed ciphertext letter. Each letter
+              must have a unique substitute so the mapping can be reversed. There are many possible mappings, but simple
+              monoalphabetic substitution is still vulnerable to statistical analysis because common letters and word
+              patterns leak clues.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Monoalphabetic dictionary pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>monoalpha_cipher = {
+    "a": "m", "b": "n", "c": "b", "d": "v", "e": "c",
+    "f": "x", "g": "z", "h": "a", "i": "s", "j": "d",
+    "k": "f", "l": "g", "m": "h", "n": "j", "o": "k",
+    "p": "l", "q": "p", "r": "o", "s": "i", "t": "u",
+    "u": "y", "v": "t", "w": "r", "x": "e", "y": "w",
+    "z": "q", " ": " "
+}
+
+message = "good morning"
+encrypted = []
+
+for letter in message:
+    encrypted.append(monoalpha_cipher.get(letter, letter))
+
+print("".join(encrypted))</code></pre>
+            </div>
+            <p>
+              To decrypt a monoalphabetic cipher, create the inverse dictionary by switching keys and values. The
+              original dictionary maps plaintext to ciphertext. The inverse dictionary maps ciphertext back to
+              plaintext.
+            </p>
+            <p>
+              A polyalphabetic cipher uses multiple substitution alphabets in sequence. Instead of applying the same
+              shift to every letter, it changes the shift according to a key pattern. This reduces some obvious
+              frequency patterns, which is why polyalphabetic ciphers were historically harder to break than a simple
+              Caesar cipher.
+            </p>
+            <p>
+              The chapter also describes using a keyword to shift the alphabet. For example, a key such as
+              <code>KIND</code> can be placed at the start of the cipher alphabet, duplicate letters removed, and the
+              rest of the alphabet appended afterward. The important rule is one-to-one mapping: no plaintext letter
+              should map to two ciphertext letters, and no ciphertext letter should map back to two plaintext letters.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson7-modern">
+            <h2>5. Modern Symmetric Algorithms and Python Libraries</h2>
+            <p>
+              Modern encryption should use established, reviewed libraries instead of handmade ciphers. Classical
+              examples teach mechanics, but real confidentiality depends on mature algorithms, correct modes, safe key
+              generation, authentication, and careful storage of secrets.
+            </p>
+            <div class="reference-card">
+              <h3>Encryption algorithm summary</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Algorithm</th>
+                      <th>Type</th>
+                      <th>Key size</th>
+                      <th>Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>DES</th><td>Block cipher</td><td>56 bits</td><td>Historically common, but no longer strong enough for modern protection.</td></tr>
+                    <tr><th>TripleDES</th><td>Block cipher</td><td>168 bits, about 112 effective</td><td>A DES modification that improved security but is now legacy.</td></tr>
+                    <tr><th>Blowfish</th><td>Block cipher</td><td>Variable, up to 448 bits</td><td>Known for strong historical security, though newer designs are usually preferred today.</td></tr>
+                    <tr><th>AES</th><td>Block cipher</td><td>128, 192, or 256 bits</td><td>Modern replacement for DES and widely used today.</td></tr>
+                    <tr><th>RC4</th><td>Stream cipher</td><td>40 or 128 bits historically</td><td>Fast stream cipher historically used in SSL, but now considered unsafe for modern use.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              DES, the Data Encryption Standard, was designed as a block cipher that encodes plaintext in 64-bit chunks.
+              Its effective 56-bit key is too small for modern use. The chapter includes DES3 examples through
+              PyCryptodome, but for new real-world systems, choose modern authenticated encryption such as Fernet for
+              beginner Python work or well-reviewed AES modes through a trusted library.
+            </p>
+            <p>
+              AES, the Advanced Encryption Standard, is a block cipher established by NIST in 2001. It encrypts data in
+              128-bit blocks and supports 128, 192, and 256-bit keys. The source lesson uses PyCryptodome's
+              <code>Crypto.Cipher.AES</code> with EAX mode, which produces both ciphertext and an authentication tag.
+              The tag matters because decryption alone does not prove the message was not modified.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>AES EAX shape</span><button class="copy-code">Copy</button></div>
+              <pre><code>from Crypto.Cipher import AES
+
+key = b"Sixteen byte key"
+data = b"Secret message"
+
+cipher = AES.new(key, AES.MODE_EAX)
+nonce = cipher.nonce
+ciphertext, tag = cipher.encrypt_and_digest(data)
+
+decipher = AES.new(key, AES.MODE_EAX, nonce=nonce)
+plaintext = decipher.decrypt(ciphertext)
+
+try:
+    decipher.verify(tag)
+    print("The message is authentic:", plaintext)
+except ValueError:
+    print("Key incorrect or message corrupted")</code></pre>
+            </div>
+            <p>
+              The <code>cryptography</code> package's Fernet feature gives beginners a safer high-level symmetric
+              encryption interface. Fernet generates keys, encrypts bytes, authenticates messages, and decrypts with the
+              same key. The message must be converted to bytes before encryption, usually with <code>encode()</code>.
+              After decryption, convert bytes back to a string with <code>decode()</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Fernet symmetric encryption</span><button class="copy-code">Copy</button></div>
+              <pre><code>from cryptography.fernet import Fernet
+
+message = "Hey, Can I have some rice"
+
+key = Fernet.generate_key()
+fernet = Fernet(key)
+
+encrypted_message = fernet.encrypt(message.encode())
+print("encrypted string:", encrypted_message)
+
+decrypted_message = fernet.decrypt(encrypted_message).decode()
+print("decrypted string:", decrypted_message)</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>Shannon's characteristics of good ciphers</h3>
+              <ul class="compact-list">
+                <li>The amount of secrecy needed should determine the amount of labor appropriate for encryption and decryption.</li>
+                <li>The key set and enciphering algorithm should be free from unnecessary complexity.</li>
+                <li>The implementation should be as simple as possible.</li>
+                <li>Errors in ciphering should not propagate and corrupt more of the message.</li>
+                <li>The ciphertext should be no larger than the original message when possible.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson7-asymmetric">
+            <h2>6. Asymmetric Encryption</h2>
+            <p>
+              Asymmetric encryption uses a pair of keys. A public key can be shared and used for encryption. A private
+              key must be kept secret and used for decryption. A message encrypted with the public key can only be
+              decrypted with the related private key. This removes the need to secretly transmit the decryption key to
+              every sender.
+            </p>
+            <p>
+              RSA and ElGamal are two well-known public-key algorithms. RSA was developed by Ron Rivest, Adi Shamir,
+              and Len Adleman. It has historically used variable key sizes such as 512, 1024, and 2048 bits, though
+              small sizes are not appropriate for modern security. ElGamal also uses variable key sizes and appears in
+              protocols such as PGP.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>RSA educational example shape</span><button class="copy-code">Copy</button></div>
+              <pre><code>import rsa
+
+public_key, private_key = rsa.newkeys(512)
+
+message = "Welcome to Ontario"
+encrypted_message = rsa.encrypt(message.encode(), public_key)
+
+decrypted_message = rsa.decrypt(encrypted_message, private_key).decode()
+
+print("original string:", message)
+print("encrypted string:", encrypted_message)
+print("decrypted string:", decrypted_message)</code></pre>
+            </div>
+            <p>
+              Asymmetric encryption is powerful, but it is not a replacement for symmetric encryption in every
+              situation. It is slower. Larger asymmetric keys may provide security comparable to much smaller symmetric
+              keys. It can also be vulnerable to man-in-the-middle attacks if public keys are not authenticated. This is
+              why certificates and public key infrastructure matter.
+            </p>
+            <div class="reference-card">
+              <h3>Symmetric versus asymmetric</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Symmetric</th>
+                      <th>Asymmetric</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Keys</th><td>Same secret key encrypts and decrypts.</td><td>Public key and private key pair.</td></tr>
+                    <tr><th>Speed</th><td>Usually faster for large data.</td><td>Usually slower.</td></tr>
+                    <tr><th>Main challenge</th><td>Securely sharing the secret key.</td><td>Verifying that a public key belongs to the right party.</td></tr>
+                    <tr><th>Common use</th><td>Encrypting bulk data.</td><td>Key exchange, signatures, identity, and small data operations.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson7-authentication">
+            <h2>7. Authentication, Message Digests, and Digital Signatures</h2>
+            <p>
+              Authentication validates identity or the integrity of data. The chapter groups authentication technologies
+              into message digests or message authentication codes, digital signatures, and public key infrastructure.
+              These tools answer different questions: Did the data change? Did this sender create or approve it? Does
+              this public key belong to the party it claims to represent?
+            </p>
+            <p>
+              A message digest is a fingerprint for data. The process of creating a digest is called hashing. A hash
+              function is one way: it should be infeasible to reverse the digest into the original message, and
+              infeasible to deliberately construct two different messages with the same digest. Hashes are commonly used
+              to detect changes, compare files, and support password storage workflows.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Message digest with hashlib</span><button class="copy-code">Copy</button></div>
+              <pre><code>import hashlib
+
+update_bytes = b"Python123"
+
+my_hash1 = hashlib.md5()
+my_hash1.update(update_bytes)
+print("MD5:", my_hash1.hexdigest())
+print("Digest size:", my_hash1.digest_size)
+
+my_hash2 = hashlib.sha256()
+my_hash2.update(update_bytes)
+print("SHA256:", my_hash2.hexdigest())
+print("Digest size:", my_hash2.digest_size)</code></pre>
+            </div>
+            <p>
+              MD5 appears in the source material as a common historical hash algorithm, but it should not be used for
+              modern security decisions. SHA-256 is stronger for general integrity checks. Password storage should use
+              password-hashing algorithms such as bcrypt, not plain MD5 or plain SHA-256.
+            </p>
+            <p>
+              A digital signature is a cryptographic protocol that acts like a digital mark only the sender can make.
+              It gives the receiver a way to check source and integrity. A valid signature should be authentic and hard
+              for someone else to forge. In practice, a message digest is created, signed with a private key, and
+              verified with the sender's public key.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Digital signature shape with PyNaCl</span><button class="copy-code">Copy</button></div>
+              <pre><code>from nacl.signing import SigningKey, VerifyKey
+
+signing_key = SigningKey.generate()
+signed = signing_key.sign(b"This key is Generated String key")
+
+verify_key = signing_key.verify_key
+verify_key_bytes = verify_key.encode()
+
+verify_key = VerifyKey(verify_key_bytes)
+verify_key.verify(signed)
+verify_key.verify(signed.message, signed.signature)</code></pre>
+            </div>
+            <p>
+              The source example also modifies a signed message to demonstrate failure. If a signed message is altered,
+              verification should fail and the library should raise a signature error. That is the point: signatures do
+              not merely attach a name to a message; they help detect tampering.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson7-passwords">
+            <h2>8. Passwords, Hashes, and Authentication Systems</h2>
+            <p>
+              A password is a secret character string known to the user and the authentication system. A responsible
+              system should not store the plaintext password. Instead, it stores a password hash produced by a password
+              hashing library. When the user logs in, the entered password is hashed and checked against the stored
+              value.
+            </p>
+            <p>
+              The source lesson asks for a simple authentication system using <code>bcrypt</code> and a dictionary as a
+              database. That is appropriate for practice, but real systems need a real database, rate limiting, secure
+              sessions, account recovery controls, and careful operational security.
+            </p>
+            <div class="reference-card">
+              <h3>Password risks</h3>
+              <ul class="compact-list">
+                <li>An attacker may learn a password through social engineering.</li>
+                <li>An attacker may crack a weak password through brute force or guesswork.</li>
+                <li>A password may be exposed if sent over an unprotected network.</li>
+                <li>An encrypted or captured password-like value may be replayed if the protocol allows it.</li>
+              </ul>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>bcrypt workflow shape</span><button class="copy-code">Copy</button></div>
+              <pre><code>import bcrypt
+
+password = "correct horse battery staple"
+
+hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+
+is_valid = bcrypt.checkpw(password.encode(), hashed_password)
+print(is_valid)</code></pre>
+            </div>
+            <p>
+              The key habit is that you verify passwords with the hashing library instead of manually comparing raw
+              password text. If the entered password is correct, the check function returns true. If it is wrong, it
+              returns false.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson7-certificates">
+            <h2>9. Kerberos, Personal Tokens, Biometrics, and Digital Certificates</h2>
+            <p>
+              Cryptography supports several authentication technologies beyond passwords. Kerberos is an authentication
+              service that uses symmetric key encryption and a key distribution center. A Kerberos authentication server
+              stores symmetric keys and information about which users have access to which network services.
+            </p>
+            <p>
+              Personal tokens are hardware devices that generate or store authentication values. A storage token holds a
+              secret value and unlocks it with a PIN. A synchronous one-time-password token generates a new value
+              periodically based on time and a secret. A challenge-response token computes an answer based on a server's
+              challenge. A digital-signature token holds a private key and signs supplied data. Tokens may appear as
+              smart cards, USB tokens, handheld devices, or other physical forms.
+            </p>
+            <p>
+              Biometrics use biological characteristics for authentication. Examples include fingerprints, voice,
+              handwriting, face recognition, retinal scans, and hand geometry. Biometrics can help identify a person,
+              but they do not by themselves secure information while it travels over a network.
+            </p>
+            <p>
+              A digital certificate is a signed statement by a trusted party that another party's public key belongs to
+              them. A certificate includes identity information, a public key, and a signature from a certificate
+              authority. Top-level certificate authorities use self-signed root certificates. Name recognition and trust
+              matter because anyone can technically start a certificate authority, but not every authority is trusted by
+              browsers or operating systems.
+            </p>
+            <div class="reference-card">
+              <h3>Authentication technology reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Technology</th>
+                      <th>Main idea</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Kerberos</th><td>Uses symmetric keys and a key distribution center for network authentication.</td></tr>
+                    <tr><th>Personal token</th><td>Uses a physical device to store or generate authentication material.</td></tr>
+                    <tr><th>Biometric authentication</th><td>Uses measured biological characteristics to identify a user.</td></tr>
+                    <tr><th>Digital certificate</th><td>Links identity information to a public key through a trusted signature.</td></tr>
+                    <tr><th>Digital signature</th><td>Provides source assurance and tamper evidence for a message.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson7-cryptanalysis">
+            <h2>10. Cryptanalysis and Base64</h2>
+            <p>
+              Cryptanalysis is the process of breaking or analyzing an encryption code. It can involve trying to
+              recognize patterns in encrypted messages, infer meaning without decrypting the message, deduce a key,
+              exploit weaknesses in an implementation or environment, or find general weaknesses in an algorithm.
+              Understanding cryptanalysis helps explain why modern systems avoid homemade encryption.
+            </p>
+            <p>
+              Base64 appears at the end of Lesson 7. It is often confused with encryption, but it is not encryption and
+              does not provide confidentiality. Base64 encodes binary data into printable ASCII characters so it can pass
+              through text-based systems such as JSON, XML, email, or older protocols that may not handle raw bytes
+              safely.
+            </p>
+            <p>
+              Base64 works by converting data to bytes, encoding those bytes into Base64 bytes, then decoding the result
+              into a printable string. Decoding reverses the process. Anyone can decode Base64 if they have the encoded
+              text, so it should never be used as a secrecy mechanism.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Base64 encode and decode</span><button class="copy-code">Copy</button></div>
+              <pre><code>import base64
+
+message = "Hello, World!"
+
+byte_conversion = message.encode("utf-8")
+encoded_bytes = base64.b64encode(byte_conversion)
+encoded_message = encoded_bytes.decode("utf-8")
+
+print("Encoded message:")
+print(encoded_message)
+
+decoded_conversion = encoded_message.encode("utf-8")
+decoded_bytes = base64.b64decode(decoded_conversion)
+decoded_message = decoded_bytes.decode("utf-8")
+
+print("Decoded message:")
+print(decoded_message)</code></pre>
+            </div>
+            <div class="callout warning">
+              <h3>Base64 is not security</h3>
+              <p>
+                If a value is Base64 encoded, it is only represented differently. It is not protected. Use encryption
+                when secrecy is required and hashing/signatures when integrity or authentication is required.
+              </p>
+            </div>
+            <div class="next-step-panel">
+              <h3>Ready to practice Lesson 7?</h3>
+              <p>
+                The Lesson 7 testing environment contains the cipher, encryption-library, hashing, authentication,
+                signature, and Base64 activities from the chapter. It does not provide completed answers.
+              </p>
+              <a class="button primary" href="#lesson7-practice" data-route="lesson7-practice">Practice Lesson 7</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson7-practice-view" aria-labelledby="lesson7-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 7 Testing Environment</p>
+          <h1 id="lesson7-practice-title">Cryptography and Authentication Practice</h1>
+          <p>
+            Complete these activities in your own IDE. Lesson 7 currently uses embedded lesson activities from the PDF,
+            so this page separates the practice prompts from the textbook material and keeps concept reminders hidden.
+          </p>
+        </header>
+
+        <div class="practice-tabs" role="tablist" aria-label="Lesson 7 practice groups">
+          <button class="tab active" data-practice-tab="lesson7-cipher-activities">Cipher Activities</button>
+          <button class="tab" data-practice-tab="lesson7-library-activities">Library Encryption</button>
+          <button class="tab" data-practice-tab="lesson7-auth-activities">Authentication</button>
+          <button class="tab" data-practice-tab="lesson7-review-activities">Review Checks</button>
+        </div>
+
+        <section class="practice-panel active" id="lesson7-cipher-activities">
+          <div class="panel-intro">
+            <h2>Classical Cipher Activities</h2>
+            <p>These activities practice substitution mappings, reversible dictionaries, and key-based alphabet shifts.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Caesar Cipher Correspondence</h3>
+            <p><strong>Objective:</strong> Write Python code that creates Caesar cipher letter correspondence.</p>
+            <ol>
+              <li>Use the alphabet <code>A</code> through <code>Z</code>.</li>
+              <li>Create the shifted alphabet for a Caesar shift of three.</li>
+              <li>Display which plaintext letter maps to which ciphertext letter.</li>
+              <li>Use your mapping to reason through encrypting a short phrase such as <code>Blue and gold</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A Caesar cipher shifts letters by a fixed amount. Modular arithmetic with <code>% 26</code> handles
+                wrapping around from the end of the alphabet back to the beginning.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card prominent">
+            <h3>Key-Shift Monoalphabetic Encoder and Decoder</h3>
+            <p><strong>Time guide:</strong> 25-30 minutes</p>
+            <p><strong>Objective:</strong> Use a monoalphabetic cipher approach to encode and decode messages using a key-shift alphabet.</p>
+            <ol>
+              <li>Create a function that accepts a message as an argument.</li>
+              <li>Inside it, create a <code>monoalpha_cipher</code> dictionary based on the shifted alphabet key.</li>
+              <li>Return the encrypted message.</li>
+              <li>Create a second function that accepts a message as an argument.</li>
+              <li>Inside it, create or reuse the inverse cipher dictionary.</li>
+              <li>Return the decrypted message.</li>
+              <li>Test your script with the message <code>how are you doing today?</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A monoalphabetic cipher needs one-to-one mapping. To decrypt, reverse the dictionary so ciphertext
+                letters map back to plaintext letters. Use <code>dict.get(letter, letter)</code> if you want spaces or
+                punctuation to pass through unchanged.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson7-library-activities">
+          <div class="panel-intro">
+            <h2>Library Encryption Activities</h2>
+            <p>These activities practice using established libraries instead of hand-rolled encryption.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Encrypt and Decrypt a Text File</h3>
+            <p><strong>Time guide:</strong> 60-65 minutes</p>
+            <p><strong>Objective:</strong> Write a Python script that creates, writes, encrypts, decrypts, and reads a text file.</p>
+            <ol>
+              <li>Create a function that accepts a file name as an argument and creates a text file.</li>
+              <li>Create a function that accepts a file name and contents as arguments and writes the content to the text file.</li>
+              <li>Create a function that accepts a file name and encrypts the text file.</li>
+              <li>Create a function that accepts a file name and decrypts the text file.</li>
+              <li>Create a function that accepts a file name and reads the content of the file.</li>
+              <li>Create a file named <code>Crypto.txt</code>.</li>
+              <li>Write this message to the file: <code>Cryptography library is one of the many libraries and modules that Python offers for secure communication and encryption.</code></li>
+              <li>Encrypt and print the value of the file.</li>
+              <li>Decrypt and print the content of the file.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Combine Lesson 4 file functions with Lesson 7 symmetric encryption. A library such as Fernet expects
+                bytes, so strings usually need <code>encode()</code> before encryption and <code>decode()</code> after
+                decryption.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>AES and RSA Reading Check</h3>
+            <ol>
+              <li>Explain why AES is a symmetric algorithm.</li>
+              <li>Explain why RSA is an asymmetric algorithm.</li>
+              <li>Describe what a nonce and authentication tag are used for in the AES EAX example.</li>
+              <li>Explain which RSA key encrypts and which RSA key decrypts.</li>
+              <li>Explain why asymmetric encryption is often slower than symmetric encryption.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Symmetric encryption uses the same secret key on both sides. Asymmetric encryption uses a public/private
+                key pair. Authenticated modes help detect tampering, not just recover plaintext.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson7-auth-activities">
+          <div class="panel-intro">
+            <h2>Hashing and Authentication Activities</h2>
+            <p>These prompts practice message digests, password hashing, and digital signatures.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Message Digest Comparison</h3>
+            <ol>
+              <li>Use <code>hashlib.md5()</code> to digest the bytes value <code>b"Python123"</code>.</li>
+              <li>Use <code>hashlib.sha256()</code> to digest the same bytes value.</li>
+              <li>Print each hexadecimal digest.</li>
+              <li>Print each digest size.</li>
+              <li>Explain why a changed message produces a different digest.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Hash functions create one-way fingerprints. Use <code>update()</code> with bytes and
+                <code>hexdigest()</code> for readable output. MD5 is historical and not appropriate for modern security
+                decisions.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card prominent">
+            <h3>Simple Authentication System</h3>
+            <p><strong>Objective:</strong> Create a simple authentication system using hashed passwords.</p>
+            <ol>
+              <li>Create a function to register new users.</li>
+              <li>Store usernames and hashed passwords securely.</li>
+              <li>Use the <code>bcrypt</code> library for hashing passwords.</li>
+              <li>You may use a dictionary as a small practice database.</li>
+              <li>Implement authentication to verify user credentials against stored hashed passwords.</li>
+              <li>Add password-management functionality to update a password.</li>
+              <li>Ensure updated passwords are hashed before storage.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Store password hashes, not plaintext passwords. With bcrypt, hash the password when registering or
+                updating, then use the library's check function during login. A dictionary is only for practice.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Digital Signature Verification Check</h3>
+            <ol>
+              <li>Generate a signing key with the PyNaCl signing tools.</li>
+              <li>Sign a byte-string message.</li>
+              <li>Obtain the verify key from the signing key.</li>
+              <li>Verify the signed message.</li>
+              <li>Alter the signed message and observe that verification fails.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A digital signature should prove source and detect tampering. Verification uses the public verify key.
+                If the message or signature changes, verification should fail.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson7-review-activities">
+          <div class="panel-intro">
+            <h2>Review Checks</h2>
+            <p>Use these prompts to review the conceptual parts of Lesson 7.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Security Concepts</h3>
+            <ol>
+              <li>Define secrecy, authentication, and message integrity.</li>
+              <li>Explain why key length affects brute-force resistance.</li>
+              <li>Explain two limitations of symmetric encryption.</li>
+              <li>Explain two limitations of asymmetric encryption.</li>
+              <li>Describe the role of a digital certificate.</li>
+              <li>Describe the role of Kerberos in network authentication.</li>
+              <li>List three types of personal tokens or token-style authentication.</li>
+              <li>Explain why biometrics do not automatically secure network traffic.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Lesson 7 is not only about encryption code. It also connects encryption to identity, trust, certificates,
+                tokens, passwords, and integrity checks.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Cryptanalysis and Base64</h3>
+            <ol>
+              <li>Define cryptanalysis.</li>
+              <li>List two ways encrypted messages may leak useful clues even without direct decryption.</li>
+              <li>Explain why homemade ciphers are risky.</li>
+              <li>Encode <code>Hello, World!</code> using Base64.</li>
+              <li>Decode the Base64 value back to the original message.</li>
+              <li>Explain why Base64 is not encryption.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Cryptanalysis studies ways to break or reason about encrypted communication. Base64 only changes
+                representation so binary data can move through text systems; it does not provide secrecy.
+              </p>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -5974,8 +6859,8 @@ print("Great! Value is in the correct range.")</code></pre>
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260525-2"></script>
+  <script src="community-config.js?v=20260525-3"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-2"></script>
+  <script src="app.js?v=20260525-3"></script>
 </body>
 </html>
