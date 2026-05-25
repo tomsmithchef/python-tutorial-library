@@ -38,7 +38,7 @@
       <div class="lander">
         <div class="lander-copy">
           <p class="eyebrow">Python Fundamentals</p>
-          <h1 id="home-title">Learn Lesson 1 like an online textbook, then practice without spoilers.</h1>
+          <h1 id="home-title">Learn Python fundamentals like an online textbook, then practice without spoilers.</h1>
           <p>
             This web version turns the source course materials into reading-first chapters for complete beginners.
             Open a chapter to study the material, then use Testing when you are ready to practice without answers
@@ -99,6 +99,15 @@ print("Welcome,", name)
             <a href="#lesson4-practice" data-route="lesson4-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 5</p>
+          <h2>Data Manipulation in Python: Pandas</h2>
+          <p>Installing Pandas, Series, DataFrames, reading data, cleaning data, analysis helpers, plotting, and Pickle.</p>
+          <div class="chapter-links">
+            <a href="#lesson5-study" data-route="lesson5-study">Study</a>
+            <a href="#lesson5-practice" data-route="lesson5-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -146,6 +155,12 @@ print("Welcome,", name)
             <h2>File I/O, Modules, and Packages</h2>
             <p>Practice files, OS methods, modules, packages, imports, and inventory-style programs.</p>
             <span class="testing-card-action">Open Lesson 4 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson5-practice" data-route="lesson5-practice">
+            <p class="chapter-number">Lesson 5</p>
+            <h2>Pandas Data Manipulation</h2>
+            <p>Practice Series, DataFrames, reading CSV/TXT/JSON files, cleaning data, analysis, plotting, and Pickle.</p>
+            <span class="testing-card-action">Open Lesson 5 Testing</span>
           </a>
         </section>
       </div>
@@ -4183,6 +4198,1124 @@ BMW</code></pre>
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson5-study-view" aria-labelledby="lesson5-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 5 sections">
+          <p class="sidebar-label">Lesson 5 Study Material</p>
+          <a href="#lesson5-manipulation">1. Data Manipulation</a>
+          <a href="#lesson5-setup">2. Pandas Setup</a>
+          <a href="#lesson5-series">3. Series</a>
+          <a href="#lesson5-dataframes">4. DataFrames</a>
+          <a href="#lesson5-reading">5. Reading Files</a>
+          <a href="#lesson5-analysis">6. Inspecting Data</a>
+          <a href="#lesson5-cleaning">7. Cleaning Data</a>
+          <a href="#lesson5-transforming">8. Transforming Data</a>
+          <a href="#lesson5-plotting">9. Plotting</a>
+          <a href="#lesson5-pickle">10. Pickle</a>
+          <a href="#lesson5-practice" data-route="lesson5-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 5</p>
+            <h1 id="lesson5-study-title">Data Manipulation in Python: Pandas</h1>
+            <p>
+              Lesson 5 introduces Python as a practical data tool. Instead of working only with one number, one string,
+              or one list at a time, you begin working with whole datasets: rows, columns, missing values, files,
+              summaries, charts, and saved objects. Pandas is the main library in this chapter because it gives Python a
+              spreadsheet-like data structure that can still be controlled with code.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson4-study" data-route="lesson4-study">Previous: Lesson 4</a>
+              <a class="lesson-nav-button next" href="#lesson5-practice" data-route="lesson5-practice">Next: Lesson 5 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson5-manipulation">
+            <h2>1. Data Manipulation and Parsing</h2>
+            <p>
+              Data manipulation means taking raw information and reshaping it into a form that is easier to understand,
+              analyze, or use in another program. A raw dataset might contain thousands of rows, inconsistent dates,
+              empty cells, duplicate records, columns you do not need, and values that are technically present but
+              clearly wrong. Manipulation is the process of organizing that data: selecting useful parts, correcting
+              mistakes, filling or removing missing values, grouping related rows, and producing summaries.
+            </p>
+            <p>
+              Parsing is closely related. When Python parses data, it reads information from a source and interprets
+              its structure. A CSV file uses commas to separate fields. A JSON file stores nested key-value data. A text
+              file may use spaces or tabs. Pandas helps Python parse these formats into data structures you can inspect
+              and manipulate.
+            </p>
+            <p>
+              For a beginner, the important mindset shift is that Pandas is not just another way to store values. It is
+              a workflow library. You load data, inspect it, clean it, analyze it, and sometimes export or save the
+              result. Lesson 5 moves through that whole path.
+            </p>
+            <div class="callout">
+              <h3>Beginner mental model</h3>
+              <p>
+                Think of a Pandas dataset as a table with labels. The labels help you ask questions like "show me this
+                column," "show me these rows," "summarize this group," or "replace missing values in this field."
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson5-setup">
+            <h2>2. Installing and Importing Pandas</h2>
+            <p>
+              Pandas is not part of Python's standard library. That means a normal Python installation may not include
+              it until you install the package. In PyCharm, you can install it from the Python Packages window by
+              searching for <code>pandas</code> and choosing Install. In a terminal, the usual command is
+              <code>pip install pandas</code>. Many data examples also use NumPy and Matplotlib, so you may eventually
+              install those too with <code>pip install numpy matplotlib</code>.
+            </p>
+            <p>
+              Once Pandas is installed, your script still has to import it. The common import style is
+              <code>import pandas as pd</code>. The <code>as pd</code> part creates a short alias. Instead of typing
+              <code>pandas.Series(...)</code> or <code>pandas.DataFrame(...)</code>, you can type
+              <code>pd.Series(...)</code> and <code>pd.DataFrame(...)</code>. The alias does not change the library; it
+              only gives your program a shorter local name for it.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Installing and importing</span><button class="copy-code">Copy</button></div>
+              <pre><code># Terminal command, not Python code:
+pip install pandas
+
+# Python script:
+import pandas as pd
+
+numbers = pd.Series([10, 20, 30])
+print(numbers)</code></pre>
+            </div>
+            <p>
+              If Python says <code>ModuleNotFoundError: No module named 'pandas'</code>, the script is running in an
+              environment where Pandas is not installed. In IDEs, this often means the package was installed for one
+              interpreter but the project is using another. Check the project interpreter, then install Pandas into that
+              same environment.
+            </p>
+            <div class="reference-card">
+              <h3>Why Pandas is useful</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>What it helps with</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Data alignment</th>
+                      <td>Matches data by labels so values can line up even when indexes differ.</td>
+                    </tr>
+                    <tr>
+                      <th>Missing data support</th>
+                      <td>Detects, removes, or fills empty values that would otherwise distort analysis.</td>
+                    </tr>
+                    <tr>
+                      <th>DataFrame object</th>
+                      <td>Stores tabular data with row and column labels, similar to a spreadsheet.</td>
+                    </tr>
+                    <tr>
+                      <th>Flexible input formats</th>
+                      <td>Works with CSV, JSON, text-style tables, matrix-like data, tabular data, and time series.</td>
+                    </tr>
+                    <tr>
+                      <th>Selection and reshaping</th>
+                      <td>Supports subsetting, slicing, filtering, reordering, reshaping, pivoting, and grouping.</td>
+                    </tr>
+                    <tr>
+                      <th>Aggregation</th>
+                      <td>Summarizes groups with counts, sums, means, and other calculations.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Pandas was originally created by Wes McKinney while working with financial data, where fast analysis of
+              labeled tables matters. It builds on NumPy, which is why Pandas can perform many operations across whole
+              columns efficiently instead of forcing you to loop through every value by hand.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson5-series">
+            <h2>3. Pandas Series</h2>
+            <p>
+              A <code>Series</code> is one of the two primary Pandas data structures. It is one-dimensional, which means
+              it behaves like a single labeled column of data. A Series can store many Python-style data types, including
+              integers, floats, strings, and Boolean values. The labels attached to the values are called the
+              <code>index</code>.
+            </p>
+            <p>
+              If you create a Series from a list and do not provide labels, Pandas creates a default integer index that
+              starts at <code>0</code>. This should feel familiar from list indexing. If you provide your own labels with
+              the <code>index=</code> argument, you can access values by those labels instead. If you create a Series
+              from a dictionary, the dictionary keys become the labels automatically.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Series from a list</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+letters = ["a", "b", "c"]
+letter_series = pd.Series(letters)
+
+print(letter_series)
+print(letter_series[0])</code></pre>
+            </div>
+            <div class="output-block">
+              <span>Expected output idea</span>
+              <pre><code>0    a
+1    b
+2    c
+dtype: object
+a</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Series with custom labels</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+letters = ["a", "b", "c"]
+letter_series = pd.Series(letters, index=["e", "f", "g"])
+
+print(letter_series)
+print(letter_series["e"])</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Series from a dictionary</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+scores = {"a": 1, "b": 2, "c": 3}
+score_series = pd.Series(scores)
+
+print(score_series)
+print(score_series["a"])</code></pre>
+            </div>
+            <p>
+              A Series has one axis of labels and one set of values. It does not contain multiple columns. When you need
+              several columns side by side, you move to a DataFrame.
+            </p>
+            <div class="reference-card">
+              <h3>Series attributes</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>Series.index</code></th><td>Returns the labels used to identify each value.</td></tr>
+                    <tr><th><code>Series.shape</code></th><td>Returns a tuple describing the length of the Series.</td></tr>
+                    <tr><th><code>Series.dtype</code></th><td>Shows the data type used by the values.</td></tr>
+                    <tr><th><code>Series.size</code></th><td>Returns the number of values.</td></tr>
+                    <tr><th><code>Series.empty</code></th><td>Returns <code>True</code> if the Series has no values.</td></tr>
+                    <tr><th><code>Series.hasnans</code></th><td>Returns <code>True</code> if there are missing values.</td></tr>
+                    <tr><th><code>Series.nbytes</code></th><td>Reports how many bytes the values use in memory.</td></tr>
+                    <tr><th><code>Series.ndim</code></th><td>Returns the number of dimensions. For a Series, this is <code>1</code>.</td></tr>
+                    <tr><th><code>Series.itemsize</code></th><td>Reports the size of the underlying data type where available. In modern Pandas, use dtype and memory usage details when this is not exposed.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="reference-card">
+              <h3>Series methods and functions</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>map()</code></th><td>Transforms values using a function, mapping, or another Series.</td></tr>
+                    <tr><th><code>std()</code></th><td>Calculates standard deviation, a measure of how spread out numeric values are.</td></tr>
+                    <tr><th><code>to_frame()</code></th><td>Converts a Series into a one-column DataFrame.</td></tr>
+                    <tr><th><code>value_counts()</code></th><td>Counts how many times each unique value appears.</td></tr>
+                    <tr><th><code>mean()</code></th><td>Calculates the average of numeric values.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Because Series operations are vectorized, many calculations apply to every value at once. If
+              <code>numbers</code> is a Series, <code>numbers + 2</code> creates a result where every value has been
+              increased by two. A filter such as <code>numbers &gt; 5</code> creates a Boolean Series, and
+              <code>numbers[numbers &gt; 5]</code> uses that Boolean result to keep only matching values.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Series operations</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+numbers = pd.Series([1, 3, 5, 7, 9])
+
+print(numbers + 2)
+print(numbers[numbers &gt; 5])
+print(numbers.mean())
+print(numbers.std())</code></pre>
+            </div>
+            <p class="ide-note">Try it in your IDE: create the Series from the activity list, then inspect <code>index</code>, <code>shape</code>, <code>dtype</code>, and <code>size</code>.</p>
+          </section>
+
+          <section class="study-section" id="lesson5-dataframes">
+            <h2>4. Pandas DataFrames</h2>
+            <p>
+              A <code>DataFrame</code> is the second primary Pandas data structure. It is two-dimensional, with labeled
+              rows and labeled columns. If a Series is like one labeled column, a DataFrame is like a complete table.
+              This makes DataFrames feel similar to spreadsheets, but they are controlled by Python code and can handle
+              repeatable data workflows much more reliably than manual clicking.
+            </p>
+            <p>
+              DataFrames have a row index and column labels. The row index identifies rows. The column labels identify
+              fields such as <code>Name</code>, <code>Age</code>, <code>Salary</code>, or
+              <code>Engine Information.EngineType</code>. Columns can contain different data types, so one column might
+              store strings while another stores integers or floats.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>DataFrame from a dictionary</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+my_data = {
+    "Name": ["Issac", "Goodnews", "Seal"],
+    "Age": [50, 31, 14]
+}
+
+people = pd.DataFrame(my_data)
+print(people)</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>DataFrame with custom row index</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+my_data = {
+    "Name": ["Issac", "Goodnews", "Seal"],
+    "Age": [50, 31, 14]
+}
+
+people = pd.DataFrame(my_data, index=["1", "2", "3"])
+print(people)</code></pre>
+            </div>
+            <p>
+              A common beginner mistake is to think a DataFrame is just a printed table. The printed view is only one
+              representation. The real object stores labels, values, types, and methods. You can select columns,
+              inspect shape, write the DataFrame to a file, group rows, clean values, and plot columns.
+            </p>
+            <div class="reference-card">
+              <h3>Series versus DataFrame</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Structure</th>
+                      <th>Dimensions</th>
+                      <th>Beginner picture</th>
+                      <th>Typical use</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Series</th>
+                      <td>1-dimensional</td>
+                      <td>One labeled column</td>
+                      <td>A single set of related values.</td>
+                    </tr>
+                    <tr>
+                      <th>DataFrame</th>
+                      <td>2-dimensional</td>
+                      <td>A labeled table</td>
+                      <td>Rows and columns from a dataset.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Random DataFrame activity pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+import numpy as np
+
+np.random.seed(10)
+
+data = {
+    "name": ["Alice", "Bob", "Charlie", "David", "Eva"],
+    "age": np.random.randint(20, 70, size=5),
+    "salary": np.random.randint(30000, 90000, size=5)
+}
+
+# Convert the dictionary to a DataFrame, inspect it, then export it.</code></pre>
+            </div>
+            <p>
+              The activity above uses NumPy to generate repeatable random values. <code>np.random.seed(10)</code> makes
+              the random numbers repeatable, which is useful for examples because the output stays consistent from run
+              to run.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson5-reading">
+            <h2>5. Reading CSV, Text, and JSON Files</h2>
+            <p>
+              Real datasets usually come from files. Pandas includes reader functions that parse common file formats
+              into DataFrames. A CSV file is a comma-separated values file. It is plain text, widely supported, and
+              common in spreadsheets and exported reports. Pandas reads CSV files with <code>pd.read_csv()</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Read a CSV file</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+cars = pd.read_csv("cars.csv")
+
+print(cars.to_string())
+print(cars)</code></pre>
+            </div>
+            <p>
+              The difference between <code>print(cars)</code> and <code>print(cars.to_string())</code> matters with large
+              datasets. Pandas may shorten the normal printed display by showing the first rows and last rows. Calling
+              <code>to_string()</code> asks Pandas to produce a full string representation of the DataFrame.
+            </p>
+            <p>
+              Columns can be selected with square brackets. If you pass a list of column names, Pandas returns a
+              DataFrame containing those columns. The column name has to match the real file header exactly, including
+              spaces and punctuation. In the lesson examples, names such as
+              <code>Engine Information.EngineType</code> require careful spelling.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Select a column</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+cars = pd.read_csv("cars.csv")
+
+print(cars[["Engine Information.EngineType"]])</code></pre>
+            </div>
+            <p>
+              Pandas uses <code>loc</code> to select rows by label. The basic idea is
+              <code>dataframe.loc[list_of_indexes]</code>. If your DataFrame uses default row labels, those labels look
+              like row numbers starting at <code>0</code>. If your DataFrame has custom labels, <code>loc</code> uses
+              those labels instead.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Select rows with loc</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+cars = pd.read_csv("cars.csv")
+
+print(cars.loc[[0, 1, 2]])</code></pre>
+            </div>
+            <p>
+              Text files can also be read with <code>pd.read_csv()</code> when the data has a consistent separator. The
+              <code>sep=</code> argument tells Pandas what separates fields. The <code>header=None</code> argument tells
+              Pandas the file does not contain a header row. The <code>names=</code> argument supplies your own column
+              names.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Read a space-separated text file</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+students = pd.read_csv("students.txt", sep=" ", header=None)
+print(students)
+
+students_named = pd.read_csv(
+    "students.txt",
+    sep=" ",
+    names=["firstname", "lastname"]
+)
+print(students_named)</code></pre>
+            </div>
+            <p>
+              JSON data is built from objects and arrays, and its object syntax looks similar to Python dictionaries.
+              Pandas reads JSON with <code>pd.read_json()</code>. Some JSON datasets store one JSON object per line; in
+              that case, pass <code>lines=True</code>. After reading a JSON file, you can use the same DataFrame methods
+              you use with CSV data.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Read a JSON file</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+file_path = "datasets/empire_invoke_wmi_2019-05-18214442.json"
+events = pd.read_json(file_path, lines=True)
+
+print(events.head())
+print(events.tail())</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>File reader reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Reader</th>
+                      <th>Use it for</th>
+                      <th>Useful arguments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>pd.read_csv()</code></th><td>CSV files and delimiter-based text files.</td><td><code>sep</code>, <code>header</code>, <code>names</code></td></tr>
+                    <tr><th><code>pd.read_json()</code></th><td>JSON files or JSON-lines files.</td><td><code>lines=True</code> for one JSON record per line.</td></tr>
+                    <tr><th><code>to_string()</code></th><td>Displaying an entire DataFrame as text.</td><td>Call on the DataFrame after reading.</td></tr>
+                    <tr><th><code>to_csv()</code></th><td>Saving a DataFrame back to a CSV file.</td><td><code>index=False</code> when row labels should not be saved.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson5-analysis">
+            <h2>6. Inspecting and Analyzing Data</h2>
+            <p>
+              Before cleaning or plotting a dataset, inspect it. Inspection answers basic questions: How many rows and
+              columns are there? What are the column names? What data types are present? Do numeric columns have
+              reasonable ranges? Are there missing values? Pandas provides several methods and attributes for this
+              first look.
+            </p>
+            <div class="reference-card">
+              <h3>Inspection methods and attributes</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Tool</th>
+                      <th>What it shows</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>head(n=5)</code></th><td>Returns the first rows. Without an argument, it returns the first five.</td></tr>
+                    <tr><th><code>tail(n=5)</code></th><td>Returns the last rows. Without an argument, it returns the last five.</td></tr>
+                    <tr><th><code>shape</code></th><td>Returns a tuple containing row count and column count.</td></tr>
+                    <tr><th><code>iloc</code></th><td>Selects rows and columns by integer position.</td></tr>
+                    <tr><th><code>describe()</code></th><td>Shows statistical summaries for numeric columns, such as count, mean, standard deviation, min, and percentiles.</td></tr>
+                    <tr><th><code>info()</code></th><td>Prints column names, non-null counts, data types, and memory information.</td></tr>
+                    <tr><th><code>len(df)</code></th><td>Returns the number of rows in the DataFrame.</td></tr>
+                    <tr><th><code>df["column"].dtypes</code></th><td>Shows the data type of a specific column.</td></tr>
+                    <tr><th><code>select_dtypes()</code></th><td>Selects columns by data type, such as numeric columns.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Inspect a dataset</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("Census.txt")
+
+print(df.head(100))
+print(df.tail(20))
+print(df.shape)
+print(df["POPESTIMATE2010"].describe())
+print(df.info())</code></pre>
+            </div>
+            <p>
+              Notice that <code>info()</code> prints information rather than returning a normal table. That is why you
+              often write <code>df.info()</code> by itself. By contrast, <code>head()</code>, <code>tail()</code>, and
+              <code>describe()</code> return objects that can be printed, stored, or displayed in a notebook.
+            </p>
+            <p>
+              The event log analysis example in the source material uses <code>pd.read_json(..., lines=True)</code>,
+              <code>head()</code>, <code>shape</code>, JSON parsing, flattening with <code>json_normalize</code>, and
+              <code>groupby()</code> to identify available data sources. The key idea is that nested JSON often needs to
+              be flattened before grouped summaries become easy.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Event log exploration pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>import json
+import pandas as pd
+from pandas import json_normalize
+
+events = pd.read_json("empire_invoke_wmi_2019-05-18214442.json", lines=True)
+
+print(events.head())
+print(events.shape)
+
+json_records = json.loads(events.to_json(orient="records"))
+flat_events = json_normalize(json_records)
+
+print(flat_events.groupby(["source_name"]).size())</code></pre>
+            </div>
+            <p>
+              Older examples may import <code>json_normalize</code> from <code>pandas.io.json</code>. In modern Pandas,
+              <code>from pandas import json_normalize</code> is the clearer import.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson5-cleaning">
+            <h2>7. Cleaning Empty Cells, Wrong Formats, Wrong Data, and Duplicates</h2>
+            <p>
+              Data cleaning is the process of making a dataset trustworthy enough for analysis. The chapter focuses on
+              four common problems: empty cells, wrong formats, wrong data, and duplicate records. These problems matter
+              because analysis methods do exactly what the data tells them to do. If the dataset contains blanks,
+              impossible values, or repeated records, your summary can be misleading.
+            </p>
+            <p>
+              Empty cells can be removed with <code>dropna()</code> or replaced with <code>fillna()</code>. By default,
+              many Pandas cleaning methods return a new DataFrame and leave the original unchanged. If you want to
+              change the original object directly, some methods accept <code>inplace=True</code>. Beginners should be
+              deliberate here: assigning the result to a new variable is often clearer because you can compare before
+              and after.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Handle missing values</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df_cars = pd.read_csv("cars.csv")
+
+cleaned = df_cars.dropna()
+df_cars["Dimensions.Length"].fillna(10, inplace=True)</code></pre>
+            </div>
+            <p>
+              Wrong format means a value exists but is stored in a form that makes analysis difficult. Dates are a
+              common example. A date column may contain strings that should be converted to date-time values. Pandas
+              provides <code>pd.to_datetime()</code> for this. After conversion, rows that still cannot be converted can
+              be removed with <code>dropna(subset=[...])</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Convert date formats</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("cars.csv")
+
+df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+df.dropna(subset=["Date"], inplace=True)</code></pre>
+            </div>
+            <p>
+              Wrong data means the value is in the right general format but is not believable or valid. A speed of
+              <code>1000</code> km/h in a normal car dataset is probably not a formatting issue; it is a bad value. In a
+              small dataset, you might replace one value with <code>df.loc[row_index, "ColumnName"] = new_value</code>.
+              In a larger dataset, you might loop over indexes and replace or drop rows that fall outside a boundary.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Replace or remove wrong data</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("cars.csv")
+
+for row_index in df.index:
+    if df.loc[row_index, "Speed"] &gt; 150:
+        df.loc[row_index, "Speed"] = 150
+
+for row_index in df.index:
+    if df.loc[row_index, "Speed"] &lt; 0:
+        df.drop(row_index, inplace=True)</code></pre>
+            </div>
+            <p>
+              Duplicate records can be detected with <code>duplicated()</code>. It returns Boolean values for rows:
+              <code>True</code> for a duplicate and <code>False</code> otherwise. To remove duplicates, use
+              <code>drop_duplicates()</code>. With <code>inplace=True</code>, the original DataFrame is modified.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Find and remove duplicates</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("cars.csv")
+
+print(df.duplicated())
+df.drop_duplicates(inplace=True)</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>Cleaning reference</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Problem</th>
+                      <th>Useful tools</th>
+                      <th>Beginner decision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Empty cells</th><td><code>dropna()</code>, <code>fillna()</code></td><td>Remove rows if missing data makes the row unusable; fill values when a sensible replacement exists.</td></tr>
+                    <tr><th>Wrong format</th><td><code>to_datetime()</code>, <code>dropna(subset=...)</code></td><td>Convert values into one consistent type, then remove rows that still fail conversion.</td></tr>
+                    <tr><th>Wrong data</th><td><code>loc</code>, loops, <code>drop()</code></td><td>Replace isolated bad values or remove rows outside an acceptable boundary.</td></tr>
+                    <tr><th>Duplicates</th><td><code>duplicated()</code>, <code>drop_duplicates()</code></td><td>Inspect duplicates first, then remove them when repeated records are not meaningful.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson5-transforming">
+            <h2>8. Transforming, Summarizing, and Correlating Data</h2>
+            <p>
+              After data is loaded and cleaned, you often reshape it or summarize it. Dropping unnecessary columns keeps
+              the dataset focused. Inserting a calculated or generated column adds information. Selecting by data type
+              lets you work only with numeric columns when preparing for analysis or plotting.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Drop, inspect, select, and insert</span><button class="copy-code">Copy</button></div>
+              <pre><code>import numpy as np
+import pandas as pd
+
+df = pd.read_csv("cars.csv")
+
+df = df.drop(columns=["ColumnName1", "ColumnName2"])
+
+print(len(df))
+print(df["Speed"].dtypes)
+print(df.select_dtypes(include="int64"))
+
+random_col = np.random.randint(100, size=len(df))
+df.insert(3, "random_col", random_col)</code></pre>
+            </div>
+            <p>
+              <code>describe()</code> is useful for quick numeric summaries, but grouped summaries are where Pandas
+              becomes especially powerful. <code>groupby()</code> splits the data into groups based on a column, then an
+              aggregation function such as <code>count()</code>, <code>sum()</code>, or <code>mean()</code> summarizes
+              another column inside each group.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Group and aggregate</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("Census.txt")
+
+state_totals = df.groupby("STNAME")["POPESTIMATE2014"].sum()
+print(state_totals)</code></pre>
+            </div>
+            <p>
+              Correlation measures how strongly numeric columns move together. Pandas calculates correlations with
+              <code>corr()</code>. The result ranges from <code>-1</code> to <code>1</code>. A value near
+              <code>1</code> means two values tend to increase together. A value near <code>-1</code> means one tends to
+              increase while the other decreases. A value near <code>0</code> means there is little linear relationship.
+              Pandas ignores non-numeric columns when computing correlation.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Calculate correlation</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+
+df = pd.read_csv("Census.txt")
+
+relationship = df[["POPESTIMATE2010", "POPESTIMATE2014"]].corr()
+print(relationship)</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>Correlation guide</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Value</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>1</code></th><td>Perfect positive relationship.</td></tr>
+                    <tr><th><code>0.9</code></th><td>Strong positive relationship; values tend to increase together.</td></tr>
+                    <tr><th><code>-0.9</code></th><td>Strong negative relationship; one value tends to increase as the other decreases.</td></tr>
+                    <tr><th><code>-0.1</code> or <code>0.1</code></th><td>Weak relationship.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson5-plotting">
+            <h2>9. Plotting with Pandas and Matplotlib</h2>
+            <p>
+              Plotting turns numeric data into a visual shape. Pandas has a convenient <code>plot()</code> method, but
+              it relies on Matplotlib to display the chart. The common import is
+              <code>import matplotlib.pyplot as plt</code> or a similar alias. After calling a plot method, call
+              <code>plt.show()</code> to open the chart window when running in a normal Python environment.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Basic plot</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("cars.csv")
+
+df.plot()
+plt.show()</code></pre>
+            </div>
+            <p>
+              The <code>kind=</code> argument controls the chart type. A scatter plot compares two numeric columns, so
+              it needs an <code>x</code> column and a <code>y</code> column. A histogram shows how values are distributed
+              in one numeric column, so it is usually called from a single column.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Scatter plot and histogram</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("cars.csv")
+
+df.plot(kind="scatter", x="Weight", y="Speed")
+plt.show()
+
+df["Speed"].plot(kind="hist")
+plt.show()</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Common plotting issue</h3>
+              <p>
+                If no chart appears, check that Matplotlib is installed, your script reaches <code>plt.show()</code>,
+                and your environment supports opening chart windows. In notebooks, charts may display inline instead.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson5-pickle">
+            <h2>10. Python Pickle: Storing and Loading Objects</h2>
+            <p>
+              Pickle is a Python module for serialization and deserialization. Serialization means converting an object
+              in memory into a byte stream that can be written to disk, sent over a network, or stored for later.
+              Deserialization reverses the process and reconstructs the object from the byte stream.
+            </p>
+            <p>
+              Pickle can be useful when you want to save program state, cache Python objects, store objects in a
+              database, or send Python data between Python programs. It is Python-specific, so it is not a good choice
+              when another programming language needs to read the data. CSV and JSON are better cross-language formats.
+            </p>
+            <div class="callout warning">
+              <h3>Security warning</h3>
+              <p>
+                Never unpickle data from an untrusted or unauthenticated source. Pickle can execute instructions during
+                loading, so malicious pickle files are dangerous.
+              </p>
+            </div>
+            <div class="reference-card">
+              <h3>Pickle module interface</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Tool</th>
+                      <th>What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>pickle.dump(obj, file)</code></th><td>Serializes an object and writes it to an open binary file.</td></tr>
+                    <tr><th><code>pickle.load(file)</code></th><td>Reads a pickled object from an open binary file and reconstructs it.</td></tr>
+                    <tr><th><code>pickle.dumps(obj)</code></th><td>Serializes an object and returns bytes instead of writing a file.</td></tr>
+                    <tr><th><code>pickle.loads(bytes)</code></th><td>Reconstructs an object from a bytes object.</td></tr>
+                    <tr><th><code>pickle.HIGHEST_PROTOCOL</code></th><td>The highest protocol version available in the current Python version.</td></tr>
+                    <tr><th><code>pickle.DEFAULT_PROTOCOL</code></th><td>The protocol Python uses when you do not choose one.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="reference-card">
+              <h3>Protocol and compatibility arguments</h3>
+              <p>
+                The full Pickle functions include optional arguments for protocol and compatibility. In beginner code,
+                you will most often rely on the defaults, but the names are worth recognizing when you see them in
+                documentation.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Argument</th>
+                      <th>Where it appears</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th><code>protocol</code></th>
+                      <td><code>dump()</code> and <code>dumps()</code></td>
+                      <td>Chooses the Pickle protocol version. If omitted, Python uses the default protocol. A negative value selects the highest available protocol.</td>
+                    </tr>
+                    <tr>
+                      <th><code>fix_imports</code></th>
+                      <td><code>dump()</code> and <code>load()</code></td>
+                      <td>Helps map old Python 2 module names to Python 3 names for compatibility with older pickle streams.</td>
+                    </tr>
+                    <tr>
+                      <th><code>encoding</code> and <code>errors</code></th>
+                      <td><code>load()</code> and <code>loads()</code></td>
+                      <td>Control how Python 2 string data is decoded when older pickle data is loaded in Python 3.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              Pickle files are opened in binary mode. Use <code>"wb"</code> when writing a pickle file and
+              <code>"rb"</code> when reading one. The <code>w</code> and <code>r</code> mean write and read; the
+              <code>b</code> means binary.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Write and read a pickle file</span><button class="copy-code">Copy</button></div>
+              <pre><code>import pickle
+import numpy as np
+
+my_data_dict = {
+    "location_one": np.random.random(20),
+    "location_two": np.random.random(20)
+}
+
+with open("pickle.pkl", "wb") as pickle_file:
+    pickle.dump(my_data_dict, pickle_file)
+
+with open("pickle.pkl", "rb") as pickle_file:
+    my_data = pickle.load(pickle_file)
+
+print(my_data)</code></pre>
+            </div>
+            <div class="reference-card">
+              <h3>Picklable object types</h3>
+              <p>
+                Pickle can handle many ordinary Python objects, including Booleans, integers, floats, complex numbers,
+                strings, tuples, lists, sets, and dictionaries that contain picklable objects. Classes and functions can
+                also be pickled when they are defined at the top level of a module.
+              </p>
+            </div>
+            <p>
+              Pickle is also sensitive to Python context. If a pickle file was created with a different Python version
+              or with custom classes that no longer exist in the same module location, loading may fail. This is another
+              reason to use Pickle for trusted Python-to-Python workflows, not for long-term public data exchange.
+            </p>
+            <div class="reference-card">
+              <h3>Pickle exceptions</h3>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Exception</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>pickle.PickleError</code></th><td>Base class for Pickle-related exceptions.</td></tr>
+                    <tr><th><code>pickle.PicklingError</code></th><td>Raised when an object cannot be pickled.</td></tr>
+                    <tr><th><code>pickle.UnpicklingError</code></th><td>Raised when loading fails because data is corrupted, invalid, or unsafe.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p>
+              To explore Pickle further in a Python console, import the module and run <code>help(pickle)</code>. This
+              follows the same habit from earlier lessons: when a module or keyword is unfamiliar, use Python's built-in
+              help system to inspect it.
+            </p>
+            <div class="next-step-panel">
+              <h3>Ready to practice Lesson 5?</h3>
+              <p>
+                The Lesson 5 testing environment contains the embedded Pandas Series, DataFrame, analysis, plotting, and
+                Pickle activities from the chapter. No full solutions are shown.
+              </p>
+              <a class="button primary" href="#lesson5-practice" data-route="lesson5-practice">Practice Lesson 5</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson5-practice-view" aria-labelledby="lesson5-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 5 Testing Environment</p>
+          <h1 id="lesson5-practice-title">Pandas, Data Cleaning, Plotting, and Pickle Practice</h1>
+          <p>
+            Complete these activities in your own IDE. Lesson 5 does not yet have separate assignment or lab text files,
+            so this page includes only the practice activities embedded in the chapter source material. Concept
+            reminders stay hidden until you open them.
+          </p>
+        </header>
+
+        <div class="practice-tabs" role="tablist" aria-label="Lesson 5 practice groups">
+          <button class="tab active" data-practice-tab="lesson5-series-activities">Series Activities</button>
+          <button class="tab" data-practice-tab="lesson5-dataframe-activities">DataFrame Activities</button>
+          <button class="tab" data-practice-tab="lesson5-analysis-activities">Analysis and Plotting</button>
+          <button class="tab" data-practice-tab="lesson5-pickle-activities">Pickle Activities</button>
+        </div>
+
+        <section class="practice-panel active" id="lesson5-series-activities">
+          <div class="panel-intro">
+            <h2>Series Activities</h2>
+            <p>These activities practice one-dimensional Pandas data and vectorized operations.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Create and Explore a Pandas Series</h3>
+            <ol>
+              <li>Create a Pandas Series from the list of integers <code>[1, 3, 5, 7, 9]</code>.</li>
+              <li>Access the third element of the Series.</li>
+              <li>Add <code>2</code> to each element of the Series.</li>
+              <li>Filter the Series so it only includes elements greater than <code>5</code>.</li>
+              <li>Calculate the mean and standard deviation of the Series.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A Series is one-dimensional and has an index. Default indexes start at <code>0</code>, so the third item
+                uses position <code>2</code>. Arithmetic can be applied to the whole Series, and Boolean filters can keep
+                only matching values. Use Series methods such as <code>mean()</code> and <code>std()</code> for summary
+                statistics.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson5-dataframe-activities">
+          <div class="panel-intro">
+            <h2>DataFrame and File Activities</h2>
+            <p>These tasks practice building DataFrames and exporting them for later use.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Convert a Dictionary to a DataFrame and Save as CSV</h3>
+            <p><strong>Objective:</strong> Complete the starter program so it creates a DataFrame from a dictionary and saves it to a CSV file.</p>
+            <div class="output-block">
+              <span>Starter code</span>
+              <pre><code>import pandas as pd
+import numpy as np
+
+np.random.seed(10)
+
+data = {
+    "name": ["Alice", "Bob", "Charlie", "David", "Eva"],
+    "age": np.random.randint(20, 70, size=5),
+    "salary": np.random.randint(30000, 90000, size=5)
+}
+
+# Convert dictionary to dataframe
+# your code here
+
+# Display the DataFrame
+# your code here
+
+# Save the dataframe to csv file
+# your code here</code></pre>
+            </div>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A DataFrame can be created from a dictionary when each key becomes a column name and each value is a
+                same-length list or array. To export, look for the DataFrame method that writes comma-separated values.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Reader Method Check</h3>
+            <ol>
+              <li>Identify which Pandas function reads CSV files.</li>
+              <li>Identify which Pandas function reads JSON files.</li>
+              <li>Explain when <code>to_string()</code> is useful.</li>
+              <li>Explain what <code>sep</code>, <code>header=None</code>, and <code>names</code> do when reading a text file.</li>
+              <li>Describe why exact column names matter when selecting columns with square brackets.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Pandas reader functions parse files into DataFrames. CSV and delimiter-based text files use one reader;
+                JSON uses another. Column selection depends on labels exactly as they appear in the DataFrame.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson5-analysis-activities">
+          <div class="panel-intro">
+            <h2>Analysis, Cleaning, and Plotting Activities</h2>
+            <p>These activities practice inspecting a dataset, grouping values, calculating correlation, and plotting.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Census Data Analysis</h3>
+            <p><strong>Dataset:</strong> <code>Census.txt</code></p>
+            <ol>
+              <li>Show the first <code>100</code> records of the file.</li>
+              <li>Show the last <code>20</code> records.</li>
+              <li>Describe the <code>POPESTIMATE2010</code> column.</li>
+              <li>Plot your data as a histogram graph.</li>
+              <li>Group your data by <code>STNAME</code> and sum the <code>POPESTIMATE2014</code> column.</li>
+              <li>Find the correlation between <code>POPESTIMATE2010</code> and <code>POPESTIMATE2014</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Use inspection methods such as <code>head()</code>, <code>tail()</code>, and <code>describe()</code>.
+                Grouped summaries use <code>groupby()</code> followed by an aggregation method. Correlation uses numeric
+                columns. Histograms are usually created from a single numeric column.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Data Cleaning Concept Check</h3>
+            <ol>
+              <li>Explain when you would use <code>dropna()</code> instead of <code>fillna()</code>.</li>
+              <li>Describe how <code>pd.to_datetime()</code> can help with wrong-format date values.</li>
+              <li>Explain how <code>loc</code> can replace a wrong value at a specific row and column.</li>
+              <li>Explain the difference between <code>duplicated()</code> and <code>drop_duplicates()</code>.</li>
+              <li>Describe what <code>inplace=True</code> changes about a cleaning operation.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Cleaning choices depend on the problem. Empty values can be removed or filled. Wrong formats can be
+                converted. Wrong data can be replaced or dropped. Duplicate detection reports repeated rows, while
+                duplicate removal changes the dataset.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson5-pickle-activities">
+          <div class="panel-intro">
+            <h2>Pickle Activities</h2>
+            <p>These activities practice storing and loading Python objects after a data workflow.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Convert a Dictionary to a DataFrame and Save as Pickle</h3>
+            <p><strong>Objective:</strong> Complete the starter program so it creates a DataFrame from a dictionary and saves it using Pickle.</p>
+            <div class="output-block">
+              <span>Starter code</span>
+              <pre><code>import pandas as pd
+import numpy as np
+
+np.random.seed(10)
+
+data = {
+    "name": ["Alice", "Bob", "Charlie", "David", "Eva"],
+    "age": np.random.randint(20, 70, size=5),
+    "salary": np.random.randint(30000, 90000, size=5)
+}
+
+# Convert dictionary to dataframe
+# your code here
+
+# Display the DataFrame
+# your code here
+
+# Save the dataframe to pickle
+# your code here</code></pre>
+            </div>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                Pickle stores Python objects as bytes. Open a file in binary write mode when saving with
+                <code>pickle.dump()</code>. If you use a Pandas-specific pickle method, remember that the same security
+                warning still applies: only load trusted pickle files.
+              </p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Pickle Safety and Interface Check</h3>
+            <ol>
+              <li>Define serialization and deserialization in your own words.</li>
+              <li>List two situations where Pickle is useful.</li>
+              <li>List two situations where Pickle is not the right format.</li>
+              <li>Explain why unpickling untrusted data is unsafe.</li>
+              <li>Identify the difference between <code>dump()</code>, <code>load()</code>, <code>dumps()</code>, and <code>loads()</code>.</li>
+              <li>Use <code>help(pickle)</code> in the Python console to inspect the module documentation.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                <code>dump()</code> and <code>load()</code> work with files. <code>dumps()</code> and
+                <code>loads()</code> work with bytes in memory. Pickle is Python-specific and should only be loaded from
+                trusted sources.
+              </p>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -4193,8 +5326,8 @@ BMW</code></pre>
     </div>
   </footer>
 
-  <script src="community-config.js?v=20260522-10"></script>
+  <script src="community-config.js?v=20260525-1"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260522-10"></script>
+  <script src="app.js?v=20260525-1"></script>
 </body>
 </html>
