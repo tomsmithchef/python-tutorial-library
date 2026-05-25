@@ -6,7 +6,7 @@
   <title>Python Tutorial Library | Lesson 1</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260525-7">
+  <link rel="stylesheet" href="styles.css?v=20260525-8">
 </head>
 <body>
   <header class="site-header" id="top">
@@ -1358,15 +1358,15 @@ print("x < y is", x < y)</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 2 sections">
           <p class="sidebar-label">Lesson 2 Study Material</p>
-          <a href="#lesson2-flow">1. Flow Control</a>
-          <a href="#lesson2-if">2. If, Else, Elif</a>
-          <a href="#lesson2-nesting">3. Nested Decisions</a>
-          <a href="#lesson2-loops">4. Loops</a>
-          <a href="#lesson2-break">5. Break and Continue</a>
-          <a href="#lesson2-cli">6. Command-Line Arguments</a>
-          <a href="#lesson2-argv">7. sys.argv</a>
-          <a href="#lesson2-getopt">8. getopt</a>
-          <a href="#lesson2-argparse">9. argparse</a>
+          <a href="#lesson2-flow">1. Flow Control <small>Page 3</small></a>
+          <a href="#lesson2-if">2. If, Else, Elif <small>Pages 4-6, 8</small></a>
+          <a href="#lesson2-nesting">3. Nested Decisions <small>Page 7</small></a>
+          <a href="#lesson2-loops">4. Loops <small>Pages 9-11</small></a>
+          <a href="#lesson2-break">5. Break and Continue <small>Pages 14-16</small></a>
+          <a href="#lesson2-cli">6. Command-Line Arguments <small>Pages 12-13, 17</small></a>
+          <a href="#lesson2-argv">7. sys.argv <small>Pages 18-19</small></a>
+          <a href="#lesson2-getopt">8. getopt <small>Pages 20-21</small></a>
+          <a href="#lesson2-argparse">9. argparse <small>Pages 22-25</small></a>
           <a href="#lesson2-practice" data-route="lesson2-practice">Testing Environment</a>
         </aside>
 
@@ -1387,6 +1387,7 @@ print("x < y is", x < y)</code></pre>
 
           <section class="study-section" id="lesson2-flow">
             <h2>1. Flow Control</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               Flow control is the part of programming that decides which instructions run, which instructions are
               skipped, and which instructions repeat. Without flow control, a program runs straight from top to bottom
@@ -1450,6 +1451,7 @@ print("x < y is", x < y)</code></pre>
 
           <section class="study-section" id="lesson2-if">
             <h2>2. If, Else, and Elif</h2>
+            <p class="section-pages">Source pages 4-6 and 8</p>
             <p>
               The simplest decision uses <code>if</code>. An <code>if</code> statement has a condition followed by a
               colon. The indented block underneath runs only when the condition is true. If the condition is false,
@@ -1530,6 +1532,7 @@ else:
 
           <section class="study-section" id="lesson2-nesting">
             <h2>3. Nested Decisions</h2>
+            <p class="section-pages">Source page 7</p>
             <p>
               A nested <code>if</code> statement is an <code>if</code> statement placed inside another
               <code>if</code> statement. Nesting is sometimes useful because one question only matters after another
@@ -1558,6 +1561,7 @@ else:
 
           <section class="study-section" id="lesson2-loops">
             <h2>4. Loops</h2>
+            <p class="section-pages">Source pages 9-11</p>
             <p>
               A loop repeats a statement or a group of statements. Loops are one of the main reasons programming is
               powerful: the computer can repeat a task hundreds or thousands of times without getting tired. Lesson 2
@@ -1705,6 +1709,7 @@ for number in [10, 23, 24, 35, 65, 78, 100]:
 
           <section class="study-section" id="lesson2-break">
             <h2>5. Break and Continue</h2>
+            <p class="section-pages">Source pages 14-16</p>
             <p>
               Sometimes a loop should not run all the way to its natural end. The <code>break</code> statement exits the
               loop immediately. After <code>break</code>, Python continues with the first line after the loop. This is
@@ -1763,6 +1768,7 @@ print("The end")</code></pre>
 
           <section class="study-section" id="lesson2-cli">
             <h2>6. Command-Line Arguments</h2>
+            <p class="section-pages">Source pages 12-13 and 17</p>
             <p>
               Command-line arguments are values typed after the script name when a program is run from a terminal. They
               let a script receive information without using <code>input()</code>. This matters when you want to run a
@@ -1844,6 +1850,7 @@ print("The end")</code></pre>
 
           <section class="study-section" id="lesson2-argv">
             <h2>7. sys.argv</h2>
+            <p class="section-pages">Source pages 18-19</p>
             <p>
               The <code>sys</code> module gives access to parts of the Python runtime environment. One important value
               in this module is <code>sys.argv</code>, a list containing the command-line arguments. The first item,
@@ -1895,6 +1902,7 @@ for i in range(1, total_arguments):
 
           <section class="study-section" id="lesson2-getopt">
             <h2>8. getopt</h2>
+            <p class="section-pages">Source pages 20-21</p>
             <p>
               The <code>getopt</code> module helps parse command-line options. Options are arguments that usually begin
               with a dash, such as <code>-h</code> for help or <code>-o Colors</code> for an option named
@@ -1945,6 +1953,7 @@ except getopt.GetoptError:
 
           <section class="study-section" id="lesson2-argparse">
             <h2>9. argparse</h2>
+            <p class="section-pages">Source pages 22-25</p>
             <p>
               The <code>argparse</code> module is the preferred standard-library tool for many command-line programs.
               It can define positional arguments, optional arguments, help messages, descriptions, defaults, and type
@@ -2083,6 +2092,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>Use an <code>if</code>, <code>elif</code>, and <code>else</code> chain. The middle range needs a compound condition with <code>and</code>.</p>
+              <a class="page-ref" href="#lesson2-if" data-study-route="lesson2-study">Review: Lesson 2, pages 4-8.</a>
             </details>
           </article>
 
@@ -2096,6 +2106,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>A loop can visit each number in the list and update a running total. A running total usually starts at zero before the loop begins.</p>
+              <a class="page-ref" href="#lesson2-loops" data-study-route="lesson2-study">Review: Lesson 2, pages 9-11.</a>
             </details>
           </article>
 
@@ -2112,6 +2123,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>The modulus operator <code>%</code> can check remainders. A number is even when division by 2 leaves a remainder of 0.</p>
+              <a class="page-ref" href="#lesson2-loops" data-study-route="lesson2-study">Review: Lesson 2, pages 9-11 and 16.</a>
             </details>
           </article>
 
@@ -2126,6 +2138,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>Use <code>sys.argv</code> or <code>argparse</code>. Command-line arguments arrive as strings, so numeric comparisons require conversion.</p>
+              <a class="page-ref" href="#lesson2-argv" data-study-route="lesson2-study">Review: Lesson 2, pages 17-19 and 24.</a>
             </details>
           </article>
 
@@ -2143,6 +2156,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p><code>sys.argv</code> is a list. The script name is item zero, and user-provided arguments start at item one.</p>
+              <a class="page-ref" href="#lesson2-argv" data-study-route="lesson2-study">Review: Lesson 2, pages 18-19.</a>
             </details>
           </article>
 
@@ -2161,6 +2175,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>A colon after an option letter means that option expects a value. In <code>"ho:v"</code>, <code>-o</code> expects a value but <code>-h</code> and <code>-v</code> do not.</p>
+              <a class="page-ref" href="#lesson2-getopt" data-study-route="lesson2-study">Review: Lesson 2, pages 20-21.</a>
             </details>
           </article>
 
@@ -2178,6 +2193,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p><code>argparse</code> can generate help text and collect positional arguments into an object. Command-line values still need numeric conversion unless you configure a type.</p>
+              <a class="page-ref" href="#lesson2-argparse" data-study-route="lesson2-study">Review: Lesson 2, pages 22-23.</a>
             </details>
           </article>
 
@@ -2195,6 +2211,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>This is a larger flow-control problem. Break it into decisions: validate month, determine days in that month, validate day, then decide whether the next day changes the day, month, or year.</p>
+              <a class="page-ref" href="#lesson2-argparse" data-study-route="lesson2-study">Review: Lesson 2, pages 24-25.</a>
             </details>
           </article>
         </section>
@@ -2221,6 +2238,7 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>This task uses comparison operators and the logical operator <code>and</code>. Both requirements must be true for the customer to qualify.</p>
+              <a class="page-ref" href="#lesson2-if" data-study-route="lesson2-study">Review: Lesson 2, pages 4-8.</a>
             </details>
           </article>
 
@@ -2258,6 +2276,7 @@ number Square
             <details>
               <summary>Concept Reminder</summary>
               <p>Use <code>range()</code> for numeric repetition. Remember that the stop value in <code>range()</code> is not included unless you adjust it.</p>
+              <a class="page-ref" href="#lesson2-loops" data-study-route="lesson2-study">Review: Lesson 2, pages 9-11.</a>
             </details>
           </article>
         </section>
@@ -2318,6 +2337,7 @@ number Square
             <details>
               <summary>Concept Reminder</summary>
               <p>This task is a decision table. You can solve it with a clear <code>if</code>, <code>elif</code>, and <code>else</code> structure. Start by handling invalid choices and draws, then handle the winning combinations.</p>
+              <a class="page-ref" href="#lesson2-if" data-study-route="lesson2-study">Review: Lesson 2, pages 3-8.</a>
             </details>
           </article>
         </section>
@@ -2328,15 +2348,15 @@ number Square
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 3 sections">
           <p class="sidebar-label">Lesson 3 Study Material</p>
-          <a href="#lesson3-purpose">1. Why Functions Matter</a>
-          <a href="#lesson3-define-call">2. Define and Call</a>
-          <a href="#lesson3-parameters">3. Parameters and Arguments</a>
-          <a href="#lesson3-scope">4. Scope and Lifetime</a>
-          <a href="#lesson3-docstrings">5. Docstrings and Return</a>
-          <a href="#lesson3-builtins">6. Built-in Functions</a>
-          <a href="#lesson3-recursion">7. Recursion</a>
-          <a href="#lesson3-lambda">8. Lambda Functions</a>
-          <a href="#lesson3-filter-map">9. Filter and Map</a>
+          <a href="#lesson3-purpose">1. Why Functions Matter <small>Page 3</small></a>
+          <a href="#lesson3-define-call">2. Define and Call <small>Page 4</small></a>
+          <a href="#lesson3-parameters">3. Parameters and Arguments <small>Pages 6-7</small></a>
+          <a href="#lesson3-scope">4. Scope and Lifetime <small>Page 5</small></a>
+          <a href="#lesson3-docstrings">5. Docstrings and Return <small>Pages 8-9</small></a>
+          <a href="#lesson3-builtins">6. Built-in Functions <small>Pages 11-18</small></a>
+          <a href="#lesson3-recursion">7. Recursion <small>Pages 19-25</small></a>
+          <a href="#lesson3-lambda">8. Lambda Functions <small>Pages 26-29</small></a>
+          <a href="#lesson3-filter-map">9. Filter and Map <small>Pages 30-34</small></a>
           <a href="#lesson3-practice" data-route="lesson3-practice">Testing Environment</a>
         </aside>
 
@@ -2358,6 +2378,7 @@ number Square
 
           <section class="study-section" id="lesson3-purpose">
             <h2>1. Why Functions Matter</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               A function is a group of related statements that performs a specific task. That definition sounds simple,
               but it changes how you design programs. Without functions, a program often becomes one long sequence of
@@ -2413,6 +2434,7 @@ number Square
 
           <section class="study-section" id="lesson3-define-call">
             <h2>2. Defining and Calling a Function</h2>
+            <p class="section-pages">Source page 4</p>
             <p>
               Python creates functions with the <code>def</code> keyword. The function definition starts with
               <code>def</code>, then the function name, then parentheses, then a colon. The indented block underneath is
@@ -2488,6 +2510,7 @@ greet("Joseph")</code></pre>
 
           <section class="study-section" id="lesson3-parameters">
             <h2>3. Parameters, Arguments, Defaults, and Flexible Inputs</h2>
+            <p class="section-pages">Source pages 6-7</p>
             <p>
               A parameter is the name written in the function definition. An argument is the actual value supplied when
               the function is called. In <code>def greet(name):</code>, <code>name</code> is a parameter. In
@@ -2579,6 +2602,7 @@ show_named_colours(first_colour="Red", second_colour="Yellow", third_colour="Blu
 
           <section class="study-section" id="lesson3-scope">
             <h2>4. Scope and Lifetime of Variables</h2>
+            <p class="section-pages">Source page 5</p>
             <p>
               Scope describes where a variable is recognized. A variable created inside a function is local to that
               function. It exists while the function is running and is separate from variables outside the function,
@@ -2604,6 +2628,7 @@ print("Value outside function:", x)</code></pre>
 
           <section class="study-section" id="lesson3-docstrings">
             <h2>5. Docstrings and Return Values</h2>
+            <p class="section-pages">Source pages 8-9</p>
             <p>
               A docstring documents what a function does. It appears as the first statement inside the function body,
               usually inside triple quotes. Good docstrings are short, direct, and useful to someone who wants to call
@@ -2668,6 +2693,7 @@ print("The sum is", answer)</code></pre>
 
           <section class="study-section" id="lesson3-builtins">
             <h2>6. Built-in and User-defined Functions</h2>
+            <p class="section-pages">Source pages 11-18</p>
             <p>
               Python includes many built-in functions. You have already used several: <code>print()</code>,
               <code>input()</code>, <code>type()</code>, <code>len()</code>, <code>int()</code>, <code>float()</code>,
@@ -2883,6 +2909,7 @@ print(time.time())</code></pre>
 
           <section class="study-section" id="lesson3-recursion">
             <h2>7. Recursion</h2>
+            <p class="section-pages">Source pages 19-25</p>
             <p>
               Recursion happens when a function calls itself directly or indirectly. It can be useful when a problem can
               be described in terms of a smaller version of the same problem. For example, counting down from 5 can be
@@ -2971,6 +2998,7 @@ print(recursive_factorial(4))</code></pre>
 
           <section class="study-section" id="lesson3-lambda">
             <h2>8. Anonymous Lambda Functions</h2>
+            <p class="section-pages">Source pages 26-29</p>
             <p>
               A lambda function is a small anonymous function created with the <code>lambda</code> keyword. Anonymous
               means the function does not need a regular name created with <code>def</code>. Lambda functions are useful
@@ -3037,6 +3065,7 @@ print(min_value(1, 2))</code></pre>
 
           <section class="study-section" id="lesson3-filter-map">
             <h2>9. filter(), map(), and Lambda</h2>
+            <p class="section-pages">Source pages 30-34</p>
             <p>
               The <code>filter()</code> function keeps items from an iterable when a function returns
               <code>True</code> for those items. The <code>map()</code> function transforms each item in an iterable by
@@ -3149,6 +3178,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Use a function parameter, <code>type()</code> or <code>isinstance()</code>, an <code>if</code> statement, and the built-in <code>abs()</code> function.</p>
+              <a class="page-ref" href="#lesson3-builtins" data-study-route="lesson3-study">Review: Lesson 3, pages 10-15.</a>
             </details>
           </article>
 
@@ -3163,6 +3193,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Built-ins are already available in Python. Examples include <code>len()</code>, <code>sum()</code>, <code>max()</code>, <code>min()</code>, <code>abs()</code>, <code>round()</code>, and <code>type()</code>.</p>
+              <a class="page-ref" href="#lesson3-builtins" data-study-route="lesson3-study">Review: Lesson 3, pages 11-15.</a>
             </details>
           </article>
 
@@ -3177,6 +3208,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Separate the calculation from the user interaction. The function should receive two values and return one value.</p>
+              <a class="page-ref" href="#lesson3-define-call" data-study-route="lesson3-study">Review: Lesson 3, pages 4 and 16.</a>
             </details>
           </article>
 
@@ -3189,6 +3221,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Use <code>range(1, 51)</code> if the ending number should be included. Each square is the number multiplied by itself.</p>
+              <a class="page-ref" href="#lesson3-builtins" data-study-route="lesson3-study">Review: Lesson 3, page 17.</a>
             </details>
           </article>
 
@@ -3204,6 +3237,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Modules must be imported before use. <code>dir()</code> inspects names, and <code>help()</code> opens documentation.</p>
+              <a class="page-ref" href="#lesson3-builtins" data-study-route="lesson3-study">Review: Lesson 3, page 18.</a>
             </details>
           </article>
 
@@ -3219,6 +3253,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Recursive functions need a base case. Lambda functions return one expression. <code>filter()</code> selects items; <code>map()</code> transforms items.</p>
+              <a class="page-ref" href="#lesson3-recursion" data-study-route="lesson3-study">Review: Lesson 3, pages 19-34.</a>
             </details>
           </article>
         </section>
@@ -3246,6 +3281,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Use a function to isolate the list-processing task. Type checking is needed because the list contains strings, integers, and floats.</p>
+              <a class="page-ref" href="#lesson3-define-call" data-study-route="lesson3-study">Review: Lesson 3, pages 3-4 and 11-15.</a>
             </details>
           </article>
 
@@ -3265,6 +3301,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>A tuple of tuples is nested data. You can loop through each inner tuple and check membership with <code>in</code>.</p>
+              <a class="page-ref" href="#lesson3-define-call" data-study-route="lesson3-study">Review: Lesson 3, pages 3-4.</a>
             </details>
           </article>
 
@@ -3283,6 +3320,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>This lab is about dividing responsibilities between functions. One function can coordinate input while another handles the calculation.</p>
+              <a class="page-ref" href="#lesson3-docstrings" data-study-route="lesson3-study">Review: Lesson 3, pages 8-9.</a>
             </details>
           </article>
 
@@ -3301,6 +3339,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>This is a multi-condition decision. A helper function can return whether all three requirements are satisfied.</p>
+              <a class="page-ref" href="#lesson3-define-call" data-study-route="lesson3-study">Review: Lesson 3, pages 3-4.</a>
             </details>
           </article>
         </section>
@@ -3328,6 +3367,7 @@ print(doubled_numbers)</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Loop through the string one character at a time. String methods can test whether a character is uppercase or lowercase. Keep separate counters and return or print the final counts clearly.</p>
+              <a class="page-ref" href="#lesson3-define-call" data-study-route="lesson3-study">Review: Lesson 3, pages 3-4.</a>
             </details>
           </article>
         </section>
@@ -3338,14 +3378,14 @@ print(doubled_numbers)</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 4 sections">
           <p class="sidebar-label">Lesson 4 Study Material</p>
-          <a href="#lesson4-files">1. Files and File Workflow</a>
-          <a href="#lesson4-open">2. Opening and Closing</a>
-          <a href="#lesson4-write-read">3. Writing and Reading</a>
-          <a href="#lesson4-methods">4. File and OS Methods</a>
-          <a href="#lesson4-modules">5. Modules</a>
-          <a href="#lesson4-imports">6. Import Styles</a>
-          <a href="#lesson4-search">7. Search Path and Exploration</a>
-          <a href="#lesson4-packages">8. Packages</a>
+          <a href="#lesson4-files">1. Files and File Workflow <small>Page 3</small></a>
+          <a href="#lesson4-open">2. Opening and Closing <small>Pages 4-5</small></a>
+          <a href="#lesson4-write-read">3. Writing and Reading <small>Pages 6, 11-13</small></a>
+          <a href="#lesson4-methods">4. File and OS Methods <small>Pages 7-10</small></a>
+          <a href="#lesson4-modules">5. Modules <small>Pages 14-19</small></a>
+          <a href="#lesson4-imports">6. Import Styles <small>Pages 20-21</small></a>
+          <a href="#lesson4-search">7. Search Path and Exploration <small>Pages 22-24</small></a>
+          <a href="#lesson4-packages">8. Packages <small>Pages 27-32</small></a>
           <a href="#lesson4-practice" data-route="lesson4-practice">Testing Environment</a>
         </aside>
 
@@ -3366,6 +3406,7 @@ print(doubled_numbers)</code></pre>
 
           <section class="study-section" id="lesson4-files">
             <h2>1. Files and the File Workflow</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               A file is a named location on disk used to store related information. Variables and lists are useful while
               a program is running, but they normally disappear when the program exits. Files solve that problem by
@@ -3389,6 +3430,7 @@ print(doubled_numbers)</code></pre>
 
           <section class="study-section" id="lesson4-open">
             <h2>2. Opening and Closing Files</h2>
+            <p class="section-pages">Source pages 4-5</p>
             <p>
               Python opens files with the built-in <code>open()</code> function. The function returns a file object,
               sometimes called a handle, that lets the program read from or write to the file. The file mode tells Python
@@ -3505,6 +3547,7 @@ print(contents)</code></pre>
 
           <section class="study-section" id="lesson4-write-read">
             <h2>3. Writing and Reading Data</h2>
+            <p class="section-pages">Source pages 6 and 11-13</p>
             <p>
               To write to a file, open it in write, append, or exclusive-creation mode. Write mode <code>w</code>
               creates the file if needed but erases existing content if the file already exists. Append mode
@@ -3584,6 +3627,7 @@ print(cars)</code></pre>
 
           <section class="study-section" id="lesson4-methods">
             <h2>4. File Methods and OS Module Methods</h2>
+            <p class="section-pages">Source pages 7-10</p>
             <p>
               File objects include methods for reading, writing, positioning, and checking file capabilities.
               <code>tell()</code> returns the current file position. <code>seek()</code> changes the file position.
@@ -3712,6 +3756,7 @@ if os.path.exists("cars.txt"):
 
           <section class="study-section" id="lesson4-modules">
             <h2>5. Modules</h2>
+            <p class="section-pages">Source pages 14-19</p>
             <p>
               A module is a Python file that contains related code. If you create a file named <code>calculator.py</code>,
               then <code>calculator</code> is the module name. A module can contain functions, variables, classes, and
@@ -3811,6 +3856,7 @@ if __name__ == "__main__":
 
           <section class="study-section" id="lesson4-imports">
             <h2>6. Import Styles and Module Namespaces</h2>
+            <p class="section-pages">Source pages 20-21</p>
             <p>
               The simplest import style is <code>import calculator</code>. With that style, you access a function using
               the module name and dot operator, such as <code>calculator.add(1, 2)</code>. You can also give the module
@@ -3877,6 +3923,7 @@ print(add(1, 2))</code></pre>
 
           <section class="study-section" id="lesson4-search">
             <h2>7. Module Search Path and Exploring Modules</h2>
+            <p class="section-pages">Source pages 22-24</p>
             <p>
               When Python sees an import, it must find the module. It first checks built-in modules, then searches
               directories listed in <code>sys.path</code>. The current script directory is usually part of that search
@@ -3946,6 +3993,7 @@ for path in sys.path:
 
           <section class="study-section" id="lesson4-packages">
             <h2>8. Packages</h2>
+            <p class="section-pages">Source pages 27-32</p>
             <p>
               As a project grows, one folder full of modules can become hard to manage. A package is a directory that
               groups related modules. In traditional Python packages, the directory contains an <code>__init__.py</code>
@@ -4095,6 +4143,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>These demonstrations use the file workflow: open, read or write, and close. Use <code>with open(...)</code> for automatic closing, and use <code>os.path.getsize()</code> for the file-size task.</p>
+              <a class="page-ref" href="#lesson4-write-read" data-study-route="lesson4-study">Review: Lesson 4, pages 3-11.</a>
             </details>
           </article>
 
@@ -4109,6 +4158,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Use a <code>with open(...)</code> block and a loop over the file object. <code>strip()</code> can remove newline characters from each line.</p>
+              <a class="page-ref" href="#lesson4-write-read" data-study-route="lesson4-study">Review: Lesson 4, pages 11-12.</a>
             </details>
           </article>
 
@@ -4122,6 +4172,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Read the file, split text into words if needed, then use <code>len(word)</code> with a condition.</p>
+              <a class="page-ref" href="#lesson4-write-read" data-study-route="lesson4-study">Review: Lesson 4, page 13.</a>
             </details>
           </article>
 
@@ -4136,6 +4187,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>A module is a Python file. Add the new function to the module file, import the module in another file, and call the function with dot notation or a specific import.</p>
+              <a class="page-ref" href="#lesson4-modules" data-study-route="lesson4-study">Review: Lesson 4, pages 16-25.</a>
             </details>
           </article>
 
@@ -4156,6 +4208,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>This task combines modules, functions, loops, validation, conditions, and arithmetic. Keep calculation functions separate from input validation functions.</p>
+              <a class="page-ref" href="#lesson4-modules" data-study-route="lesson4-study">Review: Lesson 4, pages 16-26.</a>
             </details>
           </article>
 
@@ -4170,6 +4223,7 @@ test_conversion.py</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Packages are directories that organize modules. Use <code>__init__.py</code>, dot notation, and imports from the package path.</p>
+              <a class="page-ref" href="#lesson4-packages" data-study-route="lesson4-study">Review: Lesson 4, pages 27-32.</a>
             </details>
           </article>
         </section>
@@ -4211,6 +4265,7 @@ BMW</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>File-reading functions should accept a file name so the same logic can work with different files. A list is a natural place to collect each cleaned line.</p>
+              <a class="page-ref" href="#lesson4-write-read" data-study-route="lesson4-study">Review: Lesson 4, pages 11-12.</a>
             </details>
           </article>
 
@@ -4236,6 +4291,7 @@ BMW</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>This lab is about package structure. Keep conversion formulas inside module functions, then import those modules in the test script.</p>
+              <a class="page-ref" href="#lesson4-packages" data-study-route="lesson4-study">Review: Lesson 4, pages 27-32.</a>
             </details>
           </article>
         </section>
@@ -4275,6 +4331,7 @@ BMW</code></pre>
             <details>
               <summary>Concept Reminder</summary>
               <p>Use append mode for adding records, read mode for displaying records, and a temporary-file workflow for modifying a record safely.</p>
+              <a class="page-ref" href="#lesson4-write-read" data-study-route="lesson4-study">Review: Lesson 4, pages 3-13.</a>
             </details>
           </article>
         </section>
@@ -4285,16 +4342,16 @@ BMW</code></pre>
       <div class="lesson-layout">
         <aside class="sidebar" aria-label="Lesson 5 sections">
           <p class="sidebar-label">Lesson 5 Study Material</p>
-          <a href="#lesson5-manipulation">1. Data Manipulation</a>
-          <a href="#lesson5-setup">2. Pandas Setup</a>
-          <a href="#lesson5-series">3. Series</a>
-          <a href="#lesson5-dataframes">4. DataFrames</a>
-          <a href="#lesson5-reading">5. Reading Files</a>
-          <a href="#lesson5-analysis">6. Inspecting Data</a>
-          <a href="#lesson5-cleaning">7. Cleaning Data</a>
-          <a href="#lesson5-transforming">8. Transforming Data</a>
-          <a href="#lesson5-plotting">9. Plotting</a>
-          <a href="#lesson5-pickle">10. Pickle</a>
+          <a href="#lesson5-manipulation">1. Data Manipulation <small>Page 3</small></a>
+          <a href="#lesson5-setup">2. Pandas Setup <small>Pages 4-6</small></a>
+          <a href="#lesson5-series">3. Series <small>Pages 7-11</small></a>
+          <a href="#lesson5-dataframes">4. DataFrames <small>Pages 12-14</small></a>
+          <a href="#lesson5-reading">5. Reading Files <small>Pages 15-19</small></a>
+          <a href="#lesson5-analysis">6. Inspecting Data <small>Pages 20, 28-30</small></a>
+          <a href="#lesson5-cleaning">7. Cleaning Data <small>Pages 21-24</small></a>
+          <a href="#lesson5-transforming">8. Transforming Data <small>Pages 25-30</small></a>
+          <a href="#lesson5-plotting">9. Plotting <small>Pages 31-34</small></a>
+          <a href="#lesson5-pickle">10. Pickle <small>Pages 35-42</small></a>
           <a href="#lesson5-practice" data-route="lesson5-practice">Testing Environment</a>
         </aside>
 
@@ -4316,6 +4373,7 @@ BMW</code></pre>
 
           <section class="study-section" id="lesson5-manipulation">
             <h2>1. Data Manipulation and Parsing</h2>
+            <p class="section-pages">Source page 3</p>
             <p>
               Data manipulation means taking raw information and reshaping it into a form that is easier to understand,
               analyze, or use in another program. A raw dataset might contain thousands of rows, inconsistent dates,
@@ -4345,6 +4403,7 @@ BMW</code></pre>
 
           <section class="study-section" id="lesson5-setup">
             <h2>2. Installing and Importing Pandas</h2>
+            <p class="section-pages">Source pages 4-6</p>
             <p>
               Pandas is not part of Python's standard library. That means a normal Python installation may not include
               it until you install the package. In PyCharm, you can install it from the Python Packages window by
@@ -4424,6 +4483,7 @@ print(numbers)</code></pre>
 
           <section class="study-section" id="lesson5-series">
             <h2>3. Pandas Series</h2>
+            <p class="section-pages">Source pages 7-11</p>
             <p>
               A <code>Series</code> is one of the two primary Pandas data structures. It is one-dimensional, which means
               it behaves like a single labeled column of data. A Series can store many Python-style data types, including
@@ -4544,6 +4604,7 @@ print(numbers.std())</code></pre>
 
           <section class="study-section" id="lesson5-dataframes">
             <h2>4. Pandas DataFrames</h2>
+            <p class="section-pages">Source pages 12-14</p>
             <p>
               A <code>DataFrame</code> is the second primary Pandas data structure. It is two-dimensional, with labeled
               rows and labeled columns. If a Series is like one labeled column, a DataFrame is like a complete table.
@@ -4638,6 +4699,7 @@ data = {
 
           <section class="study-section" id="lesson5-reading">
             <h2>5. Reading CSV, Text, and JSON Files</h2>
+            <p class="section-pages">Source pages 15-19</p>
             <p>
               Real datasets usually come from files. Pandas includes reader functions that parse common file formats
               into DataFrames. A CSV file is a comma-separated values file. It is plain text, widely supported, and
@@ -4745,6 +4807,7 @@ print(events.tail())</code></pre>
 
           <section class="study-section" id="lesson5-analysis">
             <h2>6. Inspecting and Analyzing Data</h2>
+            <p class="section-pages">Source pages 20 and 28-30</p>
             <p>
               Before cleaning or plotting a dataset, inspect it. Inspection answers basic questions: How many rows and
               columns are there? What are the column names? What data types are present? Do numeric columns have
@@ -4822,6 +4885,7 @@ print(flat_events.groupby(["source_name"]).size())</code></pre>
 
           <section class="study-section" id="lesson5-cleaning">
             <h2>7. Cleaning Empty Cells, Wrong Formats, Wrong Data, and Duplicates</h2>
+            <p class="section-pages">Source pages 21-24</p>
             <p>
               Data cleaning is the process of making a dataset trustworthy enough for analysis. The chapter focuses on
               four common problems: empty cells, wrong formats, wrong data, and duplicate records. These problems matter
@@ -4917,6 +4981,7 @@ df.drop_duplicates(inplace=True)</code></pre>
 
           <section class="study-section" id="lesson5-transforming">
             <h2>8. Transforming, Summarizing, and Correlating Data</h2>
+            <p class="section-pages">Source pages 25-30</p>
             <p>
               After data is loaded and cleaned, you often reshape it or summarize it. Dropping unnecessary columns keeps
               the dataset focused. Inserting a calculated or generated column adds information. Selecting by data type
@@ -4992,6 +5057,7 @@ print(relationship)</code></pre>
 
           <section class="study-section" id="lesson5-plotting">
             <h2>9. Plotting with Pandas and Matplotlib</h2>
+            <p class="section-pages">Source pages 31-34</p>
             <p>
               Plotting turns numeric data into a visual shape. Pandas has a convenient <code>plot()</code> method, but
               it relies on Matplotlib to display the chart. The common import is
@@ -5037,6 +5103,7 @@ plt.show()</code></pre>
 
           <section class="study-section" id="lesson5-pickle">
             <h2>10. Python Pickle: Storing and Loading Objects</h2>
+            <p class="section-pages">Source pages 35-42</p>
             <p>
               Pickle is a Python module for serialization and deserialization. Serialization means converting an object
               in memory into a byte stream that can be written to disk, sent over a network, or stored for later.
@@ -5225,6 +5292,7 @@ print(my_data)</code></pre>
                 only matching values. Use Series methods such as <code>mean()</code> and <code>std()</code> for summary
                 statistics.
               </p>
+              <a class="page-ref" href="#lesson5-series" data-study-route="lesson5-study">Review: Lesson 5, pages 7-11.</a>
             </details>
           </article>
         </section>
@@ -5266,6 +5334,7 @@ data = {
                 A DataFrame can be created from a dictionary when each key becomes a column name and each value is a
                 same-length list or array. To export, look for the DataFrame method that writes comma-separated values.
               </p>
+              <a class="page-ref" href="#lesson5-dataframes" data-study-route="lesson5-study">Review: Lesson 5, pages 12-14.</a>
             </details>
           </article>
 
@@ -5284,6 +5353,7 @@ data = {
                 Pandas reader functions parse files into DataFrames. CSV and delimiter-based text files use one reader;
                 JSON uses another. Column selection depends on labels exactly as they appear in the DataFrame.
               </p>
+              <a class="page-ref" href="#lesson5-reading" data-study-route="lesson5-study">Review: Lesson 5, pages 15-19.</a>
             </details>
           </article>
         </section>
@@ -5312,6 +5382,7 @@ data = {
                 Grouped summaries use <code>groupby()</code> followed by an aggregation method. Correlation uses numeric
                 columns. Histograms are usually created from a single numeric column.
               </p>
+              <a class="page-ref" href="#lesson5-analysis" data-study-route="lesson5-study">Review: Lesson 5, pages 20 and 28-34.</a>
             </details>
           </article>
 
@@ -5331,6 +5402,7 @@ data = {
                 converted. Wrong data can be replaced or dropped. Duplicate detection reports repeated rows, while
                 duplicate removal changes the dataset.
               </p>
+              <a class="page-ref" href="#lesson5-cleaning" data-study-route="lesson5-study">Review: Lesson 5, pages 21-24.</a>
             </details>
           </article>
         </section>
@@ -5373,6 +5445,7 @@ data = {
                 <code>pickle.dump()</code>. If you use a Pandas-specific pickle method, remember that the same security
                 warning still applies: only load trusted pickle files.
               </p>
+              <a class="page-ref" href="#lesson5-pickle" data-study-route="lesson5-study">Review: Lesson 5, pages 35-42.</a>
             </details>
           </article>
 
@@ -5393,6 +5466,7 @@ data = {
                 <code>loads()</code> work with bytes in memory. Pickle is Python-specific and should only be loaded from
                 trusted sources.
               </p>
+              <a class="page-ref" href="#lesson5-pickle" data-study-route="lesson5-study">Review: Lesson 5, pages 35-41.</a>
             </details>
           </article>
         </section>
