@@ -1380,7 +1380,7 @@ print("Outside the if statement.")</code></pre>
 if num >= 0:
     print("Positive or zero")
 else:
-print("Negative number")</code></pre>
+    print("Negative number")</code></pre>
             </div>
             <div class="reference-card">
               <h3>Condition operators</h3>
@@ -1549,6 +1549,61 @@ while i <= 5:
                 </table>
               </div>
             </div>
+            <div class="reference-card">
+              <h3>Accumulator and filter patterns</h3>
+              <p>
+                Several Lesson 2 practice questions ask you to build a result gradually. When you add numbers one at a
+                time, use an accumulator. When you sort values into different groups, use one or more result lists.
+                These are not new Python features; they are reliable loop patterns.
+              </p>
+              <div class="code-card">
+                <div class="code-head"><span>Accumulator and filter loop</span><button class="copy-code">Copy</button></div>
+                <pre><code>numbers = [6, 5, 3, 8, 4, 2, 5, 4, 11]
+total = 0
+
+for number in numbers:
+    total = total + number
+
+print("The sum of all the numbers in the list is", total)
+
+even_numbers = []
+odd_numbers = []
+
+for number in [10, 23, 24, 35, 65, 78, 100]:
+    if number % 2 == 0:
+        even_numbers.append(number)
+    else:
+        odd_numbers.append(number)</code></pre>
+              </div>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Pattern</th>
+                      <th>Start with</th>
+                      <th>Update inside the loop</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Running total</th>
+                      <td><code>total = 0</code></td>
+                      <td><code>total = total + number</code></td>
+                    </tr>
+                    <tr>
+                      <th>Counting matches</th>
+                      <td><code>count = 0</code></td>
+                      <td><code>count = count + 1</code> when a condition is true.</td>
+                    </tr>
+                    <tr>
+                      <th>Filtering into a list</th>
+                      <td><code>matches = []</code></td>
+                      <td><code>matches.append(value)</code> when the value belongs in that group.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </section>
 
           <section class="study-section" id="lesson2-break">
@@ -1660,6 +1715,33 @@ print("The end")</code></pre>
                 provided before the program starts. Both approaches collect information, but they fit different styles
                 of program use.
               </p>
+            </div>
+            <div class="reference-card">
+              <h3>Running a command-line script</h3>
+              <p>
+                The command-line examples in this lesson are meant to be run from PowerShell, Command Prompt, or a
+                terminal panel. First navigate to the folder containing the Python file. Then type <code>python</code>,
+                the file name, and any arguments after it. If the file is named
+                <code>commandlineDemonstration.py</code>, a test run could look like
+                <code>python commandlineDemonstration.py 4 4 4</code>.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Command part</th>
+                      <th>Example</th>
+                      <th>Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Interpreter</th><td><code>python</code></td><td>Starts Python.</td></tr>
+                    <tr><th>Script file</th><td><code>commandlineDemonstration.py</code></td><td>The program to run.</td></tr>
+                    <tr><th>Arguments</th><td><code>4 4 4</code></td><td>Values the program receives through <code>sys.argv</code> or a parser.</td></tr>
+                    <tr><th>Help flag</th><td><code>-h</code></td><td>Commonly used to request help text from <code>argparse</code> programs.</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </section>
 
@@ -1812,6 +1894,48 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
                 </table>
               </div>
             </div>
+            <div class="reference-card">
+              <h3>Designing larger decision problems</h3>
+              <p>
+                The date challenge at the end of Lesson 2 is larger than the first <code>if</code> examples because it
+                combines validation, month rules, leap-year logic, and rollover from one month or year to the next. The
+                trick is to avoid writing the whole program at once. Break the problem into questions that can each be
+                answered with one decision.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Question</th>
+                      <th>Condition idea</th>
+                      <th>Why it matters</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Is the month valid?</th>
+                      <td><code>1 &lt;= month &lt;= 12</code></td>
+                      <td>No day can be valid if the month itself is not valid.</td>
+                    </tr>
+                    <tr>
+                      <th>How many days are in this month?</th>
+                      <td>31-day months, 30-day months, and February are separate cases.</td>
+                      <td>The maximum valid day depends on the month.</td>
+                    </tr>
+                    <tr>
+                      <th>Is it a leap year?</th>
+                      <td>A common rule is divisible by 4, except centuries must be divisible by 400.</td>
+                      <td>February has 29 days in leap years and 28 days otherwise.</td>
+                    </tr>
+                    <tr>
+                      <th>Does the date roll over?</th>
+                      <td>If <code>day == days_in_month</code>, reset day to 1 and advance the month.</td>
+                      <td>December 31 also advances the year and resets the month to January.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <div class="next-step-panel">
               <h3>Ready to practice Lesson 2?</h3>
               <p>
@@ -1905,6 +2029,58 @@ print("The sum of the two numbers is", first_number + second_number)</code></pre
             <details>
               <summary>Concept Reminder</summary>
               <p>Use <code>sys.argv</code> or <code>argparse</code>. Command-line arguments arrive as strings, so numeric comparisons require conversion.</p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>sys.argv Command-Line Demonstration</h3>
+            <p><strong>Suggested file:</strong> <code>commandlineDemonstration.py</code></p>
+            <ol>
+              <li>Create a script that imports <code>sys</code>.</li>
+              <li>Print the total number of command-line arguments.</li>
+              <li>Print the script name from <code>sys.argv[0]</code>.</li>
+              <li>Loop through the remaining arguments and display them.</li>
+              <li>Convert numeric arguments and display their sum.</li>
+              <li>Test with <code>python commandlineDemonstration.py 4 4 4</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p><code>sys.argv</code> is a list. The script name is item zero, and user-provided arguments start at item one.</p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>getopt Command-Line Demonstration</h3>
+            <p><strong>Suggested file:</strong> <code>commandlineDemonstration2.py</code></p>
+            <ol>
+              <li>Create a script that imports <code>sys</code> and <code>getopt</code>.</li>
+              <li>Use <code>sys.argv[1:]</code> so the script name is not parsed as an option.</li>
+              <li>Use <code>getopt.getopt()</code> with a short-options string similar to <code>"ho:v"</code>.</li>
+              <li>Print the parsed option/value pairs.</li>
+              <li>Print the leftover arguments that were not parsed as options.</li>
+              <li>Handle <code>getopt.GetoptError</code> and exit with <code>sys.exit(2)</code>.</li>
+              <li>Test with an option-style command such as <code>python commandlineDemonstration2.py -o Colors -h Blue Red Yellow Green</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>A colon after an option letter means that option expects a value. In <code>"ho:v"</code>, <code>-o</code> expects a value but <code>-h</code> and <code>-v</code> do not.</p>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>argparse Command-Line Demonstration</h3>
+            <p><strong>Suggested file:</strong> <code>commandlineDemonstration3.py</code></p>
+            <ol>
+              <li>Create an <code>ArgumentParser</code> with a description.</li>
+              <li>Add two positional arguments named <code>first_number</code> and <code>second_number</code>.</li>
+              <li>Parse the arguments with <code>parse_args()</code>.</li>
+              <li>Convert the values to integers and print their sum.</li>
+              <li>Test help with <code>python commandlineDemonstration3.py -h</code>.</li>
+              <li>Test the calculation with <code>python commandlineDemonstration3.py 5 10</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p><code>argparse</code> can generate help text and collect positional arguments into an object. Command-line values still need numeric conversion unless you configure a type.</p>
             </details>
           </article>
 
@@ -2018,7 +2194,7 @@ number Square
                     <th>Player 2 - Paper</th>
                     <th>Player 2 - Scissors</th>
                   </tr>
-                </thead>
+                  </thead>
                 <tbody>
                   <tr>
                     <th>Player 1 - Rock</th>
@@ -2241,6 +2417,15 @@ student(firstname="Ada", lastname="Lovelace", colour="Blue")</code></pre>
               parameter beginning with <code>**</code>, often written as <code>**kwargs</code>, collects extra keyword
               arguments into a dictionary.
             </p>
+            <div class="callout">
+              <h3>Required parameters are still required</h3>
+              <p>
+                Default values only make the parameters with defaults optional. If a function has
+                <code>def student(firstname, lastname="King"):</code>, the caller still has to provide
+                <code>firstname</code>. Calling the function with only <code>lastname="Gates"</code> would raise an
+                error because the required first name was never supplied.
+              </p>
+            </div>
             <div class="code-card">
               <div class="code-head"><span>*args and **kwargs</span><button class="copy-code">Copy</button></div>
               <pre><code>def show_colours(*colours):
@@ -2464,6 +2649,139 @@ print(len(numbers))</code></pre>
                 </table>
               </div>
             </div>
+            <div class="reference-card">
+              <h3>Built-in functions named in this lesson</h3>
+              <p>
+                The slide material includes a broad inventory of built-in functions. Some are everyday beginner tools,
+                while others are advanced or specialized. This table gives you a searchable index so that when an
+                assignment asks you to demonstrate ten built-ins, you can choose deliberately instead of guessing.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Function</th>
+                      <th>What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>abs()</code></th><td>Returns the absolute value of a number.</td></tr>
+                    <tr><th><code>all()</code></th><td>Returns <code>True</code> when every item in an iterable is truthy.</td></tr>
+                    <tr><th><code>any()</code></th><td>Returns <code>True</code> when at least one item in an iterable is truthy.</td></tr>
+                    <tr><th><code>ascii()</code></th><td>Returns a readable string version of an object, escaping non-ASCII characters.</td></tr>
+                    <tr><th><code>bin()</code></th><td>Converts an integer to a binary string.</td></tr>
+                    <tr><th><code>bool()</code></th><td>Returns the Boolean value of an object.</td></tr>
+                    <tr><th><code>bytearray()</code></th><td>Creates a mutable sequence of bytes.</td></tr>
+                    <tr><th><code>bytes()</code></th><td>Creates an immutable bytes object.</td></tr>
+                    <tr><th><code>callable()</code></th><td>Checks whether an object can be called like a function.</td></tr>
+                    <tr><th><code>chr()</code></th><td>Returns the character represented by a Unicode code point.</td></tr>
+                    <tr><th><code>classmethod()</code></th><td>Converts a method into a class method. This is more relevant after classes are introduced.</td></tr>
+                    <tr><th><code>compile()</code></th><td>Compiles source text into a code object that Python can execute.</td></tr>
+                    <tr><th><code>complex()</code></th><td>Creates a complex number.</td></tr>
+                    <tr><th><code>delattr()</code></th><td>Deletes a named attribute from an object.</td></tr>
+                    <tr><th><code>dict()</code></th><td>Creates a dictionary.</td></tr>
+                    <tr><th><code>dir()</code></th><td>Lists names available on an object or module.</td></tr>
+                    <tr><th><code>divmod()</code></th><td>Returns quotient and remainder together.</td></tr>
+                    <tr><th><code>enumerate()</code></th><td>Pairs each iterable item with a counter index.</td></tr>
+                    <tr><th><code>eval()</code></th><td>Evaluates a Python expression from a string. Avoid using it on untrusted input.</td></tr>
+                    <tr><th><code>exec()</code></th><td>Executes Python code from a string or code object. Avoid using it on untrusted input.</td></tr>
+                    <tr><th><code>filter()</code></th><td>Keeps iterable items for which a function returns <code>True</code>.</td></tr>
+                    <tr><th><code>float()</code></th><td>Creates or converts to a floating-point number.</td></tr>
+                    <tr><th><code>format()</code></th><td>Formats a value according to a format specification.</td></tr>
+                    <tr><th><code>frozenset()</code></th><td>Creates an immutable set.</td></tr>
+                    <tr><th><code>getattr()</code></th><td>Reads a named attribute from an object.</td></tr>
+                    <tr><th><code>globals()</code></th><td>Returns the current global symbol table as a dictionary.</td></tr>
+                    <tr><th><code>hasattr()</code></th><td>Checks whether an object has a named attribute.</td></tr>
+                    <tr><th><code>hash()</code></th><td>Returns the hash value of an object when the object is hashable.</td></tr>
+                    <tr><th><code>help()</code></th><td>Opens Python's help system for a topic, object, function, or module.</td></tr>
+                    <tr><th><code>hex()</code></th><td>Converts an integer to a hexadecimal string.</td></tr>
+                    <tr><th><code>id()</code></th><td>Returns the identity number of an object during the current run.</td></tr>
+                    <tr><th><code>input()</code></th><td>Reads text typed by the user.</td></tr>
+                    <tr><th><code>int()</code></th><td>Creates or converts to an integer.</td></tr>
+                    <tr><th><code>isinstance()</code></th><td>Checks whether an object belongs to a type or tuple of types.</td></tr>
+                    <tr><th><code>issubclass()</code></th><td>Checks whether one class is a subclass of another.</td></tr>
+                    <tr><th><code>iter()</code></th><td>Returns an iterator object.</td></tr>
+                    <tr><th><code>len()</code></th><td>Returns the length of an object.</td></tr>
+                    <tr><th><code>list()</code></th><td>Creates a list.</td></tr>
+                    <tr><th><code>locals()</code></th><td>Returns the current local symbol table as a dictionary.</td></tr>
+                    <tr><th><code>map()</code></th><td>Applies a function to every item in an iterable.</td></tr>
+                    <tr><th><code>max()</code></th><td>Returns the largest item.</td></tr>
+                    <tr><th><code>memoryview()</code></th><td>Returns a memory view object for binary data.</td></tr>
+                    <tr><th><code>min()</code></th><td>Returns the smallest item.</td></tr>
+                    <tr><th><code>next()</code></th><td>Returns the next item from an iterator.</td></tr>
+                    <tr><th><code>object()</code></th><td>Creates a new base object.</td></tr>
+                    <tr><th><code>oct()</code></th><td>Converts an integer to an octal string.</td></tr>
+                    <tr><th><code>open()</code></th><td>Opens a file and returns a file object.</td></tr>
+                    <tr><th><code>ord()</code></th><td>Returns the Unicode code point for a character.</td></tr>
+                    <tr><th><code>pow()</code></th><td>Raises a number to a power.</td></tr>
+                    <tr><th><code>print()</code></th><td>Prints values to standard output.</td></tr>
+                    <tr><th><code>property()</code></th><td>Creates a managed attribute for a class. This is more relevant after classes are introduced.</td></tr>
+                    <tr><th><code>range()</code></th><td>Creates a sequence of integers, often for loops.</td></tr>
+                    <tr><th><code>repr()</code></th><td>Returns a developer-oriented string representation of an object.</td></tr>
+                    <tr><th><code>reversed()</code></th><td>Returns a reverse iterator.</td></tr>
+                    <tr><th><code>round()</code></th><td>Rounds a number.</td></tr>
+                    <tr><th><code>set()</code></th><td>Creates a set.</td></tr>
+                    <tr><th><code>setattr()</code></th><td>Sets a named attribute on an object.</td></tr>
+                    <tr><th><code>slice()</code></th><td>Creates a slice object.</td></tr>
+                    <tr><th><code>sorted()</code></th><td>Returns a new sorted list from an iterable.</td></tr>
+                    <tr><th><code>staticmethod()</code></th><td>Converts a method into a static method. This is more relevant after classes are introduced.</td></tr>
+                    <tr><th><code>str()</code></th><td>Creates or converts to a string.</td></tr>
+                    <tr><th><code>sum()</code></th><td>Adds numeric items in an iterable.</td></tr>
+                    <tr><th><code>super()</code></th><td>Returns an object used to access parent-class behavior.</td></tr>
+                    <tr><th><code>tuple()</code></th><td>Creates a tuple.</td></tr>
+                    <tr><th><code>type()</code></th><td>Returns an object's type.</td></tr>
+                    <tr><th><code>vars()</code></th><td>Returns an object's <code>__dict__</code> when available.</td></tr>
+                    <tr><th><code>zip()</code></th><td>Combines multiple iterables into tuples item by item.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="reference-card">
+              <h3>Module exploration commands</h3>
+              <p>
+                Lesson 3 also asks you to explore modules from the Python console. Import the module first, then use
+                <code>dir()</code> to list names or <code>help()</code> to read documentation. Common practice modules
+                include <code>math</code>, <code>random</code>, <code>statistics</code>, <code>sys</code>, and
+                <code>time</code>. The special name <code>__main__</code> refers to the module currently being run as
+                the main program.
+              </p>
+              <div class="code-card">
+                <div class="code-head"><span>Exploring modules</span><button class="copy-code">Copy</button></div>
+                <pre><code>import math
+import random
+import statistics
+import sys
+import time
+
+print(dir(math))
+help(random)
+print(sys.getrecursionlimit())
+print(time.time())</code></pre>
+              </div>
+            </div>
+            <div class="reference-card">
+              <h3>String checks used in function assignments</h3>
+              <p>
+                Some Lesson 3 assignments ask a function to inspect text. Strings have methods that answer questions
+                about each character. When counting uppercase and lowercase letters, loop through the string and use
+                these methods on each character.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>Use</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th><code>character.isupper()</code></th><td>Returns <code>True</code> for an uppercase letter.</td></tr>
+                    <tr><th><code>character.islower()</code></th><td>Returns <code>True</code> for a lowercase letter.</td></tr>
+                    <tr><th><code>character.isalpha()</code></th><td>Returns <code>True</code> for alphabetic characters and can help ignore spaces, digits, and punctuation.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </section>
 
           <section class="study-section" id="lesson3-recursion">
@@ -2489,6 +2807,22 @@ print(len(numbers))</code></pre>
     countdown(num - 1)
 
 countdown(5)</code></pre>
+            </div>
+            <p>
+              Factorial is another classic recursion example. The factorial of 4 means
+              <code>4 * 3 * 2 * 1</code>. A recursive version says: the factorial of <code>n</code> is
+              <code>n</code> times the factorial of <code>n - 1</code>, until the base case is reached. Python's
+              <code>math</code> module also provides <code>math.factorial()</code>, so the recursive version is mainly
+              used here to understand the pattern.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Recursive factorial pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>def recursive_factorial(n):
+    if n == 1:
+        return 1
+    return n * recursive_factorial(n - 1)
+
+print(recursive_factorial(4))</code></pre>
             </div>
             <p>
               Recursion can make some problems elegant, but it is not always the best beginner tool. Recursive calls use
@@ -3189,9 +3523,10 @@ if os.path.exists("cars.txt"):
                       <th>Method</th>
                       <th>What it does</th>
                     </tr>
-                  </thead>
+                </thead>
                   <tbody>
                     <tr><th><code>close()</code></th><td>Closes the file object. A <code>with</code> block does this automatically.</td></tr>
+                    <tr><th><code>detach()</code></th><td>Separates the underlying binary buffer from a text file object. This is advanced and rarely needed in beginner file work.</td></tr>
                     <tr><th><code>flush()</code></th><td>Forces buffered data to be written to disk.</td></tr>
                     <tr><th><code>read(n)</code></th><td>Reads the whole file or up to <code>n</code> characters.</td></tr>
                     <tr><th><code>readline(n=-1)</code></th><td>Reads one line, optionally limited by size.</td></tr>
@@ -3206,6 +3541,47 @@ if os.path.exists("cars.txt"):
                     <tr><th><code>seekable()</code></th><td>Returns whether the file position can be changed.</td></tr>
                     <tr><th><code>isatty()</code></th><td>Returns whether the stream is connected to a terminal-like device.</td></tr>
                     <tr><th><code>fileno()</code></th><td>Returns the underlying file descriptor number.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="reference-card">
+              <h3>Class demonstration file patterns</h3>
+              <p>
+                The lesson demonstrations combine file methods with the <code>os</code> module. The important idea is
+                not to memorize one exact script, but to recognize the workflow: write a list to a file, inspect a file,
+                copy file contents, and read lines into a variable or collection.
+              </p>
+              <div class="rules-table-wrap">
+                <table class="rules-table">
+                  <thead>
+                    <tr>
+                      <th>Demonstration</th>
+                      <th>Tools involved</th>
+                      <th>Beginner pattern</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Write <code>cars.txt</code></th>
+                      <td><code>open(..., "w")</code>, <code>write()</code> or <code>writelines()</code></td>
+                      <td>Loop over a list of car names and write each name with a newline.</td>
+                    </tr>
+                    <tr>
+                      <th>Get file size</th>
+                      <td><code>os.path.getsize("pythonclose.txt")</code></td>
+                      <td>Check how many bytes a file uses on disk.</td>
+                    </tr>
+                    <tr>
+                      <th>Copy a file</th>
+                      <td>Read from <code>cars.txt</code>, write to <code>cars_two.txt</code></td>
+                      <td>Open the source for reading and the destination for writing, then transfer the text.</td>
+                    </tr>
+                    <tr>
+                      <th>Read line by line</th>
+                      <td><code>for line in file</code>, <code>readline()</code>, or <code>readlines()</code></td>
+                      <td>Store the line text in a variable or append cleaned lines to a list.</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -3256,6 +3632,14 @@ if os.path.exists("cars.txt"):
     """Return the sum of two numbers."""
     return num_one + num_two
 
+def subtract(num_one, num_two):
+    """Return num_one minus num_two."""
+    return num_one - num_two
+
+def multiply(num_one, num_two):
+    """Return the product of two numbers."""
+    return num_one * num_two
+
 def divide(num_one, num_two):
     """Return num_one divided by num_two."""
     return num_one / num_two</code></pre>
@@ -3265,7 +3649,26 @@ def divide(num_one, num_two):
               <pre><code>import calculator as cal
 
 print(cal.add(1, 5))
+print(cal.subtract(6, 9))
+print(cal.multiply(1, 5))
 print(cal.divide(10, 2))</code></pre>
+            </div>
+            <p>
+              A module can be imported by another file, or it can be run directly as a script. Python sets the special
+              variable <code>__name__</code> to <code>"__main__"</code> only for the file being run directly. That is
+              why many examples use an <code>if __name__ == "__main__":</code> guard. It lets a file provide reusable
+              functions when imported, while still having a starting point when run as the main program.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Main guard pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>import calculator as cal
+
+def main():
+    print(cal.add(1, 5))
+    print(cal.divide(10, 2))
+
+if __name__ == "__main__":
+    main()</code></pre>
             </div>
             <p>
               PEP 8 recommends short lowercase module names. Imports should appear near the top of the file, after any
@@ -3585,6 +3988,20 @@ test_conversion.py</code></pre>
           </div>
 
           <article class="task-card">
+            <h3>File I/O Class Demonstrations</h3>
+            <ol>
+              <li>Write the list <code>['Toyota', 'Benz', 'Kia', 'Honda', 'Ferrarri', 'Lexus']</code> to a file named <code>cars.txt</code>.</li>
+              <li>Write a script that gets the size of a file named <code>pythonclose.txt</code>.</li>
+              <li>Write a script that copies <code>cars.txt</code> to another file named <code>cars_two.txt</code>.</li>
+              <li>Write a script that reads a file line by line and stores the text in a variable or collection.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>These demonstrations use the file workflow: open, read or write, and close. Use <code>with open(...)</code> for automatic closing, and use <code>os.path.getsize()</code> for the file-size task.</p>
+            </details>
+          </article>
+
+          <article class="task-card">
             <h3>Read File Lines into a List</h3>
             <ol>
               <li>Write a Python function that accepts a file name as a parameter.</li>
@@ -3630,8 +4047,11 @@ test_conversion.py</code></pre>
             <ol>
               <li>Create <code>productcal.py</code> with a function that calculates product discount from price and quantity.</li>
               <li>Use discount rules: 5% for quantity 1-10, 10% for 11-50, 15% for 51-100, and 20% for more than 100.</li>
+              <li>Calculate discount as <code>discount_percent / 100 * product_price * quantity</code>.</li>
               <li>Create a tax function that accepts product price, discount, and quantity.</li>
+              <li>Calculate tax as <code>1.5 * ((product_price * quantity) - discount) / 100</code>.</li>
               <li>Create <code>producttest.py</code>, import <code>productcal</code>, read quantity and product price from the user, and calculate amount payable.</li>
+              <li>Calculate amount payable as <code>((product_price * quantity) - discount) + tax</code>.</li>
               <li>Create separate validation functions for quantity and price.</li>
               <li>Keep asking until quantity is a positive integer and price is an integer or float.</li>
               <li>Test with: quantity 50 and price 1000; quantity 50 and price 56.90; quantity aaaaa and price 1000; quantity 0 and price 1000.</li>
@@ -3707,6 +4127,10 @@ BMW</code></pre>
               <li>Inside it, create <code>temperature.py</code>, <code>distance.py</code>, and <code>__init__.py</code>.</li>
               <li>In <code>temperature.py</code>, implement Fahrenheit-to-Celsius and Celsius-to-Fahrenheit functions.</li>
               <li>In <code>distance.py</code>, implement miles-to-kilometers and kilometers-to-miles functions.</li>
+              <li>Use <code>fahrenheit = celsius * 9 / 5 + 32</code> for Celsius to Fahrenheit.</li>
+              <li>Use <code>celsius = (fahrenheit - 32) * 5 / 9</code> for Fahrenheit to Celsius.</li>
+              <li>Use <code>kilometers = miles * 1.60934</code> for miles to kilometers.</li>
+              <li>Use <code>miles = kilometers * 0.621371</code> for kilometers to miles.</li>
               <li>Ensure all functions have properly formatted docstrings.</li>
               <li>Create a <code>test_conversion.py</code> file to test the package functions.</li>
               <li>Zip the <code>unitconvert</code> folder and <code>test_conversion.py</code>.</li>
