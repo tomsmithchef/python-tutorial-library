@@ -1,0 +1,31 @@
+Assignment 5: Manipulate DataFrame
+
+Introduction
+
+In this assignment, you will write a Python script that takes a CSV file (Assignment.csv) then calculate and inserts entities as columns to your DataFrame.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it datamanipulate.py.
+Add the Assignment File (attached) to your project.
+Write a Python script that takes a CSV file (Assignment.csv) then calculate and inserts the following entities as columns to your DataFrame.
+Total Games (Summer + Winter Games)
+Gold_Combined_Total
+Silver_Combined_Total
+Bronze_Combined_Total
+Combined_Total
+Run your code to ensure your script prints the correct message based on the above rules.
+Save your project, zip it, and submit.
+
+
+Deliverable
+
+Submit the Python Script: datamanipulate.py + report
+Make sure to include comments/docstrings
+
+
+Files:
+Assignments.csv (not included) See the school page.

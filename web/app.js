@@ -350,7 +350,7 @@ function createAttachmentLink(entry) {
   const link = document.createElement("a");
   link.className = "attachment-link";
   link.href = href;
-  link.setAttribute("download", "");
+  link.setAttribute("download", attachmentLabel(entry));
 
   const icon = document.createElement("span");
   icon.className = "attachment-icon";

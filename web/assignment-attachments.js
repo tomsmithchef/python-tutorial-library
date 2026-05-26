@@ -15,4 +15,14 @@
 //   taskTitle: "Rock, Paper, Scissors Game"
 // }
 
-window.PY_TUTORIAL_ATTACHMENTS = [];
+window.PY_TUTORIAL_ATTACHMENTS = [
+  {
+    lesson: "lesson5",
+    taskTitle: "Assignment 5: Manipulate DataFrame",
+    title: "Assignment 5 DataFrame CSV",
+    description: "CSV dataset for the Lesson 5 DataFrame manipulation assignment.",
+    file: "attachments/Assignment_5_MinpulateDataframe.csv",
+    label: "Assignment.csv",
+    size: "7 KB"
+  }
+];

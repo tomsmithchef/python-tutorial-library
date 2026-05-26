@@ -5240,8 +5240,9 @@ print(my_data)</code></pre>
             <div class="next-step-panel">
               <h3>Ready to practice Lesson 5?</h3>
               <p>
-                The Lesson 5 testing environment contains the embedded Pandas Series, DataFrame, analysis, plotting, and
-                Pickle activities from the chapter. No full solutions are shown.
+                The Lesson 5 testing environment contains the embedded Pandas Series, DataFrame, analysis, plotting,
+                Pickle activities from the chapter, and the school DataFrame manipulation assignment. No full solutions
+                are shown.
               </p>
               <a class="button primary" href="#lesson5-practice" data-route="lesson5-practice">Practice Lesson 5</a>
             </div>
@@ -5256,9 +5257,9 @@ print(my_data)</code></pre>
           <p class="eyebrow">Lesson 5 Testing Environment</p>
           <h1 id="lesson5-practice-title">Pandas, Data Cleaning, Plotting, and Pickle Practice</h1>
           <p>
-            Complete these activities in your own IDE. Lesson 5 does not yet have separate assignment or lab text files,
-            so this page includes only the practice activities embedded in the chapter source material. Concept
-            reminders stay hidden until you open them.
+            Complete these activities in your own IDE. Lesson 5 now includes the chapter practice activities and the
+            school DataFrame manipulation assignment. Concept reminders stay hidden until you open them, and assignment
+            downloads are provided without completed solutions.
           </p>
         </header>
 
@@ -5267,6 +5268,7 @@ print(my_data)</code></pre>
           <button class="tab" data-practice-tab="lesson5-dataframe-activities">DataFrame Activities</button>
           <button class="tab" data-practice-tab="lesson5-analysis-activities">Analysis and Plotting</button>
           <button class="tab" data-practice-tab="lesson5-pickle-activities">Pickle Activities</button>
+          <button class="tab" data-practice-tab="lesson5-graded-assignment">Assignment</button>
         </div>
 
         <section class="practice-panel active" id="lesson5-series-activities">
@@ -5467,6 +5469,45 @@ data = {
                 trusted sources.
               </p>
               <a class="page-ref" href="#lesson5-pickle" data-study-route="lesson5-study">Review: Lesson 5, pages 35-41.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson5-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment</h2>
+            <p>This card contains the school Assignment 5 requirements. Use the attached CSV as the dataset for your own script.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Assignment 5: Manipulate DataFrame</h3>
+            <p><strong>Objective:</strong> Write a Python script that reads the assignment CSV file into a Pandas DataFrame, calculates new combined columns, inserts them into the DataFrame, and prints the resulting data.</p>
+            <p><strong>Required file name:</strong> <code>datamanipulate.py</code></p>
+            <p><strong>Dataset:</strong> Download the attached CSV file. If your school page or instructor calls the file <code>Assignment.csv</code>, use that expected name in your local project.</p>
+            <ol>
+              <li>Open PyCharm or your preferred Python IDE.</li>
+              <li>Create a new Python file named <code>datamanipulate.py</code>.</li>
+              <li>Add the assignment CSV file to the same project folder as your script.</li>
+              <li>Read the CSV file into a Pandas DataFrame.</li>
+              <li>Create a new <code>Total Games</code> column from the Summer and Winter games columns.</li>
+              <li>Create <code>Gold_Combined_Total</code> from the Summer and Winter gold-medal columns.</li>
+              <li>Create <code>Silver_Combined_Total</code> from the Summer and Winter silver-medal columns.</li>
+              <li>Create <code>Bronze_Combined_Total</code> from the Summer and Winter bronze-medal columns.</li>
+              <li>Create <code>Combined_Total</code> from the combined gold, silver, and bronze totals.</li>
+              <li>Print or display the updated DataFrame so you can verify that the calculated columns were inserted correctly.</li>
+              <li>Save the project, zip it if required, and submit the Python script plus report.</li>
+            </ol>
+            <p><strong>Deliverables:</strong> <code>datamanipulate.py</code> and a report. Include clear comments or a docstring that explains the purpose of the script.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                This assignment uses the DataFrame workflow from Lesson 5: read a CSV file, inspect column names, select
+                columns by their exact labels, use arithmetic between Series objects, assign the result into new
+                DataFrame columns, and display the updated table. Pay close attention to column spelling in the CSV,
+                because Pandas column names must match exactly.
+              </p>
+              <a class="page-ref" href="#lesson5-reading" data-study-route="lesson5-study">Review: Lesson 5, pages 15-20.</a>
+              <a class="page-ref" href="#lesson5-analysis" data-study-route="lesson5-study">Review: Lesson 5, pages 28-34.</a>
             </details>
           </article>
         </section>
@@ -8843,8 +8884,8 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
   </footer>
 
   <script src="community-config.js?v=20260525-4"></script>
-  <script src="assignment-attachments.js?v=20260525-5"></script>
+  <script src="assignment-attachments.js?v=20260525-6"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-7"></script>
+  <script src="app.js?v=20260525-8"></script>
 </body>
 </html>

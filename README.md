@@ -12,8 +12,8 @@ This folder contains a self-contained web textbook for the first nine Python fun
 - `web/attachments/` - optional starter files, datasets, lab handouts, or other assignment downloads
 - `supabase/class-board-schema.sql` - database tables and security policies for the Class Board
 - `Lesson 1.pdf` through `Lesson 9.pdf` - original lesson slide decks
-- `Lesson 1 Assignments.txt` through `Lesson 4 Assignments.txt` - assignment/lab source text
-- Lessons 5, 6, 7, 8, and 9 currently use embedded lesson activities from the PDFs only; assignment/lab text can be added later
+- `Lesson 1 Assignments.txt` through `Lesson 5 Assignments.txt` - assignment/lab source text
+- Lessons 6, 7, 8, and 9 currently use embedded lesson activities from the PDFs only; assignment/lab text can be added later
 - `lesson_tutorial.py` - older terminal version kept for reference
 
 The website itself only needs the `web` folder. The PDFs and assignment text files are included as source/reference material.
@@ -44,6 +44,7 @@ Python Tutorial Library/
   Lesson 4.pdf
   Lesson 4 Assignments.txt
   Lesson 5.pdf
+  Lesson 5 Assignments.txt
   Lesson 6.pdf
   Lesson 7.pdf
   Lesson 8.pdf
@@ -58,6 +59,7 @@ Python Tutorial Library/
     community-config.js
     assignment-attachments.js
     attachments/
+      Assignment_5_MinpulateDataframe.csv
       README.md
 ```
 
