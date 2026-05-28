@@ -1,0 +1,101 @@
+
+Lab Activity 6-1: String Capitalization Function
+
+Introduction
+
+In this lab activity, you will write a Python function capitalize_last_name() that accepts a string with a first and last name, and returns a string in which only the first letter of the first name is uppercase and all letters of the last name are uppercase.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it capitalize_last_name.py.
+Write a Python function capitalize_last_name() that accepts a string with a first and last name, and returns a string in which only the first letter of the first name is uppercase and all letters of the last name are uppercase. For example, 'john james' should become 'John JAMES'. The function should raise appropriate errors for invalid inputs.
+Run your code to ensure it works correctly.
+Save your file and submit.
+Tips:
+
+Use str.split() to split a str into separate words.
+If something other than a string object is passed as an argument, the function should raise a TypeError.
+You can use isistance() to check whether an object is of a particular type. If the str does not consist of exactly two words, the function should raise a ValueError.
+Deliverable
+
+Submit the Python Script: capitalize_last_name.py and a report showing program execution
+Make sure that your code has comments
+
+
+
+
+
+==============================================================================================================
+
+
+
+
+
+Lab Activity 6-2: Quantity and Price Validation Functions
+Completion requirements
+To do: Make a submission
+Due: Saturday, 30 May 2026, 11:59 PM
+Introduction
+
+In this lab activity, you will write two Python functions that validate user input for quantity and price. The quantity must be an integer greater than 0, and the price must be either an integer or a float.
+
+The functions should keep asking the user to enter a value input until quantity is > 0 and quantity is an integer. Also keep asking the user for price input until the input is either integer or float. Use try and except to achieve this.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it validate_inputs.py.
+Implement two functions:
+validate_quantity(): Validates that the input is an integer greater than 0.
+validate_price(): Validates that the input is either an integer or a float.
+Ensure the functions keep asking for user input until valid input is provided.
+Ensure you check that the quantity is > 0
+Ensure you check you only accept an integer for quantity
+Ensure you check you only accept an integer or float for price
+Use try and except blocks to handle invalid inputs.
+Run your code to ensure it works correctly.
+Save your file and submit.
+Deliverable
+
+Submit the Python Script: validate_inputs.py and a report showing program execution
+Make sure that your code has comments
+
+
+
+
+==============================================================================================================
+
+
+
+
+
+Assignment 6: Interactive Calculator with Error Handling
+
+Introduction
+
+In this assignment, you will write a Python program that functions as an interactive calculator. The program will accept user input in the form of a simple arithmetic operation (e.g., 5 + 10), validate the input, and perform the calculation. The program should handle invalid inputs gracefully using exceptions.
+
+Instructions
+
+Complete the following steps:
+
+Open PyCharm IDE.
+Create a new Python file and name it {name}_exceptions.py.
+Write a Python program that functions as an interactive calculator.
+The program will accept user input in the form of a simple arithmetic operation (e.g., 5 + 10), validate the input, and perform the calculation.
+The program should handle invalid inputs gracefully using exceptions.
+Run and test your code to ensure it works correctly.
+Save your file and submit.
+Output Sample:
+
+
+
+Deliverable
+
+Submit the Python Script: {name}_exceptions.py and a report showing program execution
+Make sure that your code has comments

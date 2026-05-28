@@ -6035,16 +6035,16 @@ print("Great! Value is in the correct range.")</code></pre>
           <p class="eyebrow">Lesson 6 Testing Environment</p>
           <h1 id="lesson6-practice-title">Exception Handling and Validation Practice</h1>
           <p>
-            Complete these activities in your own IDE. Lesson 6 currently has embedded lesson questions only, so this
-            page contains the chapter activities without full solutions. Concept reminders stay hidden until you open
-            them.
+            Complete these activities in your own IDE. Lesson 6 includes concept checks, two lab activities, and the
+            interactive calculator assignment. Concept reminders stay hidden until you open them, and no completed
+            solutions are provided.
           </p>
         </header>
 
         <div class="practice-tabs" role="tablist" aria-label="Lesson 6 practice groups">
           <button class="tab active" data-practice-tab="lesson6-concept-checks">Concept Checks</button>
-          <button class="tab" data-practice-tab="lesson6-function-activity">Function Activity</button>
-          <button class="tab" data-practice-tab="lesson6-validation-activity">Validation Activity</button>
+          <button class="tab" data-practice-tab="lesson6-lab-activities">Lab Activities</button>
+          <button class="tab" data-practice-tab="lesson6-graded-assignment">Assignment</button>
         </div>
 
         <section class="practice-panel active" id="lesson6-concept-checks">
@@ -6093,16 +6093,20 @@ print("Great! Value is in the correct range.")</code></pre>
           </article>
         </section>
 
-        <section class="practice-panel" id="lesson6-function-activity">
+        <section class="practice-panel" id="lesson6-lab-activities">
           <div class="panel-intro">
-            <h2>Function Activity</h2>
-            <p>This activity practices raising <code>TypeError</code> and <code>ValueError</code> from inside a function.</p>
+            <h2>Lab Activities from Lesson 6 Assignments</h2>
+            <p>These labs practice raising exceptions, validating user input, and repeating prompts until values are usable.</p>
           </div>
 
           <article class="task-card prominent">
-            <h3>capitalize_last_name()</h3>
-            <p><strong>Objective:</strong> Create a function named <code>capitalize_last_name()</code>.</p>
+            <div class="task-meta">Lab Activity 6-1</div>
+            <h3>String Capitalization Function</h3>
+            <p><strong>Required file:</strong> <code>capitalize_last_name.py</code></p>
+            <p><strong>Objective:</strong> Write a function named <code>capitalize_last_name()</code> that formats a first and last name and raises appropriate errors for invalid inputs.</p>
             <ol>
+              <li>Open PyCharm or your preferred Python IDE.</li>
+              <li>Create a new Python file named <code>capitalize_last_name.py</code>.</li>
               <li>The function must accept one argument: a string containing a single first name and a single last name.</li>
               <li>Return a string where only the first letter of the first name is uppercase.</li>
               <li>Return the last name in all uppercase letters.</li>
@@ -6111,7 +6115,9 @@ print("Great! Value is in the correct range.")</code></pre>
               <li>If something other than a string object is passed, raise a <code>TypeError</code>.</li>
               <li>Use <code>isinstance()</code> to check whether the object is a string.</li>
               <li>If the string does not consist of exactly two words, raise a <code>ValueError</code>.</li>
+              <li>Run your code to ensure it works correctly.</li>
             </ol>
+            <p><strong>Deliverable:</strong> Submit <code>capitalize_last_name.py</code> and a report showing program execution. Include comments in your code.</p>
             <details>
               <summary>Concept Reminder</summary>
               <p>
@@ -6122,27 +6128,26 @@ print("Great! Value is in the correct range.")</code></pre>
               <a class="page-ref" href="#lesson6-validation" data-study-route="lesson6-study">Review: Lesson 6, pages 12 and 14.</a>
             </details>
           </article>
-        </section>
-
-        <section class="practice-panel" id="lesson6-validation-activity">
-          <div class="panel-intro">
-            <h2>Validation Activity</h2>
-            <p>This activity practices repeated input validation with <code>try</code> and <code>except</code>.</p>
-          </div>
 
           <article class="task-card prominent">
+            <div class="task-meta">Lab Activity 6-2 - Due: Saturday, 30 May 2026, 11:59 PM</div>
             <h3>Quantity and Price Validation Functions</h3>
+            <p><strong>Required file:</strong> <code>validate_inputs.py</code></p>
             <p><strong>Objective:</strong> Create two different functions that check the validity of quantity and price.</p>
             <ol>
-              <li>Create one function that validates quantity.</li>
-              <li>Create one function that validates price.</li>
+              <li>Open PyCharm or your preferred Python IDE.</li>
+              <li>Create a new Python file named <code>validate_inputs.py</code>.</li>
+              <li>Create <code>validate_quantity()</code> to validate quantity input.</li>
+              <li>Create <code>validate_price()</code> to validate price input.</li>
               <li>Ensure quantity is greater than <code>0</code>.</li>
               <li>Ensure quantity only accepts integers.</li>
               <li>Ensure price accepts an integer or a float.</li>
               <li>Keep asking the user to enter quantity until the quantity is greater than <code>0</code> and is an integer.</li>
               <li>Keep asking the user to enter price until the input is either an integer or a float.</li>
               <li>Use <code>try</code> and <code>except</code> to handle invalid conversions.</li>
+              <li>Run your code to ensure it works correctly.</li>
             </ol>
+            <p><strong>Deliverable:</strong> Submit <code>validate_inputs.py</code> and a report showing program execution. Include comments in your code.</p>
             <details>
               <summary>Concept Reminder</summary>
               <p>
@@ -6151,6 +6156,43 @@ print("Great! Value is in the correct range.")</code></pre>
                 validation separate so each function has one clear job.
               </p>
               <a class="page-ref" href="#lesson6-validation" data-study-route="lesson6-study">Review: Lesson 6, page 15.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson6-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 6: Interactive Calculator with Error Handling</h2>
+            <p>Build an interactive calculator that accepts a simple arithmetic operation and handles invalid input gracefully.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Interactive Calculator with Error Handling</h3>
+            <p><strong>Required file:</strong> <code>{name}_exceptions.py</code></p>
+            <p><strong>Objective:</strong> Write a Python program that accepts user input in the form of a simple arithmetic operation, validates the input, performs the calculation, and uses exceptions to handle invalid input without crashing.</p>
+            <ol>
+              <li>Open PyCharm or your preferred Python IDE.</li>
+              <li>Create a new Python file named <code>{name}_exceptions.py</code>.</li>
+              <li>Write an interactive calculator program.</li>
+              <li>Prompt the user to enter a simple arithmetic operation such as <code>5 + 10</code>.</li>
+              <li>Validate that the input contains a usable left operand, operator, and right operand.</li>
+              <li>Support basic arithmetic operations such as addition, subtraction, multiplication, and division.</li>
+              <li>Use <code>try</code> and <code>except</code> blocks to handle invalid numbers, unsupported operators, malformed expressions, and division by zero.</li>
+              <li>Display friendly error messages instead of raw tracebacks.</li>
+              <li>Run and test your code with valid operations and several invalid inputs.</li>
+              <li>Save your file and submit it with your report.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit <code>{name}_exceptions.py</code> and a report showing program execution. Include comments in your code.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                This assignment combines parsing user input, converting text to numbers, choosing behavior based on an
+                operator, and catching exceptions. Use specific exception handlers where possible, especially
+                <code>ValueError</code> for invalid number conversion and <code>ZeroDivisionError</code> for division by
+                zero.
+              </p>
+              <a class="page-ref" href="#lesson6-try-except" data-study-route="lesson6-study">Review: Lesson 6, pages 6-11.</a>
+              <a class="page-ref" href="#lesson6-specific" data-study-route="lesson6-study">Review: Lesson 6, pages 9-10.</a>
             </details>
           </article>
         </section>
