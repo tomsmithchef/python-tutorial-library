@@ -1,0 +1,60 @@
+
+Lab Activity 9
+
+Introduction
+
+In this lab activity, you will complete various supplementary python exercises.
+
+Instructions
+
+Complete the following exercises:
+
+Write a program to take three names as input from a user in the single input() function call and print the names.
+Get a list of numbers as input from a user and calculate the sum of it.
+Write a python program that accept a list of strings from a user and concatenate them with "_" between each string.
+Write a program that get two integer numbers, return their product only if the product is equal to or lower than 1000. Otherwise, return their sum.
+Port scanner: By using IP address: 142.112.28.74 and Port:80, check if the network port is open.
+Write a function divide_numbers(a, b) that divides a by b and handles the following errors:
+Division by zero and Incorrect input types.
+Test your code for values: (0, 10); (3.50, 2); (11,0); (12, ‘4’)
+Modify the Exercise 4 function from Exercise 1 to handle both ZeroDivisionError and TypeError in a single except block and add a generic except block for any other unexpected errors.
+Encrypt the following sentences with the given keys using the cipher program:
+"'You can show black is white by argument,' said Filby, 'but you will never convince me.'" with the key 8.
+"Besty is 45 years old" with key 21.
+Decrypt the following ciphertexts with the given keys using the cipher program:
+"'Kv uqwpfu rncwukdng gpqwij.'" with key 2.
+"Xqp whh ahoa kb pda sknhz swo ejreoexha." with key 22.
+Deliverable
+
+Submit your python scripts and a report showing successful execution of these scripts
+Your code should have comments
+
+
+
+
+==============================================================================================================
+
+
+
+
+Assignment 9: Web Scraping for Country Information
+
+Introduction
+
+In this assignment, you will create a Python script to extract and store country information such as name, capital, population, and area from a website.
+
+Instructions
+
+Complete the following steps:
+
+Open your preferred Python development environment.
+Create a new Python script file.
+Write Python code to extract country information from the following URL: https://www.scrapethissite.com/pages/simple/
+Store the extracted information in a list. Each list item is a dictionary holding information for a particular country.
+Create a function to convert the list to CSV or Excel format.
+Test the script by running it and verifying the output.
+Deliverable
+
+Submit your Python file.
+Report
+Include comments

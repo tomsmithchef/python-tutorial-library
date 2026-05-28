@@ -1,0 +1,280 @@
+
+Lab Activity 8
+
+Scapy Lab Assignment: Packet Inspection and Analysis with Python
+
+Introduction
+
+In this lab activity, you will explore basic packet inspection and analysis using the Python library Scapy. You will first practice using several Scapy commands interactively in the Python terminal, and then translate those commands into a Python script.
+
+This activity is designed to help you become familiar with packet structures, packet visualization, and hexadecimal representations of network data.
+
+Learning Objectives
+By the end of this lab, students will be able to:
+
+Install and configure Scapy
+
+Create and inspect packets interactively
+
+Use Scapy packet inspection functions
+
+Translate terminal commands into reusable Python scripts
+
+Analyze packet contents and structures
+
+Prerequisites
+Before starting this assignment, ensure that you have:
+
+Python 3 installed
+
+Administrator/root privileges (recommended for packet operations)
+
+Internet access to install packages
+
+Part 1 — Install Scapy
+Install Scapy using the following command:
+
+Windows
+pip install scapy
+Linux / macOS
+pip3 install scapy
+To verify the installation:
+
+python
+Then inside the Python interpreter:
+
+from scapy.all import *
+If no errors appear, Scapy is installed successfully.
+
+Part 2 — Practice Scapy Commands in the Python Console
+Launch the Python interpreter and import Scapy:
+
+from scapy.all import *
+Create a sample packet:
+
+pkt = IP(dst="8.8.8.8")/ICMP()
+Practice the following Scapy commands on the packet:
+
+Required Commands
+1. nsummary()
+Displays packet summaries with numbering.
+
+Example:
+
+pkt.nsummary()
+2. summary()
+Displays a one-line summary of the packet.
+
+Example:
+
+pkt.summary()
+3. hexdump()
+Displays the packet contents in hexadecimal format.
+
+Example:
+
+hexdump(pkt)
+4. show()
+Displays the packet fields and values.
+
+Example:
+
+pkt.show()
+5. show2()
+Displays the packet fields after automatic field calculation.
+
+Example:
+
+pkt.show2()
+6. raw()
+Displays the raw byte representation of the packet.
+
+Example:
+
+raw(pkt)
+7. rawhex()
+Displays the raw hexadecimal representation of the packet.
+
+Example:
+
+raw(pkt).hex()
+Part 3 — Translate Commands into a Python Script
+Create a Python script named:
+
+scapy_lab.py
+Your script must:
+
+Import Scapy
+
+Create at least one packet
+
+Demonstrate all required commands
+
+Include comments explaining each command
+
+Clearly label the output sections
+
+Example Script Structure
+from scapy.all import *
+
+# Create packet
+pkt = IP(dst="8.8.8.8")/ICMP()
+
+# Summary
+print("=== SUMMARY ===")
+print(pkt.summary())
+
+# Show packet details
+print("=== SHOW ===")
+pkt.show()
+
+# Hexdump
+print("=== HEXDUMP ===")
+hexdump(pkt)
+You are encouraged to expand this script with additional packet types such as:
+
+TCP packets
+
+UDP packets
+
+DNS packets
+
+Example:
+
+pkt2 = IP(dst="1.1.1.1")/TCP(dport=80)
+Part 4 — Report Requirements
+In addition to your Python script, submit a short report (1–2 pages) that includes:
+
+Report Sections
+1. Introduction
+Briefly explain the purpose of Scapy and packet analysis.
+
+2. Installation
+Describe how Scapy was installed and configured.
+
+3. Commands Practiced
+Explain the purpose of each required command:
+
+nsummary()
+
+summary()
+
+hexdump()
+
+show()
+
+show2()
+
+rawhex()
+
+4. Screenshots
+Include screenshots showing:
+
+Successful Scapy installation
+
+Interactive command execution
+
+Script execution results
+
+5. Observations
+Discuss:
+
+What information each command displays
+
+Differences between show() and show2()
+
+Why hexadecimal packet analysis is useful
+
+6. Conclusion
+Summarize what you learned during the lab.
+
+Deliverables
+Submit the following files:
+
+scapy_lab.py
+
+Lab report (PDF or DOCX format)
+
+Screenshots used in the report
+
+Grading Criteria
+Component	Marks
+Scapy installation completed	10
+Interactive command practice	20
+Correct implementation in Python script	35
+Code quality and comments	15
+Report completeness and screenshots	20
+Total	100
+Bonus Challenge (Optional)
+Try creating and analyzing more advanced packets:
+
+TCP SYN packet
+
+DNS query packet
+
+ARP request packet
+
+Example:
+
+pkt = Ether()/ARP(pdst="192.168.1.1")
+pkt.show()
+You may include these experiments in your report for bonus marks.
+
+
+
+
+
+
+
+==============================================================================================================
+
+
+
+
+
+
+Assignment 8
+
+Assignment 8: Sending TCP Packets to a Web Server Using Scapy
+
+Introduction
+
+In this assignment, you will write a Python script that uses the Scapy library to craft and send a TCP packet to port 80 of a real, publicly accessible web server. You will capture the server's response and document your findings in a short report.
+
+Target Server
+
+Use httpbin.org (IP: 54.235.97.46) as your target. This is a simple HTTP request and response service commonly used for testing and experimentation.
+
+Instructions
+
+Open your preferred Python development environment.
+
+Install Scapy if you haven't already (pip install scapy).
+
+Create a new Python script file named tcp_packet_sender.py.
+
+Your script must do all of the following:
+
+Construct a TCP SYN packet destined for 54.235.97.46 on port 80
+Send the packet and capture the server's response using Scapy's sr1() function
+Print the response summary to the console (e.g., whether a SYN-ACK was received)
+Send an HTTP GET request as a TCP payload to port 80 and print the raw response data
+Test your script and confirm it runs without errors.
+
+Deliverables
+
+Submit both of the following:
+
+Python file — your completed tcp_packet_sender.py script
+Report (PDF or Word document) — a short written report (1–2 pages) that includes:
+A brief explanation of what TCP is and how a SYN / SYN-ACK handshake works
+Screenshots of your script's console output showing the packet exchange
+The response flags returned by the server and what they mean
+Any errors or unexpected results you encountered and how you resolved them
+Hints
+
+The IP layer is created with IP(dst="54.235.97.46")
+The TCP layer for a SYN packet uses TCP(dport=80, flags="S")
+Stack layers using the / operator: packet = IP(...) / TCP(...)
+sr1() sends a packet and waits for a single response; response.show() prints its details
+Running Scapy typically requires administrator/root privileges

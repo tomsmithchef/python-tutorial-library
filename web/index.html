@@ -7664,8 +7664,8 @@ offline.nsummary()</code></pre>
             <div class="next-step-panel">
               <h3>Ready to practice Lesson 8?</h3>
               <p>
-                The Lesson 8 testing environment contains Wireshark, dpkt, Scapy layer, packet-set, send/receive,
-                fuzzing, import/export, and sniffing prompts. It does not provide completed answers.
+                The Lesson 8 testing environment contains concept checks, the Scapy packet-inspection lab, and the TCP
+                packet sending assignment. It does not provide completed answers.
               </p>
               <a class="button primary" href="#lesson8-practice" data-route="lesson8-practice">Practice Lesson 8</a>
             </div>
@@ -7680,331 +7680,167 @@ offline.nsummary()</code></pre>
           <p class="eyebrow">Lesson 8 Testing Environment</p>
           <h1 id="lesson8-practice-title">Scapy and Packet Analysis Practice</h1>
           <p>
-            Complete these activities in your own IDE and lab environment. Lesson 8 currently uses embedded lesson
-            activities from the chapter, so this page keeps the prompts separate from the textbook and uses hidden concept
-            reminders instead of completed solutions.
+            Complete these activities in your own IDE and lab environment. Lesson 8 includes concept checks, a Scapy
+            packet-inspection lab, and a TCP packet sending assignment. Concept reminders stay hidden until you open
+            them, and no completed solutions are provided.
           </p>
         </header>
 
         <div class="practice-tabs" role="tablist" aria-label="Lesson 8 practice groups">
-          <button class="tab active" data-practice-tab="lesson8-traffic-activities">Traffic Analysis</button>
-          <button class="tab" data-practice-tab="lesson8-scapy-activities">Scapy Basics</button>
-          <button class="tab" data-practice-tab="lesson8-send-activities">Send and Receive</button>
-          <button class="tab" data-practice-tab="lesson8-sniff-activities">Sniffing and Files</button>
+          <button class="tab active" data-practice-tab="lesson8-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson8-lab-activities">Lab Activities</button>
+          <button class="tab" data-practice-tab="lesson8-graded-assignment">Assignment</button>
         </div>
 
-        <section class="practice-panel active" id="lesson8-traffic-activities">
+        <section class="practice-panel active" id="lesson8-concept-checks">
           <div class="panel-intro">
-            <h2>Traffic Analysis Activities</h2>
-            <p>These prompts practice packet-capture vocabulary, Wireshark workflow, filters, and PCAP reading.</p>
+            <h2>Concept Checks</h2>
+            <p>Use these prompts to review packet analysis, Scapy inspection commands, and safe network lab boundaries.</p>
           </div>
 
           <article class="task-card">
-            <h3>Wireshark Capture Review</h3>
-            <p><strong>Objective:</strong> Practice reading basic packet-capture information from a small authorized capture.</p>
+            <h3>Traffic and Packet Analysis Review</h3>
             <ol>
-              <li>Open Wireshark and identify the interface used for your lab traffic.</li>
-              <li>Start a short capture in a permitted lab environment.</li>
               <li>Identify the packet list columns for time, source, destination, protocol, and info.</li>
-              <li>Apply an IP address display filter using the pattern <code>ip.addr == x.x.x.x</code>.</li>
-              <li>Apply at least three protocol filters from this list: <code>tcp</code>, <code>udp</code>, <code>dns</code>, <code>arp</code>, <code>smtp</code>.</li>
-              <li>Stop the capture and save it as a <code>.pcap</code> file.</li>
+              <li>Explain the difference between live capture and opening a saved <code>.pcap</code> file.</li>
+              <li>Describe why display filters help when a capture contains many packets.</li>
+              <li>Explain why packet captures should only be performed in authorized lab environments.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                A display filter changes what Wireshark shows you; it does not necessarily delete packets from the
-                capture file. Save only lab captures that you are allowed to keep.
+                Packet analysis means narrowing traffic into something you can explain: who talked, what protocol was
+                used, when it happened, and what the packet summary suggests. Permission and scope are part of the
+                technical workflow.
               </p>
               <a class="page-ref" href="#lesson8-wireshark" data-study-route="lesson8-study">Review: Lesson 8, pages 3-7.</a>
             </details>
           </article>
 
           <article class="task-card">
-            <h3>PCAP Source and Destination Printer</h3>
-            <p><strong>Objective:</strong> Use <code>dpkt</code> to read a packet capture and display IP endpoints.</p>
+            <h3>Scapy Inspection Command Review</h3>
             <ol>
-              <li>Install <code>dpkt</code> if it is not already available in your environment.</li>
-              <li>Open a saved <code>.pcap</code> file in binary mode.</li>
-              <li>Create a <code>dpkt.pcap.Reader</code> object.</li>
-              <li>Loop through the reader and unpack each <code>timestamp</code> and packet buffer.</li>
-              <li>Parse the packet buffer as an Ethernet frame.</li>
-              <li>Convert source and destination IP bytes into dotted strings.</li>
-              <li>Print the source and destination for each IP packet you process.</li>
+              <li>Explain what <code>summary()</code> displays.</li>
+              <li>Explain why <code>nsummary()</code> is useful when working with packet lists.</li>
+              <li>Describe the difference between <code>show()</code> and <code>show2()</code>.</li>
+              <li>Explain what <code>hexdump()</code> reveals about packet bytes.</li>
+              <li>Describe why <code>raw(packet)</code> and <code>raw(packet).hex()</code> are useful for low-level inspection.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                <code>socket.inet_ntoa()</code> converts packed IPv4 bytes into readable dotted-quad text. Real captures
-                may include non-IP frames, so robust code checks packet types before assuming <code>ip.src</code> and
-                <code>ip.dst</code> exist.
-              </p>
-              <a class="page-ref" href="#lesson8-dpkt" data-study-route="lesson8-study">Review: Lesson 8, pages 7-8.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Traffic Vocabulary Check</h3>
-            <ol>
-              <li>Define network traffic in your own words.</li>
-              <li>Explain the meaning of <code>Traffic volume = Traffic intensity * Time</code>.</li>
-              <li>Explain what the source and destination fields tell you.</li>
-              <li>Explain why a busy network capture can become difficult to read without filters.</li>
-              <li>Describe the difference between live capture and opening a saved capture file.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                A capture is a record of packets. Analysis means narrowing that record into something you can explain:
-                who talked, what protocol was used, when it happened, and what the packet summary suggests.
-              </p>
-              <a class="page-ref" href="#lesson8-traffic" data-study-route="lesson8-study">Review: Lesson 8, pages 3-7.</a>
-            </details>
-          </article>
-        </section>
-
-        <section class="practice-panel" id="lesson8-scapy-activities">
-          <div class="panel-intro">
-            <h2>Scapy Basics Activities</h2>
-            <p>These activities practice Scapy imports, packet objects, layer stacking, inspection commands, and packet sets.</p>
-          </div>
-
-          <article class="task-card">
-            <h3>Interactive Mode and Module Mode</h3>
-            <ol>
-              <li>Start Scapy in interactive mode from the terminal.</li>
-              <li>Create an <code>IP()</code> object and display it.</li>
-              <li>Create a separate Python script that imports Scapy in module mode.</li>
-              <li>Import <code>IP</code> from <code>scapy.layers.inet</code>.</li>
-              <li>Use <code>print(IP)</code> and <code>print(dir())</code> to inspect what is available.</li>
-              <li>Write a short paragraph describing when you would prefer a script over the interactive shell.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Interactive mode is convenient for one-liners and experiments. Module mode is better when the same steps
-                should be saved, rerun, submitted, or debugged like a normal Python program.
-              </p>
-              <a class="page-ref" href="#lesson8-install-modes" data-study-route="lesson8-study">Review: Lesson 8, pages 13-14.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Layer Stacking Practice</h3>
-            <p><strong>Objective:</strong> Create packets by stacking Scapy layers with the <code>/</code> operator.</p>
-            <ol>
-              <li>Create an <code>IP()</code> packet.</li>
-              <li>Create an <code>IP()/TCP()</code> packet.</li>
-              <li>Create an <code>Ether()/IP()/TCP()</code> packet.</li>
-              <li>Create an <code>IP()/TCP()</code> packet with a simple HTTP-style string payload.</li>
-              <li>Create an <code>IP(proto=55)/TCP()</code> packet.</li>
-              <li>Use <code>show()</code>, <code>show2()</code>, and <code>hexdump()</code> on at least one packet.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                The <code>/</code> operator stacks layers in Scapy. <code>show()</code> displays fields before full
-                assembly, while <code>show2()</code> assembles the packet first and can fill calculated values.
-              </p>
-              <a class="page-ref" href="#lesson8-layers" data-study-route="lesson8-study">Review: Lesson 8, pages 15-17.</a>
-            </details>
-          </article>
-
-          <article class="task-card prominent">
-            <h3>nsummary, summary, and hexdump Activity</h3>
-            <p><strong>Time guide:</strong> 5-10 minutes</p>
-            <p><strong>Objective:</strong> Implement Scapy inspection commands in the terminal, then translate them into a Python script.</p>
-            <ol>
-              <li>Create a small packet or packet list in interactive Scapy.</li>
-              <li>Run <code>nsummary()</code> and observe the numbered summary output.</li>
-              <li>Run <code>summary()</code> and compare it with <code>nsummary()</code>.</li>
-              <li>Run <code>hexdump()</code> on one packet.</li>
-              <li>Create a Python script that performs the same inspections.</li>
-              <li>Add comments explaining what each inspection command helps you learn.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Summaries help you scan packet lists quickly. Hexdumps remind you that packet objects ultimately become
-                raw bytes when stored, sent, or decoded.
+                Scapy packet objects can be displayed at different levels of detail. Summaries help you scan quickly;
+                field views help you inspect structure; raw and hexadecimal views show the actual bytes underneath.
               </p>
               <a class="page-ref" href="#lesson8-commands" data-study-route="lesson8-study">Review: Lesson 8, pages 19-20.</a>
             </details>
           </article>
 
           <article class="task-card">
-            <h3>Packet Sets and PacketList</h3>
-            <ol>
-              <li>Create an <code>IP</code> packet using a small CIDR destination range.</li>
-              <li>Create an <code>IP</code> packet with TTL values <code>1</code>, <code>2</code>, and a range from <code>5</code> through <code>9</code>.</li>
-              <li>Create a <code>TCP</code> layer with destination ports <code>80</code> and <code>443</code>.</li>
-              <li>Combine the IP and TCP expressions.</li>
-              <li>Use a list comprehension to display the generated combinations.</li>
-              <li>Wrap the generated packets in a <code>PacketList</code> and call <code>summary()</code>.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Packet sets can expand one expression into many packets. When more than one field contains multiple
-                values, Scapy may generate combinations. Use a list or <code>PacketList</code> when you need every
-                generated packet explicitly.
-              </p>
-              <a class="page-ref" href="#lesson8-packet-sets" data-study-route="lesson8-study">Review: Lesson 8, page 18.</a>
-            </details>
-          </article>
-        </section>
-
-        <section class="practice-panel" id="lesson8-send-activities">
-          <div class="panel-intro">
-            <h2>Sending and Receiving Activities</h2>
-            <p>Use a private lab target or instructor-provided environment for these prompts.</p>
-          </div>
-
-          <article class="task-card">
-            <h3>send() and sendp() Comparison</h3>
+            <h3>Sending and Receiving Safety Check</h3>
             <ol>
               <li>Explain the difference between Layer 3 sending and Layer 2 sending.</li>
-              <li>Create a Layer 3 packet for a permitted lab target.</li>
-              <li>Use <code>send()</code> with <code>count</code> set to a small value.</li>
-              <li>Create a Layer 2 packet that includes an <code>Ether()</code> layer.</li>
-              <li>Use <code>sendp()</code> with a lab interface name supplied by your environment.</li>
-              <li>Write down what <code>count</code>, <code>loop</code>, <code>inter</code>, and <code>iface</code> control.</li>
+              <li>Explain what <code>sr1()</code> does differently from <code>send()</code>.</li>
+              <li>Describe why timeouts are important when waiting for packet responses.</li>
+              <li>Explain why endless network loops are risky.</li>
+              <li>Write a short rule you will follow before sending, sniffing, or fuzzing traffic.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                <code>send()</code> works at Layer 3 and does not listen for replies. <code>sendp()</code> works at
-                Layer 2, so you provide a link-layer header and often specify an interface.
+                Packet tools are normal cybersecurity learning tools, but they interact with real networks. Keep the
+                target, packet count, timeout, and authorization clear before sending live traffic.
               </p>
-              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, page 21.</a>
-            </details>
-          </article>
-
-          <article class="task-card prominent">
-            <h3>Send and Receive TCP Packets</h3>
-            <p><strong>Time guide:</strong> 25-30 minutes</p>
-            <p><strong>Objective:</strong> Write a Python script that sends and receives TCP packets with Scapy.</p>
-            <ol>
-              <li>Choose an authorized lab target IP address.</li>
-              <li>Create an IP layer for that destination.</li>
-              <li>Create a TCP layer using a small list of destination ports.</li>
-              <li>Use <code>sr()</code> to send the packets and receive responses.</li>
-              <li>Store the answered and unanswered results in separate variables.</li>
-              <li>Use <code>summary()</code> or <code>nsummary()</code> to inspect the answered results.</li>
-              <li>Add a timeout so the script does not wait forever.</li>
-              <li>Write a short explanation of the difference between answered and unanswered probes.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                <code>sr()</code> returns answered stimulus-response pairs and unanswered packets. Start with a very
-                small list of ports and a timeout so the program remains predictable in a classroom lab.
-              </p>
-              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 22-23 and 28.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>sr1() and srloop() Review</h3>
-            <ol>
-              <li>Create an ICMP packet for a permitted lab target.</li>
-              <li>Use <code>sr1()</code> to collect only the first response.</li>
-              <li>Print a friendly message if no response is received.</li>
-              <li>Use <code>srloop()</code> with a very small count in a lab environment.</li>
-              <li>Explain why endless loops are risky on networks.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                <code>sr1()</code> is useful when you only care about the first answer. <code>srloop()</code> repeats a
-                send-and-receive action, so keep it bounded in learning exercises.
-              </p>
-              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 22-23.</a>
+              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 21-23 and 28.</a>
             </details>
           </article>
         </section>
 
-        <section class="practice-panel" id="lesson8-sniff-activities">
+        <section class="practice-panel" id="lesson8-lab-activities">
           <div class="panel-intro">
-            <h2>Fuzzing, Import/Export, and Sniffing Activities</h2>
-            <p>These prompts practice advanced Scapy features while keeping safety and authorization visible.</p>
+            <h2>Lab Activities from Lesson 8 Assignments</h2>
+            <p>This lab practices Scapy installation, packet creation, inspection commands, and report writing.</p>
           </div>
 
-          <article class="task-card">
-            <h3>Fuzzing Concept Check</h3>
+          <article class="task-card prominent">
+            <div class="task-meta">Lab Activity 8</div>
+            <h3>Packet Inspection and Analysis with Scapy</h3>
+            <p><strong>Required file:</strong> <code>scapy_lab.py</code></p>
+            <p><strong>Objective:</strong> Explore basic packet inspection and analysis with Scapy, first in the Python console and then in a reusable script.</p>
+            <h4>Part 1: Install and Verify Scapy</h4>
             <ol>
-              <li>Define fuzzing in your own words.</li>
-              <li>Create a fuzzed UDP/NTP packet object for an isolated lab target, but do not send it at first.</li>
-              <li>Use <code>show()</code> to inspect which fields Scapy randomized.</li>
-              <li>Explain why checksums are treated differently from ordinary randomizable fields.</li>
-              <li>Explain why fuzzing should not be performed against public systems.</li>
-              <li>Describe when <code>RandIP()</code> would be relevant.</li>
+              <li>Confirm Python 3 is installed.</li>
+              <li>Install Scapy with <code>pip install scapy</code> on Windows or <code>pip3 install scapy</code> on Linux/macOS.</li>
+              <li>Open the Python interpreter and run <code>from scapy.all import *</code>.</li>
+              <li>Confirm no import errors appear.</li>
             </ol>
+            <h4>Part 2: Practice in the Python Console</h4>
+            <ol>
+              <li>Create a sample packet with <code>pkt = IP(dst="8.8.8.8")/ICMP()</code>.</li>
+              <li>Practice <code>pkt.nsummary()</code>.</li>
+              <li>Practice <code>pkt.summary()</code>.</li>
+              <li>Practice <code>hexdump(pkt)</code>.</li>
+              <li>Practice <code>pkt.show()</code>.</li>
+              <li>Practice <code>pkt.show2()</code>.</li>
+              <li>Practice <code>raw(pkt)</code>.</li>
+              <li>Practice <code>raw(pkt).hex()</code> for raw hexadecimal output.</li>
+            </ol>
+            <h4>Part 3: Translate to a Script</h4>
+            <ol>
+              <li>Create <code>scapy_lab.py</code>.</li>
+              <li>Import Scapy.</li>
+              <li>Create at least one packet.</li>
+              <li>Demonstrate every required command from the console practice section.</li>
+              <li>Clearly label output sections.</li>
+              <li>Add comments explaining each command.</li>
+              <li>Optional: expand the script with TCP, UDP, DNS, or ARP packets.</li>
+            </ol>
+            <p><strong>Report:</strong> Submit a 1-2 page report covering the purpose of Scapy, installation, commands practiced, screenshots, observations, and conclusion.</p>
+            <p><strong>Deliverables:</strong> <code>scapy_lab.py</code>, lab report, and screenshots used in the report.</p>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                Fuzzing sends unusual inputs to observe behavior. It belongs in a controlled lab because unexpected
-                packet values can stress, confuse, or disrupt systems.
+                Start with packet inspection before sending live traffic. <code>show()</code> displays current field
+                values, while <code>show2()</code> assembles the packet first and can fill calculated fields.
               </p>
-              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, page 24.</a>
+              <a class="page-ref" href="#lesson8-install-modes" data-study-route="lesson8-study">Review: Lesson 8, pages 13-14.</a>
+              <a class="page-ref" href="#lesson8-commands" data-study-route="lesson8-study">Review: Lesson 8, pages 19-20.</a>
             </details>
           </article>
+        </section>
 
-          <article class="task-card">
-            <h3>Import and Export Packet Data</h3>
+        <section class="practice-panel" id="lesson8-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 8: Sending TCP Packets to a Web Server Using Scapy</h2>
+            <p>Craft a TCP packet, send it to the assigned test server, capture the response, and document the result.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Sending TCP Packets to a Web Server Using Scapy</h3>
+            <p><strong>Required file:</strong> <code>tcp_packet_sender.py</code></p>
+            <p><strong>Target server:</strong> <code>httpbin.org</code> at <code>54.235.97.46</code>, port <code>80</code>.</p>
+            <p><strong>Objective:</strong> Write a Python script that uses Scapy to craft and send a TCP packet to the assigned web server, capture the response, and document your findings.</p>
             <ol>
-              <li>Use <code>rdpcap()</code> to read a saved capture file.</li>
-              <li>Use <code>sniff(offline="file.pcap")</code> to read the same capture another way.</li>
-              <li>Use <code>summary()</code> and <code>nsummary()</code> on the loaded packets.</li>
-              <li>Create a small packet object and display it with <code>hexdump()</code>.</li>
-              <li>Describe what <code>export_object()</code> and <code>import_object()</code> are used for.</li>
-              <li>Explain the difference between packet bytes and a readable string representation.</li>
+              <li>Open your preferred Python development environment.</li>
+              <li>Install Scapy if needed with <code>pip install scapy</code>.</li>
+              <li>Create a new Python script named <code>tcp_packet_sender.py</code>.</li>
+              <li>Construct a TCP SYN packet destined for <code>54.235.97.46</code> on port <code>80</code>.</li>
+              <li>Use <code>sr1()</code> to send the packet and capture the server response.</li>
+              <li>Print the response summary and identify whether a SYN-ACK was received.</li>
+              <li>Send an HTTP GET request as a TCP payload to port <code>80</code>.</li>
+              <li>Print the raw response data.</li>
+              <li>Test your script and confirm it runs without errors.</li>
             </ol>
+            <p><strong>Report:</strong> Include a brief explanation of TCP and SYN/SYN-ACK, screenshots of console output, the response flags and their meaning, and any errors or unexpected results.</p>
+            <p><strong>Deliverables:</strong> <code>tcp_packet_sender.py</code> and a 1-2 page report in PDF or Word format.</p>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                <code>rdpcap()</code> and offline <code>sniff()</code> work with saved files. <code>raw(packet)</code>
-                gives packet bytes, while summaries and hexdumps give human-friendly views of those bytes.
+                The IP layer can use <code>IP(dst="54.235.97.46")</code>. A SYN packet uses
+                <code>TCP(dport=80, flags="S")</code>. The <code>sr1()</code> function sends one packet and waits for
+                one response, so use a timeout to keep the script predictable.
               </p>
-              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, pages 25-26.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Sniffing Options Review</h3>
-            <ol>
-              <li>Use <code>sniff()</code> on an authorized lab interface with a small <code>count</code>.</li>
-              <li>Use a BPF filter such as <code>"tcp and port 80"</code> in a lab environment.</li>
-              <li>Use <code>timeout</code> so the capture stops even if the count is not reached.</li>
-              <li>Use <code>prn</code> to print a short summary of each captured packet.</li>
-              <li>Read an offline capture with <code>sniff(offline="file.pcap")</code>.</li>
-              <li>Explain why Scapy may miss packets on very busy networks.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                <code>sniff()</code> can capture live or offline traffic. Filters reduce what is captured or processed.
-                Scapy is flexible, but dedicated tools are better for high-speed capture.
-              </p>
-              <a class="page-ref" href="#lesson8-sniffing" data-study-route="lesson8-study">Review: Lesson 8, page 27.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Safety and Ethics Reflection</h3>
-            <ol>
-              <li>List three Scapy actions that should only be performed in a lab or permissioned network.</li>
-              <li>Explain why reading a saved classroom PCAP is safer than sending live packets.</li>
-              <li>Describe the difference between learning protocol structure and testing someone else's system.</li>
-              <li>Write a short rule you will follow before capturing, sending, fuzzing, or sniffing traffic.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Packet tools are normal cybersecurity learning tools, but they interact with real networks. Permission,
-                scope, and restraint are part of the technical skill.
-              </p>
-              <a class="page-ref" href="#lesson8-scapy-purpose" data-study-route="lesson8-study">Review: Lesson 8, pages 3 and 9-28.</a>
+              <a class="page-ref" href="#lesson8-send-receive" data-study-route="lesson8-study">Review: Lesson 8, pages 22-23 and 28.</a>
             </details>
           </article>
         </section>
@@ -8529,9 +8365,8 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
             <div class="next-step-panel">
               <h3>Ready to practice Lesson 9?</h3>
               <p>
-                The Lesson 9 testing environment contains responsible-scraping checks, Requests and Beautiful Soup
-                prompts, Selenium review, export practice, and the country-data challenge. It does not provide
-                completed answers.
+                The Lesson 9 testing environment contains concept checks, supplementary Python lab exercises, and the
+                country-information web scraping assignment. It does not provide completed answers.
               </p>
               <a class="button primary" href="#lesson9-practice" data-route="lesson9-practice">Practice Lesson 9</a>
             </div>
@@ -8546,22 +8381,21 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
           <p class="eyebrow">Lesson 9 Testing Environment</p>
           <h1 id="lesson9-practice-title">Web Scraping Practice</h1>
           <p>
-            Complete these activities in your own IDE. The concept reminders give a study nudge and include page
-            references so you know where to reread the matching Lesson 9 material.
+            Complete these activities in your own IDE. Lesson 9 includes concept checks, a supplementary Python lab,
+            and the country-information web scraping assignment. Concept reminders stay hidden until you open them.
           </p>
         </header>
 
         <div class="practice-tabs" role="tablist" aria-label="Lesson 9 practice groups">
-          <button class="tab active" data-practice-tab="lesson9-responsible-activities">Responsible Scraping</button>
-          <button class="tab" data-practice-tab="lesson9-parser-activities">Requests and Parsers</button>
-          <button class="tab" data-practice-tab="lesson9-selenium-activities">Selenium</button>
-          <button class="tab" data-practice-tab="lesson9-export-activities">Export Challenge</button>
+          <button class="tab active" data-practice-tab="lesson9-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson9-lab-activities">Lab Activities</button>
+          <button class="tab" data-practice-tab="lesson9-graded-assignment">Assignment</button>
         </div>
 
-        <section class="practice-panel active" id="lesson9-responsible-activities">
+        <section class="practice-panel active" id="lesson9-concept-checks">
           <div class="panel-intro">
-            <h2>Responsible Scraping Activities</h2>
-            <p>These activities check the judgment side of scraping before you write automation.</p>
+            <h2>Concept Checks</h2>
+            <p>Use these prompts to review responsible scraping, parsing tools, and exporting data.</p>
           </div>
 
           <article class="task-card">
@@ -8603,13 +8437,14 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
           </article>
 
           <article class="task-card">
-            <h3>Library Selection Check</h3>
+            <h3>Requests, Parser, and Selenium Check</h3>
             <ol>
               <li>Match Requests, Beautiful Soup, lxml, and Selenium to their main purpose.</li>
               <li>Identify which tool can run JavaScript by controlling a real browser.</li>
               <li>Identify which tools are best for parsing static HTML.</li>
               <li>Explain why Selenium is usually slower than Requests.</li>
-              <li>Choose a library combination for a static page and a JavaScript-heavy page.</li>
+              <li>Explain why Beautiful Soup is usually paired with Requests.</li>
+              <li>Describe when XPath might be useful.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
@@ -8620,205 +8455,83 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
               <a class="page-ref" href="#lesson9-libraries" data-study-route="lesson9-study">Review: Lesson 9, pages 6 and 18.</a>
             </details>
           </article>
-        </section>
-
-        <section class="practice-panel" id="lesson9-parser-activities">
-          <div class="panel-intro">
-            <h2>Requests and Parser Activities</h2>
-            <p>These prompts practice HTTP requests, Beautiful Soup selectors, and lxml XPath.</p>
-          </div>
 
           <article class="task-card">
-            <h3>Requests GET and POST Review</h3>
+            <h3>Export and Quality Check</h3>
             <ol>
-              <li>Install the Requests library if needed.</li>
-              <li>Write a GET request for a permitted URL.</li>
-              <li>Print the response status code.</li>
-              <li>Print a small slice of <code>response.text</code>.</li>
-              <li>Create a small dictionary of form data.</li>
-              <li>Write a POST request that sends that dictionary to a permitted test endpoint.</li>
-              <li>Explain the difference between <code>response.text</code> and <code>response.content</code>.</li>
+              <li>Explain why a scraper should check the HTTP response before parsing.</li>
+              <li>Explain why selectors should be tested after a website changes.</li>
+              <li>Describe how a list of dictionaries can become a DataFrame.</li>
+              <li>Explain when you would choose CSV and when you would choose Excel.</li>
+              <li>Explain why <code>index=False</code> is commonly used when exporting with pandas.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                Requests simplifies HTTP. Use <code>get()</code> to request a page and <code>post()</code> to send form
-                data. Always check whether the response succeeded before parsing it.
+                A scraper should make failures visible, keep each record in a consistent shape, and export a file that
+                can be opened and checked by a human.
               </p>
-              <a class="page-ref" href="#lesson9-requests" data-study-route="lesson9-study">Review: Lesson 9, page 7.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Beautiful Soup Title and h3 Extraction</h3>
-            <ol>
-              <li>Use Requests to retrieve <code>http://books.toscrape.com/</code>.</li>
-              <li>Create a Beautiful Soup object with <code>html.parser</code>.</li>
-              <li>Print the page title.</li>
-              <li>Find all <code>h3</code> elements.</li>
-              <li>Loop through the elements and print cleaned text.</li>
-              <li>Explain why Beautiful Soup is paired with Requests in this exercise.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Beautiful Soup parses HTML, but it does not request the page by itself. Requests gets the HTML, and
-                Beautiful Soup turns that HTML into a searchable tree.
-              </p>
-              <a class="page-ref" href="#lesson9-bs4" data-study-route="lesson9-study">Review: Lesson 9, pages 8-9.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>CSS Selector Practice</h3>
-            <ol>
-              <li>Use <code>soup.select(".product_pod")</code> to collect book product cards.</li>
-              <li>Loop through the cards.</li>
-              <li>Inside each card, find the title link.</li>
-              <li>Print the title text or title attribute.</li>
-              <li>Use <code>soup.find()</code> with an attributes dictionary to find an element by ID in a sample page.</li>
-              <li>Explain when a CSS selector feels easier than <code>find_all()</code>.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                CSS selectors can target classes with <code>.</code>, IDs with <code>#</code>, and nested structures
-                with selector combinations. <code>select()</code> returns multiple matches.
-              </p>
-              <a class="page-ref" href="#lesson9-bs4" data-study-route="lesson9-study">Review: Lesson 9, page 10.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>lxml XPath Practice</h3>
-            <ol>
-              <li>Install <code>lxml</code> if needed.</li>
-              <li>Use Requests to retrieve a permitted HTML page.</li>
-              <li>Create a tree with <code>html.fromstring()</code>.</li>
-              <li>Write an XPath expression that returns text or attribute values.</li>
-              <li>Print each value returned by <code>tree.xpath()</code>.</li>
-              <li>Explain how XPath differs from a Beautiful Soup tag search.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                lxml builds a tree from HTML text, then XPath selects nodes, text, or attributes. It is fast and
-                powerful, especially for structured documents.
-              </p>
-              <a class="page-ref" href="#lesson9-lxml" data-study-route="lesson9-study">Review: Lesson 9, pages 11-12.</a>
+              <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 20-22.</a>
             </details>
           </article>
         </section>
 
-        <section class="practice-panel" id="lesson9-selenium-activities">
+        <section class="practice-panel" id="lesson9-lab-activities">
           <div class="panel-intro">
-            <h2>Selenium Activities</h2>
-            <p>These prompts practice deciding when browser automation is needed and using Selenium locators.</p>
+            <h2>Lab Activities from Lesson 9 Assignments</h2>
+            <p>This lab combines supplementary Python exercises from earlier course topics with network and cipher practice.</p>
           </div>
-
-          <article class="task-card">
-            <h3>Selenium Setup Checklist</h3>
-            <ol>
-              <li>Identify the browser you plan to automate.</li>
-              <li>Download or locate the matching WebDriver executable for that browser.</li>
-              <li>Install the Selenium Python package.</li>
-              <li>Create a <code>Service</code> object for the driver path.</li>
-              <li>Create a browser driver object.</li>
-              <li>Open <code>http://books.toscrape.com/</code> with <code>driver.get()</code>.</li>
-              <li>Close the browser cleanly when done.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Selenium needs a browser, a compatible driver, and the Selenium package. The driver lets Python control
-                the browser.
-              </p>
-              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, pages 14-15.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Selenium Locator Review</h3>
-            <ol>
-              <li>Use <code>By.TAG_NAME</code> to find a tag on a page.</li>
-              <li>Use <code>By.CLASS_NAME</code> to find an element by class.</li>
-              <li>Use <code>By.CSS_SELECTOR</code> to find all title links in product cards.</li>
-              <li>Explain the difference between <code>find_element()</code> and <code>find_elements()</code>.</li>
-              <li>List all eight locator types covered in the lesson.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Selenium locators include ID, name, XPath, full link text, partial link text, tag name, class name, and
-                CSS selector. One method returns one match; the plural method returns a list.
-              </p>
-              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, page 16.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Selenium Plus Beautiful Soup Extraction</h3>
-            <ol>
-              <li>Use Selenium to open the book scraping practice site.</li>
-              <li>Read <code>driver.page_source</code>.</li>
-              <li>Pass the rendered page source into Beautiful Soup.</li>
-              <li>Find all <code>h3</code> elements.</li>
-              <li>Extract the link text for each title.</li>
-              <li>Append each title to a list named <code>results</code>.</li>
-              <li>Print the list items as a quick debugging check.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Selenium can render the page first. Beautiful Soup can then parse <code>driver.page_source</code>, which
-                is useful when content appears after browser rendering.
-              </p>
-              <a class="page-ref" href="#lesson9-selenium" data-study-route="lesson9-study">Review: Lesson 9, pages 17 and 19.</a>
-            </details>
-          </article>
-        </section>
-
-        <section class="practice-panel" id="lesson9-export-activities">
-          <div class="panel-intro">
-            <h2>Export and Final Challenge Activities</h2>
-            <p>These activities practice storing scraped results in useful tabular formats.</p>
-          </div>
-
-          <article class="task-card">
-            <h3>CSV and Excel Export Check</h3>
-            <ol>
-              <li>Create a list of scraped book titles or sample titles.</li>
-              <li>Create a pandas DataFrame with one clear column name.</li>
-              <li>Export the DataFrame to a CSV file.</li>
-              <li>Export the same DataFrame to an Excel file.</li>
-              <li>Use <code>index=False</code> so row numbers are not written as an extra data column.</li>
-              <li>Explain why the file extension matters.</li>
-              <li>Explain what <code>encoding="utf-8"</code> does for CSV output.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Pandas DataFrames store tabular data. Use <code>to_csv()</code> for CSV and <code>to_excel()</code> for
-                Excel. Excel export may require <code>openpyxl</code>.
-              </p>
-              <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 20-21.</a>
-            </details>
-          </article>
 
           <article class="task-card prominent">
-            <h3>Country, Capital, Population, and Area Scraper</h3>
-            <p><strong>Time guide:</strong> 60-65 minutes</p>
-            <p><strong>Objective:</strong> Create a Python script that extracts and stores country data from the assigned practice site.</p>
+            <div class="task-meta">Lab Activity 9</div>
+            <h3>Supplementary Python Exercises</h3>
+            <p><strong>Objective:</strong> Complete the listed Python exercises and submit your scripts with a report showing successful execution.</p>
             <ol>
-              <li>Use this URL: <code>https://www.scrapethissite.com/pages/simple/</code>.</li>
-              <li>Create a function that accepts the URL as an argument.</li>
-              <li>The function should extract country name, capital, population, and area in square kilometers.</li>
-              <li>The function should return the extracted result as a list or list-like collection.</li>
-              <li>Create a second function that converts the extracted list to CSV or Excel.</li>
-              <li>Use clear column names: country, capital, population, and area.</li>
-              <li>Run the script and confirm the exported file contains the expected columns.</li>
-              <li>Submit your script and exported file according to your instructor's directions.</li>
+              <li>Write a program that takes three names from one <code>input()</code> call and prints the names.</li>
+              <li>Get a list of numbers from the user and calculate the sum.</li>
+              <li>Accept a list of strings from the user and concatenate them with <code>_</code> between each string.</li>
+              <li>Write a program that gets two integers and returns their product only if the product is less than or equal to <code>1000</code>; otherwise, return their sum.</li>
+              <li>Create a port scanner that checks IP address <code>142.112.28.74</code> on port <code>80</code>.</li>
+              <li>Write <code>divide_numbers(a, b)</code> to divide <code>a</code> by <code>b</code> and handle division by zero and incorrect input types.</li>
+              <li>Test <code>divide_numbers()</code> with <code>(0, 10)</code>, <code>(3.50, 2)</code>, <code>(11, 0)</code>, and <code>(12, "4")</code>.</li>
+              <li>Modify the exercise function to handle <code>ZeroDivisionError</code> and <code>TypeError</code> in a single <code>except</code> block, plus a generic <code>except</code> block for unexpected errors.</li>
+              <li>Encrypt the assigned sentences with keys <code>8</code> and <code>21</code> using the cipher program.</li>
+              <li>Decrypt the assigned ciphertexts with keys <code>2</code> and <code>22</code> using the cipher program.</li>
             </ol>
+            <p><strong>Deliverable:</strong> Submit your Python scripts and a report showing successful execution. Include comments in your code.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                This lab revisits input handling, lists, functions, exceptions, networking, and cipher logic. Keep each
+                exercise small and test it before moving to the next one.
+              </p>
+              <a class="page-ref" href="#lesson6-validation" data-study-route="lesson6-study">Review: Lesson 6 validation patterns.</a>
+              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7 cipher material.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson9-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 9: Web Scraping for Country Information</h2>
+            <p>Create a scraper that extracts country data and exports the results to CSV or Excel.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Web Scraping for Country Information</h3>
+            <p><strong>Objective:</strong> Create a Python script that extracts country name, capital, population, and area from the assigned website, stores each result in a dictionary, and exports the collected data.</p>
+            <ol>
+              <li>Open your preferred Python development environment.</li>
+              <li>Create a new Python script file.</li>
+              <li>Use this URL: <code>https://www.scrapethissite.com/pages/simple/</code>.</li>
+              <li>Write Python code to extract each country's name, capital, population, and area.</li>
+              <li>Store the extracted information in a list.</li>
+              <li>Store each country's information as a dictionary inside that list.</li>
+              <li>Create a function that converts the list to CSV or Excel format.</li>
+              <li>Test the script by running it and verifying the output file.</li>
+              <li>Add comments that explain the main parts of your code.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit your Python file and a report.</p>
             <details>
               <summary>Concept Reminder</summary>
               <p>
@@ -8826,25 +8539,6 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 fields, store each record in a consistent shape, then let pandas write the final table.
               </p>
               <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 19-22.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Scraper Quality Review</h3>
-            <ol>
-              <li>Confirm your script handles a failed HTTP request clearly.</li>
-              <li>Confirm your selectors return the number of records you expect.</li>
-              <li>Confirm numeric fields are cleaned consistently before export.</li>
-              <li>Confirm the output file opens correctly in a spreadsheet program.</li>
-              <li>Write down one thing that might break if the website changes.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                A scraper should not only work once. It should make failures visible, keep data shapes consistent, and
-                export files that can be opened and checked.
-              </p>
-              <a class="page-ref" href="#lesson9-challenges" data-study-route="lesson9-study">Review: Lesson 9, pages 5 and 20-22.</a>
             </details>
           </article>
         </section>
