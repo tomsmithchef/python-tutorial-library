@@ -33,5 +33,14 @@ window.PY_TUTORIAL_ATTACHMENTS = [
     file: "attachments/Lesson 7 Lab 7 ceasercipheralgo.py",
     label: "ceasercipheralgo.py",
     size: "1 KB"
+  },
+  {
+    lesson: "lesson9",
+    taskTitle: "Supplementary Python Exercises",
+    title: "Lesson 9 Lab Files",
+    description: "ZIP attachment for the Lesson 9 supplementary Python exercises.",
+    file: "attachments/Lesson 9 Lab 9 Solutions.zip",
+    label: "Lesson 9 Lab 9 Solutions.zip",
+    size: "3 KB"
   }
 ];
