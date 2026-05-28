@@ -24,5 +24,14 @@ window.PY_TUTORIAL_ATTACHMENTS = [
     file: "attachments/Assignment_5_MinpulateDataframe.csv",
     label: "Assignment.csv",
     size: "7 KB"
+  },
+  {
+    lesson: "lesson7",
+    taskTitle: "Monoalphabetic Cipher Encryption and Decryption",
+    title: "Lesson 7 Cipher Lab Script",
+    description: "Provided Python script for the Lesson 7 monoalphabetic cipher lab.",
+    file: "attachments/Lesson 7 Lab 7 ceasercipheralgo.py",
+    label: "ceasercipheralgo.py",
+    size: "1 KB"
   }
 ];

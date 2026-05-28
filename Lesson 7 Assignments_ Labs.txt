@@ -1,0 +1,64 @@
+Lab Activity 7: Monoalphabetic Cipher Encryption and Decryption
+
+Introduction
+
+In this lab activity, you will create a Python program to encode and decode messages using the Monoalphabetic Cipher approach with a shift alphabet key.
+
+Instructions
+
+Complete the following steps:
+
+Create a Python project directory for the lab activity.
+Implement the functions for encoding and decoding messages using the Monoalphabetic Cipher approach.
+Implement a function to encode a message using the Monoalphabetic Cipher approach with a given shift alphabet key.
+Create a monoalphabetic cipher dictionary based on the shift alphabet key.
+Use the dictionary to encode the message and return the encrypted message.
+Implement a function to decode a message using the Monoalphabetic Cipher approach with the same shift alphabet key.
+Create a monoalphabetic cipher dictionary based on the shift alphabet key.
+Use the dictionary to decode the message and return the decrypted message.
+Test the program with a sample message and key to ensure correct encryption and decryption.
+Test the program with the provided sample message and key.
+Take screenshots of your code and the encrypted/decrypted message.
+Submit the screenshots as specified.
+Deliverable
+
+Submit the Python script and a report containing the screenshots of your code and message.
+Your code should have proper comments including a header comment
+
+Files
+
+
+
+
+==============================================================================================================
+
+
+
+
+
+Assignment 7: Password Encryption and Decryption
+
+Introduction
+
+In this assignment, you will create a Python program to generate random passwords, encrypt passwords using RSA encryption, and decrypt passwords.
+
+Instructions
+
+Complete the following steps:
+
+Create a new empty Python script project named "MyCryptography".
+Create a Python script file named "Cryptography".
+Write a function to generate random passwords with specified complexity requirements:
+Must contain at least one special character.
+Must contain at least one digit.
+Must contain at least one capital letter.
+Implement a function to encrypt passwords using the RSA encryption library.
+Implement a function to decrypt passwords using RSA encryption.
+Test the functions by:
+Generating a new random password and printing it.
+Encrypting the generated password and printing the encrypted value.
+Decrypting the generated password and printing the decrypted value.
+Deliverable
+
+Submit the Python file: MyCryptography and  a report.
+Comments in your code are mandatory

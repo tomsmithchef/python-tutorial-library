@@ -6855,97 +6855,42 @@ print(decoded_message)</code></pre>
           <p class="eyebrow">Lesson 7 Testing Environment</p>
           <h1 id="lesson7-practice-title">Cryptography and Authentication Practice</h1>
           <p>
-            Complete these activities in your own IDE. Lesson 7 currently uses embedded chapter activities,
-            so this page separates the practice prompts from the textbook material and keeps concept reminders hidden.
+            Complete these activities in your own IDE. Lesson 7 includes concept checks, one cipher lab activity, and
+            the password encryption and decryption assignment. Concept reminders stay hidden until you open them, and
+            downloads appear with their matching activity.
           </p>
         </header>
 
         <div class="practice-tabs" role="tablist" aria-label="Lesson 7 practice groups">
-          <button class="tab active" data-practice-tab="lesson7-cipher-activities">Cipher Activities</button>
-          <button class="tab" data-practice-tab="lesson7-library-activities">Library Encryption</button>
-          <button class="tab" data-practice-tab="lesson7-auth-activities">Authentication</button>
-          <button class="tab" data-practice-tab="lesson7-review-activities">Review Checks</button>
+          <button class="tab active" data-practice-tab="lesson7-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson7-lab-activities">Lab Activities</button>
+          <button class="tab" data-practice-tab="lesson7-graded-assignment">Assignment</button>
         </div>
 
-        <section class="practice-panel active" id="lesson7-cipher-activities">
+        <section class="practice-panel active" id="lesson7-concept-checks">
           <div class="panel-intro">
-            <h2>Classical Cipher Activities</h2>
-            <p>These activities practice substitution mappings, reversible dictionaries, and key-based alphabet shifts.</p>
+            <h2>Concept Checks</h2>
+            <p>Use these prompts to review cryptography vocabulary, responsible library choices, hashing, and encoding.</p>
           </div>
 
           <article class="task-card">
-            <h3>Caesar Cipher Correspondence</h3>
-            <p><strong>Objective:</strong> Write Python code that creates Caesar cipher letter correspondence.</p>
+            <h3>Security Concepts</h3>
             <ol>
-              <li>Use the alphabet <code>A</code> through <code>Z</code>.</li>
-              <li>Create the shifted alphabet for a Caesar shift of three.</li>
-              <li>Display which plaintext letter maps to which ciphertext letter.</li>
-              <li>Use your mapping to reason through encrypting a short phrase such as <code>Blue and gold</code>.</li>
+              <li>Define secrecy, authentication, and message integrity.</li>
+              <li>Explain why key length affects brute-force resistance.</li>
+              <li>Explain two limitations of symmetric encryption.</li>
+              <li>Explain two limitations of asymmetric encryption.</li>
+              <li>Describe the role of a digital certificate.</li>
+              <li>Explain why homemade ciphers are risky for real security work.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                A Caesar cipher shifts letters by a fixed amount. Modular arithmetic with <code>% 26</code> handles
-                wrapping around from the end of the alphabet back to the beginning.
+                Lesson 7 connects encryption to identity, trust, certificates, passwords, integrity checks, and
+                responsible algorithm choice. Educational ciphers are useful for learning, but real systems should use
+                established libraries and protocols.
               </p>
-              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7, pages 11-14.</a>
-            </details>
-          </article>
-
-          <article class="task-card prominent">
-            <h3>Key-Shift Monoalphabetic Encoder and Decoder</h3>
-            <p><strong>Time guide:</strong> 25-30 minutes</p>
-            <p><strong>Objective:</strong> Use a monoalphabetic cipher approach to encode and decode messages using a key-shift alphabet.</p>
-            <ol>
-              <li>Create a function that accepts a message as an argument.</li>
-              <li>Inside it, create a <code>monoalpha_cipher</code> dictionary based on the shifted alphabet key.</li>
-              <li>Return the encrypted message.</li>
-              <li>Create a second function that accepts a message as an argument.</li>
-              <li>Inside it, create or reuse the inverse cipher dictionary.</li>
-              <li>Return the decrypted message.</li>
-              <li>Test your script with the message <code>how are you doing today?</code>.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                A monoalphabetic cipher needs one-to-one mapping. To decrypt, reverse the dictionary so ciphertext
-                letters map back to plaintext letters. Use <code>dict.get(letter, letter)</code> if you want spaces or
-                punctuation to pass through unchanged.
-              </p>
-              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7, pages 15-19.</a>
-            </details>
-          </article>
-        </section>
-
-        <section class="practice-panel" id="lesson7-library-activities">
-          <div class="panel-intro">
-            <h2>Library Encryption Activities</h2>
-            <p>These activities practice using established libraries instead of hand-rolled encryption.</p>
-          </div>
-
-          <article class="task-card prominent">
-            <h3>Encrypt and Decrypt a Text File</h3>
-            <p><strong>Time guide:</strong> 60-65 minutes</p>
-            <p><strong>Objective:</strong> Write a Python script that creates, writes, encrypts, decrypts, and reads a text file.</p>
-            <ol>
-              <li>Create a function that accepts a file name as an argument and creates a text file.</li>
-              <li>Create a function that accepts a file name and contents as arguments and writes the content to the text file.</li>
-              <li>Create a function that accepts a file name and encrypts the text file.</li>
-              <li>Create a function that accepts a file name and decrypts the text file.</li>
-              <li>Create a function that accepts a file name and reads the content of the file.</li>
-              <li>Create a file named <code>Crypto.txt</code>.</li>
-              <li>Write this message to the file: <code>Cryptography library is one of the many libraries and modules that Python offers for secure communication and encryption.</code></li>
-              <li>Encrypt and print the value of the file.</li>
-              <li>Decrypt and print the content of the file.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Combine Lesson 4 file functions with Lesson 7 symmetric encryption. A library such as Fernet expects
-                bytes, so strings usually need <code>encode()</code> before encryption and <code>decode()</code> after
-                decryption.
-              </p>
-              <a class="page-ref" href="#lesson7-modern" data-study-route="lesson7-study">Review: Lesson 7, pages 25-34.</a>
+              <a class="page-ref" href="#lesson7-foundations" data-study-route="lesson7-study">Review: Lesson 7, pages 4-5, 29, 35, and 43-47.</a>
             </details>
           </article>
 
@@ -6967,101 +6912,23 @@ print(decoded_message)</code></pre>
               <a class="page-ref" href="#lesson7-modern" data-study-route="lesson7-study">Review: Lesson 7, pages 23-35.</a>
             </details>
           </article>
-        </section>
-
-        <section class="practice-panel" id="lesson7-auth-activities">
-          <div class="panel-intro">
-            <h2>Hashing and Authentication Activities</h2>
-            <p>These prompts practice message digests, password hashing, and digital signatures.</p>
-          </div>
 
           <article class="task-card">
-            <h3>Message Digest Comparison</h3>
+            <h3>Message Digest and Signature Check</h3>
             <ol>
               <li>Use <code>hashlib.md5()</code> to digest the bytes value <code>b"Python123"</code>.</li>
               <li>Use <code>hashlib.sha256()</code> to digest the same bytes value.</li>
               <li>Print each hexadecimal digest.</li>
-              <li>Print each digest size.</li>
               <li>Explain why a changed message produces a different digest.</li>
+              <li>Explain how a digital signature can help prove source and detect tampering.</li>
             </ol>
             <details>
               <summary>Concept Reminder</summary>
               <p>
-                Hash functions create one-way fingerprints. Use <code>update()</code> with bytes and
-                <code>hexdigest()</code> for readable output. MD5 is historical and not appropriate for modern security
-                decisions.
+                Hash functions create one-way fingerprints. Digital signatures use key-based verification to detect
+                whether a signed message has changed and whether it came from the expected signer.
               </p>
-              <a class="page-ref" href="#lesson7-authentication" data-study-route="lesson7-study">Review: Lesson 7, pages 36-38.</a>
-            </details>
-          </article>
-
-          <article class="task-card prominent">
-            <h3>Simple Authentication System</h3>
-            <p><strong>Objective:</strong> Create a simple authentication system using hashed passwords.</p>
-            <ol>
-              <li>Create a function to register new users.</li>
-              <li>Store usernames and hashed passwords securely.</li>
-              <li>Use the <code>bcrypt</code> library for hashing passwords.</li>
-              <li>You may use a dictionary as a small practice database.</li>
-              <li>Implement authentication to verify user credentials against stored hashed passwords.</li>
-              <li>Add password-management functionality to update a password.</li>
-              <li>Ensure updated passwords are hashed before storage.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Store password hashes, not plaintext passwords. With bcrypt, hash the password when registering or
-                updating, then use the library's check function during login. A dictionary is only for practice.
-              </p>
-              <a class="page-ref" href="#lesson7-passwords" data-study-route="lesson7-study">Review: Lesson 7, pages 39 and 42.</a>
-            </details>
-          </article>
-
-          <article class="task-card">
-            <h3>Digital Signature Verification Check</h3>
-            <ol>
-              <li>Generate a signing key with the PyNaCl signing tools.</li>
-              <li>Sign a byte-string message.</li>
-              <li>Obtain the verify key from the signing key.</li>
-              <li>Verify the signed message.</li>
-              <li>Alter the signed message and observe that verification fails.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                A digital signature should prove source and detect tampering. Verification uses the public verify key.
-                If the message or signature changes, verification should fail.
-              </p>
-              <a class="page-ref" href="#lesson7-authentication" data-study-route="lesson7-study">Review: Lesson 7, pages 40-41 and 47.</a>
-            </details>
-          </article>
-        </section>
-
-        <section class="practice-panel" id="lesson7-review-activities">
-          <div class="panel-intro">
-            <h2>Review Checks</h2>
-            <p>Use these prompts to review the conceptual parts of Lesson 7.</p>
-          </div>
-
-          <article class="task-card">
-            <h3>Security Concepts</h3>
-            <ol>
-              <li>Define secrecy, authentication, and message integrity.</li>
-              <li>Explain why key length affects brute-force resistance.</li>
-              <li>Explain two limitations of symmetric encryption.</li>
-              <li>Explain two limitations of asymmetric encryption.</li>
-              <li>Describe the role of a digital certificate.</li>
-              <li>Describe the role of Kerberos in network authentication.</li>
-              <li>List three types of personal tokens or token-style authentication.</li>
-              <li>Explain why biometrics do not automatically secure network traffic.</li>
-            </ol>
-            <details>
-              <summary>Concept Reminder</summary>
-              <p>
-                Lesson 7 is not only about encryption code. It also connects encryption to identity, trust, certificates,
-                tokens, passwords, and integrity checks.
-              </p>
-              <a class="page-ref" href="#lesson7-foundations" data-study-route="lesson7-study">Review: Lesson 7, pages 4-5, 29, 35, and 43-47.</a>
+              <a class="page-ref" href="#lesson7-authentication" data-study-route="lesson7-study">Review: Lesson 7, pages 36-41 and 47.</a>
             </details>
           </article>
 
@@ -7070,7 +6937,6 @@ print(decoded_message)</code></pre>
             <ol>
               <li>Define cryptanalysis.</li>
               <li>List two ways encrypted messages may leak useful clues even without direct decryption.</li>
-              <li>Explain why homemade ciphers are risky.</li>
               <li>Encode <code>Hello, World!</code> using Base64.</li>
               <li>Decode the Base64 value back to the original message.</li>
               <li>Explain why Base64 is not encryption.</li>
@@ -7082,6 +6948,75 @@ print(decoded_message)</code></pre>
                 representation so binary data can move through text systems; it does not provide secrecy.
               </p>
               <a class="page-ref" href="#lesson7-cryptanalysis" data-study-route="lesson7-study">Review: Lesson 7, pages 48-50.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson7-lab-activities">
+          <div class="panel-intro">
+            <h2>Lab Activities from Lesson 7 Assignments</h2>
+            <p>This lab practices classical cipher encoding and decoding with a reusable Python script.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <div class="task-meta">Lab Activity 7</div>
+            <h3>Monoalphabetic Cipher Encryption and Decryption</h3>
+            <p><strong>Objective:</strong> Create a Python program to encode and decode messages using a monoalphabetic cipher approach with a shift alphabet key.</p>
+            <ol>
+              <li>Create a Python project directory for the lab activity.</li>
+              <li>Implement functions for encoding and decoding messages using the monoalphabetic cipher approach.</li>
+              <li>Create a function that accepts a message and key and returns the encrypted message.</li>
+              <li>Create a monoalphabetic cipher dictionary or repeatable key mapping based on the shift alphabet key.</li>
+              <li>Create a function that uses the same key approach to decode the encrypted message.</li>
+              <li>Test the program with a sample message and key.</li>
+              <li>Test the program with the provided sample message and key from your course materials.</li>
+              <li>Take screenshots of your code and the encrypted/decrypted message output.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit the Python script and a report containing screenshots of your code and messages. Include a header comment and meaningful code comments.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                A monoalphabetic cipher maps plaintext characters to ciphertext characters. To decrypt, the program must
+                reverse or reproduce the same mapping so ciphertext can be translated back to readable text.
+              </p>
+              <a class="page-ref" href="#lesson7-classical" data-study-route="lesson7-study">Review: Lesson 7, pages 15-19.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson7-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 7: Password Encryption and Decryption</h2>
+            <p>Create a password generator and use RSA encryption to encrypt and decrypt the generated password.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Password Encryption and Decryption</h3>
+            <p><strong>Required project:</strong> <code>MyCryptography</code></p>
+            <p><strong>Required script:</strong> <code>Cryptography</code></p>
+            <p><strong>Objective:</strong> Generate random passwords with required complexity, encrypt passwords using RSA, and decrypt the encrypted password value.</p>
+            <ol>
+              <li>Create a new empty Python script project named <code>MyCryptography</code>.</li>
+              <li>Create a Python script file named <code>Cryptography</code>.</li>
+              <li>Write a function to generate random passwords.</li>
+              <li>Ensure each generated password contains at least one special character.</li>
+              <li>Ensure each generated password contains at least one digit.</li>
+              <li>Ensure each generated password contains at least one capital letter.</li>
+              <li>Implement a function to encrypt passwords using an RSA encryption library.</li>
+              <li>Implement a function to decrypt passwords using RSA encryption.</li>
+              <li>Test by generating a new random password and printing it.</li>
+              <li>Encrypt the generated password and print the encrypted value.</li>
+              <li>Decrypt the generated password and print the decrypted value.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit the Python file/project and a report. Comments in your code are mandatory.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                RSA uses a public/private key pair. A password generator also needs validation logic: generate or test
+                candidate text until it meets the required character categories before encrypting it.
+              </p>
+              <a class="page-ref" href="#lesson7-asymmetric" data-study-route="lesson7-study">Review: Lesson 7, pages 30-35.</a>
+              <a class="page-ref" href="#lesson7-passwords" data-study-route="lesson7-study">Review: Lesson 7, pages 39 and 42.</a>
             </details>
           </article>
         </section>
