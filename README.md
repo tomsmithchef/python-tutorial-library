@@ -7,8 +7,12 @@ This folder contains a self-contained web textbook for the first nine Python fun
 - `web/index.html` - the main website file to open in a browser
 - `web/styles.css` - the website styling
 - `web/app.js` - navigation, tabs, hints, code-copy behavior, and the optional Class Board
+- `web/quiz-data.js` - static lesson quiz banks for browser drill mode
+- `web/quiz-engine.js` - browser quiz engine, feedback, review, import UI, and local attempt history
 - `web/community-config.js` - Supabase connection settings for the optional Class Board
 - `web/assignment-attachments.js` - optional downloadable assignment attachment manifest
+- `web/api/import-quiz.py` - Vercel serverless endpoint for importing DOCX/PDF quiz files
+- `web/requirements.txt` - Python parser dependencies for the Vercel import endpoint
 - `web/attachments/` - optional starter files, datasets, lab handouts, or other assignment downloads
 - `supabase/class-board-schema.sql` - database tables and security policies for the Class Board
 - `Lesson 1.pdf` through `Lesson 9.pdf` - original lesson slide decks
@@ -56,8 +60,13 @@ Python Tutorial Library/
     index.html
     styles.css
     app.js
+    quiz-data.js
+    quiz-engine.js
     community-config.js
     assignment-attachments.js
+    requirements.txt
+    api/
+      import-quiz.py
     attachments/
       Assignment_5_MinpulateDataframe.csv
       README.md
@@ -72,6 +81,19 @@ Python Tutorial Library/
 - Use **Community** to open the optional Class Board for questions, code snippets, and class discussion.
 - Concept reminders are hidden by default. Open them only when you need a hint.
 - The testing pages do not provide completed solutions.
+- Each lesson Testing page includes **Drill Mode**. Use **Start Lesson Drill** for built-in questions, **Review Recent Attempts** for browser-saved scores, or **Import Quiz File** on the deployed site.
+
+## Quiz Drill Mode
+
+The quiz drill system is a web version of the useful WiliQuiz behavior. It supports single-answer questions, multi-select questions, written responses, partial credit, immediate feedback, retry, review mode, and recent attempt history.
+
+- Built-in lesson drills work from the static `web/index.html` file.
+- Attempt history is saved in the browser's `localStorage`, not Supabase.
+- Imported quiz files require the deployed Vercel site or another server that exposes `/api/import-quiz`.
+- Import currently supports `.docx` and `.pdf` files with numbered questions and an `ANSWERS` section.
+- The quiz system is for practice, not secure graded exams. Browser quiz data can be inspected by advanced users.
+
+For Vercel deployment, keep the project root set to `web` so `api/import-quiz.py` and `requirements.txt` are included in the deployment.
 
 ## Adding Assignment Downloads
 
