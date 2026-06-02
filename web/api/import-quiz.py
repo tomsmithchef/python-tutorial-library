@@ -75,7 +75,7 @@ def extract_pdf_text(file_bytes):
 
 
 def split_answer_section(text):
-    match = re.search(r"(?im)^\s*answers?\s*:?\s*$", text)
+    match = re.search(r"(?im)^\s*(answers?|answer\s+key)\s*:?\s*$", text)
     if not match:
         return text, ""
     return text[:match.start()], text[match.end():]
@@ -92,6 +92,32 @@ def strip_question_number(line):
 def extract_answers(answer_text):
     answers = {}
     lines = [line.strip() for line in answer_text.splitlines() if line.strip()]
+
+    table_tokens = []
+    for line in lines:
+        cleaned = clean_text(line).strip()
+        if re.match(r"^(q#|question|answer|answers?)$", cleaned, re.IGNORECASE):
+            continue
+        if re.match(r"^\d+$", cleaned) or re.match(r"^[A-E](?:\s*,\s*[A-E])*$", cleaned, re.IGNORECASE):
+            table_tokens.append(cleaned.upper())
+
+    index = 0
+    while index < len(table_tokens) - 1:
+        qnum_token = table_tokens[index]
+        answer_token = table_tokens[index + 1]
+        if qnum_token.isdigit() and re.match(r"^[A-E](?:\s*,\s*[A-E])*$", answer_token, re.IGNORECASE):
+            answers[int(qnum_token)] = {
+                "labels": [label.upper() for label in re.findall(r"[A-E]", answer_token, re.IGNORECASE)],
+                "written": [],
+                "explanation": ""
+            }
+            index += 2
+        else:
+            index += 1
+
+    if answers:
+        return answers
+
     sequential = 1
 
     for line in lines:

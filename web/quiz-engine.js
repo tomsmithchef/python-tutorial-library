@@ -63,7 +63,7 @@
   function normalizeText(value) {
     return String(value || "")
       .trim()
-      .replace(/[’‘]/g, "'")
+      .replace(/[\u2019\u2018]/g, "'")
       .replace(/\s+/g, " ")
       .replace(/[.;,:!?]+$/g, "")
       .toLowerCase();
@@ -87,89 +87,102 @@
 
   function getQuizForLesson(lessonKey) {
     const bank = window.PY_TUTORIAL_QUIZZES || {};
-    const quiz = bank[normalizeLesson(lessonKey)];
+    const quiz = bank[lessonKey] || bank[normalizeLesson(lessonKey)];
     return quiz ? cloneQuiz(quiz) : null;
   }
 
-  function createButton(label, className = "button secondary", type = "button") {
-    const button = document.createElement("button");
-    button.type = type;
-    button.className = className;
-    button.textContent = label;
-    return button;
+  function quizLibraryItems() {
+    const bank = window.PY_TUTORIAL_QUIZZES || {};
+    return Object.keys(bank)
+      .sort((a, b) => lessonNumber(a) - lessonNumber(b))
+      .map((lessonKey) => {
+        const quiz = bank[lessonKey];
+        return {
+          lessonKey,
+          folder: quiz.folder || "Quiz Library",
+          label: quiz.label || quiz.title || `Quiz ${lessonNumber(lessonKey)}`,
+          title: quiz.title || quiz.label || `Quiz ${lessonNumber(lessonKey)}`,
+          description: quiz.description || "",
+          sourceFile: quiz.sourceFile || "",
+          count: Array.isArray(quiz.questions) ? quiz.questions.length : 0
+        };
+      });
   }
 
-  function createLauncher(shell, lessonKey) {
-    if (shell.querySelector(".quiz-drill-panel")) {
+  function createQuizWorkspace() {
+    const quizWorkspace = document.querySelector("#quiz-view .quiz-workspace");
+    if (!quizWorkspace || quizWorkspace.querySelector(".quiz-app-shell")) {
       return;
     }
 
-    const lessonLabel = `Lesson ${lessonNumber(lessonKey)}`;
-    const quiz = getQuizForLesson(lessonKey);
     const panel = document.createElement("section");
-    panel.className = "quiz-drill-panel";
-    panel.dataset.quizLesson = lessonKey;
+    panel.className = "quiz-app-shell";
+    panel.setAttribute("aria-label", "WiliQuiz drill studio");
 
     panel.innerHTML = `
-      <div class="quiz-drill-copy">
-        <p class="eyebrow">Drill Mode</p>
-        <h2>${lessonLabel} Quiz Drills</h2>
-        <p>Practice this lesson with WiliQuiz-style feedback. These drills are separate from the assignment cards and save recent attempts in this browser.</p>
-      </div>
-      <div class="quiz-drill-actions">
-        <button type="button" class="button primary" data-quiz-action="start">Start Lesson Drill</button>
-        <button type="button" class="button secondary" data-quiz-action="import">Import Quiz File</button>
+      <div class="quiz-app-head">
+        <div>
+          <p class="eyebrow">WiliQuiz</p>
+          <h2>Quiz Drill Studio</h2>
+          <p>Launch the full Python MCQ practice exam, import a quiz document, or review your local attempt history.</p>
+        </div>
         <button type="button" class="button secondary" data-quiz-action="attempts">Review Recent Attempts</button>
       </div>
-      <form class="quiz-import-form" hidden>
-        <label>
-          <span>DOCX or PDF quiz file</span>
-          <input type="file" accept=".docx,.pdf,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
-        </label>
-        <button type="submit" class="button primary">Import and Start</button>
-        <p class="quiz-status" data-quiz-import-status></p>
-      </form>
+      <div class="quiz-foyer-grid">
+        <form class="quiz-import-card quiz-import-form">
+          <p class="eyebrow">Import Tool</p>
+          <h3>Import Quiz File</h3>
+          <p>Upload a DOCX or PDF with numbered questions and an ANSWERS or Answer Key section. Imported quizzes run through the same drill engine.</p>
+          <label class="quiz-import-drop">
+            <span class="quiz-import-icon" aria-hidden="true">+</span>
+            <strong>Choose DOCX or PDF</strong>
+            <small>Uses the Vercel parser endpoint when deployed.</small>
+            <input type="file" accept=".docx,.pdf,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+          </label>
+          <button type="submit" class="button primary">Import and Start</button>
+          <p class="quiz-status" data-quiz-import-status></p>
+        </form>
+        <div class="quiz-library-panel">
+          <p class="eyebrow">Library</p>
+          <h3>Quiz Library</h3>
+          <p>Select a quiz file from the built-in library.</p>
+          <div class="quiz-library-tree" role="tree" aria-label="WiliQuiz library">
+            ${renderLibraryTree()}
+          </div>
+        </div>
+      </div>
       <div class="quiz-attempts" hidden></div>
       <div class="quiz-stage" hidden></div>
     `;
 
-    const tabs = shell.querySelector(".practice-tabs");
-    if (tabs) {
-      tabs.insertAdjacentElement("beforebegin", panel);
-    } else {
-      shell.querySelector(".practice-header")?.insertAdjacentElement("afterend", panel);
-    }
+    quizWorkspace.append(panel);
 
     const state = {
-      lessonKey,
-      shell,
+      lessonKey: "all",
+      showAllAttempts: true,
+      shell: quizWorkspace,
       panel,
       stage: panel.querySelector(".quiz-stage"),
       attemptsPanel: panel.querySelector(".quiz-attempts"),
       importForm: panel.querySelector(".quiz-import-form"),
       importStatus: panel.querySelector("[data-quiz-import-status]"),
+      appHead: panel.querySelector(".quiz-app-head"),
+      foyer: panel.querySelector(".quiz-foyer-grid"),
       session: null
     };
     quizState.set(panel, state);
 
-    panel.querySelector("[data-quiz-action='start']").disabled = !quiz;
-    panel.querySelector("[data-quiz-action='start']").addEventListener("click", () => {
-      if (quiz) {
-        startQuiz(state, quiz);
-      }
-    });
-
-    panel.querySelector("[data-quiz-action='import']").addEventListener("click", () => {
-      state.importForm.hidden = !state.importForm.hidden;
-      state.attemptsPanel.hidden = true;
-      if (!state.importForm.hidden) {
-        state.importForm.querySelector("input")?.focus();
-      }
+    panel.querySelectorAll("[data-quiz-library]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const quiz = getQuizForLesson(button.dataset.quizLibrary);
+        if (quiz) {
+          startQuiz(state, quiz);
+        }
+      });
     });
 
     panel.querySelector("[data-quiz-action='attempts']").addEventListener("click", () => {
       renderAttempts(state);
-      state.importForm.hidden = true;
       state.attemptsPanel.hidden = !state.attemptsPanel.hidden;
     });
 
@@ -179,21 +192,74 @@
     });
   }
 
+  function renderLibraryTree() {
+    const items = quizLibraryItems();
+    const folders = items.reduce((grouped, item) => {
+      if (!grouped[item.folder]) {
+        grouped[item.folder] = [];
+      }
+      grouped[item.folder].push(item);
+      return grouped;
+    }, {});
+    return `
+      ${Object.entries(folders).map(([folder, folderItems]) => `
+        <details class="quiz-library-folder" open>
+          <summary>${escapeHtml(folder)}</summary>
+          <div class="quiz-library-children">
+            ${folderItems.map((item) => `
+              <button type="button" class="quiz-library-item" data-quiz-library="${escapeHtml(item.lessonKey)}" role="treeitem">
+                <span class="quiz-file-icon" aria-hidden="true">PDF</span>
+                <span>
+                  <strong>${escapeHtml(item.label)}</strong>
+                  <small>${escapeHtml(item.count)} questions${item.sourceFile ? ` &middot; ${escapeHtml(item.sourceFile)}` : ""}</small>
+                  ${item.description ? `<em>${escapeHtml(item.description)}</em>` : ""}
+                </span>
+              </button>
+            `).join("")}
+          </div>
+        </details>
+      `).join("")}
+    `;
+  }
+
   function prepareQuiz(rawQuiz, lessonKey) {
     const quiz = cloneQuiz(rawQuiz);
     quiz.lesson = normalizeLesson(quiz.lesson || lessonKey);
     quiz.questions = Array.isArray(quiz.questions) ? quiz.questions : [];
-    quiz.questions = quiz.questions.map((question, index) => ({
-      id: question.id || `${quiz.lesson}-q${index + 1}`,
-      type: question.type || (question.acceptedAnswers?.length ? "written" : question.correctLabels?.length > 1 ? "multi" : "choice"),
-      text: question.text || "",
-      options: Array.isArray(question.options) ? question.options : [],
-      correctLabels: Array.isArray(question.correctLabels) ? question.correctLabels.map((label) => String(label).toUpperCase()) : [],
-      acceptedAnswers: Array.isArray(question.acceptedAnswers) ? question.acceptedAnswers : [],
-      hint: question.hint || "",
-      explanation: question.explanation || "",
-      sourceRef: question.sourceRef || null
-    }));
+    quiz.questions = quiz.questions.map((question, index) => {
+      const rawOptions = Array.isArray(question.options) ? question.options : [];
+      const rawCorrect = Array.isArray(question.correctLabels)
+        ? question.correctLabels.map((label) => String(label).toUpperCase())
+        : [];
+      const qType = question.type || (question.acceptedAnswers?.length ? "written" : rawCorrect.length > 1 ? "multi" : "choice");
+
+      let finalOptions = rawOptions;
+      let finalCorrect = rawCorrect;
+
+      if ((qType === "choice" || qType === "multi") && rawOptions.length > 1) {
+        const correctTexts = new Set(
+          rawCorrect
+            .map((cl) => rawOptions.find((o) => String(o.label).toUpperCase() === cl)?.text)
+            .filter(Boolean)
+        );
+        const shuffled = [...rawOptions].sort(() => Math.random() - 0.5);
+        const labels = ["A", "B", "C", "D"];
+        finalOptions = shuffled.map((opt, i) => ({ label: labels[i] || opt.label, text: opt.text }));
+        finalCorrect = finalOptions.filter((opt) => correctTexts.has(opt.text)).map((opt) => opt.label);
+      }
+
+      return {
+        id: question.id || `${quiz.lesson}-q${index + 1}`,
+        type: qType,
+        text: question.text || "",
+        options: finalOptions,
+        correctLabels: finalCorrect,
+        acceptedAnswers: Array.isArray(question.acceptedAnswers) ? question.acceptedAnswers : [],
+        hint: question.hint || "",
+        explanation: question.explanation || "",
+        sourceRef: question.sourceRef || null
+      };
+    });
     return quiz;
   }
 
@@ -209,7 +275,8 @@
     };
     state.stage.hidden = false;
     state.attemptsPanel.hidden = true;
-    state.importForm.hidden = true;
+    state.appHead.hidden = true;
+    state.foyer.hidden = true;
     renderQuestion(state);
     state.stage.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -393,31 +460,42 @@
         <div class="quiz-progress-bar" aria-hidden="true"><span style="width: ${((session.currentIndex + 1) / session.quiz.questions.length) * 100}%"></span></div>
         <div class="quiz-question">
           <h4>${escapeHtml(question.text)}</h4>
-          ${question.hint ? `<details class="quiz-hint"><summary>Hint</summary><p>${escapeHtml(question.hint)}</p></details>` : ""}
-          ${sourceRef}
           <div class="quiz-answer-area">
             ${renderAnswerInputs(question, inputType, result)}
           </div>
+          ${question.hint ? `<details class="quiz-hint"><summary>Hint</summary><p>${escapeHtml(question.hint)}</p></details>` : ""}
+          ${sourceRef}
           ${isAnswered ? renderFeedback(question, result) : ""}
           <p class="quiz-status" data-quiz-status></p>
         </div>
         <div class="quiz-controls">
+          <button type="button" class="button secondary" data-quiz-nav="cancel">Cancel</button>
           <button type="button" class="button secondary" data-quiz-nav="back" ${session.currentIndex === 0 ? "disabled" : ""}>Back</button>
-          <button type="button" class="button secondary" data-quiz-nav="skip" ${isAnswered ? "disabled" : ""}>Skip</button>
-          <button type="button" class="button primary" data-quiz-nav="submit" ${isAnswered ? "disabled" : ""}>Submit</button>
-          <button type="button" class="button primary" data-quiz-nav="next">${session.currentIndex >= session.quiz.questions.length - 1 ? "Results" : "Next"}</button>
-          <button type="button" class="button secondary" data-quiz-nav="cancel">Close Drill</button>
+          <button type="button" class="button primary" data-quiz-nav="submit">${isAnswered ? (session.currentIndex >= session.quiz.questions.length - 1 ? "Results" : "Next") : "Submit"}</button>
         </div>
       </article>
     `;
 
-    state.stage.querySelector("[data-quiz-nav='back']").addEventListener("click", () => previousQuestion(state));
-    state.stage.querySelector("[data-quiz-nav='skip']").addEventListener("click", () => skipCurrent(state));
-    state.stage.querySelector("[data-quiz-nav='submit']").addEventListener("click", () => submitCurrent(state));
-    state.stage.querySelector("[data-quiz-nav='next']").addEventListener("click", () => nextQuestion(state));
     state.stage.querySelector("[data-quiz-nav='cancel']").addEventListener("click", () => {
       state.stage.hidden = true;
+      state.appHead.hidden = false;
+      state.foyer.hidden = false;
       state.session = null;
+    });
+    state.stage.querySelector("[data-quiz-nav='back']").addEventListener("click", () => previousQuestion(state));
+    state.stage.querySelector("[data-quiz-nav='submit']").addEventListener("click", () => {
+      if (isAnswered) {
+        nextQuestion(state);
+        return;
+      }
+      const selected = question.type === "written"
+        ? [writtenValue(state.stage)]
+        : selectedChoiceValues(state.stage);
+      if (selected.some((v) => String(v).trim())) {
+        submitCurrent(state);
+      } else {
+        skipCurrent(state);
+      }
     });
     bindSourceLinks(state.stage);
   }
@@ -599,6 +677,8 @@
     });
     state.stage.querySelector("[data-quiz-result='close']").addEventListener("click", () => {
       state.stage.hidden = true;
+      state.appHead.hidden = false;
+      state.foyer.hidden = false;
       state.session = null;
     });
   }
@@ -651,7 +731,10 @@
   }
 
   function renderAttempts(state) {
-    const attempts = readAttempts().filter((attempt) => normalizeAttachmentLessonShim(attempt.lesson) === normalizeAttachmentLessonShim(state.lessonKey));
+    const allAttempts = readAttempts();
+    const attempts = state.showAllAttempts
+      ? allAttempts
+      : allAttempts.filter((attempt) => normalizeAttachmentLessonShim(attempt.lesson) === normalizeAttachmentLessonShim(state.lessonKey));
     state.attemptsPanel.hidden = false;
     if (!attempts.length) {
       state.attemptsPanel.innerHTML = `
@@ -670,7 +753,7 @@
             <p class="eyebrow">Local History</p>
             <h3>Recent Attempts</h3>
           </div>
-          <button type="button" class="button secondary" data-clear-attempts>Clear Lesson History</button>
+          <button type="button" class="button secondary" data-clear-attempts>${state.showAllAttempts ? "Clear All History" : "Clear Lesson History"}</button>
         </div>
         <div class="quiz-attempt-list">
           ${attempts.map((attempt) => `
@@ -686,7 +769,9 @@
     `;
 
     state.attemptsPanel.querySelector("[data-clear-attempts]").addEventListener("click", () => {
-      const remaining = readAttempts().filter((attempt) => normalizeAttachmentLessonShim(attempt.lesson) !== normalizeAttachmentLessonShim(state.lessonKey));
+      const remaining = state.showAllAttempts
+        ? []
+        : readAttempts().filter((attempt) => normalizeAttachmentLessonShim(attempt.lesson) !== normalizeAttachmentLessonShim(state.lessonKey));
       writeAttempts(remaining);
       renderAttempts(state);
     });
@@ -739,12 +824,7 @@
   }
 
   function initQuizDrills() {
-    document.querySelectorAll(".practice-shell").forEach((shell) => {
-      const lessonKey = lessonFromPracticeView(shell.closest(".view"));
-      if (lessonKey) {
-        createLauncher(shell, lessonKey);
-      }
-    });
+    createQuizWorkspace();
   }
 
   if (document.readyState === "loading") {

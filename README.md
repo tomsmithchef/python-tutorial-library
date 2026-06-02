@@ -7,7 +7,7 @@ This folder contains a self-contained web textbook for the first nine Python fun
 - `web/index.html` - the main website file to open in a browser
 - `web/styles.css` - the website styling
 - `web/app.js` - navigation, tabs, hints, code-copy behavior, and the optional Class Board
-- `web/quiz-data.js` - static lesson quiz banks for browser drill mode
+- `web/quiz-data.js` - built-in quiz banks for the Python MCQ practice exams
 - `web/quiz-engine.js` - browser quiz engine, feedback, review, import UI, and local attempt history
 - `web/community-config.js` - Supabase connection settings for the optional Class Board
 - `web/assignment-attachments.js` - optional downloadable assignment attachment manifest
@@ -81,13 +81,15 @@ Python Tutorial Library/
 - Use **Community** to open the optional Class Board for questions, code snippets, and class discussion.
 - Concept reminders are hidden by default. Open them only when you need a hint.
 - The testing pages do not provide completed solutions.
-- Each lesson Testing page includes **Drill Mode**. Use **Start Lesson Drill** for built-in questions, **Review Recent Attempts** for browser-saved scores, or **Import Quiz File** on the deployed site.
+- The main **Testing** page includes a **Quiz Environment** card. Open it to use the WiliQuiz-style exam workspace, review browser-saved attempts, or import a DOCX/PDF quiz file on the deployed site.
 
-## Quiz Drill Mode
+## Quiz Drill Studio
 
-The quiz drill system is a web version of the useful WiliQuiz behavior. It supports single-answer questions, multi-select questions, written responses, partial credit, immediate feedback, retry, review mode, and recent attempt history.
+The quiz drill system is a web version of the useful WiliQuiz behavior, packaged as one dedicated testing environment instead of one widget on every lesson page. It supports single-answer questions, multi-select questions, written responses, partial credit, immediate feedback, retry, review mode, and recent attempt history.
 
-- Built-in lesson drills work from the static `web/index.html` file.
+- The built-in Python MCQ practice exam is kept as one intact 60-question collection.
+- The built-in Python MCQ coverage gap exam is a second intact 60-question collection focused on under-tested Lesson 1-9 details.
+- Built-in quiz drills work from the static `web/index.html` file.
 - Attempt history is saved in the browser's `localStorage`, not Supabase.
 - Imported quiz files require the deployed Vercel site or another server that exposes `/api/import-quiz`.
 - Import currently supports `.docx` and `.pdf` files with numbered questions and an `ANSWERS` section.

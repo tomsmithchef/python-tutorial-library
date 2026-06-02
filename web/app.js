@@ -1,6 +1,7 @@
 const routes = {
   home: document.querySelector("#home-view"),
   testing: document.querySelector("#testing-view"),
+  quiz: document.querySelector("#quiz-view"),
   study: document.querySelector("#study-view"),
   practice: document.querySelector("#practice-view"),
   "lesson2-study": document.querySelector("#lesson2-study-view"),
@@ -25,6 +26,7 @@ const routes = {
 const routeLabels = {
   home: ["Chapters", "home", "Chapter Select"],
   testing: ["Testing", "testing", "Choose a Lesson"],
+  quiz: ["Testing", "testing", "Quiz Environment"],
   study: ["Lesson 1", "study", "Introduction to Python"],
   practice: ["Lesson 1", "study", "Testing Environment"],
   "lesson2-study": ["Lesson 2", "lesson2-study", "Flow Control and Loops"],
@@ -59,7 +61,7 @@ function setRoute(routeName) {
   document.querySelectorAll("[data-route]").forEach((link) => {
     link.classList.toggle("active", link.dataset.route === safeRoute);
   });
-  document.querySelector("#testing-nav")?.classList.toggle("active", safeRoute === "testing" || safeRoute.includes("practice"));
+  document.querySelector("#testing-nav")?.classList.toggle("active", safeRoute === "testing" || safeRoute === "quiz" || safeRoute.includes("practice"));
 
   const [lessonLabel, lessonRoute, pageLabel] = routeLabels[safeRoute] || routeLabels.home;
   const lessonCrumb = document.querySelector("#crumb-lesson");
@@ -92,6 +94,7 @@ function setRoute(routeName) {
       "lesson8-practice": ["Proceed to Lesson 9", "lesson9-study"],
       "lesson9-study": ["Return to Chapters", "home"],
       "lesson9-practice": ["Return to Chapters", "home"],
+      quiz: ["Back to Testing", "testing"],
     };
     const next = nextRoutes[safeRoute];
     footerNext.hidden = !next;

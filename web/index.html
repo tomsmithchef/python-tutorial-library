@@ -3,10 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Python Tutorial Library | Lesson 1</title>
+  <title>Python Tutorial Library | Python Fundamentals &amp; Cybersecurity</title>
+  <meta name="description" content="A complete Python fundamentals and cybersecurity tutorial covering Lessons 1–9, with interactive MCQ drills and 60-question practice exams.">
+
+  <!-- Open Graph / link preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Python Tutorial Library">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python Fundamentals and Cybersecurity — Lessons 1–9.">
+  <meta property="og:image" content="/og-preview.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python Tutorial Library">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python Fundamentals and Cybersecurity — Lessons 1–9.">
+  <meta name="twitter:image" content="/og-preview.svg">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260525-8">
+  <link rel="stylesheet" href="styles.css?v=20260602-quizpage">
 </head>
 <body>
   <header class="site-header" id="top">
@@ -161,15 +177,20 @@ print("Welcome,", name)
       <div class="testing-hub">
         <header class="testing-hero">
           <p class="eyebrow">Testing Environment</p>
-          <h1 id="testing-title">Choose a Lesson to Practice</h1>
+          <h1 id="testing-title">Choose a testing environment</h1>
           <p>
-            This area is separate from the chapter study pages. Pick the lesson you want to test yourself on, then
-            complete the questions, labs, and assignments in your own IDE. Concept reminders stay hidden until you open
-            them.
+            Open the dedicated quiz workspace for exam drills and imported quiz files, or choose a lesson card for the
+            regular questions, labs, and assignments. Concept reminders stay hidden until you open them.
           </p>
         </header>
 
         <section class="chapter-grid testing-grid" aria-label="Testing lesson selection">
+          <a class="chapter-card active-chapter testing-choice quiz-environment-card" href="#quiz" data-route="quiz">
+            <p class="chapter-number">Quiz Environment</p>
+            <h2>WiliQuiz Exam Workspace</h2>
+            <p>Open the full 60-question Python MCQ practice exam, import quiz files, and review recent browser-saved attempts.</p>
+            <span class="testing-card-action">Open Quiz Environment</span>
+          </a>
           <a class="chapter-card active-chapter testing-choice" href="#practice" data-route="practice">
             <p class="chapter-number">Lesson 1</p>
             <h2>Introduction to Python Programming</h2>
@@ -225,6 +246,22 @@ print("Welcome,", name)
             <span class="testing-card-action">Open Lesson 9 Testing</span>
           </a>
         </section>
+      </div>
+    </section>
+
+    <section class="view" id="quiz-view" aria-labelledby="quiz-title">
+      <div class="quiz-workspace">
+        <header class="testing-hero quiz-workspace-hero">
+          <p class="eyebrow">WiliQuiz</p>
+          <h1 id="quiz-title">Exam Workspace</h1>
+          <p>
+            Use this full-page workspace for quiz drills. The built-in library keeps the Python MCQ practice exam as one
+            complete 60-question collection, and the import tool can load additional DOCX or PDF quiz files.
+          </p>
+          <div class="lander-actions">
+            <a class="button secondary" href="#testing" data-route="testing">Back to Testing</a>
+          </div>
+        </header>
       </div>
     </section>
 
@@ -8884,9 +8921,9 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
 
   <script src="community-config.js?v=20260525-4"></script>
   <script src="assignment-attachments.js?v=20260525-6"></script>
-  <script src="quiz-data.js?v=20260602-1"></script>
+  <script src="quiz-data.js?v=20260602-python-mcq-gap"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260525-8"></script>
-  <script src="quiz-engine.js?v=20260602-1"></script>
+  <script src="app.js?v=20260602-quizpage"></script>
+  <script src="quiz-engine.js?v=20260602-quizpage"></script>
 </body>
 </html>
