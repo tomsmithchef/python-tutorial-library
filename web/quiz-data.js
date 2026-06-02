@@ -233,7 +233,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "False Lesson 2: Loops & Conditional Statements (Q9–Q18)"
+            "text": "False"
           }
         ],
         "correctLabels": [
@@ -523,7 +523,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "5 Lesson 3: Python Functions (Q19–Q28)"
+            "text": "5"
           }
         ],
         "correctLabels": [
@@ -813,7 +813,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "The function restarts from the beginning Lesson 4: File I/O, Modules & Packages (Q29–Q36)"
+            "text": "The function restarts from the beginning"
           }
         ],
         "correctLabels": [
@@ -1045,7 +1045,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "get-package package_name Lesson 5: Data Manipulation with Pandas (Q37–Q42)"
+            "text": "get-package package_name"
           }
         ],
         "correctLabels": [
@@ -1219,7 +1219,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "The total number of cells Lesson 6: Error & Exception Handling (Q43–Q45)"
+            "text": "The total number of cells"
           }
         ],
         "correctLabels": [
@@ -1306,7 +1306,7 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "D",
-            "text": "Exceptions can only be raised manually using the raise keyword Lessons 7, 8 & 9: Python for Cybersecurity (Q46–Q60)"
+            "text": "Exceptions can only be raised manually using the raise keyword"
           }
         ],
         "correctLabels": [
