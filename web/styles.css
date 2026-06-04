@@ -386,6 +386,10 @@ h3 {
   padding: 36px 0 72px;
 }
 
+.lesson-layout > * {
+  min-width: 0;
+}
+
 .sidebar {
   position: sticky;
   top: 96px;
@@ -428,6 +432,7 @@ h3 {
 }
 
 .textbook {
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.92);
@@ -557,6 +562,8 @@ h3 {
 
 .code-card,
 .output-block {
+  min-width: 0;
+  max-width: 100%;
   margin: 24px 0;
   border-radius: var(--radius);
   overflow: hidden;
@@ -1967,8 +1974,7 @@ details p {
   }
 
   .sidebar {
-    position: static;
-    max-height: none;
+    display: none;
   }
 
   .community-panel {
