@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Python Tutorial Library | Python, Cybersecurity &amp; PowerShell</title>
-  <meta name="description" content="A complete programming tutorial covering Lessons 1-10, with Python fundamentals, cybersecurity, PowerShell scripting, interactive MCQ drills, and practice exams.">
+  <meta name="description" content="A complete programming tutorial covering Lessons 1-11, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, interactive MCQ drills, and practice exams.">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Python Tutorial Library">
-  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, and PowerShell scripting - Lessons 1-10.">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, and HTML/CSS web design - Lessons 1-11.">
   <meta property="og:image" content="/og-preview.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Python Tutorial Library">
-  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, and PowerShell scripting - Lessons 1-10.">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, and HTML/CSS web design - Lessons 1-11.">
   <meta name="twitter:image" content="/og-preview.svg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -171,6 +171,15 @@ print("Welcome,", name)
             <a href="#lesson10-practice" data-route="lesson10-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 11</p>
+          <h2>Introduction to Web Design: HTML and CSS</h2>
+          <p>Web design basics, HTML structure, semantic tags, CSS selectors, styling, layouts, forms, and responsive portfolio pages.</p>
+          <div class="chapter-links">
+            <a href="#lesson11-study" data-route="lesson11-study">Study</a>
+            <a href="#lesson11-practice" data-route="lesson11-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -259,6 +268,12 @@ print("Welcome,", name)
             <h2>PowerShell Scripting</h2>
             <p>Practice script setup, profiles, parameters, validation, error handling, and backup business rules.</p>
             <span class="testing-card-action">Open Lesson 10 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson11-practice" data-route="lesson11-practice">
+            <p class="chapter-number">Lesson 11</p>
+            <h2>HTML and CSS Web Design</h2>
+            <p>Practice semantic HTML, shared CSS, navigation, project grids, contact forms, responsive media queries, and portfolio packaging.</p>
+            <span class="testing-card-action">Open Lesson 11 Testing</span>
           </a>
         </section>
       </div>
@@ -9363,6 +9378,504 @@ Always:
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson11-study-view" aria-labelledby="lesson11-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 11 sections">
+          <p class="sidebar-label">Lesson 11 Study Material</p>
+          <a href="#lesson11-design">1. Web Design Goals <small>Pages 2-6</small></a>
+          <a href="#lesson11-tools">2. Tools and Workflow <small>Pages 7-9, 15</small></a>
+          <a href="#lesson11-html">3. HTML Structure <small>Pages 10-18</small></a>
+          <a href="#lesson11-tags">4. Tags, Attributes, and Semantics <small>Pages 19-26</small></a>
+          <a href="#lesson11-pages">5. Multi-Page Sites <small>Assignment</small></a>
+          <a href="#lesson11-css">6. CSS Rules and Selectors <small>Pages 28-37</small></a>
+          <a href="#lesson11-layout">7. Layout and Responsive Design <small>Assignment</small></a>
+          <a href="#lesson11-forms">8. Forms and Accessibility <small>Assignment</small></a>
+          <a href="#lesson11-portfolio">9. Portfolio Project Plan <small>Assignment</small></a>
+          <a href="#lesson11-practice" data-route="lesson11-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 11</p>
+            <h1 id="lesson11-study-title">Introduction to Web Design: HTML and CSS</h1>
+            <p>
+              This lesson comes from the course's HTML and CSS material, originally labeled Lesson 13. It is presented
+              here as Lesson 11 because the tutorial now includes web development foundations after Python,
+              cybersecurity, and PowerShell.
+            </p>
+            <p>
+              The goal is to understand how a web page is built in layers. HTML gives the document structure and
+              content. CSS controls how that content is presented. A browser reads both files, builds a document tree,
+              and renders a visual page for the user.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson10-study" data-route="lesson10-study">Previous: Lesson 10</a>
+              <a class="lesson-nav-button next" href="#lesson11-practice" data-route="lesson11-practice">Next: Lesson 11 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson11-design">
+            <h2>1. Web Design Goals</h2>
+            <p class="section-pages">Source pages 2-6</p>
+            <p>
+              Web design is the planning and presentation side of a website. It includes layout, content organization,
+              imagery, color, typography, navigation, usability, accessibility, and the overall experience a visitor has
+              while using the site. Web development is the implementation side: writing the HTML, CSS, JavaScript, and
+              other code that makes the site work.
+            </p>
+            <p>
+              A strong website should make a good first impression, be easy to navigate, look consistent from page to
+              page, and work on different screen sizes. Search engines and assistive technologies also benefit from
+              clean, organized markup because the structure of the page is easier to understand.
+            </p>
+            <div class="reference-card">
+              <h3>Key elements of web design</h3>
+              <ul>
+                <li><strong>Layout:</strong> how content is arranged on the page.</li>
+                <li><strong>Color scheme:</strong> the set of colors used across the site.</li>
+                <li><strong>Typography:</strong> the appearance and hierarchy of text.</li>
+                <li><strong>Imagery:</strong> photos, screenshots, icons, and graphics.</li>
+                <li><strong>Navigation:</strong> how users move between pages and sections.</li>
+                <li><strong>Consistency:</strong> repeated patterns that make the site feel intentional.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson11-tools">
+            <h2>2. Tools and Workflow</h2>
+            <p class="section-pages">Source pages 7-9 and 15</p>
+            <p>
+              To build a basic website, you need a browser and a text editor. The lesson recommends Visual Studio Code
+              because it supports extensions, syntax highlighting, and the Live Server workflow. A browser such as
+              Chrome, Firefox, or Edge acts as a renderer: it reads the document and displays it visually.
+            </p>
+            <p>
+              HTML files can be opened directly in a browser, but Live Server is more convenient while learning because
+              it refreshes the page after changes. For the portfolio assignment, keep all project files in one folder
+              so links, images, and stylesheets are easy to test before zipping the work.
+            </p>
+            <div class="reference-card">
+              <h3>Recommended project folder</h3>
+              <pre><code>portfolio-site/
+  index.html
+  portfolio.html
+  contact.html
+  css/
+    styles.css
+  images/
+    profile.jpg
+    project-1.jpg
+    project-2.jpg</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson11-html">
+            <h2>3. HTML Structure</h2>
+            <p class="section-pages">Source pages 10-18</p>
+            <p>
+              HTML stands for HyperText Markup Language. It is not a programming language because it does not describe
+              an algorithm. Instead, it marks up content with tags so the browser understands the structure of the
+              document. The browser turns that structure into the DOM, or Document Object Model, which is a tree of
+              nodes. Each element can have a parent and children.
+            </p>
+            <p>
+              Every HTML page has two main parts. The <code>&lt;head&gt;</code> contains metadata such as character set,
+              page title, viewport settings, description, and stylesheet links. The <code>&lt;body&gt;</code> contains
+              the visible content: headings, paragraphs, images, navigation, forms, and links.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Basic HTML document</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;My Portfolio&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to my portfolio&lt;/h1&gt;
+  &lt;p&gt;This page introduces who I am and what I build.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <p>
+              The viewport meta tag is especially important for responsive design. Without it, mobile browsers may
+              render the page as if it were a wide desktop page and then shrink it down.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson11-tags">
+            <h2>4. Tags, Attributes, and Semantics</h2>
+            <p class="section-pages">Source pages 19-26</p>
+            <p>
+              HTML tags wrap information. The better the wrapping, the easier the page is to read, style, and maintain.
+              A heading should use a heading tag. A paragraph should use <code>&lt;p&gt;</code>. A navigation area
+              should use <code>&lt;nav&gt;</code>. A form control should have a matching <code>&lt;label&gt;</code>.
+            </p>
+            <p>
+              Attributes add extra information to an element. An <code>id</code> should identify one unique element. A
+              <code>class</code> can be shared by many elements so CSS can style them as a group. Images use
+              <code>src</code> for the file path and <code>alt</code> for meaningful replacement text.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Semantic section with image</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;section class="profile-intro"&gt;
+  &lt;img src="images/profile.jpg" alt="Portrait of Jordan Lee"&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Jordan Lee&lt;/h1&gt;
+    &lt;p&gt;Student developer learning HTML, CSS, and Python.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Avoid structureless markup</h3>
+              <p>
+                Do not place a title and several paragraphs as loose text inside one generic container. Use headings,
+                paragraphs, sections, lists, links, and forms so the page structure communicates meaning.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson11-pages">
+            <h2>5. Multi-Page Sites</h2>
+            <p class="section-pages">Assignment foundation</p>
+            <p>
+              The assignment requires three pages: <code>index.html</code>, <code>portfolio.html</code>, and
+              <code>contact.html</code>. Each page should include the same navigation bar so users can move through the
+              site without feeling lost. The easiest way to keep this consistent in a beginner project is to copy the
+              same <code>&lt;nav&gt;</code> block into all three files and test each link.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Shared navigation markup</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;header class="site-header"&gt;
+  &lt;a class="logo" href="index.html"&gt;Jordan Lee&lt;/a&gt;
+  &lt;nav aria-label="Main navigation"&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;a href="portfolio.html"&gt;Portfolio&lt;/a&gt;
+    &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+            </div>
+            <p>
+              Relative links matter. If <code>portfolio.html</code> sits in the same folder as <code>index.html</code>,
+              link to <code>portfolio.html</code>. If your stylesheet is inside a <code>css</code> folder, link to
+              <code>css/styles.css</code>. If images are inside an <code>images</code> folder, use paths such as
+              <code>images/project-1.jpg</code>.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson11-css">
+            <h2>6. CSS Rules and Selectors</h2>
+            <p class="section-pages">Source pages 28-37</p>
+            <p>
+              CSS controls presentation: colors, backgrounds, borders, spacing, size, typography, layout, hover states,
+              and other visual behavior. The recommended approach is an external stylesheet linked from each HTML page.
+              This keeps the HTML focused on structure and the CSS focused on appearance.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>External stylesheet link</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;link rel="stylesheet" href="css/styles.css"&gt;</code></pre>
+            </div>
+            <p>
+              A CSS rule has a selector and a declaration block. The selector chooses elements. The declarations define
+              what changes. Selectors can target tag names, classes, IDs, hover states, attributes, descendants, direct
+              children, or multiple groups separated by commas.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>CSS selectors</span><button class="copy-code">Copy</button></div>
+              <pre><code>body {
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+}
+
+.project-card {
+  border: 1px solid #d9e2ec;
+  padding: 1rem;
+}
+
+.site-header a:hover {
+  color: #0f766e;
+}
+
+input[type="email"] {
+  border-color: #2563eb;
+}</code></pre>
+            </div>
+            <p>
+              Use CSS variables to keep colors and fonts consistent. If you later change the brand color in one place,
+              every rule that uses that variable updates with it.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>CSS variables</span><button class="copy-code">Copy</button></div>
+              <pre><code>:root {
+  --ink: #1e293b;
+  --accent: #0f766e;
+  --surface: #ffffff;
+  --line: #d9e2ec;
+}
+
+.button {
+  background: var(--accent);
+  color: white;
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson11-layout">
+            <h2>7. Layout and Responsive Design</h2>
+            <p class="section-pages">Assignment foundation</p>
+            <p>
+              The portfolio page requires at least five project sections arranged in a visually appealing way. CSS Grid
+              is a good fit because it can create a responsive card layout with a small amount of code. Flexbox is also
+              useful for navigation bars, button rows, and smaller one-dimensional layouts.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Responsive project grid</span><button class="copy-code">Copy</button></div>
+              <pre><code>.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+            </div>
+            <p>
+              Responsive design means the page adapts to desktop, tablet, and mobile screen sizes. Test by resizing the
+              browser and by checking whether text, images, navigation links, and form controls still fit without
+              horizontal scrolling.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson11-forms">
+            <h2>8. Forms and Accessibility</h2>
+            <p class="section-pages">Assignment foundation</p>
+            <p>
+              The contact page requires a form with name, email, subject, message, and submit button. A form should be
+              structured with labels so users know what each field is for. Labels also help assistive technology and
+              increase the clickable area for form controls.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Accessible contact form</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;form class="contact-form"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" type="text" required&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;label for="subject"&gt;Subject&lt;/label&gt;
+  &lt;input id="subject" name="subject" type="text"&gt;
+
+  &lt;label for="message"&gt;Message&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="6"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <p>
+              Since this is a static beginner website, the form may not actually send email unless a backend or form
+              service is added. For this assignment, make sure the form is properly structured, visually styled, and
+              included on the contact page with contact information below it.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson11-portfolio">
+            <h2>9. Portfolio Project Plan</h2>
+            <p class="section-pages">Assignment planning</p>
+            <p>
+              The final assignment asks for a professional-looking multi-section personal portfolio website. Before
+              coding, plan the content for each page. The homepage introduces you and your skills. The portfolio page
+              showcases five projects. The contact page provides a labeled contact form and contact details.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Portfolio pseudocode</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: Portfolio website
+
+Create a project folder.
+Create index.html, portfolio.html, contact.html.
+Create css/styles.css and an images folder.
+
+On every page:
+    link the same stylesheet.
+    include the same navigation bar.
+    include a clear page title and main content area.
+
+On index.html:
+    introduce yourself.
+    add a profile image with alt text.
+    list your skills.
+    add a Learn More link to portfolio.html.
+
+On portfolio.html:
+    create at least five project sections.
+    include title, description, screenshot, and optional project link.
+    arrange project cards with grid or flexbox.
+
+On contact.html:
+    create labeled form fields.
+    add contact information below the form.
+
+Before submitting:
+    test all links.
+    test layout at desktop, tablet, and mobile widths.
+    zip all HTML, CSS, and image files.</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Deliverable readiness check</h3>
+              <p>
+                Your zip file should contain the HTML files, CSS file, and all images used by the site. Do not zip only
+                the HTML files if your pages depend on images or a stylesheet. Name the final file
+                <code>YourName_Portfolio.zip</code>.
+              </p>
+            </div>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson10-study" data-route="lesson10-study">Back to Lesson 10</a>
+              <a class="lesson-nav-button next" href="#lesson11-practice" data-route="lesson11-practice">Open Lesson 11 Testing</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson11-practice-view" aria-labelledby="lesson11-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 11 Testing Environment</p>
+          <h1 id="lesson11-practice-title">HTML and CSS Web Design Practice</h1>
+          <p>
+            Use these checks to prepare for the portfolio assignment. Concept checks stay separate from the graded
+            assignment so the build requirements are easy to find.
+          </p>
+        </header>
+
+        <nav class="practice-tabs" aria-label="Lesson 11 practice sections">
+          <button class="tab active" data-practice-tab="lesson11-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson11-graded-assignment">Assignment</button>
+        </nav>
+
+        <section class="practice-panel active" id="lesson11-concept-checks">
+          <div class="panel-intro">
+            <h2>Concept Checks</h2>
+            <p>Review the foundations needed before building the multi-page portfolio website.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>HTML Structure Review</h3>
+            <ol>
+              <li>Explain the difference between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</li>
+              <li>List three pieces of metadata commonly found in the <code>&lt;head&gt;</code>.</li>
+              <li>Explain why HTML is a markup language rather than a programming language.</li>
+              <li>Describe what the DOM means in your own words.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>HTML gives structure to content. The browser turns that structure into the DOM tree before rendering the page.</p>
+              <a class="page-ref" href="#lesson11-html" data-study-route="lesson11-study">Review: Lesson 11 HTML structure.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Semantic Tags and Attributes</h3>
+            <ol>
+              <li>Choose the best tag for a page title, paragraph, image, navigation area, and form.</li>
+              <li>Explain the difference between <code>id</code> and <code>class</code>.</li>
+              <li>Add meaningful <code>alt</code> text to a profile image example.</li>
+              <li>Rewrite a generic <code>&lt;div&gt;</code> block using semantic tags where appropriate.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Semantic markup helps browsers, search engines, assistive technology, and future readers understand the page.</p>
+              <a class="page-ref" href="#lesson11-tags" data-study-route="lesson11-study">Review: Lesson 11 tags and semantics.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>CSS Selectors and Shared Styling</h3>
+            <ol>
+              <li>Write one selector for all paragraphs.</li>
+              <li>Write one selector for elements with class <code>project-card</code>.</li>
+              <li>Write one selector for an email input.</li>
+              <li>Explain why an external stylesheet is better than repeating inline styles on every page.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Selectors choose the elements to style. An external stylesheet keeps the site consistent across pages.</p>
+              <a class="page-ref" href="#lesson11-css" data-study-route="lesson11-study">Review: Lesson 11 CSS rules and selectors.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Responsive Portfolio Layout</h3>
+            <ol>
+              <li>Create a grid layout for five project cards.</li>
+              <li>Write a media query that changes the grid to one column on small screens.</li>
+              <li>Explain why images should use <code>max-width: 100%</code> or <code>width: 100%</code>.</li>
+              <li>Test whether the navigation still fits on a narrow screen.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Responsive design adjusts layout, spacing, and navigation so the page remains usable on desktop, tablet, and mobile screens.</p>
+              <a class="page-ref" href="#lesson11-layout" data-study-route="lesson11-study">Review: Lesson 11 layout and responsive design.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson11-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 11: Multi-Section Personal Portfolio Website</h2>
+            <p>This assignment was originally labeled Assignment 13 in the source materials.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Create a Personal Portfolio Website</h3>
+            <p><strong>Objective:</strong> Build a professional-looking multi-page personal portfolio website using HTML and CSS.</p>
+            <ol>
+              <li>Create at least three pages: <code>index.html</code>, <code>portfolio.html</code>, and <code>contact.html</code>.</li>
+              <li>Add a consistent navigation bar to every page.</li>
+              <li>On the homepage, include an introduction, welcome message, profile photo, skills section, and Learn More button.</li>
+              <li>On the portfolio page, list at least five projects.</li>
+              <li>For each project, include a title, brief description, screenshot or image, and project link if applicable.</li>
+              <li>Use CSS Grid or Flexbox to arrange the project sections cleanly.</li>
+              <li>On the contact page, include labeled fields for name, email, subject, and message.</li>
+              <li>Add a submit button and contact information below the form.</li>
+              <li>Use a shared CSS file with consistent colors, typography, spacing, and hover effects.</li>
+              <li>Use CSS variables for colors or fonts.</li>
+              <li>Make the navigation fixed or sticky if appropriate.</li>
+              <li>Use media queries so the site works on desktop, tablet, and mobile screens.</li>
+              <li>Test links, images, layout, and form structure in Chrome, Firefox, or Edge.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Create a zip file containing every HTML file, CSS file, and image used in the project. Name it <code>YourName_Portfolio.zip</code> and submit it through the assignment drop box.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                The reading material above covers the foundations needed for the deliverable: semantic HTML,
+                multi-page navigation, external CSS, selectors, responsive layouts, accessible form labels, and final
+                file packaging.
+              </p>
+              <a class="page-ref" href="#lesson11-portfolio" data-study-route="lesson11-study">Review: Lesson 11 portfolio project plan.</a>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -9377,7 +9890,7 @@ Always:
   <script src="assignment-attachments.js?v=20260525-6"></script>
   <script src="quiz-data.js?v=20260602-python-mcq-gap"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260602-quizpage"></script>
+  <script src="app.js?v=20260604-lesson11"></script>
   <script src="quiz-engine.js?v=20260602-quizpage"></script>
 </body>
 </html>
