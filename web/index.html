@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Python Tutorial Library | Python, Cybersecurity &amp; PowerShell</title>
-  <meta name="description" content="A complete programming tutorial covering Lessons 1-12, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, interactive MCQ drills, and practice exams.">
+  <meta name="description" content="A complete programming tutorial covering Lessons 1-13, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, error handling, interactive MCQ drills, and practice exams.">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Python Tutorial Library">
-  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, and JavaScript DOM manipulation - Lessons 1-12.">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, and error handling - Lessons 1-13.">
   <meta property="og:image" content="/og-preview.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Python Tutorial Library">
-  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, and JavaScript DOM manipulation - Lessons 1-12.">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, and error handling - Lessons 1-13.">
   <meta name="twitter:image" content="/og-preview.svg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -189,6 +189,15 @@ print("Welcome,", name)
             <a href="#lesson12-practice" data-route="lesson12-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 13</p>
+          <h2>jQuery and JavaScript Error Handling</h2>
+          <p>jQuery setup, selectors, events, DOM shortcuts, content updates, effects, and JavaScript syntax, runtime, and logic errors.</p>
+          <div class="chapter-links">
+            <a href="#lesson13-study" data-route="lesson13-study">Study</a>
+            <a href="#lesson13-practice" data-route="lesson13-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -289,6 +298,12 @@ print("Welcome,", name)
             <h2>JavaScript and DOM Manipulation</h2>
             <p>Practice JavaScript syntax, DOM selection, event listeners, dynamic content, list controls, and starter-file enhancement.</p>
             <span class="testing-card-action">Open Lesson 12 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson13-practice" data-route="lesson13-practice">
+            <p class="chapter-number">Lesson 13</p>
+            <h2>jQuery and Error Handling</h2>
+            <p>Practice jQuery selectors, event methods, text/html/val, append/prepend/remove, and JavaScript error handling patterns.</p>
+            <span class="testing-card-action">Open Lesson 13 Testing</span>
           </a>
         </section>
       </div>
@@ -10344,6 +10359,407 @@ Before submitting:
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson13-study-view" aria-labelledby="lesson13-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 13 sections">
+          <p class="sidebar-label">Lesson 13 Study Material</p>
+          <a href="#lesson13-overview">1. What jQuery Is <small>Pages 2-4</small></a>
+          <a href="#lesson13-syntax">2. jQuery Syntax <small>Pages 5-8</small></a>
+          <a href="#lesson13-events">3. jQuery Events <small>Pages 9-14</small></a>
+          <a href="#lesson13-html">4. Text, HTML, and Values <small>Page 15</small></a>
+          <a href="#lesson13-add-remove">5. Add and Remove Content <small>Pages 16-19</small></a>
+          <a href="#lesson13-errors">6. Error Types <small>Pages 20-23</small></a>
+          <a href="#lesson13-try-catch">7. try, catch, finally <small>Page 24</small></a>
+          <a href="#lesson13-final-plan">8. Final Practice Plan <small>Wrap-up</small></a>
+          <a href="#lesson13-practice" data-route="lesson13-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 13</p>
+            <h1 id="lesson13-study-title">jQuery and JavaScript Error Handling</h1>
+            <p>
+              This final chapter comes from the course's Lesson 15 material. It introduces jQuery, a JavaScript library
+              designed to make common DOM tasks shorter, and then closes with JavaScript error types and exception
+              handling.
+            </p>
+            <p>
+              Modern JavaScript can do many things jQuery was originally created to simplify, but jQuery remains useful
+              to understand because many older websites and tutorials still use it. Learning it also reinforces the DOM
+              ideas from Lesson 12: select something, attach behavior, then change the page.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson12-study" data-route="lesson12-study">Previous: Lesson 12</a>
+              <a class="lesson-nav-button next" href="#lesson13-practice" data-route="lesson13-practice">Next: Lesson 13 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson13-overview">
+            <h2>1. What jQuery Is</h2>
+            <p class="section-pages">Source pages 2-4</p>
+            <p>
+              jQuery is a lightweight JavaScript library often described as "write less, do more." Its purpose is to
+              make common JavaScript tasks easier: DOM manipulation, CSS manipulation, event methods, effects,
+              animations, AJAX, and utility functions.
+            </p>
+            <p>
+              To use jQuery, a page must load the jQuery library before it runs jQuery code. The lesson shows two
+              options: download jQuery and link to the local file, or use a CDN link. A CDN, or Content Delivery
+              Network, loads the library from a hosted URL.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Load jQuery from a CDN</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+            <p>
+              The order matters. Load jQuery first, then load the script that uses jQuery.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson13-syntax">
+            <h2>2. jQuery Syntax</h2>
+            <p class="section-pages">Source pages 5-8</p>
+            <p>
+              jQuery uses the pattern <code>$(selector).action()</code>. The <code>$</code> gives access to jQuery.
+              The selector finds elements, usually with CSS-style selectors. The action is the method that changes,
+              reads, hides, shows, or attaches behavior to the selected elements.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Basic jQuery selectors</span><button class="copy-code">Copy</button></div>
+              <pre><code>$("p").hide();        // hide all paragraphs
+$(".test").hide();   // hide all elements with class="test"
+$("#test").hide();   // hide the element with id="test"
+$(this).hide();      // hide the current element inside an event</code></pre>
+            </div>
+            <p>
+              jQuery code is commonly placed inside a document ready block so it does not run before the page elements
+              exist.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Document ready pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>$(document).ready(function () {
+  $("p.intro").hide();
+});</code></pre>
+            </div>
+            <p>
+              Selectors can target tags, IDs, classes, attributes, element positions, buttons, and table rows. The
+              important habit is the same as regular CSS and DOM work: choose the smallest selector that clearly
+              matches the elements you intend to affect.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson13-events">
+            <h2>3. jQuery Events</h2>
+            <p class="section-pages">Source pages 9-14</p>
+            <p>
+              Events are actions that happen on a page, such as clicks, double-clicks, key presses, form submissions,
+              focus changes, scrolling, loading, and resizing. jQuery provides short event methods such as
+              <code>click()</code>, <code>dblclick()</code>, <code>mouseenter()</code>, <code>mouseleave()</code>, and
+              <code>hover()</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Click and double-click events</span><button class="copy-code">Copy</button></div>
+              <pre><code>$(document).ready(function () {
+  $("p").click(function () {
+    $(this).hide();
+  });
+
+  $("#p1").dblclick(function () {
+    alert("Paragraph double-clicked");
+  });
+});</code></pre>
+            </div>
+            <p>
+              Inside a jQuery event handler, <code>this</code> refers to the specific element that triggered the event.
+              Wrapping it as <code>$(this)</code> turns it into a jQuery object so jQuery methods can be called on it.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Hover with two handlers</span><button class="copy-code">Copy</button></div>
+              <pre><code>$("#p1").hover(
+  function () {
+    console.log("mouse entered");
+  },
+  function () {
+    console.log("mouse left");
+  }
+);</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson13-html">
+            <h2>4. Text, HTML, and Values</h2>
+            <p class="section-pages">Source page 15</p>
+            <p>
+              jQuery includes simple methods for reading or changing content. Use <code>text()</code> for plain text,
+              <code>html()</code> for content that may include HTML markup, and <code>val()</code> for form field
+              values.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Get and set content</span><button class="copy-code">Copy</button></div>
+              <pre><code>const currentText = $("#intro").text();
+$("#intro").text("The intro text changed.");
+
+$("#content").html("&lt;p&gt;A new paragraph from jQuery.&lt;/p&gt;");
+
+const typedValue = $("#name").val();
+$("#name").val("Ada");</code></pre>
+            </div>
+            <p>
+              Use <code>html()</code> carefully because it treats the value as markup. If the goal is only to display
+              text, <code>text()</code> is the safer habit.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson13-add-remove">
+            <h2>5. Add and Remove Content</h2>
+            <p class="section-pages">Source pages 16-19</p>
+            <p>
+              jQuery wraps common DOM insertion tasks into shorter methods. Use <code>append()</code> to add content at
+              the end of selected elements, <code>prepend()</code> to add content at the beginning,
+              <code>after()</code> to insert after selected elements, and <code>before()</code> to insert before them.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Add content with jQuery</span><button class="copy-code">Copy</button></div>
+              <pre><code>$("p").append(" Some appended text.");
+$("p").prepend("Some prepended text. ");
+$("img").after("&lt;p&gt;Text after the image.&lt;/p&gt;");
+$("img").before("&lt;p&gt;Text before the image.&lt;/p&gt;");</code></pre>
+            </div>
+            <p>
+              To remove content, use <code>remove()</code> when the selected element itself should disappear, including
+              its children. Use <code>empty()</code> when the selected element should remain but its contents should be
+              cleared.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Remove or empty elements</span><button class="copy-code">Copy</button></div>
+              <pre><code>$("#panel").remove(); // removes #panel itself
+$("#panel").empty();  // keeps #panel but removes its children</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson13-errors">
+            <h2>6. Error Types</h2>
+            <p class="section-pages">Source pages 20-23</p>
+            <p>
+              The lesson closes by reviewing three common error categories. A syntax error happens when the code cannot
+              be parsed, such as a missing parenthesis or brace. A runtime error happens while the script is executing,
+              such as calling a function that does not exist. A logical error happens when the code runs but produces
+              the wrong result because the programmer's logic is wrong.
+            </p>
+            <div class="reference-card">
+              <h3>Error categories</h3>
+              <ul>
+                <li><strong>Syntax error:</strong> JavaScript cannot understand the code structure.</li>
+                <li><strong>Runtime error:</strong> the code starts, then fails while executing.</li>
+                <li><strong>Logical error:</strong> the code runs, but the result does not match the requirement.</li>
+              </ul>
+            </div>
+            <p>
+              Syntax errors are usually caught by the browser console before the affected code runs. Runtime errors can
+              often be caught and handled. Logical errors require careful testing because the browser may not report an
+              error at all.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson13-try-catch">
+            <h2>7. try, catch, finally</h2>
+            <p class="section-pages">Source page 24</p>
+            <p>
+              JavaScript supports exception handling with <code>try</code>, <code>catch</code>, and
+              <code>finally</code>. Put risky code in the <code>try</code> block. Put the error response in
+              <code>catch</code>. Put cleanup or final messages in <code>finally</code> when that code should run
+              whether an error occurred or not.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>try, catch, finally</span><button class="copy-code">Copy</button></div>
+              <pre><code>try {
+  const value = JSON.parse("{ bad json }");
+  console.log(value);
+} catch (error) {
+  console.error("Something went wrong:", error.message);
+} finally {
+  console.log("Error handling example finished.");
+}</code></pre>
+            </div>
+            <p>
+              You can catch runtime exceptions, including programmer-generated exceptions. You cannot use
+              <code>try</code>/<code>catch</code> to repair code that has a syntax error before it can run.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson13-final-plan">
+            <h2>8. Final Practice Plan</h2>
+            <p class="section-pages">Course wrap-up</p>
+            <p>
+              This chapter is a good place to combine the web skills from Lessons 11, 12, and 13. Start with a small
+              HTML page, load jQuery, add click and hover behavior, update text or values, add/remove content, and use
+              <code>try</code>/<code>catch</code> around code that might fail.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Final practice pseudocode</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: jQuery final practice
+
+Create a small HTML page with:
+    a heading
+    a paragraph
+    an input
+    an Add button
+    a Clear button
+    a list or content panel
+
+Load jQuery before script.js.
+
+When the document is ready:
+    attach a click handler to Add.
+    read the input with val().
+    append a new item to the list.
+    clear the input.
+
+Attach another handler to Clear:
+    empty the list or content panel.
+
+Add a hover behavior:
+    change styling or show a short message.
+
+Wrap risky parsing or lookup code in try/catch:
+    log the error clearly.
+    keep the page usable.</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Final lesson note</h3>
+              <p>
+                There is no separate assignment handout for this final PDF in the project folder. The practice page
+                focuses on concept checks and a wrap-up challenge that uses the lesson material directly.
+              </p>
+            </div>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson12-study" data-route="lesson12-study">Back to Lesson 12</a>
+              <a class="lesson-nav-button next" href="#lesson13-practice" data-route="lesson13-practice">Open Lesson 13 Testing</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson13-practice-view" aria-labelledby="lesson13-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 13 Testing Environment</p>
+          <h1 id="lesson13-practice-title">jQuery and Error Handling Practice</h1>
+          <p>
+            Use these checks to close out the web development lessons. This final chapter has no separate assignment
+            handout, so the second tab is a course wrap-up practice challenge.
+          </p>
+        </header>
+
+        <nav class="practice-tabs" aria-label="Lesson 13 practice sections">
+          <button class="tab active" data-practice-tab="lesson13-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson13-final-challenge">Final Challenge</button>
+        </nav>
+
+        <section class="practice-panel active" id="lesson13-concept-checks">
+          <div class="panel-intro">
+            <h2>Concept Checks</h2>
+            <p>Review jQuery selectors, events, DOM methods, and JavaScript error handling.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>jQuery Setup and Syntax</h3>
+            <ol>
+              <li>Explain why the jQuery library must load before your own script uses <code>$()</code>.</li>
+              <li>Write the basic <code>$(selector).action()</code> pattern.</li>
+              <li>Write selectors for all paragraphs, an element with id <code>test</code>, and elements with class <code>test</code>.</li>
+              <li>Explain the purpose of <code>$(document).ready()</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>jQuery selectors are based mostly on CSS selectors. The ready block prevents code from running before page elements exist.</p>
+              <a class="page-ref" href="#lesson13-syntax" data-study-route="lesson13-study">Review: Lesson 13 syntax.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>jQuery Events</h3>
+            <ol>
+              <li>Attach a click event to all paragraphs.</li>
+              <li>Use <code>$(this)</code> to hide only the clicked paragraph.</li>
+              <li>Explain the difference between <code>mouseenter()</code> and <code>mouseleave()</code>.</li>
+              <li>Describe when <code>hover()</code> is useful.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Event handlers connect browser actions to code. Inside the handler, <code>this</code> is the element that triggered the event.</p>
+              <a class="page-ref" href="#lesson13-events" data-study-route="lesson13-study">Review: Lesson 13 events.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Content and DOM Changes</h3>
+            <ol>
+              <li>Use <code>text()</code> to change plain text.</li>
+              <li>Use <code>val()</code> to read an input field.</li>
+              <li>Use <code>append()</code> to add content to the end of a panel.</li>
+              <li>Explain the difference between <code>remove()</code> and <code>empty()</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p><code>text()</code>, <code>html()</code>, and <code>val()</code> read or set content. <code>append()</code>, <code>prepend()</code>, <code>before()</code>, and <code>after()</code> insert content.</p>
+              <a class="page-ref" href="#lesson13-html" data-study-route="lesson13-study">Review: Lesson 13 content methods.</a>
+              <a class="page-ref" href="#lesson13-add-remove" data-study-route="lesson13-study">Review: Lesson 13 add/remove methods.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Error Handling Review</h3>
+            <ol>
+              <li>Define syntax error, runtime error, and logical error.</li>
+              <li>Explain which error types <code>try</code>/<code>catch</code> can help with.</li>
+              <li>Write a <code>try</code>/<code>catch</code> block that logs <code>error.message</code>.</li>
+              <li>Explain why logical errors require tests and expected results.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Error handling can respond to runtime exceptions, but it does not replace testing your logic against the actual requirement.</p>
+              <a class="page-ref" href="#lesson13-errors" data-study-route="lesson13-study">Review: Lesson 13 error types.</a>
+              <a class="page-ref" href="#lesson13-try-catch" data-study-route="lesson13-study">Review: Lesson 13 try/catch/finally.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson13-final-challenge">
+          <div class="panel-intro">
+            <h2>Final Practice Challenge</h2>
+            <p>Build a small interactive page that demonstrates jQuery and basic error handling.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>jQuery Interaction and Error Handling Mini-Project</h3>
+            <p><strong>Objective:</strong> Create a small HTML page that uses jQuery selectors, events, content updates, and a <code>try</code>/<code>catch</code> block.</p>
+            <ol>
+              <li>Create an HTML file with a heading, intro paragraph, text input, Add button, Clear button, and list or content panel.</li>
+              <li>Load jQuery before your own <code>script.js</code>.</li>
+              <li>Use <code>$(document).ready()</code> for your jQuery code.</li>
+              <li>When Add is clicked, read the input with <code>val()</code> and append a new item.</li>
+              <li>When Clear is clicked, use <code>empty()</code> to clear the list or panel.</li>
+              <li>Add a hover or click effect that changes text, hides an element, or changes a class.</li>
+              <li>Add a <code>try</code>/<code>catch</code> example, such as parsing JSON from an input and reporting invalid input clearly.</li>
+              <li>Test at least one syntax mistake, one runtime mistake, and one logic mistake in your notes so you can describe the difference.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> This is a practice challenge for the final chapter, not a separate source assignment. Save your HTML and JavaScript files if your instructor asks for evidence of completion.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                The challenge combines the last three web chapters: HTML structure, JavaScript DOM behavior, jQuery
+                shortcuts, and defensive error handling.
+              </p>
+              <a class="page-ref" href="#lesson13-final-plan" data-study-route="lesson13-study">Review: Lesson 13 final practice plan.</a>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -10358,7 +10774,7 @@ Before submitting:
   <script src="assignment-attachments.js?v=20260604-lesson12"></script>
   <script src="quiz-data.js?v=20260602-python-mcq-gap"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260604-lesson12"></script>
+  <script src="app.js?v=20260604-lesson13"></script>
   <script src="quiz-engine.js?v=20260602-quizpage"></script>
 </body>
 </html>
