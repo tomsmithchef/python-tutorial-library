@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Python Tutorial Library | Python Fundamentals &amp; Cybersecurity</title>
-  <meta name="description" content="A complete Python fundamentals and cybersecurity tutorial covering Lessons 1–9, with interactive MCQ drills and 60-question practice exams.">
+  <title>Python Tutorial Library | Python, Cybersecurity &amp; PowerShell</title>
+  <meta name="description" content="A complete programming tutorial covering Lessons 1-10, with Python fundamentals, cybersecurity, PowerShell scripting, interactive MCQ drills, and practice exams.">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Python Tutorial Library">
-  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python Fundamentals and Cybersecurity — Lessons 1–9.">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, and PowerShell scripting - Lessons 1-10.">
   <meta property="og:image" content="/og-preview.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Python Tutorial Library">
-  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python Fundamentals and Cybersecurity — Lessons 1–9.">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, and PowerShell scripting - Lessons 1-10.">
   <meta name="twitter:image" content="/og-preview.svg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -162,6 +162,15 @@ print("Welcome,", name)
             <a href="#lesson9-practice" data-route="lesson9-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 10</p>
+          <h2>PowerShell Scripting and Configuration</h2>
+          <p>Script files, execution policy, profiles, parameters, scope, validation, error handling, and backup logic.</p>
+          <div class="chapter-links">
+            <a href="#lesson10-study" data-route="lesson10-study">Study</a>
+            <a href="#lesson10-practice" data-route="lesson10-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -244,6 +253,12 @@ print("Welcome,", name)
             <h2>Web Scraping</h2>
             <p>Practice responsible scraping, HTTP requests, parsers, Selenium, and CSV/Excel export workflows.</p>
             <span class="testing-card-action">Open Lesson 9 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson10-practice" data-route="lesson10-practice">
+            <p class="chapter-number">Lesson 10</p>
+            <h2>PowerShell Scripting</h2>
+            <p>Practice script setup, profiles, parameters, validation, error handling, and backup business rules.</p>
+            <span class="testing-card-action">Open Lesson 10 Testing</span>
           </a>
         </section>
       </div>
@@ -8904,6 +8919,437 @@ df.to_excel("Book_title.xlsx", index=False)</code></pre>
                 fields, store each record in a consistent shape, then let pandas write the final table.
               </p>
               <a class="page-ref" href="#lesson9-export" data-study-route="lesson9-study">Review: Lesson 9, pages 19-22.</a>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="lesson10-study-view" aria-labelledby="lesson10-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 10 sections">
+          <p class="sidebar-label">Lesson 10 Study Material</p>
+          <a href="#lesson10-intro">1. What PowerShell Scripts Do <small>Pages 3-4</small></a>
+          <a href="#lesson10-run">2. Running Scripts Safely <small>Pages 5-7</small></a>
+          <a href="#lesson10-variables">3. Variables and Strings <small>Pages 8-9</small></a>
+          <a href="#lesson10-scope-profile">4. Scope and Profiles <small>Pages 10-17</small></a>
+          <a href="#lesson10-parameters">5. Parameters <small>Pages 20-21</small></a>
+          <a href="#lesson10-validation">6. Flow Control and Validation <small>Pages 23-24</small></a>
+          <a href="#lesson10-errors">7. Error Handling <small>Pages 25-28</small></a>
+          <a href="#lesson10-backup">8. Building Backup.ps1 <small>Assignment</small></a>
+          <a href="#lesson10-practice" data-route="lesson10-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="lesson-hero">
+            <p class="eyebrow">Lesson 10</p>
+            <h1 id="lesson10-study-title">PowerShell Scripting and Configuration</h1>
+            <p>
+              This lesson comes from the course's PowerShell scripting material, originally labeled Lesson 12. It is
+              presented here as Lesson 10 because the tutorial now expands beyond Python into shell scripting and
+              Windows automation.
+            </p>
+            <div class="lesson-nav-buttons">
+              <a class="lesson-nav-button" href="#lesson9-study" data-route="lesson9-study">Previous: Lesson 9</a>
+              <a class="lesson-nav-button next" href="#lesson10-practice" data-route="lesson10-practice">Next: Lesson 10 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson10-intro">
+            <h2>What PowerShell Scripts Do</h2>
+            <p>
+              PowerShell is both a command shell and a scripting language. A command shell lets you run commands one at
+              a time. A scripting language lets you save several commands in a file so the computer can repeat them
+              consistently. A PowerShell script is usually saved with the <code>.ps1</code> extension.
+            </p>
+            <p>
+              Scripts are useful when a task has multiple steps, must be repeated often, or needs to behave the same
+              way every time. Common examples include collecting logs, creating reports, managing users, checking
+              folders, and backing up files. The assignment for this lesson asks you to build a <code>Backup.ps1</code>
+              script, so the main idea is: turn a repeated manual file task into a controlled program.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code># A tiny script can start with simple statements.
+Write-Host "Starting backup check..."
+
+$sourcePath = "C:\Projects\Website"
+$destinationPath = "C:\Backups\WebsiteBackup"
+
+Write-Host "Source: $sourcePath"
+Write-Host "Destination: $destinationPath"</code></pre>
+            </div>
+            <p>
+              PowerShell commands are often called cmdlets. Many cmdlets use a verb-noun naming pattern, such as
+              <code>Get-ChildItem</code>, <code>Test-Path</code>, <code>Copy-Item</code>, and <code>New-Item</code>.
+              That pattern makes scripts easier to read because the command names describe the action and the target.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson10-run">
+            <h2>Running Scripts Safely</h2>
+            <p>
+              PowerShell does not treat scripts as casual text files. Scripts can modify files, change settings, or
+              automate administrative tasks, so PowerShell includes execution policies. Use
+              <code>Get-ExecutionPolicy</code> to view the current policy. A policy such as <code>Restricted</code>
+              blocks script execution, while <code>RemoteSigned</code> allows local scripts and requires downloaded
+              scripts to be trusted.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>Get-ExecutionPolicy
+
+# A common student setup for local scripts:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code></pre>
+            </div>
+            <p>
+              When running a script, include the path. If the script is in the current folder, use <code>.\</code> so
+              PowerShell knows exactly which file you mean. This prevents accidental execution of another command with a
+              similar name.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code># Run Backup.ps1 from the folder that contains the file.
+.\Backup.ps1
+
+# Run it with parameter values.
+.\Backup.ps1 -SourcePath "C:\Projects\Website" -DestinationPath "C:\Backups\WebsiteBackup"</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson10-variables">
+            <h2>Variables and Strings</h2>
+            <p>
+              A variable stores a value so it can be reused later. PowerShell variable names begin with
+              <code>$</code>. In a backup script, variables are helpful because the source folder, destination folder,
+              file list, and status messages may be needed in several places.
+            </p>
+            <p>
+              Single quotes and double quotes behave differently. Single quotes keep text literal. Double quotes allow
+              variable interpolation, which means PowerShell replaces the variable name with its value. For a more
+              complex expression inside a string, wrap the expression in <code>$()</code>.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>$name = "Jordan"
+$count = 3
+
+Write-Host 'Hello, $name'
+Write-Host "Hello, $name"
+Write-Host "Files copied: $($count + 2)"</code></pre>
+            </div>
+            <div class="output-block">
+              <p><strong>Expected output:</strong></p>
+              <pre><code>Hello, $name
+Hello, Jordan
+Files copied: 5</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson10-scope-profile">
+            <h2>Scope and Profiles</h2>
+            <p>
+              Scope controls where a variable, function, or alias can be seen and changed. A variable created inside a
+              script usually belongs to script scope, so it exists while that script is running. A variable created in
+              the current shell belongs to the current local scope. Global scope is the broadest scope in the session.
+            </p>
+            <ul>
+              <li><strong>Local scope:</strong> the current working scope.</li>
+              <li><strong>Script scope:</strong> values that belong to the script while the script runs.</li>
+              <li><strong>Global scope:</strong> values available broadly in the current PowerShell session.</li>
+            </ul>
+            <p>
+              Profiles are scripts that run when PowerShell starts. They are a way to customize your shell with a
+              greeting, aliases, prompt settings, or helper functions. The assignment asks you to inspect the profile
+              paths and create a current-user/current-host profile with a personalized greeting.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>$PROFILE | Select-Object *
+
+if (-not (Test-Path $PROFILE.CurrentUserCurrentHost)) {
+    New-Item -ItemType File -Path $PROFILE.CurrentUserCurrentHost -Force
+}
+
+Add-Content -Path $PROFILE.CurrentUserCurrentHost -Value 'Write-Host "Welcome back to PowerShell!"'</code></pre>
+            </div>
+            <p>
+              After editing a profile, open a new PowerShell session to test it. If the greeting appears, your profile
+              customization is working.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson10-parameters">
+            <h2>Parameters</h2>
+            <p>
+              Parameters let the person running a script supply values at runtime. Without parameters, a backup script
+              would only work for the folder names hard-coded inside the file. With parameters, the same script can back
+              up different folders.
+            </p>
+            <p>
+              A <code>param</code> block belongs near the top of the script. You can add types such as
+              <code>[string]</code> and attributes such as <code>[Parameter(Mandatory)]</code> so the script asks for
+              required input instead of running with missing values.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>param(
+    [Parameter(Mandatory)]
+    [string]$SourcePath,
+
+    [Parameter(Mandatory)]
+    [string]$DestinationPath,
+
+    [switch]$WebApp
+)
+
+Write-Host "Preparing to back up $SourcePath"</code></pre>
+            </div>
+            <p>
+              The <code>[switch]</code> type is useful for yes-or-no options. In this lesson, <code>-WebApp</code> can
+              mean "also check whether this folder contains web app files such as HTML, JavaScript, or CSS."
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson10-validation">
+            <h2>Flow Control and Validation</h2>
+            <p>
+              Flow control decides which branch of code runs. The most common structure is
+              <code>if</code>, <code>elseif</code>, and <code>else</code>. Validation uses flow control to check input
+              before the script does work. For the backup assignment, validation should confirm that the source exists
+              and that the destination does not already exist.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>if (-not (Test-Path $SourcePath)) {
+    throw "Source path does not exist: $SourcePath"
+}
+elseif (Test-Path $DestinationPath) {
+    throw "Destination already exists: $DestinationPath"
+}
+else {
+    Write-Host "Validation passed."
+}</code></pre>
+            </div>
+            <p>
+              For web app content, use <code>Get-ChildItem</code> with <code>-Recurse</code> to inspect the folder tree.
+              Then check file extensions. The business rule is not just "copy files"; it is "when the web app option is
+              selected, identify whether the source contains web app content."
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>if ($WebApp) {
+    $webFiles = Get-ChildItem -Path $SourcePath -Recurse -File |
+        Where-Object { $_.Extension -in ".html", ".js", ".css" }
+
+    if ($webFiles.Count -gt 0) {
+        Write-Host "Web app content found: $($webFiles.Count) files"
+    }
+    else {
+        Write-Host "No web app content found."
+    }
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson10-errors">
+            <h2>Error Handling</h2>
+            <p>
+              Some errors are nonterminating, which means PowerShell reports the problem but may continue running. Other
+              errors are terminating, which means the script stops. For deliberate assignment rules, use
+              <code>throw</code> when the script should stop, such as a missing source folder or a destination that
+              would overwrite an existing backup.
+            </p>
+            <p>
+              A <code>try</code>, <code>catch</code>, and optional <code>finally</code> block gives the script a clear
+              error-handling structure. The risky work goes in <code>try</code>. The response to failure goes in
+              <code>catch</code>. Cleanup or final status messages can go in <code>finally</code>.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>try {
+    Copy-Item -Path $SourcePath -Destination $DestinationPath -Recurse -ErrorAction Stop
+    Write-Host "Backup completed."
+}
+catch {
+    Write-Error "Backup failed: $($_.Exception.Message)"
+}
+finally {
+    Write-Host "Backup script finished."
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson10-backup">
+            <h2>Building Backup.ps1</h2>
+            <p>
+              The assignment combines profile setup, parameters, validation, error handling, and business logic. Before
+              writing the final script, plan it in pseudocode. Pseudocode is not meant to be perfect PowerShell. It is a
+              plain-language outline of the script's decisions.
+            </p>
+            <div class="code-card">
+              <button class="copy-code" type="button">Copy</button>
+              <pre><code>PSEUDOCODE: Backup.ps1
+
+Accept SourcePath, DestinationPath, and optional WebApp switch.
+
+If SourcePath does not exist:
+    stop with a clear error.
+
+If DestinationPath already exists:
+    stop so an existing backup is not overwritten.
+
+If WebApp switch was used:
+    search SourcePath for .html, .js, and .css files.
+    report whether web app content was found.
+
+Try to copy the source folder to the destination folder.
+If copy succeeds:
+    print a success message.
+If copy fails:
+    print the error message.
+Always:
+    print that the script finished.</code></pre>
+            </div>
+            <p>
+              A strong report for this assignment should not only say that the script works. It should explain the
+              profile customization, show how parameters were passed, describe which invalid-path tests were attempted,
+              and summarize how the <code>-WebApp</code> switch changed the script's behavior.
+            </p>
+            <div class="lesson-callout">
+              <h3>Minimum foundations before starting the assignment</h3>
+              <ul>
+                <li>Know how to run <code>.\Backup.ps1</code> from the folder that contains the script.</li>
+                <li>Know how to pass <code>-SourcePath</code> and <code>-DestinationPath</code>.</li>
+                <li>Use <code>Test-Path</code> before copying files.</li>
+                <li>Use <code>throw</code> or <code>Write-Error</code> to make failures visible.</li>
+                <li>Use <code>[switch]$WebApp</code> for the optional web content check.</li>
+              </ul>
+            </div>
+            <div class="lesson-nav-buttons bottom">
+              <a class="lesson-nav-button" href="#lesson9-study" data-route="lesson9-study">Back to Lesson 9</a>
+              <a class="lesson-nav-button next" href="#lesson10-practice" data-route="lesson10-practice">Open Lesson 10 Testing</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson10-practice-view" aria-labelledby="lesson10-practice-title">
+      <div class="practice-shell">
+        <header class="practice-hero">
+          <p class="eyebrow">Lesson 10 Testing Environment</p>
+          <h1 id="lesson10-practice-title">PowerShell Scripting Practice</h1>
+          <p>
+            Use these checks to rehearse the concepts before completing the PowerShell backup assignment. The assignment
+            remains separate from the concept checks so the graded work is easy to find.
+          </p>
+        </header>
+
+        <nav class="practice-tabs" aria-label="Lesson 10 practice sections">
+          <button class="tab active" data-practice-tab="lesson10-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson10-graded-assignment">Assignment</button>
+        </nav>
+
+        <section class="practice-panel active" id="lesson10-concept-checks">
+          <div class="panel-intro">
+            <h2>Concept Checks</h2>
+            <p>Review the foundations needed for the assignment before building the final script.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Script Safety and Execution Policy</h3>
+            <ol>
+              <li>Explain why PowerShell scripts use the <code>.ps1</code> extension.</li>
+              <li>Run <code>Get-ExecutionPolicy</code> and record the policy shown on your computer.</li>
+              <li>Explain the difference between running <code>Backup.ps1</code> and <code>.\Backup.ps1</code>.</li>
+              <li>Describe why downloaded scripts require extra caution.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Execution policies reduce accidental script execution. Running a script by path helps you run the exact file you intended.</p>
+              <a class="page-ref" href="#lesson10-run" data-study-route="lesson10-study">Review: Lesson 10 running scripts safely.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Profiles and Scope</h3>
+            <ol>
+              <li>Run <code>$PROFILE | Select-Object *</code>.</li>
+              <li>Identify the current user/current host profile path.</li>
+              <li>Explain what a profile does when a new PowerShell session starts.</li>
+              <li>Describe why a variable inside <code>Backup.ps1</code> should not be treated as a permanent global setting.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Profiles customize the shell at startup. Scope controls where variables, functions, and aliases can be seen or changed.</p>
+              <a class="page-ref" href="#lesson10-scope-profile" data-study-route="lesson10-study">Review: Lesson 10 scope and profiles.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Parameters and Switches</h3>
+            <ol>
+              <li>Write a <code>param</code> block with <code>$SourcePath</code> and <code>$DestinationPath</code>.</li>
+              <li>Mark both path parameters as mandatory.</li>
+              <li>Add <code>[switch]$WebApp</code>.</li>
+              <li>Write an example command that runs the script with all three options.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Parameters make a script reusable. A switch parameter acts like an optional on/off flag.</p>
+              <a class="page-ref" href="#lesson10-parameters" data-study-route="lesson10-study">Review: Lesson 10 parameters.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Validation and Error Handling</h3>
+            <ol>
+              <li>Use <code>Test-Path</code> to check whether a source folder exists.</li>
+              <li>Use <code>Test-Path</code> to check whether a destination folder already exists.</li>
+              <li>Explain why the script should stop instead of overwriting an existing backup.</li>
+              <li>Describe what <code>$_.Exception.Message</code> provides inside a <code>catch</code> block.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Validation catches bad input early. Error handling makes failures understandable instead of silent or confusing.</p>
+              <a class="page-ref" href="#lesson10-validation" data-study-route="lesson10-study">Review: Lesson 10 validation.</a>
+              <a class="page-ref" href="#lesson10-errors" data-study-route="lesson10-study">Review: Lesson 10 error handling.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson10-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 10: PowerShell Scripting and Configuration</h2>
+            <p>This assignment was originally labeled Assignment 12 in the source materials.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>PowerShell Backup Script and Profile Setup</h3>
+            <p><strong>Objective:</strong> Demonstrate PowerShell profile setup, script creation, parameters, validation, error handling, and business logic inside a Windows PowerShell environment.</p>
+            <ol>
+              <li>Start a PowerShell session.</li>
+              <li>Run <code>$PROFILE | Select-Object *</code> and observe the current user and host profile paths.</li>
+              <li>Create a current user/current host profile that displays a personalized greeting when PowerShell starts.</li>
+              <li>Create a file named <code>Backup.ps1</code>.</li>
+              <li>Add parameters for <code>-SourcePath</code> and <code>-DestinationPath</code>.</li>
+              <li>Validate that the source directory exists before backup work begins.</li>
+              <li>Prevent the script from overwriting an existing backup destination.</li>
+              <li>Use error handling so invalid paths and copy failures produce clear messages.</li>
+              <li>Add a <code>-WebApp</code> switch parameter.</li>
+              <li>When <code>-WebApp</code> is used, check the source directory for <code>.html</code>, <code>.js</code>, and <code>.css</code> files.</li>
+              <li>Test the script with valid paths, invalid source paths, existing destination paths, and directories with and without web app content.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit a report summarizing key learnings, profile setup, command examples, test results, validation behavior, and the final business logic implemented in <code>Backup.ps1</code>.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                The reading material above covers each required foundation: profiles for startup customization,
+                parameters for reusable input, <code>Test-Path</code> for validation, <code>try</code>/<code>catch</code>
+                for errors, and the <code>-WebApp</code> switch for business-specific file detection.
+              </p>
+              <a class="page-ref" href="#lesson10-backup" data-study-route="lesson10-study">Review: Lesson 10 Backup.ps1 planning.</a>
             </details>
           </article>
         </section>
