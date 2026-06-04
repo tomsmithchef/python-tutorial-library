@@ -42,5 +42,14 @@ window.PY_TUTORIAL_ATTACHMENTS = [
     file: "attachments/Lesson 9 Lab 9 Solutions.zip",
     label: "Lesson 9 Lab 9 Solutions.zip",
     size: "3 KB"
+  },
+  {
+    lesson: "lesson12",
+    taskTitle: "Build a Dynamic Web Page with JavaScript",
+    title: "Assignment 12 Starter HTML",
+    description: "Provided base HTML file for the JavaScript DOM manipulation assignment.",
+    file: "attachments/Assignment 14 index-given.html",
+    label: "index-given.html",
+    size: "1 KB"
   }
 ];

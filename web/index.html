@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Python Tutorial Library | Python, Cybersecurity &amp; PowerShell</title>
-  <meta name="description" content="A complete programming tutorial covering Lessons 1-11, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, interactive MCQ drills, and practice exams.">
+  <meta name="description" content="A complete programming tutorial covering Lessons 1-12, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, interactive MCQ drills, and practice exams.">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Python Tutorial Library">
-  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, and HTML/CSS web design - Lessons 1-11.">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, and JavaScript DOM manipulation - Lessons 1-12.">
   <meta property="og:image" content="/og-preview.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Python Tutorial Library">
-  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, and HTML/CSS web design - Lessons 1-11.">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, and JavaScript DOM manipulation - Lessons 1-12.">
   <meta name="twitter:image" content="/og-preview.svg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -180,6 +180,15 @@ print("Welcome,", name)
             <a href="#lesson11-practice" data-route="lesson11-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Lesson 12</p>
+          <h2>JavaScript and DOM Manipulation</h2>
+          <p>JavaScript syntax, variables, functions, events, DOM selection, element creation, style changes, and dynamic page behavior.</p>
+          <div class="chapter-links">
+            <a href="#lesson12-study" data-route="lesson12-study">Study</a>
+            <a href="#lesson12-practice" data-route="lesson12-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -274,6 +283,12 @@ print("Welcome,", name)
             <h2>HTML and CSS Web Design</h2>
             <p>Practice semantic HTML, shared CSS, navigation, project grids, contact forms, responsive media queries, and portfolio packaging.</p>
             <span class="testing-card-action">Open Lesson 11 Testing</span>
+          </a>
+          <a class="chapter-card active-chapter testing-choice" href="#lesson12-practice" data-route="lesson12-practice">
+            <p class="chapter-number">Lesson 12</p>
+            <h2>JavaScript and DOM Manipulation</h2>
+            <p>Practice JavaScript syntax, DOM selection, event listeners, dynamic content, list controls, and starter-file enhancement.</p>
+            <span class="testing-card-action">Open Lesson 12 Testing</span>
           </a>
         </section>
       </div>
@@ -9876,6 +9891,459 @@ Before submitting:
         </section>
       </div>
     </section>
+
+    <section class="view" id="lesson12-study-view" aria-labelledby="lesson12-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Lesson 12 sections">
+          <p class="sidebar-label">Lesson 12 Study Material</p>
+          <a href="#lesson12-js">1. What JavaScript Adds <small>Pages 3-6</small></a>
+          <a href="#lesson12-syntax">2. Syntax Foundations <small>Pages 7-16</small></a>
+          <a href="#lesson12-functions">3. Functions, Loops, and Conditions <small>Pages 12-17</small></a>
+          <a href="#lesson12-dom">4. DOM Model and Selection <small>Pages 18-23</small></a>
+          <a href="#lesson12-content">5. Change Content and Styles <small>Pages 24-30</small></a>
+          <a href="#lesson12-create">6. Create and Insert Elements <small>Pages 31-36</small></a>
+          <a href="#lesson12-remove">7. Remove and Replace Elements <small>Pages 37-42</small></a>
+          <a href="#lesson12-events">8. Events and User Input <small>Pages 43-46</small></a>
+          <a href="#lesson12-assignment-plan">9. Assignment Build Plan <small>Assignment</small></a>
+          <a href="#lesson12-practice" data-route="lesson12-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Lesson 12</p>
+            <h1 id="lesson12-study-title">Introduction to JavaScript and DOM Manipulation</h1>
+            <p>
+              This lesson comes from the course's JavaScript and DOM material, originally labeled Lesson 14. It is
+              presented here as Lesson 12, continuing the web development path after HTML and CSS.
+            </p>
+            <p>
+              HTML gives the page structure and CSS controls presentation. JavaScript adds behavior. With JavaScript,
+              a page can respond to clicks, read user input, change text, add elements, remove elements, replace
+              elements, and update styles without reloading the whole page.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson11-study" data-route="lesson11-study">Previous: Lesson 11</a>
+              <a class="lesson-nav-button next" href="#lesson12-practice" data-route="lesson12-practice">Next: Lesson 12 Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="lesson12-js">
+            <h2>1. What JavaScript Adds</h2>
+            <p class="section-pages">Source pages 3-6</p>
+            <p>
+              JavaScript is a programming language used heavily in web browsers. It is easy to start because simple
+              scripts can be written with only a few lines, but it becomes deep quickly because it can control page
+              behavior, react to events, validate forms, perform calculations, and retrieve data from the internet.
+            </p>
+            <p>
+              In a website, JavaScript can be placed directly inside a <code>&lt;script&gt;</code> tag, loaded from an
+              external file, or attached inline to an element event. For maintainable assignments, use an external
+              <code>script.js</code> file and include it near the bottom of the HTML body.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>External JavaScript file</span><button class="copy-code">Copy</button></div>
+              <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+            <p>
+              The provided assignment starter already includes this script reference. That means your job is to create
+              <code>script.js</code> and write the behavior there.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson12-syntax">
+            <h2>2. Syntax Foundations</h2>
+            <p class="section-pages">Source pages 7-16</p>
+            <p>
+              JavaScript syntax is similar to C-style languages. Variables can hold numbers, strings, Booleans, arrays,
+              and objects. Modern beginner code usually uses <code>let</code> for values that may change and
+              <code>const</code> for values that should not be reassigned. The slides also introduce <code>var</code>,
+              which is older and function-scoped.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Variables and values</span><button class="copy-code">Copy</button></div>
+              <pre><code>let paragraphCount = 0;
+let message = "Hello";
+let isReady = true;
+let fruits = ["banana", "apple", "mango"];
+
+const user = {
+  name: "Mihir",
+  city: "Ottawa"
+};</code></pre>
+            </div>
+            <p>
+              The difference between loose equality and strict equality matters. <code>==</code> can coerce types, so
+              <code>5 == "5"</code> is true. <code>===</code> checks both value and type, so
+              <code>5 === "5"</code> is false. Prefer strict equality in most beginner code.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson12-functions">
+            <h2>3. Functions, Loops, and Conditions</h2>
+            <p class="section-pages">Source pages 12-17</p>
+            <p>
+              Functions package instructions so they can run when needed. In this assignment, each button click should
+              call a function or run a small callback. Loops let you repeat work, and conditional statements let the
+              script choose between branches.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Function and condition example</span><button class="copy-code">Copy</button></div>
+              <pre><code>function describeScore(score) {
+  if (score >= 90) {
+    return "great";
+  } else if (score > 70) {
+    return "good";
+  } else {
+    return "needs practice";
+  }
+}
+
+console.log(describeScore(85));</code></pre>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Loop through an array</span><button class="copy-code">Copy</button></div>
+              <pre><code>const fruits = ["banana", "apple", "mango"];
+
+for (let i = 0; i &lt; fruits.length; i += 1) {
+  console.log(fruits[i]);
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson12-dom">
+            <h2>4. DOM Model and Selection</h2>
+            <p class="section-pages">Source pages 18-23</p>
+            <p>
+              DOM means Document Object Model. It is the browser's object representation of the HTML page. Every
+              element is accessible from JavaScript through the <code>document</code> object. Once JavaScript selects
+              an element, it can read it, change it, attach events to it, or use it as a parent for new elements.
+            </p>
+            <p>
+              Use <code>document.querySelector()</code> when you need the first matching element. Use
+              <code>document.querySelectorAll()</code> when you need every matching element. Both methods accept CSS
+              selectors such as <code>"h1"</code>, <code>"#content"</code>, <code>".main"</code>, or
+              <code>"input[type='text']"</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Select DOM elements</span><button class="copy-code">Copy</button></div>
+              <pre><code>const header = document.querySelector("h1");
+const content = document.querySelector("#content");
+const allParagraphs = document.querySelectorAll("p");</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson12-content">
+            <h2>5. Change Content and Styles</h2>
+            <p class="section-pages">Source pages 24-30</p>
+            <p>
+              JavaScript can change text and HTML inside an element. The slides introduce <code>innerHTML</code>, which
+              replaces the HTML content inside an element. When you only need text, <code>textContent</code> is often a
+              simpler and safer habit because it treats the value as text rather than markup.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Change text and style</span><button class="copy-code">Copy</button></div>
+              <pre><code>const header = document.querySelector("h1");
+header.textContent = "Updated Dynamic Web Page";
+
+const intro = document.querySelector("#intro");
+intro.style.fontSize = "1.5em";
+intro.style.color = "blue";</code></pre>
+            </div>
+            <p>
+              CSS property names become camelCase in JavaScript. For example, <code>font-size</code> becomes
+              <code>fontSize</code>, <code>background-color</code> becomes <code>backgroundColor</code>, and
+              <code>margin-top</code> becomes <code>marginTop</code>.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson12-create">
+            <h2>6. Create and Insert Elements</h2>
+            <p class="section-pages">Source pages 31-36</p>
+            <p>
+              To add new content, create an element, add text or child nodes to it, then append or insert it inside an
+              existing parent. The assignment's "Add New Paragraph" task uses this pattern with a new
+              <code>&lt;p&gt;</code> element inside the <code>#content</code> div.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Create and append a paragraph</span><button class="copy-code">Copy</button></div>
+              <pre><code>let paragraphCount = 0;
+const content = document.querySelector("#content");
+
+function addParagraph() {
+  paragraphCount += 1;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = `New paragraph ${paragraphCount}`;
+
+  content.appendChild(paragraph);
+}</code></pre>
+            </div>
+            <p>
+              <code>appendChild()</code> places the new element as the last child. <code>insertBefore()</code> places a
+              new element before an existing child when the order matters.
+            </p>
+          </section>
+
+          <section class="study-section" id="lesson12-remove">
+            <h2>7. Remove and Replace Elements</h2>
+            <p class="section-pages">Source pages 37-42</p>
+            <p>
+              Removing an element usually means asking the parent to remove one of its children with
+              <code>removeChild()</code>. To clear an entire container, you can loop while it still has a first child,
+              or set <code>innerHTML</code> to an empty string. The assignment allows either approach for clearing
+              <code>#content</code>.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Remove and replace content</span><button class="copy-code">Copy</button></div>
+              <pre><code>const content = document.querySelector("#content");
+
+function clearContent() {
+  content.innerHTML = "";
+}
+
+function replaceFirstParagraph() {
+  const oldParagraph = content.querySelector("p");
+  if (!oldParagraph) {
+    return;
+  }
+
+  const replacement = document.createElement("p");
+  replacement.textContent = "This paragraph was replaced.";
+  content.replaceChild(replacement, oldParagraph);
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson12-events">
+            <h2>8. Events and User Input</h2>
+            <p class="section-pages">Source pages 43-46</p>
+            <p>
+              Events are actions the browser can report to JavaScript: clicks, key presses, mouse movement, form
+              submission, and page loading. The clean beginner pattern is to select an element and call
+              <code>addEventListener()</code>. The event name is a string such as <code>"click"</code>, and the handler
+              is the function that should run.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Button click event</span><button class="copy-code">Copy</button></div>
+              <pre><code>const changeHeaderButton = document.querySelector("#changeHeader");
+
+changeHeaderButton.addEventListener("click", function () {
+  const header = document.querySelector("h1");
+  header.textContent = "Header changed with JavaScript";
+});</code></pre>
+            </div>
+            <p>
+              For the list task, read the input value, create a new <code>&lt;li&gt;</code>, add a Remove button, and
+              attach a click event to that button so it removes only its own list item.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Add list items from input</span><button class="copy-code">Copy</button></div>
+              <pre><code>const input = document.querySelector("#newItem");
+const list = document.querySelector("#itemList");
+const addItemButton = document.querySelector("#addItem");
+
+addItemButton.addEventListener("click", function () {
+  const value = input.value.trim();
+  if (value === "") {
+    return;
+  }
+
+  const item = document.createElement("li");
+  item.textContent = value;
+
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.addEventListener("click", function () {
+    list.removeChild(item);
+  });
+
+  item.appendChild(removeButton);
+  list.appendChild(item);
+  input.value = "";
+});</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="lesson12-assignment-plan">
+            <h2>9. Assignment Build Plan</h2>
+            <p class="section-pages">Assignment planning</p>
+            <p>
+              The assignment starts from a provided HTML file and asks you to create a separate
+              <code>script.js</code>. Keep the HTML structure mostly intact, then use JavaScript to enhance it. Build
+              one feature at a time and test it in the browser before moving to the next requirement.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>DOM assignment pseudocode</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: Dynamic web page assignment
+
+When the page loads:
+    select #intro.
+    change its color and font size.
+
+When Change Header is clicked:
+    select the h1.
+    change the header text.
+
+When Add New Paragraph is clicked:
+    increment a paragraph counter.
+    create a new paragraph.
+    add numbered text.
+    append it to #content.
+    optionally replace an existing paragraph as required.
+
+When Remove Content is clicked:
+    remove all children inside #content.
+
+When Add Item is clicked:
+    read #newItem.
+    create an li.
+    create a Remove button inside that li.
+    add a click event so the Remove button deletes that li.
+    append the li to #itemList.
+
+Before submitting:
+    test every button.
+    keep comments clear.
+    zip index.html and script.js.</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Starter file reminder</h3>
+              <p>
+                Download the provided starter HTML from the Lesson 12 assignment tab. Save it as
+                <code>index.html</code>, create <code>script.js</code> in the same folder, and test the page in a
+                browser after each feature.
+              </p>
+            </div>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson11-study" data-route="lesson11-study">Back to Lesson 11</a>
+              <a class="lesson-nav-button next" href="#lesson12-practice" data-route="lesson12-practice">Open Lesson 12 Testing</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="lesson12-practice-view" aria-labelledby="lesson12-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Lesson 12 Testing Environment</p>
+          <h1 id="lesson12-practice-title">JavaScript DOM Manipulation Practice</h1>
+          <p>
+            Use these checks before completing the dynamic webpage assignment. The provided starter HTML appears inside
+            the Assignment tab download area.
+          </p>
+        </header>
+
+        <nav class="practice-tabs" aria-label="Lesson 12 practice sections">
+          <button class="tab active" data-practice-tab="lesson12-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="lesson12-graded-assignment">Assignment</button>
+        </nav>
+
+        <section class="practice-panel active" id="lesson12-concept-checks">
+          <div class="panel-intro">
+            <h2>Concept Checks</h2>
+            <p>Review the JavaScript and DOM patterns needed for the assignment.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>JavaScript Syntax Review</h3>
+            <ol>
+              <li>Declare a variable for a paragraph counter.</li>
+              <li>Explain the difference between <code>let</code> and <code>var</code>.</li>
+              <li>Write a function that returns a string.</li>
+              <li>Explain why <code>===</code> is usually safer than <code>==</code>.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>JavaScript variables can hold strings, numbers, Booleans, arrays, and objects. Prefer block-scoped variables in new code.</p>
+              <a class="page-ref" href="#lesson12-syntax" data-study-route="lesson12-study">Review: Lesson 12 syntax foundations.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>DOM Selection and Changes</h3>
+            <ol>
+              <li>Select the first <code>h1</code> on a page.</li>
+              <li>Select the element with id <code>content</code>.</li>
+              <li>Change an element's text with <code>textContent</code>.</li>
+              <li>Change <code>font-size</code> through JavaScript style syntax.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Start with the <code>document</code> object, then select elements with CSS selectors. CSS property names become camelCase in JavaScript.</p>
+              <a class="page-ref" href="#lesson12-dom" data-study-route="lesson12-study">Review: Lesson 12 DOM selection.</a>
+              <a class="page-ref" href="#lesson12-content" data-study-route="lesson12-study">Review: Lesson 12 content and style changes.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Create, Remove, and Replace</h3>
+            <ol>
+              <li>Create a new paragraph with <code>document.createElement("p")</code>.</li>
+              <li>Append the paragraph to a parent container.</li>
+              <li>Remove all content from a container.</li>
+              <li>Replace an existing paragraph with a new paragraph.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Create elements first, then attach them to the DOM. Removing or replacing elements usually means working through the parent element.</p>
+              <a class="page-ref" href="#lesson12-create" data-study-route="lesson12-study">Review: Lesson 12 creating elements.</a>
+              <a class="page-ref" href="#lesson12-remove" data-study-route="lesson12-study">Review: Lesson 12 removing and replacing elements.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Events and Dynamic Lists</h3>
+            <ol>
+              <li>Add a click event listener to a button.</li>
+              <li>Read text from an input field.</li>
+              <li>Create a list item from the input value.</li>
+              <li>Add a Remove button that deletes only its own list item.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Event listeners connect user actions to JavaScript functions. Each dynamic list item can have its own Remove button and click handler.</p>
+              <a class="page-ref" href="#lesson12-events" data-study-route="lesson12-study">Review: Lesson 12 events and user input.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="lesson12-graded-assignment">
+          <div class="panel-intro">
+            <h2>Assignment 12: Dynamic Web Page Using JavaScript and DOM Manipulation</h2>
+            <p>This assignment was originally labeled Assignment 14 in the source materials.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Build a Dynamic Web Page with JavaScript</h3>
+            <p><strong>Objective:</strong> Start from the provided HTML file and create JavaScript behavior that modifies the DOM in response to user actions.</p>
+            <ol>
+              <li>Download the starter HTML file and save it as <code>index.html</code>.</li>
+              <li>Create a separate <code>script.js</code> file in the same folder.</li>
+              <li>When the <strong>Change Header</strong> button is clicked, use <code>document.querySelector()</code> to select the <code>h1</code> and change its text.</li>
+              <li>When the <strong>Add New Paragraph</strong> button is clicked, create a new numbered paragraph and append it to <code>#content</code>.</li>
+              <li>When the <strong>Remove Content</strong> button is clicked, remove all content inside <code>#content</code>.</li>
+              <li>Use the input field and <strong>Add Item</strong> button to add new <code>&lt;li&gt;</code> elements to <code>#itemList</code>.</li>
+              <li>Add a <strong>Remove</strong> button next to each list item so that specific item can be deleted.</li>
+              <li>When the page loads, change the style of <code>#intro</code>, such as font size <code>1.5em</code> and color <code>blue</code>.</li>
+              <li>Use <code>replaceChild()</code> to replace the text of an existing paragraph inside <code>#content</code> when a new paragraph is added.</li>
+              <li>Comment your code clearly so each task is easy to identify.</li>
+              <li>Test the page in a browser and confirm every button works.</li>
+            </ol>
+            <p><strong>Deliverable:</strong> Submit <code>index.html</code> and <code>script.js</code> in a zip folder through the assignment drop box.</p>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                The lesson covers every required tool: selectors, event listeners, text/style changes,
+                <code>createElement()</code>, <code>appendChild()</code>, <code>removeChild()</code>,
+                <code>innerHTML</code>, and <code>replaceChild()</code>.
+              </p>
+              <a class="page-ref" href="#lesson12-assignment-plan" data-study-route="lesson12-study">Review: Lesson 12 assignment build plan.</a>
+            </details>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -9887,10 +10355,10 @@ Before submitting:
   </footer>
 
   <script src="community-config.js?v=20260525-4"></script>
-  <script src="assignment-attachments.js?v=20260525-6"></script>
+  <script src="assignment-attachments.js?v=20260604-lesson12"></script>
   <script src="quiz-data.js?v=20260602-python-mcq-gap"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260604-lesson11"></script>
+  <script src="app.js?v=20260604-lesson12"></script>
   <script src="quiz-engine.js?v=20260602-quizpage"></script>
 </body>
 </html>
