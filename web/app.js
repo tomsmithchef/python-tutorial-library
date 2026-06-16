@@ -28,6 +28,8 @@ const routes = {
   "lesson12-practice": document.querySelector("#lesson12-practice-view"),
   "lesson13-study": document.querySelector("#lesson13-study-view"),
   "lesson13-practice": document.querySelector("#lesson13-practice-view"),
+  "digital-forensics-study": document.querySelector("#digital-forensics-study-view"),
+  "digital-forensics-practice": document.querySelector("#digital-forensics-practice-view"),
   community: document.querySelector("#community-view"),
 };
 
@@ -61,6 +63,8 @@ const routeLabels = {
   "lesson12-practice": ["Lesson 12", "lesson12-study", "Testing Environment"],
   "lesson13-study": ["Lesson 13", "lesson13-study", "jQuery and Error Handling"],
   "lesson13-practice": ["Lesson 13", "lesson13-study", "Testing Environment"],
+  "digital-forensics-study": ["Digital Forensics", "digital-forensics-study", "Study Unit"],
+  "digital-forensics-practice": ["Digital Forensics", "digital-forensics-study", "Testing Environment"],
   community: ["Community", "community", "Class Board"],
 };
 
@@ -116,8 +120,10 @@ function setRoute(routeName) {
       "lesson11-practice": ["Proceed to Lesson 12", "lesson12-study"],
       "lesson12-study": ["Proceed to Lesson 13", "lesson13-study"],
       "lesson12-practice": ["Proceed to Lesson 13", "lesson13-study"],
-      "lesson13-study": ["Return to Chapters", "home"],
-      "lesson13-practice": ["Return to Chapters", "home"],
+      "lesson13-study": ["Proceed to Digital Forensics", "digital-forensics-study"],
+      "lesson13-practice": ["Proceed to Digital Forensics", "digital-forensics-study"],
+      "digital-forensics-study": ["Return to Chapters", "home"],
+      "digital-forensics-practice": ["Return to Chapters", "home"],
       quiz: ["Back to Testing", "testing"],
     };
     const next = nextRoutes[safeRoute];
@@ -183,6 +189,9 @@ function routeFromHash() {
   }
   if (hash.startsWith("lesson13-") && !routes[hash]) {
     return "lesson13-study";
+  }
+  if (hash.startsWith("digital-forensics-") && !routes[hash]) {
+    return "digital-forensics-study";
   }
   return hash || "home";
 }
@@ -356,6 +365,17 @@ document.querySelectorAll(".sidebar a[href^='#lesson13-']:not([data-route])").fo
   link.addEventListener("click", (event) => {
     event.preventDefault();
     setRoute("lesson13-study");
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+    }
+  });
+});
+
+document.querySelectorAll(".sidebar a[href^='#digital-forensics-']:not([data-route])").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setRoute("digital-forensics-study");
     const target = document.querySelector(link.getAttribute("href"));
     if (target) {
       setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 0);

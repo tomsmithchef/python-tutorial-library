@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Python Tutorial Library | Python, Cybersecurity &amp; PowerShell</title>
-  <meta name="description" content="A complete programming tutorial covering Lessons 1-13, with Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, error handling, interactive MCQ drills, and practice exams.">
+  <title>Python Tutorial Library | Python, Cybersecurity, Web &amp; Digital Forensics</title>
+  <meta name="description" content="A complete tutorial library covering Lessons 1-13 plus a Digital Forensics Essentials unit, with Python fundamentals, cybersecurity, PowerShell scripting, web development, interactive MCQ drills, and practice exams.">
 
   <!-- Open Graph / link preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Python Tutorial Library">
-  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, and error handling - Lessons 1-13.">
+  <meta property="og:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, web development, and Digital Forensics Essentials.">
   <meta property="og:image" content="/og-preview.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Python Tutorial Library">
-  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, HTML/CSS web design, JavaScript DOM manipulation, jQuery, and error handling - Lessons 1-13.">
+  <meta name="twitter:description" content="Study notes, practice exams, and interactive MCQ drills covering Python fundamentals, cybersecurity, PowerShell scripting, web development, and Digital Forensics Essentials.">
   <meta name="twitter:image" content="/og-preview.svg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -198,6 +198,15 @@ print("Welcome,", name)
             <a href="#lesson13-practice" data-route="lesson13-practice">Practice</a>
           </div>
         </article>
+        <article class="chapter-card active-chapter">
+          <p class="chapter-number">Digital Forensics</p>
+          <h2>Digital Forensics Essentials</h2>
+          <p>Evidence handling, investigation phases, disks, acquisition, anti-forensics, OS artifacts, network logs, web attacks, Tor, and email crimes.</p>
+          <div class="chapter-links">
+            <a href="#digital-forensics-study" data-route="digital-forensics-study">Study</a>
+            <a href="#digital-forensics-practice" data-route="digital-forensics-practice">Practice</a>
+          </div>
+        </article>
         <article class="chapter-card active-chapter community-card">
           <p class="chapter-number">Community</p>
           <h2>Class Board</h2>
@@ -305,6 +314,12 @@ print("Welcome,", name)
             <p>Practice jQuery selectors, event methods, text/html/val, append/prepend/remove, and JavaScript error handling patterns.</p>
             <span class="testing-card-action">Open Lesson 13 Testing</span>
           </a>
+          <a class="chapter-card active-chapter testing-choice" href="#digital-forensics-practice" data-route="digital-forensics-practice">
+            <p class="chapter-number">Digital Forensics</p>
+            <h2>Digital Forensics Essentials</h2>
+            <p>Practice all eleven modules and launch the complete 110-question Digital Forensics Essentials exam.</p>
+            <span class="testing-card-action">Open Forensics Testing</span>
+          </a>
         </section>
       </div>
     </section>
@@ -315,8 +330,9 @@ print("Welcome,", name)
           <p class="eyebrow">WiliQuiz</p>
           <h1 id="quiz-title">Exam Workspace</h1>
           <p>
-            Use this full-page workspace for quiz drills. The built-in library keeps the Python MCQ practice exam as one
-            complete 60-question collection, and the import tool can load additional DOCX or PDF quiz files.
+            Use this full-page workspace for quiz drills. The built-in library keeps the Python MCQ practice exam and
+            the Digital Forensics Essentials practice exam as complete collections, and the import tool can load
+            additional DOCX or PDF quiz files.
           </p>
           <div class="lander-actions">
             <a class="button secondary" href="#testing" data-route="testing">Back to Testing</a>
@@ -10760,6 +10776,665 @@ Wrap risky parsing or lookup code in try/catch:
         </section>
       </div>
     </section>
+
+    <section class="view" id="digital-forensics-study-view" aria-labelledby="digital-forensics-study-title">
+      <div class="lesson-layout">
+        <aside class="sidebar" aria-label="Digital Forensics sections">
+          <p class="sidebar-label">Digital Forensics Study Material</p>
+          <a href="#digital-forensics-overview">Unit Overview <small>Modules 1-11</small></a>
+          <a href="#digital-forensics-module-1">1. Fundamentals <small>Module 1</small></a>
+          <a href="#digital-forensics-module-2">2. Investigation Process <small>Module 2</small></a>
+          <a href="#digital-forensics-module-3">3. Disks and File Systems <small>Module 3</small></a>
+          <a href="#digital-forensics-module-4">4. Acquisition <small>Module 4</small></a>
+          <a href="#digital-forensics-module-5">5. Anti-forensics <small>Module 5</small></a>
+          <a href="#digital-forensics-module-6">6. Windows Forensics <small>Module 6</small></a>
+          <a href="#digital-forensics-module-7">7. Linux and Mac <small>Module 7</small></a>
+          <a href="#digital-forensics-module-8">8. Network Forensics <small>Module 8</small></a>
+          <a href="#digital-forensics-module-9">9. Web Attacks <small>Module 9</small></a>
+          <a href="#digital-forensics-module-10">10. Dark Web <small>Module 10</small></a>
+          <a href="#digital-forensics-module-11">11. Email Crimes <small>Module 11</small></a>
+          <a href="#digital-forensics-exam-plan">Exam Plan <small>Practice exam</small></a>
+          <a href="#digital-forensics-practice" data-route="digital-forensics-practice">Testing Environment</a>
+        </aside>
+
+        <article class="textbook">
+          <header class="textbook-header">
+            <p class="eyebrow">Digital Forensics Essentials</p>
+            <h1 id="digital-forensics-study-title">Digital Forensics Essentials Study Unit</h1>
+            <p>
+              This unit gathers the Digital Forensics Essentials modules into one study path. It is separate from the
+              Python sequence, but it fits this library well because the same study and testing tools can help you
+              prepare for the exam. The central idea is simple: digital evidence is fragile, so investigators must
+              identify it, preserve it, acquire it, analyze it, document it, and explain it in a defensible way.
+            </p>
+            <p>
+              Read the modules as a chain. The first modules establish legal and procedural foundations. The middle
+              modules explain storage, acquisition, deleted data, operating-system artifacts, and logs. The final
+              modules apply those habits to network traffic, web attacks, Tor activity, and email crime.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson13-study" data-route="lesson13-study">Back to Lesson 13</a>
+              <a class="lesson-nav-button next" href="#digital-forensics-practice" data-route="digital-forensics-practice">Next: Forensics Testing</a>
+            </div>
+          </header>
+
+          <section class="study-section" id="digital-forensics-overview">
+            <h2>Unit Overview</h2>
+            <p class="section-pages">Source Modules 1-11</p>
+            <p>
+              Digital forensics is the disciplined collection and examination of data from computers, storage media,
+              networks, applications, and accounts so that the findings can support an investigation. The unit repeats
+              several core habits: protect the original evidence, use a forensically sound copy, document every action,
+              maintain chain of custody, and connect technical artifacts to a clear timeline.
+            </p>
+            <p>
+              A beginner should think of every module as answering one of four questions: What evidence might exist?
+              How can it be preserved? Which artifact proves or disproves the event? How do we explain the result
+              without overstating what the evidence shows?
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Forensic reasoning pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: digital forensics reasoning
+
+For each incident:
+    get legal authority and define the scope.
+    secure the scene and protect fragile evidence.
+    record who handled each item and when.
+    collect volatile data before it disappears.
+    acquire non-volatile data with write protection.
+    verify copies with hashes.
+    analyze copies, logs, metadata, and artifacts.
+    build a timeline from independent sources.
+    report facts, methods, limitations, and conclusions.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-1">
+            <h2>1. Computer Forensics Fundamentals</h2>
+            <p class="section-pages">Source Module 1</p>
+            <p>
+              Computer forensics is a set of methodical procedures used to identify, gather, preserve, extract,
+              interpret, document, and present digital evidence. The evidence must be handled so it remains reliable
+              for legal, administrative, or organizational proceedings. The objective is not merely to find interesting
+              files. The objective is to preserve evidence integrity while explaining what happened, what systems were
+              affected, what the impact was, and how the organization can prevent a repeat event.
+            </p>
+            <p>
+              The module separates cybercrime into insider and external attacks and introduces indicators of compromise.
+              It also explains that digital evidence is circumstantial and fragile. Volatile evidence such as RAM,
+              process lists, logged-on users, open files, and network connections can disappear when power is removed.
+              Non-volatile evidence such as disk files, removable media, emails, browser artifacts, and logs may persist
+              longer, but it can still be altered by careless handling.
+            </p>
+            <p>
+              Rules of evidence matter throughout the unit. The best evidence rule favors the original evidence or a
+              forensically sound duplicate. Chain of custody records who collected, transferred, stored, and examined
+              evidence. Forensic readiness is the organization's preparation to collect and use digital evidence quickly
+              with minimal disruption. A good investigator combines technical skill, careful documentation, legal
+              awareness, interviewing ability, and clear reporting.
+            </p>
+            <div class="callout">
+              <h3>Exam focus</h3>
+              <p>
+                Know the definition of computer forensics, the difference between volatile and non-volatile evidence,
+                why digital evidence is fragile, what chain of custody protects, and why legal compliance can decide
+                whether technically strong evidence is admissible.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-2">
+            <h2>2. Computer Forensics Investigation Process</h2>
+            <p class="section-pages">Source Module 2</p>
+            <p>
+              The investigation process is a methodical path from authorization to final reporting. The module groups it
+              into three phases: pre-investigation, investigation, and post-investigation. Pre-investigation work includes
+              setting up a forensic lab, building a qualified team, preparing hardware and software, obtaining
+              authorization, and planning search and seizure. This phase prevents a rushed response from damaging the
+              case before the technical work begins.
+            </p>
+            <p>
+              The investigation phase includes documenting the electronic crime scene, securing and evaluating the
+              scene, preserving evidence, acquiring data, analyzing the evidence, and connecting findings back to the
+              case facts. Original media should not be used as the analysis workspace. Investigators acquire images or
+              copies, verify them, and perform analysis on the duplicate so the original remains preserved.
+            </p>
+            <p>
+              The post-investigation phase converts technical work into a defensible report. A report should state the
+              purpose, scope, case details, evidence list, tools used, preservation methods, analysis process, findings,
+              limitations, and conclusions supported by evidence. If testimony is required, the expert witness explains
+              technical findings clearly and impartially rather than arguing the case like an advocate.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Investigation workflow</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: investigation process
+
+Pre-investigation:
+    confirm authority, scope, team, lab, tools, and warrant or consent.
+
+Investigation:
+    document the scene.
+    identify and secure evidence.
+    preserve volatile and non-volatile sources.
+    acquire forensic images or exports.
+    verify integrity with hashes.
+    analyze the working copy.
+
+Post-investigation:
+    organize notes and evidence records.
+    write objective findings.
+    prepare to explain methods and limits.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-3">
+            <h2>3. Understanding Hard Disks and File Systems</h2>
+            <p class="section-pages">Source Module 3</p>
+            <p>
+              Storage knowledge helps an investigator know where evidence can hide. Traditional hard disk drives store
+              data magnetically on platters divided into tracks and sectors. Sectors are physical units, traditionally
+              512 bytes, while clusters are logical allocation units used by a file system. Solid-state drives use NAND
+              flash memory with no moving parts, which improves speed but introduces forensic complications such as
+              wear leveling and cleanup behavior.
+            </p>
+            <p>
+              The logical structure of a disk includes partitioning and file systems. MBR is an older partitioning
+              scheme with boot code and a partition table, while GPT is newer and supports larger disks and more
+              partitions. BIOS and UEFI participate in the boot process by initializing hardware and handing control to
+              boot code or a boot manager. The module also surveys Windows, Linux, and Mac file systems, including FAT,
+              NTFS, Ext, HFS+, and APFS.
+            </p>
+            <p>
+              File systems matter because they store metadata. NTFS uses the Master File Table to record information
+              about files and directories, and it supports features such as journaling, permissions, compression, and
+              encryption. Slack space can contain remnants of older data because a file may not fill every byte of its
+              final cluster. Deleted files, overwritten areas, partitions, and metadata can all become evidence when
+              examined with tools such as Autopsy and The Sleuth Kit.
+            </p>
+            <div class="callout">
+              <h3>Beginner anchor</h3>
+              <p>
+                A file is not just a visible icon. It has content, location, allocation records, timestamps, permissions,
+                and surrounding space. Forensics often depends on metadata and remnants, not only the file body.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-4">
+            <h2>4. Data Acquisition and Duplication</h2>
+            <p class="section-pages">Source Module 4</p>
+            <p>
+              Data acquisition is the process of collecting information from a computer or storage device for forensic
+              analysis. Live acquisition collects data from a powered-on system, including volatile evidence such as
+              RAM, running processes, logged-on users, routing tables, open connections, swap files, and temporary
+              files. Dead or static acquisition collects data from a powered-off system, usually by removing or
+              protecting the storage media and imaging it.
+            </p>
+            <p>
+              The order of volatility tells investigators to collect the evidence most likely to disappear first.
+              A bit-stream image captures a complete bit-by-bit copy of a drive, including deleted data and slack space.
+              Logical acquisition collects active files and folders. Sparse acquisition targets selected files or
+              artifacts. Raw, proprietary, and AFF/AFF4 formats are common image formats, and each format has tradeoffs
+              in compression, metadata, compatibility, and tool support.
+            </p>
+            <p>
+              Write protection is a major control. A write blocker helps prevent accidental changes to suspect media.
+              Hash values such as MD5, SHA-1, and SHA-256 are used to verify that the acquired copy matches the original
+              at the time of acquisition. The result is a defensible working copy that can be examined without changing
+              the original evidence.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Acquisition decision flow</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: choosing an acquisition method
+
+If the system is powered on and volatile evidence matters:
+    collect RAM, processes, users, open files, and network state first.
+    document every command or tool used.
+
+If storage media can be safely preserved:
+    use a write blocker.
+    create a forensic image.
+    calculate and record hash values.
+
+If scope is limited to selected files:
+    perform logical or sparse acquisition.
+    still document source, method, and verification.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-5">
+            <h2>5. Defeating Anti-forensics Techniques</h2>
+            <p class="section-pages">Source Module 5</p>
+            <p>
+              Anti-forensics is the attempt to hide, destroy, alter, or complicate evidence so an investigation becomes
+              harder to complete or less reliable. Common goals include hiding traces of activity, preventing recovery,
+              confusing tools, compromising reports, and deleting evidence that anti-forensic tools were used. The
+              module covers deletion, recycle bin artifacts, file carving, password protection, steganography, hidden
+              file-system structures, metadata overwriting, encryption, tool exploitation, and tool detection.
+            </p>
+            <p>
+              Deleted data is often recoverable because operating systems usually remove pointers or mark space as
+              available before the content itself is overwritten. In Windows, Recycle Bin artifacts such as $I and $R
+              files can preserve metadata and recovered content. File carving searches raw data for file signatures and
+              structure when file-system metadata is missing. Deleted partitions may also be recoverable if their
+              structures are still detectable.
+            </p>
+            <p>
+              Encryption and passwords are not the same problem. Passwords may protect access to a file, account, or
+              container, while encryption transforms the data itself. Investigators may use lawful password recovery,
+              password hash analysis, memory artifacts, backups, metadata, and surrounding logs. Steganography hides
+              data inside other files such as images or audio, so detection may depend on file size, entropy, metadata,
+              visual anomalies, known tools, or comparison against clean originals.
+            </p>
+            <div class="callout">
+              <h3>Exam focus</h3>
+              <p>
+                Be ready to distinguish deletion from wiping, password protection from encryption, and file carving
+                from normal file-system browsing. Anti-forensics does not always erase evidence; it often changes where
+                the investigator must look.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-6">
+            <h2>6. Windows Forensics</h2>
+            <p class="section-pages">Source Module 6</p>
+            <p>
+              Windows forensics begins by separating volatile and non-volatile information. Volatile information can
+              include logged-on users, process memory, process-to-port mappings, open files, network status, and active
+              network connections. Tools such as PsLoggedOn and LogonSessions can help identify active users and logon
+              sessions, but investigators must remember that commands run on a live system can alter the system.
+            </p>
+            <p>
+              Non-volatile Windows evidence includes files, registry hives, event logs, browser history, cache, cookies,
+              prefetch files, recycle bin artifacts, shortcuts, metadata, and application data. The Windows Registry is
+              especially important because hives such as NTUSER.dat, SAM, SYSTEM, SOFTWARE, and SECURITY can reveal
+              user activity, installed software, devices, account information, and system configuration.
+            </p>
+            <p>
+              Browser artifacts can show visits, downloads, cookies, cached content, and timestamps. Windows files and
+              metadata can help answer who used the system, what files were opened, what devices were attached, what
+              programs ran, and when key events occurred. A strong Windows investigation often correlates memory,
+              registry, logs, browser data, and file metadata into a timeline.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Windows artifact checklist</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: Windows artifact review
+
+Collect volatile state:
+    users, sessions, processes, ports, connections, open files.
+
+Review non-volatile artifacts:
+    registry hives
+    event logs
+    prefetch files
+    browser history, cache, cookies, and downloads
+    recycle bin records
+    file metadata and shortcuts
+
+Correlate:
+    user account + program execution + file access + network activity + timestamps.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-7">
+            <h2>7. Linux and Mac Forensics</h2>
+            <p class="section-pages">Source Module 7</p>
+            <p>
+              Linux forensics also starts with volatile data. Investigators may collect uptime, logged-in users, network
+              interfaces, routing tables, listening services, running processes, open files, mounted file systems, swap
+              areas, and disk information. Commands such as <code>ifconfig</code>, <code>netstat</code>, <code>lsof</code>,
+              and process listing tools help reveal the live state, while logs provide the persistent history needed to
+              verify or challenge the live snapshot.
+            </p>
+            <p>
+              Linux file-system images can be examined with tools such as The Sleuth Kit and Autopsy. Important evidence
+              may appear in system logs, authentication logs, shell history, cron jobs, service configuration, mounted
+              volumes, deleted files, and memory dumps. The same caution applies: collect the most fragile evidence
+              first, then work from images or copies whenever possible.
+            </p>
+            <p>
+              Mac forensics focuses on logs, directories, property list files, application artifacts, launch agents,
+              launch daemons, jobs, browser data, network interface history, and memory. Mac systems have their own
+              artifact locations and storage formats, so an investigator must understand the operating system instead
+              of assuming Windows paths or Windows registry habits apply everywhere.
+            </p>
+            <div class="callout">
+              <h3>Cross-platform habit</h3>
+              <p>
+                The evidence categories are familiar across systems: users, processes, network state, files, logs,
+                startup items, application artifacts, and memory. The paths, commands, and formats change by OS.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-8">
+            <h2>8. Network Forensics</h2>
+            <p class="section-pages">Source Module 8</p>
+            <p>
+              Network forensics captures, records, and analyzes network events to discover the source and method of a
+              security incident. It can reveal attack sources, techniques, traces, and evidence. Network analysis may
+              be postmortem, where existing logs are reviewed after the incident, or real-time, where activity is
+              monitored while an attack is ongoing.
+            </p>
+            <p>
+              Logs are central. Evidence may come from firewalls, IDS/IPS tools, VPNs, proxies, routers, switches,
+              authentication systems, web servers, DNS, DHCP, endpoint security tools, SIEM systems, and honeypots.
+              Event correlation connects separate records into a single story. For example, a firewall block, IDS alert,
+              web server request, and authentication failure may represent different views of the same attack chain.
+            </p>
+            <p>
+              Packet analysis tools such as Wireshark can reveal source and destination IP addresses, ports, protocols,
+              payload indicators, retransmissions, suspicious scans, and command-and-control behavior. Logs and packets
+              answer different questions. Logs are easier to store and search, while packet captures can expose details
+              that a log never recorded.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Network correlation plan</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: correlate network evidence
+
+Start with a known time window.
+Collect logs from:
+    firewall, IDS/IPS, VPN, proxy, DNS, DHCP, web server, authentication, SIEM.
+Collect packet captures if available.
+
+For each suspicious event:
+    record source IP, destination IP, ports, protocol, timestamp, action, and payload clue.
+    compare the event against other logs at the same time.
+    build a timeline from first contact to final observed action.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-9">
+            <h2>9. Investigating Web Attacks</h2>
+            <p class="section-pages">Source Module 9</p>
+            <p>
+              Web application forensics investigates attacks against web applications, web servers, application servers,
+              databases, and supporting infrastructure. The module emphasizes logs because web attacks often leave their
+              strongest evidence in HTTP requests, server responses, application errors, WAF records, IDS alerts, and
+              SIEM correlation events. Challenges include distributed systems, high log volume, incomplete logging, and
+              possible log tampering.
+            </p>
+            <p>
+              The web investigation method is to identify compromised systems, acquire forensic images or protected
+              copies, collect logs from the web server, application server, database server, firewall, IDS, SIEM, and
+              configuration files, verify log integrity with hashes, review suspicious entries, correlate events, trace
+              attacking IP addresses, and document the full sequence. IIS and Apache logs are both important, but their
+              formats and fields differ.
+            </p>
+            <p>
+              The module highlights common attacks such as cross-site scripting, SQL injection, directory traversal,
+              parameter tampering, buffer overflow, sensitive data exposure, and log tampering. XSS investigation looks
+              for suspicious tags, encoded payloads, and obfuscation. SQL injection investigation looks for SQL
+              meta-characters such as quotes, comments, equals signs, semicolons, and encoded equivalents in requests.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Web log review pattern</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: web attack investigation
+
+Define the suspected attack window.
+Collect and hash:
+    IIS or Apache logs
+    application logs
+    database logs
+    WAF, IDS, and SIEM alerts
+    relevant configuration files
+
+Search for:
+    encoded script tags
+    SQL meta-characters
+    traversal patterns such as ../
+    unusual status codes
+    repeated requests from the same source
+
+Correlate request, alert, account, database, and file changes.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-10">
+            <h2>10. Dark Web Forensics</h2>
+            <p class="section-pages">Source Module 10</p>
+            <p>
+              The module distinguishes the surface web, deep web, and dark web. The surface web is searchable by normal
+              engines. The deep web contains content not publicly indexed, such as account portals, databases, and
+              subscription content. The dark web requires special access software such as Tor and uses anonymity systems
+              to hide user identity and service location.
+            </p>
+            <p>
+              Tor uses onion routing through entry, middle, and exit relays. A Tor exit relay appears to the destination
+              as the origin of traffic, masking the user's real address from the destination. Bridge nodes can serve as
+              unlisted entry points to help bypass blocking. This architecture creates investigative challenges because
+              attribution is indirect and artifacts may be limited.
+            </p>
+            <p>
+              Tor browser artifacts can appear in active connections, registry entries, prefetch files, installation
+              paths, state files, and memory dumps. On Windows, Tor commonly uses local ports 9150 and 9151. Memory
+              dumps are valuable because they may contain visited sites, emails, entered data, URLs, and other session
+              artifacts that do not survive normal browser cleanup.
+            </p>
+            <div class="callout">
+              <h3>Exam focus</h3>
+              <p>
+                Know the surface/deep/dark web distinction, Tor relay roles, why exit relays matter, what a bridge node
+                does, and why memory acquisition is important when Tor activity is suspected.
+              </p>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-module-11">
+            <h2>11. Investigating Email Crimes</h2>
+            <p class="section-pages">Source Module 11</p>
+            <p>
+              Email systems use a client-server architecture. A Mail User Agent is the user's email client, a Mail
+              Transfer Agent accepts and routes messages, and a Mail Delivery Agent places messages into recipient
+              mailboxes. SMTP sends outgoing mail. POP3 downloads mail to a client, while IMAP keeps mail on the server
+              so it can be accessed from multiple devices.
+            </p>
+            <p>
+              An email message has a header, body, and signature. The header is forensically important because it can
+              reveal the sender, route, timestamps, originating IP clues, message ID, Return-Path, Received-SPF results,
+              and DKIM signatures. Received headers are especially valuable because the bottommost reliable Received
+              entry is closest to the source. A mismatch between sender and Return-Path or an SPF failure can indicate
+              spoofing.
+            </p>
+            <p>
+              The investigation process includes seizing computers and accounts, acquiring email data, examining
+              messages, retrieving headers, analyzing headers, and recovering deleted messages. Desktop clients may store
+              local mailbox files. In Microsoft Outlook, POP accounts commonly use .pst files, while other account types
+              may use .ost files. Webmail investigations may require account access, provider records, exported mail, and
+              careful preservation of headers and messages.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Email header analysis</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: email crime investigation
+
+Preserve the account and device.
+Acquire mailbox data or exported messages.
+For each suspicious email:
+    save the full header.
+    inspect Subject, From, To, Date, body, links, and attachments.
+    read Received headers from bottom to top.
+    compare From, Return-Path, SPF, DKIM, and Message-ID.
+    trace IP addresses only within legal and technical limits.
+    recover deleted messages if the client or mailbox retains them.</code></pre>
+            </div>
+          </section>
+
+          <section class="study-section" id="digital-forensics-exam-plan">
+            <h2>Exam Study Plan</h2>
+            <p class="section-pages">Practice Exam Modules 1-11</p>
+            <p>
+              The built-in practice exam contains 110 multiple-choice questions, ten per module. Use it after you can
+              explain the major evidence sources and workflows without looking. If you miss a question, do not only
+              memorize the letter. Return to the module section and restate the reason the correct option is stronger
+              than the distractors.
+            </p>
+            <p>
+              The most testable patterns are definitions, phase order, evidence fragility, best evidence and chain of
+              custody, sector and cluster vocabulary, MBR versus GPT, live versus dead acquisition, bit-stream imaging,
+              anti-forensics categories, OS artifact locations, log correlation, web attack signatures, Tor artifacts,
+              and email header fields.
+            </p>
+            <div class="page-controls">
+              <a class="lesson-nav-button" href="#lesson13-study" data-route="lesson13-study">Back to Lesson 13</a>
+              <a class="lesson-nav-button next" href="#digital-forensics-practice" data-route="digital-forensics-practice">Open Forensics Testing</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="view" id="digital-forensics-practice-view" aria-labelledby="digital-forensics-practice-title">
+      <div class="practice-shell">
+        <header class="practice-header">
+          <p class="eyebrow">Digital Forensics Testing Environment</p>
+          <h1 id="digital-forensics-practice-title">Digital Forensics Essentials Practice</h1>
+          <p>
+            Use these checks before launching the full exam. The concept checks stay organized by module, the scenario
+            asks you to think like an investigator, and the exam tab links to the 110-question WiliQuiz drill.
+          </p>
+        </header>
+
+        <nav class="practice-tabs" aria-label="Digital Forensics practice sections">
+          <button class="tab active" data-practice-tab="digital-forensics-concept-checks">Concept Checks</button>
+          <button class="tab" data-practice-tab="digital-forensics-scenario">Investigation Scenario</button>
+          <button class="tab" data-practice-tab="digital-forensics-exam">Practice Exam</button>
+        </nav>
+
+        <section class="practice-panel active" id="digital-forensics-concept-checks">
+          <div class="panel-intro">
+            <h2>Module Concept Checks</h2>
+            <p>Review the major exam ideas from each Digital Forensics Essentials module.</p>
+          </div>
+
+          <article class="task-card">
+            <h3>Modules 1-2: Foundations and Process</h3>
+            <ol>
+              <li>Define computer forensics in one sentence using the words identify, preserve, analyze, and present.</li>
+              <li>Explain why volatile evidence should be handled differently from non-volatile evidence.</li>
+              <li>Describe what chain of custody proves.</li>
+              <li>List the three investigation phases and one major task from each phase.</li>
+              <li>Explain why a forensic report should focus on objective findings, methods, and supported conclusions.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Modules 1 and 2 are about admissibility and repeatability: legal authority, preservation, documentation, acquisition, analysis, and reporting.</p>
+              <a class="page-ref" href="#digital-forensics-module-1" data-study-route="digital-forensics-study">Review: Module 1 fundamentals.</a>
+              <a class="page-ref" href="#digital-forensics-module-2" data-study-route="digital-forensics-study">Review: Module 2 process.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Modules 3-4: Storage and Acquisition</h3>
+            <ol>
+              <li>Distinguish a sector from a cluster.</li>
+              <li>Explain why slack space may contain useful evidence.</li>
+              <li>Compare MBR and GPT at a beginner level.</li>
+              <li>Explain why a bit-stream image is more complete than a logical acquisition.</li>
+              <li>Describe the role of a write blocker and a hash value during acquisition.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Storage structure tells you where evidence can remain; acquisition controls protect the original evidence while creating a verified working copy.</p>
+              <a class="page-ref" href="#digital-forensics-module-3" data-study-route="digital-forensics-study">Review: Module 3 disks and file systems.</a>
+              <a class="page-ref" href="#digital-forensics-module-4" data-study-route="digital-forensics-study">Review: Module 4 acquisition.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Modules 5-7: Anti-forensics and Operating Systems</h3>
+            <ol>
+              <li>Explain how deletion differs from secure wiping.</li>
+              <li>Describe when file carving is useful.</li>
+              <li>Give two examples of Windows registry or browser artifacts.</li>
+              <li>Give two examples of Linux volatile data to collect from a live system.</li>
+              <li>Explain why Mac artifact locations must be studied separately instead of assumed from Windows habits.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>Anti-forensics changes where evidence may be found. OS forensics depends on platform-specific artifacts, commands, logs, and metadata.</p>
+              <a class="page-ref" href="#digital-forensics-module-5" data-study-route="digital-forensics-study">Review: Module 5 anti-forensics.</a>
+              <a class="page-ref" href="#digital-forensics-module-6" data-study-route="digital-forensics-study">Review: Module 6 Windows forensics.</a>
+              <a class="page-ref" href="#digital-forensics-module-7" data-study-route="digital-forensics-study">Review: Module 7 Linux and Mac forensics.</a>
+            </details>
+          </article>
+
+          <article class="task-card">
+            <h3>Modules 8-11: Network, Web, Tor, and Email</h3>
+            <ol>
+              <li>Explain the purpose of event correlation in network forensics.</li>
+              <li>List four log sources that may help reconstruct a network incident.</li>
+              <li>Identify two web attack indicators that may appear in IIS or Apache logs.</li>
+              <li>Explain why Tor memory artifacts may matter even if browser files are missing.</li>
+              <li>Describe how Received, Return-Path, SPF, and DKIM fields help analyze suspicious email.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>The final modules all require correlation: compare independent artifacts until the timeline and source of activity become defensible.</p>
+              <a class="page-ref" href="#digital-forensics-module-8" data-study-route="digital-forensics-study">Review: Module 8 network forensics.</a>
+              <a class="page-ref" href="#digital-forensics-module-9" data-study-route="digital-forensics-study">Review: Module 9 web attacks.</a>
+              <a class="page-ref" href="#digital-forensics-module-10" data-study-route="digital-forensics-study">Review: Module 10 dark web forensics.</a>
+              <a class="page-ref" href="#digital-forensics-module-11" data-study-route="digital-forensics-study">Review: Module 11 email crimes.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="digital-forensics-scenario">
+          <div class="panel-intro">
+            <h2>Investigation Scenario</h2>
+            <p>Practice connecting the modules into one defensible investigation plan.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Compromised Workstation and Suspicious Email</h3>
+            <p><strong>Scenario:</strong> A user reports receiving a suspicious email, clicking a link, and then noticing unusual browser behavior. The workstation is still powered on. Security tools show outbound traffic to unfamiliar IP addresses.</p>
+            <ol>
+              <li>State what authority, scope, and documentation you need before collecting evidence.</li>
+              <li>List the volatile evidence you would collect before shutting down or imaging the system.</li>
+              <li>List the non-volatile evidence you would preserve from the workstation.</li>
+              <li>Explain how you would acquire the disk or selected artifacts without changing the original evidence.</li>
+              <li>Identify Windows, browser, email, network, and web log artifacts that may help build the timeline.</li>
+              <li>Describe what you would look for in the email header, including Received lines, Return-Path, SPF, and DKIM.</li>
+              <li>Explain how you would correlate endpoint artifacts with firewall, IDS, DNS, proxy, and SIEM logs.</li>
+              <li>List what your final report should include and what claims you should avoid making without evidence.</li>
+            </ol>
+            <details>
+              <summary>Concept Reminder</summary>
+              <p>
+                This scenario touches Modules 1, 2, 4, 6, 8, 9, and 11. The key is order: preserve fragile evidence,
+                verify copies, analyze artifacts, correlate independent records, and report only supported conclusions.
+              </p>
+              <a class="page-ref" href="#digital-forensics-overview" data-study-route="digital-forensics-study">Review: unit workflow.</a>
+            </details>
+          </article>
+        </section>
+
+        <section class="practice-panel" id="digital-forensics-exam">
+          <div class="panel-intro">
+            <h2>Digital Forensics Essentials Practice Exam</h2>
+            <p>Launch the complete 110-question MCQ exam in the WiliQuiz drill workspace.</p>
+          </div>
+
+          <article class="task-card prominent">
+            <h3>Built-in WiliQuiz Exam</h3>
+            <p>
+              The quiz library now includes <strong>Digital Forensics Essentials Practice Exam</strong>, sourced from
+              <code>DFE_Practice_Exam_Modules_1-11.pdf</code>. It contains ten questions for each module and uses the
+              same scoring, feedback, shuffled options, and recent-attempt review tools as the Python exam.
+            </p>
+            <ol>
+              <li>Open the quiz workspace.</li>
+              <li>Choose the <strong>Digital Forensics</strong> folder.</li>
+              <li>Start <strong>Digital Forensics Essentials Practice Exam</strong>.</li>
+              <li>After the results screen, use missed question IDs to return to the matching module section.</li>
+            </ol>
+            <div class="chapter-links">
+              <a href="#quiz" data-route="quiz">Open WiliQuiz Exam Workspace</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -10772,9 +11447,9 @@ Wrap risky parsing or lookup code in try/catch:
 
   <script src="community-config.js?v=20260525-4"></script>
   <script src="assignment-attachments.js?v=20260604-lesson12"></script>
-  <script src="quiz-data.js?v=20260602-python-mcq-gap"></script>
+  <script src="quiz-data.js?v=20260615-digital-forensics"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260604-lesson13"></script>
+  <script src="app.js?v=20260615-digital-forensics"></script>
   <script src="quiz-engine.js?v=20260602-quizpage"></script>
 </body>
 </html>
