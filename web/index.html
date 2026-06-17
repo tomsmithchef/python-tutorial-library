@@ -11525,30 +11525,121 @@ Correlate:
             <h2>7. Linux and Mac Forensics</h2>
             <p class="section-pages">Source Module 7</p>
             <p>
-              Linux forensics also starts with volatile data. Investigators may collect uptime, logged-in users, network
-              interfaces, routing tables, listening services, running processes, open files, mounted file systems, swap
-              areas, and disk information. Commands such as <code>ifconfig</code>, <code>netstat</code>, <code>lsof</code>,
-              and process listing tools help reveal the live state, while logs provide the persistent history needed to
-              verify or challenge the live snapshot.
+              Linux forensics begins by respecting the order of volatility. Linux systems are common on enterprise
+              servers, cloud infrastructure, appliances, and developer workstations, so an investigator needs to know
+              how to collect evidence without assuming Windows paths, registry artifacts, or GUI tools. The first goal
+              is to preserve the live state that will disappear after shutdown: hostname, date, time zone, uptime,
+              logged-in users, network configuration, listening ports, active processes, open files, mounted file
+              systems, swap areas, disk partitions, loaded kernel modules, kernel messages, and user events.
             </p>
             <p>
-              Linux file-system images can be examined with tools such as The Sleuth Kit and Autopsy. Important evidence
-              may appear in system logs, authentication logs, shell history, cron jobs, service configuration, mounted
-              volumes, deleted files, and memory dumps. The same caution applies: collect the most fragile evidence
-              first, then work from images or copies whenever possible.
+              The module's live-response commands form a practical collection sequence. <code>hostname</code>,
+              <code>date</code>, <code>cat /etc/timezone</code>, and <code>date +%s</code> identify the system and help
+              normalize timestamps. <code>uptime</code> shows how long the system has been running, the current time,
+              logged-in user count, and system load averages. <code>ip addr show</code> lists interfaces and IP
+              addresses. <code>ifconfig &lt;interface&gt;</code> can reveal promiscuous mode, which matters because a
+              network card in promiscuous mode can capture packets not addressed to it; <code>ifconfig &lt;interface&gt;
+              -promisc</code> disables it when response procedures permit.
             </p>
             <p>
-              Mac forensics focuses on logs, directories, property list files, application artifacts, launch agents,
-              launch daemons, jobs, browser data, network interface history, and memory. Mac systems have their own
-              artifact locations and storage formats, so an investigator must understand the operating system instead
-              of assuming Windows paths or Windows registry habits apply everywhere.
+              Network and process commands connect ports to programs. <code>netstat -i</code> lists network interfaces,
+              <code>netstat -rn</code> prints routing tables with numerical addresses, and <code>ip r</code> shows Linux
+              routes. Open ports can be reviewed with TCP and UDP scans, and <code>netstat -tulpn</code> links listening
+              ports to programs and process IDs. <code>lsof -i -P -n | grep LISTEN</code> is another fast way to list
+              listening processes, while <code>lsof</code> and <code>lsof -u &lt;user_name&gt;</code> identify open files for
+              the system or a specific user. Process listings should be checked for suspicious parent-child
+              relationships, unexpected services, and processes that do not match the role of the host.
+            </p>
+            <p>
+              Non-volatile Linux evidence gives the longer history. Important sources include <code>/etc/passwd</code>
+              for local users, <code>/var/log/wtmp</code> for login history, <code>/var/log/auth.log</code> for authentication,
+              sudo, SSH, and authorization events, <code>/var/log/syslog</code> for system messages, and
+              <code>/var/log/kern.log</code> for kernel information. The module also calls out <code>/var/log/faillog</code>,
+              printer logs, mail logs, MySQL logs, Apache logs under <code>/var/log/apache2/*</code>, crash reports,
+              daemon logs for services such as squid and ntpd, debug logs, and package installation history in
+              <code>/var/log/dpkg.log</code>. These records help prove whether the live snapshot is normal, recently
+              changed, or part of a larger incident timeline.
+            </p>
+            <h3>The Sleuth Kit and Memory</h3>
+            <p>
+              File-system images should be examined from copies. The Sleuth Kit supports image analysis with commands
+              such as <code>fsstat</code>, <code>fls</code>, and <code>istat</code>. <code>fsstat</code> reports file-system
+              details such as type, volume ID, last-mounted timestamps, and last-mounted directory. <code>fls</code>
+              lists files and directories in an image and can help find deleted files. <code>istat</code> displays inode
+              metadata such as MAC times, file size, and permissions. Together, these tools help answer what existed,
+              when it changed, and whether deleted evidence may still be recoverable.
+            </p>
+            <p>
+              Memory forensics analyzes RAM dumps captured from a running machine. RAM can reveal active processes,
+              network connections, unauthorized access, loaded modules, recently executed commands, injected code, and
+              malware behavior that may never appear cleanly on disk. Volatility requires a Linux profile matching the
+              target kernel. Common plugins in the module include <code>linux_pslist</code> for running processes,
+              <code>linux_netstat</code> for network communication, <code>linux_pstree</code> for parent-child process
+              relationships, and <code>linux_malfind</code> for hidden or injected code with suspicious read, write, and
+              execute permissions. PhotoRec can carve deleted or lost files from memory dumps and images, after which
+              recovered material should be scanned and reviewed as potential evidence.
+            </p>
+            <h3>Mac Evidence Sources</h3>
+            <p>
+              Mac forensics uses familiar evidence categories but different locations and storage formats. Version
+              information appears in <code>/System/Library/CoreServices/SystemVersion.plist</code>. Timestamps can be
+              reviewed with <code>stat</code>. User data is concentrated under <code>/Users/&lt;username&gt;/Library</code>.
+              Application bundles, Finder activity, Basic Security Module audit data, Spotlight metadata, Time Machine
+              backups, kernel extensions, Apple Mail, Safari, iChat, and shell history can all contribute to a timeline.
+              Browser artifacts are especially important: Safari history, downloads, and bookmarks use plist files under
+              the user's Safari folder, while Firefox and Chrome store data under each user's Application Support tree.
+            </p>
+            <p>
+              The module lists several Mac artifact paths that are worth memorizing. System and application logs include
+              <code>/var/log/crashreporter.log</code>, CUPS printer logs, <code>/var/log/daily.out</code> for network
+              interface history, Samba logs, <code>~/Library/Logs</code>, <code>/var/log/*</code>, and
+              <code>/var/audit/*</code>. Startup and persistence locations include <code>/Library/LaunchAgents/*</code>,
+              <code>/System/Library/LaunchAgents/*</code>, <code>/Library/LaunchDaemons/*</code>,
+              <code>/System/Library/LaunchDaemons/*</code>, startup items, cron jobs, and scheduled jobs. Preference and
+              account artifacts include wireless network plists, user preferences, attached iDevice records, social
+              account databases, trash folders, and browser folders.
+            </p>
+            <p>
+              Mac-specific tools broaden the investigation. Biskus APFS Capture can extract APFS partition and metadata
+              reports in CSV or SQLite form. Spotlight parsing can examine <code>.store.db</code> under
+              <code>/.Spotlight-V100/Store-V2/&lt;UUID&gt;</code> to recover metadata such as dates, last-opened values,
+              and file or application usage counts. The module also names OS X Auditor, Recon Imager, Memoryze for the
+              Mac, Stellar Data Recovery Professional for Mac, F-Response, volafox, Volatility, and mac_apt as relevant
+              tools.
             </p>
             <div class="callout">
               <h3>Cross-platform habit</h3>
               <p>
-                The evidence categories are familiar across systems: users, processes, network state, files, logs,
-                startup items, application artifacts, and memory. The paths, commands, and formats change by OS.
+                The evidence categories stay familiar across systems: users, processes, network state, files, logs,
+                startup items, application artifacts, and memory. The paths, commands, timestamp epochs, and storage
+                formats change by OS.
               </p>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Linux and Mac response order</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: Unix-like forensic triage
+
+Collect fragile Linux state first:
+    hostname, date, timezone, epoch time, uptime
+    logged-in users and login history
+    interfaces, routing table, promiscuous mode
+    open ports, listening services, running processes
+    open files, mounted file systems, swap, disk partitions
+
+Collect persistent Linux records:
+    /etc/passwd
+    /var/log/auth.log, /var/log/wtmp, /var/log/syslog, /var/log/kern.log
+    service logs, package logs, web server logs, shell history, cron jobs
+
+Analyze copies:
+    use fsstat for file-system details
+    use fls for files, directories, and deleted entries
+    use istat for inode metadata and MAC times
+    use Volatility and PhotoRec for memory evidence
+
+For Mac:
+    review plists, user Library artifacts, logs, launch agents, launch daemons
+    inspect Spotlight, APFS metadata, browser data, mail, backups, and shell history.</code></pre>
             </div>
           </section>
 
@@ -11557,21 +11648,81 @@ Correlate:
             <p class="section-pages">Source Module 8</p>
             <p>
               Network forensics captures, records, and analyzes network events to discover the source and method of a
-              security incident. It can reveal attack sources, techniques, traces, and evidence. Network analysis may
-              be postmortem, where existing logs are reviewed after the incident, or real-time, where activity is
-              monitored while an attack is ongoing.
+              security incident. It can reveal the attack source, the path of intrusion, the techniques used, and the
+              traces that remain as evidence. Network analysis may be postmortem, where investigators review logs after
+              an incident has already happened, or real-time, where they monitor traffic to detect and examine an
+              ongoing attack.
             </p>
+            <p>
+              Common network attacks include eavesdropping, data modification, enumeration, session hijacking, IP
+              spoofing, denial of service, buffer overflow, email infection, malware, man-in-the-middle attacks,
+              password attacks, packet sniffing, and router attacks. Wireless-specific attacks include rogue access
+              points, client misassociation, misconfigured access points, unauthorized association, ad hoc connection
+              attacks, honeypot access points, AP MAC spoofing, and jamming. The practical question is not only "what
+              happened," but also "which network evidence source would record it?"
+            </p>
+            <p>
+              Indicators of compromise are forensic artifacts that suggest a host or network incident. The module lists
+              suspicious URLs, login anomalies, unusual ports, unexpected outbound traffic, user-agent strings, and
+              repeated requests for the same file. Evidence can be full content data such as PCAP files, session data
+              summarizing conversations, alert data from tools such as Snort or Suricata, and statistical data such as
+              protocol usage, timestamps, average packet sizes, and packet rates.
+            </p>
+            <h3>Where Network Evidence Lives</h3>
             <p>
               Logs are central. Evidence may come from firewalls, IDS/IPS tools, VPNs, proxies, routers, switches,
-              authentication systems, web servers, DNS, DHCP, endpoint security tools, SIEM systems, and honeypots.
-              Event correlation connects separate records into a single story. For example, a firewall block, IDS alert,
-              web server request, and authentication failure may represent different views of the same attack chain.
+              DHCP, DNS, authentication systems, servers, desktops, antivirus tools, business applications, databases,
+              SIEM platforms, and honeypots. At the application layer, server and application logs may show what users
+              requested. At the transport and internet layers, firewalls, IDS/IPS, and VPN logs can show source,
+              destination, ports, protocols, and actions. At the network access layer, routers and switches help
+              explain path, MAC-level behavior, and local connectivity.
             </p>
             <p>
-              Packet analysis tools such as Wireshark can reveal source and destination IP addresses, ports, protocols,
-              payload indicators, retransmissions, suspicious scans, and command-and-control behavior. Logs and packets
-              answer different questions. Logs are easier to store and search, while packet captures can expose details
-              that a log never recorded.
+              Firewall logs are especially important because firewalls are often the first controlled point of entry.
+              They record source and destination addresses, source and destination ports, protocol, time, date, action,
+              request type, and sometimes priority or severity. Cisco firewall records use mnemonic identifiers and
+              severity values, while Check Point logs use viewer icons and colors for accepted, decrypted, dropped,
+              encrypted, rejected, monitored, filtered, or malware-related events. IDS logs are different: they focus on
+              suspicious packet types, probes, known vulnerabilities, syntax violations, unusual repeated activity,
+              address anomalies, and generated signatures.
+            </p>
+            <p>
+              Honeypot logs capture attacker behavior against decoy systems. The module specifically names Kippo, whose
+              logs can include timestamp, session type, session ID, source IP address, and message details. Router logs
+              add event IDs, dates, times, identifiers, protocols, source IP addresses, and destination IP addresses.
+              DHCP audit logs, commonly under <code>C:\Windows\System32\dhcp</code> on DHCP servers, connect an IP
+              address to a hostname and MAC address at a particular time. Those relationships can be decisive when IP
+              addresses change.
+            </p>
+            <h3>Correlation and Traffic Analysis</h3>
+            <p>
+              Event correlation connects separate records into a single story. Correlation can be same-platform, such as
+              comparing Windows event logs across Windows servers, or cross-platform, such as tying Windows endpoints to
+              a Linux firewall and email gateway. Before correlation is useful, log data must be transmitted securely,
+              normalized into comparable formats, and reduced so duplicate or irrelevant records do not bury the signal.
+              Approaches include graph-based, neural network, codebook, rule-based, field-based, automated field,
+              packet parameter or payload, profile or fingerprint, vulnerability, open-port, Bayesian, time-based,
+              role-based, and route correlation.
+            </p>
+            <p>
+              Packet analysis tools such as tcpdump and Wireshark can reveal source and destination IP addresses, ports,
+              protocols, payload indicators, retransmissions, suspicious scans, and command-and-control behavior.
+              Wireshark display filters include protocol names such as <code>arp</code>, <code>http</code>,
+              <code>tcp</code>, <code>udp</code>, <code>dns</code>, and <code>ip</code>, host filters such as
+              <code>ip.addr == 10.0.0.4</code>, port filters such as <code>tcp.port==23</code>, and combined filters
+              such as <code>ip.addr==192.168.1.100 &amp;&amp; tcp.port==23</code>. Logs are easier to store and search,
+              while packet captures can expose details that a log never recorded.
+            </p>
+            <p>
+              The module's traffic examples are useful exam anchors. A TCP SYN flood shows many SYN packets of similar
+              size from many spoofed sources to one target and can be confirmed through protocol hierarchy statistics.
+              A SYN-FIN flood can be searched with <code>tcp.flags==0x003</code>. FTP brute force can show repeated
+              <code>ftp.response.code == 530</code> failures and later <code>ftp.response.code == 230</code> successes.
+              SMB password attacks may show repeated <code>STATUS_LOGON_FAILURE</code> messages. MAC flooding produces
+              malformed packets and many fake MAC addresses. ARP poisoning can show duplicate IP address warnings and
+              can be filtered with <code>arp.duplicate-address-detected</code>. Malware may appear as a host connecting
+              to unusual ports, IP addresses, or known bad services, such as a suspicious connection on port 1177 tied
+              to njRAT in the module example.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Network correlation plan</span><button class="copy-code">Copy</button></div>
@@ -11579,13 +11730,24 @@ Correlate:
 
 Start with a known time window.
 Collect logs from:
-    firewall, IDS/IPS, VPN, proxy, DNS, DHCP, web server, authentication, SIEM.
-Collect packet captures if available.
+    firewall, IDS/IPS, VPN, proxy, router, switch
+    DNS, DHCP, web server, authentication, endpoint security, SIEM
+    honeypot logs and packet captures if available
 
 For each suspicious event:
     record source IP, destination IP, ports, protocol, timestamp, action, and payload clue.
+    classify evidence as full content, session, alert, or statistical data.
     compare the event against other logs at the same time.
-    build a timeline from first contact to final observed action.</code></pre>
+    resolve changing IP addresses with DHCP hostname and MAC records.
+    build a timeline from first contact to final observed action.
+
+Useful Wireshark filters:
+    tcp.flags==0x003
+    ftp.response.code == 530
+    ftp.response.code == 230
+    arp.duplicate-address-detected
+    ip.addr == 10.0.0.4
+    ip.addr==192.168.1.100 &amp;&amp; tcp.port==23</code></pre>
             </div>
           </section>
 
@@ -11597,20 +11759,72 @@ For each suspicious event:
               databases, and supporting infrastructure. The module emphasizes logs because web attacks often leave their
               strongest evidence in HTTP requests, server responses, application errors, WAF records, IDS alerts, and
               SIEM correlation events. Challenges include distributed systems, high log volume, incomplete logging, and
-              possible log tampering.
+              possible log tampering. Tracing can be even harder when reverse proxies, anonymizers, load balancers, or
+              multiple backend systems separate the attacker from the vulnerable application.
             </p>
             <p>
-              The web investigation method is to identify compromised systems, acquire forensic images or protected
-              copies, collect logs from the web server, application server, database server, firewall, IDS, SIEM, and
-              configuration files, verify log integrity with hashes, review suspicious entries, correlate events, trace
-              attacking IP addresses, and document the full sequence. IIS and Apache logs are both important, but their
-              formats and fields differ.
+              Indicators of a web attack include customers being unable to access services, web page defacement,
+              suspicious user-account activity, unusually slow network performance, leakage of sensitive data, frequent
+              server reboots, and URLs redirecting to incorrect sites. Common web threats include cookie poisoning, SQL
+              injection, injection flaws, cross-site request forgery, directory traversal, unvalidated input, cross-site
+              scripting, sensitive data exposure, parameter or form tampering, denial of service, broken access control,
+              information leakage, improper error handling, buffer overflow, insufficient logging and monitoring, broken
+              authentication, security misconfiguration, and log tampering.
             </p>
             <p>
-              The module highlights common attacks such as cross-site scripting, SQL injection, directory traversal,
-              parameter tampering, buffer overflow, sensitive data exposure, and log tampering. XSS investigation looks
-              for suspicious tags, encoded payloads, and obfuscation. SQL injection investigation looks for SQL
-              meta-characters such as quotes, comments, equals signs, semicolons, and encoded equivalents in requests.
+              The web investigation method is procedural. Interview relevant people, identify the servers and devices
+              involved, take systems offline if needed and legally permitted, seize them in a forensically sound manner,
+              acquire and duplicate forensic images, collect logs from the web server, application server, database
+              server, web application firewall, local system events, SIEM, and IDS, preserve application and server
+              configuration files, use checksums to verify log integrity, analyze working copies, correlate events into
+              an attack chain, trace the attacking IP where possible, and document every step.
+            </p>
+            <h3>IIS and Apache Logs</h3>
+            <p>
+              IIS logs all server visits in ASCII text files, stored by default under
+              <code>%SystemDrive%\inetpub\logs\LogFiles</code> on Windows Server. Important fields include date and
+              time, server IP, method such as GET, URI stem, URI query, server port, username, client IP, user agent,
+              referrer, HTTP status code, and time taken. A normal-looking HTTP <code>200</code> response can be
+              important in an attack investigation because it shows the server processed the request instead of
+              rejecting it.
+            </p>
+            <p>
+              Apache logs usually divide into access logs and error logs. Access log defaults include
+              <code>/var/log/httpd/access_log</code> on Red Hat family systems, <code>/var/log/apache2/access.log</code>
+              on Debian and Ubuntu, and <code>/var/log/httpd-access.log</code> on FreeBSD. Error log defaults include
+              <code>/var/log/httpd/error_log</code>, <code>/var/log/apache2/error.log</code>, and
+              <code>/var/log/httpd-error.log</code>. Common access-log format records remote host, ident, user, time,
+              request line, status, and bytes. Combined format adds referrer and user-agent, which can help reconstruct
+              user flow and tool fingerprints.
+            </p>
+            <p>
+              Windows-based web attack response also includes host review. Event Viewer can reveal whether the event log
+              service stopped, Windows File Protection became inactive, Telnet started, failed logins occurred, or
+              accounts locked out. Investigators may review file shares with <code>net view &lt;IP Address&gt;</code>,
+              open sessions with <code>net session</code>, mapped connections with <code>net use</code>, NetBIOS over
+              TCP/IP activity with <code>nbtstat -S</code>, listening TCP and UDP ports with <code>netstat -na</code>,
+              scheduled tasks with <code>schtasks.exe</code>, local users and groups, Task Manager, running services
+              with <code>net start</code>, and sudden storage changes with <code>dir</code>.
+            </p>
+            <h3>XSS and SQL Injection</h3>
+            <p>
+              Cross-site scripting investigations look for HTML tags and executable script behavior in request strings,
+              logs, IDS alerts, and SIEM alerts. The module lists tags such as <code>&lt;script&gt;</code>,
+              <code>&lt;IMG&gt;</code>, <code>&lt;INPUT&gt;</code>, and <code>&lt;BODY&gt;</code>. Attackers may use
+              toggle case, hex encoding, double encoding, inline comments, replaced keywords, character encoding, and
+              whitespace manipulation to avoid detection. A request containing
+              <code>%3Cscript%3Ealert%28XSS%29%3C%2Fscript%3E</code> decodes to
+              <code>&lt;script&gt;alert(XSS)&lt;/script&gt;</code>. If the web server returns HTTP <code>200</code> and
+              the application stores the value, the payload may execute later for other users.
+            </p>
+            <p>
+              SQL injection investigations search web server logs, IDS logs, and SIEM alerts for SQL meta-characters and
+              encoded equivalents. Important patterns include single quotes, double dash comments, equals signs,
+              semicolons, hash comments, <code>or 1=1</code>, <code>union</code>, and MSSQL procedure execution such as
+              <code>exec master..xp_cmdshell</code>. In the IIS example from the module,
+              <code>Id=ORD-001%27%20or%201=1;--</code> decodes to <code>Id=ORD-001 ' or 1=1;--</code>. The module ties
+              this to an attacker IP, a server IP, a username, an order-details page, and an HTTP <code>200</code>
+              response that suggests the application processed the malicious request.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Web log review pattern</span><button class="copy-code">Copy</button></div>
@@ -11625,13 +11839,27 @@ Collect and hash:
     relevant configuration files
 
 Search for:
-    encoded script tags
-    SQL meta-characters
+    encoded script tags such as %3Cscript%3E
+    suspicious HTML tags: script, img, input, body, iframe, object
+    SQL meta-characters: ', --, =, ;, #, union, xp_cmdshell
     traversal patterns such as ../
+    parameter or form tampering
     unusual status codes
     repeated requests from the same source
 
-Correlate request, alert, account, database, and file changes.</code></pre>
+Correlate:
+    request timestamp
+    attacker IP and source port
+    target server IP and destination port
+    requested URI and query string
+    HTTP method and status code
+    user account, database activity, file changes, IDS alert, SIEM alert
+
+Regex examples to understand:
+    /((\%3C)|(\%253C)|&lt;)[^\n]+((\%3E)|(\%253E)|&gt;)/i
+    /(\%27)|(\')|(\-\-)|(\%23)|(#)/ix
+    /((\%27)|(\'))union/ix
+    /exec(\s|\+)+(s|x)p\w+/ix</code></pre>
             </div>
           </section>
 
