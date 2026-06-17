@@ -1,6 +1,5 @@
 // Quiz banks for the Python Tutorial Library WiliQuiz workspace.
-// Generated from WiliQuiz/data/quizzes/Python Exam/Python_MCQ_Practice_Exam.pdf and a Lessons 1-9 coverage audit.
-// Keep each MCQ exam as one intact 60-question collection.
+// Generated from WiliQuiz/data/quizzes/Python Exam/Python_MCQ_Practice_Exam.pdf and course coverage audits.
 
 window.PY_TUTORIAL_QUIZZES = {
   "pythonMcqPracticeExam": {
@@ -3852,11 +3851,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Restore deleted files for the user"
+            "text": "Identify, preserve, and analyze evidence to support legal proceedings"
           },
           {
             "label": "B",
-            "text": "Identify, preserve, and analyze evidence to support legal proceedings"
+            "text": "Restore deleted files for the user"
           },
           {
             "label": "C",
@@ -3868,7 +3867,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -3894,15 +3893,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Volatile evidence is lost when the system is powered off, while non-volatile evidence persists"
+            "text": "Non-volatile evidence exists only in RAM"
           },
           {
             "label": "D",
-            "text": "Non-volatile evidence exists only in RAM"
+            "text": "Volatile evidence is lost when the system is powered off, while non-volatile evidence persists"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -3954,15 +3953,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Collect, preserve, and use digital evidence efficiently while minimizing the cost of an investigation"
-          },
-          {
-            "label": "B",
             "text": "Encrypt all of its communications"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Train employees to recognize phishing"
+          },
+          {
+            "label": "C",
+            "text": "Collect, preserve, and use digital evidence efficiently while minimizing the cost of an investigation"
           },
           {
             "label": "D",
@@ -3970,7 +3969,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -3992,19 +3991,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "The integrity and traceability of evidence from collection through to court"
-          },
-          {
-            "label": "C",
             "text": "Automatic analysis of the evidence"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Encryption of all stored data"
+          },
+          {
+            "label": "D",
+            "text": "The integrity and traceability of evidence from collection through to court"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -4022,15 +4021,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Configuring corporate firewalls"
+            "text": "Preserving evidence integrity and documenting all actions taken"
           },
           {
             "label": "B",
-            "text": "Writing application source code"
+            "text": "Configuring corporate firewalls"
           },
           {
             "label": "C",
-            "text": "Preserving evidence integrity and documenting all actions taken"
+            "text": "Writing application source code"
           },
           {
             "label": "D",
@@ -4038,7 +4037,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -4090,23 +4089,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Improperly handled evidence may be ruled inadmissible regardless of its technical quality"
-          },
-          {
-            "label": "B",
             "text": "It reduces storage costs"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "It is entirely optional"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "It speeds up the imaging process"
+          },
+          {
+            "label": "D",
+            "text": "Improperly handled evidence may be ruled inadmissible regardless of its technical quality"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 1: Computer Forensics Fundamentals.",
@@ -4162,11 +4161,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Collection, encryption, and deletion"
+            "text": "Pre-investigation, investigation, and post-investigation"
           },
           {
             "label": "C",
-            "text": "Pre-investigation, investigation, and post-investigation"
+            "text": "Collection, encryption, and deletion"
           },
           {
             "label": "D",
@@ -4174,7 +4173,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4192,23 +4191,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Testifying in court"
+            "text": "Setting up the forensics lab and obtaining proper authorization such as a search warrant"
           },
           {
             "label": "B",
-            "text": "Deleting irrelevant evidence"
+            "text": "Testifying in court"
           },
           {
             "label": "C",
-            "text": "Writing the final report"
+            "text": "Deleting irrelevant evidence"
           },
           {
             "label": "D",
-            "text": "Setting up the forensics lab and obtaining proper authorization such as a search warrant"
+            "text": "Writing the final report"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4226,15 +4225,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Provides the legal authority to seize and examine specified evidence"
-          },
-          {
-            "label": "B",
             "text": "Speeds up disk imaging"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Encrypts the seized evidence"
+          },
+          {
+            "label": "C",
+            "text": "Provides the legal authority to seize and examine specified evidence"
           },
           {
             "label": "D",
@@ -4242,7 +4241,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4264,11 +4263,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Secure the scene and preserve volatile and fragile evidence"
+            "text": "Write the indictment"
           },
           {
             "label": "C",
-            "text": "Write the indictment"
+            "text": "Secure the scene and preserve volatile and fragile evidence"
           },
           {
             "label": "D",
@@ -4276,7 +4275,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4302,15 +4301,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Acquired and examined using forensically sound methods on a copy"
+            "text": "Deleted after a quick review"
           },
           {
             "label": "D",
-            "text": "Deleted after a quick review"
+            "text": "Acquired and examined using forensically sound methods on a copy"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4336,15 +4335,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "To make it take longer"
+            "text": "So that results are reproducible, defensible, and admissible in court"
           },
           {
             "label": "D",
-            "text": "So that results are reproducible, defensible, and admissible in court"
+            "text": "To make it take longer"
           }
         ],
         "correctLabels": [
-          "D"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4362,15 +4361,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "A clear, accurate forensic report of the findings"
-          },
-          {
-            "label": "B",
             "text": "The seized hardware itself"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "The suspect's password"
+          },
+          {
+            "label": "C",
+            "text": "A clear, accurate forensic report of the findings"
           },
           {
             "label": "D",
@@ -4378,7 +4377,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4430,15 +4429,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Bypass disk encryption"
+            "text": "Preserve the original evidence and perform analysis on a copy"
           },
           {
             "label": "B",
-            "text": "Save disk space"
+            "text": "Bypass disk encryption"
           },
           {
             "label": "C",
-            "text": "Preserve the original evidence and perform analysis on a copy"
+            "text": "Save disk space"
           },
           {
             "label": "D",
@@ -4446,7 +4445,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4468,19 +4467,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "The suspect's social media posts"
+            "text": "Objective findings, the methods used, and conclusions supported by the evidence"
           },
           {
             "label": "C",
-            "text": "The investigator's personal opinions only"
+            "text": "The suspect's social media posts"
           },
           {
             "label": "D",
-            "text": "Objective findings, the methods used, and conclusions supported by the evidence"
+            "text": "The investigator's personal opinions only"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 2: Computer Forensics Investigation Process.",
@@ -4498,11 +4497,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Platters divided into concentric tracks and sectors"
+            "text": "Registry keys"
           },
           {
             "label": "B",
-            "text": "Registry keys"
+            "text": "Platters divided into concentric tracks and sectors"
           },
           {
             "label": "C",
@@ -4514,7 +4513,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4536,19 +4535,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "512 bytes"
-          },
-          {
-            "label": "C",
             "text": "always exactly 4 KB"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "1 MB"
+          },
+          {
+            "label": "D",
+            "text": "512 bytes"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4570,11 +4569,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "A type of partition table"
+            "text": "A group of sectors treated as the smallest unit a file system allocates to a file"
           },
           {
             "label": "C",
-            "text": "A group of sectors treated as the smallest unit a file system allocates to a file"
+            "text": "A type of partition table"
           },
           {
             "label": "D",
@@ -4582,7 +4581,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4604,19 +4603,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Stores no partition information"
+            "text": "Is a newer partitioning scheme that supports larger disks and more partitions"
           },
           {
             "label": "C",
-            "text": "Is older and limited to 2 TB disks"
+            "text": "Stores no partition information"
           },
           {
             "label": "D",
-            "text": "Is a newer partitioning scheme that supports larger disks and more partitions"
+            "text": "Is older and limited to 2 TB disks"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4668,11 +4667,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Encrypt the network"
+            "text": "Organize, store, and manage how data is stored and retrieved on a volume"
           },
           {
             "label": "B",
-            "text": "Organize, store, and manage how data is stored and retrieved on a volume"
+            "text": "Encrypt the network"
           },
           {
             "label": "C",
@@ -4684,7 +4683,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4710,15 +4709,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Journaling, security permissions, and support for larger volumes"
+            "text": "No metadata at all"
           },
           {
             "label": "D",
-            "text": "No metadata at all"
+            "text": "Journaling, security permissions, and support for larger volumes"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4736,23 +4735,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Cannot be examined by any tool"
+            "text": "May contain remnants of previously stored data"
           },
           {
             "label": "B",
-            "text": "Stores only the operating system"
+            "text": "Cannot be examined by any tool"
           },
           {
             "label": "C",
-            "text": "Is always completely empty"
+            "text": "Stores only the operating system"
           },
           {
             "label": "D",
-            "text": "May contain remnants of previously stored data"
+            "text": "Is always completely empty"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4808,11 +4807,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Records metadata about every file and directory on the volume"
+            "text": "Boots the system"
           },
           {
             "label": "C",
-            "text": "Boots the system"
+            "text": "Records metadata about every file and directory on the volume"
           },
           {
             "label": "D",
@@ -4820,7 +4819,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
@@ -4838,15 +4837,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Destroys the evidence in the process"
+            "text": "Collects data from a system that is powered on, including volatile data"
           },
           {
             "label": "B",
-            "text": "Is performed on a powered-off system"
+            "text": "Destroys the evidence in the process"
           },
           {
             "label": "C",
-            "text": "Collects data from a system that is powered on, including volatile data"
+            "text": "Is performed on a powered-off system"
           },
           {
             "label": "D",
@@ -4854,7 +4853,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -4872,23 +4871,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Is always encrypted"
+            "text": "Is lost when the system is powered off or rebooted"
           },
           {
             "label": "B",
-            "text": "Is permanently stored on the hard disk"
+            "text": "Is always encrypted"
           },
           {
             "label": "C",
-            "text": "Is the largest in size"
+            "text": "Is permanently stored on the hard disk"
           },
           {
             "label": "D",
-            "text": "Is lost when the system is powered off or rebooted"
+            "text": "Is the largest in size"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -4906,15 +4905,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Collect the most volatile, fastest-disappearing data first"
-          },
-          {
-            "label": "B",
             "text": "Ignore RAM entirely"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Image the disk before doing anything else"
+          },
+          {
+            "label": "C",
+            "text": "Collect the most volatile, fastest-disappearing data first"
           },
           {
             "label": "D",
@@ -4922,7 +4921,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -4944,11 +4943,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Bit-stream imaging"
+            "text": "Sparse acquisition of selected files"
           },
           {
             "label": "C",
-            "text": "Sparse acquisition of selected files"
+            "text": "Bit-stream imaging"
           },
           {
             "label": "D",
@@ -4956,7 +4955,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -4982,15 +4981,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Only selected files or file types relevant to the case"
+            "text": "Only the contents of RAM"
           },
           {
             "label": "D",
-            "text": "Only the contents of RAM"
+            "text": "Only selected files or file types relevant to the case"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -5042,11 +5041,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Allow read-only access so the evidence media is not altered"
+            "text": "Encrypt the suspect drive"
           },
           {
             "label": "B",
-            "text": "Encrypt the suspect drive"
+            "text": "Allow read-only access so the evidence media is not altered"
           },
           {
             "label": "C",
@@ -5058,7 +5057,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -5110,15 +5109,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Share the original media publicly"
+            "text": "Work only on a verified copy and never on the original evidence"
           },
           {
             "label": "B",
-            "text": "Always analyze the original drive directly"
+            "text": "Share the original media publicly"
           },
           {
             "label": "C",
-            "text": "Work only on a verified copy and never on the original evidence"
+            "text": "Always analyze the original drive directly"
           },
           {
             "label": "D",
@@ -5126,7 +5125,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -5148,19 +5147,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "ipconfig"
+            "text": "dd"
           },
           {
             "label": "C",
-            "text": "ping"
+            "text": "ipconfig"
           },
           {
             "label": "D",
-            "text": "dd"
+            "text": "ping"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 4: Data Acquisition and Duplication.",
@@ -5178,15 +5177,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Obstruct, mislead, or prevent a forensic investigation"
-          },
-          {
-            "label": "B",
             "text": "Improve the quality of evidence"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Back up important data"
+          },
+          {
+            "label": "C",
+            "text": "Obstruct, mislead, or prevent a forensic investigation"
           },
           {
             "label": "D",
@@ -5194,7 +5193,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5284,19 +5283,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Wiping a drive with a magnet"
+            "text": "Hiding a secret message within an ordinary file or medium"
           },
           {
             "label": "C",
-            "text": "Encrypting an entire disk"
+            "text": "Wiping a drive with a magnet"
           },
           {
             "label": "D",
-            "text": "Hiding a secret message within an ordinary file or medium"
+            "text": "Encrypting an entire disk"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5314,11 +5313,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Confuse and mislead investigators, for example through log tampering or false email headers"
+            "text": "Back up the evidence"
           },
           {
             "label": "B",
-            "text": "Back up the evidence"
+            "text": "Confuse and mislead investigators, for example through log tampering or false email headers"
           },
           {
             "label": "C",
@@ -5330,7 +5329,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5352,19 +5351,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Wiping permanently destroys files or file systems, while overwriting replaces existing data or metadata"
-          },
-          {
-            "label": "C",
             "text": "Both only change file extensions"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Neither has any effect on evidence"
+          },
+          {
+            "label": "D",
+            "text": "Wiping permanently destroys files or file systems, while overwriting replaces existing data or metadata"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5382,15 +5381,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Changes the file names"
+            "text": "Renders data unreadable without the correct key"
           },
           {
             "label": "B",
-            "text": "Deletes the underlying data"
+            "text": "Changes the file names"
           },
           {
             "label": "C",
-            "text": "Renders data unreadable without the correct key"
+            "text": "Deletes the underlying data"
           },
           {
             "label": "D",
@@ -5398,7 +5397,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5450,23 +5449,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Cleartext, obfuscated, hashes"
-          },
-          {
-            "label": "B",
             "text": "Obfuscated, hashes, cleartext"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "All three offer equal protection"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Hashes, obfuscated, cleartext"
+          },
+          {
+            "label": "D",
+            "text": "Cleartext, obfuscated, hashes"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5488,11 +5487,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Validate findings using multiple tools and keep forensic tools updated"
+            "text": "Avoid documenting the process"
           },
           {
             "label": "C",
-            "text": "Avoid documenting the process"
+            "text": "Validate findings using multiple tools and keep forensic tools updated"
           },
           {
             "label": "D",
@@ -5500,7 +5499,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
@@ -5522,11 +5521,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Files stored on the hard disk"
+            "text": "Running processes and the contents of RAM"
           },
           {
             "label": "C",
-            "text": "Running processes and the contents of RAM"
+            "text": "Files stored on the hard disk"
           },
           {
             "label": "D",
@@ -5534,7 +5533,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5556,19 +5555,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Holds nothing of investigative value"
+            "text": "Records system and user configuration as well as activity"
           },
           {
             "label": "C",
-            "text": "Stores only image files"
+            "text": "Holds nothing of investigative value"
           },
           {
             "label": "D",
-            "text": "Records system and user configuration as well as activity"
+            "text": "Stores only image files"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5586,15 +5585,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Running processes, network connections, and artifacts not stored on disk"
-          },
-          {
-            "label": "B",
             "text": "Only the BIOS version"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Only printer settings"
+          },
+          {
+            "label": "C",
+            "text": "Running processes, network connections, and artifacts not stored on disk"
           },
           {
             "label": "D",
@@ -5602,7 +5601,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5620,11 +5619,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Speeding up the browser"
+            "text": "Reconstructing a user's online activity"
           },
           {
             "label": "B",
-            "text": "Reconstructing a user's online activity"
+            "text": "Speeding up the browser"
           },
           {
             "label": "C",
@@ -5636,7 +5635,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5658,11 +5657,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "The main content of a file"
+            "text": "Data about data, such as timestamps and authorship"
           },
           {
             "label": "C",
-            "text": "Data about data, such as timestamps and authorship"
+            "text": "The main content of a file"
           },
           {
             "label": "D",
@@ -5670,7 +5669,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5722,11 +5721,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Recently run programs and user settings"
+            "text": "The contents of email bodies only"
           },
           {
             "label": "B",
-            "text": "The contents of email bodies only"
+            "text": "Recently run programs and user settings"
           },
           {
             "label": "C",
@@ -5738,7 +5737,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5790,15 +5789,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Compressing data"
+            "text": "Recording system, security, and application events for timeline analysis"
           },
           {
             "label": "B",
-            "text": "Defragmenting the disk"
+            "text": "Compressing data"
           },
           {
             "label": "C",
-            "text": "Recording system, security, and application events for timeline analysis"
+            "text": "Defragmenting the disk"
           },
           {
             "label": "D",
@@ -5806,7 +5805,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 6: Windows Forensics.",
@@ -5858,15 +5857,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Files stored on the disk"
-          },
-          {
-            "label": "B",
             "text": "The contents of RAM"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "The ARP cache"
+          },
+          {
+            "label": "C",
+            "text": "Files stored on the disk"
           },
           {
             "label": "D",
@@ -5874,7 +5873,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -5892,11 +5891,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "The data is instantly wiped from the platter"
+            "text": "The inode pointer is removed but the data remains until overwritten"
           },
           {
             "label": "B",
-            "text": "The inode pointer is removed but the data remains until overwritten"
+            "text": "The data is instantly wiped from the platter"
           },
           {
             "label": "C",
@@ -5908,7 +5907,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -5934,15 +5933,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Analyze file system images during an investigation"
+            "text": "Encrypt disks"
           },
           {
             "label": "D",
-            "text": "Encrypt disks"
+            "text": "Analyze file system images during an investigation"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6032,19 +6031,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "/var/log"
-          },
-          {
-            "label": "C",
             "text": "/home"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "/boot"
+          },
+          {
+            "label": "D",
+            "text": "/var/log"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6070,15 +6069,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "Its own file systems (such as HFS+ or APFS) and directory structures"
+            "text": "The Windows Registry"
           },
           {
             "label": "D",
-            "text": "The Windows Registry"
+            "text": "Its own file systems (such as HFS+ or APFS) and directory structures"
           }
         ],
         "correctLabels": [
-          "C"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6100,19 +6099,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "The file was encrypted"
+            "text": "The data blocks have not yet been overwritten with new data"
           },
           {
             "label": "C",
-            "text": "The inode is recreated first"
+            "text": "The file was encrypted"
           },
           {
             "label": "D",
-            "text": "The data blocks have not yet been overwritten with new data"
+            "text": "The inode is recreated first"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6130,15 +6129,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "It captures the running state that disappears when the system is shut down"
-          },
-          {
-            "label": "B",
             "text": "It is always encrypted"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "It is irrelevant to investigations"
+          },
+          {
+            "label": "C",
+            "text": "It captures the running state that disappears when the system is shut down"
           },
           {
             "label": "D",
@@ -6146,7 +6145,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6164,11 +6163,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Boots the machine faster"
+            "text": "Preserves the original evidence while allowing examination"
           },
           {
             "label": "B",
-            "text": "Preserves the original evidence while allowing examination"
+            "text": "Boots the machine faster"
           },
           {
             "label": "C",
@@ -6180,7 +6179,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 7: Linux and Mac Forensics.",
@@ -6202,11 +6201,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Repairing network cables"
+            "text": "Capturing, recording, and analyzing network traffic and logs to investigate incidents"
           },
           {
             "label": "C",
-            "text": "Capturing, recording, and analyzing network traffic and logs to investigate incidents"
+            "text": "Repairing network cables"
           },
           {
             "label": "D",
@@ -6214,7 +6213,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6266,23 +6265,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Relating multiple events from different sources to identify patterns or incidents"
-          },
-          {
-            "label": "B",
             "text": "Encrypting event records"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Ignoring log data"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Deleting old logs"
+          },
+          {
+            "label": "D",
+            "text": "Relating multiple events from different sources to identify patterns or incidents"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6300,11 +6299,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "They never change"
+            "text": "They record activity such as connections, access, and traffic over time"
           },
           {
             "label": "B",
-            "text": "They record activity such as connections, access, and traffic over time"
+            "text": "They never change"
           },
           {
             "label": "C",
@@ -6316,7 +6315,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6372,19 +6371,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Editing email messages"
+            "text": "Analyzing captured packets and traffic flows for malicious activity"
           },
           {
             "label": "C",
-            "text": "Only reading the registry"
+            "text": "Editing email messages"
           },
           {
             "label": "D",
-            "text": "Analyzing captured packets and traffic flows for malicious activity"
+            "text": "Only reading the registry"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6402,15 +6401,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Highly volatile and must be captured as it occurs"
-          },
-          {
-            "label": "B",
             "text": "Encrypted on the disk"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Irrelevant to most cases"
+          },
+          {
+            "label": "C",
+            "text": "Highly volatile and must be captured as it occurs"
           },
           {
             "label": "D",
@@ -6418,7 +6417,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6440,19 +6439,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Monitoring and alerting on suspicious activity that can become evidence"
-          },
-          {
-            "label": "C",
             "text": "Deleting logs automatically"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Imaging hard disks"
+          },
+          {
+            "label": "D",
+            "text": "Monitoring and alerting on suspicious activity that can become evidence"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6508,19 +6507,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Speed up the CPU"
+            "text": "Identify the source, timing, and nature of an attack"
           },
           {
             "label": "C",
-            "text": "Compress them for storage"
+            "text": "Speed up the CPU"
           },
           {
             "label": "D",
-            "text": "Identify the source, timing, and nature of an attack"
+            "text": "Compress them for storage"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 8: Network Forensics.",
@@ -6538,11 +6537,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Investigating attacks against web applications and their servers"
+            "text": "Designing attractive websites"
           },
           {
             "label": "B",
-            "text": "Designing attractive websites"
+            "text": "Investigating attacks against web applications and their servers"
           },
           {
             "label": "C",
@@ -6554,7 +6553,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6576,11 +6575,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Record requests, sources, and activity useful for reconstructing attacks"
+            "text": "Encrypt the server"
           },
           {
             "label": "C",
-            "text": "Encrypt the server"
+            "text": "Record requests, sources, and activity useful for reconstructing attacks"
           },
           {
             "label": "D",
@@ -6588,7 +6587,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6610,11 +6609,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "The Apache web server"
+            "text": "Microsoft's Internet Information Services web server"
           },
           {
             "label": "C",
-            "text": "Microsoft's Internet Information Services web server"
+            "text": "The Apache web server"
           },
           {
             "label": "D",
@@ -6622,7 +6621,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6640,23 +6639,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Inode and cluster logs"
+            "text": "Access logs and error logs"
           },
           {
             "label": "B",
-            "text": "Cache and cookie logs"
+            "text": "Inode and cluster logs"
           },
           {
             "label": "C",
-            "text": "Registry and SAM logs"
+            "text": "Cache and cookie logs"
           },
           {
             "label": "D",
-            "text": "Access logs and error logs"
+            "text": "Registry and SAM logs"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6674,15 +6673,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "A web application's database through malicious input"
-          },
-          {
-            "label": "B",
             "text": "The printer"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "The BIOS"
+          },
+          {
+            "label": "C",
+            "text": "A web application's database through malicious input"
           },
           {
             "label": "D",
@@ -6690,7 +6689,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6780,19 +6779,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Checking the power supply"
+            "text": "Analyzing patterns and anomalies in web server logs"
           },
           {
             "label": "C",
-            "text": "Reading the BIOS"
+            "text": "Checking the power supply"
           },
           {
             "label": "D",
-            "text": "Analyzing patterns and anomalies in web server logs"
+            "text": "Reading the BIOS"
           }
         ],
         "correctLabels": [
-          "D"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6810,11 +6809,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Access files and directories located outside the intended web root"
+            "text": "Encrypt cookies"
           },
           {
             "label": "B",
-            "text": "Encrypt cookies"
+            "text": "Access files and directories located outside the intended web root"
           },
           {
             "label": "C",
@@ -6826,7 +6825,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6844,11 +6843,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "PDF"
+            "text": "W3C extended log format"
           },
           {
             "label": "B",
-            "text": "W3C extended log format"
+            "text": "PDF"
           },
           {
             "label": "C",
@@ -6860,7 +6859,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 9: Investigating Web Attacks.",
@@ -6878,15 +6877,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Does not actually exist"
+            "text": "Is hidden and requires special browsers such as Tor to access"
           },
           {
             "label": "B",
-            "text": "Is fully indexed by Google"
+            "text": "Does not actually exist"
           },
           {
             "label": "C",
-            "text": "Is hidden and requires special browsers such as Tor to access"
+            "text": "Is fully indexed by Google"
           },
           {
             "label": "D",
@@ -6894,7 +6893,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -6946,23 +6945,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Encrypting traffic and passing it through multiple relays"
-          },
-          {
-            "label": "B",
             "text": "Using a single central server"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Disabling encryption entirely"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Sending all traffic in plaintext"
+          },
+          {
+            "label": "D",
+            "text": "Encrypting traffic and passing it through multiple relays"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -6984,11 +6983,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Entry, middle, and exit relays"
+            "text": "Client, host, and proxy relays"
           },
           {
             "label": "C",
-            "text": "Client, host, and proxy relays"
+            "text": "Entry, middle, and exit relays"
           },
           {
             "label": "D",
@@ -6996,7 +6995,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7014,15 +7013,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Encrypts nothing at all"
+            "text": "Appears as the origin of the traffic, masking the user's identity"
           },
           {
             "label": "B",
-            "text": "Reveals the user's real IP address"
+            "text": "Encrypts nothing at all"
           },
           {
             "label": "C",
-            "text": "Appears as the origin of the traffic, masking the user's identity"
+            "text": "Reveals the user's real IP address"
           },
           {
             "label": "D",
@@ -7030,7 +7029,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7048,23 +7047,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Delete browser logs"
+            "text": "Act as an unlisted entry point that helps bypass censorship or blocking"
           },
           {
             "label": "B",
-            "text": "Store the browsing history"
+            "text": "Delete browser logs"
           },
           {
             "label": "C",
-            "text": "Speed up the local disk"
+            "text": "Store the browsing history"
           },
           {
             "label": "D",
-            "text": "Act as an unlisted entry point that helps bypass censorship or blocking"
+            "text": "Speed up the local disk"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7082,15 +7081,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Artifacts such as visited sites and activity from the Tor session"
-          },
-          {
-            "label": "B",
             "text": "Only the BIOS password"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Nothing of any use"
+          },
+          {
+            "label": "C",
+            "text": "Artifacts such as visited sites and activity from the Tor session"
           },
           {
             "label": "D",
@@ -7098,7 +7097,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7120,19 +7119,19 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "A limited number of remaining artifacts or traces"
-          },
-          {
-            "label": "C",
             "text": "Encrypted RAM only"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "No challenges at all"
+          },
+          {
+            "label": "D",
+            "text": "A limited number of remaining artifacts or traces"
           }
         ],
         "correctLabels": [
-          "B"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7154,11 +7153,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": "Only the monitor"
+            "text": "Artifacts such as registry entries, prefetch files, and active network connections"
           },
           {
             "label": "C",
-            "text": "Artifacts such as registry entries, prefetch files, and active network connections"
+            "text": "Only the monitor"
           },
           {
             "label": "D",
@@ -7166,7 +7165,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "B"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7192,15 +7191,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "80/443"
+            "text": "9150/9151"
           },
           {
             "label": "D",
-            "text": "9150/9151"
+            "text": "80/443"
           }
         ],
         "correctLabels": [
-          "D"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 10: Dark Web Forensics.",
@@ -7218,23 +7217,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Client-server"
-          },
-          {
-            "label": "B",
             "text": "Standalone single machine"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Blockchain"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "Peer-to-peer only"
+          },
+          {
+            "label": "D",
+            "text": "Client-server"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7252,11 +7251,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Mail User Agent (MUA)"
+            "text": "Mail Transfer Agent (MTA)"
           },
           {
             "label": "B",
-            "text": "Mail Transfer Agent (MTA)"
+            "text": "Mail User Agent (MUA)"
           },
           {
             "label": "C",
@@ -7268,7 +7267,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7286,15 +7285,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "HTTP"
+            "text": "SMTP"
           },
           {
             "label": "B",
-            "text": "POP3"
+            "text": "HTTP"
           },
           {
             "label": "C",
-            "text": "SMTP"
+            "text": "POP3"
           },
           {
             "label": "D",
@@ -7302,7 +7301,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "C"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7328,15 +7327,15 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "C",
-            "text": "File, edit, and view"
+            "text": "Header, body, and signature"
           },
           {
             "label": "D",
-            "text": "Header, body, and signature"
+            "text": "File, edit, and view"
           }
         ],
         "correctLabels": [
-          "D"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7354,15 +7353,15 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Crimes committed by sending emails and crimes supported by emails"
-          },
-          {
-            "label": "B",
             "text": "Static and dynamic"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "Local and remote"
+          },
+          {
+            "label": "C",
+            "text": "Crimes committed by sending emails and crimes supported by emails"
           },
           {
             "label": "D",
@@ -7370,7 +7369,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "A"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7388,11 +7387,11 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "Report, then seize, then analyze"
+            "text": "Seize accounts, acquire data, examine messages, retrieve and analyze headers, recover deleted mail"
           },
           {
             "label": "B",
-            "text": "Seize accounts, acquire data, examine messages, retrieve and analyze headers, recover deleted mail"
+            "text": "Report, then seize, then analyze"
           },
           {
             "label": "C",
@@ -7404,7 +7403,7 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7456,23 +7455,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "A faster connection"
+            "text": "Possible email spoofing"
           },
           {
             "label": "B",
-            "text": "Stronger encryption"
+            "text": "A faster connection"
           },
           {
             "label": "C",
-            "text": "A perfectly valid email"
+            "text": "Stronger encryption"
           },
           {
             "label": "D",
-            "text": "Possible email spoofing"
+            "text": "A perfectly valid email"
           }
         ],
         "correctLabels": [
-          "D"
+          "A"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7490,23 +7489,23 @@ window.PY_TUTORIAL_QUIZZES = {
         "options": [
           {
             "label": "A",
-            "text": "IMAP"
-          },
-          {
-            "label": "B",
             "text": "SMTP"
           },
           {
-            "label": "C",
+            "label": "B",
             "text": "FTP"
           },
           {
-            "label": "D",
+            "label": "C",
             "text": "POP3"
+          },
+          {
+            "label": "D",
+            "text": "IMAP"
           }
         ],
         "correctLabels": [
-          "A"
+          "D"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
@@ -7528,11 +7527,11 @@ window.PY_TUTORIAL_QUIZZES = {
           },
           {
             "label": "B",
-            "text": ".pst"
+            "text": ".exe"
           },
           {
             "label": "C",
-            "text": ".exe"
+            "text": ".pst"
           },
           {
             "label": "D",
@@ -7540,11 +7539,1517 @@ window.PY_TUTORIAL_QUIZZES = {
           }
         ],
         "correctLabels": [
-          "B"
+          "C"
         ],
         "acceptedAnswers": [],
         "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
+        "sourceRef": {
+          "href": "#digital-forensics-module-11",
+          "route": "digital-forensics-study",
+          "label": "Source Module 11: Investigating Email Crimes"
+        }
+      }
+    ]
+  },
+  "digitalForensicsSupplementalDetailExam": {
+    "lesson": "digital-forensics-supplemental",
+    "folder": "Digital Forensics",
+    "label": "Digital Forensics Supplemental Detail Exam",
+    "title": "Digital Forensics Supplemental Detail Exam",
+    "description": "A 44-question detail exam that closes artifact, command, path, and workflow gaps across Digital Forensics Essentials Modules 1-11.",
+    "sourceFile": "Generated_from_DFE_Modules_1-11_Gap_Check",
+    "questions": [
+      {
+        "id": "dfe-supp-q01",
+        "type": "choice",
+        "text": "Which phrase best describes electronically stored information (ESI) in a forensic context?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only printed documents scanned into evidence"
+          },
+          {
+            "label": "B",
+            "text": "Only encrypted files on a hard drive"
+          },
+          {
+            "label": "C",
+            "text": "Digital information stored or transmitted by electronic systems"
+          },
+          {
+            "label": "D",
+            "text": "A replacement term for chain of custody"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
+        "explanation": "ESI is the broad category of digital information that may become evidence.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-1",
+          "route": "digital-forensics-study",
+          "label": "Source Module 1: Computer Forensics Fundamentals"
+        }
+      },
+      {
+        "id": "dfe-supp-q02",
+        "type": "choice",
+        "text": "Why is forensic readiness valuable before an incident occurs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It eliminates the need for legal authority"
+          },
+          {
+            "label": "B",
+            "text": "It lets an organization collect usable evidence efficiently and at lower cost"
+          },
+          {
+            "label": "C",
+            "text": "It guarantees every attacker is identified"
+          },
+          {
+            "label": "D",
+            "text": "It allows investigators to skip documentation"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
+        "explanation": "Forensic readiness prepares people, systems, and procedures so evidence can be preserved and used efficiently.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-1",
+          "route": "digital-forensics-study",
+          "label": "Source Module 1: Computer Forensics Fundamentals"
+        }
+      },
+      {
+        "id": "dfe-supp-q03",
+        "type": "choice",
+        "text": "Which action most directly supports admissibility of fragile digital evidence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Preserving integrity and documenting each handling step"
+          },
+          {
+            "label": "B",
+            "text": "Changing filenames to make evidence easier to read"
+          },
+          {
+            "label": "C",
+            "text": "Analyzing the original disk whenever possible"
+          },
+          {
+            "label": "D",
+            "text": "Deleting unrelated files before imaging"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
+        "explanation": "Integrity and documentation help prove that evidence was not altered or mishandled.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-1",
+          "route": "digital-forensics-study",
+          "label": "Source Module 1: Computer Forensics Fundamentals"
+        }
+      },
+      {
+        "id": "dfe-supp-q04",
+        "type": "choice",
+        "text": "The best evidence rule is most closely connected to which forensic practice?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Using the fastest commercial tool available"
+          },
+          {
+            "label": "B",
+            "text": "Collecting only screenshots"
+          },
+          {
+            "label": "C",
+            "text": "Presenting the original evidence or a verified forensic duplicate"
+          },
+          {
+            "label": "D",
+            "text": "Allowing only one investigator to view a case"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
+        "explanation": "The rule favors original evidence or a reliable duplicate that accurately represents the original.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-1",
+          "route": "digital-forensics-study",
+          "label": "Source Module 1: Computer Forensics Fundamentals"
+        }
+      },
+      {
+        "id": "dfe-supp-q05",
+        "type": "choice",
+        "text": "What is the safest first responder priority at a digital crime scene?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Secure the scene and preserve fragile evidence"
+          },
+          {
+            "label": "B",
+            "text": "Begin deep analysis immediately"
+          },
+          {
+            "label": "C",
+            "text": "Install updates on affected systems"
+          },
+          {
+            "label": "D",
+            "text": "Post findings to the incident channel"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
+        "explanation": "The first responder protects the scene and prevents avoidable evidence loss.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-2",
+          "route": "digital-forensics-study",
+          "label": "Source Module 2: Computer Forensics Investigation Process"
+        }
+      },
+      {
+        "id": "dfe-supp-q06",
+        "type": "choice",
+        "text": "Why should authorization such as a warrant or written scope be confirmed before seizure?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It makes hashing unnecessary"
+          },
+          {
+            "label": "B",
+            "text": "It replaces chain of custody"
+          },
+          {
+            "label": "C",
+            "text": "It defines legal authority and boundaries for the search"
+          },
+          {
+            "label": "D",
+            "text": "It proves the suspect is guilty"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
+        "explanation": "Legal authority and scope protect the investigation from later admissibility problems.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-2",
+          "route": "digital-forensics-study",
+          "label": "Source Module 2: Computer Forensics Investigation Process"
+        }
+      },
+      {
+        "id": "dfe-supp-q07",
+        "type": "choice",
+        "text": "Which report habit is most defensible in court?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Include only conclusions and omit methods"
+          },
+          {
+            "label": "B",
+            "text": "Separate objective findings from unsupported assumptions"
+          },
+          {
+            "label": "C",
+            "text": "Use marketing language for forensic tools"
+          },
+          {
+            "label": "D",
+            "text": "Avoid mentioning limitations"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
+        "explanation": "A forensic report should show methods, findings, conclusions, and limitations without overclaiming.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-2",
+          "route": "digital-forensics-study",
+          "label": "Source Module 2: Computer Forensics Investigation Process"
+        }
+      },
+      {
+        "id": "dfe-supp-q08",
+        "type": "choice",
+        "text": "An expert witness is expected to",
+        "options": [
+          {
+            "label": "A",
+            "text": "Decide the verdict"
+          },
+          {
+            "label": "B",
+            "text": "Destroy evidence after testimony"
+          },
+          {
+            "label": "C",
+            "text": "Explain technical findings clearly and impartially"
+          },
+          {
+            "label": "D",
+            "text": "Act as the prosecutor"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
+        "explanation": "Expert witnesses help the court understand technical evidence without becoming the decision-maker.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-2",
+          "route": "digital-forensics-study",
+          "label": "Source Module 2: Computer Forensics Investigation Process"
+        }
+      },
+      {
+        "id": "dfe-supp-q09",
+        "type": "choice",
+        "text": "Why can slack space matter during file-system analysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It stores only active directory names"
+          },
+          {
+            "label": "B",
+            "text": "It may contain remnants from previous file content"
+          },
+          {
+            "label": "C",
+            "text": "It is always zero-filled"
+          },
+          {
+            "label": "D",
+            "text": "It contains only BIOS settings"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
+        "explanation": "Slack space is unused space within allocated clusters and may retain old data fragments.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-3",
+          "route": "digital-forensics-study",
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
+        }
+      },
+      {
+        "id": "dfe-supp-q10",
+        "type": "choice",
+        "text": "Which statement best distinguishes a sector from a cluster?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A cluster is always smaller than a sector"
+          },
+          {
+            "label": "B",
+            "text": "A sector exists only in RAM"
+          },
+          {
+            "label": "C",
+            "text": "They are names for the same registry object"
+          },
+          {
+            "label": "D",
+            "text": "A sector is a physical/logical disk unit; a cluster is one or more sectors allocated by a file system"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
+        "explanation": "File systems allocate clusters, which are built from one or more sectors.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-3",
+          "route": "digital-forensics-study",
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
+        }
+      },
+      {
+        "id": "dfe-supp-q11",
+        "type": "choice",
+        "text": "Why is the NTFS Master File Table important?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It sends outgoing email"
+          },
+          {
+            "label": "B",
+            "text": "It stores only browser cookies"
+          },
+          {
+            "label": "C",
+            "text": "It disables journaling"
+          },
+          {
+            "label": "D",
+            "text": "It records metadata for files and directories on the volume"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
+        "explanation": "The MFT is central to NTFS because it tracks file and directory metadata.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-3",
+          "route": "digital-forensics-study",
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
+        }
+      },
+      {
+        "id": "dfe-supp-q12",
+        "type": "choice",
+        "text": "Which GPT advantage matters when compared with legacy MBR?",
+        "options": [
+          {
+            "label": "A",
+            "text": "GPT removes all metadata"
+          },
+          {
+            "label": "B",
+            "text": "GPT supports larger disks and more partitions"
+          },
+          {
+            "label": "C",
+            "text": "GPT works only on floppy disks"
+          },
+          {
+            "label": "D",
+            "text": "GPT prevents forensic imaging"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
+        "explanation": "GPT is newer and supports larger disks and more partition entries than traditional MBR.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-3",
+          "route": "digital-forensics-study",
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
+        }
+      },
+      {
+        "id": "dfe-supp-q13",
+        "type": "choice",
+        "text": "According to the order of volatility, which evidence category should be collected earliest when practical?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Archival media"
+          },
+          {
+            "label": "B",
+            "text": "Printed network diagrams"
+          },
+          {
+            "label": "C",
+            "text": "Old backup tapes"
+          },
+          {
+            "label": "D",
+            "text": "Registers and cache"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
+        "explanation": "The most volatile items, such as registers and cache, disappear fastest.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-4",
+          "route": "digital-forensics-study",
+          "label": "Source Module 4: Data Acquisition and Duplication"
+        }
+      },
+      {
+        "id": "dfe-supp-q14",
+        "type": "choice",
+        "text": "Which acquisition format is open source and designed to store metadata, compression, and consistency checks?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SMTP"
+          },
+          {
+            "label": "B",
+            "text": "NTFS"
+          },
+          {
+            "label": "C",
+            "text": "AFF"
+          },
+          {
+            "label": "D",
+            "text": "POP3"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
+        "explanation": "Advanced Forensics Format is an open acquisition format with metadata and integrity features.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-4",
+          "route": "digital-forensics-study",
+          "label": "Source Module 4: Data Acquisition and Duplication"
+        }
+      },
+      {
+        "id": "dfe-supp-q15",
+        "type": "choice",
+        "text": "Which requirement should a forensic imaging tool satisfy?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It should silently ignore I/O errors"
+          },
+          {
+            "label": "B",
+            "text": "It should delete bad sectors"
+          },
+          {
+            "label": "C",
+            "text": "It should require analysis on the original drive"
+          },
+          {
+            "label": "D",
+            "text": "It should not change the original content and should log errors clearly"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
+        "explanation": "Acquisition tools must preserve source media and provide readable, repeatable error records.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-4",
+          "route": "digital-forensics-study",
+          "label": "Source Module 4: Data Acquisition and Duplication"
+        }
+      },
+      {
+        "id": "dfe-supp-q16",
+        "type": "choice",
+        "text": "Why sanitize target media before acquisition?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To remove prior data that could contaminate the evidence copy"
+          },
+          {
+            "label": "B",
+            "text": "To encrypt the suspect drive"
+          },
+          {
+            "label": "C",
+            "text": "To make RAM volatile"
+          },
+          {
+            "label": "D",
+            "text": "To change the source hash"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
+        "explanation": "Clean target media prevents old data from being confused with acquired evidence.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-4",
+          "route": "digital-forensics-study",
+          "label": "Source Module 4: Data Acquisition and Duplication"
+        }
+      },
+      {
+        "id": "dfe-supp-q17",
+        "type": "choice",
+        "text": "In Windows Vista and later Recycle Bin forensics, what is the relationship between $R and $I files?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$I stores content while $R stores registry hives"
+          },
+          {
+            "label": "B",
+            "text": "$R stores content while $I stores metadata"
+          },
+          {
+            "label": "C",
+            "text": "Both are RAM dumps"
+          },
+          {
+            "label": "D",
+            "text": "Both are deleted automatically when viewed"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
+        "explanation": "$R contains the deleted file content and $I contains metadata such as original name and deletion time.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-5",
+          "route": "digital-forensics-study",
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
+        }
+      },
+      {
+        "id": "dfe-supp-q18",
+        "type": "choice",
+        "text": "Why are NTFS Alternate Data Streams useful to an attacker?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They disable all timestamps"
+          },
+          {
+            "label": "B",
+            "text": "They can hide additional data in a file without obvious Explorer output"
+          },
+          {
+            "label": "C",
+            "text": "They are the same as SMTP headers"
+          },
+          {
+            "label": "D",
+            "text": "They only exist in RAM"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
+        "explanation": "ADS can hide secondary streams behind an ordinary-looking file.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-5",
+          "route": "digital-forensics-study",
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
+        }
+      },
+      {
+        "id": "dfe-supp-q19",
+        "type": "choice",
+        "text": "TimeStomp is associated with which anti-forensic behavior?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Creating a bit-stream image"
+          },
+          {
+            "label": "B",
+            "text": "Routing Tor traffic"
+          },
+          {
+            "label": "C",
+            "text": "Changing MACE timestamp metadata"
+          },
+          {
+            "label": "D",
+            "text": "Parsing DKIM signatures"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
+        "explanation": "TimeStomp can alter modified, accessed, created, and entry-modified timestamps.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-5",
+          "route": "digital-forensics-study",
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
+        }
+      },
+      {
+        "id": "dfe-supp-q20",
+        "type": "choice",
+        "text": "Which password type is generally hardest to reverse directly?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cleartext password"
+          },
+          {
+            "label": "B",
+            "text": "Obfuscated password"
+          },
+          {
+            "label": "C",
+            "text": "A visible username"
+          },
+          {
+            "label": "D",
+            "text": "Password hash"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
+        "explanation": "A hash is generated with a one-way algorithm, so it is not reversed like simple obfuscation.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-5",
+          "route": "digital-forensics-study",
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
+        }
+      },
+      {
+        "id": "dfe-supp-q21",
+        "type": "choice",
+        "text": "Which Windows artifact is an ESE database used by Windows Search?",
+        "options": [
+          {
+            "label": "A",
+            "text": "NTUSER.ini"
+          },
+          {
+            "label": "B",
+            "text": "Windows.edb"
+          },
+          {
+            "label": "C",
+            "text": "boot.ini"
+          },
+          {
+            "label": "D",
+            "text": "pagefile.log"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 6: Windows Forensics.",
+        "explanation": "Windows Search stores index data in Windows.edb.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-6",
+          "route": "digital-forensics-study",
+          "label": "Source Module 6: Windows Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q22",
+        "type": "choice",
+        "text": "What can a Windows Prefetch file help show?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The sender SPF policy for email"
+          },
+          {
+            "label": "B",
+            "text": "That an application ran, including run count and last run timing"
+          },
+          {
+            "label": "C",
+            "text": "Only the monitor resolution"
+          },
+          {
+            "label": "D",
+            "text": "The Tor exit relay list"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 6: Windows Forensics.",
+        "explanation": "Prefetch files can show program execution evidence and related timing.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-6",
+          "route": "digital-forensics-study",
+          "label": "Source Module 6: Windows Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q23",
+        "type": "choice",
+        "text": "Which Registry hive is tied to the active loaded profile for the currently logged-on user?",
+        "options": [
+          {
+            "label": "A",
+            "text": "HKEY_CLASSES_ROOT only"
+          },
+          {
+            "label": "B",
+            "text": "HKEY_PERFORMANCE_DATA"
+          },
+          {
+            "label": "C",
+            "text": "HKEY_DYN_DATA"
+          },
+          {
+            "label": "D",
+            "text": "HKEY_CURRENT_USER"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 6: Windows Forensics.",
+        "explanation": "HKEY_CURRENT_USER represents the active loaded user profile.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-6",
+          "route": "digital-forensics-study",
+          "label": "Source Module 6: Windows Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q24",
+        "type": "choice",
+        "text": "Which Chrome artifact path is most likely to contain history and cookies for the default profile?",
+        "options": [
+          {
+            "label": "A",
+            "text": "C:\\Windows\\System32\\dhcp"
+          },
+          {
+            "label": "B",
+            "text": "C:\\WINDOWS\\Prefetch only"
+          },
+          {
+            "label": "C",
+            "text": "C:\\Users\\{user}\\AppData\\Local\\Google\\Chrome\\User Data\\Default"
+          },
+          {
+            "label": "D",
+            "text": "C:\\Users\\{user}\\Documents\\Outlook Files"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 6: Windows Forensics.",
+        "explanation": "Chrome default profile data, including history and cookies, is commonly stored under User Data\\Default.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-6",
+          "route": "digital-forensics-study",
+          "label": "Source Module 6: Windows Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q25",
+        "type": "choice",
+        "text": "Which Linux command is used to print numerical routing-table information?",
+        "options": [
+          {
+            "label": "A",
+            "text": "netstat -rn"
+          },
+          {
+            "label": "B",
+            "text": "Get-FileHash"
+          },
+          {
+            "label": "C",
+            "text": "eventvwr.msc"
+          },
+          {
+            "label": "D",
+            "text": "schtasks.exe"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 7: Linux and Mac Forensics.",
+        "explanation": "netstat -rn prints the kernel routing table with numerical addresses.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-7",
+          "route": "digital-forensics-study",
+          "label": "Source Module 7: Linux and Mac Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q26",
+        "type": "choice",
+        "text": "Which Volatility plugin helps identify injected or hidden code in Linux memory?",
+        "options": [
+          {
+            "label": "A",
+            "text": "linux_malfind"
+          },
+          {
+            "label": "B",
+            "text": "linux_formatdisk"
+          },
+          {
+            "label": "C",
+            "text": "windows_edb"
+          },
+          {
+            "label": "D",
+            "text": "smtp_trace"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 7: Linux and Mac Forensics.",
+        "explanation": "linux_malfind is used to search for suspicious injected code regions.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-7",
+          "route": "digital-forensics-study",
+          "label": "Source Module 7: Linux and Mac Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q27",
+        "type": "choice",
+        "text": "Which macOS locations are associated with startup persistence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "C:\\Windows\\Prefetch only"
+          },
+          {
+            "label": "B",
+            "text": "SMTP port 25"
+          },
+          {
+            "label": "C",
+            "text": "The MBR partition table only"
+          },
+          {
+            "label": "D",
+            "text": "LaunchAgents and LaunchDaemons folders"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 7: Linux and Mac Forensics.",
+        "explanation": "LaunchAgents and LaunchDaemons are important macOS persistence locations.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-7",
+          "route": "digital-forensics-study",
+          "label": "Source Module 7: Linux and Mac Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q28",
+        "type": "choice",
+        "text": "What does Spotlight parsing help recover in macOS forensics?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Indexed file and application metadata such as dates and usage counts"
+          },
+          {
+            "label": "B",
+            "text": "Only DHCP lease IDs"
+          },
+          {
+            "label": "C",
+            "text": "Only Tor relay IPs"
+          },
+          {
+            "label": "D",
+            "text": "Only Outlook PST files"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 7: Linux and Mac Forensics.",
+        "explanation": "Spotlight databases can reveal file metadata, last-opened values, and application/file usage patterns.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-7",
+          "route": "digital-forensics-study",
+          "label": "Source Module 7: Linux and Mac Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q29",
+        "type": "choice",
+        "text": "Which option is an example of full-content network evidence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A printed policy manual"
+          },
+          {
+            "label": "B",
+            "text": "A registry hive"
+          },
+          {
+            "label": "C",
+            "text": "A PCAP containing captured packets"
+          },
+          {
+            "label": "D",
+            "text": "A Word document template"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 8: Network Forensics.",
+        "explanation": "Full-content evidence preserves actual packet data, commonly in PCAP form.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-8",
+          "route": "digital-forensics-study",
+          "label": "Source Module 8: Network Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q30",
+        "type": "choice",
+        "text": "Which fields are most typical in firewall logs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Source/destination IPs, ports, protocol, time, and action"
+          },
+          {
+            "label": "B",
+            "text": "Only file authors and templates"
+          },
+          {
+            "label": "C",
+            "text": "Only email body text"
+          },
+          {
+            "label": "D",
+            "text": "Only disk geometry"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 8: Network Forensics.",
+        "explanation": "Firewall logs usually describe connection endpoints, protocol, timing, and permit/deny actions.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-8",
+          "route": "digital-forensics-study",
+          "label": "Source Module 8: Network Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q31",
+        "type": "choice",
+        "text": "What does Kippo provide in network forensics?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Windows Registry hashing"
+          },
+          {
+            "label": "B",
+            "text": "Mac APFS partition imaging"
+          },
+          {
+            "label": "C",
+            "text": "PDF metadata extraction only"
+          },
+          {
+            "label": "D",
+            "text": "Honeypot logs including session and source details"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 8: Network Forensics.",
+        "explanation": "Kippo is a honeypot whose logs can show attacker sessions and source information.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-8",
+          "route": "digital-forensics-study",
+          "label": "Source Module 8: Network Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q32",
+        "type": "choice",
+        "text": "Which Wireshark filter is useful for detecting ARP poisoning indicators?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Get-FileHash"
+          },
+          {
+            "label": "B",
+            "text": "received-spf=pass"
+          },
+          {
+            "label": "C",
+            "text": "linux_pslist"
+          },
+          {
+            "label": "D",
+            "text": "arp.duplicate-address-detected"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 8: Network Forensics.",
+        "explanation": "Duplicate ARP address warnings can indicate ARP poisoning.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-8",
+          "route": "digital-forensics-study",
+          "label": "Source Module 8: Network Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q33",
+        "type": "choice",
+        "text": "In IIS log analysis, why can an HTTP 200 status be significant during an attack review?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It means the request was encrypted with DKIM"
+          },
+          {
+            "label": "B",
+            "text": "It proves no attack occurred"
+          },
+          {
+            "label": "C",
+            "text": "It may show the server processed the malicious request"
+          },
+          {
+            "label": "D",
+            "text": "It deletes the web log"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 9: Investigating Web Attacks.",
+        "explanation": "A 200 response can indicate the application accepted and processed the suspicious request.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-9",
+          "route": "digital-forensics-study",
+          "label": "Source Module 9: Investigating Web Attacks"
+        }
+      },
+      {
+        "id": "dfe-supp-q34",
+        "type": "choice",
+        "text": "Which encoded string is a strong XSS clue because it decodes to a script tag?",
+        "options": [
+          {
+            "label": "A",
+            "text": "9150/9151"
+          },
+          {
+            "label": "B",
+            "text": "MFT"
+          },
+          {
+            "label": "C",
+            "text": "Windows.edb"
+          },
+          {
+            "label": "D",
+            "text": "%3Cscript%3E"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 9: Investigating Web Attacks.",
+        "explanation": "%3Cscript%3E is the URL-encoded form of <script>.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-9",
+          "route": "digital-forensics-study",
+          "label": "Source Module 9: Investigating Web Attacks"
+        }
+      },
+      {
+        "id": "dfe-supp-q35",
+        "type": "choice",
+        "text": "Which pattern is a common SQL injection clue in web logs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "arp.duplicate-address-detected"
+          },
+          {
+            "label": "B",
+            "text": "EnablePrefetcher=3"
+          },
+          {
+            "label": "C",
+            "text": "or 1=1;--"
+          },
+          {
+            "label": "D",
+            "text": "HKEY_CURRENT_USER"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 9: Investigating Web Attacks.",
+        "explanation": "or 1=1 with SQL comment markers is a classic injection pattern.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-9",
+          "route": "digital-forensics-study",
+          "label": "Source Module 9: Investigating Web Attacks"
+        }
+      },
+      {
+        "id": "dfe-supp-q36",
+        "type": "choice",
+        "text": "Which two Apache log types are most important for web attack review?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SAM logs and SYSTEM logs"
+          },
+          {
+            "label": "B",
+            "text": "Access logs and error logs"
+          },
+          {
+            "label": "C",
+            "text": "PST and OST logs"
+          },
+          {
+            "label": "D",
+            "text": "Bridge and relay logs"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 9: Investigating Web Attacks.",
+        "explanation": "Apache access logs record requests, while error logs record diagnostic and error information.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-9",
+          "route": "digital-forensics-study",
+          "label": "Source Module 9: Investigating Web Attacks"
+        }
+      },
+      {
+        "id": "dfe-supp-q37",
+        "type": "choice",
+        "text": "Which Windows Registry key can preserve a Tor Browser execution path?",
+        "options": [
+          {
+            "label": "A",
+            "text": "HKEY_USERS\\<SID>\\SOFTWARE\\Mozilla\\Firefox\\Launcher"
+          },
+          {
+            "label": "B",
+            "text": "HKEY_LOCAL_MACHINE\\SYSTEM\\DHCP\\Leases"
+          },
+          {
+            "label": "C",
+            "text": "HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\Word"
+          },
+          {
+            "label": "D",
+            "text": "HKEY_CLASSES_ROOT\\.pst"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 10: Dark Web Forensics.",
+        "explanation": "The Tor module identifies the Mozilla Firefox Launcher key under HKEY_USERS as an execution-path artifact.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-10",
+          "route": "digital-forensics-study",
+          "label": "Source Module 10: Dark Web Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q38",
+        "type": "choice",
+        "text": "Why are Tor Browser prefetch files useful after uninstall?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They contain DKIM signatures"
+          },
+          {
+            "label": "B",
+            "text": "They store the full email mailbox"
+          },
+          {
+            "label": "C",
+            "text": "They can show created time, last run time, execution count, and execution directory"
+          },
+          {
+            "label": "D",
+            "text": "They are public relay directories"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 10: Dark Web Forensics.",
+        "explanation": "Prefetch can preserve execution metadata even when the browser files are gone.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-10",
+          "route": "digital-forensics-study",
+          "label": "Source Module 10: Dark Web Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q39",
+        "type": "choice",
+        "text": "Which memory-dump timing generally produces the most Tor artifacts?",
+        "options": [
+          {
+            "label": "A",
+            "text": "After the hard drive is degaussed"
+          },
+          {
+            "label": "B",
+            "text": "While Tor Browser is open"
+          },
+          {
+            "label": "C",
+            "text": "After RAM is powered off for a week"
+          },
+          {
+            "label": "D",
+            "text": "Before Tor is ever installed"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 10: Dark Web Forensics.",
+        "explanation": "A memory dump taken while the browser is open usually contains the richest session artifacts.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-10",
+          "route": "digital-forensics-study",
+          "label": "Source Module 10: Dark Web Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q40",
+        "type": "choice",
+        "text": "What is the investigative meaning of a Tor bridge node?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The final destination server"
+          },
+          {
+            "label": "B",
+            "text": "An unlisted proxy into Tor that can help bypass blocking"
+          },
+          {
+            "label": "C",
+            "text": "A Windows Recycle Bin metadata file"
+          },
+          {
+            "label": "D",
+            "text": "An Outlook archive file"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 10: Dark Web Forensics.",
+        "explanation": "Bridge nodes are not listed like public relays and can make detection/blocking harder.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-10",
+          "route": "digital-forensics-study",
+          "label": "Source Module 10: Dark Web Forensics"
+        }
+      },
+      {
+        "id": "dfe-supp-q41",
+        "type": "choice",
+        "text": "Which protocol and port pair is correct for default SMTP sending?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SMTP / 25"
+          },
+          {
+            "label": "B",
+            "text": "POP3 / 993"
+          },
+          {
+            "label": "C",
+            "text": "IMAP / 110"
+          },
+          {
+            "label": "D",
+            "text": "HTTP / 143"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 11: Investigating Email Crimes.",
+        "explanation": "SMTP sends outgoing email and commonly listens on port 25.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-11",
+          "route": "digital-forensics-study",
+          "label": "Source Module 11: Investigating Email Crimes"
+        }
+      },
+      {
+        "id": "dfe-supp-q42",
+        "type": "choice",
+        "text": "Which Outlook file type commonly stores local mailbox data for Exchange, Office 365, and IMAP accounts?",
+        "options": [
+          {
+            "label": "A",
+            "text": ".ost"
+          },
+          {
+            "label": "B",
+            "text": ".pst only"
+          },
+          {
+            "label": "C",
+            "text": ".pf"
+          },
+          {
+            "label": "D",
+            "text": ".aff"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 11: Investigating Email Crimes.",
+        "explanation": "OST files store offline copies for Exchange, Office 365, and IMAP-style accounts.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-11",
+          "route": "digital-forensics-study",
+          "label": "Source Module 11: Investigating Email Crimes"
+        }
+      },
+      {
+        "id": "dfe-supp-q43",
+        "type": "choice",
+        "text": "How should Received headers usually be read during source analysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only from the visible subject line"
+          },
+          {
+            "label": "B",
+            "text": "Alphabetically by server name"
+          },
+          {
+            "label": "C",
+            "text": "They should not be used"
+          },
+          {
+            "label": "D",
+            "text": "From the bottommost reliable entry upward"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 11: Investigating Email Crimes.",
+        "explanation": "The bottommost reliable Received entry is closest to the originating source.",
+        "sourceRef": {
+          "href": "#digital-forensics-module-11",
+          "route": "digital-forensics-study",
+          "label": "Source Module 11: Investigating Email Crimes"
+        }
+      },
+      {
+        "id": "dfe-supp-q44",
+        "type": "choice",
+        "text": "Which DKIM field identifies the sending domain?",
+        "options": [
+          {
+            "label": "A",
+            "text": "d="
+          },
+          {
+            "label": "B",
+            "text": "bh="
+          },
+          {
+            "label": "C",
+            "text": "b="
+          },
+          {
+            "label": "D",
+            "text": "c="
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Source Module 11: Investigating Email Crimes.",
+        "explanation": "In a DKIM signature, d= identifies the signing/sending domain.",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
