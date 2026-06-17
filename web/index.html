@@ -11035,36 +11035,143 @@ For each incident type:
               case before the technical work begins.
             </p>
             <p>
+              The process matters because digital evidence is fragile. A court, agency, or organization must be able to
+              trust that each action was lawful, repeatable, documented, and technically defensible. The source module
+              is very direct on this point: if investigators deviate from local law, established precedent, or repeatable
+              procedure, the findings may be challenged or invalidated during cross-examination.
+            </p>
+
+            <h3>Pre-investigation Phase</h3>
+            <p>
+              Pre-investigation is the preparation work done before the actual evidence analysis begins. A
+              <strong>Computer Forensics Lab (CFL)</strong> is the controlled place where the instruments, software,
+              hardware tools, forensic workstations, and evidence handling processes are maintained. Lab planning includes the expected number of
+              cases, investigation types, personnel, work area size, workstation needs, essential services, evidence
+              storage, Internet and communication lines, lighting, emergency power, heating, ventilation, air
+              conditioning, sign-in controls, intrusion alarms, fire suppression, training, certification, and possible
+              accreditation such as ASCLD/LAB or ISO/IEC 17025.
+            </p>
+            <p>
+              The investigation team should stay small enough to protect confidentiality and prevent leaks, but it still
+              needs the right roles. Module 2 names photographers, incident responders, incident analyzers, evidence
+              examiners or investigators, evidence documenters, evidence managers, evidence witnesses, and attorneys.
+              A technical lead coordinates the work, and every team member should have the clearance and authorization
+              needed for their assigned task.
+            </p>
+            <p>
+              A forensic lab needs both hardware and software. Hardware may include forensic workstations with strong
+              processing power and RAM, specialized cables, write blockers, drive duplicators, archive and restore
+              devices, media sterilization systems, and complete forensic hardware kits. Software may include operating
+              systems, data discovery tools, password-cracking tools, acquisition tools, data analyzers, data recovery
+              tools, file viewers, conversion tools, security utilities, Wireshark, FTK, and other forensic platforms.
+            </p>
+
+            <h3>Investigation Methodology</h3>
+            <p>
               The investigation phase includes documenting the electronic crime scene, securing and evaluating the
               scene, preserving evidence, acquiring data, analyzing the evidence, and connecting findings back to the
               case facts. Original media should not be used as the analysis workspace. Investigators acquire images or
               copies, verify them, and perform analysis on the duplicate so the original remains preserved.
             </p>
             <p>
+              Module 2 presents the investigation methodology as eight linked activities: documenting the electronic
+              crime scene, search and seizure, evidence preservation, data acquisition, data analysis, case analysis,
+              reporting, and testifying as an expert witness. Documenting the scene includes recording the physical
+              position of systems and devices, noting difficult-to-find electronic components, and recording the power
+              state of computers, storage media, and other electronic devices.
+            </p>
+            <p>
+              Search and seizure begins with planning. Investigators may need consent, witness signatures, a search
+              warrant, incident information, and a clear understanding of the authority to search. A plan should include
+              the incident description, case name, evidence to seize, location, whether the search is overt or covert,
+              applicable jurisdiction, relevant legislation, local management approval, the extent of authority, and
+              health and safety precautions. The module also calls out practical handling decisions for powered-on
+              computers, powered-off computers, networked computers, operating-system shutdown procedures, mobile
+              devices, and other handheld devices.
+            </p>
+            <p>
+              Evidence preservation is the proper handling and documentation of physical and digital evidence so it
+              remains free from contamination. Evidence should be isolated, secured, transported, and preserved in a way
+              that protects its true state. During evidence transfer, both the sender and receiver should record the
+              date and time of transfer in the chain-of-custody record. The source module also names three practical
+              preservation records: the project logbook, a tag that uniquely identifies each item of evidence, and the
+              chain-of-custody document.
+            </p>
+            <p>
+              Data acquisition is the imaging or collection of information from media according to forensic standards.
+              It must protect integrity, be auditable, and be accurate enough to stand up in court or formal review.
+              Data analysis then examines, identifies, separates, converts, and models data to isolate useful
+              information. The module specifically calls out analysis of file contents, creation and modification times,
+              users associated with file creation, access, and modification, physical storage location, timeline
+              generation, and root-cause identification.
+            </p>
+            <p>
+              Case analysis relates the evidence back to the case facts. Investigators may decide whether to pursue
+              additional procedures, examine host data, inspect network service logs, collect case-specific evidence
+              from social media, identify remote storage locations, interview people for aliases or account details, or
+              consider out-of-scope items that may matter in context. For example, fraud cases may involve printers,
+              scanners, laminators, or check paper, while other cases may involve cameras, storage cards, or cloud
+              accounts.
+            </p>
+
+            <h3>Post-investigation Phase</h3>
+            <p>
               The post-investigation phase converts technical work into a defensible report. A report should state the
               purpose, scope, case details, evidence list, tools used, preservation methods, analysis process, findings,
               limitations, and conclusions supported by evidence. If testimony is required, the expert witness explains
               technical findings clearly and impartially rather than arguing the case like an advocate.
+            </p>
+            <p>
+              Before writing, investigators gather notes from all phases, identify facts that support conclusions, list
+              evidence to submit with the report, list conclusions that need to be included, and organize the material so
+              the final document is concise and accurate. A strong report is clear, technically sound, understandable to
+              the target audience, logically structured, legally inspectable, and aligned with local law.
+            </p>
+            <p>
+              The Forensics Investigation Report Template in Module 2 includes the executive summary, case number,
+              authors and examiners, purpose, significant findings, signature analysis, investigation objectives,
+              incident details, date and time the incident allegedly occurred, date and time it was reported, details of
+              the person reporting it, investigation assignment information, evidence location, collected evidence list,
+              tools used to collect evidence, preservation notes, initial evaluation, investigative techniques, analysis
+              tools, relevant findings, supporting files, attachments, appendices, full paths of important files, expert
+              reviews, attacker methodology, user applications and Internet activity, and recommendations.
+            </p>
+            <p>
+              Testifying as an expert witness requires more than technical knowledge. The witness should understand
+              courtroom procedure, how attorneys introduce expert evidence, how technical findings are walked through,
+              and how opposing counsel may challenge or discredit testimony during cross-examination. This is why the
+              investigation must be repeatable, documented, and restrained in its claims.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Investigation workflow</span><button class="copy-code">Copy</button></div>
               <pre><code>PSEUDOCODE: investigation process
 
 Pre-investigation:
-    confirm authority, scope, team, lab, tools, and warrant or consent.
+    prepare the forensic lab.
+    assign authorized team roles.
+    confirm authority, scope, warrant, consent, and jurisdiction.
+    prepare hardware, software, evidence tags, and chain-of-custody forms.
 
 Investigation:
-    document the scene.
-    identify and secure evidence.
-    preserve volatile and non-volatile sources.
-    acquire forensic images or exports.
-    verify integrity with hashes.
-    analyze the working copy.
+    document the scene, device positions, and power states.
+    plan and perform search and seizure.
+    isolate, tag, secure, transfer, and preserve evidence.
+    acquire forensic images or exports using auditable methods.
+    analyze file contents, timestamps, users, locations, and timelines.
+    relate evidence back to the case facts.
 
 Post-investigation:
-    organize notes and evidence records.
-    write objective findings.
-    prepare to explain methods and limits.</code></pre>
+    gather notes from all phases.
+    write a clear report with evidence, methods, findings, limits, and recommendations.
+    prepare expert testimony that can survive cross-examination.</code></pre>
+            </div>
+            <div class="callout">
+              <h3>Exam focus</h3>
+              <p>
+                Know the three phases, the eight investigation methodology activities, what belongs in a search and
+                seizure plan, why evidence transfer records matter, what data analysis examines, what belongs in a
+                forensic report, and why repeatability matters in court.
+              </p>
             </div>
           </section>
 
@@ -11079,6 +11186,53 @@ Post-investigation:
               wear leveling and cleanup behavior.
             </p>
             <p>
+              Module 3 is dense because storage has both physical structure and logical structure. Physical structure is
+              about platters, heads, tracks, sectors, cylinders, and interfaces. Logical structure is about partitions,
+              boot records, file systems, clusters, metadata, and operating-system rules. A forensic examiner needs both
+              views because evidence may exist as visible files, metadata, slack space, unallocated space, deleted
+              partitions, boot artifacts, or file-system records.
+            </p>
+
+            <h3>Hard Disk Drives and Physical Layout</h3>
+            <p>
+              A hard disk drive records data magnetically on metallic platters. Its major parts include platters,
+              spindle, actuator, actuator arm, read/write heads, tracks, clusters, sectors, power connector, jumpers,
+              and drive interface connectors. Tracks are concentric circles on the platter where information is stored.
+              Track numbering begins at 0 from the outer edge and moves inward. Tracks at the same head position across
+              platter surfaces form a cylinder, so older addressing often talks about cylinders rather than only tracks.
+            </p>
+            <p>
+              A sector is the smallest physical storage unit on a disk platter. Traditional HDD sectors are 512 bytes,
+              optical media sectors are commonly 2048 bytes, and newer advanced-format drives use 4096-byte, or 4K,
+              sectors. Sector addressing can be described with CHS: cylinder, head, and sector. The module gives the
+              capacity formula as cylinders multiplied by heads multiplied by sectors per track multiplied by bytes per
+              sector. This matters because low-level disk structure explains why tools can inspect data outside normal
+              file browsing.
+            </p>
+            <p>
+              Data density also matters. Track density is the spacing between tracks, areal density is bits per square
+              inch on a platter, and bit density is bits per unit length of track. Disk performance is measured by data
+              rate, the number of bytes per second sent to the CPU, and seek time, the time required to send the first
+              byte of a requested file. These details are not usually the center of a beginner investigation, but they
+              explain why physical media and drive design affect recovery, imaging, and performance.
+            </p>
+
+            <h3>SSDs and Disk Interfaces</h3>
+            <p>
+              SSDs are non-volatile storage devices that use NAND flash memory rather than moving platters. The NAND
+              flash retains charge without power. The controller acts as the bridge between flash memory and the host,
+              running firmware-level logic. DRAM can improve read/write performance, and the host interface connects
+              the SSD to the machine. Common SSD interfaces include SATA, PCIe, and SCSI-style interfaces.
+            </p>
+            <p>
+              The module also surveys disk interfaces. ATA/PATA, also known as IDE/EIDE, connects storage to the
+              motherboard data bus. SATA/AHCI uses serial signaling and replaced parallel ATA in many systems. SAS is
+              an enterprise successor to parallel SCSI. PCIe SSDs connect high-speed flash storage through PCI Express.
+              SCSI refers to a family of standard interfaces designed to connect multiple peripherals to a computer.
+            </p>
+
+            <h3>Logical Disk Structure</h3>
+            <p>
               The logical structure of a disk includes partitioning and file systems. MBR is an older partitioning
               scheme with boot code and a partition table, while GPT is newer and supports larger disks and more
               partitions. BIOS and UEFI participate in the boot process by initializing hardware and handing control to
@@ -11086,17 +11240,166 @@ Post-investigation:
               NTFS, Ext, HFS+, and APFS.
             </p>
             <p>
+              A cluster is the smallest logical storage unit used by a file system. It is a set of sectors allocated as
+              a unit. Cluster size affects operating-system performance and disk utilization. Larger clusters can reduce
+              fragmentation, but they can waste more unused space when files do not fill the final cluster. Lost
+              clusters occur when the operating system marks clusters as used but does not link them to any file, often
+              because file activity was interrupted before a file was closed or linked correctly. Windows tools such as
+              CHKDSK can detect and repair logical file-system errors.
+            </p>
+            <p>
+              Slack space is the area between the end of a file and the end of the final cluster allocated to that file.
+              If a 10 KB file receives a 32 KB cluster allocation, the remaining 22 KB is slack space. That unused area
+              can contain remnants of prior data. Forensics often cares about slack space, unallocated clusters, and
+              unused partitions because normal users may not see them, but forensic tools can.
+            </p>
+
+            <h3>MBR, BPB, GUID, and GPT</h3>
+            <p>
+              The Master Boot Record is sector zero of a data storage device. In practice it is usually a 512-byte boot
+              sector containing master boot code, a partition table, and a disk signature. The boot code helps load the
+              operating system, the partition table records hard disk partitions, and the disk signature helps identify
+              the media. Disk partitions divide a storage device into logical areas so an operating system can format
+              and use them.
+            </p>
+            <p>
+              The BIOS Parameter Block is a data structure in the partition boot sector. It describes physical and
+              logical layout details such as heads, tracks, and file-system structure. The module notes that BPB
+              information helps investigators locate the file table on a hard drive. This is the kind of structure that
+              explains how forensic tools can move from raw sectors to meaningful file-system records.
+            </p>
+            <p>
+              GUID means Globally Unique Identifier. A GUID is a 128-bit value commonly displayed as hexadecimal groups
+              separated by hyphens. GUIDs can identify COM objects, database records, browser sessions, Windows user
+              accounts, disks, and partitions. GPT, or GUID Partition Table, is tied to UEFI and replaces traditional
+              MBR partitioning. GPT supports more partitions, much larger partition sizes, 64-bit logical block
+              addressing, and primary plus backup partition tables for redundancy.
+            </p>
+            <p>
+              GPT analysis includes practical artifact concerns. Investigators may use tools such as DiskPart, OS X
+              Disk Utility, GNU Parted, Sleuth Kit's <code>mmls</code>, PowerShell-style helpers such as
+              <code>Get-GPT</code>, <code>Get-BootSector</code>, and <code>Get-PartitionTable</code>, or manual hex
+              editor review. Deleted or converted partition schemes can leave useful traces. GPT header areas,
+              partition entries, inter-partition gaps, unpartitioned space near the end of a disk, and reserved areas
+              can all matter when data is hidden or partitions were altered.
+            </p>
+
+            <h3>Boot Processes</h3>
+            <p>
+              Booting is the process of starting or restarting an operating system and loading it from storage into RAM.
+              A cold boot starts from a powered-off state; a warm boot restarts a machine that is already on. Windows
+              BIOS-MBR startup includes firmware, MBR, volume boot record, NT boot sector, Boot Manager, boot
+              configuration data, Winload, HAL, kernel components, session manager, logon, and security processes.
+              Windows UEFI-GPT startup uses UEFI phases, drivers, boot services, a boot loader, and then operating
+              system kernel initialization.
+            </p>
+            <p>
+              The module also introduces Mac and Linux boot flow. Mac systems use EFI boot services, boot managers,
+              drivers, applications, and OS loaders. Linux boot typically moves from POST to BIOS, MBR, bootloader,
+              kernel, initrd or temporary root file system, real root file system, init process, and system daemons.
+              These boot sequences matter because boot artifacts can help explain startup behavior, persistence,
+              tampering, or why a system reached a certain state.
+            </p>
+
+            <h3>Windows File Systems</h3>
+            <p>
+              FAT was the early Windows file system and is named for its file allocation table. FAT12, FAT16, and FAT32
+              differ in the size of entries and cluster limits. FAT links directory entries, clusters, and table records
+              to locate file content. NTFS is the standard file system for modern Windows systems. It improves on FAT
+              with better metadata support, advanced data structures, reliability, disk utilization, access-control
+              lists, and journaling.
+            </p>
+            <p>
+              NTFS system files are important forensic landmarks. The module names files such as <code>$attrdef</code>,
+              <code>$badclus</code>, <code>$bitmap</code>, <code>$boot</code>, <code>$logfile</code>,
+              <code>$mft</code>, <code>$mftmirr</code>, <code>$quota</code>, <code>$upcase</code>, and
+              <code>$volume</code>. The Master File Table contains a record for every file. The MFT mirror helps with
+              recovery. The log file supports recovery. The bitmap tracks allocation. These records help investigators
+              reason about files even when the visible folder view is incomplete.
+            </p>
+            <p>
+              NTFS also includes Encrypting File System and sparse files. EFS provides file-system-level encryption and
+              uses file encryption keys protected by the user's public key and recovery-agent keys. Sparse files save
+              disk space by allocating clusters only for meaningful nonzero data while representing undefined zero data
+              as non-allocated space. Both features can affect how file content appears during analysis.
+            </p>
+
+            <h3>Linux and macOS File Systems</h3>
+            <p>
+              Linux file-system study begins with the Filesystem Hierarchy Standard. In FHS, everything sits under the
+              root directory. Common directories include <code>/bin</code> for essential binaries, <code>/boot</code>
+              for boot files, <code>/dev</code> for device files, <code>/etc</code> for host-specific configuration,
+              <code>/home</code> for user data, <code>/lib</code> for essential libraries, <code>/media</code> and
+              <code>/mnt</code> for mounted media, <code>/proc</code> for process and kernel information,
+              <code>/run</code> for runtime information, <code>/tmp</code> for temporary files, <code>/usr</code> for
+              read-only user data, and <code>/var</code> for variable data such as logs and spool files.
+            </p>
+            <p>
+              The ext family matters in Linux forensics. The original ext overcame Minix limits but lacked separate
+              timestamp support. ext2 improved speed and timestamp support but lacked journaling. ext3 added
+              journaling, improving recovery after crashes. ext4 replaced ext3 in many environments and improved
+              performance, scalability, reliability, timestamps, extents, allocation, and file-system checking speed.
+              Journaling file systems record intended updates before applying them so the system can recover more
+              safely after a crash or power failure.
+            </p>
+            <p>
+              macOS file systems include UFS, HFS, HFS+, and APFS. HFS+ supports large files and Unicode names and is
+              also called macOS Extended. APFS, introduced for modern Apple platforms, uses a container layer and a file
+              system layer. The container layer stores volume metadata, encryption state, and snapshots; the file system
+              layer stores file metadata, content, and directory structures.
+            </p>
+
+            <h3>File System Analysis Tools</h3>
+            <p>
               File systems matter because they store metadata. NTFS uses the Master File Table to record information
               about files and directories, and it supports features such as journaling, permissions, compression, and
               encryption. Slack space can contain remnants of older data because a file may not fill every byte of its
               final cluster. Deleted files, overwritten areas, partitions, and metadata can all become evidence when
               examined with tools such as Autopsy and The Sleuth Kit.
             </p>
+            <p>
+              Autopsy is a digital forensics platform and graphical interface to The Sleuth Kit and other forensic
+              tools. The Sleuth Kit is a library and command-line tool collection for investigating volume and
+              file-system data non-intrusively. It supports DOS partitions, BSD disk labels, Mac partitions, Sun slices,
+              GPT disks, raw images, Expert Witness images, AFF images, and file systems such as NTFS, FAT, ExFAT, UFS,
+              ext2, ext3, ext4, HFS, ISO 9660, and YAFFS2. The module also mentions WinHex as a hexadecimal editor used
+              for computer forensics, recovery, low-level data processing, and recovery from corrupt file systems or
+              memory cards.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Disk analysis mental model</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: disk and file-system analysis
+
+Identify the physical media:
+    HDD, SSD, interface, sector size, and condition.
+
+Identify partitioning:
+    MBR or GPT.
+    primary and backup partition structures.
+    deleted, hidden, or converted partition artifacts.
+
+Identify the file system:
+    FAT, NTFS, ext, HFS+, APFS, or another supported format.
+
+Inspect evidence areas:
+    visible files
+    metadata and file tables
+    slack space
+    unallocated clusters
+    deleted files
+    boot records
+    logs and journals
+    hidden or reserved areas
+
+Use forensic tools on an image, not the original media.</code></pre>
+            </div>
             <div class="callout">
               <h3>Beginner anchor</h3>
               <p>
                 A file is not just a visible icon. It has content, location, allocation records, timestamps, permissions,
-                and surrounding space. Forensics often depends on metadata and remnants, not only the file body.
+                and surrounding space. Forensics often depends on metadata and remnants, not only the file body. Module
+                3 is really about learning the map underneath the icon: sectors, clusters, partitions, boot records,
+                file tables, journals, and allocation records.
               </p>
             </div>
           </section>
