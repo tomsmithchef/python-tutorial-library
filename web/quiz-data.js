@@ -3837,12 +3837,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -3871,12 +3871,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -3905,12 +3905,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -3939,12 +3939,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -3973,12 +3973,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4007,12 +4007,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4041,12 +4041,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4075,12 +4075,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4109,12 +4109,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4143,12 +4143,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 1: Computer Forensics Fundamentals.",
+        "hint": "Source Module 1: Computer Forensics Fundamentals.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-1",
           "route": "digital-forensics-study",
-          "label": "Review: Module 1, Computer Forensics Fundamentals"
+          "label": "Source Module 1: Computer Forensics Fundamentals"
         }
       },
       {
@@ -4177,12 +4177,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4211,12 +4211,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4245,12 +4245,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4279,12 +4279,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4313,12 +4313,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4347,12 +4347,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4381,12 +4381,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4415,12 +4415,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4449,12 +4449,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4483,12 +4483,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 2: Computer Forensics Investigation Process.",
+        "hint": "Source Module 2: Computer Forensics Investigation Process.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-2",
           "route": "digital-forensics-study",
-          "label": "Review: Module 2, Computer Forensics Investigation Process"
+          "label": "Source Module 2: Computer Forensics Investigation Process"
         }
       },
       {
@@ -4517,12 +4517,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4551,12 +4551,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4585,12 +4585,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4619,12 +4619,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4653,12 +4653,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4687,12 +4687,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4721,12 +4721,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4755,12 +4755,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4789,12 +4789,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4823,12 +4823,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 3: Understanding Hard Disks and File Systems.",
+        "hint": "Source Module 3: Understanding Hard Disks and File Systems.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-3",
           "route": "digital-forensics-study",
-          "label": "Review: Module 3, Understanding Hard Disks and File Systems"
+          "label": "Source Module 3: Understanding Hard Disks and File Systems"
         }
       },
       {
@@ -4857,12 +4857,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -4891,12 +4891,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -4925,12 +4925,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -4959,12 +4959,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -4993,12 +4993,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5027,12 +5027,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5061,12 +5061,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5095,12 +5095,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5129,12 +5129,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5163,12 +5163,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 4: Data Acquisition and Duplication.",
+        "hint": "Source Module 4: Data Acquisition and Duplication.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-4",
           "route": "digital-forensics-study",
-          "label": "Review: Module 4, Data Acquisition and Duplication"
+          "label": "Source Module 4: Data Acquisition and Duplication"
         }
       },
       {
@@ -5197,12 +5197,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5231,12 +5231,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5265,12 +5265,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5299,12 +5299,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5333,12 +5333,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5367,12 +5367,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5401,12 +5401,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5435,12 +5435,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5469,12 +5469,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5503,12 +5503,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 5: Defeating Anti-forensics Techniques.",
+        "hint": "Source Module 5: Defeating Anti-forensics Techniques.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-5",
           "route": "digital-forensics-study",
-          "label": "Review: Module 5, Defeating Anti-forensics Techniques"
+          "label": "Source Module 5: Defeating Anti-forensics Techniques"
         }
       },
       {
@@ -5537,12 +5537,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5571,12 +5571,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5605,12 +5605,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5639,12 +5639,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5673,12 +5673,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5707,12 +5707,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5741,12 +5741,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5775,12 +5775,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5809,12 +5809,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5843,12 +5843,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 6: Windows Forensics.",
+        "hint": "Source Module 6: Windows Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-6",
           "route": "digital-forensics-study",
-          "label": "Review: Module 6, Windows Forensics"
+          "label": "Source Module 6: Windows Forensics"
         }
       },
       {
@@ -5877,12 +5877,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -5911,12 +5911,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -5945,12 +5945,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -5979,12 +5979,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6013,12 +6013,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6047,12 +6047,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6081,12 +6081,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6115,12 +6115,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6149,12 +6149,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6183,12 +6183,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 7: Linux and Mac Forensics.",
+        "hint": "Source Module 7: Linux and Mac Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-7",
           "route": "digital-forensics-study",
-          "label": "Review: Module 7, Linux and Mac Forensics"
+          "label": "Source Module 7: Linux and Mac Forensics"
         }
       },
       {
@@ -6217,12 +6217,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6251,12 +6251,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6285,12 +6285,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6319,12 +6319,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6353,12 +6353,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6387,12 +6387,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6421,12 +6421,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6455,12 +6455,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6489,12 +6489,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6523,12 +6523,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 8: Network Forensics.",
+        "hint": "Source Module 8: Network Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-8",
           "route": "digital-forensics-study",
-          "label": "Review: Module 8, Network Forensics"
+          "label": "Source Module 8: Network Forensics"
         }
       },
       {
@@ -6557,12 +6557,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6591,12 +6591,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6625,12 +6625,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6659,12 +6659,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6693,12 +6693,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6727,12 +6727,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6761,12 +6761,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6795,12 +6795,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6829,12 +6829,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6863,12 +6863,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 9: Investigating Web Attacks.",
+        "hint": "Source Module 9: Investigating Web Attacks.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-9",
           "route": "digital-forensics-study",
-          "label": "Review: Module 9, Investigating Web Attacks"
+          "label": "Source Module 9: Investigating Web Attacks"
         }
       },
       {
@@ -6897,12 +6897,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -6931,12 +6931,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -6965,12 +6965,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -6999,12 +6999,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7033,12 +7033,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7067,12 +7067,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7101,12 +7101,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7135,12 +7135,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7169,12 +7169,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7203,12 +7203,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 10: Dark Web Forensics.",
+        "hint": "Source Module 10: Dark Web Forensics.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-10",
           "route": "digital-forensics-study",
-          "label": "Review: Module 10, Dark Web Forensics"
+          "label": "Source Module 10: Dark Web Forensics"
         }
       },
       {
@@ -7237,12 +7237,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7271,12 +7271,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7305,12 +7305,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7339,12 +7339,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7373,12 +7373,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7407,12 +7407,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7441,12 +7441,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "C"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7475,12 +7475,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "D"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7509,12 +7509,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "A"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       },
       {
@@ -7543,12 +7543,12 @@ window.PY_TUTORIAL_QUIZZES = {
           "B"
         ],
         "acceptedAnswers": [],
-        "hint": "Review Digital Forensics Module 11: Investigating Email Crimes.",
+        "hint": "Source Module 11: Investigating Email Crimes.",
         "explanation": "",
         "sourceRef": {
           "href": "#digital-forensics-module-11",
           "route": "digital-forensics-study",
-          "label": "Review: Module 11, Investigating Email Crimes"
+          "label": "Source Module 11: Investigating Email Crimes"
         }
       }
     ]

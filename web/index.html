@@ -11408,31 +11408,85 @@ Use forensic tools on an image, not the original media.</code></pre>
             <h2>4. Data Acquisition and Duplication</h2>
             <p class="section-pages">Source Module 4</p>
             <p>
-              Data acquisition is the process of collecting information from a computer or storage device for forensic
-              analysis. Live acquisition collects data from a powered-on system, including volatile evidence such as
-              RAM, running processes, logged-on users, routing tables, open connections, swap files, and temporary
-              files. Dead or static acquisition collects data from a powered-off system, usually by removing or
-              protecting the storage media and imaging it.
+              Data acquisition is the use of established methods to extract electronically stored information from a
+              suspect computer or storage medium. The work must be auditable, repeatable, and acceptable in court. A
+              student should treat acquisition as both a technical workflow and an evidence-integrity workflow: collect
+              the right data, avoid changing the original, verify the copy, and document the exact method.
             </p>
             <p>
-              The order of volatility tells investigators to collect the evidence most likely to disappear first.
-              A bit-stream image captures a complete bit-by-bit copy of a drive, including deleted data and slack space.
-              Logical acquisition collects active files and folders. Sparse acquisition targets selected files or
-              artifacts. Raw, proprietary, and AFF/AFF4 formats are common image formats, and each format has tradeoffs
-              in compression, metadata, compatibility, and tool support.
+              Live acquisition collects data from a powered-on system. It is used when volatile information may explain
+              the incident timeline or identify responsible users. Live collection can include current configuration,
+              running processes, running state, logged-on users, date and time, uptime, loaded DLLs or shared libraries,
+              swap files, temp files, routing tables, ARP cache, network configuration, and active network connections.
+              Dead or static acquisition collects data from a powered-off system, usually by removing storage media,
+              write-protecting it, and imaging it from a forensic workstation.
             </p>
             <p>
-              Write protection is a major control. A write blocker helps prevent accidental changes to suspect media.
-              Hash values such as MD5, SHA-1, and SHA-256 are used to verify that the acquired copy matches the original
-              at the time of acquisition. The result is a defensible working copy that can be examined without changing
-              the original evidence.
+              The order of volatility helps decide what to collect first. A typical order starts with registers and
+              cache, then routing tables, process tables, kernel statistics, and memory, then temporary files, then disk
+              or other storage media, then relevant remote logs and monitoring data, then physical configuration and
+              network topology, and finally archival media. The module's rule of thumb is simple: never work on the
+              original when a defensible image or logical copy can be made, use clean target media, create two or more
+              copies when possible, and verify copy integrity against the original.
+            </p>
+            <h3>Acquisition Types and Formats</h3>
+            <p>
+              Logical acquisition collects selected files or file types relevant to the case, such as Outlook
+              <code>.pst</code> or <code>.ost</code> files in an email investigation. Sparse acquisition is similar but
+              also collects fragments of unallocated data so deleted files may be acquired without imaging an entire
+              disk. Bit-stream imaging creates a bit-by-bit copy of the entire drive, including sectors, clusters,
+              deleted data, and slack space. Bit-stream disk-to-image is the common approach, while disk-to-disk may be
+              used when imaging software cannot work with an old or incompatible drive or when disk geometry must be
+              adjusted.
+            </p>
+            <p>
+              Image format matters. Raw format is commonly created with <code>dd</code>, transfers quickly, and can be
+              read by many forensic tools, but it generally needs storage equal to the original media and may not store
+              rich metadata. Proprietary formats from commercial tools can compress images, split them into segments,
+              and store metadata such as acquisition date, hash values, and case details, but compatibility can become a
+              problem. Advanced Forensics Format (AFF) is open source, supports compression, metadata, segmentation,
+              cross-platform access, and internal consistency checks. AFF4 extends the model for large evidence sets
+              using volumes, streams, graphs, unique URLs, and a more flexible information model.
+            </p>
+            <h3>Methodology</h3>
+            <p>
+              The acquisition method depends on the situation: drive size, time available, legal scope, whether the
+              original drive can be retained, and whether a logical or sparse collection is acceptable. Tool selection
+              must be defensible. The module expects acquisition tools to avoid changing original content, log I/O
+              errors clearly, produce repeatable and verifiable results, alert the examiner when the destination is too
+              small, create a full bit-stream copy when there are no source errors, and create a qualified bit-stream
+              copy when I/O errors are encountered and documented.
+            </p>
+            <p>
+              Target media must be sanitized before use and disposed of properly after the case. The module names common
+              sanitization standards such as DoD 5220.22-M, NIST SP 800-88, NAVSO P-5239-26, VSITR, and GOST P50739-95.
+              For volatile acquisition, tools such as Belkasoft Live RAM Capturer can save memory in formats such as
+              <code>.mem</code>. For non-volatile disk acquisition, investigators may use remote acquisition tools,
+              bootable media such as CAINE, or dead acquisition through a forensic workstation with write protection and
+              tools such as FTK Imager, ProDiscover, EnCase, Tableau Forensic Imager, X-Ways Forensics, or The Sleuth
+              Kit.
+            </p>
+            <p>
+              Write protection is a major control. Hardware write blockers such as CRU WiebeTech USB WriteBlocker or
+              Tableau Forensic Bridges, and software write blockers such as SAFE Block or MacForensicsLab Write
+              Controller, are used to allow read-only access. Contingency planning matters too: create multiple images,
+              use more than one tool when available, prepare for hardware or software failure, account for host
+              protected areas, and be ready for encrypted drives such as BitLocker where a lawful decryption key may be
+              needed.
+            </p>
+            <p>
+              Validation is the final proof that acquisition succeeded. Hash algorithms such as CRC-32, MD5, SHA-1, and
+              SHA-256 create a digital fingerprint for the evidence. On Windows, <code>Get-FileHash</code> can compute a
+              hash value for an evidence file. Tools such as ProDiscover may store metadata and hash values in their
+              acquisition files and warn when an image no longer matches the original. Raw images often require a
+              separate manual validation record.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Acquisition decision flow</span><button class="copy-code">Copy</button></div>
               <pre><code>PSEUDOCODE: choosing an acquisition method
 
 If the system is powered on and volatile evidence matters:
-    collect RAM, processes, users, open files, and network state first.
+    collect registers/cache if practical, RAM, processes, users, open files, routing, ARP, and network state.
     document every command or tool used.
 
 If storage media can be safely preserved:
@@ -11442,7 +11496,16 @@ If storage media can be safely preserved:
 
 If scope is limited to selected files:
     perform logical or sparse acquisition.
-    still document source, method, and verification.</code></pre>
+    still document source, method, and verification.
+
+Select a format:
+    raw/dd for broad compatibility and simple bit-stream images
+    proprietary for compression, segmentation, and case metadata
+    AFF/AFF4 for open, metadata-rich acquisition workflows
+
+Validate:
+    compare original and image hashes.
+    record tool, version, hash algorithm, date, examiner, errors, and storage location.</code></pre>
             </div>
           </section>
 
@@ -11453,30 +11516,103 @@ If scope is limited to selected files:
               Anti-forensics is the attempt to hide, destroy, alter, or complicate evidence so an investigation becomes
               harder to complete or less reliable. Common goals include hiding traces of activity, preventing recovery,
               confusing tools, compromising reports, and deleting evidence that anti-forensic tools were used. The
-              module covers deletion, recycle bin artifacts, file carving, password protection, steganography, hidden
-              file-system structures, metadata overwriting, encryption, tool exploitation, and tool detection.
+              module covers deletion, Recycle Bin artifacts, file carving, password protection, steganography, hidden
+              file-system structures, trail obfuscation, artifact wiping, metadata overwriting, encryption, program
+              packers, footprint minimization, exploitation of forensic tool bugs, and detection of forensic tool
+              activity.
             </p>
             <p>
               Deleted data is often recoverable because operating systems usually remove pointers or mark space as
-              available before the content itself is overwritten. In Windows, Recycle Bin artifacts such as $I and $R
-              files can preserve metadata and recovered content. File carving searches raw data for file signatures and
-              structure when file-system metadata is missing. Deleted partitions may also be recoverable if their
-              structures are still detectable.
+              available before the content itself is overwritten. On FAT, a deleted filename may be marked with
+              <code>E5h</code> and its cluster marked unused. On NTFS, the file entry is marked unallocated and the
+              clusters are marked free in <code>$BitMap</code>, but the content remains until reused. Normal Windows
+              delete sends many files to the Recycle Bin, while <code>Shift+Delete</code>, network-drive deletion, and
+              some USB deletions may bypass it.
             </p>
             <p>
-              Encryption and passwords are not the same problem. Passwords may protect access to a file, account, or
-              container, while encryption transforms the data itself. Investigators may use lawful password recovery,
-              password hash analysis, memory artifacts, backups, metadata, and surrounding logs. Steganography hides
-              data inside other files such as images or audio, so detection may depend on file size, entropy, metadata,
-              visual anomalies, known tools, or comparison against clean originals.
+              Recycle Bin storage varies by Windows generation and file system. Older FAT systems used
+              <code>Drive:\RECYCLED</code>. Windows 2000, NT, and XP NTFS systems used <code>Drive:\RECYCLER\&lt;SID&gt;</code>.
+              Windows Vista and later use <code>Drive:\$Recycle.Bin\&lt;SID&gt;</code>. In Vista and later, the
+              <code>$R</code> file stores the deleted file content and the matching <code>$I</code> file stores metadata
+              such as original filename, original size, and deletion date/time. If <code>$I</code> metadata is missing or
+              intentionally removed, investigators should still look for <code>$R</code> files and recover them for
+              analysis.
+            </p>
+            <h3>Recovery and Hiding</h3>
+            <p>
+              File carving recovers files or fragments when file-system metadata is missing. It uses signatures, headers,
+              footers, and structure rather than file extensions. For example, changing a JPEG extension to
+              <code>.dll</code> does not change the file header. The module calls out hex editors and viewers such as
+              010 Editor, CI Hex Viewer, Hexinator, Hex Editor Neo, Qiew, and WinHex, plus recovery tools such as
+              Autopsy, Recover My Files, EaseUS Data Recovery Wizard, R-Studio, TestDisk, PhotoRec, Stellar Phoenix, and
+              Kernel for Linux Data Recovery. Deleted partitions can be recovered when partition structures remain
+              detectable and tools can reconstruct partition table entries.
+            </p>
+            <p>
+              Passwords and encryption are separate issues. Cleartext passwords are stored or transmitted without
+              encryption. Obfuscated passwords can be reversed if the algorithm is known. Password hashes are one-way
+              signatures generated by algorithms such as MD5 or SHA. Cracking techniques include dictionary attacks,
+              brute force, and rule-based attacks. Tools named in the module include Passware Kit Forensic, L0phtCrack,
+              ophcrack, Cain &amp; Abel, RainbowCrack, and Offline NT Password &amp; Registry Editor. Encryption is
+              stronger because it renders data unreadable without the correct key and may include full-volume
+              encryption, key files, and plausible deniability.
+            </p>
+            <p>
+              Steganography hides secret messages inside ordinary carriers such as images, audio, or documents.
+              Investigators analyze the stego-object to extract hidden material and may use tools such as OpenStego and
+              StegSpy. Alternate Data Streams (ADS) hide data inside NTFS streams without changing the visible file size
+              or normal function, though timestamps may change unless tools such as TimeStomp alter them. Trail
+              obfuscation tries to confuse the timeline through log cleaners, spoofing, misinformation, zombie accounts,
+              Trojan commands, false email headers, timestamp manipulation, header changes, VPNs, or SSH tunneling.
+            </p>
+            <h3>Wiping and Countermeasures</h3>
+            <p>
+              Artifact wiping targets permanent deletion of selected files or entire file systems. Disk wiping utilities
+              overwrite large areas or whole media, while file wiping utilities target individual files and file-table
+              entries. Degaussing and physical destruction can make evidence unavailable by exposing media to strong
+              magnetic fields or by disintegration, incineration, pulverizing, shredding, or melting. Formatting usually
+              wipes address tables and creates a new file tree rather than erasing all content immediately, so recovery
+              may still be possible.
+            </p>
+            <p>
+              Overwriting data or metadata makes recovery and timeline reconstruction harder. Metadata overwriting
+              matters because investigators use timestamps to arrange actions. TimeStomp, for example, can change MACE
+              attributes: modified, accessed, created, and entry-modified. Countermeasures are practical rather than
+              magical: train investigators on anti-forensics, validate results with multiple tools, keep forensic tools
+              updated and tested, understand the weaknesses of anti-forensic methods, and maintain legal controls
+              against illegal tool use.
             </p>
             <div class="callout">
               <h3>Exam focus</h3>
               <p>
                 Be ready to distinguish deletion from wiping, password protection from encryption, and file carving
                 from normal file-system browsing. Anti-forensics does not always erase evidence; it often changes where
-                the investigator must look.
+                the investigator must look, such as <code>$R</code> files, unallocated space, ADS, metadata, memory,
+                backups, and alternate logs.
               </p>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Anti-forensics response map</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: respond to anti-forensics
+
+If files were deleted:
+    inspect Recycle Bin paths and $I/$R pairs.
+    carve unallocated space by file signature.
+    scan for deleted partitions and lost file-system structures.
+
+If files were hidden:
+    compare extension to file header.
+    check NTFS alternate data streams.
+    inspect stego-carrier files with steganography tools.
+
+If the trail was altered:
+    compare logs from multiple systems.
+    inspect MACE timestamps and metadata.
+    look for log cleaners, TimeStomp-like behavior, VPN/SSH tunneling, and false headers.
+
+If evidence is protected:
+    distinguish cleartext, obfuscated passwords, hashes, and encryption.
+    search lawful key sources, memory, backups, and surrounding artifacts.</code></pre>
             </div>
           </section>
 
@@ -11485,39 +11621,103 @@ If scope is limited to selected files:
             <p class="section-pages">Source Module 6</p>
             <p>
               Windows forensics begins by separating volatile and non-volatile information. Volatile information can
-              include logged-on users, process memory, process-to-port mappings, open files, network status, and active
-              network connections. Tools such as PsLoggedOn and LogonSessions can help identify active users and logon
-              sessions, but investigators must remember that commands run on a live system can alter the system.
+              be modified or lost when a system is shut down or rebooted, and it often explains the running state of an
+              incident. Examples include system time, logged-on users, network information, open files, network
+              connections, network status, process information, process-to-port mappings, process memory, mapped drives,
+              shares, clipboard contents, service and driver information, and command history. The module warns that
+              memory should be acquired or duplicated before running live commands because commands can alter RAM and
+              processes.
             </p>
             <p>
-              Non-volatile Windows evidence includes files, registry hives, event logs, browser history, cache, cookies,
-              prefetch files, recycle bin artifacts, shortcuts, metadata, and application data. The Windows Registry is
-              especially important because hives such as NTUSER.dat, SAM, SYSTEM, SOFTWARE, and SECURITY can reveal
-              user activity, installed software, devices, account information, and system configuration.
+              Windows live triage tools answer specific questions. <code>PsLoggedOn</code> shows users logged on locally
+              or through resources. <code>net session</code> shows computer names, usernames, open files, and session
+              duration on a server. <code>LogonSessions -p</code> lists active logon sessions and processes in each
+              session. <code>net file</code> displays or closes shared files opened on a server. NetworkOpenedFiles lists
+              files opened through remote login. <code>nbtstat -c</code> shows NetBIOS name-to-IP mappings.
+              <code>netstat -a -n -o</code> maps active TCP/UDP connections and listening ports to process IDs.
+              <code>tasklist</code>, PsList, Task Manager, Process Explorer, ProcDump, and Process Dumper help identify
+              suspicious processes and dump memory for later analysis.
             </p>
             <p>
-              Browser artifacts can show visits, downloads, cookies, cached content, and timestamps. Windows files and
-              metadata can help answer who used the system, what files were opened, what devices were attached, what
-              programs ran, and when key events occurred. A strong Windows investigation often correlates memory,
-              registry, logs, browser data, and file metadata into a timeline.
+              Non-volatile evidence persists after shutdown. It includes user files, email, office documents,
+              spreadsheets, deleted files, swap files, slack space, unallocated space, optical media, USB drives, and
+              smartphone memory. Windows-specific sources include ESE databases such as <code>contacts.edb</code>,
+              Windows Live Mail stores, <code>WebCacheV01.dat</code>, Exchange <code>.edb</code> databases,
+              <code>Windows.edb</code> for search indexing, and <code>DataStore.edb</code> under
+              <code>C:\Windows\SoftwareDistribution\DataStore</code>. Windows Search Index evidence is often found in
+              <code>C:\ProgramData\Microsoft\Search\Data\Applications\Windows\Windows.edb</code>. DriveLetterView can
+              show previously connected drives, and slack space should be collected from a bit-level copy and verified
+              by hash.
+            </p>
+            <h3>Memory and Registry</h3>
+            <p>
+              Windows memory analysis uses physical memory or RAM dumps to detect hidden rootkits, suspicious processes,
+              hidden objects, network activity, accessed files, and malware behavior. Crash dumps can also reveal memory
+              state at the time of a failure and may help determine whether a crash came from an internal bug or remote
+              exploitation. Windows dump types include automatic, complete, kernel, and small memory dumps. Belkasoft RAM
+              Capturer and FTK Imager can acquire RAM, while Redline can analyze a memory image and reveal running
+              processes and ports, such as suspicious <code>rundll32.exe</code> communication.
+            </p>
+            <p>
+              The Windows Registry is a hierarchical database of operating system and application settings. It is
+              valuable because user actions and system configuration leave traces there. Volatile hives include
+              <code>HKEY_CLASSES_ROOT</code>, <code>HKEY_CURRENT_USER</code>, and <code>HKEY_CURRENT_CONFIG</code>;
+              non-volatile hives such as <code>HKEY_LOCAL_MACHINE</code> and <code>HKEY_USERS</code> are stored on disk.
+              Key hives include SAM for local account and workgroup settings, Security for local security data,
+              Software for application configuration, System for hardware drivers and services, Default for default user
+              settings, and <code>NTUSER.dat</code> for the currently logged-on user's profile. Registry cells include
+              key cells, value cells, subkey lists, value lists, and security descriptor cells.
+            </p>
+            <h3>Browsers, Prefetch, and Metadata</h3>
+            <p>
+              Browser artifacts can show visits, downloads, cookies, cached content, server names, referrers, typed
+              counts, and timestamps. Chrome history and cookies are commonly under
+              <code>C:\Users\{user}\AppData\Local\Google\Chrome\User Data\Default</code>, and Chrome cache under the
+              <code>Cache</code> subfolder. Firefox cache is commonly under the user profile's
+              <code>cache2</code> folder, cookies in <code>cookies.sqlite</code>, and history in
+              <code>places.sqlite</code>. Edge artifacts may appear under WebCache, Cookies, and History paths in the
+              user's Microsoft local app data. Tools such as ChromeCacheView, ChromeCookiesView, ChromeHistoryView,
+              MZCacheView, MZCookiesView, MZHistoryView, IECacheView, EdgeCookiesView, and BrowsingHistoryView support
+              analysis.
+            </p>
+            <p>
+              Windows file analysis includes restore points, prefetch files, image metadata, document metadata, and
+              file-system timestamp behavior. Restore point <code>Rp.log</code> files record restore point type,
+              description, and creation time, while <code>change.log</code> files record monitored file changes.
+              Prefetch <code>.pf</code> files under <code>Windows\Prefetch</code> can show that an application ran, its
+              run count, last run time, and related files loaded in the first seconds after launch. Prefetch behavior is
+              controlled through
+              <code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00x\Control\SessionManager\MemoryManagement\PrefetchParameters</code>
+              and <code>EnablePrefetcher</code> values from 0 through 3.
+            </p>
+            <p>
+              Metadata is data about data: filename, file size, MAC timestamps, author, organization, computer name,
+              network name, hidden text, revisions, templates, GPS data, EXIF data, and embedded OLE objects. FAT stores
+              times based on local time, while NTFS stores MAC times in UTC. Copying and moving files can change created
+              and modified timestamps differently depending on whether the file stays on the same file system or crosses
+              to another one. PDF and Word files can preserve creation tools, authorship, revisions, OLE streams, and
+              prior editors.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Windows artifact checklist</span><button class="copy-code">Copy</button></div>
               <pre><code>PSEUDOCODE: Windows artifact review
 
 Collect volatile state:
-    users, sessions, processes, ports, connections, open files.
+    system time and uptime
+    users, sessions, processes, ports, connections, open files
+    NetBIOS cache, NIC status, shares, mapped drives, clipboard, command history
+    RAM dump and selected process dumps
 
 Review non-volatile artifacts:
-    registry hives
-    event logs
-    prefetch files
-    browser history, cache, cookies, and downloads
+    registry hives: SAM, Security, Software, System, Default, NTUSER.dat
+    ESE databases and Windows.edb search index
+    browser history, cache, cookies, downloads, referrers, and typed counts
     recycle bin records
-    file metadata and shortcuts
+    restore point logs, prefetch files, file metadata, image EXIF, PDF/Word metadata
+    slack space, unallocated space, USB/device history
 
 Correlate:
-    user account + program execution + file access + network activity + timestamps.</code></pre>
+    user account + logon session + program execution + file access + network activity + timestamps.</code></pre>
             </div>
           </section>
 
@@ -11868,28 +12068,82 @@ Regex examples to understand:
             <p class="section-pages">Source Module 10</p>
             <p>
               The module distinguishes the surface web, deep web, and dark web. The surface web is searchable by normal
-              engines. The deep web contains content not publicly indexed, such as account portals, databases, and
-              subscription content. The dark web requires special access software such as Tor and uses anonymity systems
-              to hide user identity and service location.
+              engines such as Google or Yahoo. The deep web contains content not publicly indexed and often requires
+              authorization, such as legal documents, financial records, government reports, subscription information,
+              databases, and account portals. The dark web is hidden from ordinary browsing and requires special tools
+              such as Tor to access; those tools are designed to protect user anonymity and to support hidden services.
             </p>
             <p>
-              Tor uses onion routing through entry, middle, and exit relays. A Tor exit relay appears to the destination
-              as the origin of traffic, masking the user's real address from the destination. Bridge nodes can serve as
-              unlisted entry points to help bypass blocking. This architecture creates investigative challenges because
-              attribution is indirect and artifacts may be limited.
+              Tor relays are also called routers or nodes. A Tor circuit uses an entry relay, one or more middle relays,
+              and an exit relay. The user connects to the entry relay, which can see the user's IP address. Traffic is
+              encrypted and passed through the middle relays. The exit relay sends traffic to the destination server and
+              is seen by that destination as the origin of the traffic, which masks the user's real address from the
+              destination. Tor Browser is based on Firefox and uses onion routing to provide access to <code>.onion</code>
+              sites. The module also mentions hidden service behavior, including anonymous hosting through Tor-only
+              domains.
             </p>
             <p>
-              Tor browser artifacts can appear in active connections, registry entries, prefetch files, installation
-              paths, state files, and memory dumps. On Windows, Tor commonly uses local ports 9150 and 9151. Memory
-              dumps are valuable because they may contain visited sites, emails, entered data, URLs, and other session
-              artifacts that do not survive normal browser cleanup.
+              Bridge nodes are different from ordinary public relays because they are not listed in the public relay
+              directory. They act as proxies into the Tor network and can help users bypass censorship or blocking. This
+              architecture creates investigative challenges: high anonymity, encrypted networks, difficulty tracing a
+              physical location, few remaining traces after uninstall, and legal jurisdiction issues across countries.
+            </p>
+            <h3>Tor Artifacts</h3>
+            <p>
+              Dark web forensics focuses on identifying and investigating illicit activity performed through dark web
+              tools. When Tor Browser activity is suspected, memory dumps are especially important because they can
+              contain websites browsed, email addresses used, personally identifiable information entered into sites,
+              URLs, and session behavior. A dump taken while Tor Browser is open usually contains the most artifacts. A
+              dump taken after the browser is closed may still contain much of the useful information. A dump taken after
+              uninstall usually contains the least.
+            </p>
+            <p>
+              On Windows, Tor Browser commonly establishes connections through local ports <code>9150</code> and
+              <code>9151</code>. <code>netstat -ano</code> can show active Tor-related connections. A listening or
+              established state suggests the browser is open, while <code>TIME_WAIT</code> may indicate the browser was
+              recently closed. Registry evidence can include the execution path under
+              <code>HKEY_USERS\&lt;SID&gt;\SOFTWARE\Mozilla\Firefox\Launcher</code>. The Tor state file can appear under
+              <code>\Tor Browser\Browser\TorBrowser\Data\Tor\</code> inside the execution path and may help extract last
+              execution date and time.
+            </p>
+            <p>
+              Prefetch files are valuable when Tor Browser has been uninstalled or installed somewhere unexpected.
+              Windows prefetch artifacts under <code>C:\WINDOWS\Prefetch</code> can show browser-created timestamps,
+              last-run timestamps, number of executions, the execution directory, and the filename. Tools such as
+              WinPrefetchView can parse this metadata. For memory acquisition, the module names Belkasoft Live RAM
+              Capturer and FTK Imager. For memory analysis, Bulk Extractor can process a dump and produce feature files
+              containing useful artifacts such as URLs, email IDs, and personally identifiable information.
             </p>
             <div class="callout">
               <h3>Exam focus</h3>
               <p>
                 Know the surface/deep/dark web distinction, Tor relay roles, why exit relays matter, what a bridge node
-                does, and why memory acquisition is important when Tor activity is suspected.
+                does, why ports <code>9150/9151</code> matter on Windows, and why memory acquisition is important when
+                Tor activity is suspected.
               </p>
+            </div>
+            <div class="code-card">
+              <div class="code-head"><span>Tor forensic triage</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: Tor Browser investigation
+
+If Tor activity is suspected:
+    capture RAM before shutdown when legally and operationally possible.
+    run netstat -ano and look for local ports 9150 and 9151.
+    record whether connections are LISTENING, ESTABLISHED, or TIME_WAIT.
+
+Review Windows artifacts:
+    HKEY_USERS\&lt;SID&gt;\SOFTWARE\Mozilla\Firefox\Launcher
+    \Tor Browser\Browser\TorBrowser\Data\Tor\ state file
+    C:\WINDOWS\Prefetch Tor Browser entries
+
+Analyze memory:
+    process dump or full RAM image on a forensic workstation.
+    use Bulk Extractor or similar tools to search for URLs, email IDs, PII, and session remnants.
+
+Interpret cautiously:
+    exit relays mask source identity.
+    bridge nodes may hide Tor usage from simple public relay blocklists.
+    uninstall leaves fewer artifacts, so correlate memory, registry, prefetch, and network state.</code></pre>
             </div>
           </section>
 
@@ -11897,38 +12151,112 @@ Regex examples to understand:
             <h2>11. Investigating Email Crimes</h2>
             <p class="section-pages">Source Module 11</p>
             <p>
-              Email systems use a client-server architecture. A Mail User Agent is the user's email client, a Mail
-              Transfer Agent accepts and routes messages, and a Mail Delivery Agent places messages into recipient
-              mailboxes. SMTP sends outgoing mail. POP3 downloads mail to a client, while IMAP keeps mail on the server
-              so it can be accessed from multiple devices.
+              Email systems use a client-server architecture. A Mail User Agent (MUA) lets the user read, compose, and
+              send email. Common MUAs include Microsoft Outlook,
+              Mozilla Thunderbird, Gmail, Yahoo Mail, and other webmail systems. A Mail Transfer Agent (MTA), such as
+              Sendmail, Exim, or Postfix, accepts a message from the sender and routes it toward its destination. A Mail
+              Delivery Agent (MDA), such as Dovecot, receives the message from the MTA and stores it in the recipient's
+              mailbox.
+            </p>
+            <p>
+              SMTP sends outgoing mail and listens on port <code>25</code> by default. POP3 retrieves mail from a server,
+              listens on port <code>110</code>, and commonly downloads messages to the user's hard disk while removing
+              them from the server. IMAP is designed for accessing email on the server, listens on port <code>143</code>
+              by default, and IMAPS listens on port <code>993</code>. IMAP keeps mail on the server so the same mailbox
+              can be accessed from multiple devices.
             </p>
             <p>
               An email message has a header, body, and signature. The header is forensically important because it can
-              reveal the sender, route, timestamps, originating IP clues, message ID, Return-Path, Received-SPF results,
-              and DKIM signatures. Received headers are especially valuable because the bottommost reliable Received
-              entry is closest to the source. A mismatch between sender and Return-Path or an SPF failure can indicate
-              spoofing.
+              reveal origin, route, time, subject, recipients, message ID, reply-to values, sender, MIME version,
+              priority, Return-Path, Received-SPF, and DKIM signatures. The body contains the actual message in plain
+              text or HTML and may include links, images, or attachments. The signature provides sender identity or role
+              information, but it is easy to fake and should not be treated as proof by itself.
+            </p>
+            <h3>Email Crime Workflow</h3>
+            <p>
+              Email crime investigation examines the origin and content of messages as evidence. The module divides
+              email crimes into crimes committed by sending emails, such as spamming, phishing, mail bombing, and mail
+              storms, and crimes supported by emails, such as identity fraud, cyberstalking, child exploitation, and
+              abduction-related communication. The investigation steps are: seize computers and email accounts, acquire
+              email data, examine messages, retrieve email headers, analyze headers, and recover deleted messages.
             </p>
             <p>
-              The investigation process includes seizing computers and accounts, acquiring email data, examining
-              messages, retrieving headers, analyzing headers, and recovering deleted messages. Desktop clients may store
-              local mailbox files. In Microsoft Outlook, POP accounts commonly use .pst files, while other account types
-              may use .ost files. Webmail investigations may require account access, provider records, exported mail, and
-              careful preservation of headers and messages.
+              Seizing accounts may require a search warrant that authorizes on-site examination of computers and the
+              email server used to send the messages under investigation. Account seizure can involve changing the
+              password with the suspect's cooperation or through the provider/server process. Acquisition differs by
+              client type. Desktop clients leave local archives and folders, while webmail may require account access,
+              provider records, or exported mail. Investigators must collect all relevant local files because archives
+              can be split across multiple files.
+            </p>
+            <p>
+              Outlook stores local mailbox data in <code>.pst</code> and <code>.ost</code> files. POP accounts commonly
+              use Personal Storage Table <code>.pst</code> files under
+              <code>C:\Users\%USERNAME%\Documents\Outlook Files</code>. Exchange, Office 365, and IMAP accounts commonly
+              use Offline Storage Table <code>.ost</code> files under
+              <code>C:\Users\%USERNAME%\AppData\Local\Microsoft\Outlook</code>. Outlook archive folders can also store
+              <code>.pst</code> data. Thunderbird local mail can be collected from local folders or <code>mbox</code>
+              files using forensic tools such as SysTools MailPro+.
+            </p>
+            <h3>Message and Header Analysis</h3>
+            <p>
+              Message examination starts with the visible content. The subject can reveal urgency or social-engineering
+              pressure. The sender address may be spoofed or use a suspicious free-mail domain instead of the claimed
+              organization's domain. The body may contain fraudulent links, credential-harvesting forms, or redirects.
+              Attachments may contain JavaScript, VBScript, executables, macros, or malicious PDFs and should be opened
+              only in a controlled forensic environment.
+            </p>
+            <p>
+              Header retrieval differs by client. Outlook desktop exposes Internet headers through message properties.
+              Outlook.com exposes message details through the More actions menu. Gmail exposes the original message
+              through Show original. After retrieval, investigators examine timestamp, From, To, Message-ID, Subject,
+              MIME-Version, Received headers, Return-Path, Received-SPF, and DKIM signature values. The Message-ID should
+              be globally unique and often includes time and a fully qualified domain name. Received headers should be
+              read from bottom to top because the bottommost reliable entry is closest to the origin.
+            </p>
+            <p>
+              Header authentication fields are especially testable. A Return-Path mismatch can suggest spoofing because
+              the bounce address differs from the visible sender. Sender Policy Framework (SPF) lets a domain publish
+              which servers may send mail for it; a failed or softfail SPF result can indicate spam or spoofing. DKIM
+              provides a cryptographic signature tied to the sending domain. Important DKIM fields include version,
+              algorithm, canonicalization, sender domain, selector, timestamp, body hash, and signature. Suspicious mail
+              analysis may also validate the sender address, inspect links in a forensic workstation, trace originating
+              IP addresses from Received headers, and compare the Message-ID domain against the claimed provider.
+            </p>
+            <p>
+              Deleted message recovery depends on the email client. Thunderbird messages deleted from a mailbox may stay
+              in Trash until cleared, and deleted messages from Local Folders may be recoverable. Outlook moves deleted
+              messages to Deleted Items; if removed from that folder, they may remain in unallocated space until
+              overwritten. Tools such as Paraben's Electronic Evidence Examiner can recover email bodies, attachments,
+              and RFC headers from Outlook and Thunderbird data.
             </p>
             <div class="code-card">
               <div class="code-head"><span>Email header analysis</span><button class="copy-code">Copy</button></div>
               <pre><code>PSEUDOCODE: email crime investigation
 
-Preserve the account and device.
-Acquire mailbox data or exported messages.
+Preserve the account and device:
+    obtain authorization or warrant.
+    seize relevant computers and email accounts.
+    acquire desktop mailbox files, webmail exports, provider records, and local archives.
+
+Know the protocol context:
+    SMTP sends mail, default port 25.
+    POP3 retrieves and often removes mail from server, default port 110.
+    IMAP keeps mail on server for multi-device access, default port 143.
+    IMAPS uses port 993.
+
 For each suspicious email:
     save the full header.
     inspect Subject, From, To, Date, body, links, and attachments.
     read Received headers from bottom to top.
     compare From, Return-Path, SPF, DKIM, and Message-ID.
     trace IP addresses only within legal and technical limits.
-    recover deleted messages if the client or mailbox retains them.</code></pre>
+    recover deleted messages if the client or mailbox retains them.
+
+Local sources:
+    Outlook POP accounts: .pst
+    Outlook Exchange, Office 365, IMAP: .ost
+    Thunderbird: local folders or mbox files
+    Webmail: exported messages, provider logs, preserved headers</code></pre>
             </div>
           </section>
 
@@ -12092,13 +12420,14 @@ For each suspicious email:
             <p>
               The quiz library now includes <strong>Digital Forensics Essentials Practice Exam</strong>, sourced from
               <code>DFE_Practice_Exam_Modules_1-11.pdf</code>. It contains ten questions for each module and uses the
-              same scoring, feedback, shuffled options, and recent-attempt review tools as the Python exam.
+              same scoring, feedback, shuffled options, and recent-attempt review tools as the Python exam. Each
+              question includes a source reference back to the matching Digital Forensics module section.
             </p>
             <ol>
               <li>Open the quiz workspace.</li>
               <li>Choose the <strong>Digital Forensics</strong> folder.</li>
               <li>Start <strong>Digital Forensics Essentials Practice Exam</strong>.</li>
-              <li>After the results screen, use missed question IDs to return to the matching module section.</li>
+              <li>After the results screen, use missed question IDs and source links to return to the matching module section.</li>
             </ol>
             <div class="chapter-links">
               <a href="#quiz" data-route="quiz">Open WiliQuiz Exam Workspace</a>
