@@ -10860,25 +10860,166 @@ For each incident:
               affected, what the impact was, and how the organization can prevent a repeat event.
             </p>
             <p>
-              The module separates cybercrime into insider and external attacks and introduces indicators of compromise.
-              It also explains that digital evidence is circumstantial and fragile. Volatile evidence such as RAM,
-              process lists, logged-on users, open files, and network connections can disappear when power is removed.
-              Non-volatile evidence such as disk files, removable media, emails, browser artifacts, and logs may persist
-              longer, but it can still be altered by careless handling.
+              The module frames computer forensics as both a technical discipline and a legal discipline. The technical
+              side asks where evidence exists and how it can be recovered. The legal side asks whether the collection,
+              handling, analysis, and reporting process can be defended later. A technically correct discovery can still
+              fail if the investigator cannot show authority, competence, repeatability, and a clean record of handling.
+            </p>
+
+            <h3>Objectives and Use Cases</h3>
+            <p>
+              The objectives of computer forensics are to identify, gather, and preserve evidence of cybercrime; collect
+              that evidence in a forensically sound manner; estimate the impact of malicious activity; assess the intent
+              of the perpetrator; minimize organizational losses; protect the organization from similar incidents; and
+              support prosecution or internal action. Forensics may be used during incident response, copyright or
+              intellectual-property disputes, suspected misuse of resources, fraud investigations, security policy work,
+              and readiness planning.
             </p>
             <p>
-              Rules of evidence matter throughout the unit. The best evidence rule favors the original evidence or a
-              forensically sound duplicate. Chain of custody records who collected, transferred, stored, and examined
-              evidence. Forensic readiness is the organization's preparation to collect and use digital evidence quickly
-              with minimal disruption. A good investigator combines technical skill, careful documentation, legal
-              awareness, interviewing ability, and clear reporting.
+              The need for computer forensics comes from both risk and accountability. Organizations need working IT
+              systems and trustworthy network infrastructure, but after an incident they also need factual evidence that
+              can show what happened. A useful investigation can track perpetrators, reduce wasted time, protect
+              financial resources, and guide improvements so the same weakness is not left open.
+            </p>
+
+            <h3>Cybercrime Context</h3>
+            <p>
+              The module separates cybercrime into insider and external attacks and introduces indicators of compromise.
+              An insider attack is performed by someone with trusted or authorized access, such as a current employee,
+              former employee, contractor, partner, or other trusted user. An external attack comes from outside the
+              organization and may use technical weaknesses, exposed services, stolen credentials, or social engineering.
+              Indicators of compromise are clues that something may have happened, such as suspicious logins, unusual
+              network connections, altered files, unexpected processes, or artifacts that do not match normal behavior.
+            </p>
+            <p>
+              Examples of cybercrimes in the module include espionage, intellectual-property theft, data manipulation,
+              Trojan horse attacks, SQL attacks, brute-force attacks, phishing and spoofing, privilege escalation,
+              denial-of-service attacks, cyber defamation, cyberterrorism, and cyberwarfare. At the organizational
+              level, these incidents can cause loss of confidentiality, integrity, and availability; theft of sensitive
+              data; business disruption; loss of customer and stakeholder trust; reputational damage; financial loss;
+              and regulatory penalties.
+            </p>
+
+            <h3>Digital Evidence</h3>
+            <p>
+              Digital evidence is information with probative value that is stored or transmitted in digital form. The
+              module connects this idea to Locard's Exchange Principle: anyone or anything entering a crime scene takes
+              something from the scene and leaves something behind. In digital investigations, those traces may be file
+              metadata, logs, account activity, network records, browser artifacts, deleted data, device identifiers, or
+              memory contents.
+            </p>
+            <p>
+              Digital evidence is circumstantial and fragile. Volatile evidence can disappear when a device is powered
+              off or rebooted. Examples include system time, logged-on users, open files, network information, process
+              information, process-to-port mapping, process memory, clipboard contents, service and driver information,
+              and command history. Non-volatile evidence persists on storage media, but it can still be damaged or
+              changed. Examples include hidden files, slack space, swap files, index files, unallocated clusters, unused
+              partitions, hidden partitions, registry settings, and event logs.
+            </p>
+            <div class="callout">
+              <h3>Evidence Source Map</h3>
+              <p>
+                Module 1 treats evidence sources broadly. User-created files include address books, documents,
+                databases, media files, bookmarks, and compressed files. User-protected files include misnamed files,
+                encrypted files, password-protected files, hidden files, and steganography. Computer-created files
+                include backups, logs, configuration files, printer spool files, cookies, swap files, system files,
+                history files, and temporary files.
+              </p>
+              <p>
+                Device sources are equally varied: hard drives, thumb drives, memory cards, smart cards, cameras, RAM,
+                handheld devices, network interface cards, routers, modems, hubs, switches, servers, printers, IoT and
+                wearable devices, removable media, scanners, phones, copiers, fax machines, credit card skimmers,
+                digital watches, and GPS devices can all hold useful evidence depending on the case.
+              </p>
+            </div>
+
+            <h3>Rules of Evidence</h3>
+            <p>
+              Rules of evidence matter throughout the unit. Module 1 names five basic rules for evidence that may need
+              to stand in court: <strong>Understandable</strong>, <strong>Admissible</strong>,
+              <strong>Authentic</strong>, <strong>Reliable</strong>, and <strong>Complete</strong>. Understandable
+              evidence can be followed by a judge or decision-maker. Admissible evidence relates to the fact being
+              proved. Authentic evidence is real and properly connected to the incident. Reliable evidence leaves no
+              reasonable doubt about its authenticity or truthfulness. Complete evidence can help prove the attacker's
+              actions or support innocence rather than presenting only a misleading fragment.
+            </p>
+            <p>
+              The best evidence rule favors the original evidence or a forensically sound duplicate. A duplicate may be
+              accepted when the court or decision-maker accepts the reason for using it, but the investigator must still
+              show that the duplicate is reliable. Chain of custody records who collected, transferred, stored, and
+              examined evidence. The Scientific Working Group on Digital Evidence emphasizes quality systems, written
+              procedures, appropriate tools, written activity records, and qualified personnel. The ACPO principles
+              reinforce the same idea: avoid changing original data, explain any necessary access to original data,
+              preserve an audit trail that an independent party can follow, and make sure the case officer is
+              responsible for legal compliance.
+            </p>
+
+            <h3>Forensic Readiness</h3>
+            <p>
+              Forensic readiness is the organization's ability to use digital evidence quickly, legally, and with
+              minimal investigation cost. It supports business continuity because a prepared organization can identify
+              impacted components faster, collect legally sound evidence, analyze it, recover services with less
+              downtime, claim insurance when appropriate, and pursue legal action when needed. A lack of readiness can
+              lead to reputation loss, system downtime, data manipulation or theft, and an inability to collect evidence
+              that will stand up later.
+            </p>
+            <p>
+              Forensic readiness planning is a process. The module's planning sequence is to identify the potential
+              evidence needed for likely incidents, determine evidence sources, define a policy for legally extracting
+              electronic evidence with minimal disruption, establish a secure handling and storage policy, decide when
+              an incident requires a full or formal investigation, create documentation procedures, establish legal
+              advisory support, and keep an incident response team ready to review incidents and preserve evidence.
+            </p>
+            <div class="code-card">
+              <div class="code-head"><span>Readiness planning checklist</span><button class="copy-code">Copy</button></div>
+              <pre><code>PSEUDOCODE: forensic readiness planning
+
+Identify likely incident types.
+For each incident type:
+    list the evidence needed.
+    list systems and devices that may hold that evidence.
+    define legal authority and extraction steps.
+    define secure storage and chain-of-custody handling.
+    decide when the incident becomes a formal investigation.
+    prepare documentation templates.
+    involve legal advisors before evidence is mishandled.
+    keep response roles ready before an incident occurs.</code></pre>
+            </div>
+
+            <h3>Forensic Investigator Role</h3>
+            <p>
+              A forensic investigator helps with cybercrime investigation, sound evidence handling, and incident
+              handling and response. The investigator may determine damage, recover data of investigative value, create
+              an image of original evidence without tampering with it, guide officials, analyze evidence, prepare the
+              report, update the organization about attack and recovery methods, maintain records, and testify when
+              required.
+            </p>
+            <p>
+              The module also describes the traits of a good investigator. Strong interviewing skills help gather
+              information from clients, victims, witnesses, and suspects. Writing skills matter because the report must
+              be clear. Analytical skill helps connect evidence to a suspect or event. Communication skills help explain
+              findings to non-specialists. A strong investigator stays current with forensic methods, understands more
+              than one platform, knows hardware and software, maintains professional contacts, and understands laws
+              relevant to the case.
+            </p>
+
+            <h3>Legal Compliance</h3>
+            <p>
+              Legal compliance ensures that collected and analyzed evidence can be used. Module 1 lists several
+              regulations and standards that can affect investigations, including GLBA, the Electronic Communications
+              Privacy Act, FISMA, HIPAA, GDPR, the Data Protection Act 2018, PCI DSS, and SOX. It also names other laws
+              from multiple jurisdictions, including United States, United Kingdom, Australia, India, Germany, Italy,
+              Canada, Singapore, Belgium, Brazil, the Philippines, and Hong Kong. The important lesson is not to
+              memorize every statute as a beginner; it is to recognize that jurisdiction, data type, organization type,
+              and investigative authority change what investigators are allowed to do.
             </p>
             <div class="callout">
               <h3>Exam focus</h3>
               <p>
                 Know the definition of computer forensics, the difference between volatile and non-volatile evidence,
-                why digital evidence is fragile, what chain of custody protects, and why legal compliance can decide
-                whether technically strong evidence is admissible.
+                why digital evidence is fragile, common evidence source categories, the five named rules of evidence,
+                what chain of custody protects, what forensic readiness planning does, and why legal compliance can
+                decide whether technically strong evidence is admissible.
               </p>
             </div>
           </section>
