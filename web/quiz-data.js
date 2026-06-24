@@ -9057,5 +9057,5885 @@ window.PY_TUTORIAL_QUIZZES = {
         }
       }
     ]
+  },
+  "ctiaModule01PracticeExam": {
+    "lesson": "ctia-module-01",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 01 Practice Exam",
+    "title": "CTIA Module 01: Introduction to Threat Intelligence",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 01: Introduction to Threat Intelligence.",
+    "sourceFile": "CTIA_MCQ_Module01_Module02.pdf",
+    "questions": [
+      {
+        "id": "ctia-m01-q01",
+        "type": "choice",
+        "text": "Which term best describes the process of utilizing information to analyze and respond to the emerging requirements of an organization?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Intelligence"
+          },
+          {
+            "label": "B",
+            "text": "Data"
+          },
+          {
+            "label": "C",
+            "text": "Metadata"
+          },
+          {
+            "label": "D",
+            "text": "Information"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Intelligence Intelligence analyzes and interprets information to support decision making, converting the 'what' and 'how' into the 'why' and 'when'."
+      },
+      {
+        "id": "ctia-m01-q02",
+        "type": "choice",
+        "text": "In the data-to-intelligence hierarchy, what is the correct order of processing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Intelligence → Data → Information"
+          },
+          {
+            "label": "B",
+            "text": "Data → Intelligence → Information"
+          },
+          {
+            "label": "C",
+            "text": "Data → Information → Intelligence"
+          },
+          {
+            "label": "D",
+            "text": "Information → Data → Intelligence"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Data → Information → Intelligence Raw data is processed into meaningful information, which is then analyzed and interpreted to produce intelligence."
+      },
+      {
+        "id": "ctia-m01-q03",
+        "type": "choice",
+        "text": "An attack that exploits an application vulnerability before the software developer releases a patch is called a:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Exploit"
+          },
+          {
+            "label": "B",
+            "text": "Zero-Day Attack"
+          },
+          {
+            "label": "C",
+            "text": "Brute Force Attack"
+          },
+          {
+            "label": "D",
+            "text": "Advanced Persistent Threat"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Zero-Day Attack A zero-day attack targets a flaw for which no fix yet exists, giving defenders 'zero days' to respond."
+      },
+      {
+        "id": "ctia-m01-q04",
+        "type": "choice",
+        "text": "Which of the following is defined as a breach of IT system security through vulnerabilities?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Vulnerability"
+          },
+          {
+            "label": "B",
+            "text": "Cyber Threat"
+          },
+          {
+            "label": "C",
+            "text": "Risk"
+          },
+          {
+            "label": "D",
+            "text": "Exploit"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Exploit An exploit is the means by which a vulnerability is leveraged to breach a system's security."
+      },
+      {
+        "id": "ctia-m01-q05",
+        "type": "choice",
+        "text": "Cyber Threat Intelligence (CTI) primarily helps organizations to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Avoid all compliance requirements"
+          },
+          {
+            "label": "B",
+            "text": "Eliminate all cyber risk permanently"
+          },
+          {
+            "label": "C",
+            "text": "Replace the need for firewalls"
+          },
+          {
+            "label": "D",
+            "text": "Convert unknown threats into known threats"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Convert unknown threats into known threats CTI converts unknown threats into known threats, enabling proactive and advanced defense strategies."
+      },
+      {
+        "id": "ctia-m01-q06",
+        "type": "choice",
+        "text": "Which is a key difference between threat intelligence and threat data?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They are identical concepts"
+          },
+          {
+            "label": "B",
+            "text": "Threat intelligence is actionable and analyzed; threat data is raw and lacks context"
+          },
+          {
+            "label": "C",
+            "text": "Threat data is contextual and analyzed; threat intelligence is raw"
+          },
+          {
+            "label": "D",
+            "text": "Threat data is always more reliable than threat intelligence"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Threat intelligence is actionable and analyzed; threat data is raw and lacks context Threat intelligence is actionable, contextual, and analyzed by professionals, whereas threat data is raw and provides only basic indicators."
+      },
+      {
+        "id": "ctia-m01-q07",
+        "type": "choice",
+        "text": "The 'knowns' and 'unknowns' concept used to describe the three stages of obtaining intelligence was proposed by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Donald Rumsfeld"
+          },
+          {
+            "label": "B",
+            "text": "MITRE"
+          },
+          {
+            "label": "C",
+            "text": "Lockheed Martin"
+          },
+          {
+            "label": "D",
+            "text": "EC-Council"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Donald Rumsfeld Donald Rumsfeld's framing of Known Knowns, Known Unknowns, and Unknown Unknowns is used to describe stages of intelligence."
+      },
+      {
+        "id": "ctia-m01-q08",
+        "type": "choice",
+        "text": "Which type of threat intelligence is consumed by high-level executives and management and focuses on changing risks?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strategic"
+          },
+          {
+            "label": "B",
+            "text": "Operational"
+          },
+          {
+            "label": "C",
+            "text": "Technical"
+          },
+          {
+            "label": "D",
+            "text": "Tactical"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Strategic Strategic threat intelligence provides high-level information on changing risks and business impact for executive decision making."
+      },
+      {
+        "id": "ctia-m01-q09",
+        "type": "choice",
+        "text": "Tactical threat intelligence primarily provides information about:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Quarterly financial risk"
+          },
+          {
+            "label": "B",
+            "text": "Specific indicators of compromise only"
+          },
+          {
+            "label": "C",
+            "text": "TTPs (tactics, techniques, and procedures) used by attackers"
+          },
+          {
+            "label": "D",
+            "text": "High-level business strategies"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "TTPs (tactics, techniques, and procedures) used by attackers Tactical threat intelligence focuses on attacker TTPs and is consumed by IT service managers, SOC managers, and administrators."
+      },
+      {
+        "id": "ctia-m01-q10",
+        "type": "choice",
+        "text": "Technical threat intelligence is typically consumed by which group?",
+        "options": [
+          {
+            "label": "A",
+            "text": "High-level executives"
+          },
+          {
+            "label": "B",
+            "text": "Marketing department"
+          },
+          {
+            "label": "C",
+            "text": "Board of directors"
+          },
+          {
+            "label": "D",
+            "text": "SOC staff and IR teams"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "SOC staff and IR teams Technical threat intelligence (e.g., specific IPs, domains, malware hashes) is consumed by SOC staff and incident response teams and has a short lifespan."
+      },
+      {
+        "id": "ctia-m01-q11",
+        "type": "choice",
+        "text": "Operational threat intelligence is generally collected from which sources?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Firewalls and IDS logs only"
+          },
+          {
+            "label": "B",
+            "text": "Financial reports"
+          },
+          {
+            "label": "C",
+            "text": "Humans, social media, and chat rooms"
+          },
+          {
+            "label": "D",
+            "text": "Vendor pricing sheets"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Humans, social media, and chat rooms Operational threat intelligence about specific threats is collected from sources such as humans, social media, and chat rooms."
+      },
+      {
+        "id": "ctia-m01-q12",
+        "type": "choice",
+        "text": "Which of the following is an example of technical threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "An organizational compliance roadmap"
+          },
+          {
+            "label": "B",
+            "text": "A high-level board report on changing risks"
+          },
+          {
+            "label": "C",
+            "text": "Specific IP addresses and domains used by malicious endpoints"
+          },
+          {
+            "label": "D",
+            "text": "Long-term business strategy guidance"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Specific IP addresses and domains used by malicious endpoints Technical threat intelligence includes concrete indicators like malicious IPs, domains, malware hashes, and phishing email headers."
+      },
+      {
+        "id": "ctia-m01-q13",
+        "type": "choice",
+        "text": "Which approach focuses on data analytics, AI/ML, and historical information to predict future threats?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reactive Defense"
+          },
+          {
+            "label": "B",
+            "text": "Predictive Threat Intelligence"
+          },
+          {
+            "label": "C",
+            "text": "Signature-based Detection"
+          },
+          {
+            "label": "D",
+            "text": "Proactive Threat Intelligence"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Predictive Threat Intelligence Predictive threat intelligence uses analytics, AI/ML, and historical data to anticipate and prepare for future threats."
+      },
+      {
+        "id": "ctia-m01-q14",
+        "type": "choice",
+        "text": "In Threat Intelligence Informed Risk Management, which step is used to identify, assess, and track potential threats?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Frame"
+          },
+          {
+            "label": "B",
+            "text": "Monitor"
+          },
+          {
+            "label": "C",
+            "text": "Respond"
+          },
+          {
+            "label": "D",
+            "text": "Assess"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Assess The 'Assess' step uses threat intelligence to identify, assess, and track potential threats and vulnerabilities."
+      },
+      {
+        "id": "ctia-m01-q15",
+        "type": "choice",
+        "text": "What is a primary benefit of integrating cyber threat intelligence into a SIEM?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It guarantees zero breaches"
+          },
+          {
+            "label": "B",
+            "text": "It reduces the false positive alarm rate and speeds up alert triage"
+          },
+          {
+            "label": "C",
+            "text": "It eliminates the need for logging"
+          },
+          {
+            "label": "D",
+            "text": "It removes the need for any analysts"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "It reduces the false positive alarm rate and speeds up alert triage Integrating CTI into SIEM enhances threat detection, reduces false positives, and speeds up triage and investigation."
+      },
+      {
+        "id": "ctia-m01-q16",
+        "type": "choice",
+        "text": "During incident response escalation, which phase involves preplanning where analysts determine likely attackers and targets?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phase 1: Preplanning"
+          },
+          {
+            "label": "B",
+            "text": "Phase 4: Breach"
+          },
+          {
+            "label": "C",
+            "text": "Phase 2: Event"
+          },
+          {
+            "label": "D",
+            "text": "Phase 3: Incident"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Phase 1: Preplanning In Phase 1 (Preplanning), CTI helps determine which hacker groups would target the organization, their motives, and possible attack scenarios."
+      },
+      {
+        "id": "ctia-m01-q17",
+        "type": "choice",
+        "text": "The correct order of the Threat Intelligence Lifecycle is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collection → Planning → Processing → Dissemination → Analysis"
+          },
+          {
+            "label": "B",
+            "text": "Planning and Direction → Collection → Processing and Exploitation → Analysis and Production → Dissemination and Integration"
+          },
+          {
+            "label": "C",
+            "text": "Analysis → Collection → Planning → Dissemination → Processing"
+          },
+          {
+            "label": "D",
+            "text": "Dissemination → Collection → Analysis → Planning → Processing"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Planning and Direction → The lifecycle runs: Planning and Direction, Collection, Processing and Exploitation, Analysis and Production, then Dissemination and Integration. Q# Answer Why Collection → Processing and Exploitation → Analysis and Production → Dissemination and Integration"
+      },
+      {
+        "id": "ctia-m01-q18",
+        "type": "choice",
+        "text": "In the threat intelligence lifecycle, defining intelligence requirements and making a collection plan occurs during which phase?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Dissemination and Integration"
+          },
+          {
+            "label": "B",
+            "text": "Analysis and Production"
+          },
+          {
+            "label": "C",
+            "text": "Collection"
+          },
+          {
+            "label": "D",
+            "text": "Planning and Direction"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Planning and Direction Planning and Direction is where intelligence requirements are defined, a collection plan is made, and requirements for other phases are set."
+      },
+      {
+        "id": "ctia-m01-q19",
+        "type": "choice",
+        "text": "Which of the following is NOT one of the four required components to meet threat intelligence capabilities?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Marketing automation"
+          },
+          {
+            "label": "B",
+            "text": "Automated response"
+          },
+          {
+            "label": "C",
+            "text": "Incident response"
+          },
+          {
+            "label": "D",
+            "text": "Intelligence architecture"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Marketing automation The capability components are incident response, automated response, intelligence architecture, and indicators of compromise — not marketing."
+      },
+      {
+        "id": "ctia-m01-q20",
+        "type": "choice",
+        "text": "At which Threat Intelligence Maturity Level is a well-defined CTI program in place with proactive threat hunting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Maturity Level 3"
+          },
+          {
+            "label": "B",
+            "text": "Maturity Level 0"
+          },
+          {
+            "label": "C",
+            "text": "Maturity Level 4"
+          },
+          {
+            "label": "D",
+            "text": "Maturity Level 1"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Maturity Level 4 Maturity Level 4 represents a well-defined, mature CTI program that generates/consumes intelligence and assists in proactive threat hunting."
+      },
+      {
+        "id": "ctia-m01-q21",
+        "type": "choice",
+        "text": "Which of the following is an open-source threat intelligence platform used for sharing and correlating IoCs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "MISP"
+          },
+          {
+            "label": "B",
+            "text": "ThreatConnect TIP"
+          },
+          {
+            "label": "C",
+            "text": "ThreatStream"
+          },
+          {
+            "label": "D",
+            "text": "CrowdStrike Falcon"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "MISP MISP is an open-source threat intelligence platform for sharing, storing, and correlating IoCs and threat information."
+      },
+      {
+        "id": "ctia-m01-q22",
+        "type": "choice",
+        "text": "Geopolitical threat intelligence is collected through sources such as OSINT, HUMINT, IMINT, and:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Payroll records"
+          },
+          {
+            "label": "B",
+            "text": "Antivirus signatures"
+          },
+          {
+            "label": "C",
+            "text": "SIEM logs only"
+          },
+          {
+            "label": "D",
+            "text": "Cyber Counterintelligence (CCI)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Cyber Counterintelligence (CCI) Geopolitical threat intelligence draws on OSINT, HUMINT, IMINT, and Cyber Counterintelligence (CCI) to assess location-based threats."
+      },
+      {
+        "id": "ctia-m01-q23",
+        "type": "choice",
+        "text": "Which of the following is a legal consideration (rather than an ethical consideration) in threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Information Disclosure"
+          },
+          {
+            "label": "B",
+            "text": "Privacy Concerns"
+          },
+          {
+            "label": "C",
+            "text": "Unauthorized Access"
+          },
+          {
+            "label": "D",
+            "text": "Confidentiality"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Unauthorized Access Unauthorized Access, Data Privacy/Protection, and Jurisdictional Concerns are legal considerations; privacy concerns and confidentiality fall under ethics."
+      },
+      {
+        "id": "ctia-m01-q24",
+        "type": "choice",
+        "text": "A unique challenge of threat intelligence in cloud environments stems mainly from:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The distributed and dynamic nature of cloud computing"
+          },
+          {
+            "label": "B",
+            "text": "The simplicity of static infrastructure"
+          },
+          {
+            "label": "C",
+            "text": "The absence of any threat actors targeting cloud"
+          },
+          {
+            "label": "D",
+            "text": "The lack of any data in cloud platforms"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "The distributed and dynamic nature of cloud computing Cloud's distributed and dynamic nature creates challenges such as multi-cloud complexity, ephemeral resources, and limited visibility."
+      },
+      {
+        "id": "ctia-m01-q25",
+        "type": "choice",
+        "text": "Which emerging technology is noted for helping secure data storage, enhance authentication, and mitigate DDoS attacks when combined with threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Legacy mainframes"
+          },
+          {
+            "label": "B",
+            "text": "Blockchain"
+          },
+          {
+            "label": "C",
+            "text": "Spreadsheet macros"
+          },
+          {
+            "label": "D",
+            "text": "Fax over IP"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 01: Introduction to Threat Intelligence.",
+        "explanation": "Blockchain Blockchain can strengthen threat intelligence by securing data storage, enhancing authentication, and helping mitigate DDoS attacks. CTIA — Certified Threat Intelligence Analyst"
+      }
+    ]
+  },
+  "ctiaModule02PracticeExam": {
+    "lesson": "ctia-module-02",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 02 Practice Exam",
+    "title": "CTIA Module 02: Cyber Threats and Attack Frameworks",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 02: Cyber Threats and Attack Frameworks.",
+    "sourceFile": "CTIA_MCQ_Module01_Module02.pdf",
+    "questions": [
+      {
+        "id": "ctia-m02-q01",
+        "type": "choice",
+        "text": "Cyber threats take advantage of vulnerabilities to compromise which three properties of information?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Latency, bandwidth, and uptime"
+          },
+          {
+            "label": "B",
+            "text": "Cost, speed, and scalability"
+          },
+          {
+            "label": "C",
+            "text": "Authentication, billing, and storage"
+          },
+          {
+            "label": "D",
+            "text": "Confidentiality, integrity, and availability"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Confidentiality, integrity, and availability Cyber threats aim to compromise the confidentiality, integrity, or availability (the CIA triad) of information."
+      },
+      {
+        "id": "ctia-m02-q02",
+        "type": "choice",
+        "text": "Which of the following is categorized as a Network Threat?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ransomware"
+          },
+          {
+            "label": "B",
+            "text": "SQL Injection"
+          },
+          {
+            "label": "C",
+            "text": "Privilege Escalation"
+          },
+          {
+            "label": "D",
+            "text": "Man-in-the-Middle (MitM) attack"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Man-in-the- Middle (MitM) attack MitM, DoS/DDoS, packet sniffing, and DNS spoofing are network threats; SQL injection is an application threat and ransomware/privilege escalation are host threats."
+      },
+      {
+        "id": "ctia-m02-q03",
+        "type": "choice",
+        "text": "SQL Injection and Cross-Site Scripting (XSS) belong to which threat category?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Application Threats"
+          },
+          {
+            "label": "B",
+            "text": "Network Threats"
+          },
+          {
+            "label": "C",
+            "text": "Host Threats"
+          },
+          {
+            "label": "D",
+            "text": "Physical Threats"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Application Threats SQL injection, XSS, CSRF, and code injection are application threats targeting software and APIs."
+      },
+      {
+        "id": "ctia-m02-q04",
+        "type": "choice",
+        "text": "A hacker with extraordinary computing skills who resorts to malicious or destructive activities is known as a:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gray Hat"
+          },
+          {
+            "label": "B",
+            "text": "Black Hat"
+          },
+          {
+            "label": "C",
+            "text": "White Hat"
+          },
+          {
+            "label": "D",
+            "text": "Script Kiddie"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Black Hat Black hats (crackers) use their skills for malicious or destructive purposes."
+      },
+      {
+        "id": "ctia-m02-q05",
+        "type": "choice",
+        "text": "An unskilled attacker who compromises systems by running scripts and tools developed by others is a:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Suicide Hacker"
+          },
+          {
+            "label": "B",
+            "text": "Industrial Spy"
+          },
+          {
+            "label": "C",
+            "text": "Hacktivist"
+          },
+          {
+            "label": "D",
+            "text": "Script Kiddie"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Script Kiddie Script kiddies lack deep skills and rely on pre-made tools and scripts created by real hackers."
+      },
+      {
+        "id": "ctia-m02-q06",
+        "type": "choice",
+        "text": "An attacker who hacks to promote a political agenda, often to deface or disable a website, is a:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Insider"
+          },
+          {
+            "label": "B",
+            "text": "State-Sponsored Hacker"
+          },
+          {
+            "label": "C",
+            "text": "Hacktivist"
+          },
+          {
+            "label": "D",
+            "text": "Gray Hat"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Hacktivist Hacktivists hack to promote political or social agendas, frequently by defacing or disabling websites."
+      },
+      {
+        "id": "ctia-m02-q07",
+        "type": "choice",
+        "text": "According to the threat triad, which element refers to the security weakness in an organization that allows an adversary to target it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Capability"
+          },
+          {
+            "label": "B",
+            "text": "Opportunity"
+          },
+          {
+            "label": "C",
+            "text": "Intent"
+          },
+          {
+            "label": "D",
+            "text": "Motive"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Opportunity Opportunity is the existing security vulnerability or weakness that allows the adversary to attack; intent is the goal and capability is the TTPs."
+      },
+      {
+        "id": "ctia-m02-q08",
+        "type": "choice",
+        "text": "In CTI, the equation 'Attacks = Motive (Goal) + Method + ____' is completed by which term?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Budget"
+          },
+          {
+            "label": "B",
+            "text": "Vulnerability"
+          },
+          {
+            "label": "C",
+            "text": "Firewall"
+          },
+          {
+            "label": "D",
+            "text": "Encryption"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Vulnerability Attacks arise from a motive/goal combined with a method and an exploitable vulnerability."
+      },
+      {
+        "id": "ctia-m02-q09",
+        "type": "choice",
+        "text": "What is the main objective of an Advanced Persistent Threat (APT)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Obtain sensitive information while remaining undetected for a long period"
+          },
+          {
+            "label": "B",
+            "text": "Immediately destroy all systems"
+          },
+          {
+            "label": "C",
+            "text": "Test new antivirus products"
+          },
+          {
+            "label": "D",
+            "text": "Generate maximum public noise"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Obtain sensitive information while remaining undetected for a long period APTs aim to gain unauthorized access and stealthily steal sensitive information over a long time, rather than sabotage."
+      },
+      {
+        "id": "ctia-m02-q10",
+        "type": "choice",
+        "text": "Which characteristic describes how long an APT attack remains undetected in a target's network?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Resources"
+          },
+          {
+            "label": "B",
+            "text": "Risk Tolerance"
+          },
+          {
+            "label": "C",
+            "text": "Objectives"
+          },
+          {
+            "label": "D",
+            "text": "Timeliness"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Risk Tolerance Risk Tolerance refers to the level up to which the attack remains undetected in the target's network."
+      },
+      {
+        "id": "ctia-m02-q11",
+        "type": "choice",
+        "text": "What is the correct sequence of the Advanced Persistent Threat (APT) lifecycle?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Preparation → Expansion → Initial Intrusion → Cleanup → Persistence → Exfiltration"
+          },
+          {
+            "label": "B",
+            "text": "Initial Intrusion → Preparation → Persistence → Expansion → Cleanup → Exfiltration"
+          },
+          {
+            "label": "C",
+            "text": "Cleanup → Preparation → Expansion → Initial Intrusion → Persistence → Exfiltration"
+          },
+          {
+            "label": "D",
+            "text": "Preparation → Initial Intrusion → Expansion → Persistence → Search and Exfiltration → Cleanup"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Preparation → Initial Intrusion → Expansion → Persistence → Search and Exfiltration → Cleanup The APT lifecycle runs: Preparation, Initial Intrusion, Expansion, Persistence, Search and Exfiltration, and Cleanup."
+      },
+      {
+        "id": "ctia-m02-q12",
+        "type": "choice",
+        "text": "In the APT lifecycle, covering tracks and remaining undetected occurs during which stage?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cleanup"
+          },
+          {
+            "label": "B",
+            "text": "Expansion"
+          },
+          {
+            "label": "C",
+            "text": "Persistence"
+          },
+          {
+            "label": "D",
+            "text": "Preparation"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Cleanup The Cleanup stage involves covering tracks and remaining undetected after objectives are met."
+      },
+      {
+        "id": "ctia-m02-q13",
+        "type": "choice",
+        "text": "What is the correct order of the seven phases of the Cyber Kill Chain?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Weaponization → Reconnaissance → Delivery → Installation → Exploitation → C2 → Actions on Objectives"
+          },
+          {
+            "label": "B",
+            "text": "Reconnaissance → Weaponization → Delivery → Exploitation → Installation → Command and Control → Actions on Objectives"
+          },
+          {
+            "label": "C",
+            "text": "Reconnaissance → Delivery → Weaponization → Installation → Exploitation → C2 → Actions on Objectives"
+          },
+          {
+            "label": "D",
+            "text": "Delivery → Reconnaissance → Weaponization → Exploitation → Installation → C2 → Actions on Objectives"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Reconnaissance → Weaponization → Delivery → Exploitation → Installation → Command and Control → Actions on Objectives The Cyber Kill Chain order is Reconnaissance, Weaponization, Delivery, Exploitation, Installation, Command and Control, and Actions on Objectives."
+      },
+      {
+        "id": "ctia-m02-q14",
+        "type": "choice",
+        "text": "In the Cyber Kill Chain, creating a deliverable malicious payload using an exploit and a backdoor occurs during which phase?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Weaponization"
+          },
+          {
+            "label": "B",
+            "text": "Installation"
+          },
+          {
+            "label": "C",
+            "text": "Reconnaissance"
+          },
+          {
+            "label": "D",
+            "text": "Delivery"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Weaponization Weaponization is the phase where a malicious payload is created by coupling an exploit with a backdoor."
+      },
+      {
+        "id": "ctia-m02-q15",
+        "type": "choice",
+        "text": "Within the TTP concept, what does 'Tactics' refer to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A specific malware hash"
+          },
+          {
+            "label": "B",
+            "text": "The organizational approach followed to launch an attack"
+          },
+          {
+            "label": "C",
+            "text": "The guideline that describes the way an attacker performs the attack from beginning to end"
+          },
+          {
+            "label": "D",
+            "text": "The technical methods used to achieve intermediate results"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "The guideline that describes the way an attacker performs the attack from beginning to end Tactics describe the overall way an attacker conducts an attack from start to finish, including information-gathering and persistence approaches. Q# Answer Why"
+      },
+      {
+        "id": "ctia-m02-q16",
+        "type": "choice",
+        "text": "In the TTP model, 'Techniques' are best defined as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Technical methods used by an attacker to achieve intermediate results"
+          },
+          {
+            "label": "B",
+            "text": "High-level business strategies"
+          },
+          {
+            "label": "C",
+            "text": "The motive behind an attack"
+          },
+          {
+            "label": "D",
+            "text": "Legal considerations of intelligence"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Technical methods used by an attacker to achieve intermediate results Techniques are the technical methods (e.g., initial exploitation, setting up C2 channels) used to achieve intermediate attack results."
+      },
+      {
+        "id": "ctia-m02-q17",
+        "type": "choice",
+        "text": "Adversary behavioral identification gives security analysts insight primarily into:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Quarterly revenue forecasts"
+          },
+          {
+            "label": "B",
+            "text": "Employee payroll data"
+          },
+          {
+            "label": "C",
+            "text": "Upcoming threats and exploits"
+          },
+          {
+            "label": "D",
+            "text": "Marketing campaign performance"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Upcoming threats and exploits Identifying common adversary methods (e.g., use of PowerShell, DNS tunneling) provides insight into upcoming threats and exploits."
+      },
+      {
+        "id": "ctia-m02-q18",
+        "type": "choice",
+        "text": "The MITRE ATT&CK framework is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A password manager"
+          },
+          {
+            "label": "B",
+            "text": "A firewall configuration tool"
+          },
+          {
+            "label": "C",
+            "text": "A globally accessible knowledge base of adversary tactics and techniques based on real-world observations"
+          },
+          {
+            "label": "D",
+            "text": "An antivirus engine"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "A globally accessible knowledge base of adversary tactics and techniques based on real-world observations MITRE ATT&CK is a globally accessible knowledge base of adversary tactics and techniques derived from real-world observations."
+      },
+      {
+        "id": "ctia-m02-q19",
+        "type": "choice",
+        "text": "The MITRE ATT&CK framework is split into PRE-ATT&CK and which other major component?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Enterprise ATT&CK"
+          },
+          {
+            "label": "B",
+            "text": "Legacy ATT&CK"
+          },
+          {
+            "label": "C",
+            "text": "Personal ATT&CK"
+          },
+          {
+            "label": "D",
+            "text": "Cloud ATT&CK"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Enterprise ATT&CK ATT&CK is divided into PRE-ATT&CK (recon/weaponize) and Enterprise ATT&CK (the later deliver/exploit/control/execute/maintain stages)."
+      },
+      {
+        "id": "ctia-m02-q20",
+        "type": "choice",
+        "text": "Which is a use of the MITRE ATT&CK framework specifically in Red Teaming?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Enrich threat intelligence feeds"
+          },
+          {
+            "label": "B",
+            "text": "Visualize adversary footprints"
+          },
+          {
+            "label": "C",
+            "text": "Simulate real-time attacks and ensure coverage and validation"
+          },
+          {
+            "label": "D",
+            "text": "Identify threat groups"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Simulate real-time attacks and ensure coverage and validation In red teaming, ATT&CK is used to simulate real-time attacks, ensure coverage/validation, identify gaps, and measure efficiency."
+      },
+      {
+        "id": "ctia-m02-q21",
+        "type": "choice",
+        "text": "What are the four core features (vertices) of the Diamond Model of Intrusion Analysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Adversary, Capability, Infrastructure, Victim"
+          },
+          {
+            "label": "B",
+            "text": "Reconnaissance, Delivery, Exploitation, Installation"
+          },
+          {
+            "label": "C",
+            "text": "Strategic, Tactical, Operational, Technical"
+          },
+          {
+            "label": "D",
+            "text": "Confidentiality, Integrity, Availability, Authenticity"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Adversary, Capability, Infrastructure, Victim The Diamond Model's four core features are Adversary, Capability, Infrastructure, and Victim."
+      },
+      {
+        "id": "ctia-m02-q22",
+        "type": "choice",
+        "text": "In the Extended Diamond Model, the Social-Political meta-feature is used primarily to determine:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Which firewall to deploy"
+          },
+          {
+            "label": "B",
+            "text": "The cost of the SIEM"
+          },
+          {
+            "label": "C",
+            "text": "The number of employees"
+          },
+          {
+            "label": "D",
+            "text": "Why the attack was performed (the adversary–victim relationship)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Why the attack was performed (the adversary–victim relationship) The Social-Political meta-feature describes the adversary–victim relationship and helps determine why an attack was performed."
+      },
+      {
+        "id": "ctia-m02-q23",
+        "type": "choice",
+        "text": "Indicators of Compromise (IoCs) are best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Marketing analytics"
+          },
+          {
+            "label": "B",
+            "text": "Finished intelligence reports"
+          },
+          {
+            "label": "C",
+            "text": "A type of firewall rule"
+          },
+          {
+            "label": "D",
+            "text": "Clues or pieces of forensic data indicating a potential intrusion or malicious activity"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Clues or pieces of forensic data indicating a potential intrusion or malicious activity IoCs are forensic clues/artifacts found on a network or system that indicate a potential intrusion; they are data points, not intelligence by themselves."
+      },
+      {
+        "id": "ctia-m02-q24",
+        "type": "choice",
+        "text": "Filenames, file hashes, registry keys, DLLs, and mutexes are examples of which IoC category?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Network Indicators"
+          },
+          {
+            "label": "B",
+            "text": "Strategic Indicators"
+          },
+          {
+            "label": "C",
+            "text": "Host-Based Indicators"
+          },
+          {
+            "label": "D",
+            "text": "Email Indicators"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "Host-Based Indicators Host-based indicators include filenames, file hashes, registry keys, DLLs, and mutexes found on a system."
+      },
+      {
+        "id": "ctia-m02-q25",
+        "type": "choice",
+        "text": "In the Pyramid of Pain, which indicator is at the very top, causing the most 'pain' for an adversary to change?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hash Values"
+          },
+          {
+            "label": "B",
+            "text": "TTPs"
+          },
+          {
+            "label": "C",
+            "text": "IP Addresses"
+          },
+          {
+            "label": "D",
+            "text": "Domain Names"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 02: Cyber Threats and Attack Frameworks.",
+        "explanation": "TTPs TTPs sit at the top of the Pyramid of Pain — denying them is the toughest for adversaries; hash values at the bottom are trivial to change."
+      }
+    ]
+  },
+  "ctiaModule03PracticeExam": {
+    "lesson": "ctia-module-03",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 03 Practice Exam",
+    "title": "CTIA Module 03: Requirements, Planning, Direction, and Review",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 03: Requirements, Planning, Direction, and Review.",
+    "sourceFile": "CTIA_MCQ_Module03_Module04.pdf",
+    "questions": [
+      {
+        "id": "ctia-m03-q01",
+        "type": "choice",
+        "text": "When identifying critical threats, on the impact rating scale used in the module, a rating of 5 corresponds to which impact level?",
+        "options": [
+          {
+            "label": "A",
+            "text": "High"
+          },
+          {
+            "label": "B",
+            "text": "No Impact"
+          },
+          {
+            "label": "C",
+            "text": "Low"
+          },
+          {
+            "label": "D",
+            "text": "Critical"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Critical Threats are rated 1–5 by impact, where 1 = No Impact, 2 = Low, 3 = Medium, 4 = High, and 5 = Critical."
+      },
+      {
+        "id": "ctia-m03-q02",
+        "type": "choice",
+        "text": "On the threat possibility rating scale, a rating of 1 indicates that a threat is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Extremely Possible"
+          },
+          {
+            "label": "B",
+            "text": "Not Likely"
+          },
+          {
+            "label": "C",
+            "text": "Moderately possible"
+          },
+          {
+            "label": "D",
+            "text": "Highly Possible"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Not Likely Possibility is rated 1–5, where 1 = Not Likely and 5 = Extremely Possible."
+      },
+      {
+        "id": "ctia-m03-q03",
+        "type": "choice",
+        "text": "An organization's 'security pressure posture' represents:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The physical security of the data center"
+          },
+          {
+            "label": "B",
+            "text": "The number of firewalls deployed"
+          },
+          {
+            "label": "C",
+            "text": "Various elements or drivers that force it to enhance or develop new security programs"
+          },
+          {
+            "label": "D",
+            "text": "The salary budget for the security team"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Various elements or drivers that force it to enhance or develop new security programs Security pressure posture refers to the drivers (customer pressure, regulatory needs, etc.) that push an organization to strengthen or build security programs."
+      },
+      {
+        "id": "ctia-m03-q04",
+        "type": "choice",
+        "text": "Which security control performs real-time SOC functions such as identifying, monitoring, recording, auditing, and analyzing security incidents?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gateway"
+          },
+          {
+            "label": "B",
+            "text": "SIEM"
+          },
+          {
+            "label": "C",
+            "text": "Endpoint Solutions"
+          },
+          {
+            "label": "D",
+            "text": "NGFW"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "SIEM A SIEM performs real-time SOC functions and tracks suspicious end-user behavior in a real-time IT environment."
+      },
+      {
+        "id": "ctia-m03-q05",
+        "type": "choice",
+        "text": "In the security infrastructure controls, which node routes traffic from a workstation to an external command and control server and helps identify malware such as a RAT?",
+        "options": [
+          {
+            "label": "A",
+            "text": "IDS/IPS"
+          },
+          {
+            "label": "B",
+            "text": "NGFW"
+          },
+          {
+            "label": "C",
+            "text": "SIEM"
+          },
+          {
+            "label": "D",
+            "text": "Gateway"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Gateway A gateway is a network node that routes workstation traffic to external C2 servers and helps identify installed malware like Remote Access Trojans."
+      },
+      {
+        "id": "ctia-m03-q06",
+        "type": "choice",
+        "text": "By performing threat identification, asset prioritization, and risk assessment, an organization can ultimately:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Identify the goals and requirements for building a threat intelligence program"
+          },
+          {
+            "label": "B",
+            "text": "Eliminate the need for a security team"
+          },
+          {
+            "label": "C",
+            "text": "Avoid all future cyberattacks"
+          },
+          {
+            "label": "D",
+            "text": "Remove all compliance obligations"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Identify the goals and requirements for building a threat intelligence program These activities help an organization identify the goals and requirements for building a threat intelligence program to enhance its security posture."
+      },
+      {
+        "id": "ctia-m03-q07",
+        "type": "choice",
+        "text": "Intelligence requirements that consist of 'knowns and unknowns' about questions to be answered by the intelligence function belong to which requirement category?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Business Requirements"
+          },
+          {
+            "label": "B",
+            "text": "Production Requirements"
+          },
+          {
+            "label": "C",
+            "text": "Intelligence Requirements"
+          },
+          {
+            "label": "D",
+            "text": "Collection Requirements"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Intelligence Requirements Intelligence requirements consist of knowns and unknowns about questions the intelligence function must answer to support knowledge and judgment-based decisions."
+      },
+      {
+        "id": "ctia-m03-q08",
+        "type": "choice",
+        "text": "Collection requirements primarily focus on:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Either external or internal sources"
+          },
+          {
+            "label": "B",
+            "text": "The format of the final report"
+          },
+          {
+            "label": "C",
+            "text": "The budget for the program"
+          },
+          {
+            "label": "D",
+            "text": "Deliverables for intelligence consumers"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Either external or internal sources Collection requirements focus on external sources (e.g., threat actors) or internal sources (e.g., the organization's attack surfaces)."
+      },
+      {
+        "id": "ctia-m03-q09",
+        "type": "choice",
+        "text": "Which group of intelligence consumers includes high-level executives such as CISOs and IT managers who consume intelligence to understand changing cybersecurity trends?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Technical Users"
+          },
+          {
+            "label": "B",
+            "text": "Strategic Users"
+          },
+          {
+            "label": "C",
+            "text": "Tactical Users"
+          },
+          {
+            "label": "D",
+            "text": "Operational Users"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Strategic Users Strategic users are high-level executives/management (CISOs, IT managers) who use intelligence to understand changing trends and make decisions on technology, budget, and staff."
+      },
+      {
+        "id": "ctia-m03-q10",
+        "type": "choice",
+        "text": "Priority Intelligence Requirements (PIRs) are best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A list of approved vendors"
+          },
+          {
+            "label": "B",
+            "text": "A set of malware signatures"
+          },
+          {
+            "label": "C",
+            "text": "A budget spreadsheet"
+          },
+          {
+            "label": "D",
+            "text": "A series of questions that helps the threat intelligence team focus on what matters to higher-level management"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "A series of questions that helps the threat intelligence team focus on what matters to higher- level management PIRs take the form of a series of questions that help the intelligence team focus on what is important to senior management and provide dynamic situational awareness to reduce risks."
+      },
+      {
+        "id": "ctia-m03-q11",
+        "type": "choice",
+        "text": "In the MoSCoW prioritization method, what does the 'M' stand for?",
+        "options": [
+          {
+            "label": "A",
+            "text": "MUST Have (Compulsory)"
+          },
+          {
+            "label": "B",
+            "text": "Moderate Have"
+          },
+          {
+            "label": "C",
+            "text": "Minor Have"
+          },
+          {
+            "label": "D",
+            "text": "May Have"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "MUST Have (Compulsory) MoSCoW stands for MUST Have (compulsory), SHOULD Have (high priority), COULD Have (preferred but not essential), and WON'T Have (postponed)."
+      },
+      {
+        "id": "ctia-m03-q12",
+        "type": "choice",
+        "text": "In the MoSCoW method, which category represents requirements that are 'preferred but not essential'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "WON'T Have"
+          },
+          {
+            "label": "B",
+            "text": "COULD Have"
+          },
+          {
+            "label": "C",
+            "text": "SHOULD Have"
+          },
+          {
+            "label": "D",
+            "text": "MUST Have"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "COULD Have COULD Have requirements are preferred but not essential; WON'T Have requirements can be postponed or suggested for future execution."
+      },
+      {
+        "id": "ctia-m03-q13",
+        "type": "choice",
+        "text": "Which of the following is listed as a key organizational asset that must be prioritized and protected?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Intellectual Property"
+          },
+          {
+            "label": "B",
+            "text": "Parking spaces"
+          },
+          {
+            "label": "C",
+            "text": "Marketing slogans"
+          },
+          {
+            "label": "D",
+            "text": "Office furniture"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Intellectual Property Key prioritized assets include personal details, financial information, intellectual property, sensitive business data, and login/IT system information."
+      },
+      {
+        "id": "ctia-m03-q14",
+        "type": "choice",
+        "text": "The Rule of Engagement (ROE) in a threat intelligence program refers to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A penetration testing tool"
+          },
+          {
+            "label": "B",
+            "text": "The formal permission to implement a threat intelligence program"
+          },
+          {
+            "label": "C",
+            "text": "A data normalization standard"
+          },
+          {
+            "label": "D",
+            "text": "A type of malware"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "The formal permission to implement a threat intelligence program ROE refers to the formal permission to implement a threat intelligence program and provides top-level guidance, helping the team overcome legal, federal, and policy restrictions."
+      },
+      {
+        "id": "ctia-m03-q15",
+        "type": "choice",
+        "text": "A nondisclosure agreement (NDA) in the context of threat intelligence is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A software license"
+          },
+          {
+            "label": "B",
+            "text": "A marketing contract"
+          },
+          {
+            "label": "C",
+            "text": "A security contract signed between two parties for maintaining secrecy of mutually shared information"
+          },
+          {
+            "label": "D",
+            "text": "A vulnerability scanning report"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "A security contract signed between two parties for maintaining secrecy of mutually shared information An NDA is a security contract between two persons or companies to maintain secrecy of mutually shared information and protect sensitive data from disclosure. Q# Answer Why"
+      },
+      {
+        "id": "ctia-m03-q16",
+        "type": "choice",
+        "text": "Which is identified as a common threat intelligence pitfall to avoid?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Relying on obsolete information"
+          },
+          {
+            "label": "B",
+            "text": "Using up-to-date intelligence"
+          },
+          {
+            "label": "C",
+            "text": "Standardizing data formats"
+          },
+          {
+            "label": "D",
+            "text": "Providing context to data"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Relying on obsolete information Pitfalls to avoid include unreliable sources, inadequate communication, data without context, lack of standardization, lack of technology capabilities, and relying on obsolete information."
+      },
+      {
+        "id": "ctia-m03-q17",
+        "type": "choice",
+        "text": "In preparing 'People, Processes, and Technology', the producers and consumers of threat intelligence include all EXCEPT:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Marketing Consumers"
+          },
+          {
+            "label": "B",
+            "text": "Threat Data Consumers"
+          },
+          {
+            "label": "C",
+            "text": "Threat Intelligence Producers"
+          },
+          {
+            "label": "D",
+            "text": "Raw Data Producers"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Marketing Consumers Producers/consumers include Raw Data Producers, Threat Data Consumers, Threat Intelligence Consumers, and Threat Intelligence Producers."
+      },
+      {
+        "id": "ctia-m03-q18",
+        "type": "choice",
+        "text": "When developing a collection plan, threat intelligence data is divided into how many high-level categories?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Four"
+          },
+          {
+            "label": "B",
+            "text": "Three"
+          },
+          {
+            "label": "C",
+            "text": "Five"
+          },
+          {
+            "label": "D",
+            "text": "Seven"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Five Threat intelligence data has five high-level categories: phishing messages, indicators of malware, compromised devices, IP reputation, and malicious infrastructure."
+      },
+      {
+        "id": "ctia-m03-q19",
+        "type": "choice",
+        "text": "Which is the FIRST step listed in scheduling a threat intelligence program?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Estimate the duration of each activity"
+          },
+          {
+            "label": "B",
+            "text": "Review the project charter"
+          },
+          {
+            "label": "C",
+            "text": "Develop the final schedule"
+          },
+          {
+            "label": "D",
+            "text": "Build a work breakdown structure (WBS)"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Review the project charter Scheduling begins with reviewing the project charter, then building a WBS, identifying deliverables, defining activities, and so on through developing the final schedule."
+      },
+      {
+        "id": "ctia-m03-q20",
+        "type": "choice",
+        "text": "When establishing a case to management for a threat intelligence program, which item is categorized as a 'Benefit'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Time consumption is too high"
+          },
+          {
+            "label": "B",
+            "text": "Risk of disturbance in business operations"
+          },
+          {
+            "label": "C",
+            "text": "Insufficient budget for new projects"
+          },
+          {
+            "label": "D",
+            "text": "Decreasing repeated/recurring incidents"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Decreasing repeated/recurring incidents Benefits include decreasing recurring incidents, reducing reputation damage, improved asset security, and better productivity; the others are obstacles."
+      },
+      {
+        "id": "ctia-m03-q21",
+        "type": "choice",
+        "text": "Which selection criterion for threat intelligence partners refers to the geographic and cultural breadth of coverage a partner provides?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Client Services"
+          },
+          {
+            "label": "B",
+            "text": "Access to Experts"
+          },
+          {
+            "label": "C",
+            "text": "APIs and Integrations"
+          },
+          {
+            "label": "D",
+            "text": "Global and Cultural Reach"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Global and Cultural Reach Global and Cultural Reach is one of the partner selection criteria, alongside historical data, range of deliverables, APIs, platform/portal, client services, and access to experts."
+      },
+      {
+        "id": "ctia-m03-q22",
+        "type": "choice",
+        "text": "Threat intelligence sharing partners are mainly categorized into how many types?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Two"
+          },
+          {
+            "label": "B",
+            "text": "Five"
+          },
+          {
+            "label": "C",
+            "text": "Three"
+          },
+          {
+            "label": "D",
+            "text": "Four"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Three Sharing partners fall into three types: providers of threat indicators, providers of threat data feeds, and providers of comprehensive cyber threat intelligence."
+      },
+      {
+        "id": "ctia-m03-q23",
+        "type": "choice",
+        "text": "Which commonly used classification method indicates how intelligence can be distributed and shared between individuals, communities, or organizations?",
+        "options": [
+          {
+            "label": "A",
+            "text": "OSINT"
+          },
+          {
+            "label": "B",
+            "text": "MoSCoW"
+          },
+          {
+            "label": "C",
+            "text": "STIX/TAXII"
+          },
+          {
+            "label": "D",
+            "text": "Traffic Light Protocol (TLP)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Traffic Light Protocol (TLP) The Traffic Light Protocol (TLP) is the commonly used data handling classification method that governs how intelligence is distributed and shared."
+      },
+      {
+        "id": "ctia-m03-q24",
+        "type": "choice",
+        "text": "When reviewing a threat intelligence program, the consideration 'Focus on future' primarily means:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hiring new staff only"
+          },
+          {
+            "label": "B",
+            "text": "Ignoring past performance entirely"
+          },
+          {
+            "label": "C",
+            "text": "Learning from mistakes to avoid similar ones in future projects"
+          },
+          {
+            "label": "D",
+            "text": "Predicting stock prices"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Learning from mistakes to avoid similar ones in future projects 'Focus on future' means the main objective of the review is to learn from mistakes and avoid repeating them in future projects."
+      },
+      {
+        "id": "ctia-m03-q25",
+        "type": "choice",
+        "text": "Which activity is part of assessing the success and failure of a threat intelligence program?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Conducting gap analysis and determining whether program goals were accomplished"
+          },
+          {
+            "label": "B",
+            "text": "Conducting a marketing campaign"
+          },
+          {
+            "label": "C",
+            "text": "Purchasing new office furniture"
+          },
+          {
+            "label": "D",
+            "text": "Increasing the advertising budget"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 03: Requirements, Planning, Direction, and Review.",
+        "explanation": "Conducting gap analysis and determining whether program goals were accomplished Assessment activities include conducting gap analysis, determining goal accomplishment, evaluating costs/benefits, identifying improvements and lessons learned, and reporting findings. CTIA — Certified Threat Intelligence Analyst"
+      }
+    ]
+  },
+  "ctiaModule04PracticeExam": {
+    "lesson": "ctia-module-04",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 04 Practice Exam",
+    "title": "CTIA Module 04: Data Collection and Processing",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 04: Data Collection and Processing.",
+    "sourceFile": "CTIA_MCQ_Module03_Module04.pdf",
+    "questions": [
+      {
+        "id": "ctia-m04-q01",
+        "type": "choice",
+        "text": "Which data collection method gathers data from networks or information systems within the local boundaries or control of the organization, with no direct engagement with the adversary?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Manual Data Collection"
+          },
+          {
+            "label": "B",
+            "text": "Passive Data Collection"
+          },
+          {
+            "label": "C",
+            "text": "Active Data Collection"
+          },
+          {
+            "label": "D",
+            "text": "Hybrid Data Collection"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Passive Data Collection Passive data collection gathers data from systems under the organization's control without directly engaging the adversary or their infrastructure."
+      },
+      {
+        "id": "ctia-m04-q02",
+        "type": "choice",
+        "text": "A honeypot built to lure and trap adversaries is an example of which data collection method?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Active Data Collection"
+          },
+          {
+            "label": "B",
+            "text": "Hybrid Data Collection"
+          },
+          {
+            "label": "C",
+            "text": "Strategic Data Collection"
+          },
+          {
+            "label": "D",
+            "text": "Passive Data Collection"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Hybrid Data Collection Hybrid data collection uses shared networks, commercial feeds, or purpose-built networks like honeypots to lure and trap adversaries."
+      },
+      {
+        "id": "ctia-m04-q03",
+        "type": "choice",
+        "text": "Which type of data is the unprocessed, unaltered, and unfiltered form of data that requires extra time for processing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Structured Data"
+          },
+          {
+            "label": "B",
+            "text": "Exploited Data"
+          },
+          {
+            "label": "C",
+            "text": "Raw Data"
+          },
+          {
+            "label": "D",
+            "text": "Production Data"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Raw Data Raw data is unprocessed and unfiltered, may contain basic adversary details, and requires extra time to process into usable information."
+      },
+      {
+        "id": "ctia-m04-q04",
+        "type": "choice",
+        "text": "Operational security (OPSEC) for data collection is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A risk management process where an analyst views operations from an adversary's perspective to avoid exposing sensitive data"
+          },
+          {
+            "label": "B",
+            "text": "A type of malware analysis"
+          },
+          {
+            "label": "C",
+            "text": "A reporting format"
+          },
+          {
+            "label": "D",
+            "text": "A data visualization technique"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "A risk management process where an analyst views operations from an adversary's perspective to avoid exposing sensitive data OPSEC is a risk management process where the analyst analyzes operations from an adversary's point of view to provide security measures and avoid exposing sensitive data."
+      },
+      {
+        "id": "ctia-m04-q05",
+        "type": "choice",
+        "text": "Which of the following is recommended as an operational security measure to collect data confidentially?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Using unencrypted channels"
+          },
+          {
+            "label": "B",
+            "text": "Sharing credentials publicly"
+          },
+          {
+            "label": "C",
+            "text": "Disabling all firewalls"
+          },
+          {
+            "label": "D",
+            "text": "Using dark web browsers like the TOR Browser"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Using dark web browsers like the TOR Browser Recommended OPSEC measures include using TOR for confidential collection, secure tunneling (SSH/HTTPS), VMs, VPNs, and patched firewalls."
+      },
+      {
+        "id": "ctia-m04-q06",
+        "type": "choice",
+        "text": "Which intelligence discipline collects information from publicly available sources such as media, the internet, and public government data?",
+        "options": [
+          {
+            "label": "A",
+            "text": "OSINT"
+          },
+          {
+            "label": "B",
+            "text": "SIGINT"
+          },
+          {
+            "label": "C",
+            "text": "HUMINT"
+          },
+          {
+            "label": "D",
+            "text": "IMINT"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "OSINT Open-Source Intelligence (OSINT) is collected and analyzed from publicly available sources like media, the internet, and public government data."
+      },
+      {
+        "id": "ctia-m04-q07",
+        "type": "choice",
+        "text": "Signals Intelligence (SIGINT) that is obtained from the interception of communication signals is specifically called:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Imagery Intelligence (IMINT)"
+          },
+          {
+            "label": "B",
+            "text": "Foreign Instrumentation Signals Intelligence (FISINT)"
+          },
+          {
+            "label": "C",
+            "text": "Electronic Intelligence (ELINT)"
+          },
+          {
+            "label": "D",
+            "text": "Communication Intelligence (COMINT)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Communication Intelligence (COMINT) Within SIGINT, COMINT is obtained from intercepting communication signals; ELINT comes from electronic sensors and FISINT from non-human communication systems."
+      },
+      {
+        "id": "ctia-m04-q08",
+        "type": "choice",
+        "text": "Which intelligence discipline collects information from an adversary's equipment or captured enemy material (CEM)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "OSINT"
+          },
+          {
+            "label": "B",
+            "text": "GEOINT"
+          },
+          {
+            "label": "C",
+            "text": "HUMINT"
+          },
+          {
+            "label": "D",
+            "text": "TECHINT"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "TECHINT Technical Intelligence (TECHINT) is collected from an adversary's equipment or captured enemy material, using sources like foreign equipment and weapon systems."
+      },
+      {
+        "id": "ctia-m04-q09",
+        "type": "choice",
+        "text": "On the web, the layer that consists of hidden and unindexed pages that cannot be located using traditional browsers but can be reached via search engines like the TOR browser is the:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Deep Web"
+          },
+          {
+            "label": "B",
+            "text": "Dark Web"
+          },
+          {
+            "label": "C",
+            "text": "Open Web"
+          },
+          {
+            "label": "D",
+            "text": "Surface Web"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Deep Web The Deep Web consists of hidden, unindexed pages; the Dark Web is the subset of the deep web that enables anonymous, untraceable navigation."
+      },
+      {
+        "id": "ctia-m04-q10",
+        "type": "choice",
+        "text": "Website mirroring (e.g., using HTTrack) refers to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Encrypting a website's traffic"
+          },
+          {
+            "label": "B",
+            "text": "Replicating an entire website onto a local system to review it and its source code offline"
+          },
+          {
+            "label": "C",
+            "text": "Blocking access to a website"
+          },
+          {
+            "label": "D",
+            "text": "Translating a website to another language"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Replicating an entire website onto a local system to review it and its source code offline Website mirroring replicates an entire website to a local system so an analyst can review the site and its source code offline without repeated requests to the server."
+      },
+      {
+        "id": "ctia-m04-q11",
+        "type": "choice",
+        "text": "Which cyber counterintelligence technique redirects potentially malicious IP traffic into a sinkhole DNS server to prevent malware from resolving malicious URLs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Passive DNS monitoring"
+          },
+          {
+            "label": "B",
+            "text": "Malware sinkhole"
+          },
+          {
+            "label": "C",
+            "text": "Honeypot"
+          },
+          {
+            "label": "D",
+            "text": "YARA rules"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Malware sinkhole A malware sinkhole redirects malicious traffic to a sinkhole DNS server to stop the malware from resolving malicious hostnames and to examine its activities."
+      },
+      {
+        "id": "ctia-m04-q12",
+        "type": "choice",
+        "text": "YARA is primarily used by malware researchers to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Manage a budget"
+          },
+          {
+            "label": "B",
+            "text": "Encrypt data feeds"
+          },
+          {
+            "label": "C",
+            "text": "Identify and classify malware samples based on binary or textual patterns"
+          },
+          {
+            "label": "D",
+            "text": "Visualize network traffic"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Identify and classify malware samples based on binary or textual patterns YARA is a multi-platform tool used to identify and classify malware samples by creating rules based on binary or textual patterns."
+      },
+      {
+        "id": "ctia-m04-q13",
+        "type": "choice",
+        "text": "Static malware analysis is also known as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sandbox analysis"
+          },
+          {
+            "label": "B",
+            "text": "Dynamic analysis"
+          },
+          {
+            "label": "C",
+            "text": "Code analysis"
+          },
+          {
+            "label": "D",
+            "text": "Behavioral analysis"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Code analysis Static malware analysis (code analysis) examines the executable binary code without actually executing it; dynamic analysis (behavioral analysis) runs the code."
+      },
+      {
+        "id": "ctia-m04-q14",
+        "type": "choice",
+        "text": "Dynamic malware analysis requires which kind of environment to deter the spread of malware?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A public website"
+          },
+          {
+            "label": "B",
+            "text": "An employee's personal laptop"
+          },
+          {
+            "label": "C",
+            "text": "A production server"
+          },
+          {
+            "label": "D",
+            "text": "Virtual machines and sandboxes"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Virtual machines and sandboxes Dynamic analysis executes malware to observe behavior, so it requires safe environments like virtual machines and sandboxes to contain the malware."
+      },
+      {
+        "id": "ctia-m04-q15",
+        "type": "choice",
+        "text": "In dynamic malware analysis, taking a snapshot of the system at the time the analysis begins in order to identify significant changes is called:",
+        "options": [
+          {
+            "label": "A",
+            "text": "System baselining"
+          },
+          {
+            "label": "B",
+            "text": "File fingerprinting"
+          },
+          {
+            "label": "C",
+            "text": "Host integrity monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Packing"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "System baselining System baselining takes a snapshot of the system (files, registry, ports, network activity) at the start of analysis to identify significant changes from the baseline."
+      },
+      {
+        "id": "ctia-m04-q16",
+        "type": "choice",
+        "text": "When collecting data through Python scripting for web scraping, which two libraries are commonly used?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SQLAlchemy and OAuth"
+          },
+          {
+            "label": "B",
+            "text": "Flask and Django"
+          },
+          {
+            "label": "C",
+            "text": "Requests and BeautifulSoup"
+          },
+          {
+            "label": "D",
+            "text": "NumPy and Pandas"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Requests and BeautifulSoup Web scraping with Python commonly uses the Requests library (to send HTTP requests) and BeautifulSoup (to parse HTML content). Q# Answer Why"
+      },
+      {
+        "id": "ctia-m04-q17",
+        "type": "choice",
+        "text": "Producing your own threat intelligence through binary classification typically involves creating a machine learning model that classifies data into which two categories?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Raw and processed"
+          },
+          {
+            "label": "B",
+            "text": "Internal and external"
+          },
+          {
+            "label": "C",
+            "text": "Threat and non-threat"
+          },
+          {
+            "label": "D",
+            "text": "Strategic and tactical"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Threat and non- threat Binary classification builds an ML model that classifies data into 'threat' and 'non-threat' categories based on predefined features."
+      },
+      {
+        "id": "ctia-m04-q18",
+        "type": "choice",
+        "text": "Which is one of the key concepts associated with bulk data collection?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Volume"
+          },
+          {
+            "label": "B",
+            "text": "Simplicity"
+          },
+          {
+            "label": "C",
+            "text": "Locality"
+          },
+          {
+            "label": "D",
+            "text": "Brevity"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Volume Bulk data collection is associated with concepts like Volume, Velocity, Variety, Variability, Complexity, Distributed Processing, and Distributed Storage."
+      },
+      {
+        "id": "ctia-m04-q19",
+        "type": "choice",
+        "text": "In the structured form of bulk data collection, data collection is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collected from multiple sources in multiple formats"
+          },
+          {
+            "label": "B",
+            "text": "Limited to social media only"
+          },
+          {
+            "label": "C",
+            "text": "Restricted to some organization-specific parameters"
+          },
+          {
+            "label": "D",
+            "text": "Never analyzed"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Restricted to some organization- specific parameters In the structured form, collection is restricted to organization-specific parameters; the unstructured form gathers large amounts of multi-format data from multiple sources."
+      },
+      {
+        "id": "ctia-m04-q20",
+        "type": "choice",
+        "text": "Normalization of collected data is the process of:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Structuring unstructured data so it is sorted and usable by humans and machines"
+          },
+          {
+            "label": "B",
+            "text": "Deleting all collected data"
+          },
+          {
+            "label": "C",
+            "text": "Sharing data with the public"
+          },
+          {
+            "label": "D",
+            "text": "Encrypting data for storage"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Structuring unstructured data so it is sorted and usable by humans and machines Normalization structures unstructured data so it is sorted and usable by humans and automated tools, using filtering, tagging, and queuing to reduce data volume."
+      },
+      {
+        "id": "ctia-m04-q21",
+        "type": "choice",
+        "text": "Which data structuring/normalization format is a community-driven language that is part of MITRE standards and is both human-understandable and machine-readable?",
+        "options": [
+          {
+            "label": "A",
+            "text": "OpenIOC"
+          },
+          {
+            "label": "B",
+            "text": "STIX"
+          },
+          {
+            "label": "C",
+            "text": "VERIS"
+          },
+          {
+            "label": "D",
+            "text": "CybOX"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "STIX STIX (Structured Threat Information eXpression) is a community-driven, MITRE-standard language that is both human-understandable and machine-readable."
+      },
+      {
+        "id": "ctia-m04-q22",
+        "type": "choice",
+        "text": "TAXII is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A data visualization tool"
+          },
+          {
+            "label": "B",
+            "text": "A language for describing cyber observables"
+          },
+          {
+            "label": "C",
+            "text": "A malware sandbox"
+          },
+          {
+            "label": "D",
+            "text": "A protocol/set of technical specifications for the secure sharing of intelligence in STIX and CybOX"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "A protocol/set of technical specifications for the secure sharing of intelligence in STIX and CybOX TAXII (Trusted Automated eXchange of Indicator Information) is a MITRE protocol used for the secure sharing of intelligence represented in STIX and CybOX."
+      },
+      {
+        "id": "ctia-m04-q23",
+        "type": "choice",
+        "text": "Which type of data sampling selects samples based on availability, making it quick and easy but less credible?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Probability Sampling"
+          },
+          {
+            "label": "B",
+            "text": "Convenience Sampling"
+          },
+          {
+            "label": "C",
+            "text": "Purposive Sampling"
+          },
+          {
+            "label": "D",
+            "text": "Random Sampling"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Convenience Sampling Convenience sampling selects samples based on availability—quick and easy but less credible—whereas probability sampling is random and generalizable."
+      },
+      {
+        "id": "ctia-m04-q24",
+        "type": "choice",
+        "text": "Which storage platform stores data in a localized system or server and is prone to data loss during disasters?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Centralized Storage"
+          },
+          {
+            "label": "B",
+            "text": "Hybrid Storage"
+          },
+          {
+            "label": "C",
+            "text": "Distributed Storage"
+          },
+          {
+            "label": "D",
+            "text": "Cloud Storage"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Centralized Storage Centralized storage keeps data in a localized system or server; it is locally available but prone to data loss during disasters, unlike distributed or cloud storage."
+      },
+      {
+        "id": "ctia-m04-q25",
+        "type": "choice",
+        "text": "Which of the following is named as a popular data visualization tool analysts can use to visualize stored threat data?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nmap"
+          },
+          {
+            "label": "B",
+            "text": "Metasploit"
+          },
+          {
+            "label": "C",
+            "text": "Wireshark"
+          },
+          {
+            "label": "D",
+            "text": "Tableau"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 04: Data Collection and Processing.",
+        "explanation": "Tableau Tableau and QlikView are named as popular data visualization tools for representing stored threat data graphically."
+      }
+    ]
+  },
+  "ctiaModule05PracticeExam": {
+    "lesson": "ctia-module-05",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 05 Practice Exam",
+    "title": "CTIA Module 05: Data Analysis",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 05: Data Analysis.",
+    "sourceFile": "CTIA_MCQ_Module05.pdf",
+    "questions": [
+      {
+        "id": "ctia-m05-q01",
+        "type": "choice",
+        "text": "What best defines data analysis in the context of threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The process of encrypting data before it is shared with stakeholders"
+          },
+          {
+            "label": "B",
+            "text": "The process of collecting raw data from multiple external sources only"
+          },
+          {
+            "label": "C",
+            "text": "The process of disseminating finished intelligence to senior management"
+          },
+          {
+            "label": "D",
+            "text": "The process of examining, filtering, transforming, and modeling data to extract useful information from collected bulk data"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data analysis examines, filters, transforms, and models bulk data to extract useful information and support decision-making."
+      },
+      {
+        "id": "ctia-m05-q02",
+        "type": "choice",
+        "text": "Which discipline deals with the discovery of patterns in huge datasets using statistics, AI, machine learning, and database analytics?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Data scoring"
+          },
+          {
+            "label": "B",
+            "text": "Data mining"
+          },
+          {
+            "label": "C",
+            "text": "Data visualization"
+          },
+          {
+            "label": "D",
+            "text": "Data contextualization"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data mining discovers patterns in large datasets via statistics, AI, machine learning, and database analytics. Data visualization handles graphical representation."
+      },
+      {
+        "id": "ctia-m05-q03",
+        "type": "choice",
+        "text": "Contextualization of data primarily helps an analyst to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increase the total volume of intelligence collected"
+          },
+          {
+            "label": "B",
+            "text": "Convert all structured data into unstructured form"
+          },
+          {
+            "label": "C",
+            "text": "Replace human analysis with automated tools"
+          },
+          {
+            "label": "D",
+            "text": "Reduce intelligence into meaningful content by excluding irrelevant information"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Contextualization reduces intelligence into meaningful content by excluding irrelevant information, improving scalability and effectiveness."
+      },
+      {
+        "id": "ctia-m05-q04",
+        "type": "choice",
+        "text": "Which type of data analysis deals with analyzing real-time data of current activities?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Descriptive"
+          },
+          {
+            "label": "B",
+            "text": "Prescriptive"
+          },
+          {
+            "label": "C",
+            "text": "Predictive"
+          },
+          {
+            "label": "D",
+            "text": "Diagnostic"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Descriptive analysis deals with real-time data of current activities. Diagnostic looks at past events; predictive forecasts; prescriptive recommends actions."
+      },
+      {
+        "id": "ctia-m05-q05",
+        "type": "choice",
+        "text": "An analyst wants to understand what caused a past security incident. Which type of data analysis is most appropriate?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Descriptive"
+          },
+          {
+            "label": "B",
+            "text": "Predictive"
+          },
+          {
+            "label": "C",
+            "text": "Diagnostic"
+          },
+          {
+            "label": "D",
+            "text": "Prescriptive"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Diagnostic analysis examines data related to past events to understand what caused them."
+      },
+      {
+        "id": "ctia-m05-q06",
+        "type": "choice",
+        "text": "Prescriptive data analysis is best described as analysis that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyzes real-time current activities"
+          },
+          {
+            "label": "B",
+            "text": "Examines the quality of collected data using nonnumeric techniques"
+          },
+          {
+            "label": "C",
+            "text": "Predicts upcoming attacks based on acquired data"
+          },
+          {
+            "label": "D",
+            "text": "Applies advanced analytic techniques to make specific recommendations and develop countermeasures"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Prescriptive analysis applies advanced analytic techniques to make specific recommendations and develop countermeasures to prevent attacks."
+      },
+      {
+        "id": "ctia-m05-q07",
+        "type": "choice",
+        "text": "Which analysis type relies on nonnumeric techniques such as brainstorming, interviewing, SWOT analysis, and the Delphi technique?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Confirmatory"
+          },
+          {
+            "label": "B",
+            "text": "Quantitative"
+          },
+          {
+            "label": "C",
+            "text": "Qualitative"
+          },
+          {
+            "label": "D",
+            "text": "Exploratory"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Qualitative analysis uses nonnumeric techniques like brainstorming, interviewing, SWOT, and Delphi. Quantitative uses numerical techniques."
+      },
+      {
+        "id": "ctia-m05-q08",
+        "type": "choice",
+        "text": "Confirmatory data analysis is characterized by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Plotting data values onto graphs"
+          },
+          {
+            "label": "B",
+            "text": "Analyzing hypotheses with specified precision and confidence using methods like regression and variance analysis"
+          },
+          {
+            "label": "C",
+            "text": "Grouping similar data through clustering"
+          },
+          {
+            "label": "D",
+            "text": "Finding links between data based on assumptions"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Confirmatory analysis tests hypotheses with specified precision and confidence, using regression analysis, variance analysis, and similar methods."
+      },
+      {
+        "id": "ctia-m05-q09",
+        "type": "choice",
+        "text": "What is the correct order of the statistical data analysis process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Data Validation → Data Preparation → Data Classification → Data Scoring → Data Correlation"
+          },
+          {
+            "label": "B",
+            "text": "Data Preparation → Data Classification → Data Validation → Data Correlation → Data Scoring"
+          },
+          {
+            "label": "C",
+            "text": "Data Classification → Data Preparation → Data Validation → Data Scoring → Data Correlation"
+          },
+          {
+            "label": "D",
+            "text": "Data Preparation → Data Validation → Data Classification → Data Correlation → Data Scoring"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "The process is Data Preparation, Data Classification, Data Validation, Data Correlation, then Data Scoring."
+      },
+      {
+        "id": "ctia-m05-q10",
+        "type": "choice",
+        "text": "During Data Preparation in statistical data analysis, which activities take place?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Data collection, normalization, and aggregation"
+          },
+          {
+            "label": "B",
+            "text": "Scoring threats by damage level and occurrence rate"
+          },
+          {
+            "label": "C",
+            "text": "Verifying confidence levels and standard deviation"
+          },
+          {
+            "label": "D",
+            "text": "Plotting graphs and charts"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data Preparation is the initial stage involving data collection, normalization, and aggregation from numerous sources."
+      },
+      {
+        "id": "ctia-m05-q11",
+        "type": "choice",
+        "text": "In the Data Classification stage, which technique segments and distributes a dataset into clusters of similar properties?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Data scoring"
+          },
+          {
+            "label": "B",
+            "text": "Statistical distribution"
+          },
+          {
+            "label": "C",
+            "text": "Conditional probability"
+          },
+          {
+            "label": "D",
+            "text": "Data clustering"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data clustering segments and distributes the dataset into clusters of similar properties; it consists of hard and soft clustering."
+      },
+      {
+        "id": "ctia-m05-q12",
+        "type": "choice",
+        "text": "Which classifier example pairs correctly with its category in data classification?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Attributes — IP Address, URL, Domain"
+          },
+          {
+            "label": "B",
+            "text": "Relevance — Time, Day, Owner, User ID"
+          },
+          {
+            "label": "C",
+            "text": "Indicator type — Language, Region, Malware Type"
+          },
+          {
+            "label": "D",
+            "text": "Adversary — Organization, Individual, Country"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Adversary classifiers include organization, individual, and country. Indicator type = IP/URL/Domain; Attributes = Language/Region/Malware Type; Incidents = Time/Day/Owner."
+      },
+      {
+        "id": "ctia-m05-q13",
+        "type": "choice",
+        "text": "Standard deviation is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The degree of diffusion of collected data from their calculated mean, equal to the square root of variance"
+          },
+          {
+            "label": "B",
+            "text": "The listing of all possible data values based on occurrence"
+          },
+          {
+            "label": "C",
+            "text": "The probability that an assigned value is true or false within a required range"
+          },
+          {
+            "label": "D",
+            "text": "The interdependency between two or more variables"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Standard deviation is the degree of diffusion of data from the mean and equals the square root of variance."
+      },
+      {
+        "id": "ctia-m05-q14",
+        "type": "choice",
+        "text": "During Data Validation, confidence levels for given data are typically described using which curve?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sigmoid curve"
+          },
+          {
+            "label": "B",
+            "text": "Logarithmic curve"
+          },
+          {
+            "label": "C",
+            "text": "Gaussian (normal) distribution curve"
+          },
+          {
+            "label": "D",
+            "text": "Exponential decay curve"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Confidence levels are described using the Gaussian (normal) distribution curve, which expresses the probability of a value being true/false in a range."
+      },
+      {
+        "id": "ctia-m05-q15",
+        "type": "choice",
+        "text": "Data correlation describes interdependency between two or more variables using which mathematical method?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Linear regression"
+          },
+          {
+            "label": "B",
+            "text": "Standard deviation"
+          },
+          {
+            "label": "C",
+            "text": "Conditional probability"
+          },
+          {
+            "label": "D",
+            "text": "Statistical distribution"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data correlation describes interdependency between variables using conditional probability, given by P(A|B) = P(A∩B)/P(B)."
+      },
+      {
+        "id": "ctia-m05-q16",
+        "type": "choice",
+        "text": "Which correlation technique measures the degree of association between two linearly related variables?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Spearman's rank correlation coefficient"
+          },
+          {
+            "label": "B",
+            "text": "Pearson's r correlation coefficient"
+          },
+          {
+            "label": "C",
+            "text": "Conditional probability coefficient"
+          },
+          {
+            "label": "D",
+            "text": "Kendall's rank correlation coefficient"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Pearson's r measures the degree of association between linearly related variables. Spearman's and Kendall's are nonparametric/rank methods."
+      },
+      {
+        "id": "ctia-m05-q17",
+        "type": "choice",
+        "text": "Kendall's rank correlation coefficient is best described as a method that measures the:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ordinal relationship and strength of dependency between two variables (nonparametric)"
+          },
+          {
+            "label": "B",
+            "text": "Degree of association between linearly related variables"
+          },
+          {
+            "label": "C",
+            "text": "Damage potential of a threat"
+          },
+          {
+            "label": "D",
+            "text": "Confidence level of a single variable"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Kendall's rank coefficient is a nonparametric method measuring the ordinal relationship and strength of dependency between two variables. Q# Answer Explanation"
+      },
+      {
+        "id": "ctia-m05-q18",
+        "type": "choice",
+        "text": "In the Data Scoring stage of statistical analysis, data are scored based on:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Alphabetical order of indicators"
+          },
+          {
+            "label": "B",
+            "text": "The high value of threat parameters, including damage level and occurrence rate"
+          },
+          {
+            "label": "C",
+            "text": "The number of analysts involved"
+          },
+          {
+            "label": "D",
+            "text": "The chronological order of collection"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "Data scoring is the final stage, scoring data by high-value threat parameters such as damage level and occurrence rate to prioritize threats."
+      },
+      {
+        "id": "ctia-m05-q19",
+        "type": "choice",
+        "text": "Which statistical data analysis tool is noted for offering a vast library of machine learning algorithms, text analysis, and big-data integration?",
+        "options": [
+          {
+            "label": "A",
+            "text": "IBM SPSS"
+          },
+          {
+            "label": "B",
+            "text": "SAS/STAT"
+          },
+          {
+            "label": "C",
+            "text": "PARC ACH"
+          },
+          {
+            "label": "D",
+            "text": "Microsoft Threat Modeling Tool"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "IBM SPSS offers advanced statistical analysis, a vast library of machine learning algorithms, text analysis, and big-data integration. SAS/STAT emphasizes variance/regression and Bayesian inference."
+      },
+      {
+        "id": "ctia-m05-q20",
+        "type": "choice",
+        "text": "What is the primary purpose of the Analysis of Competing Hypotheses (ACH)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To automate data collection from the dark web"
+          },
+          {
+            "label": "B",
+            "text": "To encrypt collected hypotheses for secure storage"
+          },
+          {
+            "label": "C",
+            "text": "To compete multiple hypotheses against each other to extract the best hypothesis and overcome analytic pitfalls"
+          },
+          {
+            "label": "D",
+            "text": "To rank threats using the DREAD model"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "ACH competes multiple hypotheses against each other to extract the best one and helps analysts overcome major analytic pitfalls."
+      },
+      {
+        "id": "ctia-m05-q21",
+        "type": "choice",
+        "text": "What is the correct sequence of the ACH process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hypothesis → Evidence → Diagnostics → Refinement → Inconsistency → Sensitivity → Conclusions and Evaluation"
+          },
+          {
+            "label": "B",
+            "text": "Hypothesis → Diagnostics → Evidence → Inconsistency → Refinement → Sensitivity → Conclusions and Evaluation"
+          },
+          {
+            "label": "C",
+            "text": "Evidence → Hypothesis → Diagnostics → Refinement → Inconsistency → Sensitivity → Conclusions and Evaluation"
+          },
+          {
+            "label": "D",
+            "text": "Hypothesis → Evidence → Refinement → Diagnostics → Sensitivity → Inconsistency → Conclusions and Evaluation"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "The ACH process runs Hypothesis, Evidence, Diagnostics, Refinement, Inconsistency, Sensitivity, then Conclusions and Evaluation."
+      },
+      {
+        "id": "ctia-m05-q22",
+        "type": "choice",
+        "text": "In the ACH Diagnostics stage, the analyst prepares a matrix in order to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Encrypt the listed evidence"
+          },
+          {
+            "label": "B",
+            "text": "Diagnose existing hypotheses against listed evidence and define the diagnosticity of each piece of evidence"
+          },
+          {
+            "label": "C",
+            "text": "Automate sensitivity analysis"
+          },
+          {
+            "label": "D",
+            "text": "Disseminate conclusions to management"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "In Diagnostics the analyst builds a matrix to diagnose hypotheses against evidence and define each evidence's diagnosticity, which distinguishes ACH from traditional analysis."
+      },
+      {
+        "id": "ctia-m05-q23",
+        "type": "choice",
+        "text": "In the ACH Inconsistency stage, the analyst primarily attempts to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Combine all hypotheses into one"
+          },
+          {
+            "label": "B",
+            "text": "Document excluded evidence only"
+          },
+          {
+            "label": "C",
+            "text": "Prove the hypotheses are correct"
+          },
+          {
+            "label": "D",
+            "text": "Disprove or reject hypotheses rather than prove them"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "The Inconsistency stage rejects inconsistent hypotheses; the analyst seeks evidence to disprove hypotheses rather than to prove them."
+      },
+      {
+        "id": "ctia-m05-q24",
+        "type": "choice",
+        "text": "Which tool enables an analyst to make a well-reasoned analytical judgment and is particularly useful for weighing alternative explanations of events?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SAS/STAT"
+          },
+          {
+            "label": "B",
+            "text": "IBM SPSS"
+          },
+          {
+            "label": "C",
+            "text": "PARC ACH"
+          },
+          {
+            "label": "D",
+            "text": "ThreatModeler"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "PARC ACH supports well-reasoned analytical judgment and is useful for weighing alternative explanations of what has happened, is happening, or may happen."
+      },
+      {
+        "id": "ctia-m05-q25",
+        "type": "choice",
+        "text": "How does Structured Analysis of Competing Hypotheses (SACH) differ from standard ACH?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is an advanced ACH process where one hypothesis is split into multiple hypotheses to make analysis easier and more effective"
+          },
+          {
+            "label": "B",
+            "text": "It eliminates the need for evidence"
+          },
+          {
+            "label": "C",
+            "text": "It removes the testing of hypotheses entirely"
+          },
+          {
+            "label": "D",
+            "text": "It only applies to qualitative analysis"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 05: Data Analysis.",
+        "explanation": "SACH is an advanced ACH process that splits one hypothesis into multiple hypotheses, making the analysis easier and more effective. End of Module 05 Question Bank — 25 Questions"
+      }
+    ]
+  },
+  "ctiaModule06PracticeExam": {
+    "lesson": "ctia-module-06",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 06 Practice Exam",
+    "title": "CTIA Module 06: Intelligence Reporting and Dissemination",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 06: Intelligence Reporting and Dissemination.",
+    "sourceFile": "CTIA_MCQ_Module06.pdf",
+    "questions": [
+      {
+        "id": "ctia-m06-q01",
+        "type": "choice",
+        "text": "What is the primary purpose of a threat intelligence report?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To store raw network packet captures for forensic replay"
+          },
+          {
+            "label": "B",
+            "text": "To replace the need for any security tooling"
+          },
+          {
+            "label": "C",
+            "text": "To advertise a vendor's security products"
+          },
+          {
+            "label": "D",
+            "text": "To provide actionable contextual intelligence for organizational decision-making"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "To provide actionable contextual intelligence for organizational decision- making Threat intelligence reports include collected, aggregated, analyzed, and enriched threat data to provide actionable contextual intelligence for decision- making."
+      },
+      {
+        "id": "ctia-m06-q02",
+        "type": "choice",
+        "text": "Threat analysis reports are primarily intended for which audience?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Anti-fraud teams, forensic analysts, and incident response teams"
+          },
+          {
+            "label": "B",
+            "text": "General public on social media"
+          },
+          {
+            "label": "C",
+            "text": "End customers buying a product"
+          },
+          {
+            "label": "D",
+            "text": "Marketing and sales departments"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Anti-fraud teams, forensic analysts, and incident response teams Threat analysis reports provide a detailed analysis of specific threats to professionals such as anti-fraud teams, forensic analysts, and IR teams."
+      },
+      {
+        "id": "ctia-m06-q03",
+        "type": "choice",
+        "text": "Which of the following is a detail typically included in a threat analysis report?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Attribution of an attack to a specific threat actor or group"
+          },
+          {
+            "label": "B",
+            "text": "The rating of security priorities only"
+          },
+          {
+            "label": "C",
+            "text": "Employee performance reviews"
+          },
+          {
+            "label": "D",
+            "text": "A summary of the company's quarterly revenue"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Attribution of an attack to a specific threat actor or group Threat analysis reports include attack attribution, history, attacker motivation, possible victims, tactics, mitigation methods, and recurrence probability."
+      },
+      {
+        "id": "ctia-m06-q04",
+        "type": "choice",
+        "text": "What does a threat landscape report mainly provide?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A line-by-line code review of malware"
+          },
+          {
+            "label": "B",
+            "text": "In-depth awareness and greater insight into threats faced by an organization"
+          },
+          {
+            "label": "C",
+            "text": "A list of employees with admin rights"
+          },
+          {
+            "label": "D",
+            "text": "Vendor pricing comparisons"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "In-depth awareness and greater insight into threats faced by an organization Threat landscape reports provide in-depth awareness and greater insight into the threats an organization faces."
+      },
+      {
+        "id": "ctia-m06-q05",
+        "type": "choice",
+        "text": "Which item is part of a threat landscape report?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Penetration test payloads"
+          },
+          {
+            "label": "B",
+            "text": "A review of business risks faced by the organization"
+          },
+          {
+            "label": "C",
+            "text": "Raw firewall logs"
+          },
+          {
+            "label": "D",
+            "text": "Source code of detection signatures"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "A review of business risks faced by the organization Threat landscape reports include a review of business risks, investigation of threats, a summary of likely threat actors, and the rating of security priorities."
+      },
+      {
+        "id": "ctia-m06-q06",
+        "type": "choice",
+        "text": "Which of the following is one of the nine elements required to create a concise, actionable threat intelligence report?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Payroll Details"
+          },
+          {
+            "label": "B",
+            "text": "Marketing Plan"
+          },
+          {
+            "label": "C",
+            "text": "Vendor Contracts"
+          },
+          {
+            "label": "D",
+            "text": "Traffic Light Protocol (TLP)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Traffic Light Protocol (TLP) The nine elements include Report Details, Client Details, Test Details, Executive Summary, TLP, Analysis Methodology, Threat Details, Indicators of Compromise, and Recommended Actions."
+      },
+      {
+        "id": "ctia-m06-q07",
+        "type": "choice",
+        "text": "In the Cyber Threat Intelligence Report template, which section deals with the methodology followed throughout the project?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analysis Methodology"
+          },
+          {
+            "label": "B",
+            "text": "Executive Summary"
+          },
+          {
+            "label": "C",
+            "text": "Client Details"
+          },
+          {
+            "label": "D",
+            "text": "Recommended Actions"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Analysis Methodology The Analysis Methodology section describes the methodology followed during the threat intelligence project, including data collection, processing, and analysis."
+      },
+      {
+        "id": "ctia-m06-q08",
+        "type": "choice",
+        "text": "Which factor helps maximize the return from a threat intelligence report?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Making reports as long and complex as possible"
+          },
+          {
+            "label": "B",
+            "text": "Avoiding any formatting"
+          },
+          {
+            "label": "C",
+            "text": "Sharing only after a year"
+          },
+          {
+            "label": "D",
+            "text": "Keeping it simple and setting up a feedback loop"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Keeping it simple and setting up a feedback loop Factors to maximize return include being intelligent, sharing internally first, identifying internal needs, formatting well, setting up a feedback loop, and keeping it simple."
+      },
+      {
+        "id": "ctia-m06-q09",
+        "type": "choice",
+        "text": "What is the main benefit of establishing a continuous feedback loop for threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It eliminates the need for analysts"
+          },
+          {
+            "label": "B",
+            "text": "It produces more accurate intelligence through relevant and timely assessments"
+          },
+          {
+            "label": "C",
+            "text": "It increases the cost of intelligence"
+          },
+          {
+            "label": "D",
+            "text": "It hides reports from consumers"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "It produces more accurate intelligence through relevant and A continuous feedback loop helps produce more accurate intelligence through relevant and timely assessments, with consumer feedback integrated back into the program. Q# Answer Explanation timely assessments"
+      },
+      {
+        "id": "ctia-m06-q10",
+        "type": "choice",
+        "text": "Which report writing tool stores data in a tree structure, naturally representing hosts, ports, services, and vulnerabilities?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Wireshark"
+          },
+          {
+            "label": "B",
+            "text": "Metasploit"
+          },
+          {
+            "label": "C",
+            "text": "MagicTree"
+          },
+          {
+            "label": "D",
+            "text": "KeepNote"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "MagicTree MagicTree stores data in a tree structure, a natural way of representing information gathered during a network test."
+      },
+      {
+        "id": "ctia-m06-q11",
+        "type": "choice",
+        "text": "KeepNote is best described as a tool that stores notes in which structure and format?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A flat single text file"
+          },
+          {
+            "label": "B",
+            "text": "A binary proprietary format"
+          },
+          {
+            "label": "C",
+            "text": "A notebook hierarchy storing notes in HTML and XML"
+          },
+          {
+            "label": "D",
+            "text": "A relational database using SQL only"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "A notebook hierarchy storing notes in HTML and XML KeepNote stores class notes, TODO lists, and research in a notebook hierarchy with rich-text formatting, using simple HTML and XML file formats."
+      },
+      {
+        "id": "ctia-m06-q12",
+        "type": "choice",
+        "text": "Threat intelligence is usually disseminated through which two types of processes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Manual and automated"
+          },
+          {
+            "label": "B",
+            "text": "Public and classified"
+          },
+          {
+            "label": "C",
+            "text": "Encrypted and unencrypted"
+          },
+          {
+            "label": "D",
+            "text": "Internal and external only"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Manual and automated Information is usually disseminated either through manual or automated processes."
+      },
+      {
+        "id": "ctia-m06-q13",
+        "type": "choice",
+        "text": "Which of the following is one of the three essential criteria for a consumer to benefit from disseminated intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Right vendor, right price, right contract"
+          },
+          {
+            "label": "B",
+            "text": "Right server, right port, right protocol"
+          },
+          {
+            "label": "C",
+            "text": "Right author, right title, right font"
+          },
+          {
+            "label": "D",
+            "text": "Right content, right presentation, right time"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Right content, right presentation, right time The three essential criteria are right content, right presentation, and right time."
+      },
+      {
+        "id": "ctia-m06-q14",
+        "type": "choice",
+        "text": "Which dissemination preference allows threat intelligence to be acquired from or shared with SIEM, antivirus, NGFW, and IDS/IPS?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Searchable Knowledge Base"
+          },
+          {
+            "label": "B",
+            "text": "Automation of Security Feeds and APIs"
+          },
+          {
+            "label": "C",
+            "text": "Tailored Reports"
+          },
+          {
+            "label": "D",
+            "text": "Manual briefings"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Automation of Security Feeds and APIs Automation of Security Feeds and APIs allows TI to be acquired from or shared with security mechanisms such as SIEM, antivirus, NGFW, and IDS/IPS."
+      },
+      {
+        "id": "ctia-m06-q15",
+        "type": "choice",
+        "text": "Which is listed as a benefit of sharing intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reduced situational awareness"
+          },
+          {
+            "label": "B",
+            "text": "Slower response to TTPs"
+          },
+          {
+            "label": "C",
+            "text": "Greater defensive agility"
+          },
+          {
+            "label": "D",
+            "text": "Decreased knowledge maturation"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Greater defensive agility Benefits of sharing include sharing situational awareness, enhanced security posture, knowledge maturation, and greater defensive agility."
+      },
+      {
+        "id": "ctia-m06-q16",
+        "type": "choice",
+        "text": "In the tiered threat intelligence information sharing model, which tier focuses on critical infrastructure industry sectors with specific needs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tier 1 - Public Tier"
+          },
+          {
+            "label": "B",
+            "text": "Tier 3 - Targeted Tier"
+          },
+          {
+            "label": "C",
+            "text": "Tier 2 - Private Tier"
+          },
+          {
+            "label": "D",
+            "text": "Tier 0 - Open Tier"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Tier 3 - Targeted Tier Tier 3 (Targeted Tier) consists of a small number of communities such as critical infrastructure sectors focusing on specific needs and security requirements."
+      },
+      {
+        "id": "ctia-m06-q17",
+        "type": "choice",
+        "text": "In the four-layer Information Exchange Types model, which layer has the highest volume but lowest summarization?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Low-Level Data"
+          },
+          {
+            "label": "B",
+            "text": "Strategic Reports"
+          },
+          {
+            "label": "C",
+            "text": "Advisories"
+          },
+          {
+            "label": "D",
+            "text": "Detection Indicators"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Low-Level Data Low-Level Data sits at the base of the pyramid with the highest volume and simplicity, while Strategic Reports sit at the top with the most summarization."
+      },
+      {
+        "id": "ctia-m06-q18",
+        "type": "choice",
+        "text": "Which threat intelligence exchange architecture consists of a central hub acting as a repository for participating members?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Distributed mesh architecture"
+          },
+          {
+            "label": "B",
+            "text": "Peer-to-Peer Exchange Architecture"
+          },
+          {
+            "label": "C",
+            "text": "Hybrid Exchange Architecture"
+          },
+          {
+            "label": "D",
+            "text": "Centralized Exchange Architecture"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Centralized Exchange Architecture The Centralized Exchange Architecture consists of a central hub that acts as a repository for intelligence received from participating members and other sources."
+      },
+      {
+        "id": "ctia-m06-q19",
+        "type": "choice",
+        "text": "Which of the following are the three elements of access control on intelligence sharing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collection, Analysis, Dissemination"
+          },
+          {
+            "label": "B",
+            "text": "Encryption, Hashing, Signing"
+          },
+          {
+            "label": "C",
+            "text": "Identity, Authentication, Authorization"
+          },
+          {
+            "label": "D",
+            "text": "Confidentiality, Integrity, Availability"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Identity, Authentication, Authorization Access control includes Identity (identifying new members), Authentication (verifying communication), and Authorization (access based on community roles)."
+      },
+      {
+        "id": "ctia-m06-q20",
+        "type": "choice",
+        "text": "Strategic threat intelligence is generally:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Always shared in machine-readable formats"
+          },
+          {
+            "label": "B",
+            "text": "Not shared externally because it could reveal strategic business plans"
+          },
+          {
+            "label": "C",
+            "text": "Highly technical and shared via public forums"
+          },
+          {
+            "label": "D",
+            "text": "Focused only on indicators of compromise"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Not shared externally because it could reveal strategic business plans Strategic threat intelligence is used by management for business decisions and is generally not shared externally, as it could reveal strategic business plans."
+      },
+      {
+        "id": "ctia-m06-q21",
+        "type": "choice",
+        "text": "Sharing technical threat intelligence is shared via public forums such as which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reddit"
+          },
+          {
+            "label": "B",
+            "text": "LinkedIn"
+          },
+          {
+            "label": "C",
+            "text": "CiSP"
+          },
+          {
+            "label": "D",
+            "text": "GitHub"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "CiSP Technical threat intelligence is shared via public forums such as CiSP, trusted third parties, or directly, posing less risk of exposing sensitive data."
+      },
+      {
+        "id": "ctia-m06-q22",
+        "type": "choice",
+        "text": "Which open-source software supports security researchers to detect, classify, and share threat data related to malware samples using rules?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nessus"
+          },
+          {
+            "label": "B",
+            "text": "Suricata"
+          },
+          {
+            "label": "C",
+            "text": "YARA"
+          },
+          {
+            "label": "D",
+            "text": "Snort"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "YARA YARA is open-source software that helps researchers detect, classify, and share threat data; platforms like ThreatConnect and MISP support YARA rules. Q# Answer Explanation"
+      },
+      {
+        "id": "ctia-m06-q23",
+        "type": "choice",
+        "text": "In the Traffic Light Protocol (TLP), which designation means information may NOT be shared with any party outside the specific exchange?",
+        "options": [
+          {
+            "label": "A",
+            "text": "TLP:RED"
+          },
+          {
+            "label": "B",
+            "text": "TLP:AMBER"
+          },
+          {
+            "label": "C",
+            "text": "TLP:CLEAR"
+          },
+          {
+            "label": "D",
+            "text": "TLP:GREEN"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "TLP:RED TLP:RED is not for disclosure and is restricted to participants only; recipients may not share it outside the specific exchange in which it was disclosed."
+      },
+      {
+        "id": "ctia-m06-q24",
+        "type": "choice",
+        "text": "Which MITRE standard is a language and serialization format used to exchange cyber threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "MAEC"
+          },
+          {
+            "label": "B",
+            "text": "CAPEC"
+          },
+          {
+            "label": "C",
+            "text": "TAXII"
+          },
+          {
+            "label": "D",
+            "text": "STIX"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "STIX Structured Threat Information Expression (STIX) is a language and serialization format used to exchange CTI; TAXII is the application-layer transport protocol."
+      },
+      {
+        "id": "ctia-m06-q25",
+        "type": "choice",
+        "text": "Which U.S. regulation requires entities to remove personally identifiable information (PII) before sharing cyber information with the federal government and provides liability protection?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cybersecurity Information Sharing Act (CISA)"
+          },
+          {
+            "label": "B",
+            "text": "GDPR"
+          },
+          {
+            "label": "C",
+            "text": "HIPAA"
+          },
+          {
+            "label": "D",
+            "text": "CISPA"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 06: Intelligence Reporting and Dissemination.",
+        "explanation": "Cybersecurity Information Sharing Act (CISA) CISA authorizes entities to share cyberthreat indicators with each other and DHS with liability protection, and requires removal of identifiable PII before sharing with the government."
+      }
+    ]
+  },
+  "ctiaModule07PracticeExam": {
+    "lesson": "ctia-module-07",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 07 Practice Exam",
+    "title": "CTIA Module 07: Threat Hunting and Detection",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 07: Threat Hunting and Detection.",
+    "sourceFile": "Module_07_MCQ.pdf",
+    "questions": [
+      {
+        "id": "ctia-m07-q01",
+        "type": "choice",
+        "text": "Which of the following best describes threat hunting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A proactive and iterative approach of searching networks, devices, endpoints, and datasets to identify and isolate cyberthreats that have evaded existing security systems"
+          },
+          {
+            "label": "B",
+            "text": "An automated process that fully replaces traditional security tools"
+          },
+          {
+            "label": "C",
+            "text": "A reactive approach that waits for security alerts before investigating"
+          },
+          {
+            "label": "D",
+            "text": "A compliance audit performed once a year on network devices"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Threat hunting is a proactive and iterative approach of searching networks, devices, endpoints, and datasets to identify and isolate cyberthreats that have entered a network by evading current security systems."
+      },
+      {
+        "id": "ctia-m07-q02",
+        "type": "choice",
+        "text": "In the threat hunting steps, what happens during the 'Hypothesis' stage?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A report is generated for future detection"
+          },
+          {
+            "label": "B",
+            "text": "Data is collected and analyzed using threat intelligence"
+          },
+          {
+            "label": "C",
+            "text": "Assumptions are made using TTPs"
+          },
+          {
+            "label": "D",
+            "text": "Malicious files are investigated to eliminate threats"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The first step, Hypothesis, involves making assumptions using tactics, techniques, and procedures (TTPs)."
+      },
+      {
+        "id": "ctia-m07-q03",
+        "type": "choice",
+        "text": "Which threat hunting step involves a threat-detection tool triggering an anomaly based on the hypothesis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Investigation"
+          },
+          {
+            "label": "B",
+            "text": "Collect and process"
+          },
+          {
+            "label": "C",
+            "text": "Trigger"
+          },
+          {
+            "label": "D",
+            "text": "Response"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "In the Trigger step, threat-detection tools trigger an anomaly based on the hypothesis that was formed."
+      },
+      {
+        "id": "ctia-m07-q04",
+        "type": "choice",
+        "text": "What is the purpose of the 'Response' step in the threat hunting process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To generate a report for future detection"
+          },
+          {
+            "label": "B",
+            "text": "To trigger anomalies in detection tools"
+          },
+          {
+            "label": "C",
+            "text": "To make assumptions about attacker behavior"
+          },
+          {
+            "label": "D",
+            "text": "To collect and analyze data using threat intelligence"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The Response step generates a report for future detection, closing the loop on the hunt."
+      },
+      {
+        "id": "ctia-m07-q05",
+        "type": "choice",
+        "text": "Which of the following is NOT listed as an importance of threat hunting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Early threat detection"
+          },
+          {
+            "label": "B",
+            "text": "Elimination of all security tools"
+          },
+          {
+            "label": "C",
+            "text": "Reduction of false positives"
+          },
+          {
+            "label": "D",
+            "text": "Identification of unknown threats"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Threat hunting complements traditional security measures rather than eliminating security tools. Early detection, identifying unknown threats, and reducing false positives are all listed benefits."
+      },
+      {
+        "id": "ctia-m07-q06",
+        "type": "choice",
+        "text": "Structured threat hunting primarily relies on which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "An alert trigger or indicator of compromise (IoC)"
+          },
+          {
+            "label": "B",
+            "text": "Indicators of attacks (IoAs) and threat actors' tactics, techniques, and procedures (TTPs)"
+          },
+          {
+            "label": "C",
+            "text": "Random sampling of network packets"
+          },
+          {
+            "label": "D",
+            "text": "Critical assets and users only"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Structured threat hunting is a proactive approach relying on indicators of attacks (IoAs) and threat actors' TTPs."
+      },
+      {
+        "id": "ctia-m07-q07",
+        "type": "choice",
+        "text": "Unstructured threat hunting relies on which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "An alert trigger or indicator of compromise (IoC)"
+          },
+          {
+            "label": "B",
+            "text": "Indicators of attacks (IoAs) and TTPs"
+          },
+          {
+            "label": "C",
+            "text": "Critical assets and users"
+          },
+          {
+            "label": "D",
+            "text": "Custom data analysis procedures"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Unstructured threat hunting relies on an alert trigger or indicator of compromise (IoC)."
+      },
+      {
+        "id": "ctia-m07-q08",
+        "type": "choice",
+        "text": "Which type of threat hunting focuses on critical assets and users that are often targeted by attackers?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Structured"
+          },
+          {
+            "label": "B",
+            "text": "Situational or entity-driven"
+          },
+          {
+            "label": "C",
+            "text": "Unstructured"
+          },
+          {
+            "label": "D",
+            "text": "Automated"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Situational or entity-driven threat hunting focuses on critical assets and users, which are often targeted by attackers."
+      },
+      {
+        "id": "ctia-m07-q09",
+        "type": "choice",
+        "text": "What does the Threat Hunting Maturity Model (HMM) describe?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The financial cost of running a threat hunting program"
+          },
+          {
+            "label": "B",
+            "text": "The quantity and quality of information collected from a network for investigation"
+          },
+          {
+            "label": "C",
+            "text": "The number of analysts required for a SOC"
+          },
+          {
+            "label": "D",
+            "text": "The legal requirements for threat hunting"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The HMM describes the quantity and quality of information collected from a network for investigation."
+      },
+      {
+        "id": "ctia-m07-q10",
+        "type": "choice",
+        "text": "At which HMM level does an organization primarily depend on automated monitoring systems and alerts with low data collection?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Level 2: Procedural"
+          },
+          {
+            "label": "B",
+            "text": "Level 1: Minimal"
+          },
+          {
+            "label": "C",
+            "text": "Level 4: Leading"
+          },
+          {
+            "label": "D",
+            "text": "Level 0: Initial"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Level 0 (Initial) primarily depends on automated monitoring systems and alerts with low data collection."
+      },
+      {
+        "id": "ctia-m07-q11",
+        "type": "choice",
+        "text": "Which HMM level is characterized by following the latest threat reports and moderate to high-level routine data collection?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Level 0: Initial"
+          },
+          {
+            "label": "B",
+            "text": "Level 3: Innovative"
+          },
+          {
+            "label": "C",
+            "text": "Level 1: Minimal"
+          },
+          {
+            "label": "D",
+            "text": "Level 4: Leading"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Level 1 (Minimal) follows the latest threat reports with moderate to high-level routine data collection."
+      },
+      {
+        "id": "ctia-m07-q12",
+        "type": "choice",
+        "text": "At HMM Level 2 (Procedural), an organization typically does which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Creates custom data analysis procedures"
+          },
+          {
+            "label": "B",
+            "text": "Adopts data analysis procedures created by others, with high- to very-high-level routine data collection"
+          },
+          {
+            "label": "C",
+            "text": "Relies only on automated monitoring with low data collection"
+          },
+          {
+            "label": "D",
+            "text": "Automates existing data analysis procedures"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Level 2 (Procedural) adopts data analysis procedures created by others and performs high- to very-high-level routine data collection."
+      },
+      {
+        "id": "ctia-m07-q13",
+        "type": "choice",
+        "text": "Which HMM level is distinguished by automating existing data analysis procedures?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Level 2: Procedural"
+          },
+          {
+            "label": "B",
+            "text": "Level 3: Innovative"
+          },
+          {
+            "label": "C",
+            "text": "Level 1: Minimal"
+          },
+          {
+            "label": "D",
+            "text": "Level 4: Leading"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Level 4 (Leading) automates existing data analysis procedures, with high- to very-high-level routine data collection."
+      },
+      {
+        "id": "ctia-m07-q14",
+        "type": "choice",
+        "text": "What distinguishes HMM Level 3 (Innovative) from Level 2 (Procedural)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Level 3 only depends on automated alerts"
+          },
+          {
+            "label": "B",
+            "text": "Level 3 has low data collection"
+          },
+          {
+            "label": "C",
+            "text": "Level 3 creates custom data analysis procedures rather than adopting those created by others"
+          },
+          {
+            "label": "D",
+            "text": "Level 3 automates all procedures"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Level 3 (Innovative) creates custom data analysis procedures, whereas Level 2 adopts procedures created by others."
+      },
+      {
+        "id": "ctia-m07-q15",
+        "type": "choice",
+        "text": "Which threat hunter skill involves segregating normal and malicious patterns for effective threat identification?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Forensic abilities"
+          },
+          {
+            "label": "B",
+            "text": "Pattern recognition"
+          },
+          {
+            "label": "C",
+            "text": "Data analytics"
+          },
+          {
+            "label": "D",
+            "text": "Effective communication"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Pattern recognition requires the ability to segregate normal and malicious patterns for effective threat identification."
+      },
+      {
+        "id": "ctia-m07-q16",
+        "type": "choice",
+        "text": "Why are effective communication skills essential for threat hunters?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To configure automated monitoring tools"
+          },
+          {
+            "label": "B",
+            "text": "To negotiate budgets with management"
+          },
+          {
+            "label": "C",
+            "text": "Because they need to share their findings"
+          },
+          {
+            "label": "D",
+            "text": "To replace forensic analysis"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Effective communication skills are essential because threat hunters need to share their findings."
+      },
+      {
+        "id": "ctia-m07-q17",
+        "type": "choice",
+        "text": "Which skill emphasizes that without comprehensive understanding of how systems operate within the network, threat hunters cannot effectively identify potential threats?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Knowledge of system operations"
+          },
+          {
+            "label": "B",
+            "text": "Data analytics"
+          },
+          {
+            "label": "C",
+            "text": "Forensic abilities"
+          },
+          {
+            "label": "D",
+            "text": "Pattern recognition"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Knowledge of system operations stresses that without comprehensive knowledge of how systems operate within the network, threat hunters cannot effectively identify threats."
+      },
+      {
+        "id": "ctia-m07-q18",
+        "type": "choice",
+        "text": "In the Procedures of Threat Hunting, which step typically comes immediately after 'Create Hypothesis'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Understand environment"
+          },
+          {
+            "label": "B",
+            "text": "Define objectives and scope"
+          },
+          {
+            "label": "C",
+            "text": "Mitigation and incident response"
+          },
+          {
+            "label": "D",
+            "text": "Confirmation of threats"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The sequence runs Define Objectives and Scope, Create Hypothesis, then Understand Environment."
+      },
+      {
+        "id": "ctia-m07-q19",
+        "type": "choice",
+        "text": "Which of the following is the final step listed in the Procedures of Threat Hunting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Mitigation and incident response"
+          },
+          {
+            "label": "B",
+            "text": "Confirmation of threats"
+          },
+          {
+            "label": "C",
+            "text": "Advanced data analysis techniques"
+          },
+          {
+            "label": "D",
+            "text": "Lessons learned and automating routines"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The procedures conclude with Lessons Learned and Automating Routines."
+      },
+      {
+        "id": "ctia-m07-q20",
+        "type": "choice",
+        "text": "The Threat Hunting Loop is best described as which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A compliance reporting cycle"
+          },
+          {
+            "label": "B",
+            "text": "A one-time linear process"
+          },
+          {
+            "label": "C",
+            "text": "A purely automated detection pipeline"
+          },
+          {
+            "label": "D",
+            "text": "An iterative operation in cybersecurity that searches for possible security risks"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The threat hunting loop is an iterative operation in cybersecurity that searches for possible security risks, with each phase playing a pivotal role."
+      },
+      {
+        "id": "ctia-m07-q21",
+        "type": "choice",
+        "text": "Which of the following is one of the four phases of the Threat Hunting Loop?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Discovery of malicious patterns and TTPs"
+          },
+          {
+            "label": "B",
+            "text": "Evaluating results"
+          },
+          {
+            "label": "C",
+            "text": "Telemetry monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Define objectives and scope"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "The four phases of the loop are Create Hypothesis, Commencement of Investigation, Discovery of Malicious Patterns and TTPs, and Respond, Automate, and Enrich."
+      },
+      {
+        "id": "ctia-m07-q22",
+        "type": "choice",
+        "text": "In the intelligence-driven threat hunting methodology, what does the 'Telemetry Monitoring' element ensure?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The investigation of cyber impact scenarios"
+          },
+          {
+            "label": "B",
+            "text": "The development of simple hunting programs using IOCs"
+          },
+          {
+            "label": "C",
+            "text": "The effective management of IT infrastructure during analysis"
+          },
+          {
+            "label": "D",
+            "text": "The validation of query results"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "Telemetry monitoring is essential to ensure the effective management of IT infrastructure during analysis."
+      },
+      {
+        "id": "ctia-m07-q23",
+        "type": "choice",
+        "text": "What does the TaHiTI methodology stand for and aim to do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Targeted Heuristics in Threat Identification, designed to replace IoCs"
+          },
+          {
+            "label": "B",
+            "text": "Tactical Hunting in Threat Investigation, designed to automate SIEM alerts"
+          },
+          {
+            "label": "C",
+            "text": "Threat Analysis for Hidden Internal Targets, designed for vulnerability scanning"
+          },
+          {
+            "label": "D",
+            "text": "Targeted Hunting Integrating Threat Intelligence, designed to integrate threat intelligence and threat hunting operations"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "TaHiTI (Targeted Hunting Integrating Threat Intelligence) is a methodology designed to integrate threat intelligence and threat hunting operations."
+      },
+      {
+        "id": "ctia-m07-q24",
+        "type": "choice",
+        "text": "Which of the following correctly lists the three stages of the TaHiTI methodology?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collect, Analyze, Disseminate"
+          },
+          {
+            "label": "B",
+            "text": "Plan, Execute, Review"
+          },
+          {
+            "label": "C",
+            "text": "Detect, Respond, Recover"
+          },
+          {
+            "label": "D",
+            "text": "Initiate, Hunt, Finalize"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "TaHiTI consists of three stages: Initiate, Hunt, and Finalize."
+      },
+      {
+        "id": "ctia-m07-q25",
+        "type": "choice",
+        "text": "In threat hunting automation, how do XDR solutions differ from EDR solutions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "XDR extends threat detection and response capabilities beyond endpoints to include network and cloud environments"
+          },
+          {
+            "label": "B",
+            "text": "XDR is a low-code security automation platform"
+          },
+          {
+            "label": "C",
+            "text": "XDR only provides real-time endpoint data"
+          },
+          {
+            "label": "D",
+            "text": "XDR aggregates data only at the enterprise level via SIEM"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 07: Threat Hunting and Detection.",
+        "explanation": "EDR provides real-time endpoint data and detection, while XDR extends threat detection and response beyond endpoints to include network and cloud environments."
+      }
+    ]
+  },
+  "ctiaModule08PracticeExam": {
+    "lesson": "ctia-module-08",
+    "folder": "Threat Intelligence Analysis",
+    "label": "CTIA Module 08 Practice Exam",
+    "title": "CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management",
+    "description": "A 25-question multiple-choice practice exam for CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+    "sourceFile": "Module_08_MCQ.pdf",
+    "questions": [
+      {
+        "id": "ctia-m08-q01",
+        "type": "choice",
+        "text": "What do security operations center (SOC) operations primarily involve?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Designing the organization's marketing strategy"
+          },
+          {
+            "label": "B",
+            "text": "Managing employee payroll and HR records"
+          },
+          {
+            "label": "C",
+            "text": "Monitoring an organization's information systems and networks for security threats and incidents"
+          },
+          {
+            "label": "D",
+            "text": "Developing software applications for the organization"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "SOC operations involve monitoring an organization's information systems and networks for security threats and incidents."
+      },
+      {
+        "id": "ctia-m08-q02",
+        "type": "choice",
+        "text": "Which of the following is listed as a key SOC operation?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Customer billing"
+          },
+          {
+            "label": "B",
+            "text": "Alert triage"
+          },
+          {
+            "label": "C",
+            "text": "Product development"
+          },
+          {
+            "label": "D",
+            "text": "Supply chain logistics"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Alert triage is one of the key SOC operations, along with monitoring, incident detection, incident response, threat intelligence, and others."
+      },
+      {
+        "id": "ctia-m08-q03",
+        "type": "choice",
+        "text": "Which SOC investigation challenge describes analysts being flooded with alerts, many of which may be false positives?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Staffing and resource restrictions"
+          },
+          {
+            "label": "B",
+            "text": "Limited budget and resources"
+          },
+          {
+            "label": "C",
+            "text": "Disaster recovery"
+          },
+          {
+            "label": "D",
+            "text": "Managing alerts and incidents"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Managing alerts and incidents refers to SOC analysts being flooded with alerts, many of which may be false positives."
+      },
+      {
+        "id": "ctia-m08-q04",
+        "type": "choice",
+        "text": "The SOC challenge of 'Burnout' is primarily caused by which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Too few alerts to investigate"
+          },
+          {
+            "label": "B",
+            "text": "Lack of regulatory requirements"
+          },
+          {
+            "label": "C",
+            "text": "Excessive automation of tasks"
+          },
+          {
+            "label": "D",
+            "text": "High stress, long hours of work, and ongoing tension of securing the network"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Burnout is common in SOC analysts due to high stress under certain circumstances, long hours of work, and the ongoing tension of securing the organization's network from attackers."
+      },
+      {
+        "id": "ctia-m08-q05",
+        "type": "choice",
+        "text": "Which SOC challenge involves building and implementing an approach to restore critical systems and data after a cyberattack or natural disaster?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Disaster recovery"
+          },
+          {
+            "label": "B",
+            "text": "Burnout"
+          },
+          {
+            "label": "C",
+            "text": "Limited budget and resources"
+          },
+          {
+            "label": "D",
+            "text": "Managing alerts and incidents"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Disaster recovery is a high-impact SOC challenge in which analysts build and implement an approach to restore critical systems and data after a cyberattack, natural disaster, or other unexpected occurrence."
+      },
+      {
+        "id": "ctia-m08-q06",
+        "type": "choice",
+        "text": "How does CTI assist a SOC with 'Early Threat Identification'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "By building specific signatures for IOCs"
+          },
+          {
+            "label": "B",
+            "text": "By giving the SOC a more comprehensive picture of the threat landscape to identify new and evolving threats"
+          },
+          {
+            "label": "C",
+            "text": "By integrating security policies with tactics"
+          },
+          {
+            "label": "D",
+            "text": "By patching vulnerabilities automatically"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Threat intelligence gives the SOC a more comprehensive picture of the threat landscape, helping them identify new and evolving threats that pose significant risk."
+      },
+      {
+        "id": "ctia-m08-q07",
+        "type": "choice",
+        "text": "In SOC operations, what does threat intelligence provide under 'Contextual Understanding'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Automated patching schedules"
+          },
+          {
+            "label": "B",
+            "text": "The organization's financial forecasts"
+          },
+          {
+            "label": "C",
+            "text": "Contextual information about specific threats, threat actors, their motivations, and their targets"
+          },
+          {
+            "label": "D",
+            "text": "A list of all employees with admin access"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Threat intelligence provides contextual information about specific threats, threat actors, their motivations, and their targets."
+      },
+      {
+        "id": "ctia-m08-q08",
+        "type": "choice",
+        "text": "Under 'Signature Management,' SOC teams build specific signatures for IOCs that can be identified via which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Employee training sessions"
+          },
+          {
+            "label": "B",
+            "text": "Physical security cameras"
+          },
+          {
+            "label": "C",
+            "text": "Only manual log reviews"
+          },
+          {
+            "label": "D",
+            "text": "Alerts generated through EDR solutions, SIEMs, IDS/IPS, and firewalls"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "SOC teams build specific signatures for IOCs, which can be identified via alerts generated through EDR solutions, SIEMs, IDS/IPS, and firewalls."
+      },
+      {
+        "id": "ctia-m08-q09",
+        "type": "choice",
+        "text": "Which element do SOC teams expect from CTI when they require actionable IoCs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Employee performance reviews"
+          },
+          {
+            "label": "B",
+            "text": "IPs, hashes, domain names, and behavioral patterns"
+          },
+          {
+            "label": "C",
+            "text": "Hardware procurement lists"
+          },
+          {
+            "label": "D",
+            "text": "Marketing analytics"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "SOC teams expect CTI to provide actionable IoCs, including IPs, hashes, domain names, and behavioral patterns."
+      },
+      {
+        "id": "ctia-m08-q10",
+        "type": "choice",
+        "text": "What does the SOC team expect from CTI under 'Threat Actor Attribution'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Real-time stock prices"
+          },
+          {
+            "label": "B",
+            "text": "Information about APT groups, their associations, and their common targets"
+          },
+          {
+            "label": "C",
+            "text": "Network bandwidth statistics"
+          },
+          {
+            "label": "D",
+            "text": "A breakdown of the IT budget"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "SOC teams expect CTI to deliver information about APT groups, their associations, and their common targets."
+      },
+      {
+        "id": "ctia-m08-q11",
+        "type": "choice",
+        "text": "Which of the following is one of the Five Elements for a Next-Gen SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cloud-based analytics"
+          },
+          {
+            "label": "B",
+            "text": "Elimination of automation"
+          },
+          {
+            "label": "C",
+            "text": "Manual log analysis only"
+          },
+          {
+            "label": "D",
+            "text": "Single-vendor lock-in"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "The five elements for a Next-Gen SOC are cloud-based analytics, managed service to reduce pressure off staff, open architectures and layered analytics, automation and orchestration, and AI and machine learning."
+      },
+      {
+        "id": "ctia-m08-q12",
+        "type": "choice",
+        "text": "What is the first stage in building SOC threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Develop your strategy"
+          },
+          {
+            "label": "B",
+            "text": "Implement your solution"
+          },
+          {
+            "label": "C",
+            "text": "Prepare environment"
+          },
+          {
+            "label": "D",
+            "text": "Design the solution"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "The stages for developing SOC threat intelligence begin with Develop Your Strategy, followed by Design the Solution, and so on."
+      },
+      {
+        "id": "ctia-m08-q13",
+        "type": "choice",
+        "text": "Integrating a TIP with the SOC primarily helps security analysts do which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Eliminate the need for SIEM systems"
+          },
+          {
+            "label": "B",
+            "text": "Gather, analyze, identify, and correlate threat intelligence information from various sources"
+          },
+          {
+            "label": "C",
+            "text": "Replace all human analysts"
+          },
+          {
+            "label": "D",
+            "text": "Stop monitoring endpoints"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Integrating a TIP with the SOC helps security analysts gather, analyze, identify, and correlate threat intelligence information from various sources."
+      },
+      {
+        "id": "ctia-m08-q14",
+        "type": "choice",
+        "text": "Which TIP use case in a SOC focuses on minimizing the false positive rate of alerts by providing more detailed signature information?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Signature management"
+          },
+          {
+            "label": "B",
+            "text": "Threat intelligence lifecycle automation"
+          },
+          {
+            "label": "C",
+            "text": "Vulnerability management"
+          },
+          {
+            "label": "D",
+            "text": "Threat data dissemination and actioning"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Signature Management: TIP can provide more detailed signature information of a threat and minimizes the false positive rate of alerts."
+      },
+      {
+        "id": "ctia-m08-q15",
+        "type": "choice",
+        "text": "Which threat intelligence platform combines External Attack Surface Management, Digital Risk Protection, and Cyber Threat Intelligence modules?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Swimlane Turbine"
+          },
+          {
+            "label": "B",
+            "text": "IBM QRadar"
+          },
+          {
+            "label": "C",
+            "text": "SOCRadar"
+          },
+          {
+            "label": "D",
+            "text": "EclecticIQ TIP"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "SOCRadar's Extended Threat Intelligence product combines External Attack Surface Management, Digital Risk Protection, and Cyber Threat Intelligence modules to improve security posture."
+      },
+      {
+        "id": "ctia-m08-q16",
+        "type": "choice",
+        "text": "Risk management is best defined as which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A method for hiring security personnel"
+          },
+          {
+            "label": "B",
+            "text": "The process of encrypting all organizational data"
+          },
+          {
+            "label": "C",
+            "text": "A systematic process of identifying, assessing, prioritizing, mitigating, and monitoring risks to achieve organizational objectives while minimizing negative impacts"
+          },
+          {
+            "label": "D",
+            "text": "A one-time assessment of network vulnerabilities"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Risk management is a systematic process of identifying, assessing, prioritizing, mitigating, and monitoring risks to achieve organizational objectives while minimizing potential negative impacts."
+      },
+      {
+        "id": "ctia-m08-q17",
+        "type": "choice",
+        "text": "Which key component of risk management involves evaluating the impact and likelihood of identified risks to determine their significance?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Risk assessment"
+          },
+          {
+            "label": "B",
+            "text": "Risk identification"
+          },
+          {
+            "label": "C",
+            "text": "Risk monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Risk prioritization"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Risk assessment evaluates the impact and likelihood of identified risks to determine their significance and potential consequences."
+      },
+      {
+        "id": "ctia-m08-q18",
+        "type": "choice",
+        "text": "Under the role of threat intelligence in the risk management process, what does 'Proactive Mitigation' involve?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Enhancing understanding of emerging threats"
+          },
+          {
+            "label": "B",
+            "text": "Prioritizing risks by severity only"
+          },
+          {
+            "label": "C",
+            "text": "Supporting ongoing monitoring of the threat landscape"
+          },
+          {
+            "label": "D",
+            "text": "Informing proactive measures to mitigate identified risks and vulnerabilities"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Proactive Mitigation involves informing proactive measures to mitigate identified risks and vulnerabilities."
+      },
+      {
+        "id": "ctia-m08-q19",
+        "type": "choice",
+        "text": "In the collaboration between threat intelligence and risk management, which of the following appears in the shared/overlapping area?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Data collection"
+          },
+          {
+            "label": "B",
+            "text": "Threat hunting"
+          },
+          {
+            "label": "C",
+            "text": "Compliance management"
+          },
+          {
+            "label": "D",
+            "text": "Strategic intelligence"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "The shared overlap includes data sharing, risk identification, contextual risk assessment, proactive mitigation strategies, incident response planning, continuous monitoring and adaptation, threat hunting, and knowledge transfer."
+      },
+      {
+        "id": "ctia-m08-q20",
+        "type": "choice",
+        "text": "Which challenge of integrating threat intelligence into risk management refers to receiving more data than can be effectively processed?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Information overload"
+          },
+          {
+            "label": "B",
+            "text": "Data quality and accuracy"
+          },
+          {
+            "label": "C",
+            "text": "Timeliness of information"
+          },
+          {
+            "label": "D",
+            "text": "Interoperability"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Information Overload is one of the key challenges of integrating threat intelligence into risk management."
+      },
+      {
+        "id": "ctia-m08-q21",
+        "type": "choice",
+        "text": "Incident response (IR) is best described as which of the following?",
+        "options": [
+          {
+            "label": "A",
+            "text": "An annual compliance audit"
+          },
+          {
+            "label": "B",
+            "text": "A method for marketing security services"
+          },
+          {
+            "label": "C",
+            "text": "A process for developing new security products"
+          },
+          {
+            "label": "D",
+            "text": "A comprehensive approach to addressing and managing cybersecurity incidents to minimize their impact and facilitate swift recovery"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Incident response (IR) is a comprehensive approach to addressing and managing cybersecurity incidents to minimize their impact and facilitate swift recovery."
+      },
+      {
+        "id": "ctia-m08-q22",
+        "type": "choice",
+        "text": "Which of the following is the correct early sequence of stages in incident response?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Identification, Preparation, Containment, Recovery"
+          },
+          {
+            "label": "B",
+            "text": "Recovery, Lessons Learned, Preparation, Identification"
+          },
+          {
+            "label": "C",
+            "text": "Preparation, Identification, Containment, Eradication"
+          },
+          {
+            "label": "D",
+            "text": "Containment, Eradication, Preparation, Identification"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "The IR stages run Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned, Documentation and Reporting, and Continuous Improvement."
+      },
+      {
+        "id": "ctia-m08-q23",
+        "type": "choice",
+        "text": "When integrating threat intelligence into the incident response process, what does 'Enrich Incident Data with IoCs' involve?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Providing training to incident response teams"
+          },
+          {
+            "label": "B",
+            "text": "Defining the objectives of the IR program"
+          },
+          {
+            "label": "C",
+            "text": "Subscribing to relevant threat intelligence sources"
+          },
+          {
+            "label": "D",
+            "text": "Enriching incident data with threat intelligence indicators such as malicious IP addresses, domains, file hashes, and signatures"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Enriching incident data with threat intelligence indicators such as malicious IP addresses, domains, file hashes, and signatures helps responders understand the incident."
+      },
+      {
+        "id": "ctia-m08-q24",
+        "type": "choice",
+        "text": "Which of the following is listed as a familiar metric for measuring the effectiveness of threat intelligence in incident response?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Employee satisfaction score"
+          },
+          {
+            "label": "B",
+            "text": "Marketing conversion rate"
+          },
+          {
+            "label": "C",
+            "text": "Time to detect and respond"
+          },
+          {
+            "label": "D",
+            "text": "Number of software licenses"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Familiar metrics include Time to Detect and Respond, Time to Recover, Incident Volume and Severity, and Incident Resolution Rate and Cost."
+      },
+      {
+        "id": "ctia-m08-q25",
+        "type": "choice",
+        "text": "In post-incident analysis, what does 'Root Cause Analysis' help security analysts discover?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Systematic causes such as software or network vulnerabilities, system misconfiguration, and human errors that led to an incident"
+          },
+          {
+            "label": "B",
+            "text": "New hiring requirements only"
+          },
+          {
+            "label": "C",
+            "text": "The organization's quarterly revenue"
+          },
+          {
+            "label": "D",
+            "text": "Marketing opportunities"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review CTIA Module 08: Threat Intelligence in SOC, IR, and Risk Management.",
+        "explanation": "Root Cause Analysis helps security analysts discover systematic causes such as software or network vulnerabilities, system misconfiguration, human errors, and any other cause that led to an incident."
+      }
+    ]
   }
 };
