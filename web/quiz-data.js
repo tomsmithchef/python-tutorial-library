@@ -14937,5 +14937,5825 @@ window.PY_TUTORIAL_QUIZZES = {
         "explanation": "Root Cause Analysis helps security analysts discover systematic causes such as software or network vulnerabilities, system misconfiguration, human errors, and any other cause that led to an incident."
       }
     ]
+  },
+  "socMockExamModules01020708": {
+    "lesson": "soc-mock-01",
+    "folder": "SOC Practice Exams",
+    "label": "SOC Mock Exam 1",
+    "title": "SOC Mock Exam 1: Modules 01, 02, 07, and 08",
+    "description": "A 100-question SOC mock exam covering Security Operations and Management, Cyber Threats and Attack Methodology, Forensic Investigation and Malware Analysis, and SOC for Cloud Environments.",
+    "sourceFile": "SOC_Practice_Exam-1.pdf",
+    "questions": [
+      {
+        "id": "soc-mock1-q001",
+        "type": "choice",
+        "text": "What is the primary purpose of security management within an organization?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To guarantee that no cyber attack can ever succeed"
+          },
+          {
+            "label": "B",
+            "text": "To eliminate the need for security policies"
+          },
+          {
+            "label": "C",
+            "text": "To execute a set of security activities that maintain the organization's security posture at an adequate level"
+          },
+          {
+            "label": "D",
+            "text": "To replace all human analysts with automation"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "To execute a set of security activities that maintain the organization's security posture at an adequate level — Security management is the set of activities organizations execute to keep their security posture adequate."
+      },
+      {
+        "id": "soc-mock1-q002",
+        "type": "choice",
+        "text": "Modern security operations add which third aspect to the two traditional ones of security monitoring and security incident management?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Physical security"
+          },
+          {
+            "label": "B",
+            "text": "Situational awareness"
+          },
+          {
+            "label": "C",
+            "text": "Penetration testing"
+          },
+          {
+            "label": "D",
+            "text": "Patch management"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Situational awareness — Situational awareness (often driven by threat intelligence) is the third aspect of modern security operations."
+      },
+      {
+        "id": "soc-mock1-q003",
+        "type": "choice",
+        "text": "A Security Operations Center (SOC) is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A firewall appliance"
+          },
+          {
+            "label": "B",
+            "text": "A type of antivirus software"
+          },
+          {
+            "label": "C",
+            "text": "A centralized unit that continuously monitors and analyzes activity on an organization's information systems"
+          },
+          {
+            "label": "D",
+            "text": "A compliance certification"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A centralized unit that continuously monitors and analyzes activity on an organization's information systems — A SOC is a centralized unit that continuously monitors, assesses, and defends an organization's assets."
+      },
+      {
+        "id": "soc-mock1-q004",
+        "type": "choice",
+        "text": "Why have organizations shifted focus from preventing attacks toward rapid threat detection and response?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reliably preventing every attack is nearly impossible given the volume of advanced techniques"
+          },
+          {
+            "label": "B",
+            "text": "Detection is cheaper than buying any prevention tools"
+          },
+          {
+            "label": "C",
+            "text": "Compliance forbids prevention"
+          },
+          {
+            "label": "D",
+            "text": "Prevention tools are illegal in most countries"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Reliably preventing every attack is nearly impossible given the volume of advanced techniques — Because preventing every sophisticated attack is almost impossible, the emphasis moves to fast detection and response."
+      },
+      {
+        "id": "soc-mock1-q005",
+        "type": "choice",
+        "text": "Which three pillars must work in combination and coordination for a successful SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hardware, software, and firmware"
+          },
+          {
+            "label": "B",
+            "text": "People, processes, and technology"
+          },
+          {
+            "label": "C",
+            "text": "Budget, marketing, and sales"
+          },
+          {
+            "label": "D",
+            "text": "Firewalls, routers, and switches"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "People, processes, and technology — A SOC depends on the coordination of people, processes, and technology."
+      },
+      {
+        "id": "soc-mock1-q006",
+        "type": "choice",
+        "text": "In SOC operations, what is the purpose of event correlation?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To encrypt all network traffic"
+          },
+          {
+            "label": "B",
+            "text": "To relate and contextualize events from various sources using predefined correlation rules"
+          },
+          {
+            "label": "C",
+            "text": "To delete redundant logs permanently"
+          },
+          {
+            "label": "D",
+            "text": "To physically secure the data center"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "To relate and contextualize events from various sources using predefined correlation rules — Event correlation associates and contextualizes events from multiple sources based on predefined rules."
+      },
+      {
+        "id": "soc-mock1-q007",
+        "type": "choice",
+        "text": "Which describes the correct high-level order of the SOC workflow?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collect, Ingest, Validate, Report, Respond, Document"
+          },
+          {
+            "label": "B",
+            "text": "Ingest, Respond, Collect, Validate"
+          },
+          {
+            "label": "C",
+            "text": "Respond, Collect, Ingest, Report"
+          },
+          {
+            "label": "D",
+            "text": "Document, Validate, Collect, Respond SOC Practice Exam Page 4"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Collect, Ingest, Validate, Report, Respond, Document — The SOC workflow flows Collect → Ingest → Validate → Report → Respond → Document."
+      },
+      {
+        "id": "soc-mock1-q008",
+        "type": "choice",
+        "text": "What is the typical role of a Level 1 (Tier 1) SOC analyst?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reverse-engineering malware samples"
+          },
+          {
+            "label": "B",
+            "text": "Setting organizational cybersecurity policy"
+          },
+          {
+            "label": "C",
+            "text": "Monitoring and triaging security alerts and passing event details to the next tier"
+          },
+          {
+            "label": "D",
+            "text": "Conducting courtroom expert testimony"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Monitoring and triaging security alerts and passing event details to the next tier — Tier 1 analysts monitor and triage alerts, escalating to Tier 2 for deeper investigation."
+      },
+      {
+        "id": "soc-mock1-q009",
+        "type": "choice",
+        "text": "Which SOC role is chiefly responsible for finalizing strategies, policies, and procedures across all aspects of cybersecurity?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chief Information Security Officer (CISO)"
+          },
+          {
+            "label": "B",
+            "text": "Tier 1 analyst"
+          },
+          {
+            "label": "C",
+            "text": "Threat hunter"
+          },
+          {
+            "label": "D",
+            "text": "Forensic analyst"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Chief Information Security Officer (CISO) — The CISO finalizes cybersecurity strategies, policies, and procedures."
+      },
+      {
+        "id": "soc-mock1-q010",
+        "type": "choice",
+        "text": "Processes in a SOC are best understood as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Purely optional documentation"
+          },
+          {
+            "label": "B",
+            "text": "The link between people and technology that ensures the right tasks are performed correctly"
+          },
+          {
+            "label": "C",
+            "text": "A replacement for people"
+          },
+          {
+            "label": "D",
+            "text": "Only relevant to the finance department"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "The link between people and technology that ensures the right tasks are performed correctly — Processes act as the connection between people and technology so the right team performs the right tasks."
+      },
+      {
+        "id": "soc-mock1-q011",
+        "type": "choice",
+        "text": "In an in-house (internal) SOC model, a key disadvantage is that it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Provides no understanding of the organization"
+          },
+          {
+            "label": "B",
+            "text": "Always mishandles external data"
+          },
+          {
+            "label": "C",
+            "text": "Requires large upfront investment and years to build infrastructure and capabilities"
+          },
+          {
+            "label": "D",
+            "text": "Cannot meet any compliance requirements"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Requires large upfront investment and years to build infrastructure and capabilities — An internal SOC offers deep organizational understanding but needs heavy upfront investment and time."
+      },
+      {
+        "id": "soc-mock1-q012",
+        "type": "choice",
+        "text": "In an outsourced SOC model, who sets up the infrastructure and provides threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A Managed Security Service Provider (MSSP)"
+          },
+          {
+            "label": "B",
+            "text": "The organization's HR department"
+          },
+          {
+            "label": "C",
+            "text": "A hardware vendor only"
+          },
+          {
+            "label": "D",
+            "text": "The end users"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A Managed Security Service Provider (MSSP) — In the outsourced model, an MSSP provides the infrastructure, threat intelligence, and analyst capabilities."
+      },
+      {
+        "id": "soc-mock1-q013",
+        "type": "choice",
+        "text": "A hybrid SOC model is characterized by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Combining in-house and outsourced models, with the organization accompanied by an MSSP"
+          },
+          {
+            "label": "B",
+            "text": "Eliminating all hardware"
+          },
+          {
+            "label": "C",
+            "text": "Outsourcing nothing at all"
+          },
+          {
+            "label": "D",
+            "text": "Using only open-source tools"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Combining in-house and outsourced models, with the organization accompanied by an MSSP — The hybrid model blends in-house and outsourced approaches, sharing synergies while incurring extra cost."
+      },
+      {
+        "id": "soc-mock1-q014",
+        "type": "choice",
+        "text": "What is the main purpose of a SOC maturity model?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To select firewall vendors"
+          },
+          {
+            "label": "B",
+            "text": "To replace the SOC entirely"
+          },
+          {
+            "label": "C",
+            "text": "To analyze where a SOC succeeds and where it needs improvement using standardized measures"
+          },
+          {
+            "label": "D",
+            "text": "To rank employees by salary"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "To analyze where a SOC succeeds and where it needs improvement using standardized measures — Maturity models are governance tools used to measure effectiveness and identify improvement areas."
+      },
+      {
+        "id": "soc-mock1-q015",
+        "type": "choice",
+        "text": "The KPI 'Mean Time to Detect (MTTD)' measures: SOC Practice Exam Page 5",
+        "options": [
+          {
+            "label": "A",
+            "text": "The cost of detection tools"
+          },
+          {
+            "label": "B",
+            "text": "The average time taken to detect a security incident"
+          },
+          {
+            "label": "C",
+            "text": "The size of the log archive"
+          },
+          {
+            "label": "D",
+            "text": "The number of analysts on shift"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "The average time taken to detect a security incident — MTTD is the average time taken to detect an incident; lower is better."
+      },
+      {
+        "id": "soc-mock1-q016",
+        "type": "choice",
+        "text": "Which set of qualities should good SOC KPIs satisfy?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cheap, fast, and colorful"
+          },
+          {
+            "label": "B",
+            "text": "Secret, manual, and rare"
+          },
+          {
+            "label": "C",
+            "text": "Optional, vague, and historical"
+          },
+          {
+            "label": "D",
+            "text": "Specific, Measurable, Actionable, Relevant, and Timely"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Specific, Measurable, Actionable, Relevant, and Timely — Effective KPIs are Specific, Measurable, Actionable, Relevant, and Timely."
+      },
+      {
+        "id": "soc-mock1-q017",
+        "type": "choice",
+        "text": "Which is a recognized challenge in implementing a SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Too few security alerts to act on"
+          },
+          {
+            "label": "B",
+            "text": "Excessive simplicity of modern attacks"
+          },
+          {
+            "label": "C",
+            "text": "Lack of any technology to choose from"
+          },
+          {
+            "label": "D",
+            "text": "A shortage of skilled analysts and an increasing volume of alerts"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A shortage of skilled analysts and an increasing volume of alerts — Common SOC challenges include alert overload and a lack of skilled analysts. SOC Practice Exam Page 20"
+      },
+      {
+        "id": "soc-mock1-q018",
+        "type": "choice",
+        "text": "What does an AI-driven SOC primarily add to security operations?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The removal of all human oversight"
+          },
+          {
+            "label": "B",
+            "text": "Advanced analytics, automation, and intelligent decision-making to streamline operations"
+          },
+          {
+            "label": "C",
+            "text": "Manual-only log review"
+          },
+          {
+            "label": "D",
+            "text": "A guarantee of zero false positives forever"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Advanced analytics, automation, and intelligent decision-making to streamline operations — AI-driven SOCs integrate analytics, automation, and intelligent decision-making to improve operations."
+      },
+      {
+        "id": "soc-mock1-q019",
+        "type": "choice",
+        "text": "Log retention and archival in a SOC is important because stored logs:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Can be retrieved for forensics as well as threat control and prevention"
+          },
+          {
+            "label": "B",
+            "text": "Must be deleted immediately"
+          },
+          {
+            "label": "C",
+            "text": "Only serve marketing purposes"
+          },
+          {
+            "label": "D",
+            "text": "Are never used again"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Can be retrieved for forensics as well as threat control and prevention — Centrally retained logs support forensics, threat control, and audit preparation."
+      },
+      {
+        "id": "soc-mock1-q020",
+        "type": "choice",
+        "text": "Which statement about 'people' in a SOC is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They are unrelated to data analysis"
+          },
+          {
+            "label": "B",
+            "text": "They are specialized individuals who should possess deep technical knowledge and relevant certifications"
+          },
+          {
+            "label": "C",
+            "text": "They only handle physical building security"
+          },
+          {
+            "label": "D",
+            "text": "They need no training or certifications"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "They are specialized individuals who should possess deep technical knowledge and relevant certifications — SOC people are specialized individuals with deep technical knowledge, experience, and certifications."
+      },
+      {
+        "id": "soc-mock1-q021",
+        "type": "choice",
+        "text": "A proactive threat reaction in a SOC means the team:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Finds and removes weaknesses in infrastructure or processes before an attacker can exploit them"
+          },
+          {
+            "label": "B",
+            "text": "Ignores low-priority threats"
+          },
+          {
+            "label": "C",
+            "text": "Waits until after damage occurs to act"
+          },
+          {
+            "label": "D",
+            "text": "Only reacts after an alert is escalated externally"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Finds and removes weaknesses in infrastructure or processes before an attacker can exploit them — Proactive reaction removes weaknesses before attackers exploit them; reactive reaction remediates after the fact."
+      },
+      {
+        "id": "soc-mock1-q022",
+        "type": "choice",
+        "text": "Which best describes situational awareness as a SOC capability?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Providing information about ongoing activities across the IT infrastructure by aggregating data streams"
+          },
+          {
+            "label": "B",
+            "text": "Blocking all inbound email"
+          },
+          {
+            "label": "C",
+            "text": "Scheduling employee shifts SOC Practice Exam Page 6"
+          },
+          {
+            "label": "D",
+            "text": "Encrypting all stored passwords"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Providing information about ongoing activities across the IT infrastructure by aggregating data streams — Situational awareness aggregates and correlates data streams to give insight into ongoing activity."
+      },
+      {
+        "id": "soc-mock1-q023",
+        "type": "choice",
+        "text": "Which is an example of a 'business process' within a SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Vulnerability scanning and remediation"
+          },
+          {
+            "label": "B",
+            "text": "Incident classification and ticketing"
+          },
+          {
+            "label": "C",
+            "text": "Memory forensics"
+          },
+          {
+            "label": "D",
+            "text": "Report preparation and log retention aligned to organizational objectives"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Report preparation and log retention aligned to organizational objectives — Business processes define administrative components such as report preparation and log retention."
+      },
+      {
+        "id": "soc-mock1-q024",
+        "type": "choice",
+        "text": "During the SOC implementation phase, planning typically includes:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Buying tools before any assessment"
+          },
+          {
+            "label": "B",
+            "text": "An initial assessment of existing people, processes, technology, and business/IT objectives"
+          },
+          {
+            "label": "C",
+            "text": "Immediately decommissioning the SOC"
+          },
+          {
+            "label": "D",
+            "text": "Skipping any strategy development"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "An initial assessment of existing people, processes, technology, and business/IT objectives — Planning begins with an initial assessment of current capabilities and strategy development."
+      },
+      {
+        "id": "soc-mock1-q025",
+        "type": "choice",
+        "text": "Which best-practice supports effective SOC operations?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Removing all access controls SOC Practice Exam Page 7 Module 02 — Understanding Cyber Threats, IoCs, and Attack Methodology 25 questions"
+          },
+          {
+            "label": "B",
+            "text": "Avoiding any log collection"
+          },
+          {
+            "label": "C",
+            "text": "Using real-time security dashboards and well-defined incident response processes"
+          },
+          {
+            "label": "D",
+            "text": "Disabling all dashboards"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Using real-time security dashboards and well-defined incident response processes — Real-time dashboards and well-defined IR processes are core SOC best practices. Module 02 — Understanding Cyber Threats, IoCs, and Attack Methodology"
+      },
+      {
+        "id": "soc-mock1-q026",
+        "type": "choice",
+        "text": "A cyber threat is best defined as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A type of firewall rule"
+          },
+          {
+            "label": "B",
+            "text": "An act in which an adversary attempts to gain unauthorized access by exploiting communication paths"
+          },
+          {
+            "label": "C",
+            "text": "A routine software update"
+          },
+          {
+            "label": "D",
+            "text": "A legal compliance document"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "An act in which an adversary attempts to gain unauthorized access by exploiting communication paths — A cyber threat is an adversary's attempt to gain unauthorized access by exploiting communication paths."
+      },
+      {
+        "id": "soc-mock1-q027",
+        "type": "choice",
+        "text": "According to the module, the three elements always behind a threat's existence are:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Intent, capability, and opportunity"
+          },
+          {
+            "label": "B",
+            "text": "Budget, tools, and time"
+          },
+          {
+            "label": "C",
+            "text": "Speed, stealth, and scale"
+          },
+          {
+            "label": "D",
+            "text": "People, process, and technology"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Intent, capability, and opportunity — Every threat involves intent (motive), capability (TTPs), and opportunity (a vulnerability)."
+      },
+      {
+        "id": "soc-mock1-q028",
+        "type": "choice",
+        "text": "Within the formula Attack = Motive (Goal) + Method (TTPs) + Vulnerability, 'Method' refers to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The Tactics, Techniques, and Procedures used"
+          },
+          {
+            "label": "B",
+            "text": "The attacker's funding"
+          },
+          {
+            "label": "C",
+            "text": "The legal jurisdiction"
+          },
+          {
+            "label": "D",
+            "text": "The victim's industry"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "The Tactics, Techniques, and Procedures used — Method corresponds to the attacker's TTPs."
+      },
+      {
+        "id": "soc-mock1-q029",
+        "type": "choice",
+        "text": "In TTPs, 'Tactics' are best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The victim's response plan"
+          },
+          {
+            "label": "B",
+            "text": "A guideline describing how an attacker performs the attack from beginning to end"
+          },
+          {
+            "label": "C",
+            "text": "The exact malware binary used"
+          },
+          {
+            "label": "D",
+            "text": "A single command typed by the attacker"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A guideline describing how an attacker performs the attack from beginning to end — Tactics describe the overall approach an attacker takes from start to finish."
+      },
+      {
+        "id": "soc-mock1-q030",
+        "type": "choice",
+        "text": "A vulnerability is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A type of antivirus signature"
+          },
+          {
+            "label": "B",
+            "text": "A guaranteed successful attack"
+          },
+          {
+            "label": "C",
+            "text": "A weakness, design, or implementation error that can compromise system security"
+          },
+          {
+            "label": "D",
+            "text": "An encrypted backup"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A weakness, design, or implementation error that can compromise system security — A vulnerability is a weakness or flaw that can lead to an undesirable, security-compromising event."
+      },
+      {
+        "id": "soc-mock1-q031",
+        "type": "choice",
+        "text": "The main goal of a reconnaissance attack is to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gather all possible information about the target network"
+          },
+          {
+            "label": "B",
+            "text": "Pay a ransom"
+          },
+          {
+            "label": "C",
+            "text": "Patch the target's systems"
+          },
+          {
+            "label": "D",
+            "text": "Encrypt the victim's files"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Gather all possible information about the target network — Reconnaissance aims to gather as much information about the target network as possible."
+      },
+      {
+        "id": "soc-mock1-q032",
+        "type": "choice",
+        "text": "Network sniffing primarily allows an attacker to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increase network bandwidth SOC Practice Exam Page 8"
+          },
+          {
+            "label": "B",
+            "text": "Physically destroy switches"
+          },
+          {
+            "label": "C",
+            "text": "Monitor and capture data packets passing through a network to obtain sensitive information"
+          },
+          {
+            "label": "D",
+            "text": "Encrypt all traffic for the victim"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Monitor and capture data packets passing through a network to obtain sensitive information — Sniffing captures packets traversing the network to harvest sensitive data."
+      },
+      {
+        "id": "soc-mock1-q033",
+        "type": "choice",
+        "text": "In a Man-in-the-Middle (MITM) attack, the attacker:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Positions between client and server to intercept, read, modify, or insert data"
+          },
+          {
+            "label": "B",
+            "text": "Patches the server"
+          },
+          {
+            "label": "C",
+            "text": "Only observes physical access logs"
+          },
+          {
+            "label": "D",
+            "text": "Sends a single phishing email"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Positions between client and server to intercept, read, modify, or insert data — MITM intercepts communications, allowing the attacker to read, modify, or inject data."
+      },
+      {
+        "id": "soc-mock1-q034",
+        "type": "choice",
+        "text": "Which password attack tries every possible combination of characters until the password is broken?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Birthday attack"
+          },
+          {
+            "label": "B",
+            "text": "Dictionary attack"
+          },
+          {
+            "label": "C",
+            "text": "Rainbow table attack"
+          },
+          {
+            "label": "D",
+            "text": "Brute-force attack"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Brute-force attack — A brute-force attack systematically tries every character combination."
+      },
+      {
+        "id": "soc-mock1-q035",
+        "type": "choice",
+        "text": "Vertical privilege escalation occurs when an attacker:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Resets their own password"
+          },
+          {
+            "label": "B",
+            "text": "Uses the same level of access while assuming another user's identity"
+          },
+          {
+            "label": "C",
+            "text": "Only reads public web pages"
+          },
+          {
+            "label": "D",
+            "text": "Gains higher privileges than the account originally had"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Gains higher privileges than the account originally had — Vertical escalation grants a higher privilege level; horizontal escalation reuses the same level as another user. SOC Practice Exam Page 21"
+      },
+      {
+        "id": "soc-mock1-q036",
+        "type": "choice",
+        "text": "DNS cache poisoning works by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Physically unplugging the DNS server"
+          },
+          {
+            "label": "B",
+            "text": "Blocking all DNS traffic"
+          },
+          {
+            "label": "C",
+            "text": "Inserting forged DNS records into a resolver's cache so queries are redirected to malicious sites"
+          },
+          {
+            "label": "D",
+            "text": "Encrypting the DNS database"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Inserting forged DNS records into a resolver's cache so queries are redirected to malicious sites — Forged records are placed in the resolver cache, redirecting users to malicious sites."
+      },
+      {
+        "id": "soc-mock1-q037",
+        "type": "choice",
+        "text": "A DHCP starvation attack results in:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A denial of service because the DHCP server runs out of IP addresses to assign"
+          },
+          {
+            "label": "B",
+            "text": "Automatic patching of clients"
+          },
+          {
+            "label": "C",
+            "text": "Stronger encryption of leases"
+          },
+          {
+            "label": "D",
+            "text": "Faster IP allocation for everyone"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A denial of service because the DHCP server runs out of IP addresses to assign — By exhausting the DHCP pool with fake requests, legitimate clients cannot obtain addresses."
+      },
+      {
+        "id": "soc-mock1-q038",
+        "type": "choice",
+        "text": "How does a Distributed Denial-of-Service (DDoS) attack differ from a basic DoS attack?",
+        "options": [
+          {
+            "label": "A",
+            "text": "DDoS only targets printers"
+          },
+          {
+            "label": "B",
+            "text": "DDoS uses a single machine; DoS uses many"
+          },
+          {
+            "label": "C",
+            "text": "There is no difference"
+          },
+          {
+            "label": "D",
+            "text": "DDoS uses a multitude of compromised systems (botnets) against a single target"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "DDoS uses a multitude of compromised systems (botnets) against a single target — DDoS leverages many compromised systems (zombies/botnets) to attack one target."
+      },
+      {
+        "id": "soc-mock1-q039",
+        "type": "choice",
+        "text": "Which malware type conceals certain activities from detection by the operating system?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Spyware"
+          },
+          {
+            "label": "B",
+            "text": "Rootkit"
+          },
+          {
+            "label": "C",
+            "text": "Adware"
+          },
+          {
+            "label": "D",
+            "text": "Spam filter"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Rootkit — A rootkit hides activities and its presence from the operating system."
+      },
+      {
+        "id": "soc-mock1-q040",
+        "type": "choice",
+        "text": "A Trojan is best characterized as a program that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Self-replicates by attaching to other programs"
+          },
+          {
+            "label": "B",
+            "text": "Appears useful but contains hidden, harmful code"
+          },
+          {
+            "label": "C",
+            "text": "Only displays advertisements"
+          },
+          {
+            "label": "D",
+            "text": "Is always a legitimate OS component SOC Practice Exam Page 9"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Appears useful but contains hidden, harmful code — A Trojan masquerades as useful software while concealing malicious code."
+      },
+      {
+        "id": "soc-mock1-q041",
+        "type": "choice",
+        "text": "Indicators of Compromise (IoCs) are:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Employee performance scores"
+          },
+          {
+            "label": "B",
+            "text": "Marketing metrics for the SOC"
+          },
+          {
+            "label": "C",
+            "text": "Firewall license keys"
+          },
+          {
+            "label": "D",
+            "text": "Clues or forensic artifacts on a network or system that indicate potential intrusion or malicious activity"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Clues or forensic artifacts on a network or system that indicate potential intrusion or malicious activity — IoCs are forensic artifacts that signal a potential intrusion or malicious activity."
+      },
+      {
+        "id": "soc-mock1-q042",
+        "type": "choice",
+        "text": "Which is an example of a network-based IoC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Unusual outbound connections to suspicious IPs suggesting C2 communication"
+          },
+          {
+            "label": "B",
+            "text": "A scheduled software update"
+          },
+          {
+            "label": "C",
+            "text": "An employee taking a lunch break"
+          },
+          {
+            "label": "D",
+            "text": "A user changing their desktop wallpaper"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Unusual outbound connections to suspicious IPs suggesting C2 communication — Repeated outbound connections to suspicious IPs are a classic network IoC for command-and- control traffic."
+      },
+      {
+        "id": "soc-mock1-q043",
+        "type": "choice",
+        "text": "Which is an example of a host-based IoC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A sudden spike in DNS requests across the network"
+          },
+          {
+            "label": "B",
+            "text": "A rogue DHCP server on the LAN"
+          },
+          {
+            "label": "C",
+            "text": "Unexpected new processes or unauthorized user accounts on a single system"
+          },
+          {
+            "label": "D",
+            "text": "Excessive spam reports from many users"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Unexpected new processes or unauthorized user accounts on a single system — Unusual processes and unauthorized accounts on a host are host-based IoCs."
+      },
+      {
+        "id": "soc-mock1-q044",
+        "type": "choice",
+        "text": "Behavioral IoCs are particularly useful for detecting:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hardware failures"
+          },
+          {
+            "label": "B",
+            "text": "Insider threats and anomalous user activity"
+          },
+          {
+            "label": "C",
+            "text": "Power outages"
+          },
+          {
+            "label": "D",
+            "text": "Printer paper jams"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Insider threats and anomalous user activity — Behavioral indicators help identify insider threats and anomalous user behavior."
+      },
+      {
+        "id": "soc-mock1-q045",
+        "type": "choice",
+        "text": "What are the five phases of EC-Council's (CEH) hacking methodology, in order?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gaining access, Recon, Scanning, Reporting, Recovery"
+          },
+          {
+            "label": "B",
+            "text": "Scanning, Recon, Clearing tracks, Gaining access, Maintaining access"
+          },
+          {
+            "label": "C",
+            "text": "Delivery, Exploitation, Installation, C2, Actions"
+          },
+          {
+            "label": "D",
+            "text": "Recon, Scanning, Gaining access, Maintaining access, Clearing tracks"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Recon, Scanning, Gaining access, Maintaining access, Clearing tracks — The CEH methodology is Reconnaissance, Scanning, Gaining access, Maintaining access, Clearing tracks."
+      },
+      {
+        "id": "soc-mock1-q046",
+        "type": "choice",
+        "text": "In Lockheed Martin's Cyber Kill Chain, creating a deliverable malicious payload using an exploit and a backdoor is which phase?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Weaponization"
+          },
+          {
+            "label": "B",
+            "text": "Installation"
+          },
+          {
+            "label": "C",
+            "text": "Actions on Objectives"
+          },
+          {
+            "label": "D",
+            "text": "Reconnaissance"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Weaponization — Weaponization is building the deliverable malicious payload before delivery."
+      },
+      {
+        "id": "soc-mock1-q047",
+        "type": "choice",
+        "text": "The MITRE ATT&CK framework is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A password manager"
+          },
+          {
+            "label": "B",
+            "text": "A firewall configuration tool"
+          },
+          {
+            "label": "C",
+            "text": "A globally accessible knowledge base of adversary tactics and techniques based on real-world observations"
+          },
+          {
+            "label": "D",
+            "text": "An antivirus engine"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A globally accessible knowledge base of adversary tactics and techniques based on real- world observations — MITRE ATT&CK is a knowledge base of real-world adversary tactics and techniques."
+      },
+      {
+        "id": "soc-mock1-q048",
+        "type": "choice",
+        "text": "The Diamond Model of Intrusion Analysis is built around which four core meta-features?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Adversary, Capability, Infrastructure, Victim"
+          },
+          {
+            "label": "B",
+            "text": "People, Process, Technology, Policy"
+          },
+          {
+            "label": "C",
+            "text": "Detect, Deny, Disrupt, Deceive"
+          },
+          {
+            "label": "D",
+            "text": "Recon, Weaponize, Deliver, Exploit SOC Practice Exam Page 10"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Adversary, Capability, Infrastructure, Victim — The Diamond Model's core features are Adversary, Capability, Infrastructure, and Victim."
+      },
+      {
+        "id": "soc-mock1-q049",
+        "type": "choice",
+        "text": "Which are the six core functions of the NIST Cybersecurity Framework 2.0?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Plan, Build, Operate, Review, Audit, Close"
+          },
+          {
+            "label": "B",
+            "text": "Reconnaissance, Scanning, Access, Persistence, Exfiltration, Impact"
+          },
+          {
+            "label": "C",
+            "text": "Govern, Identify, Protect, Detect, Respond, Recover"
+          },
+          {
+            "label": "D",
+            "text": "Collect, Ingest, Validate, Report, Respond, Document"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Govern, Identify, Protect, Detect, Respond, Recover — NIST CSF 2.0 functions are Govern, Identify, Protect, Detect, Respond, and Recover."
+      },
+      {
+        "id": "soc-mock1-q050",
+        "type": "choice",
+        "text": "OWASP (Open Web Application Security Project) is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A type of malware SOC Practice Exam Page 11 Module 07 — Forensic Investigation and Malware Analysis 25 questions"
+          },
+          {
+            "label": "B",
+            "text": "A commercial antivirus vendor"
+          },
+          {
+            "label": "C",
+            "text": "A government spy agency"
+          },
+          {
+            "label": "D",
+            "text": "A non-profit organization dedicated to improving software security and highlighting critical web application vulnerabilities"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A non-profit organization dedicated to improving software security and highlighting critical web application vulnerabilities — OWASP is a non-profit that improves software security and publishes the most critical web application vulnerabilities. Module 07 — Forensic Investigation and Malware Analysis"
+      },
+      {
+        "id": "soc-mock1-q051",
+        "type": "choice",
+        "text": "Forensic investigation in a SOC context primarily involves:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Marketing the SOC's services"
+          },
+          {
+            "label": "B",
+            "text": "Deleting all evidence after an incident"
+          },
+          {
+            "label": "C",
+            "text": "Using structured methods to locate, gather, preserve, analyze, and present evidence that is legally admissible"
+          },
+          {
+            "label": "D",
+            "text": "Writing firewall rules"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Using structured methods to locate, gather, preserve, analyze, and present evidence that is legally admissible — Forensics uses structured methods to collect and present legally admissible evidence."
+      },
+      {
+        "id": "soc-mock1-q052",
+        "type": "choice",
+        "text": "Why is 'chain of custody' critical in digital forensics?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It encrypts the SOC dashboard"
+          },
+          {
+            "label": "B",
+            "text": "It speeds up internet connections"
+          },
+          {
+            "label": "C",
+            "text": "It schedules analyst shifts"
+          },
+          {
+            "label": "D",
+            "text": "It ensures the integrity and admissibility of digital evidence"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "It ensures the integrity and admissibility of digital evidence — Chain of custody preserves evidence integrity and legal admissibility."
+      },
+      {
+        "id": "soc-mock1-q053",
+        "type": "choice",
+        "text": "When does an incident typically get escalated to the forensics team?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only if no logs exist"
+          },
+          {
+            "label": "B",
+            "text": "Never; forensics is not part of SOC work"
+          },
+          {
+            "label": "C",
+            "text": "After the incident response team has handled and responded to the incident, for in- depth analysis"
+          },
+          {
+            "label": "D",
+            "text": "Before any monitoring occurs"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "After the incident response team has handled and responded to the incident, for in-depth analysis — Forensics receives the incident after the IRT responds, to investigate origin, impact, and severity. SOC Practice Exam Page 22"
+      },
+      {
+        "id": "soc-mock1-q054",
+        "type": "choice",
+        "text": "A core role of the SOC analyst in a forensic investigation is to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ignore alerts and logs"
+          },
+          {
+            "label": "B",
+            "text": "Detect incidents early and preserve valuable data with proper chain of custody"
+          },
+          {
+            "label": "C",
+            "text": "Destroy collected data"
+          },
+          {
+            "label": "D",
+            "text": "Avoid documentation"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Detect incidents early and preserve valuable data with proper chain of custody — SOC analysts provide early detection and preserve data integrity for forensic analysis."
+      },
+      {
+        "id": "soc-mock1-q055",
+        "type": "choice",
+        "text": "Which evidence sources are most relevant when investigating a network security incident?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only the CEO's personal laptop"
+          },
+          {
+            "label": "B",
+            "text": "Network traffic data and logs from routers, switches, proxies, firewalls, IDPS, DNS, and email servers"
+          },
+          {
+            "label": "C",
+            "text": "Building HVAC logs only"
+          },
+          {
+            "label": "D",
+            "text": "Printed marketing brochures"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Network traffic data and logs from routers, switches, proxies, firewalls, IDPS, DNS, and email servers — Network investigations rely on traffic captures and logs from network and security devices."
+      },
+      {
+        "id": "soc-mock1-q056",
+        "type": "choice",
+        "text": "To investigate a SQL injection incident, a forensic investigator primarily examines:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The office Wi-Fi password"
+          },
+          {
+            "label": "B",
+            "text": "Printer toner levels"
+          },
+          {
+            "label": "C",
+            "text": "Employee lunch schedules"
+          },
+          {
+            "label": "D",
+            "text": "Web server, WAF, IDS, and database logs for SQL injection signatures"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Web server, WAF, IDS, and database logs for SQL injection signatures — SQLi investigations look for attack signatures in web server, WAF, IDS, and database logs."
+      },
+      {
+        "id": "soc-mock1-q057",
+        "type": "choice",
+        "text": "When investigating an XSS incident, decoding the query string helps the analyst to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reset the database"
+          },
+          {
+            "label": "B",
+            "text": "Encrypt the cookies"
+          },
+          {
+            "label": "C",
+            "text": "Determine whether it contains malicious HTML/script tags"
+          },
+          {
+            "label": "D",
+            "text": "Increase server RAM"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Determine whether it contains malicious HTML/script tags — Decoding the query string reveals injected malicious HTML/script content."
+      },
+      {
+        "id": "soc-mock1-q058",
+        "type": "choice",
+        "text": "What are the four stages of malware analysis described in the module? SOC Practice Exam Page 12",
+        "options": [
+          {
+            "label": "A",
+            "text": "Recon, Scan, Exploit, Persist"
+          },
+          {
+            "label": "B",
+            "text": "Static Properties Analysis, Interactive Behavior Analysis, Fully Automated Analysis, Manual Code Reversing"
+          },
+          {
+            "label": "C",
+            "text": "Collect, Ingest, Validate, Report"
+          },
+          {
+            "label": "D",
+            "text": "Detect, Deny, Disrupt, Deceive"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Static Properties Analysis, Interactive Behavior Analysis, Fully Automated Analysis, Manual Code Reversing — The four stages are static properties, interactive behavior, fully automated analysis, and manual code reversing."
+      },
+      {
+        "id": "soc-mock1-q059",
+        "type": "choice",
+        "text": "The key distinction of static malware analysis is that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The malware is executed in a sandbox"
+          },
+          {
+            "label": "B",
+            "text": "It requires no tools at all"
+          },
+          {
+            "label": "C",
+            "text": "It always uses a physical machine"
+          },
+          {
+            "label": "D",
+            "text": "The malware code is NOT run; the binary is examined without execution"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "The malware code is NOT run; the binary is examined without execution — Static analysis examines the binary without executing the malware."
+      },
+      {
+        "id": "soc-mock1-q060",
+        "type": "choice",
+        "text": "Dynamic (behavioral) malware analysis requires:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Executing the malware in a controlled/sandboxed environment to observe real-time behavior"
+          },
+          {
+            "label": "B",
+            "text": "Never running the sample"
+          },
+          {
+            "label": "C",
+            "text": "Disabling all monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Only reading the file name"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Executing the malware in a controlled/sandboxed environment to observe real-time behavior — Dynamic analysis runs the malware in a controlled environment to observe behavior."
+      },
+      {
+        "id": "soc-mock1-q061",
+        "type": "choice",
+        "text": "File fingerprinting in static analysis means:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Renaming the file"
+          },
+          {
+            "label": "B",
+            "text": "Deleting metadata"
+          },
+          {
+            "label": "C",
+            "text": "Taking the analyst's actual fingerprint"
+          },
+          {
+            "label": "D",
+            "text": "Computing a hash value of the binary to identify, classify, and verify integrity of the sample"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Computing a hash value of the binary to identify, classify, and verify integrity of the sample — Fingerprinting computes a hash to identify the sample and detect any changes during analysis."
+      },
+      {
+        "id": "soc-mock1-q062",
+        "type": "choice",
+        "text": "Why is the computed hash of a malware sample compared against databases such as VirusTotal?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To check whether the sample matches known, already-documented malware"
+          },
+          {
+            "label": "B",
+            "text": "To increase the file size"
+          },
+          {
+            "label": "C",
+            "text": "To encrypt the sample"
+          },
+          {
+            "label": "D",
+            "text": "To delete the antivirus"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "To check whether the sample matches known, already-documented malware — Comparing hashes against databases reveals whether the sample is already-known malware."
+      },
+      {
+        "id": "soc-mock1-q063",
+        "type": "choice",
+        "text": "Performing a strings search on a malware binary can reveal:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The server's electricity bill"
+          },
+          {
+            "label": "B",
+            "text": "The victim's blood type"
+          },
+          {
+            "label": "C",
+            "text": "The analyst's password"
+          },
+          {
+            "label": "D",
+            "text": "Hardcoded URLs, file paths, registry keys, and other indicators of compromise"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Hardcoded URLs, file paths, registry keys, and other indicators of compromise — Extracted strings often expose URLs, paths, registry keys, and other IoCs."
+      },
+      {
+        "id": "soc-mock1-q064",
+        "type": "choice",
+        "text": "Analyzing Portable Executable (PE) information helps an analyst learn:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The office floor plan"
+          },
+          {
+            "label": "B",
+            "text": "The victim's salary"
+          },
+          {
+            "label": "C",
+            "text": "The attacker's home address"
+          },
+          {
+            "label": "D",
+            "text": "Compilation time, imported/exported functions, linked libraries, and embedded resources"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Compilation time, imported/exported functions, linked libraries, and embedded resources — PE metadata reveals compilation details, imports/exports, libraries, and resources."
+      },
+      {
+        "id": "soc-mock1-q065",
+        "type": "choice",
+        "text": "Examining file dependencies (e.g., with Dependency Walker) helps the analyst to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Estimate what the malware program can do based on the library functions it uses"
+          },
+          {
+            "label": "B",
+            "text": "Speed up the victim's PC SOC Practice Exam Page 13"
+          },
+          {
+            "label": "C",
+            "text": "Change the malware's author"
+          },
+          {
+            "label": "D",
+            "text": "Encrypt the registry"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Change the malware's author — Knowing the imported library functions helps estimate the malware's capabilities."
+      },
+      {
+        "id": "soc-mock1-q066",
+        "type": "choice",
+        "text": "Host integrity monitoring during dynamic analysis is divided into which two categories?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Static and printed analysis"
+          },
+          {
+            "label": "B",
+            "text": "Marketing and sales analysis"
+          },
+          {
+            "label": "C",
+            "text": "Physical and electrical analysis"
+          },
+          {
+            "label": "D",
+            "text": "System behavior analysis and network behavior analysis"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "System behavior analysis and network behavior analysis — Runtime behavior is observed via system behavior analysis and network behavior analysis."
+      },
+      {
+        "id": "soc-mock1-q067",
+        "type": "choice",
+        "text": "Which activity belongs to 'system behavior analysis' of running malware?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Capturing remote packet flows only"
+          },
+          {
+            "label": "B",
+            "text": "Monitoring registry artifacts, processes, services, and event logs"
+          },
+          {
+            "label": "C",
+            "text": "Monitoring IP addresses and connected ports"
+          },
+          {
+            "label": "D",
+            "text": "Tracking DNS queries on the wire"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Monitoring registry artifacts, processes, services, and event logs — System behavior analysis monitors registry, processes, services, drivers, and event logs on the host."
+      },
+      {
+        "id": "soc-mock1-q068",
+        "type": "choice",
+        "text": "Memory-analysis frameworks such as Volatility allow investigators to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Physically repair RAM chips"
+          },
+          {
+            "label": "B",
+            "text": "Send phishing emails"
+          },
+          {
+            "label": "C",
+            "text": "Analyze a RAM dump to retrieve processes, open ports, IPs, and login information"
+          },
+          {
+            "label": "D",
+            "text": "Increase disk capacity"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Analyze a RAM dump to retrieve processes, open ports, IPs, and login information — Volatility analyzes RAM dumps to recover processes, ports, IPs, and user information."
+      },
+      {
+        "id": "soc-mock1-q069",
+        "type": "choice",
+        "text": "SOC analysts focusing malware detection effort on 'unknown programs' means they:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only inspect hardware"
+          },
+          {
+            "label": "B",
+            "text": "Prioritize analysis of unsigned or unverified programs over those from trusted sources"
+          },
+          {
+            "label": "C",
+            "text": "Ignore all scripts"
+          },
+          {
+            "label": "D",
+            "text": "Trust every signed program blindly"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Prioritize analysis of unsigned or unverified programs over those from trusted sources — Analysts prioritize unsigned/unverified programs since trusted-source programs are lower risk."
+      },
+      {
+        "id": "soc-mock1-q070",
+        "type": "choice",
+        "text": "Why do SOC analysts monitor legitimate tools like PowerShell and cmd.exe during malware analysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Attackers frequently misuse them, so unusual command lines or suspicious child processes are red flags"
+          },
+          {
+            "label": "B",
+            "text": "They cannot be misused"
+          },
+          {
+            "label": "C",
+            "text": "They are always malicious"
+          },
+          {
+            "label": "D",
+            "text": "They are not part of Windows"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Attackers frequently misuse them, so unusual command lines or suspicious child processes are red flags — Attackers abuse legitimate tools, so analysts watch for unusual usage and suspicious child processes."
+      },
+      {
+        "id": "soc-mock1-q071",
+        "type": "choice",
+        "text": "A recognized challenge in malware analysis is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Too little malware to study"
+          },
+          {
+            "label": "B",
+            "text": "Malware never changing"
+          },
+          {
+            "label": "C",
+            "text": "No legal concerns ever"
+          },
+          {
+            "label": "D",
+            "text": "Highly obfuscated code and anti-analysis techniques such as encryption and code obfuscation"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Highly obfuscated code and anti-analysis techniques such as encryption and code obfuscation — Obfuscation and anti-analysis techniques make analysis difficult and require advanced skills."
+      },
+      {
+        "id": "soc-mock1-q072",
+        "type": "choice",
+        "text": "Persistence mechanisms that malware uses to remain active include:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Turning off the computer"
+          },
+          {
+            "label": "B",
+            "text": "Buying new hardware"
+          },
+          {
+            "label": "C",
+            "text": "Only deleting itself"
+          },
+          {
+            "label": "D",
+            "text": "Registry modifications, scheduled tasks, and startup scripts"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Registry modifications, scheduled tasks, and startup scripts — Malware persists via registry changes, scheduled tasks, and startup entries."
+      },
+      {
+        "id": "soc-mock1-q073",
+        "type": "choice",
+        "text": "Forensic analysis improves an organization's security posture chiefly by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hiding the root cause of incidents"
+          },
+          {
+            "label": "B",
+            "text": "Identifying root causes and yielding lessons learned to prevent future incidents SOC Practice Exam Page 14"
+          },
+          {
+            "label": "C",
+            "text": "Removing all logging"
+          },
+          {
+            "label": "D",
+            "text": "Increasing the attack surface"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Identifying root causes and yielding lessons learned to prevent future incidents — Forensics identifies root causes and lessons learned that strengthen future defenses. SOC Practice Exam Page 23"
+      },
+      {
+        "id": "soc-mock1-q074",
+        "type": "choice",
+        "text": "When investigating cookie/session poisoning, analysts examine cookie attributes such as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Screen resolution"
+          },
+          {
+            "label": "B",
+            "text": "Battery level"
+          },
+          {
+            "label": "C",
+            "text": "HttpOnly, Secure, and SameSite for weaknesses"
+          },
+          {
+            "label": "D",
+            "text": "Font and color"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "HttpOnly, Secure, and SameSite for weaknesses — Analysts inspect HttpOnly, Secure, and SameSite attributes and look for token manipulation."
+      },
+      {
+        "id": "soc-mock1-q075",
+        "type": "choice",
+        "text": "A primary objective of forensic investigation is to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Erase the attacker's tracks"
+          },
+          {
+            "label": "B",
+            "text": "Gather evidence of cybercrime in a forensically sound manner and support prosecution"
+          },
+          {
+            "label": "C",
+            "text": "Disable monitoring tools SOC Practice Exam Page 15 Module 08 — SOC for Cloud Environments 25 questions"
+          },
+          {
+            "label": "D",
+            "text": "Maximize downtime"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Gather evidence of cybercrime in a forensically sound manner and support prosecution — Forensics gathers sound evidence to track and prosecute perpetrators and reduce losses. Module 08 — SOC for Cloud Environments"
+      },
+      {
+        "id": "soc-mock1-q076",
+        "type": "choice",
+        "text": "A Cloud SOC is best defined as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A billing dashboard"
+          },
+          {
+            "label": "B",
+            "text": "A single firewall in the cloud"
+          },
+          {
+            "label": "C",
+            "text": "A physical building with no internet"
+          },
+          {
+            "label": "D",
+            "text": "A centralized unit that monitors, detects, responds to, and mitigates security threats in cloud infrastructure"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A centralized unit that monitors, detects, responds to, and mitigates security threats in cloud infrastructure — A Cloud SOC centrally monitors and responds to threats within cloud infrastructure."
+      },
+      {
+        "id": "soc-mock1-q077",
+        "type": "choice",
+        "text": "Which is a stated benefit of a Cloud SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Mandatory on-premises hardware"
+          },
+          {
+            "label": "B",
+            "text": "Elimination of compliance requirements"
+          },
+          {
+            "label": "C",
+            "text": "Reduced visibility into the environment"
+          },
+          {
+            "label": "D",
+            "text": "Enhanced visibility, real-time threat detection, scalability, and cost-effectiveness"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Enhanced visibility, real-time threat detection, scalability, and cost-effectiveness — Cloud SOC benefits include enhanced visibility, real-time detection, scalability, and cost savings."
+      },
+      {
+        "id": "soc-mock1-q078",
+        "type": "choice",
+        "text": "Compared with an on-prem SOC, a cloud SOC primarily monitors:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cloud-native services, resources, and workloads deployed in the cloud"
+          },
+          {
+            "label": "B",
+            "text": "Only physical badge readers"
+          },
+          {
+            "label": "C",
+            "text": "Only printers"
+          },
+          {
+            "label": "D",
+            "text": "The corporate cafeteria"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Cloud-native services, resources, and workloads deployed in the cloud — Cloud SOC focuses on cloud-native services, resources, and workloads."
+      },
+      {
+        "id": "soc-mock1-q079",
+        "type": "choice",
+        "text": "On-prem SOCs are generally preferred by organizations that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Refuse to use any security tools"
+          },
+          {
+            "label": "B",
+            "text": "Have no security needs"
+          },
+          {
+            "label": "C",
+            "text": "Want maximum scalability and minimal control"
+          },
+          {
+            "label": "D",
+            "text": "Have strict compliance requirements or manage highly sensitive data needing more control and customization"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Have strict compliance requirements or manage highly sensitive data needing more control and customization — On-prem SOCs suit organizations needing tighter control for strict compliance or sensitive data."
+      },
+      {
+        "id": "soc-mock1-q080",
+        "type": "choice",
+        "text": "A Cloud Access Security Broker (CASB) is an example of a:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cloud-native security service used in cloud SOC environments"
+          },
+          {
+            "label": "B",
+            "text": "Physical door lock"
+          },
+          {
+            "label": "C",
+            "text": "Network cable"
+          },
+          {
+            "label": "D",
+            "text": "Word processor"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Cloud-native security service used in cloud SOC environments — CASB is a cloud- native security service (alongside CSPM and CWPP) used by cloud SOCs."
+      },
+      {
+        "id": "soc-mock1-q081",
+        "type": "choice",
+        "text": "Cloud Security Posture Management (CSPM) tools are mainly used to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Replace human analysts entirely"
+          },
+          {
+            "label": "B",
+            "text": "Print reports"
+          },
+          {
+            "label": "C",
+            "text": "Mine cryptocurrency"
+          },
+          {
+            "label": "D",
+            "text": "Assess and manage the security posture/configuration of cloud environments"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Assess and manage the security posture/configuration of cloud environments — CSPM tools evaluate and manage cloud configuration and security posture."
+      },
+      {
+        "id": "soc-mock1-q082",
+        "type": "choice",
+        "text": "Which is a genuine challenge of operating a cloud SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cloud complexity, maintaining visibility/control, and ensuring data protection and compliance"
+          },
+          {
+            "label": "B",
+            "text": "Too few cloud resources to monitor"
+          },
+          {
+            "label": "C",
+            "text": "Complete absence of threats"
+          },
+          {
+            "label": "D",
+            "text": "No need for any monitoring"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Cloud complexity, maintaining visibility/control, and ensuring data protection and compliance — Cloud SOC challenges include complexity, visibility/control, and data protection/compliance."
+      },
+      {
+        "id": "soc-mock1-q083",
+        "type": "choice",
+        "text": "Enforcing 'least privilege access' in a cloud SOC means: SOC Practice Exam Page 16",
+        "options": [
+          {
+            "label": "A",
+            "text": "Removing authentication"
+          },
+          {
+            "label": "B",
+            "text": "Disabling all accounts"
+          },
+          {
+            "label": "C",
+            "text": "Limiting user access to only the resources they need, reducing unauthorized-activity risk"
+          },
+          {
+            "label": "D",
+            "text": "Giving every user full admin rights"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Limiting user access to only the resources they need, reducing unauthorized-activity risk — Least privilege limits access to essential resources, reducing risk."
+      },
+      {
+        "id": "soc-mock1-q084",
+        "type": "choice",
+        "text": "Microsoft Sentinel is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "An email client"
+          },
+          {
+            "label": "B",
+            "text": "A cloud-native SIEM and SOAR platform for advanced analytics, threat hunting, and automated response"
+          },
+          {
+            "label": "C",
+            "text": "A physical server rack"
+          },
+          {
+            "label": "D",
+            "text": "A spreadsheet program"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A cloud-native SIEM and SOAR platform for advanced analytics, threat hunting, and automated response — Microsoft Sentinel is Azure's cloud-native SIEM + SOAR platform."
+      },
+      {
+        "id": "soc-mock1-q085",
+        "type": "choice",
+        "text": "In Microsoft Sentinel, data connectors are used to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Link and forward events and logs from various sources into the cloud platform"
+          },
+          {
+            "label": "B",
+            "text": "Encrypt the analyst's screen"
+          },
+          {
+            "label": "C",
+            "text": "Physically wire servers together"
+          },
+          {
+            "label": "D",
+            "text": "Delete all incoming logs"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Link and forward events and logs from various sources into the cloud platform — Data connectors ingest events and logs from diverse sources into Sentinel."
+      },
+      {
+        "id": "soc-mock1-q086",
+        "type": "choice",
+        "text": "Azure Log Analytics workspace serves Sentinel as the:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Email gateway"
+          },
+          {
+            "label": "B",
+            "text": "DNS server"
+          },
+          {
+            "label": "C",
+            "text": "Central hub for storing, managing, and querying ingested data (using KQL)"
+          },
+          {
+            "label": "D",
+            "text": "Physical firewall"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Central hub for storing, managing, and querying ingested data (using KQL) — Log Analytics is the central data store, queried with Kusto Query Language (KQL)."
+      },
+      {
+        "id": "soc-mock1-q087",
+        "type": "choice",
+        "text": "In Sentinel, analytics rules are primarily used to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Identify potential threats and consolidate them into incidents"
+          },
+          {
+            "label": "B",
+            "text": "Schedule employee vacations"
+          },
+          {
+            "label": "C",
+            "text": "Format the dashboard colors"
+          },
+          {
+            "label": "D",
+            "text": "Bill the customer"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Identify potential threats and consolidate them into incidents — Analytics rules detect threats and roll them up into incidents for investigation."
+      },
+      {
+        "id": "soc-mock1-q088",
+        "type": "choice",
+        "text": "How is threat intelligence commonly integrated into Microsoft Sentinel?",
+        "options": [
+          {
+            "label": "A",
+            "text": "By mailing USB drives"
+          },
+          {
+            "label": "B",
+            "text": "By disabling all connectors"
+          },
+          {
+            "label": "C",
+            "text": "Through STIX/TAXII feeds and threat-intelligence data connectors providing IoCs/IoAs"
+          },
+          {
+            "label": "D",
+            "text": "Through printed reports only"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Through STIX/TAXII feeds and threat-intelligence data connectors providing IoCs/IoAs — Sentinel ingests threat intel via STIX/TAXII feeds and TI connectors carrying IoCs/IoAs."
+      },
+      {
+        "id": "soc-mock1-q089",
+        "type": "choice",
+        "text": "In Sentinel's SOAR capability, a 'playbook' is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A list of employee names"
+          },
+          {
+            "label": "B",
+            "text": "A collection of automated response and remediation actions triggered by alerts/incidents"
+          },
+          {
+            "label": "C",
+            "text": "A printed manual for new hires"
+          },
+          {
+            "label": "D",
+            "text": "A billing statement"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "A collection of automated response and remediation actions triggered by alerts/incidents — Playbooks are automated response/remediation workflows (built on Azure Logic Apps)."
+      },
+      {
+        "id": "soc-mock1-q090",
+        "type": "choice",
+        "text": "The investigation graph in Azure Sentinel helps analysts to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increase the screen brightness"
+          },
+          {
+            "label": "B",
+            "text": "Reset user passwords automatically SOC Practice Exam Page 17"
+          },
+          {
+            "label": "C",
+            "text": "Order office supplies"
+          },
+          {
+            "label": "D",
+            "text": "Identify the scope and root cause of a threat by correlating data with involved entities"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Identify the scope and root cause of a threat by correlating data with involved entities — The investigation graph correlates entities to reveal a threat's scope and root cause."
+      },
+      {
+        "id": "soc-mock1-q091",
+        "type": "choice",
+        "text": "In AWS environments, which service provides a comprehensive view of security alerts and compliance status across accounts?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Amazon S3 only"
+          },
+          {
+            "label": "B",
+            "text": "AWS Route 53"
+          },
+          {
+            "label": "C",
+            "text": "AWS Security Hub"
+          },
+          {
+            "label": "D",
+            "text": "AWS Billing"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "AWS Security Hub — AWS Security Hub aggregates security alerts and compliance status across AWS accounts."
+      },
+      {
+        "id": "soc-mock1-q092",
+        "type": "choice",
+        "text": "AWS Lambda is used in a cloud SOC mainly to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Replace the network entirely"
+          },
+          {
+            "label": "B",
+            "text": "Store cold backups only"
+          },
+          {
+            "label": "C",
+            "text": "Provide physical security"
+          },
+          {
+            "label": "D",
+            "text": "Automate security tasks and response actions"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Automate security tasks and response actions — AWS Lambda automates security tasks and response actions in AWS SOCs."
+      },
+      {
+        "id": "soc-mock1-q093",
+        "type": "choice",
+        "text": "In Google Cloud Platform, the centralized security and risk management platform for GCP resources is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Google Docs"
+          },
+          {
+            "label": "B",
+            "text": "Google Cloud Security Command Center"
+          },
+          {
+            "label": "C",
+            "text": "Google Maps"
+          },
+          {
+            "label": "D",
+            "text": "Gmail"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Google Cloud Security Command Center — Security Command Center is GCP's centralized security and risk management platform. SOC Practice Exam Page 24"
+      },
+      {
+        "id": "soc-mock1-q094",
+        "type": "choice",
+        "text": "Google's Chronicle in a GCP SOC primarily provides:",
+        "options": [
+          {
+            "label": "A",
+            "text": "SIEM/SOAR capabilities for security analytics and response"
+          },
+          {
+            "label": "B",
+            "text": "A video streaming service"
+          },
+          {
+            "label": "C",
+            "text": "A spreadsheet tool"
+          },
+          {
+            "label": "D",
+            "text": "A photo editor"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "SIEM/SOAR capabilities for security analytics and response — Chronicle provides cloud-native SIEM/SOAR capabilities for GCP security operations."
+      },
+      {
+        "id": "soc-mock1-q095",
+        "type": "choice",
+        "text": "Maintaining a forensic chain of custody in the cloud (e.g., GCP) relies on practices such as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Deleting snapshots immediately"
+          },
+          {
+            "label": "B",
+            "text": "Enabling logging, using immutable storage, and restricting access with IAM"
+          },
+          {
+            "label": "C",
+            "text": "Sharing evidence publicly"
+          },
+          {
+            "label": "D",
+            "text": "Disabling all logging"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Enabling logging, using immutable storage, and restricting access with IAM — Cloud chain of custody uses logging, immutable storage, IAM access control, and detailed documentation."
+      },
+      {
+        "id": "soc-mock1-q096",
+        "type": "choice",
+        "text": "Continuous monitoring is emphasized in a cloud SOC because it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Slows down detection"
+          },
+          {
+            "label": "B",
+            "text": "Prevents the use of automation"
+          },
+          {
+            "label": "C",
+            "text": "Enables swift, real-time detection of and response to threats"
+          },
+          {
+            "label": "D",
+            "text": "Removes the need for analysts"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Enables swift, real-time detection of and response to threats — Continuous monitoring allows real-time detection and rapid response in dynamic cloud environments."
+      },
+      {
+        "id": "soc-mock1-q097",
+        "type": "choice",
+        "text": "A common reason cloud-based security solutions are adopted is that they:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Eliminate the need for security entirely"
+          },
+          {
+            "label": "B",
+            "text": "Cannot scale"
+          },
+          {
+            "label": "C",
+            "text": "Are often more cost-effective than traditional on-prem solutions, reducing capital/operational expense"
+          },
+          {
+            "label": "D",
+            "text": "Always require more capital expenditure"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Are often more cost-effective than traditional on-prem solutions, reducing capital/operational expense — Cloud security solutions are frequently more cost-effective, lowering capital and operational costs."
+      },
+      {
+        "id": "soc-mock1-q098",
+        "type": "choice",
+        "text": "Which cloud SOC best practice helps reduce the risk of unauthorized activity most directly?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Turning off monitoring"
+          },
+          {
+            "label": "B",
+            "text": "Enforcing least-privilege access and strong identity controls (e.g., MFA)"
+          },
+          {
+            "label": "C",
+            "text": "Sharing credentials among the team SOC Practice Exam Page 18"
+          },
+          {
+            "label": "D",
+            "text": "Granting broad standing access"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Enforcing least-privilege access and strong identity controls (e.g., MFA) — Least privilege plus strong identity controls like MFA directly reduce unauthorized-activity risk."
+      },
+      {
+        "id": "soc-mock1-q099",
+        "type": "choice",
+        "text": "Cloud SOC compliance management (e.g., via Google Security Command Center) supports standards such as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Marketing guidelines"
+          },
+          {
+            "label": "B",
+            "text": "No standards at all"
+          },
+          {
+            "label": "C",
+            "text": "SOC 2, ISO 27001, and HIPAA"
+          },
+          {
+            "label": "D",
+            "text": "Only internal company memos"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "SOC 2, ISO 27001, and HIPAA — Cloud compliance tooling helps adhere to standards like SOC 2, ISO 27001, and HIPAA."
+      },
+      {
+        "id": "soc-mock1-q100",
+        "type": "choice",
+        "text": "A key operational difference of cloud SOC infrastructure versus on-prem is that it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Uses only physical firewalls"
+          },
+          {
+            "label": "B",
+            "text": "Has no data sources SOC Practice Exam Page 19"
+          },
+          {
+            "label": "C",
+            "text": "Cannot ingest logs"
+          },
+          {
+            "label": "D",
+            "text": "Leverages cloud-native security services and tools offered by CSPs and third parties"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam-1.pdf.",
+        "explanation": "Leverages cloud-native security services and tools offered by CSPs and third parties — Cloud SOCs leverage cloud-native services (CASB, CSPM, CWPP, cloud SIEM) rather than only traditional on-prem tools. SOC Practice Exam Page 25"
+      }
+    ]
+  },
+  "socMockExamModules0306": {
+    "lesson": "soc-mock-02",
+    "folder": "SOC Practice Exams",
+    "label": "SOC Mock Exam 2",
+    "title": "SOC Mock Exam 2: Modules 03-06",
+    "description": "A 100-question SOC mock exam covering Log Management, Incident Detection and Triage, Proactive Threat Detection, and Incident Response.",
+    "sourceFile": "SOC_Practice_Exam_Modules_03-06.pdf",
+    "questions": [
+      {
+        "id": "soc-mock2-q001",
+        "type": "choice",
+        "text": "How are an incident, an event, and a log best related?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A log triggers an event, which always becomes an incident"
+          },
+          {
+            "label": "B",
+            "text": "They are three names for the same thing"
+          },
+          {
+            "label": "C",
+            "text": "An incident is a single log entry with no related events"
+          },
+          {
+            "label": "D",
+            "text": "An event is stored as a log, and one or more events can be identified as an incident"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— An event is an observed change stored as a log; one or more events may be identified as an incident."
+      },
+      {
+        "id": "soc-mock2-q002",
+        "type": "choice",
+        "text": "Which best defines a log?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A collection of data on events generated as an audit trail by components of an information system"
+          },
+          {
+            "label": "B",
+            "text": "A real-time alert sent to an analyst"
+          },
+          {
+            "label": "C",
+            "text": "A dashboard summarizing SOC metrics"
+          },
+          {
+            "label": "D",
+            "text": "A firewall rule that blocks traffic"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A log is a collection of information on events generated as an audit trail by network, OS, applications, services, etc."
+      },
+      {
+        "id": "soc-mock2-q003",
+        "type": "choice",
+        "text": "An 'event' is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A scheduled system backup"
+          },
+          {
+            "label": "B",
+            "text": "A type of antivirus signature"
+          },
+          {
+            "label": "C",
+            "text": "Any successful cyberattack"
+          },
+          {
+            "label": "D",
+            "text": "An observed change in day-to-day operations that may indicate a policy violation or safeguard failure"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— An event is an observed change in operations that may indicate a security policy violation or a failing safeguard."
+      },
+      {
+        "id": "soc-mock2-q004",
+        "type": "choice",
+        "text": "Why does log management matter for a SOC investigation?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logs replace the need for any monitoring tools"
+          },
+          {
+            "label": "B",
+            "text": "The majority of incident victims hold evidence of the incident in their log files"
+          },
+          {
+            "label": "C",
+            "text": "Logs eliminate all false positives"
+          },
+          {
+            "label": "D",
+            "text": "Logs automatically remediate attacks"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Most victims hold evidence of incidents in log files, making logs central to detection and root-cause analysis."
+      },
+      {
+        "id": "soc-mock2-q005",
+        "type": "choice",
+        "text": "Which is NOT one of the stated needs for logging?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Identifying security incidents"
+          },
+          {
+            "label": "B",
+            "text": "Monitoring policy violations"
+          },
+          {
+            "label": "C",
+            "text": "Guaranteeing that no attack can ever succeed"
+          },
+          {
+            "label": "D",
+            "text": "Ensuring compliance with laws, rules, and regulations"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Logging supports detection, compliance, and baselining; it cannot guarantee attacks never succeed."
+      },
+      {
+        "id": "soc-mock2-q006",
+        "type": "choice",
+        "text": "Before enabling logging, an organization should determine all of the following EXCEPT:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The methods, tools, and log format to use"
+          },
+          {
+            "label": "B",
+            "text": "How logs will be reviewed and tuned"
+          },
+          {
+            "label": "C",
+            "text": "What to log and where to store the logs"
+          },
+          {
+            "label": "D",
+            "text": "The exact identity of every future attacker"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Planning covers what/where/how to log and review; knowing future attackers is not a logging prerequisite."
+      },
+      {
+        "id": "soc-mock2-q007",
+        "type": "choice",
+        "text": "Which is an example of centralized logging?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Recording user activity only on the local host machine"
+          },
+          {
+            "label": "B",
+            "text": "Printing logs to paper for each device"
+          },
+          {
+            "label": "C",
+            "text": "Collecting logs from many network devices into one central server"
+          },
+          {
+            "label": "D",
+            "text": "Disabling logging to save disk space"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Centralized logging stores logs generated by many devices in a central server for unified analysis."
+      },
+      {
+        "id": "soc-mock2-q008",
+        "type": "choice",
+        "text": "Local logging refers to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logging activities on the host machine itself"
+          },
+          {
+            "label": "B",
+            "text": "Sending all logs to a third-party cloud"
+          },
+          {
+            "label": "C",
+            "text": "Logging only firewall traffic"
+          },
+          {
+            "label": "D",
+            "text": "Correlating logs across an entire enterprise"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Local logging records user and system activity on the individual host machine."
+      },
+      {
+        "id": "soc-mock2-q009",
+        "type": "choice",
+        "text": "Which standardized log format is commonly associated with network device and Unix/Linux logging?",
+        "options": [
+          {
+            "label": "A",
+            "text": "HTML5"
+          },
+          {
+            "label": "B",
+            "text": "MP4"
+          },
+          {
+            "label": "C",
+            "text": "Syslog"
+          },
+          {
+            "label": "D",
+            "text": "DOCX"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Syslog is a widely used standard format/protocol for system and network device logging."
+      },
+      {
+        "id": "soc-mock2-q010",
+        "type": "choice",
+        "text": "In Windows, which log type contains audit records based on success/failure events such as logons?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Setup Logs"
+          },
+          {
+            "label": "B",
+            "text": "Security Logs"
+          },
+          {
+            "label": "C",
+            "text": "Forwarded Event Logs"
+          },
+          {
+            "label": "D",
+            "text": "Application Logs"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Security Logs hold audit records (logons, policy changes) based on success/failure events."
+      },
+      {
+        "id": "soc-mock2-q011",
+        "type": "choice",
+        "text": "Which Windows Event severity level records a successful audited security access attempt?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Information"
+          },
+          {
+            "label": "B",
+            "text": "Success Audit"
+          },
+          {
+            "label": "C",
+            "text": "Warning"
+          },
+          {
+            "label": "D",
+            "text": "Error"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A Success Audit event records a successful audited security access attempt, e.g., a successful logon."
+      },
+      {
+        "id": "soc-mock2-q012",
+        "type": "choice",
+        "text": "A noted weakness of Windows security logging by default is that it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Is turned off by default and must be enabled via Group or Local Policy"
+          },
+          {
+            "label": "B",
+            "text": "Only works on servers"
+          },
+          {
+            "label": "C",
+            "text": "Overwrites all logs every minute"
+          },
+          {
+            "label": "D",
+            "text": "Cannot record logons at all"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Security logging is off by default and must be enabled through Group or Local Policy to be useful."
+      },
+      {
+        "id": "soc-mock2-q013",
+        "type": "choice",
+        "text": "On most Linux systems, log files are typically stored in which directory?",
+        "options": [
+          {
+            "label": "A",
+            "text": "/home/logs"
+          },
+          {
+            "label": "B",
+            "text": "/etc/hosts"
+          },
+          {
+            "label": "C",
+            "text": "/usr/bin"
+          },
+          {
+            "label": "D",
+            "text": "/var/log"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Most Linux logs live in the /var/log directory, generally in plain ASCII text."
+      },
+      {
+        "id": "soc-mock2-q014",
+        "type": "choice",
+        "text": "Which Linux daemon is primarily responsible for producing system logs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "httpd"
+          },
+          {
+            "label": "B",
+            "text": "sshd"
+          },
+          {
+            "label": "C",
+            "text": "syslogd"
+          },
+          {
+            "label": "D",
+            "text": "crond"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The system log daemon (syslogd) produces logs for the system and various programs."
+      },
+      {
+        "id": "soc-mock2-q015",
+        "type": "choice",
+        "text": "In the Linux syslog severity scale, which level indicates the system is unusable (most severe)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Notice"
+          },
+          {
+            "label": "B",
+            "text": "Info"
+          },
+          {
+            "label": "C",
+            "text": "Emergency"
+          },
+          {
+            "label": "D",
+            "text": "Debug"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Emergency (value 0) is the most severe level, meaning the system is unusable."
+      },
+      {
+        "id": "soc-mock2-q016",
+        "type": "choice",
+        "text": "Which command displays the last lines of a log file by default, useful for viewing recent entries?",
+        "options": [
+          {
+            "label": "A",
+            "text": "tail"
+          },
+          {
+            "label": "B",
+            "text": "touch"
+          },
+          {
+            "label": "C",
+            "text": "head"
+          },
+          {
+            "label": "D",
+            "text": "mkdir"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The tail command shows the last 10 lines of a file by default, ideal for recent log entries."
+      },
+      {
+        "id": "soc-mock2-q017",
+        "type": "choice",
+        "text": "A precondition for firewall logs to exist is that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Firewall logging must be enabled"
+          },
+          {
+            "label": "B",
+            "text": "The firewall must be disabled"
+          },
+          {
+            "label": "C",
+            "text": "The host must be offline"
+          },
+          {
+            "label": "D",
+            "text": "The logs must be encrypted"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Firewall logs are only recorded when firewall logging is explicitly enabled."
+      },
+      {
+        "id": "soc-mock2-q018",
+        "type": "choice",
+        "text": "Why is log normalization performed?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To increase the number of false positives"
+          },
+          {
+            "label": "B",
+            "text": "To delete logs that are too large"
+          },
+          {
+            "label": "C",
+            "text": "To convert logs into a standard format so reviewing and analysis are simpler"
+          },
+          {
+            "label": "D",
+            "text": "To hide logs from analysts"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Normalization converts logs to a standard format, simplifying review, correlation, and analysis."
+      },
+      {
+        "id": "soc-mock2-q019",
+        "type": "choice",
+        "text": "What is the purpose of log correlation?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To delete duplicate logs only"
+          },
+          {
+            "label": "B",
+            "text": "To relate data from different sources to identify malicious activity"
+          },
+          {
+            "label": "C",
+            "text": "To translate logs into other languages"
+          },
+          {
+            "label": "D",
+            "text": "To compress logs for storage"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Correlation relates data across sources to surface malicious or suspicious activity."
+      },
+      {
+        "id": "soc-mock2-q020",
+        "type": "choice",
+        "text": "Why is time synchronization (e.g., via NTP) important across log sources?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It aligns timestamps so events from different devices can be accurately correlated"
+          },
+          {
+            "label": "B",
+            "text": "It is required to power on the devices"
+          },
+          {
+            "label": "C",
+            "text": "It reduces the size of each log"
+          },
+          {
+            "label": "D",
+            "text": "It encrypts the logs in transit"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Synchronized timestamps let analysts correlate events across devices in the correct sequence."
+      },
+      {
+        "id": "soc-mock2-q021",
+        "type": "choice",
+        "text": "In centralized logging infrastructure, the components that gather logs from many sources are commonly called:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Honeypots"
+          },
+          {
+            "label": "B",
+            "text": "Domain controllers"
+          },
+          {
+            "label": "C",
+            "text": "Log collectors or aggregators"
+          },
+          {
+            "label": "D",
+            "text": "Load balancers"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Log collectors/aggregators gather logs from multiple devices to a central location."
+      },
+      {
+        "id": "soc-mock2-q022",
+        "type": "choice",
+        "text": "Which information is typically found in a standard log entry?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The attacker's home address"
+          },
+          {
+            "label": "B",
+            "text": "Date/time, event type, severity, source, and success/failure indication"
+          },
+          {
+            "label": "C",
+            "text": "The full source code of the application"
+          },
+          {
+            "label": "D",
+            "text": "Only the user's password"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Typical entries include date/time, event type, description, severity, source, and success/failure."
+      },
+      {
+        "id": "soc-mock2-q023",
+        "type": "choice",
+        "text": "Which is a valid reason to retain and review logs over time?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To intentionally slow down the network"
+          },
+          {
+            "label": "B",
+            "text": "To establish baselines of normal activity"
+          },
+          {
+            "label": "C",
+            "text": "To avoid all compliance requirements"
+          },
+          {
+            "label": "D",
+            "text": "To prevent users from logging in"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Reviewing logs over time helps establish baselines and detect deviations; it also supports compliance."
+      },
+      {
+        "id": "soc-mock2-q024",
+        "type": "choice",
+        "text": "A key benefit of centralized over purely local logging is that it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Makes it easier to collect, protect, and correlate logs that would be difficult to manage individually"
+          },
+          {
+            "label": "B",
+            "text": "Eliminates the need for time synchronization"
+          },
+          {
+            "label": "C",
+            "text": "Guarantees logs can never be altered"
+          },
+          {
+            "label": "D",
+            "text": "Removes the need to ever analyze logs"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Centralizing logs simplifies collection, protection, and cross-device correlation versus scattered local logs."
+      },
+      {
+        "id": "soc-mock2-q025",
+        "type": "choice",
+        "text": "Which practice best helps preserve the integrity of stored logs?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Granting all users write access to logs"
+          },
+          {
+            "label": "B",
+            "text": "Preventing unauthorized access and manipulation of the logs"
+          },
+          {
+            "label": "C",
+            "text": "Storing logs only on the compromised host Module 04 — Incident Detection and Triage (SIEM)"
+          },
+          {
+            "label": "D",
+            "text": "Disabling logging during incidents"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Protecting logs from unauthorized access and manipulation preserves their integrity as evidence. Module 04 — Incident Detection and Triage (SIEM)"
+      },
+      {
+        "id": "soc-mock2-q026",
+        "type": "choice",
+        "text": "What is SIEM, and what role does it play in a SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A password manager for analysts"
+          },
+          {
+            "label": "B",
+            "text": "A backup tool that stores files offsite"
+          },
+          {
+            "label": "C",
+            "text": "A solution at the heart of the SOC that correlates and analyzes security events to spot suspicious activity"
+          },
+          {
+            "label": "D",
+            "text": "A firewall that blocks all inbound traffic"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SIEM sits at the heart of the SOC, correlating and analyzing events to identify unusual or suspicious activity."
+      },
+      {
+        "id": "soc-mock2-q027",
+        "type": "choice",
+        "text": "SIEM is best described as an extension of which capability, with an added analytics layer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Physical access control"
+          },
+          {
+            "label": "B",
+            "text": "Log management"
+          },
+          {
+            "label": "C",
+            "text": "Disk defragmentation"
+          },
+          {
+            "label": "D",
+            "text": "Email marketing"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SIEM extends log management with an additional layer of security analytics."
+      },
+      {
+        "id": "soc-mock2-q028",
+        "type": "choice",
+        "text": "Which pair represents two core SIEM capabilities?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Coffee brewing and printing"
+          },
+          {
+            "label": "B",
+            "text": "Video editing and rendering"
+          },
+          {
+            "label": "C",
+            "text": "Cable management and HVAC"
+          },
+          {
+            "label": "D",
+            "text": "Log collection and event correlation"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Typical SIEM capabilities include log collection, event correlation, real-time alerting, and dashboards."
+      },
+      {
+        "id": "soc-mock2-q029",
+        "type": "choice",
+        "text": "In a typical SIEM architecture, what does the central engine primarily do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Perform data correlation and analysis"
+          },
+          {
+            "label": "B",
+            "text": "Replace the firewall"
+          },
+          {
+            "label": "C",
+            "text": "Physically secure the building"
+          },
+          {
+            "label": "D",
+            "text": "Print reports to paper"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The central engine performs correlation and analysis of normalized data from devices."
+      },
+      {
+        "id": "soc-mock2-q030",
+        "type": "choice",
+        "text": "What advantage does an AI-enabled SIEM add over a traditional SIEM?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It disables alerting entirely"
+          },
+          {
+            "label": "B",
+            "text": "It uses machine learning for automated correlation and can apply UEBA to detect anomalies"
+          },
+          {
+            "label": "C",
+            "text": "It only works without any automation"
+          },
+          {
+            "label": "D",
+            "text": "It removes the need for any data sources"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— AI-enabled SIEM uses ML/AI for automated correlation and UEBA to detect anomalies and deviations."
+      },
+      {
+        "id": "soc-mock2-q031",
+        "type": "choice",
+        "text": "What does UEBA help a SIEM detect?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Anomalies and deviations from normal user/entity behavior"
+          },
+          {
+            "label": "B",
+            "text": "Printer paper jams"
+          },
+          {
+            "label": "C",
+            "text": "The price of hardware"
+          },
+          {
+            "label": "D",
+            "text": "Network cable lengths"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— User and Entity Behavior Analytics (UEBA) detects anomalies and deviations from normal behavior."
+      },
+      {
+        "id": "soc-mock2-q032",
+        "type": "choice",
+        "text": "In an in-house (self-hosted) SIEM model, the customer:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Buys and manages the software and hardware on premises"
+          },
+          {
+            "label": "B",
+            "text": "Shares the platform with all other tenants"
+          },
+          {
+            "label": "C",
+            "text": "Subscribes to SIEM purely as a service with no hardware"
+          },
+          {
+            "label": "D",
+            "text": "Cannot collect any logs"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— With in-house SIEM, the customer buys and manages the software and hardware on premises."
+      },
+      {
+        "id": "soc-mock2-q033",
+        "type": "choice",
+        "text": "A characteristic of SIEM-as-a-service (managed/cloud) is that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "It cannot scale"
+          },
+          {
+            "label": "B",
+            "text": "It never ingests logs"
+          },
+          {
+            "label": "C",
+            "text": "The customer must patch the platform manually"
+          },
+          {
+            "label": "D",
+            "text": "The platform is updated constantly by the provider"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— In SIEM-as-a-service the provider constantly updates the platform, though customers may not realize full functionality."
+      },
+      {
+        "id": "soc-mock2-q034",
+        "type": "choice",
+        "text": "What is a SIEM 'use case'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A defined detection scenario with logic that tells the SIEM what suspicious activity to identify"
+          },
+          {
+            "label": "B",
+            "text": "A marketing brochure"
+          },
+          {
+            "label": "C",
+            "text": "A physical carrying case for SIEM hardware"
+          },
+          {
+            "label": "D",
+            "text": "A type of network cable"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A use case defines detection logic for a specific suspicious scenario the SIEM should identify."
+      },
+      {
+        "id": "soc-mock2-q035",
+        "type": "choice",
+        "text": "A common cause of failed SIEM deployments is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Not having a clear understanding of scope, use cases, and associated requirements"
+          },
+          {
+            "label": "B",
+            "text": "Having too many analysts"
+          },
+          {
+            "label": "C",
+            "text": "Collecting any logs at all"
+          },
+          {
+            "label": "D",
+            "text": "Using dashboards"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Lacking a clear understanding of scope, use cases, and requirements is a frequent failure cause."
+      },
+      {
+        "id": "soc-mock2-q036",
+        "type": "choice",
+        "text": "Why is sequential, one-by-one implementation of use cases recommended?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It avoids ever needing log management"
+          },
+          {
+            "label": "B",
+            "text": "It guarantees zero false positives"
+          },
+          {
+            "label": "C",
+            "text": "It removes the need for correlation"
+          },
+          {
+            "label": "D",
+            "text": "It lets each use case be supported properly and enables building more complex use cases over time"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Implementing use cases one by one supports each properly and allows progressively more complex use cases."
+      },
+      {
+        "id": "soc-mock2-q037",
+        "type": "choice",
+        "text": "What is alert triage in a SOC?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Encrypting alerts"
+          },
+          {
+            "label": "B",
+            "text": "Ignoring all alerts until month-end"
+          },
+          {
+            "label": "C",
+            "text": "Deleting all alerts automatically"
+          },
+          {
+            "label": "D",
+            "text": "Reviewing and prioritizing alerts to decide which require further action or escalation"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Triage reviews and prioritizes alerts to determine which need investigation or escalation."
+      },
+      {
+        "id": "soc-mock2-q038",
+        "type": "choice",
+        "text": "A 'false positive' alert is one that:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Always indicates a confirmed breach"
+          },
+          {
+            "label": "B",
+            "text": "Flags activity as malicious when it is actually benign"
+          },
+          {
+            "label": "C",
+            "text": "Cannot be tuned out"
+          },
+          {
+            "label": "D",
+            "text": "Correctly identifies a real attack"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A false positive flags benign activity as malicious, wasting analyst effort if not tuned."
+      },
+      {
+        "id": "soc-mock2-q039",
+        "type": "choice",
+        "text": "A 'true positive' is best described as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "A disabled rule"
+          },
+          {
+            "label": "B",
+            "text": "A missed attack"
+          },
+          {
+            "label": "C",
+            "text": "A benign event flagged as malicious"
+          },
+          {
+            "label": "D",
+            "text": "An alert that correctly identifies genuine malicious activity"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A true positive is an alert that correctly identifies actual malicious activity."
+      },
+      {
+        "id": "soc-mock2-q040",
+        "type": "choice",
+        "text": "After triage confirms a significant incident, a SOC analyst typically:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Deletes the related logs"
+          },
+          {
+            "label": "B",
+            "text": "Ignores it until it recurs"
+          },
+          {
+            "label": "C",
+            "text": "Shuts down the SIEM"
+          },
+          {
+            "label": "D",
+            "text": "Reports/escalates the incident to the Incident Response Team (IRT)"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Confirmed incidents are reported and escalated to the IRT for response."
+      },
+      {
+        "id": "soc-mock2-q041",
+        "type": "choice",
+        "text": "What is the main purpose of SIEM dashboards and visualization?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To replace all analysts"
+          },
+          {
+            "label": "B",
+            "text": "To present correlated security data so analysts can quickly understand and act on activity"
+          },
+          {
+            "label": "C",
+            "text": "To configure the firewall"
+          },
+          {
+            "label": "D",
+            "text": "To store backups"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Dashboards visualize correlated data so analysts can rapidly interpret and respond to activity."
+      },
+      {
+        "id": "soc-mock2-q042",
+        "type": "choice",
+        "text": "Why does a SIEM normalize incoming data from diverse devices?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To avoid alerting"
+          },
+          {
+            "label": "B",
+            "text": "To delete older logs"
+          },
+          {
+            "label": "C",
+            "text": "To make all logs unreadable"
+          },
+          {
+            "label": "D",
+            "text": "To put varied log formats into a consistent structure so they can be correlated"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Normalization standardizes diverse device data so it can be correlated and analyzed consistently."
+      },
+      {
+        "id": "soc-mock2-q043",
+        "type": "choice",
+        "text": "What is the primary purpose of SOC reports generated from SIEM data?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To replace the IRT"
+          },
+          {
+            "label": "B",
+            "text": "To disable dashboards"
+          },
+          {
+            "label": "C",
+            "text": "To communicate security posture, incidents, and metrics to stakeholders"
+          },
+          {
+            "label": "D",
+            "text": "To advertise products"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SOC reports communicate posture, incidents, and metrics to relevant stakeholders."
+      },
+      {
+        "id": "soc-mock2-q044",
+        "type": "choice",
+        "text": "Which sequence reflects how SIEM processes data at a high level?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Collect/normalize data, correlate it, then alert and visualize"
+          },
+          {
+            "label": "B",
+            "text": "Delete logs, then correlate"
+          },
+          {
+            "label": "C",
+            "text": "Alert first, then collect logs"
+          },
+          {
+            "label": "D",
+            "text": "Visualize first, then collect"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SIEM collects and normalizes data, correlates it, then generates alerts and visualizations."
+      },
+      {
+        "id": "soc-mock2-q045",
+        "type": "choice",
+        "text": "Before building advanced use cases, an organization should first ensure it has:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Removed its firewall"
+          },
+          {
+            "label": "B",
+            "text": "Eliminated its analysts"
+          },
+          {
+            "label": "C",
+            "text": "Deployed log management capability"
+          },
+          {
+            "label": "D",
+            "text": "Disabled all logging"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Log management capability should be deployed first to support use cases."
+      },
+      {
+        "id": "soc-mock2-q046",
+        "type": "choice",
+        "text": "How can integrating threat intelligence help SIEM-based detection?",
+        "options": [
+          {
+            "label": "A",
+            "text": "By deleting all alerts"
+          },
+          {
+            "label": "B",
+            "text": "By increasing false positives"
+          },
+          {
+            "label": "C",
+            "text": "By adding context that helps prioritize and reduce noise in alert triage"
+          },
+          {
+            "label": "D",
+            "text": "By disabling correlation"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Threat intelligence adds context that helps reduce false-positive burden and speeds accurate triage."
+      },
+      {
+        "id": "soc-mock2-q047",
+        "type": "choice",
+        "text": "Which best captures a benefit of correlation rules in a SIEM?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They only work offline"
+          },
+          {
+            "label": "B",
+            "text": "They replace the need for any data sources"
+          },
+          {
+            "label": "C",
+            "text": "They permanently delete suspicious logs"
+          },
+          {
+            "label": "D",
+            "text": "They link related events across sources to reveal patterns a single log would miss"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Correlation rules connect related events across sources to reveal attack patterns single logs miss."
+      },
+      {
+        "id": "soc-mock2-q048",
+        "type": "choice",
+        "text": "When defining use case logic, an analyst is essentially specifying:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The conditions under which an alert should fire"
+          },
+          {
+            "label": "B",
+            "text": "The brand of hardware to buy"
+          },
+          {
+            "label": "C",
+            "text": "The vendor's stock price"
+          },
+          {
+            "label": "D",
+            "text": "The office seating chart"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Use case logic specifies the conditions (rule logic) under which the SIEM should raise an alert."
+      },
+      {
+        "id": "soc-mock2-q049",
+        "type": "choice",
+        "text": "A practical reason to tune SIEM rules over time is to:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increase alert fatigue"
+          },
+          {
+            "label": "B",
+            "text": "Stop collecting logs"
+          },
+          {
+            "label": "C",
+            "text": "Reduce false positives and keep detections relevant"
+          },
+          {
+            "label": "D",
+            "text": "Remove all dashboards"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Tuning reduces false positives and keeps detections aligned with the environment, easing analyst load."
+      },
+      {
+        "id": "soc-mock2-q050",
+        "type": "choice",
+        "text": "Which statement about SIEM and SOC monitoring is most accurate?",
+        "options": [
+          {
+            "label": "A",
+            "text": "SIEM eliminates the need for any human analysts"
+          },
+          {
+            "label": "B",
+            "text": "SIEM empowers monitoring teams to triage and analyze alerts more effectively"
+          },
+          {
+            "label": "C",
+            "text": "SIEM only stores logs and cannot alert"
+          },
+          {
+            "label": "D",
+            "text": "SIEM is unrelated to incident detection Module 05 — Proactive Threat Detection (Threat Intelligence)"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SIEM empowers SOC monitoring teams to triage and analyze alerts as part of incident detection. Module 05 — Proactive Threat Detection (Threat Intelligence)"
+      },
+      {
+        "id": "soc-mock2-q051",
+        "type": "choice",
+        "text": "How is Cyber Threat Intelligence (CTI) best defined?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A network cabling standard"
+          },
+          {
+            "label": "B",
+            "text": "The collection and analysis of information about threats and adversaries to find patterns and inform decisions"
+          },
+          {
+            "label": "C",
+            "text": "A list of employee passwords"
+          },
+          {
+            "label": "D",
+            "text": "A type of antivirus software"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— CTI is the collection and analysis of information about threats/adversaries to find actionable patterns."
+      },
+      {
+        "id": "soc-mock2-q052",
+        "type": "choice",
+        "text": "CTI is often delivered in which forms?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Printed posters only"
+          },
+          {
+            "label": "B",
+            "text": "Verbal rumors"
+          },
+          {
+            "label": "C",
+            "text": "Indicators of Compromise (IoCs) or threat feeds"
+          },
+          {
+            "label": "D",
+            "text": "Marketing emails"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— CTI is frequently presented as IoCs or threat feeds providing evidence-based knowledge."
+      },
+      {
+        "id": "soc-mock2-q053",
+        "type": "choice",
+        "text": "CTI analysis is performed based on which triad?",
+        "options": [
+          {
+            "label": "A",
+            "text": "People, process, technology"
+          },
+          {
+            "label": "B",
+            "text": "Confidentiality, integrity, availability"
+          },
+          {
+            "label": "C",
+            "text": "Strategic, tactical, financial"
+          },
+          {
+            "label": "D",
+            "text": "Intent, capability, and opportunity"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— CTI analysis uses the intent, capability, and opportunity triad to evaluate threats."
+      },
+      {
+        "id": "soc-mock2-q054",
+        "type": "choice",
+        "text": "A core value of threat intelligence is converting:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logs into firewalls"
+          },
+          {
+            "label": "B",
+            "text": "Known threats into unknown threats"
+          },
+          {
+            "label": "C",
+            "text": "Hardware into software"
+          },
+          {
+            "label": "D",
+            "text": "Unknown threats into known threats so they can be mitigated"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Threat intelligence converts unknown threats into known ones, helping mitigate business risk."
+      },
+      {
+        "id": "soc-mock2-q055",
+        "type": "choice",
+        "text": "How can integrating threat intelligence with SIEM help a SOC analyst?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It removes the need for logs"
+          },
+          {
+            "label": "B",
+            "text": "It reduces the burden of analyzing false positives, enabling faster, more accurate triage"
+          },
+          {
+            "label": "C",
+            "text": "It increases the volume of false positives"
+          },
+          {
+            "label": "D",
+            "text": "It disables alerting"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— TI integration reduces false-positive analysis burden, supporting accurate and fast alert triage."
+      },
+      {
+        "id": "soc-mock2-q056",
+        "type": "choice",
+        "text": "Which of the following are the four types of threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Local, Central, Hybrid, Cloud"
+          },
+          {
+            "label": "B",
+            "text": "Strategic, Tactical, Operational, Technical"
+          },
+          {
+            "label": "C",
+            "text": "Hot, Warm, Cold, Frozen"
+          },
+          {
+            "label": "D",
+            "text": "Red, Blue, Purple, Green"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The four types are Strategic, Tactical, Operational, and Technical threat intelligence."
+      },
+      {
+        "id": "soc-mock2-q057",
+        "type": "choice",
+        "text": "Strategic threat intelligence is primarily:",
+        "options": [
+          {
+            "label": "A",
+            "text": "High-level information used by management for strategic business decisions"
+          },
+          {
+            "label": "B",
+            "text": "Firewall rule syntax"
+          },
+          {
+            "label": "C",
+            "text": "A list of file hashes"
+          },
+          {
+            "label": "D",
+            "text": "Low-level packet captures"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Strategic TI is high-level information used by management to make strategic business decisions."
+      },
+      {
+        "id": "soc-mock2-q058",
+        "type": "choice",
+        "text": "Tactical threat intelligence focuses on:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Office floor plans"
+          },
+          {
+            "label": "B",
+            "text": "Quarterly revenue forecasts"
+          },
+          {
+            "label": "C",
+            "text": "Threat actors' Tactics, Techniques, and Procedures (TTPs)"
+          },
+          {
+            "label": "D",
+            "text": "Employee vacation schedules"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Tactical TI provides information on threat actors' TTPs."
+      },
+      {
+        "id": "soc-mock2-q059",
+        "type": "choice",
+        "text": "Technical threat intelligence is primarily associated with:",
+        "options": [
+          {
+            "label": "A",
+            "text": "HR policy"
+          },
+          {
+            "label": "B",
+            "text": "Indicators of Compromise (IoCs)"
+          },
+          {
+            "label": "C",
+            "text": "Board-level strategy"
+          },
+          {
+            "label": "D",
+            "text": "Marketing campaigns"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Technical TI corresponds to IoCs (e.g., malicious IPs, hashes, domains)."
+      },
+      {
+        "id": "soc-mock2-q060",
+        "type": "choice",
+        "text": "Operational threat intelligence generally provides information about:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific impending threats or campaigns"
+          },
+          {
+            "label": "B",
+            "text": "Office supply inventory"
+          },
+          {
+            "label": "C",
+            "text": "The price of cloud storage"
+          },
+          {
+            "label": "D",
+            "text": "Employee birthdays"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Operational TI concerns specific threats/campaigns relevant to the organization."
+      },
+      {
+        "id": "soc-mock2-q061",
+        "type": "choice",
+        "text": "What is a Threat Intelligence Platform (TIP) used for?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Editing videos"
+          },
+          {
+            "label": "B",
+            "text": "Managing payroll"
+          },
+          {
+            "label": "C",
+            "text": "Aggregating and managing threat data from multiple sources for analysis and integration"
+          },
+          {
+            "label": "D",
+            "text": "Designing office networks"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A TIP aggregates and manages threat data from multiple sources to support analysis and integration."
+      },
+      {
+        "id": "soc-mock2-q062",
+        "type": "choice",
+        "text": "An Indicator of Compromise (IoC) and CTI are related how?",
+        "options": [
+          {
+            "label": "A",
+            "text": "CTI is a subset of a single IoC"
+          },
+          {
+            "label": "B",
+            "text": "IoCs replace the need for CTI"
+          },
+          {
+            "label": "C",
+            "text": "They are identical and interchangeable"
+          },
+          {
+            "label": "D",
+            "text": "IoCs offer insights to the security team but should not be treated as the entirety of CTI"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The module stresses distinguishing IoCs from CTI; IoCs inform but are not the whole of CTI."
+      },
+      {
+        "id": "soc-mock2-q063",
+        "type": "choice",
+        "text": "Why does the module caution that 'malware and CTI are not equivalent'?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Malware is always harmless"
+          },
+          {
+            "label": "B",
+            "text": "CTI only studies malware"
+          },
+          {
+            "label": "C",
+            "text": "Comprehensive monitoring and context are required for threat intelligence to be meaningful, beyond just malware samples"
+          },
+          {
+            "label": "D",
+            "text": "Malware cannot be analyzed"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— CTI requires comprehensive, contextual monitoring; it is broader than analyzing malware alone."
+      },
+      {
+        "id": "soc-mock2-q064",
+        "type": "choice",
+        "text": "What does the threat intelligence lifecycle help an organization do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Randomly collect data with no plan"
+          },
+          {
+            "label": "B",
+            "text": "Avoid ever collecting data"
+          },
+          {
+            "label": "C",
+            "text": "Plan requirements, collect, process, analyze, and disseminate intelligence systematically"
+          },
+          {
+            "label": "D",
+            "text": "Replace the SOC entirely"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The TI lifecycle structures planning, collection, processing, analysis, and dissemination of intelligence."
+      },
+      {
+        "id": "soc-mock2-q065",
+        "type": "choice",
+        "text": "In the lifecycle, forming an intelligence team and setting requirements occurs during which kind of activity?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Direction/planning of requirements"
+          },
+          {
+            "label": "B",
+            "text": "Hardware procurement"
+          },
+          {
+            "label": "C",
+            "text": "Eradication"
+          },
+          {
+            "label": "D",
+            "text": "Final reporting only"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Early lifecycle activity sets requirements and forms the team to direct collection and analysis."
+      },
+      {
+        "id": "soc-mock2-q066",
+        "type": "choice",
+        "text": "Threat intelligence consumers are often categorized to match the four TI types. Which is a valid consumer category?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Catering consumers"
+          },
+          {
+            "label": "B",
+            "text": "Strategic consumers"
+          },
+          {
+            "label": "C",
+            "text": "Parking consumers"
+          },
+          {
+            "label": "D",
+            "text": "Janitorial consumers"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Consumers are grouped as strategic, tactical, operational, and technical to match the TI types."
+      },
+      {
+        "id": "soc-mock2-q067",
+        "type": "choice",
+        "text": "What is threat hunting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Buying new firewalls"
+          },
+          {
+            "label": "B",
+            "text": "Waiting passively for alerts to fire"
+          },
+          {
+            "label": "C",
+            "text": "Proactively searching the environment for hidden threats that evaded existing defenses"
+          },
+          {
+            "label": "D",
+            "text": "Deleting old logs"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Threat hunting proactively searches for threats that may have evaded automated detection."
+      },
+      {
+        "id": "soc-mock2-q068",
+        "type": "choice",
+        "text": "Threat hunting is best characterized as which kind of activity?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Purely administrative"
+          },
+          {
+            "label": "B",
+            "text": "Unrelated to security"
+          },
+          {
+            "label": "C",
+            "text": "Reactive"
+          },
+          {
+            "label": "D",
+            "text": "Proactive"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Hunting is a proactive detection activity, complementing reactive alert-driven work."
+      },
+      {
+        "id": "soc-mock2-q069",
+        "type": "choice",
+        "text": "Which tool is referenced for use in threat hunting demonstrations?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A label printer"
+          },
+          {
+            "label": "B",
+            "text": "YARA"
+          },
+          {
+            "label": "C",
+            "text": "Excel macros only"
+          },
+          {
+            "label": "D",
+            "text": "Photoshop"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The module demonstrates threat hunting using PowerShell, YARA, and threat hunting tools."
+      },
+      {
+        "id": "soc-mock2-q070",
+        "type": "choice",
+        "text": "How does staying current with adversary TTPs benefit defenders?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It slows down the SOC"
+          },
+          {
+            "label": "B",
+            "text": "It removes the need for logging"
+          },
+          {
+            "label": "C",
+            "text": "It guarantees no attacks occur"
+          },
+          {
+            "label": "D",
+            "text": "It lets them stay ahead of adversaries by anticipating the latest attack techniques"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Understanding the latest TTPs helps defenders anticipate and counter evolving attacks."
+      },
+      {
+        "id": "soc-mock2-q071",
+        "type": "choice",
+        "text": "Contextual interpretation of threat intelligence means:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Interpreting TI data within the organization's environmental context to make it actionable"
+          },
+          {
+            "label": "B",
+            "text": "Translating TI into another language"
+          },
+          {
+            "label": "C",
+            "text": "Reading IoCs without any environment knowledge"
+          },
+          {
+            "label": "D",
+            "text": "Ignoring the organization's assets"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— TI must be interpreted within environmental context to be relevant and actionable."
+      },
+      {
+        "id": "soc-mock2-q072",
+        "type": "choice",
+        "text": "Which best describes actionable threat intelligence?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A list of random IP addresses with no analysis"
+          },
+          {
+            "label": "B",
+            "text": "Marketing material"
+          },
+          {
+            "label": "C",
+            "text": "Analyzed intelligence including context, IoCs, TTPs, and recommendations that defenders can act on"
+          },
+          {
+            "label": "D",
+            "text": "Raw, unprocessed data dumps"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Actionable TI includes context, IoCs, TTPs, consequences, and recommendations defenders can use."
+      },
+      {
+        "id": "soc-mock2-q073",
+        "type": "choice",
+        "text": "A primary objective of threat intelligence is to help organizations:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increase their attack surface"
+          },
+          {
+            "label": "B",
+            "text": "Avoid all compliance"
+          },
+          {
+            "label": "C",
+            "text": "Disable monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Identify, monitor, assess, and defend against attacks from internal and external threat actors"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— TI helps identify, monitor, assess, and defend against internal and external threat actors."
+      },
+      {
+        "id": "soc-mock2-q074",
+        "type": "choice",
+        "text": "Understanding the motivation of adversaries through TI involves analyzing:",
+        "options": [
+          {
+            "label": "A",
+            "text": "The office Wi-Fi password"
+          },
+          {
+            "label": "B",
+            "text": "The characteristics and habits of threat actors"
+          },
+          {
+            "label": "C",
+            "text": "Employee lunch preferences"
+          },
+          {
+            "label": "D",
+            "text": "Only the weather"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— TI examines threat actors' characteristics and habits to understand their motivation."
+      },
+      {
+        "id": "soc-mock2-q075",
+        "type": "choice",
+        "text": "Why is threat intelligence considered important by most security professionals?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is only useful after a breach Module 06 — Incident Response"
+          },
+          {
+            "label": "B",
+            "text": "It is critical for proactive defense and informed decision-making against evolving threats"
+          },
+          {
+            "label": "C",
+            "text": "It is purely decorative"
+          },
+          {
+            "label": "D",
+            "text": "It replaces the firewall"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A large majority view TI as critical because it enables proactive, informed defense against threats. Module 06 — Incident Response"
+      },
+      {
+        "id": "soc-mock2-q076",
+        "type": "choice",
+        "text": "How is incident response (IR) best defined?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A type of firewall"
+          },
+          {
+            "label": "B",
+            "text": "A marketing strategy"
+          },
+          {
+            "label": "C",
+            "text": "A backup schedule"
+          },
+          {
+            "label": "D",
+            "text": "A systematic approach to handle security incidents with minimal damage, recovery time, and cost"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— IR is a systematic approach to handling incidents with minimal damage, recovery time, and cost."
+      },
+      {
+        "id": "soc-mock2-q077",
+        "type": "choice",
+        "text": "Incident response includes which kinds of actions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only physical security actions"
+          },
+          {
+            "label": "B",
+            "text": "Only legal actions"
+          },
+          {
+            "label": "C",
+            "text": "Only marketing actions"
+          },
+          {
+            "label": "D",
+            "text": "Both technical actions (containing, eradicating, recovering) and non-technical actions"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— IR involves technical actions (contain, eradicate, recover) and non-technical actions."
+      },
+      {
+        "id": "soc-mock2-q078",
+        "type": "choice",
+        "text": "What is the Incident Response Team (IRT)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A group of specialized people who collectively respond to, remediate, and mitigate incidents"
+          },
+          {
+            "label": "B",
+            "text": "A single automated script"
+          },
+          {
+            "label": "C",
+            "text": "The building's cleaning crew"
+          },
+          {
+            "label": "D",
+            "text": "The marketing department"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The IRT is a group of specialized people who respond to, remediate, and mitigate incidents."
+      },
+      {
+        "id": "soc-mock2-q079",
+        "type": "choice",
+        "text": "How do the SOC and IRT typically work together?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The IRT replaces the SOC"
+          },
+          {
+            "label": "B",
+            "text": "They never interact"
+          },
+          {
+            "label": "C",
+            "text": "It is a shared responsibility; the SOC helps the IRT gather required information to respond"
+          },
+          {
+            "label": "D",
+            "text": "The SOC ignores escalations"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SOC and IRT share responsibility; the SOC helps the IRT gather information to respond effectively."
+      },
+      {
+        "id": "soc-mock2-q080",
+        "type": "choice",
+        "text": "Which best represents the ordering of core incident response phases?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Post-Incident Activities, then Containment"
+          },
+          {
+            "label": "B",
+            "text": "Preparation, Containment, Evidence Gathering, Eradication, Recovery, Post-Incident Activities"
+          },
+          {
+            "label": "C",
+            "text": "Eradication first, then Preparation"
+          },
+          {
+            "label": "D",
+            "text": "Recovery, then Preparation, then Containment"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— IR proceeds roughly: Preparation → Containment → Evidence Gathering → Eradication → Recovery → Post-Incident."
+      },
+      {
+        "id": "soc-mock2-q081",
+        "type": "choice",
+        "text": "What is the goal of the containment phase?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To delete all logs immediately"
+          },
+          {
+            "label": "B",
+            "text": "To advertise the breach publicly"
+          },
+          {
+            "label": "C",
+            "text": "To skip directly to recovery"
+          },
+          {
+            "label": "D",
+            "text": "To limit the spread and impact of the incident before eradication"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Containment limits the incident's spread and impact before eradication and recovery."
+      },
+      {
+        "id": "soc-mock2-q082",
+        "type": "choice",
+        "text": "What does the eradication phase aim to accomplish?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Remove the cause/components of the incident from affected systems"
+          },
+          {
+            "label": "B",
+            "text": "Notify the press"
+          },
+          {
+            "label": "C",
+            "text": "Restore normal business operations"
+          },
+          {
+            "label": "D",
+            "text": "Purchase new hardware"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Eradication removes the root cause and malicious artifacts from affected systems."
+      },
+      {
+        "id": "soc-mock2-q083",
+        "type": "choice",
+        "text": "The recovery phase primarily involves:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hiding the incident"
+          },
+          {
+            "label": "B",
+            "text": "Spreading the malware further"
+          },
+          {
+            "label": "C",
+            "text": "Restoring affected systems to normal, secure operation"
+          },
+          {
+            "label": "D",
+            "text": "Deleting the IRT"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Recovery restores affected systems to normal, secure operation."
+      },
+      {
+        "id": "soc-mock2-q084",
+        "type": "choice",
+        "text": "Why does the IRT gather and analyze evidence during incident response?",
+        "options": [
+          {
+            "label": "A",
+            "text": "To increase the damage"
+          },
+          {
+            "label": "B",
+            "text": "To avoid learning anything"
+          },
+          {
+            "label": "C",
+            "text": "To prosecute attackers, claim damages, and claim cyber insurance"
+          },
+          {
+            "label": "D",
+            "text": "To advertise the company"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Evidence supports prosecution, damage claims, and cyber-insurance claims, plus root- cause understanding."
+      },
+      {
+        "id": "soc-mock2-q085",
+        "type": "choice",
+        "text": "When collecting evidence, why is volatile data prioritized?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is always encrypted"
+          },
+          {
+            "label": "B",
+            "text": "It never changes"
+          },
+          {
+            "label": "C",
+            "text": "It is the least important data"
+          },
+          {
+            "label": "D",
+            "text": "Fragile and volatile evidence can be lost quickly and must be extracted first"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Volatile evidence is fragile and can disappear, so it is extracted early in collection."
+      },
+      {
+        "id": "soc-mock2-q086",
+        "type": "choice",
+        "text": "Proper handling of collected evidence requires:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Emailing it to everyone"
+          },
+          {
+            "label": "B",
+            "text": "Leaving it on the compromised host with public access"
+          },
+          {
+            "label": "C",
+            "text": "Secure handling, packaging, transportation, and storage in highly secure locations"
+          },
+          {
+            "label": "D",
+            "text": "Deleting it after viewing"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Evidence must be securely handled, packaged, transported, and stored to preserve its value."
+      },
+      {
+        "id": "soc-mock2-q087",
+        "type": "choice",
+        "text": "What is a SOC playbook?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A sports rulebook"
+          },
+          {
+            "label": "B",
+            "text": "A marketing calendar"
+          },
+          {
+            "label": "C",
+            "text": "A comprehensive guide outlining specific processes and procedures for responding to security incidents"
+          },
+          {
+            "label": "D",
+            "text": "A list of employee salaries"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A SOC playbook is a comprehensive guide outlining processes and procedures for incident response."
+      },
+      {
+        "id": "soc-mock2-q088",
+        "type": "choice",
+        "text": "How does a SOC playbook differ from a SOAR playbook?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A SOC playbook is a manual guide; a SOAR playbook is a structured workflow that automates or semi-automates procedures"
+          },
+          {
+            "label": "B",
+            "text": "They are identical"
+          },
+          {
+            "label": "C",
+            "text": "A SOC playbook fully automates response"
+          },
+          {
+            "label": "D",
+            "text": "A SOAR playbook is always manual"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A SOC playbook is a manual guide, whereas a SOAR playbook automates/semi- automates those procedures."
+      },
+      {
+        "id": "soc-mock2-q089",
+        "type": "choice",
+        "text": "What does SOAR stand for?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Secure Online Access Routing"
+          },
+          {
+            "label": "B",
+            "text": "Security Orchestration, Automation, and Response"
+          },
+          {
+            "label": "C",
+            "text": "System Of Automated Reporting"
+          },
+          {
+            "label": "D",
+            "text": "Security Operations And Recovery"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SOAR stands for Security Orchestration, Automation, and Response."
+      },
+      {
+        "id": "soc-mock2-q090",
+        "type": "choice",
+        "text": "A key benefit of SOAR in incident response is that it:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Increases manual workload"
+          },
+          {
+            "label": "B",
+            "text": "Automates or semi-automates procedures, improving efficiency by reducing manual tasks"
+          },
+          {
+            "label": "C",
+            "text": "Disables all monitoring"
+          },
+          {
+            "label": "D",
+            "text": "Removes the need for any playbooks"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SOAR enhances efficiency by automating/semi-automating procedures and reducing manual effort."
+      },
+      {
+        "id": "soc-mock2-q091",
+        "type": "choice",
+        "text": "An example given of SOAR automation is that the platform can:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Schedule a company picnic"
+          },
+          {
+            "label": "B",
+            "text": "Mail a paper letter to the attacker"
+          },
+          {
+            "label": "C",
+            "text": "Order new office furniture"
+          },
+          {
+            "label": "D",
+            "text": "Isolate an infected host and initiate a malware scan automatically"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— A SOAR platform can automatically isolate an infected host and initiate a malware scan."
+      },
+      {
+        "id": "soc-mock2-q092",
+        "type": "choice",
+        "text": "What does EDR stand for?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Endpoint Detection and Response"
+          },
+          {
+            "label": "B",
+            "text": "Emergency Disaster Recovery"
+          },
+          {
+            "label": "C",
+            "text": "Enterprise Data Repository"
+          },
+          {
+            "label": "D",
+            "text": "Event Data Recorder"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— EDR stands for Endpoint Detection and Response."
+      },
+      {
+        "id": "soc-mock2-q093",
+        "type": "choice",
+        "text": "What does XDR stand for?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Extra Defense Routing"
+          },
+          {
+            "label": "B",
+            "text": "External Data Recovery"
+          },
+          {
+            "label": "C",
+            "text": "Extended Detection and Response"
+          },
+          {
+            "label": "D",
+            "text": "Cross Domain Reporting"
+          }
+        ],
+        "correctLabels": [
+          "C"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— XDR stands for Extended Detection and Response."
+      },
+      {
+        "id": "soc-mock2-q094",
+        "type": "choice",
+        "text": "How does EDR/XDR enhance incident response?",
+        "options": [
+          {
+            "label": "A",
+            "text": "By disabling logging"
+          },
+          {
+            "label": "B",
+            "text": "By providing detection and response capabilities (across endpoints and beyond) to strengthen IR"
+          },
+          {
+            "label": "C",
+            "text": "By removing all endpoints"
+          },
+          {
+            "label": "D",
+            "text": "By replacing the IRT entirely"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— EDR/XDR strengthen IR with detection and response across endpoints (EDR) and broader telemetry (XDR)."
+      },
+      {
+        "id": "soc-mock2-q095",
+        "type": "choice",
+        "text": "Preparation for incident response may include readying items such as:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Blank media to store evidence or extract images of victim devices"
+          },
+          {
+            "label": "B",
+            "text": "Spare office chairs"
+          },
+          {
+            "label": "C",
+            "text": "Confetti and balloons"
+          },
+          {
+            "label": "D",
+            "text": "Marketing brochures"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Preparation includes resources like blank media for storing evidence or imaging victim devices."
+      },
+      {
+        "id": "soc-mock2-q096",
+        "type": "choice",
+        "text": "Why is post-incident activity (lessons learned) important?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It helps recommend changes to systems to avoid future incidents"
+          },
+          {
+            "label": "B",
+            "text": "It deletes all documentation"
+          },
+          {
+            "label": "C",
+            "text": "It is unnecessary once systems recover"
+          },
+          {
+            "label": "D",
+            "text": "It increases future incidents"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Post-incident review recommends changes to prevent recurrence and improve future response."
+      },
+      {
+        "id": "soc-mock2-q097",
+        "type": "choice",
+        "text": "Which categories of incidents does the module specifically address responding to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only printer outages"
+          },
+          {
+            "label": "B",
+            "text": "Network, application, email, insider, and malware incidents"
+          },
+          {
+            "label": "C",
+            "text": "Only payroll errors"
+          },
+          {
+            "label": "D",
+            "text": "Only fire and flood"
+          }
+        ],
+        "correctLabels": [
+          "B"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— The module covers responding to network, application, email, insider, and malware incidents."
+      },
+      {
+        "id": "soc-mock2-q098",
+        "type": "choice",
+        "text": "Where evidence and sensitive incident materials are stored, the storage approach can be:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only on the attacker's system"
+          },
+          {
+            "label": "B",
+            "text": "Anywhere with no protection"
+          },
+          {
+            "label": "C",
+            "text": "Only on the public internet"
+          },
+          {
+            "label": "D",
+            "text": "Centralized or decentralized depending on requirements, but kept in highly secure locations"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Evidence storage may be centralized or decentralized, but must remain in highly secure locations."
+      },
+      {
+        "id": "soc-mock2-q099",
+        "type": "choice",
+        "text": "An organization without its own IRT might:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ignore all incidents"
+          },
+          {
+            "label": "B",
+            "text": "Disband the SOC"
+          },
+          {
+            "label": "C",
+            "text": "Refuse to respond"
+          },
+          {
+            "label": "D",
+            "text": "Opt for an outsourced/external IRT, with the SOC assisting in information gathering"
+          }
+        ],
+        "correctLabels": [
+          "D"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— Organizations may use an outsourced/external IRT, with the SOC helping gather needed information."
+      },
+      {
+        "id": "soc-mock2-q100",
+        "type": "choice",
+        "text": "Which statement best captures the SOC analyst's role in the IR process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "They have no role in incident response"
+          },
+          {
+            "label": "B",
+            "text": "They alone handle all legal prosecution"
+          },
+          {
+            "label": "C",
+            "text": "They replace the entire IRT"
+          },
+          {
+            "label": "D",
+            "text": "They detect and escalate incidents and support the IRT throughout the response"
+          }
+        ],
+        "correctLabels": [
+          "A"
+        ],
+        "acceptedAnswers": [],
+        "hint": "Review the source PDF: SOC_Practice_Exam_Modules_03-06.pdf.",
+        "explanation": "— SOC analysts detect and escalate incidents and support the IRT throughout the response process."
+      }
+    ]
   }
 };
